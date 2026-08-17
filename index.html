@@ -338,12 +338,12 @@ body {
     </div>
   </div>
   <div class="card-footer">
-    <a href="daily-dashboard.html" class="view-dashboard-btn">查看完整仪表盘 →</a>
+    <a href="dashboard.html" class="view-dashboard-btn">查看完整仪表盘 →</a>
     <div class="footer-text">数据仅供参考，理性购彩</div>
   </div>
 </div>
 <script>
-  var shareUrl = window.location.origin + '/demo/daily-dashboard.html';
+  var shareUrl = new URL('dashboard.html', window.location.href).href;
   document.getElementById('shareLink').value = shareUrl;
   function copyLink() {
     var input = document.getElementById('shareLink');
