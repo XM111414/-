@@ -239,11 +239,11 @@ body {
   </div>
   <div class="stats-row">
     <div class="stat-item">
-      <div class="value blue">154</div>
+      <div class="value blue">149</div>
       <div class="label">今日预测</div>
     </div>
     <div class="stat-item">
-      <div class="value green">101</div>
+      <div class="value green">109</div>
       <div class="label">通过筛选</div>
     </div>
     <div class="stat-item">
@@ -368,13 +368,13 @@ body {
   }
   function shareWechat() { showToast('请截图分享到微信'); }
   function shareWeibo() {
-    var text = encodeURIComponent('【每日足彩预测】今日154场比赛，通过筛选101场，本月命中率73.2%！小明同学推荐，来看看AI分析结果吧～');
+    var text = encodeURIComponent('【每日足彩预测】今日149场比赛，通过筛选109场，本月命中率73.2%！小明同学推荐，来看看AI分析结果吧～');
     var url = encodeURIComponent(shareUrl);
     window.open('https://service.weibo.com/share/share.php?title=' + text + '&url=' + url, '_blank', 'width=600,height=400');
   }
   function shareQQ() {
     var title = encodeURIComponent('每日足彩预测 - AI智能分析');
-    var summary = encodeURIComponent('今日154场比赛，通过筛选101场，本月命中率73.2%！小明同学推荐');
+    var summary = encodeURIComponent('今日149场比赛，通过筛选109场，本月命中率73.2%！小明同学推荐');
     var url = encodeURIComponent(shareUrl);
     window.open('https://connect.qq.com/widget/shareqq/index.html?title=' + title + '&summary=' + summary + '&url=' + url, '_blank', 'width=600,height=400');
   }
