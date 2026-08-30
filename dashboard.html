@@ -1837,6 +1837,9 @@ tbody tr.match-miss:hover { background: #fee2e2; }
             <option value="all">全部</option>
             <option value="pass">通过</option>
             <option value="fail">筛除</option>
+            <option value="trap">凯利陷阱</option>
+            <option value="so_agree">同赔支持</option>
+            <option value="so_conflict">同赔冲突</option>
           </select>
           <label>等级：</label>
           <select id="p-grade-all" onchange="filterPred('all')">
@@ -2285,7 +2288,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
           <div class="f-reason">-</div>
         </td>
       </tr>
-      <tr class="">
+      <tr class="kelly-trap">
         <td class="col-seq">300</td>
         <td class="col-time">22:55</td>
         <td class="col-league">
@@ -3482,7 +3485,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
           <div class="f-reason">信心封顶85→78、SP异常预警(平概率14%<18%)</div>
         </td>
       </tr>
-      <tr class="filtered-out">
+      <tr class="filtered-out kelly-trap">
         <td class="col-seq">323</td>
         <td class="col-time">00:55</td>
         <td class="col-league">
@@ -3644,7 +3647,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
           <div class="f-reason">低置信平局类型</div>
         </td>
       </tr>
-      <tr class="">
+      <tr class="kelly-trap">
         <td class="col-seq">326</td>
         <td class="col-time">00:55</td>
         <td class="col-league">
@@ -3851,7 +3854,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
           <div class="f-reason">信心封顶85→78、SP异常预警(平概率12%<18%;让1盘平SP8.18>7.5)</div>
         </td>
       </tr>
-      <tr class="">
+      <tr class="kelly-trap">
         <td class="col-seq">330</td>
         <td class="col-time">00:55</td>
         <td class="col-league">
@@ -4823,7 +4826,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
           <div class="f-reason">总概率73.3%<74.0%</div>
         </td>
       </tr>
-      <tr class="">
+      <tr class="kelly-trap">
         <td class="col-seq">348</td>
         <td class="col-time">02:55</td>
         <td class="col-league">
@@ -5201,7 +5204,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
           <div class="f-reason">-</div>
         </td>
       </tr>
-      <tr class="filtered-out">
+      <tr class="filtered-out kelly-trap">
         <td class="col-seq">355</td>
         <td class="col-time">03:25</td>
         <td class="col-league">
@@ -5471,7 +5474,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
           <div class="f-reason">-</div>
         </td>
       </tr>
-      <tr class="">
+      <tr class="kelly-trap">
         <td class="col-seq">360</td>
         <td class="col-time">04:55</td>
         <td class="col-league">
@@ -5687,7 +5690,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
           <div class="f-reason">信心封顶85→78、SP异常预警(平概率13%<18%;让1盘平SP7.93>7.5)</div>
         </td>
       </tr>
-      <tr class="">
+      <tr class="kelly-trap">
         <td class="col-seq">364</td>
         <td class="col-time">05:25</td>
         <td class="col-league">
@@ -5849,7 +5852,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
           <div class="f-reason">C级联赛</div>
         </td>
       </tr>
-      <tr class="filtered-out">
+      <tr class="filtered-out kelly-trap">
         <td class="col-seq">367</td>
         <td class="col-time">06:00</td>
         <td class="col-league">
@@ -6495,7 +6498,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         
       </tr>
-      <tr class="">
+      <tr class="kelly-trap">
         <td class="col-seq">300</td>
         <td class="col-time">22:55</td>
         <td class="col-league">
@@ -6986,7 +6989,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         
       </tr>
-      <tr class="">
+      <tr class="kelly-trap">
         <td class="col-seq">326</td>
         <td class="col-time">00:55</td>
         <td class="col-league">
@@ -7177,7 +7180,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         
       </tr>
-      <tr class="">
+      <tr class="kelly-trap">
         <td class="col-seq">330</td>
         <td class="col-time">00:55</td>
         <td class="col-league">
@@ -7777,7 +7780,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         
       </tr>
-      <tr class="">
+      <tr class="kelly-trap">
         <td class="col-seq">348</td>
         <td class="col-time">02:55</td>
         <td class="col-league">
@@ -8027,7 +8030,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         
       </tr>
-      <tr class="">
+      <tr class="kelly-trap">
         <td class="col-seq">360</td>
         <td class="col-time">04:55</td>
         <td class="col-league">
@@ -8127,7 +8130,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         
       </tr>
-      <tr class="">
+      <tr class="kelly-trap">
         <td class="col-seq">364</td>
         <td class="col-time">05:25</td>
         <td class="col-league">
@@ -17614,6 +17617,9 @@ function filterPred(tab) {
     if (tab === 'all' && status !== 'all') {
       if (status === 'pass' && row.classList.contains('filtered-out')) show = false;
       if (status === 'fail' && !row.classList.contains('filtered-out')) show = false;
+      if (status === 'trap' && !row.classList.contains('kelly-trap')) show = false;
+      if (status === 'so_agree' && !row.querySelector('.so-agree')) show = false;
+      if (status === 'so_conflict' && !row.querySelector('.so-conflict')) show = false;
     }
     
     if (grade !== 'all') {
