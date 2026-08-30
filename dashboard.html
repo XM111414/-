@@ -797,6 +797,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
 .f-badge.pass { background: #dcfce7; color: #166534; }
 .f-badge.fail { background: #fee2e2; color: #991b1b; }
 .f-reason { font-size: 0.62rem; color: var(--muted); margin-top: 2px; }
+.trap-badge { display: inline-block; margin-top: 3px; padding: 1px 7px; border-radius: 7px; font-size: 0.62rem; font-weight: 600; background: #fef3c7; color: #b45309; }
 
 
 /* 大小球复盘 */
@@ -16172,6 +16173,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
               <option value="all">全部</option>
               <option value="hit">命中</option>
               <option value="miss">未中</option>
+              <option value="trap">凯利陷阱</option>
             </select>
             <label>联赛：</label>
             <select id="h-league" onchange="filterHistoryDetail()">
@@ -17494,10 +17496,18 @@ function showHistoryDetail(dateStr) {
   document.getElementById('history-detail-view').classList.add('active');
 }
 
+function isKellyTrap(m) {
+  var fr = m.filter_reasons || [];
+  for (var i = 0; i < fr.length; i++) {
+    if (fr[i].indexOf('凯利') !== -1) return true;
+  }
+  return false;
+}
+
 function renderHistoryDetail(matches) {
   var tbody = document.getElementById('history-detail-body');
   tbody.innerHTML = '';
-  
+
   matches.forEach(function(m) {
     var hc = m.handicap || 0;
     var hcStr = hc > 0 ? '+' + hc : String(hc);
@@ -17505,6 +17515,7 @@ function renderHistoryDetail(matches) {
     var statusClass = isHit ? 'hit' : 'miss';
     var statusText = isHit ? '✓ 命中' : '✗ 未中';
     var rowClass = isHit ? 'match-hit' : 'match-miss';
+    var isTrap = isKellyTrap(m);
     
     var resultClass = '';
     if (m.actual_result === '主胜') resultClass = 'result-win';
@@ -17543,6 +17554,7 @@ function renderHistoryDetail(matches) {
           '</div>' +
         '</div>' +
         '<div class="pred-prob">' + m.p1 + '% + ' + m.p2 + '% = ' + m.total_p + '%</div>' +
+        (isTrap ? '<div class="trap-badge">&#9888; 凯利陷阱·降信心</div>' : '') +
       '</td>' +
       '<td class="col-ou"><span class="ou-mini ' + ouClass + '">' + (m.ou_recommend || '-') + '</span></td>' +
       '<td class="col-actual">' +
@@ -17566,6 +17578,7 @@ function filterHistoryDetail() {
   var filtered = matches.filter(function(m) {
     if (status === 'hit' && !m.is_hit) return false;
     if (status === 'miss' && m.is_hit) return false;
+    if (status === 'trap' && !isKellyTrap(m)) return false;
     if (league !== 'all' && m.league !== league) return false;
     if (search && m.home.toLowerCase().indexOf(search) === -1 && m.away.toLowerCase().indexOf(search) === -1) return false;
     return true;
