@@ -798,6 +798,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
 .f-badge.fail { background: #fee2e2; color: #991b1b; }
 .f-reason { font-size: 0.62rem; color: var(--muted); margin-top: 2px; }
 .trap-badge { display: inline-block; margin-top: 3px; padding: 1px 7px; border-radius: 7px; font-size: 0.62rem; font-weight: 600; background: #fef3c7; color: #b45309; }
+tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
 
 
 /* 大小球复盘 */
@@ -8700,6 +8701,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
             <option value="all">全部</option>
             <option value="hit">命中</option>
             <option value="miss">未中</option>
+            <option value="trap">凯利陷阱</option>
           </select>
           <label>联赛：</label>
           <select id="r-league" onchange="filterReview()">
@@ -8803,6 +8805,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-hit">
@@ -8842,9 +8845,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
-      <tr class="match-hit">
+      <tr class="match-hit kelly-trap">
         <td class="col-seq">69</td>
         <td class="col-league"><span class="league-tag">J2联赛</span></td>
         <td class="col-teams">
@@ -8881,6 +8885,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
       <tr class="match-hit">
@@ -8920,6 +8925,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-hit">
@@ -8959,6 +8965,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-miss">
@@ -8998,6 +9005,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge miss">✗ 未中</span>
+          
         </td>
       </tr>
       <tr class="match-hit">
@@ -9037,6 +9045,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-hit">
@@ -9076,6 +9085,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-hit">
@@ -9115,6 +9125,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-hit">
@@ -9154,6 +9165,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-hit">
@@ -9193,6 +9205,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-hit">
@@ -9232,6 +9245,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-hit">
@@ -9271,6 +9285,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-hit">
@@ -9310,6 +9325,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-hit">
@@ -9349,6 +9365,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-hit">
@@ -9388,6 +9405,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-miss">
@@ -9427,9 +9445,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge miss">✗ 未中</span>
+          
         </td>
       </tr>
-      <tr class="match-hit">
+      <tr class="match-hit kelly-trap">
         <td class="col-seq">84</td>
         <td class="col-league"><span class="league-tag">J2联赛</span></td>
         <td class="col-teams">
@@ -9466,9 +9485,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
-      <tr class="match-hit">
+      <tr class="match-hit kelly-trap">
         <td class="col-seq">85</td>
         <td class="col-league"><span class="league-tag">J2联赛</span></td>
         <td class="col-teams">
@@ -9505,9 +9525,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
-      <tr class="match-hit">
+      <tr class="match-hit kelly-trap">
         <td class="col-seq">86</td>
         <td class="col-league"><span class="league-tag">J2联赛</span></td>
         <td class="col-teams">
@@ -9544,6 +9565,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
       <tr class="match-hit">
@@ -9583,9 +9605,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
-      <tr class="match-hit">
+      <tr class="match-hit kelly-trap">
         <td class="col-seq">88</td>
         <td class="col-league"><span class="league-tag">波兰甲</span></td>
         <td class="col-teams">
@@ -9622,9 +9645,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
-      <tr class="match-hit">
+      <tr class="match-hit kelly-trap">
         <td class="col-seq">89</td>
         <td class="col-league"><span class="league-tag">K1联赛</span></td>
         <td class="col-teams">
@@ -9661,6 +9685,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
       <tr class="match-hit">
@@ -9700,6 +9725,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-hit">
@@ -9739,9 +9765,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
-      <tr class="match-hit">
+      <tr class="match-hit kelly-trap">
         <td class="col-seq">92</td>
         <td class="col-league"><span class="league-tag">K2联赛</span></td>
         <td class="col-teams">
@@ -9778,6 +9805,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
       <tr class="match-hit">
@@ -9817,9 +9845,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
-      <tr class="match-miss">
+      <tr class="match-miss kelly-trap">
         <td class="col-seq">94</td>
         <td class="col-league"><span class="league-tag">K2联赛</span></td>
         <td class="col-teams">
@@ -9856,9 +9885,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge miss">✗ 未中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
-      <tr class="match-hit">
+      <tr class="match-hit kelly-trap">
         <td class="col-seq">95</td>
         <td class="col-league"><span class="league-tag">德乙</span></td>
         <td class="col-teams">
@@ -9895,6 +9925,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
       <tr class="match-hit">
@@ -9934,6 +9965,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-hit">
@@ -9973,6 +10005,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-hit">
@@ -10012,6 +10045,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-miss">
@@ -10051,6 +10085,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge miss">✗ 未中</span>
+          
         </td>
       </tr>
       <tr class="match-hit">
@@ -10090,6 +10125,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-hit">
@@ -10129,9 +10165,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
-      <tr class="match-hit">
+      <tr class="match-hit kelly-trap">
         <td class="col-seq">102</td>
         <td class="col-league"><span class="league-tag">英冠</span></td>
         <td class="col-teams">
@@ -10168,6 +10205,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
       <tr class="match-miss">
@@ -10207,6 +10245,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge miss">✗ 未中</span>
+          
         </td>
       </tr>
       <tr class="match-hit">
@@ -10246,9 +10285,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
-      <tr class="match-hit">
+      <tr class="match-hit kelly-trap">
         <td class="col-seq">105</td>
         <td class="col-league"><span class="league-tag">英甲</span></td>
         <td class="col-teams">
@@ -10285,6 +10325,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
       <tr class="match-miss">
@@ -10324,6 +10365,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge miss">✗ 未中</span>
+          
         </td>
       </tr>
       <tr class="match-hit">
@@ -10363,6 +10405,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-miss">
@@ -10402,6 +10445,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge miss">✗ 未中</span>
+          
         </td>
       </tr>
       <tr class="match-hit">
@@ -10441,6 +10485,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-miss">
@@ -10480,6 +10525,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge miss">✗ 未中</span>
+          
         </td>
       </tr>
       <tr class="match-hit">
@@ -10519,6 +10565,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-miss">
@@ -10558,6 +10605,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge miss">✗ 未中</span>
+          
         </td>
       </tr>
       <tr class="match-hit">
@@ -10597,9 +10645,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
-      <tr class="match-miss">
+      <tr class="match-miss kelly-trap">
         <td class="col-seq">114</td>
         <td class="col-league"><span class="league-tag">波兰甲</span></td>
         <td class="col-teams">
@@ -10636,6 +10685,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge miss">✗ 未中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
       <tr class="match-hit">
@@ -10675,6 +10725,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-hit">
@@ -10714,6 +10765,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-hit">
@@ -10753,6 +10805,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-miss">
@@ -10792,9 +10845,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge miss">✗ 未中</span>
+          
         </td>
       </tr>
-      <tr class="match-hit">
+      <tr class="match-hit kelly-trap">
         <td class="col-seq">119</td>
         <td class="col-league"><span class="league-tag">瑞典甲</span></td>
         <td class="col-teams">
@@ -10831,6 +10885,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
       <tr class="match-hit">
@@ -10870,6 +10925,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-hit">
@@ -10909,6 +10965,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-hit">
@@ -10948,6 +11005,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-hit">
@@ -10987,6 +11045,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-miss">
@@ -11026,6 +11085,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge miss">✗ 未中</span>
+          
         </td>
       </tr>
       <tr class="match-hit">
@@ -11065,6 +11125,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-miss">
@@ -11104,6 +11165,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge miss">✗ 未中</span>
+          
         </td>
       </tr>
       <tr class="match-miss">
@@ -11143,9 +11205,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge miss">✗ 未中</span>
+          
         </td>
       </tr>
-      <tr class="match-hit">
+      <tr class="match-hit kelly-trap">
         <td class="col-seq">128</td>
         <td class="col-league"><span class="league-tag">英冠</span></td>
         <td class="col-teams">
@@ -11182,6 +11245,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
       <tr class="match-miss">
@@ -11221,9 +11285,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge miss">✗ 未中</span>
+          
         </td>
       </tr>
-      <tr class="match-hit">
+      <tr class="match-hit kelly-trap">
         <td class="col-seq">130</td>
         <td class="col-league"><span class="league-tag">英冠</span></td>
         <td class="col-teams">
@@ -11260,6 +11325,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
       <tr class="match-hit">
@@ -11299,6 +11365,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-hit">
@@ -11338,9 +11405,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
-      <tr class="match-hit">
+      <tr class="match-hit kelly-trap">
         <td class="col-seq">133</td>
         <td class="col-league"><span class="league-tag">英冠</span></td>
         <td class="col-teams">
@@ -11377,9 +11445,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
-      <tr class="match-hit">
+      <tr class="match-hit kelly-trap">
         <td class="col-seq">134</td>
         <td class="col-league"><span class="league-tag">英冠</span></td>
         <td class="col-teams">
@@ -11416,6 +11485,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
       <tr class="match-hit">
@@ -11455,9 +11525,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
-      <tr class="match-hit">
+      <tr class="match-hit kelly-trap">
         <td class="col-seq">136</td>
         <td class="col-league"><span class="league-tag">英甲</span></td>
         <td class="col-teams">
@@ -11494,9 +11565,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
-      <tr class="match-miss">
+      <tr class="match-miss kelly-trap">
         <td class="col-seq">137</td>
         <td class="col-league"><span class="league-tag">英甲</span></td>
         <td class="col-teams">
@@ -11533,9 +11605,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge miss">✗ 未中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
-      <tr class="match-hit">
+      <tr class="match-hit kelly-trap">
         <td class="col-seq">138</td>
         <td class="col-league"><span class="league-tag">英甲</span></td>
         <td class="col-teams">
@@ -11572,9 +11645,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
-      <tr class="match-hit">
+      <tr class="match-hit kelly-trap">
         <td class="col-seq">139</td>
         <td class="col-league"><span class="league-tag">英甲</span></td>
         <td class="col-teams">
@@ -11611,9 +11685,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
-      <tr class="match-miss">
+      <tr class="match-miss kelly-trap">
         <td class="col-seq">140</td>
         <td class="col-league"><span class="league-tag">英甲</span></td>
         <td class="col-teams">
@@ -11650,9 +11725,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge miss">✗ 未中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
-      <tr class="match-hit">
+      <tr class="match-hit kelly-trap">
         <td class="col-seq">141</td>
         <td class="col-league"><span class="league-tag">英甲</span></td>
         <td class="col-teams">
@@ -11689,9 +11765,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
-      <tr class="match-hit">
+      <tr class="match-hit kelly-trap">
         <td class="col-seq">142</td>
         <td class="col-league"><span class="league-tag">英乙</span></td>
         <td class="col-teams">
@@ -11728,9 +11805,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
-      <tr class="match-hit">
+      <tr class="match-hit kelly-trap">
         <td class="col-seq">143</td>
         <td class="col-league"><span class="league-tag">英乙</span></td>
         <td class="col-teams">
@@ -11767,9 +11845,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
-      <tr class="match-hit">
+      <tr class="match-hit kelly-trap">
         <td class="col-seq">144</td>
         <td class="col-league"><span class="league-tag">英乙</span></td>
         <td class="col-teams">
@@ -11806,9 +11885,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
-      <tr class="match-hit">
+      <tr class="match-hit kelly-trap">
         <td class="col-seq">145</td>
         <td class="col-league"><span class="league-tag">英乙</span></td>
         <td class="col-teams">
@@ -11845,9 +11925,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
-      <tr class="match-miss">
+      <tr class="match-miss kelly-trap">
         <td class="col-seq">146</td>
         <td class="col-league"><span class="league-tag">英乙</span></td>
         <td class="col-teams">
@@ -11884,9 +11965,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge miss">✗ 未中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
-      <tr class="match-hit">
+      <tr class="match-hit kelly-trap">
         <td class="col-seq">147</td>
         <td class="col-league"><span class="league-tag">英乙</span></td>
         <td class="col-teams">
@@ -11923,9 +12005,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
-      <tr class="match-miss">
+      <tr class="match-miss kelly-trap">
         <td class="col-seq">148</td>
         <td class="col-league"><span class="league-tag">英乙</span></td>
         <td class="col-teams">
@@ -11962,9 +12045,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge miss">✗ 未中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
-      <tr class="match-hit">
+      <tr class="match-hit kelly-trap">
         <td class="col-seq">149</td>
         <td class="col-league"><span class="league-tag">英乙</span></td>
         <td class="col-teams">
@@ -12001,6 +12085,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
       <tr class="match-miss">
@@ -12040,6 +12125,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge miss">✗ 未中</span>
+          
         </td>
       </tr>
       <tr class="match-hit">
@@ -12079,6 +12165,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-hit">
@@ -12118,6 +12205,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-miss">
@@ -12157,9 +12245,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge miss">✗ 未中</span>
+          
         </td>
       </tr>
-      <tr class="match-miss">
+      <tr class="match-miss kelly-trap">
         <td class="col-seq">154</td>
         <td class="col-league"><span class="league-tag">挪超</span></td>
         <td class="col-teams">
@@ -12196,9 +12285,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge miss">✗ 未中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
-      <tr class="match-miss">
+      <tr class="match-miss kelly-trap">
         <td class="col-seq">155</td>
         <td class="col-league"><span class="league-tag">苏冠</span></td>
         <td class="col-teams">
@@ -12235,6 +12325,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge miss">✗ 未中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
       <tr class="match-hit">
@@ -12274,6 +12365,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-hit">
@@ -12313,9 +12405,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
-      <tr class="match-hit">
+      <tr class="match-hit kelly-trap">
         <td class="col-seq">158</td>
         <td class="col-league"><span class="league-tag">苏冠</span></td>
         <td class="col-teams">
@@ -12352,9 +12445,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
-      <tr class="match-hit">
+      <tr class="match-hit kelly-trap">
         <td class="col-seq">159</td>
         <td class="col-league"><span class="league-tag">比乙</span></td>
         <td class="col-teams">
@@ -12391,6 +12485,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
       <tr class="match-miss">
@@ -12430,6 +12525,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge miss">✗ 未中</span>
+          
         </td>
       </tr>
       <tr class="match-hit">
@@ -12469,6 +12565,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-hit">
@@ -12508,9 +12605,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
-      <tr class="match-hit">
+      <tr class="match-hit kelly-trap">
         <td class="col-seq">163</td>
         <td class="col-league"><span class="league-tag">葡超</span></td>
         <td class="col-teams">
@@ -12547,9 +12645,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
-      <tr class="match-hit">
+      <tr class="match-hit kelly-trap">
         <td class="col-seq">164</td>
         <td class="col-league"><span class="league-tag">荷甲</span></td>
         <td class="col-teams">
@@ -12586,9 +12685,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
-      <tr class="match-hit">
+      <tr class="match-hit kelly-trap">
         <td class="col-seq">165</td>
         <td class="col-league"><span class="league-tag">荷乙</span></td>
         <td class="col-teams">
@@ -12625,6 +12725,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
       <tr class="match-hit">
@@ -12664,9 +12765,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
-      <tr class="match-hit">
+      <tr class="match-hit kelly-trap">
         <td class="col-seq">167</td>
         <td class="col-league"><span class="league-tag">西乙</span></td>
         <td class="col-teams">
@@ -12703,6 +12805,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
       <tr class="match-hit">
@@ -12742,6 +12845,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-miss">
@@ -12781,6 +12885,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge miss">✗ 未中</span>
+          
         </td>
       </tr>
       <tr class="match-hit">
@@ -12820,6 +12925,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-miss">
@@ -12859,6 +12965,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge miss">✗ 未中</span>
+          
         </td>
       </tr>
       <tr class="match-hit">
@@ -12898,6 +13005,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-hit">
@@ -12937,9 +13045,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
-      <tr class="match-hit">
+      <tr class="match-hit kelly-trap">
         <td class="col-seq">174</td>
         <td class="col-league"><span class="league-tag">瑞典超</span></td>
         <td class="col-teams">
@@ -12976,6 +13085,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
       <tr class="match-hit">
@@ -13015,6 +13125,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-hit">
@@ -13054,9 +13165,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
-      <tr class="match-hit">
+      <tr class="match-hit kelly-trap">
         <td class="col-seq">177</td>
         <td class="col-league"><span class="league-tag">奥乙</span></td>
         <td class="col-teams">
@@ -13093,9 +13205,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
-      <tr class="match-miss">
+      <tr class="match-miss kelly-trap">
         <td class="col-seq">178</td>
         <td class="col-league"><span class="league-tag">瑞士超</span></td>
         <td class="col-teams">
@@ -13132,6 +13245,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge miss">✗ 未中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
       <tr class="match-hit">
@@ -13171,6 +13285,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-miss">
@@ -13210,9 +13325,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge miss">✗ 未中</span>
+          
         </td>
       </tr>
-      <tr class="match-hit">
+      <tr class="match-hit kelly-trap">
         <td class="col-seq">181</td>
         <td class="col-league"><span class="league-tag">比甲</span></td>
         <td class="col-teams">
@@ -13249,9 +13365,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
-      <tr class="match-hit">
+      <tr class="match-hit kelly-trap">
         <td class="col-seq">182</td>
         <td class="col-league"><span class="league-tag">英超</span></td>
         <td class="col-teams">
@@ -13288,6 +13405,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
       <tr class="match-hit">
@@ -13327,9 +13445,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
-      <tr class="match-hit">
+      <tr class="match-hit kelly-trap">
         <td class="col-seq">184</td>
         <td class="col-league"><span class="league-tag">意甲</span></td>
         <td class="col-teams">
@@ -13366,9 +13485,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
-      <tr class="match-hit">
+      <tr class="match-hit kelly-trap">
         <td class="col-seq">185</td>
         <td class="col-league"><span class="league-tag">意甲</span></td>
         <td class="col-teams">
@@ -13405,6 +13525,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
       <tr class="match-miss">
@@ -13444,9 +13565,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge miss">✗ 未中</span>
+          
         </td>
       </tr>
-      <tr class="match-hit">
+      <tr class="match-hit kelly-trap">
         <td class="col-seq">187</td>
         <td class="col-league"><span class="league-tag">希腊超</span></td>
         <td class="col-teams">
@@ -13483,6 +13605,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
       <tr class="match-hit">
@@ -13522,6 +13645,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-hit">
@@ -13561,9 +13685,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
-      <tr class="match-hit">
+      <tr class="match-hit kelly-trap">
         <td class="col-seq">190</td>
         <td class="col-league"><span class="league-tag">西甲</span></td>
         <td class="col-teams">
@@ -13600,6 +13725,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
       <tr class="match-hit">
@@ -13639,6 +13765,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-hit">
@@ -13678,9 +13805,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
-      <tr class="match-hit">
+      <tr class="match-hit kelly-trap">
         <td class="col-seq">193</td>
         <td class="col-league"><span class="league-tag">意乙</span></td>
         <td class="col-teams">
@@ -13717,9 +13845,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
-      <tr class="match-miss">
+      <tr class="match-miss kelly-trap">
         <td class="col-seq">194</td>
         <td class="col-league"><span class="league-tag">意乙</span></td>
         <td class="col-teams">
@@ -13756,6 +13885,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge miss">✗ 未中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
       <tr class="match-hit">
@@ -13795,6 +13925,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-hit">
@@ -13834,6 +13965,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-hit">
@@ -13873,6 +14005,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-miss">
@@ -13912,9 +14045,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge miss">✗ 未中</span>
+          
         </td>
       </tr>
-      <tr class="match-miss">
+      <tr class="match-miss kelly-trap">
         <td class="col-seq">199</td>
         <td class="col-league"><span class="league-tag">法乙</span></td>
         <td class="col-teams">
@@ -13951,6 +14085,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge miss">✗ 未中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
       <tr class="match-miss">
@@ -13990,9 +14125,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge miss">✗ 未中</span>
+          
         </td>
       </tr>
-      <tr class="match-miss">
+      <tr class="match-miss kelly-trap">
         <td class="col-seq">201</td>
         <td class="col-league"><span class="league-tag">比乙</span></td>
         <td class="col-teams">
@@ -14029,6 +14165,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge miss">✗ 未中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
       <tr class="match-hit">
@@ -14068,6 +14205,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-hit">
@@ -14107,6 +14245,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-hit">
@@ -14146,9 +14285,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
-      <tr class="match-hit">
+      <tr class="match-hit kelly-trap">
         <td class="col-seq">205</td>
         <td class="col-league"><span class="league-tag">希腊超</span></td>
         <td class="col-teams">
@@ -14185,9 +14325,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
-      <tr class="match-hit">
+      <tr class="match-hit kelly-trap">
         <td class="col-seq">206</td>
         <td class="col-league"><span class="league-tag">罗甲</span></td>
         <td class="col-teams">
@@ -14224,6 +14365,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
       <tr class="match-miss">
@@ -14263,9 +14405,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge miss">✗ 未中</span>
+          
         </td>
       </tr>
-      <tr class="match-hit">
+      <tr class="match-hit kelly-trap">
         <td class="col-seq">208</td>
         <td class="col-league"><span class="league-tag">法甲</span></td>
         <td class="col-teams">
@@ -14302,6 +14445,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
       <tr class="match-hit">
@@ -14341,9 +14485,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
-      <tr class="match-miss">
+      <tr class="match-miss kelly-trap">
         <td class="col-seq">210</td>
         <td class="col-league"><span class="league-tag">法甲</span></td>
         <td class="col-teams">
@@ -14380,6 +14525,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge miss">✗ 未中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
       <tr class="match-hit">
@@ -14419,9 +14565,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
-      <tr class="match-hit">
+      <tr class="match-hit kelly-trap">
         <td class="col-seq">212</td>
         <td class="col-league"><span class="league-tag">比甲</span></td>
         <td class="col-teams">
@@ -14458,6 +14605,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
       <tr class="match-hit">
@@ -14497,6 +14645,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-hit">
@@ -14536,6 +14685,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-hit">
@@ -14575,6 +14725,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-hit">
@@ -14614,6 +14765,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-hit">
@@ -14653,6 +14805,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-miss">
@@ -14692,6 +14845,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge miss">✗ 未中</span>
+          
         </td>
       </tr>
       <tr class="match-miss">
@@ -14731,9 +14885,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge miss">✗ 未中</span>
+          
         </td>
       </tr>
-      <tr class="match-hit">
+      <tr class="match-hit kelly-trap">
         <td class="col-seq">220</td>
         <td class="col-league"><span class="league-tag">葡甲</span></td>
         <td class="col-teams">
@@ -14770,9 +14925,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
-      <tr class="match-miss">
+      <tr class="match-miss kelly-trap">
         <td class="col-seq">221</td>
         <td class="col-league"><span class="league-tag">阿职联</span></td>
         <td class="col-teams">
@@ -14809,6 +14965,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge miss">✗ 未中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
       <tr class="match-hit">
@@ -14848,6 +15005,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-hit">
@@ -14887,6 +15045,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-miss">
@@ -14926,6 +15085,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge miss">✗ 未中</span>
+          
         </td>
       </tr>
       <tr class="match-hit">
@@ -14965,9 +15125,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
-      <tr class="match-hit">
+      <tr class="match-hit kelly-trap">
         <td class="col-seq">226</td>
         <td class="col-league"><span class="league-tag">巴西甲</span></td>
         <td class="col-teams">
@@ -15004,9 +15165,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
-      <tr class="match-miss">
+      <tr class="match-miss kelly-trap">
         <td class="col-seq">227</td>
         <td class="col-league"><span class="league-tag">墨超</span></td>
         <td class="col-teams">
@@ -15043,6 +15205,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge miss">✗ 未中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
       <tr class="match-hit">
@@ -15082,9 +15245,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
-      <tr class="match-hit">
+      <tr class="match-hit kelly-trap">
         <td class="col-seq">229</td>
         <td class="col-league"><span class="league-tag">美职</span></td>
         <td class="col-teams">
@@ -15121,9 +15285,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
-      <tr class="match-miss">
+      <tr class="match-miss kelly-trap">
         <td class="col-seq">230</td>
         <td class="col-league"><span class="league-tag">美职</span></td>
         <td class="col-teams">
@@ -15160,6 +15325,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge miss">✗ 未中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
       <tr class="match-hit">
@@ -15199,9 +15365,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
-      <tr class="match-hit">
+      <tr class="match-hit kelly-trap">
         <td class="col-seq">232</td>
         <td class="col-league"><span class="league-tag">美职</span></td>
         <td class="col-teams">
@@ -15238,6 +15405,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
       <tr class="match-hit">
@@ -15277,9 +15445,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
-      <tr class="match-hit">
+      <tr class="match-hit kelly-trap">
         <td class="col-seq">234</td>
         <td class="col-league"><span class="league-tag">智利甲</span></td>
         <td class="col-teams">
@@ -15316,6 +15485,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
       <tr class="match-hit">
@@ -15355,6 +15525,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-hit">
@@ -15394,6 +15565,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-hit">
@@ -15433,6 +15605,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-hit">
@@ -15472,9 +15645,10 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
-      <tr class="match-miss">
+      <tr class="match-miss kelly-trap">
         <td class="col-seq">239</td>
         <td class="col-league"><span class="league-tag">美职</span></td>
         <td class="col-teams">
@@ -15511,6 +15685,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge miss">✗ 未中</span>
+          <div class="trap-badge">&#9888; 凯利陷阱</div>
         </td>
       </tr>
       <tr class="match-hit">
@@ -15550,6 +15725,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-hit">
@@ -15589,6 +15765,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
       <tr class="match-hit">
@@ -15628,6 +15805,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
         </td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
+          
         </td>
       </tr>
             </tbody>
@@ -17669,6 +17847,7 @@ function filterReview() {
     
     if (status === 'hit' && !row.classList.contains('match-hit')) show = false;
     if (status === 'miss' && !row.classList.contains('match-miss')) show = false;
+    if (status === 'trap' && !row.classList.contains('kelly-trap')) show = false;
     
     if (league !== 'all') {
       const tag = row.querySelector('.league-tag');
