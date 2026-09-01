@@ -325,6 +325,82 @@ body {
   border-left: 3px solid var(--accent);
 }
 
+/* 月份切换 + 年度汇总（2026-09-01） */
+.month-tabs {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 12px 0 4px;
+}
+.month-btn {
+  padding: 6px 16px;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: var(--ink);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s;
+}
+.month-btn:hover { border-color: var(--accent); color: var(--accent); }
+.month-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+.month-btn-sub {
+  font-size: 0.68rem;
+  opacity: 0.75;
+}
+.month-block {
+  margin-top: 14px;
+  padding-top: 6px;
+}
+.month-block-header h4 {
+  margin: 0 0 4px;
+  font-size: 0.95rem;
+  color: var(--ink);
+  text-align: center;
+  font-weight: 600;
+}
+.yearly-summary {
+  margin-top: 16px;
+  padding: 16px;
+  background: linear-gradient(135deg, #f8faff 0%, #f2f7ff 100%);
+  border: 1px solid #dbe7fb;
+  border-radius: 12px;
+}
+.yearly-summary h3 {
+  margin: 0 0 12px;
+  font-size: 1rem;
+  color: var(--ink);
+  text-align: center;
+}
+.year-months-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+.ym-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 10px 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.ym-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(37,99,235,0.12); }
+.ym-name { font-size: 0.9rem; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
+.ym-stats { display: flex; justify-content: center; gap: 10px; font-size: 0.75rem; color: var(--muted); margin-bottom: 6px; }
+.ym-rate { font-size: 0.85rem; }
+
+
 /* 每日走势 */
 .daily-trend {
   display: flex;
@@ -7744,9 +7820,1060 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
       <!-- ===== 子面板：月度汇总 ===== -->
       <div id="review-monthly" class="review-subpanel">
         <div class="monthly-header">
-          <h3>&#128202; 2026年9月 月度汇总</h3>
-          <p class="history-subtitle">累计 0 天数据，持续更新中</p>
+          <h3>&#128202; 月度汇总 · 支持月份切换</h3>
+          <p class="history-subtitle">当前显示月份可切换，年度汇总见下方</p>
+          <div class="month-tabs"><button class="month-btn active" data-ym="2026-09" onclick="switchMonth('2026-09')">9月<span class="month-btn-sub">0天</span></button><button class="month-btn" data-ym="2026-08" onclick="switchMonth('2026-08')">8月<span class="month-btn-sub">24天</span></button></div>
         </div>
+<div class="yearly-summary">
+        <h3>&#128197; 2026年 年度汇总</h3>
+        <div class="overview-grid">
+          <div class="overview-card all">
+            <div class="label">年度累计场次</div>
+            <div class="value">1480</div>
+            <div class="sub">24 天</div>
+          </div>
+          <div class="overview-card hit">
+            <div class="label">年度累计命中</div>
+            <div class="value">1084</div>
+            <div class="sub">命中率 73.2%</div>
+          </div>
+          <div class="overview-card miss">
+            <div class="label">年度累计未中</div>
+            <div class="value">396</div>
+            <div class="sub">预测错误</div>
+          </div>
+          <div class="overview-card rate">
+            <div class="label">年度总命中率</div>
+            <div class="value">73.2%</div>
+            <div class="sub">通过筛选后 74.2%</div>
+          </div>
+        </div>
+        <div class="year-months-grid">
+<div class="ym-card" onclick="switchMonth('2026-09')">
+            <div class="ym-name">9月</div>
+            <div class="ym-stats"><span>0天</span><span>0场</span></div>
+            <div class="ym-rate rate-badge low">0%</div>
+          </div><div class="ym-card" onclick="switchMonth('2026-08')">
+            <div class="ym-name">8月</div>
+            <div class="ym-stats"><span>24天</span><span>1480场</span></div>
+            <div class="ym-rate rate-badge mid">73.2%</div>
+          </div>        </div>
+      </div>
+<div class="month-block" id="month-block-2026-09">
+        <div class="month-block-header">
+          <h4>2026年9月 · 累计 0 天数据</h4>
+        </div>
+        <div class="overview-grid">
+          <div class="overview-card all">
+            <div class="label">累计场次</div>
+            <div class="value">0</div>
+            <div class="sub">0 天</div>
+          </div>
+          <div class="overview-card hit">
+            <div class="label">累计命中</div>
+            <div class="value">0</div>
+            <div class="sub">预测正确</div>
+          </div>
+          <div class="overview-card miss">
+            <div class="label">累计未中</div>
+            <div class="value">0</div>
+            <div class="sub">预测错误</div>
+          </div>
+          <div class="overview-card rate">
+            <div class="label">月均命中率</div>
+            <div class="value">0%</div>
+            <div class="sub">累计平均</div>
+          </div>
+        </div>
+        <div class="analysis-row">
+          <div class="analysis-card">
+            <h3>&#127942; 联赛累计准确率</h3>
+            <div style="overflow-x: auto;">
+              <table class="mini-table">
+                <thead>
+                  <tr>
+                    <th class="rank">#</th>
+                    <th>联赛</th>
+                    <th>场次</th>
+                    <th>命中</th>
+                    <th>命中率</th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="analysis-card">
+            <h3>&#127919; 双选类型累计</h3>
+            <div class="type-grid">
+
+            </div>
+          </div>
+          <div class="analysis-card">
+            <h3>&#128200; 每日命中率走势</h3>
+            <div class="daily-trend">
+
+            </div>
+          </div>
+        </div>
+        <div class="monthly-daily-title">每日明细</div>
+        <div class="table-wrap">
+          <table class="mini-table">
+            <thead>
+              <tr>
+                <th>日期</th>
+                <th>期号</th>
+                <th>场次</th>
+                <th>命中</th>
+                <th>未中</th>
+                <th>命中率</th>
+                <th>通过筛选</th>
+                <th>通过后命中</th>
+                <th>通过后命中率</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </div>
+      </div><div class="month-block" id="month-block-2026-08" style="display:none">
+        <div class="month-block-header">
+          <h4>2026年8月 · 累计 24 天数据</h4>
+        </div>
+        <div class="overview-grid">
+          <div class="overview-card all">
+            <div class="label">累计场次</div>
+            <div class="value">1480</div>
+            <div class="sub">24 天</div>
+          </div>
+          <div class="overview-card hit">
+            <div class="label">累计命中</div>
+            <div class="value">1084</div>
+            <div class="sub">预测正确</div>
+          </div>
+          <div class="overview-card miss">
+            <div class="label">累计未中</div>
+            <div class="value">396</div>
+            <div class="sub">预测错误</div>
+          </div>
+          <div class="overview-card rate">
+            <div class="label">月均命中率</div>
+            <div class="value">73.2%</div>
+            <div class="sub">累计平均</div>
+          </div>
+        </div>
+        <div class="analysis-row">
+          <div class="analysis-card">
+            <h3>&#127942; 联赛累计准确率</h3>
+            <div style="overflow-x: auto;">
+              <table class="mini-table">
+                <thead>
+                  <tr>
+                    <th class="rank">#</th>
+                    <th>联赛</th>
+                    <th>场次</th>
+                    <th>命中</th>
+                    <th>命中率</th>
+                  </tr>
+                </thead>
+                <tbody>
+          <tr>
+            <td class="rank">1</td>
+            <td class="league-name">阿根廷杯</td>
+            <td class="count">6 场</td>
+            <td class="hits">6 中</td>
+            <td><span class="rate-badge high">100.0%</span></td>
+          </tr>          <tr>
+            <td class="rank">2</td>
+            <td class="league-name">社区盾</td>
+            <td class="count">1 场</td>
+            <td class="hits">1 中</td>
+            <td><span class="rate-badge high">100.0%</span></td>
+          </tr>          <tr>
+            <td class="rank">3</td>
+            <td class="league-name">法超杯</td>
+            <td class="count">1 场</td>
+            <td class="hits">1 中</td>
+            <td><span class="rate-badge high">100.0%</span></td>
+          </tr>          <tr>
+            <td class="rank">4</td>
+            <td class="league-name">德国杯</td>
+            <td class="count">3 场</td>
+            <td class="hits">3 中</td>
+            <td><span class="rate-badge high">100.0%</span></td>
+          </tr>          <tr>
+            <td class="rank">5</td>
+            <td class="league-name">丹麦杯</td>
+            <td class="count">2 场</td>
+            <td class="hits">2 中</td>
+            <td><span class="rate-badge high">100.0%</span></td>
+          </tr>          <tr>
+            <td class="rank">6</td>
+            <td class="league-name">奥甲</td>
+            <td class="count">20 场</td>
+            <td class="hits">18 中</td>
+            <td><span class="rate-badge high">90.0%</span></td>
+          </tr>          <tr>
+            <td class="rank">7</td>
+            <td class="league-name">奥乙</td>
+            <td class="count">29 场</td>
+            <td class="hits">26 中</td>
+            <td><span class="rate-badge high">89.7%</span></td>
+          </tr>          <tr>
+            <td class="rank">8</td>
+            <td class="league-name">瑞典超</td>
+            <td class="count">29 场</td>
+            <td class="hits">26 中</td>
+            <td><span class="rate-badge high">89.7%</span></td>
+          </tr>          <tr>
+            <td class="rank">9</td>
+            <td class="league-name">荷甲</td>
+            <td class="count">30 场</td>
+            <td class="hits">26 中</td>
+            <td><span class="rate-badge high">86.7%</span></td>
+          </tr>          <tr>
+            <td class="rank">10</td>
+            <td class="league-name">J2联赛</td>
+            <td class="count">30 场</td>
+            <td class="hits">26 中</td>
+            <td><span class="rate-badge high">86.7%</span></td>
+          </tr>          <tr>
+            <td class="rank">11</td>
+            <td class="league-name">欧冠资格</td>
+            <td class="count">15 场</td>
+            <td class="hits">13 中</td>
+            <td><span class="rate-badge high">86.7%</span></td>
+          </tr>          <tr>
+            <td class="rank">12</td>
+            <td class="league-name">冰岛超</td>
+            <td class="count">21 场</td>
+            <td class="hits">18 中</td>
+            <td><span class="rate-badge high">85.7%</span></td>
+          </tr>          <tr>
+            <td class="rank">13</td>
+            <td class="league-name">南俱杯</td>
+            <td class="count">16 场</td>
+            <td class="hits">13 中</td>
+            <td><span class="rate-badge high">81.2%</span></td>
+          </tr>          <tr>
+            <td class="rank">14</td>
+            <td class="league-name">法甲</td>
+            <td class="count">16 场</td>
+            <td class="hits">13 中</td>
+            <td><span class="rate-badge high">81.2%</span></td>
+          </tr>          <tr>
+            <td class="rank">15</td>
+            <td class="league-name">爱甲</td>
+            <td class="count">15 场</td>
+            <td class="hits">12 中</td>
+            <td><span class="rate-badge high">80.0%</span></td>
+          </tr>          <tr>
+            <td class="rank">16</td>
+            <td class="league-name">苏超</td>
+            <td class="count">10 场</td>
+            <td class="hits">8 中</td>
+            <td><span class="rate-badge high">80.0%</span></td>
+          </tr>          <tr>
+            <td class="rank">17</td>
+            <td class="league-name">英联杯</td>
+            <td class="count">55 场</td>
+            <td class="hits">44 中</td>
+            <td><span class="rate-badge high">80.0%</span></td>
+          </tr>          <tr>
+            <td class="rank">18</td>
+            <td class="league-name">德乙</td>
+            <td class="count">24 场</td>
+            <td class="hits">19 中</td>
+            <td><span class="rate-badge high">79.2%</span></td>
+          </tr>          <tr>
+            <td class="rank">19</td>
+            <td class="league-name">葡甲</td>
+            <td class="count">33 场</td>
+            <td class="hits">26 中</td>
+            <td><span class="rate-badge high">78.8%</span></td>
+          </tr>          <tr>
+            <td class="rank">20</td>
+            <td class="league-name">欧协资格</td>
+            <td class="count">47 场</td>
+            <td class="hits">37 中</td>
+            <td><span class="rate-badge high">78.7%</span></td>
+          </tr>          <tr>
+            <td class="rank">21</td>
+            <td class="league-name">芬甲</td>
+            <td class="count">18 场</td>
+            <td class="hits">14 中</td>
+            <td><span class="rate-badge high">77.8%</span></td>
+          </tr>          <tr>
+            <td class="rank">22</td>
+            <td class="league-name">J1联赛</td>
+            <td class="count">31 场</td>
+            <td class="hits">24 中</td>
+            <td><span class="rate-badge high">77.4%</span></td>
+          </tr>          <tr>
+            <td class="rank">23</td>
+            <td class="league-name">瑞士甲</td>
+            <td class="count">13 场</td>
+            <td class="hits">10 中</td>
+            <td><span class="rate-badge high">76.9%</span></td>
+          </tr>          <tr>
+            <td class="rank">24</td>
+            <td class="league-name">希腊超</td>
+            <td class="count">13 场</td>
+            <td class="hits">10 中</td>
+            <td><span class="rate-badge high">76.9%</span></td>
+          </tr>          <tr>
+            <td class="rank">25</td>
+            <td class="league-name">巴西乙</td>
+            <td class="count">43 场</td>
+            <td class="hits">33 中</td>
+            <td><span class="rate-badge high">76.7%</span></td>
+          </tr>          <tr>
+            <td class="rank">26</td>
+            <td class="league-name">阿职联</td>
+            <td class="count">60 场</td>
+            <td class="hits">46 中</td>
+            <td><span class="rate-badge high">76.7%</span></td>
+          </tr>          <tr>
+            <td class="rank">27</td>
+            <td class="league-name">K1联赛</td>
+            <td class="count">21 场</td>
+            <td class="hits">16 中</td>
+            <td><span class="rate-badge high">76.2%</span></td>
+          </tr>          <tr>
+            <td class="rank">28</td>
+            <td class="league-name">波兰甲</td>
+            <td class="count">29 场</td>
+            <td class="hits">22 中</td>
+            <td><span class="rate-badge high">75.9%</span></td>
+          </tr>          <tr>
+            <td class="rank">29</td>
+            <td class="league-name">比甲</td>
+            <td class="count">20 场</td>
+            <td class="hits">15 中</td>
+            <td><span class="rate-badge high">75.0%</span></td>
+          </tr>          <tr>
+            <td class="rank">30</td>
+            <td class="league-name">挪甲</td>
+            <td class="count">32 场</td>
+            <td class="hits">24 中</td>
+            <td><span class="rate-badge high">75.0%</span></td>
+          </tr>          <tr>
+            <td class="rank">31</td>
+            <td class="league-name">英乙</td>
+            <td class="count">36 场</td>
+            <td class="hits">27 中</td>
+            <td><span class="rate-badge high">75.0%</span></td>
+          </tr>          <tr>
+            <td class="rank">32</td>
+            <td class="league-name">德甲</td>
+            <td class="count">8 场</td>
+            <td class="hits">6 中</td>
+            <td><span class="rate-badge high">75.0%</span></td>
+          </tr>          <tr>
+            <td class="rank">33</td>
+            <td class="league-name">苏冠</td>
+            <td class="count">15 场</td>
+            <td class="hits">11 中</td>
+            <td><span class="rate-badge mid">73.3%</span></td>
+          </tr>          <tr>
+            <td class="rank">34</td>
+            <td class="league-name">丹超</td>
+            <td class="count">18 场</td>
+            <td class="hits">13 中</td>
+            <td><span class="rate-badge mid">72.2%</span></td>
+          </tr>          <tr>
+            <td class="rank">35</td>
+            <td class="league-name">英冠</td>
+            <td class="count">36 场</td>
+            <td class="hits">26 中</td>
+            <td><span class="rate-badge mid">72.2%</span></td>
+          </tr>          <tr>
+            <td class="rank">36</td>
+            <td class="league-name">智利甲</td>
+            <td class="count">32 场</td>
+            <td class="hits">23 中</td>
+            <td><span class="rate-badge mid">71.9%</span></td>
+          </tr>          <tr>
+            <td class="rank">37</td>
+            <td class="league-name">美职</td>
+            <td class="count">53 场</td>
+            <td class="hits">38 中</td>
+            <td><span class="rate-badge mid">71.7%</span></td>
+          </tr>          <tr>
+            <td class="rank">38</td>
+            <td class="league-name">苏联赛杯</td>
+            <td class="count">7 场</td>
+            <td class="hits">5 中</td>
+            <td><span class="rate-badge mid">71.4%</span></td>
+          </tr>          <tr>
+            <td class="rank">39</td>
+            <td class="league-name">欧罗巴资格</td>
+            <td class="count">27 场</td>
+            <td class="hits">19 中</td>
+            <td><span class="rate-badge mid">70.4%</span></td>
+          </tr>          <tr>
+            <td class="rank">40</td>
+            <td class="league-name">荷乙</td>
+            <td class="count">37 场</td>
+            <td class="hits">26 中</td>
+            <td><span class="rate-badge mid">70.3%</span></td>
+          </tr>          <tr>
+            <td class="rank">41</td>
+            <td class="league-name">K2联赛</td>
+            <td class="count">20 场</td>
+            <td class="hits">14 中</td>
+            <td><span class="rate-badge mid">70.0%</span></td>
+          </tr>          <tr>
+            <td class="rank">42</td>
+            <td class="league-name">丹甲</td>
+            <td class="count">20 场</td>
+            <td class="hits">14 中</td>
+            <td><span class="rate-badge mid">70.0%</span></td>
+          </tr>          <tr>
+            <td class="rank">43</td>
+            <td class="league-name">罗甲</td>
+            <td class="count">30 场</td>
+            <td class="hits">21 中</td>
+            <td><span class="rate-badge mid">70.0%</span></td>
+          </tr>          <tr>
+            <td class="rank">44</td>
+            <td class="league-name">西甲</td>
+            <td class="count">30 场</td>
+            <td class="hits">21 中</td>
+            <td><span class="rate-badge mid">70.0%</span></td>
+          </tr>          <tr>
+            <td class="rank">45</td>
+            <td class="league-name">意乙</td>
+            <td class="count">20 场</td>
+            <td class="hits">14 中</td>
+            <td><span class="rate-badge mid">70.0%</span></td>
+          </tr>          <tr>
+            <td class="rank">46</td>
+            <td class="league-name">西乙</td>
+            <td class="count">33 场</td>
+            <td class="hits">23 中</td>
+            <td><span class="rate-badge mid">69.7%</span></td>
+          </tr>          <tr>
+            <td class="rank">47</td>
+            <td class="league-name">捷克甲</td>
+            <td class="count">26 场</td>
+            <td class="hits">18 中</td>
+            <td><span class="rate-badge mid">69.2%</span></td>
+          </tr>          <tr>
+            <td class="rank">48</td>
+            <td class="league-name">比乙</td>
+            <td class="count">13 场</td>
+            <td class="hits">9 中</td>
+            <td><span class="rate-badge mid">69.2%</span></td>
+          </tr>          <tr>
+            <td class="rank">49</td>
+            <td class="league-name">墨超</td>
+            <td class="count">22 场</td>
+            <td class="hits">15 中</td>
+            <td><span class="rate-badge mid">68.2%</span></td>
+          </tr>          <tr>
+            <td class="rank">50</td>
+            <td class="league-name">巴西杯</td>
+            <td class="count">3 场</td>
+            <td class="hits">2 中</td>
+            <td><span class="rate-badge mid">66.7%</span></td>
+          </tr>          <tr>
+            <td class="rank">51</td>
+            <td class="league-name">巴西甲</td>
+            <td class="count">35 场</td>
+            <td class="hits">23 中</td>
+            <td><span class="rate-badge mid">65.7%</span></td>
+          </tr>          <tr>
+            <td class="rank">52</td>
+            <td class="league-name">芬超</td>
+            <td class="count">23 场</td>
+            <td class="hits">15 中</td>
+            <td><span class="rate-badge mid">65.2%</span></td>
+          </tr>          <tr>
+            <td class="rank">53</td>
+            <td class="league-name">意甲</td>
+            <td class="count">20 场</td>
+            <td class="hits">13 中</td>
+            <td><span class="rate-badge mid">65.0%</span></td>
+          </tr>          <tr>
+            <td class="rank">54</td>
+            <td class="league-name">爱超</td>
+            <td class="count">14 场</td>
+            <td class="hits">9 中</td>
+            <td><span class="rate-badge mid">64.3%</span></td>
+          </tr>          <tr>
+            <td class="rank">55</td>
+            <td class="league-name">解放者杯</td>
+            <td class="count">14 场</td>
+            <td class="hits">9 中</td>
+            <td><span class="rate-badge mid">64.3%</span></td>
+          </tr>          <tr>
+            <td class="rank">56</td>
+            <td class="league-name">法乙</td>
+            <td class="count">36 场</td>
+            <td class="hits">23 中</td>
+            <td><span class="rate-badge mid">63.9%</span></td>
+          </tr>          <tr>
+            <td class="rank">57</td>
+            <td class="league-name">英超</td>
+            <td class="count">16 场</td>
+            <td class="hits">10 中</td>
+            <td><span class="rate-badge mid">62.5%</span></td>
+          </tr>          <tr>
+            <td class="rank">58</td>
+            <td class="league-name">葡超</td>
+            <td class="count">33 场</td>
+            <td class="hits">20 中</td>
+            <td><span class="rate-badge mid">60.6%</span></td>
+          </tr>          <tr>
+            <td class="rank">59</td>
+            <td class="league-name">意大利杯</td>
+            <td class="count">15 场</td>
+            <td class="hits">9 中</td>
+            <td><span class="rate-badge mid">60.0%</span></td>
+          </tr>          <tr>
+            <td class="rank">60</td>
+            <td class="league-name">英甲</td>
+            <td class="count">30 场</td>
+            <td class="hits">18 中</td>
+            <td><span class="rate-badge mid">60.0%</span></td>
+          </tr>          <tr>
+            <td class="rank">61</td>
+            <td class="league-name">瑞典甲</td>
+            <td class="count">29 场</td>
+            <td class="hits">16 中</td>
+            <td><span class="rate-badge mid">55.2%</span></td>
+          </tr>          <tr>
+            <td class="rank">62</td>
+            <td class="league-name">挪超</td>
+            <td class="count">20 场</td>
+            <td class="hits">11 中</td>
+            <td><span class="rate-badge mid">55.0%</span></td>
+          </tr>          <tr>
+            <td class="rank">63</td>
+            <td class="league-name">瑞士超</td>
+            <td class="count">12 场</td>
+            <td class="hits">6 中</td>
+            <td><span class="rate-badge mid">50.0%</span></td>
+          </tr>          <tr>
+            <td class="rank">64</td>
+            <td class="league-name">爱足总杯</td>
+            <td class="count">6 场</td>
+            <td class="hits">3 中</td>
+            <td><span class="rate-badge mid">50.0%</span></td>
+          </tr>          <tr>
+            <td class="rank">65</td>
+            <td class="league-name">韩足总杯</td>
+            <td class="count">5 场</td>
+            <td class="hits">2 中</td>
+            <td><span class="rate-badge low">40.0%</span></td>
+          </tr>          <tr>
+            <td class="rank">66</td>
+            <td class="league-name">亚冠精英资格</td>
+            <td class="count">1 场</td>
+            <td class="hits">0 中</td>
+            <td><span class="rate-badge low">0.0%</span></td>
+          </tr>          <tr>
+            <td class="rank">67</td>
+            <td class="league-name">欧超杯</td>
+            <td class="count">1 场</td>
+            <td class="hits">0 中</td>
+            <td><span class="rate-badge low">0.0%</span></td>
+          </tr>          <tr>
+            <td class="rank">68</td>
+            <td class="league-name">德超杯</td>
+            <td class="count">1 场</td>
+            <td class="hits">0 中</td>
+            <td><span class="rate-badge low">0.0%</span></td>
+          </tr>                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="analysis-card">
+            <h3>&#127919; 双选类型累计</h3>
+            <div class="type-grid">
+
+      <div class="type-card">
+        <div class="type-name">平局+主胜</div>
+        <div class="type-stats">
+          <span class="type-count">29场</span>
+          <span class="rate-badge high">79.3%</span>
+        </div>
+      </div>
+      <div class="type-card">
+        <div class="type-name">客胜+平局</div>
+        <div class="type-stats">
+          <span class="type-count">111场</span>
+          <span class="rate-badge high">76.6%</span>
+        </div>
+      </div>
+      <div class="type-card">
+        <div class="type-name">主胜+客胜</div>
+        <div class="type-stats">
+          <span class="type-count">655场</span>
+          <span class="rate-badge mid">74.5%</span>
+        </div>
+      </div>
+      <div class="type-card">
+        <div class="type-name">客胜+主胜</div>
+        <div class="type-stats">
+          <span class="type-count">493场</span>
+          <span class="rate-badge mid">72.6%</span>
+        </div>
+      </div>
+      <div class="type-card">
+        <div class="type-name">平局+客胜</div>
+        <div class="type-stats">
+          <span class="type-count">19场</span>
+          <span class="rate-badge mid">68.4%</span>
+        </div>
+      </div>
+      <div class="type-card">
+        <div class="type-name">主胜+平局</div>
+        <div class="type-stats">
+          <span class="type-count">173场</span>
+          <span class="rate-badge mid">67.6%</span>
+        </div>
+      </div>
+            </div>
+          </div>
+          <div class="analysis-card">
+            <h3>&#128200; 每日命中率走势</h3>
+            <div class="daily-trend">
+
+              <div class="trend-item">
+                <span class="trend-date">2026-08-31</span>
+                <div class="trend-bar">
+                  <div class="trend-fill mid" style="width:74.3%"></div>
+                </div>
+                <span class="trend-rate mid">74.3%</span>
+              </div>
+              <div class="trend-item">
+                <span class="trend-date">2026-08-30</span>
+                <div class="trend-bar">
+                  <div class="trend-fill high" style="width:82.3%"></div>
+                </div>
+                <span class="trend-rate high">82.3%</span>
+              </div>
+              <div class="trend-item">
+                <span class="trend-date">2026-08-29</span>
+                <div class="trend-bar">
+                  <div class="trend-fill high" style="width:75.6%"></div>
+                </div>
+                <span class="trend-rate high">75.6%</span>
+              </div>
+              <div class="trend-item">
+                <span class="trend-date">2026-08-28</span>
+                <div class="trend-bar">
+                  <div class="trend-fill mid" style="width:72.3%"></div>
+                </div>
+                <span class="trend-rate mid">72.3%</span>
+              </div>
+              <div class="trend-item">
+                <span class="trend-date">2026-08-27</span>
+                <div class="trend-bar">
+                  <div class="trend-fill high" style="width:78.1%"></div>
+                </div>
+                <span class="trend-rate high">78.1%</span>
+              </div>
+              <div class="trend-item">
+                <span class="trend-date">2026-08-26</span>
+                <div class="trend-bar">
+                  <div class="trend-fill high" style="width:80.0%"></div>
+                </div>
+                <span class="trend-rate high">80.0%</span>
+              </div>
+              <div class="trend-item">
+                <span class="trend-date">2026-08-25</span>
+                <div class="trend-bar">
+                  <div class="trend-fill high" style="width:85.2%"></div>
+                </div>
+                <span class="trend-rate high">85.2%</span>
+              </div>
+              <div class="trend-item">
+                <span class="trend-date">2026-08-24</span>
+                <div class="trend-bar">
+                  <div class="trend-fill mid" style="width:57.1%"></div>
+                </div>
+                <span class="trend-rate mid">57.1%</span>
+              </div>
+              <div class="trend-item">
+                <span class="trend-date">2026-08-23</span>
+                <div class="trend-bar">
+                  <div class="trend-fill mid" style="width:64.9%"></div>
+                </div>
+                <span class="trend-rate mid">64.9%</span>
+              </div>
+              <div class="trend-item">
+                <span class="trend-date">2026-08-22</span>
+                <div class="trend-bar">
+                  <div class="trend-fill mid" style="width:69.8%"></div>
+                </div>
+                <span class="trend-rate mid">69.8%</span>
+              </div>
+              <div class="trend-item">
+                <span class="trend-date">2026-08-21</span>
+                <div class="trend-bar">
+                  <div class="trend-fill mid" style="width:74.1%"></div>
+                </div>
+                <span class="trend-rate mid">74.1%</span>
+              </div>
+              <div class="trend-item">
+                <span class="trend-date">2026-08-20</span>
+                <div class="trend-bar">
+                  <div class="trend-fill mid" style="width:71.4%"></div>
+                </div>
+                <span class="trend-rate mid">71.4%</span>
+              </div>
+              <div class="trend-item">
+                <span class="trend-date">2026-08-19</span>
+                <div class="trend-bar">
+                  <div class="trend-fill mid" style="width:67.7%"></div>
+                </div>
+                <span class="trend-rate mid">67.7%</span>
+              </div>
+              <div class="trend-item">
+                <span class="trend-date">2026-08-18</span>
+                <div class="trend-bar">
+                  <div class="trend-fill high" style="width:81.8%"></div>
+                </div>
+                <span class="trend-rate high">81.8%</span>
+              </div>
+              <div class="trend-item">
+                <span class="trend-date">2026-08-17</span>
+                <div class="trend-bar">
+                  <div class="trend-fill mid" style="width:66.7%"></div>
+                </div>
+                <span class="trend-rate mid">66.7%</span>
+              </div>
+              <div class="trend-item">
+                <span class="trend-date">2026-08-16</span>
+                <div class="trend-bar">
+                  <div class="trend-fill high" style="width:80.0%"></div>
+                </div>
+                <span class="trend-rate high">80.0%</span>
+              </div>
+              <div class="trend-item">
+                <span class="trend-date">2026-08-15</span>
+                <div class="trend-bar">
+                  <div class="trend-fill mid" style="width:71.0%"></div>
+                </div>
+                <span class="trend-rate mid">71.0%</span>
+              </div>
+              <div class="trend-item">
+                <span class="trend-date">2026-08-14</span>
+                <div class="trend-bar">
+                  <div class="trend-fill mid" style="width:66.7%"></div>
+                </div>
+                <span class="trend-rate mid">66.7%</span>
+              </div>
+              <div class="trend-item">
+                <span class="trend-date">2026-08-13</span>
+                <div class="trend-bar">
+                  <div class="trend-fill mid" style="width:71.4%"></div>
+                </div>
+                <span class="trend-rate mid">71.4%</span>
+              </div>
+              <div class="trend-item">
+                <span class="trend-date">2026-08-12</span>
+                <div class="trend-bar">
+                  <div class="trend-fill mid" style="width:66.7%"></div>
+                </div>
+                <span class="trend-rate mid">66.7%</span>
+              </div>
+              <div class="trend-item">
+                <span class="trend-date">2026-08-11</span>
+                <div class="trend-bar">
+                  <div class="trend-fill high" style="width:76.9%"></div>
+                </div>
+                <span class="trend-rate high">76.9%</span>
+              </div>
+              <div class="trend-item">
+                <span class="trend-date">2026-08-10</span>
+                <div class="trend-bar">
+                  <div class="trend-fill mid" style="width:72.2%"></div>
+                </div>
+                <span class="trend-rate mid">72.2%</span>
+              </div>
+              <div class="trend-item">
+                <span class="trend-date">2026-08-09</span>
+                <div class="trend-bar">
+                  <div class="trend-fill high" style="width:75.0%"></div>
+                </div>
+                <span class="trend-rate high">75.0%</span>
+              </div>
+              <div class="trend-item">
+                <span class="trend-date">2026-08-08</span>
+                <div class="trend-bar">
+                  <div class="trend-fill mid" style="width:73.8%"></div>
+                </div>
+                <span class="trend-rate mid">73.8%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="monthly-daily-title">每日明细</div>
+        <div class="table-wrap">
+          <table class="mini-table">
+            <thead>
+              <tr>
+                <th>日期</th>
+                <th>期号</th>
+                <th>场次</th>
+                <th>命中</th>
+                <th>未中</th>
+                <th>命中率</th>
+                <th>通过筛选</th>
+                <th>通过后命中</th>
+                <th>通过后命中率</th>
+              </tr>
+            </thead>
+            <tbody>
+          <tr>
+            <td>2026-08-31</td>
+            <td>26091</td>
+            <td>35</td>
+            <td>26</td>
+            <td>9</td>
+            <td><span class="rate-badge mid">74.3%</span></td>
+            <td>18</td>
+            <td>12</td>
+            <td>66.7</td>
+          </tr>          <tr>
+            <td>2026-08-30</td>
+            <td>26089</td>
+            <td>79</td>
+            <td>65</td>
+            <td>14</td>
+            <td><span class="rate-badge high">82.3%</span></td>
+            <td>41</td>
+            <td>34</td>
+            <td>82.9</td>
+          </tr>          <tr>
+            <td>2026-08-29</td>
+            <td>26089</td>
+            <td>176</td>
+            <td>133</td>
+            <td>43</td>
+            <td><span class="rate-badge high">75.6%</span></td>
+            <td>111</td>
+            <td>87</td>
+            <td>78.4</td>
+          </tr>          <tr>
+            <td>2026-08-28</td>
+            <td>26089</td>
+            <td>65</td>
+            <td>47</td>
+            <td>18</td>
+            <td><span class="rate-badge mid">72.3%</span></td>
+            <td>45</td>
+            <td>34</td>
+            <td>75.6</td>
+          </tr>          <tr>
+            <td>2026-08-27</td>
+            <td>26088</td>
+            <td>32</td>
+            <td>25</td>
+            <td>7</td>
+            <td><span class="rate-badge high">78.1%</span></td>
+            <td>25</td>
+            <td>21</td>
+            <td>84.0</td>
+          </tr>          <tr>
+            <td>2026-08-26</td>
+            <td>26088</td>
+            <td>25</td>
+            <td>20</td>
+            <td>5</td>
+            <td><span class="rate-badge high">80.0%</span></td>
+            <td>13</td>
+            <td>11</td>
+            <td>84.6</td>
+          </tr>          <tr>
+            <td>2026-08-25</td>
+            <td>26088</td>
+            <td>27</td>
+            <td>23</td>
+            <td>4</td>
+            <td><span class="rate-badge high">85.2%</span></td>
+            <td>23</td>
+            <td>20</td>
+            <td>87.0</td>
+          </tr>          <tr>
+            <td>2026-08-24</td>
+            <td>26087</td>
+            <td>28</td>
+            <td>16</td>
+            <td>12</td>
+            <td><span class="rate-badge mid">57.1%</span></td>
+            <td>18</td>
+            <td>10</td>
+            <td>55.6</td>
+          </tr>          <tr>
+            <td>2026-08-23</td>
+            <td>26087</td>
+            <td>97</td>
+            <td>63</td>
+            <td>34</td>
+            <td><span class="rate-badge mid">64.9%</span></td>
+            <td>58</td>
+            <td>38</td>
+            <td>65.5</td>
+          </tr>          <tr>
+            <td>2026-08-22</td>
+            <td>26087</td>
+            <td>129</td>
+            <td>90</td>
+            <td>39</td>
+            <td><span class="rate-badge mid">69.8%</span></td>
+            <td>86</td>
+            <td>57</td>
+            <td>66.3</td>
+          </tr>          <tr>
+            <td>2026-08-21</td>
+            <td>26087</td>
+            <td>54</td>
+            <td>40</td>
+            <td>14</td>
+            <td><span class="rate-badge mid">74.1%</span></td>
+            <td>38</td>
+            <td>26</td>
+            <td>68.4</td>
+          </tr>          <tr>
+            <td>2026-08-20</td>
+            <td>26086</td>
+            <td>35</td>
+            <td>25</td>
+            <td>10</td>
+            <td><span class="rate-badge mid">71.4%</span></td>
+            <td>24</td>
+            <td>18</td>
+            <td>75.0</td>
+          </tr>          <tr>
+            <td>2026-08-19</td>
+            <td>26086</td>
+            <td>31</td>
+            <td>21</td>
+            <td>10</td>
+            <td><span class="rate-badge mid">67.7%</span></td>
+            <td>23</td>
+            <td>16</td>
+            <td>69.6</td>
+          </tr>          <tr>
+            <td>2026-08-18</td>
+            <td>26086</td>
+            <td>11</td>
+            <td>9</td>
+            <td>2</td>
+            <td><span class="rate-badge high">81.8%</span></td>
+            <td>8</td>
+            <td>6</td>
+            <td>75.0</td>
+          </tr>          <tr>
+            <td>2026-08-17</td>
+            <td>26085</td>
+            <td>30</td>
+            <td>20</td>
+            <td>10</td>
+            <td><span class="rate-badge mid">66.7%</span></td>
+            <td>22</td>
+            <td>14</td>
+            <td>63.6</td>
+          </tr>          <tr>
+            <td>2026-08-16</td>
+            <td>26085</td>
+            <td>110</td>
+            <td>88</td>
+            <td>22</td>
+            <td><span class="rate-badge high">80.0%</span></td>
+            <td>87</td>
+            <td>68</td>
+            <td>78.2</td>
+          </tr>          <tr>
+            <td>2026-08-15</td>
+            <td>26085</td>
+            <td>145</td>
+            <td>103</td>
+            <td>42</td>
+            <td><span class="rate-badge mid">71.0%</span></td>
+            <td>128</td>
+            <td>92</td>
+            <td>71.9</td>
+          </tr>          <tr>
+            <td>2026-08-14</td>
+            <td>26085</td>
+            <td>54</td>
+            <td>36</td>
+            <td>18</td>
+            <td><span class="rate-badge mid">66.7%</span></td>
+            <td>45</td>
+            <td>31</td>
+            <td>68.9</td>
+          </tr>          <tr>
+            <td>2026-08-13</td>
+            <td>26084</td>
+            <td>28</td>
+            <td>20</td>
+            <td>8</td>
+            <td><span class="rate-badge mid">71.4%</span></td>
+            <td>27</td>
+            <td>19</td>
+            <td>70.4</td>
+          </tr>          <tr>
+            <td>2026-08-12</td>
+            <td>26084</td>
+            <td>6</td>
+            <td>4</td>
+            <td>2</td>
+            <td><span class="rate-badge mid">66.7%</span></td>
+            <td>6</td>
+            <td>4</td>
+            <td>66.7</td>
+          </tr>          <tr>
+            <td>2026-08-11</td>
+            <td>26084</td>
+            <td>13</td>
+            <td>10</td>
+            <td>3</td>
+            <td><span class="rate-badge high">76.9%</span></td>
+            <td>12</td>
+            <td>9</td>
+            <td>75.0</td>
+          </tr>          <tr>
+            <td>2026-08-10</td>
+            <td>26083</td>
+            <td>18</td>
+            <td>13</td>
+            <td>5</td>
+            <td><span class="rate-badge mid">72.2%</span></td>
+            <td>13</td>
+            <td>9</td>
+            <td>69.2</td>
+          </tr>          <tr>
+            <td>2026-08-09</td>
+            <td>26083</td>
+            <td>92</td>
+            <td>69</td>
+            <td>23</td>
+            <td><span class="rate-badge high">75.0%</span></td>
+            <td>66</td>
+            <td>51</td>
+            <td>77.3</td>
+          </tr>          <tr>
+            <td>2026-08-08</td>
+            <td>26083</td>
+            <td>160</td>
+            <td>118</td>
+            <td>42</td>
+            <td><span class="rate-badge mid">73.8%</span></td>
+            <td>131</td>
+            <td>105</td>
+            <td>80.2</td>
+          </tr>            </tbody>
+          </table>
+        </div>
+      </div>
 
       <!-- ===== 子面板：大小球复盘 ===== -->
       <div id="review-ou" class="review-subpanel">
@@ -7888,82 +9015,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </div>
       </div>
 
-        <div class="overview-grid">
-          <div class="overview-card all">
-            <div class="label">累计场次</div>
-            <div class="value">0</div>
-            <div class="sub">0 天</div>
-          </div>
-          <div class="overview-card hit">
-            <div class="label">累计命中</div>
-            <div class="value">0</div>
-            <div class="sub">预测正确</div>
-          </div>
-          <div class="overview-card miss">
-            <div class="label">累计未中</div>
-            <div class="value">0</div>
-            <div class="sub">预测错误</div>
-          </div>
-          <div class="overview-card rate">
-            <div class="label">月均命中率</div>
-            <div class="value">0%</div>
-            <div class="sub">累计平均</div>
-          </div>
-        </div>
-
-        <div class="analysis-row">
-          <div class="analysis-card">
-            <h3>&#127942; 联赛累计准确率</h3>
-            <div style="overflow-x: auto;">
-              <table class="mini-table">
-                <thead>
-                  <tr>
-                    <th class="rank">#</th>
-                    <th>联赛</th>
-                    <th>场次</th>
-                    <th>命中</th>
-                    <th>命中率</th>
-                  </tr>
-                </thead>
-                <tbody>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div class="analysis-card">
-            <h3>&#127919; 双选类型累计</h3>
-            <div class="type-grid">
-
-            </div>
-          </div>
-          <div class="analysis-card">
-            <h3>&#128200; 每日命中率走势</h3>
-            <div class="daily-trend">
-
-            </div>
-          </div>
-        </div>
-
-        <div class="monthly-daily-title">每日明细</div>
-        <div class="table-wrap">
-          <table class="mini-table">
-            <thead>
-              <tr>
-                <th>日期</th>
-                <th>期号</th>
-                <th>场次</th>
-                <th>命中</th>
-                <th>未中</th>
-                <th>命中率</th>
-                <th>通过筛选</th>
-                <th>通过后命中</th>
-                <th>通过后命中率</th>
-              </tr>
-            </thead>
-            <tbody>
-            </tbody>
-          </table>
-        </div>
       </div>
     </div>
   </div>
@@ -8010,11 +9061,29 @@ function switchReviewTab(tab, btn) {
   document.querySelectorAll('.review-subtabs .sub-tab').forEach(b => b.classList.remove('active'));
   document.getElementById('review-' + tab).classList.add('active');
   btn.classList.add('active');
-  
+
   // 切到历史记录时，默认显示列表视图
   if (tab === 'history') {
     showHistoryList();
   }
+}
+
+// ===== 月度汇总月份切换（2026-09-01） =====
+function switchMonth(ym) {
+  document.querySelectorAll('.month-block').forEach(function(b) {
+    b.style.display = 'none';
+  });
+  var target = document.getElementById('month-block-' + ym);
+  if (target) {
+    target.style.display = 'block';
+  }
+  document.querySelectorAll('.month-btn').forEach(function(b) {
+    if (b.getAttribute('data-ym') === ym) {
+      b.classList.add('active');
+    } else {
+      b.classList.remove('active');
+    }
+  });
 }
 
 // ===== 历史记录详情 =====
