@@ -239,15 +239,15 @@ body {
   </div>
   <div class="stats-row">
     <div class="stat-item">
-      <div class="value blue">47</div>
+      <div class="value blue">15</div>
       <div class="label">今日预测</div>
     </div>
     <div class="stat-item">
-      <div class="value green">35</div>
+      <div class="value green">8</div>
       <div class="label">通过筛选</div>
     </div>
     <div class="stat-item">
-      <div class="value orange">66.7%</div>
+      <div class="value orange">68.5%</div>
       <div class="label">月均命中率</div>
     </div>
   </div>
@@ -258,19 +258,19 @@ body {
     <div class="today-highlights">
       <div class="highlight-row">
         <span class="name">累计场次</span>
-        <span class="val">42 场</span>
+        <span class="val">89 场</span>
       </div>
       <div class="highlight-row">
         <span class="name">累计命中</span>
-        <span class="val up">28 场</span>
+        <span class="val up">61 场</span>
       </div>
       <div class="highlight-row">
         <span class="name">累计未中</span>
-        <span class="val down">14 场</span>
+        <span class="val down">28 场</span>
       </div>
       <div class="highlight-row">
         <span class="name">历史天数</span>
-        <span class="val">1 天</span>
+        <span class="val">2 天</span>
       </div>
     </div>
     <div class="section-title">
@@ -279,19 +279,19 @@ body {
     <div class="today-highlights">
       <div class="highlight-row">
         <span class="name">比赛日期</span>
-        <span class="val">2026-09-01</span>
+        <span class="val">2026-09-02</span>
       </div>
       <div class="highlight-row">
         <span class="name">总场次</span>
-        <span class="val">42 场</span>
+        <span class="val">47 场</span>
       </div>
       <div class="highlight-row">
         <span class="name">命中场次</span>
-        <span class="val up">28 场</span>
+        <span class="val up">33 场</span>
       </div>
       <div class="highlight-row">
         <span class="name">命中率</span>
-        <span class="val up">66.7%</span>
+        <span class="val up">70.2%</span>
       </div>
     </div>
     <div class="section-title">
@@ -308,11 +308,11 @@ body {
       </div>
       <div class="highlight-row">
         <span class="name">观望</span>
-        <span class="val" style="color:var(--muted)">30 场</span>
+        <span class="val" style="color:var(--muted)">35 场</span>
       </div>
       <div class="highlight-row">
         <span class="name">命中 / 未中</span>
-        <span class="val"><span class="val up">9</span> / <span class="val down">3</span></span>
+        <span class="val"><span class="val up">6</span> / <span class="val down">4</span></span>
       </div>
     </div>
     <div class="section-title">
@@ -368,13 +368,13 @@ body {
   }
   function shareWechat() { showToast('请截图分享到微信'); }
   function shareWeibo() {
-    var text = encodeURIComponent('【每日足彩预测】今日47场比赛，通过筛选35场，本月命中率66.7%！小明同学推荐，来看看AI分析结果吧～');
+    var text = encodeURIComponent('【每日足彩预测】今日15场比赛，通过筛选8场，本月命中率68.5%！小明同学推荐，来看看AI分析结果吧～');
     var url = encodeURIComponent(shareUrl);
     window.open('https://service.weibo.com/share/share.php?title=' + text + '&url=' + url, '_blank', 'width=600,height=400');
   }
   function shareQQ() {
     var title = encodeURIComponent('每日足彩预测 - AI智能分析');
-    var summary = encodeURIComponent('今日47场比赛，通过筛选35场，本月命中率66.7%！小明同学推荐');
+    var summary = encodeURIComponent('今日15场比赛，通过筛选8场，本月命中率68.5%！小明同学推荐');
     var url = encodeURIComponent(shareUrl);
     window.open('https://connect.qq.com/widget/shareqq/index.html?title=' + title + '&summary=' + summary + '&url=' + url, '_blank', 'width=600,height=400');
   }
