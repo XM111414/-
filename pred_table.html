@@ -34,6 +34,7 @@ td.ou-wait { color: #94a3b8; }
 .tg { display: inline-block; font-size: .68rem; padding: 1px 6px; border-radius: 8px; margin-left: 3px; }
 .tg.warn { background: #fffbeb; color: #b45309; }
 .tg.blue { background: #eff6ff; color: #1d4ed8; }
+.tg.red { background: #fef2f2; color: #b91c1c; }
 .tg.gray { background: #f1f5f9; color: #64748b; }
 .legend { font-size: .78rem; color: #64748b; margin: 12px 2px 8px; line-height: 1.7; }
 footer { text-align: center; color: #94a3b8; font-size: .78rem; padding: 18px 0 6px; }
@@ -57,7 +58,7 @@ footer { text-align: center; color: #94a3b8; font-size: .78rem; padding: 18px 0 
 <div class="legend">
 ■ 按北单官方场次号（场次列）顺序排列 · 绿色行 = 通过筛选的正式推荐 · 灰色行 = 未通过筛选仅统计<br>
 ■ 让球列：<b>+1</b> 主队让1球 / <b>-1</b> 主队受让1球 · 大小球基于 v5 独立算法（ou_score = 预期进球 + 动态校准 + 0.20×|让球|，校准滚动14天自调）<br>
-■ 标签：凯利=凯利共识陷阱降信心 · 高平换向=规则6双选换向 · 低70封顶=信心封顶72% · 观察=观察名单联赛
+■ 标签：凯利=凯利共识陷阱降信心 · 高平换向=规则6双选换向 · 低70封顶=信心封顶72% · 欧冠轮换=欧冠赛前轮换风险(客战豪门未胜率50%) · 观察=观察名单联赛
 </div>
 <table>
 <thead><tr><th>场次</th><th>联赛</th><th>时间</th><th>主队</th><th>让球</th><th>客队</th><th>双选方案</th><th>概率</th><th>大小球</th><th>ou分</th><th>标签</th></tr></thead>
@@ -97,7 +98,7 @@ footer { text-align: center; color: #94a3b8; font-size: .78rem; padding: 18px 0 
 <tr class="pass"><td class="seq">278</td><td>荷甲</td><td></td><td class="l">特尔斯达</td><td class="hc">-1</td><td class="l">坎布尔</td><td><b>客胜+主胜</b></td><td>78.0%</td><td class="ou-big">大球</td><td>3.55</td><td></td></tr>
 <tr class="pass"><td class="seq">279</td><td>荷甲</td><td></td><td class="l">海伦芬</td><td class="hc">+1</td><td class="l">阿尔克马尔</td><td><b>主胜+客胜</b></td><td>78.0%</td><td class="ou-big">大球</td><td>3.55</td><td></td></tr>
 <tr class="pass"><td class="seq">280</td><td>波兰甲</td><td></td><td class="l">克拉科维亚</td><td class="hc">0</td><td class="l">扎布热矿工</td><td><b>客胜+主胜</b></td><td>79.4%</td><td class="ou-big">大球</td><td>2.95</td><td></td></tr>
-<tr class="nopass"><td class="seq">281</td><td>英超</td><td></td><td class="l">埃弗顿</td><td class="hc">0</td><td class="l">曼彻斯特联</td><td><b>客胜+主胜</b></td><td>72.0%</td><td class="ou-wait">观望</td><td>2.94</td><td><span class="tg blue">低70封顶</span></td></tr>
+<tr class="nopass"><td class="seq">281</td><td>英超</td><td></td><td class="l">埃弗顿</td><td class="hc">0</td><td class="l">曼彻斯特联</td><td><b>客胜+主胜</b></td><td>72.0%</td><td class="ou-wait">观望</td><td>2.94</td><td><span class="tg blue">低70封顶</span> <span class="tg red">欧冠轮换</span></td></tr>
 <tr class="nopass"><td class="seq">282</td><td>意甲</td><td></td><td class="l">弗罗西诺内</td><td class="hc">0</td><td class="l">威尼斯</td><td><b>主胜+平局</b></td><td>71.9%</td><td class="ou-wait">观望</td><td>2.93</td><td><span class="tg blue">低70封顶</span></td></tr>
 <tr class="pass"><td class="seq">283</td><td>意甲</td><td></td><td class="l">帕尔马</td><td class="hc">0</td><td class="l">蒙扎</td><td><b>客胜+平局</b></td><td>71.0%</td><td class="ou-wait">观望</td><td>2.91</td><td></td></tr>
 <tr class="pass"><td class="seq">284</td><td>法甲</td><td></td><td class="l">特鲁瓦</td><td class="hc">0</td><td class="l">斯特拉斯堡</td><td><b>客胜+平局</b></td><td>69.2%</td><td class="ou-wait">观望</td><td>2.92</td><td><span class="tg warn">凯利</span></td></tr>
@@ -119,7 +120,7 @@ footer { text-align: center; color: #94a3b8; font-size: .78rem; padding: 18px 0 
 <tr class="pass"><td class="seq">300</td><td>比乙</td><td></td><td class="l">利尔斯</td><td class="hc">0</td><td class="l">RFC列日</td><td><b>平局+客胜</b></td><td>68.4%</td><td class="ou-wait">观望</td><td>2.88</td><td><span class="tg warn">凯利</span></td></tr>
 <tr class="nopass"><td class="seq">301</td><td>巴西甲</td><td></td><td class="l">科里蒂巴</td><td class="hc">0</td><td class="l">米拉索尔</td><td><b>主胜+平局</b></td><td>71.9%</td><td class="ou-wait">观望</td><td>2.73</td><td><span class="tg blue">低70封顶</span></td></tr>
 <tr class="pass"><td class="seq">302</td><td>巴西乙</td><td></td><td class="l">隆德里纳</td><td class="hc">0</td><td class="l">铁路工人</td><td><b>主胜+平局</b></td><td>68.5%</td><td class="ou-wait">观望</td><td>2.71</td><td></td></tr>
-<tr class="nopass"><td class="seq">303</td><td>西甲</td><td></td><td class="l">瓦伦西亚</td><td class="hc">+2</td><td class="l">巴塞罗那</td><td><b>主胜+客胜</b></td><td>72.0%</td><td class="ou-big">大球</td><td>3.35</td><td><span class="tg blue">低70封顶</span></td></tr>
+<tr class="nopass"><td class="seq">303</td><td>西甲</td><td></td><td class="l">瓦伦西亚</td><td class="hc">+2</td><td class="l">巴塞罗那</td><td><b>主胜+客胜</b></td><td>72.0%</td><td class="ou-big">大球</td><td>3.35</td><td><span class="tg blue">低70封顶</span> <span class="tg red">欧冠轮换</span></td></tr>
 <tr class="pass"><td class="seq">304</td><td>西乙</td><td></td><td class="l">皇家奥维耶多</td><td class="hc">0</td><td class="l">布尔戈斯</td><td><b>主胜+平局</b></td><td>72.0%</td><td class="ou-wait">观望</td><td>2.91</td><td><span class="tg warn">凯利</span> <span class="tg blue">低70封顶</span></td></tr>
 <tr class="pass"><td class="seq">305</td><td>葡超</td><td></td><td class="l">圣塔克拉拉</td><td class="hc">0</td><td class="l">里奥阿维</td><td><b>主胜+平局</b></td><td>72.0%</td><td class="ou-wait">观望</td><td>2.82</td><td><span class="tg blue">低70封顶</span></td></tr>
 <tr class="nopass"><td class="seq">306</td><td>瑞士超</td><td></td><td class="l">巴塞尔</td><td class="hc">0</td><td class="l">卢加诺</td><td><b>客胜+平局</b></td><td>71.0%</td><td class="ou-big">大球</td><td>3.12</td><td></td></tr>
@@ -136,7 +137,7 @@ footer { text-align: center; color: #94a3b8; font-size: .78rem; padding: 18px 0 
 <tr class="pass"><td class="seq">317</td><td>芬甲</td><td></td><td class="l">塞伊奈约基学院</td><td class="hc">0</td><td class="l">耶尔文佩</td><td><b>客胜+平局</b></td><td>69.3%</td><td class="ou-small">小球</td><td>2.61</td><td></td></tr>
 <tr class="nopass"><td class="seq">318</td><td>法甲</td><td></td><td class="l">昂热</td><td class="hc">0</td><td class="l">雷恩</td><td><b>客胜+平局</b></td><td>79.5%</td><td class="ou-big">大球</td><td>2.95</td><td></td></tr>
 <tr class="nopass"><td class="seq">319</td><td>意乙</td><td></td><td class="l">维罗纳</td><td class="hc">-1</td><td class="l">阿雷佐</td><td><b>客胜+平局</b></td><td>74.0%</td><td class="ou-big">大球</td><td>3.15</td><td></td></tr>
-<tr class="nopass"><td class="seq">320</td><td>英超</td><td></td><td class="l">阿森纳</td><td class="hc">-1</td><td class="l">切尔西</td><td><b>客胜+主胜</b></td><td>72.0%</td><td class="ou-big">大球</td><td>3.15</td><td><span class="tg blue">低70封顶</span></td></tr>
+<tr class="nopass"><td class="seq">320</td><td>英超</td><td></td><td class="l">阿森纳</td><td class="hc">-1</td><td class="l">切尔西</td><td><b>客胜+主胜</b></td><td>72.0%</td><td class="ou-big">大球</td><td>3.15</td><td><span class="tg blue">低70封顶</span> <span class="tg red">欧冠轮换</span></td></tr>
 <tr class="pass"><td class="seq">321</td><td>德甲</td><td></td><td class="l">法兰克福</td><td class="hc">0</td><td class="l">奥格斯堡</td><td><b>主胜+客胜</b></td><td>74.3%</td><td class="ou-big">大球</td><td>2.95</td><td></td></tr>
 <tr class="pass"><td class="seq">322</td><td>波兰甲</td><td></td><td class="l">波兹南莱赫</td><td class="hc">-1</td><td class="l">琴斯托霍瓦</td><td><b>客胜+主胜</b></td><td>78.0%</td><td class="ou-big">大球</td><td>3.15</td><td></td></tr>
 <tr class="nopass"><td class="seq">323</td><td>芬甲</td><td></td><td class="l">哈卡</td><td class="hc">-2</td><td class="l">MP米凯利</td><td><b>客胜+主胜</b></td><td>72.0%</td><td class="ou-big">大球</td><td>3.05</td><td><span class="tg blue">低70封顶</span></td></tr>
