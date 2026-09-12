@@ -1,0 +1,79 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>算法版本注册表 · 北京单场系统</title><style>
+body{font-family:-apple-system,'Microsoft YaHei',sans-serif;background:#0f172a;color:#e2e8f0;margin:0;padding:24px;}
+h1{font-size:22px;margin:0 0 4px;} .sub{color:#64748b;font-size:13px;margin-bottom:20px;}
+table{border-collapse:collapse;width:100%;font-size:13px;margin-bottom:28px;}
+th{background:#1e293b;color:#94a3b8;text-align:left;padding:8px 10px;font-weight:600;border-bottom:1px solid #334155;}
+td{padding:8px 10px;border-bottom:1px solid #1e293b;vertical-align:top;}
+tr:hover{background:#1e293b80;} .sum{color:#64748b;font-size:12px;margin-top:3px;max-width:420px;}
+.up{color:#34d399;} .down{color:#f87171;} .pend{color:#64748b;font-size:12px;}
+.note{background:#1e293b;border-radius:8px;padding:14px 16px;font-size:13px;color:#94a3b8;line-height:1.8;}
+b{color:#f1f5f9;}
+</style></head><body>
+<h1>算法版本注册表</h1>
+<div class="sub">北京单场 v5 系统 · 生成于 2026-09-12 23:42 · 当前版本 v20260912</div>
+<table><tr><th style="width:90px">版本</th><th style="width:84px">日期</th><th>变更内容</th>
+<th style="width:120px">改动前14天<br>命中率/Brier</th><th style="width:120px">改动后14天<br>命中率/Brier</th><th style="width:70px">Δ命中率</th></tr>
+<tr>
+<td><b>v20260912</b></td><td>2026-09-12</td>
+<td><b>复盘完整性+平局双窗口(P3-2)</b><div class="sum">整日缺失补齐(扫描近14天缺失日自动拉官网补复盘，修复9/9-9/11跳日导致draw_mode误激活事故)；draw_mode双窗口(14天慢窗≥28%或7天快窗≥30%且样本≥150，修复单一窗滞后2-3天)；算法版本注册表上线(server/algorithm_registry.py：每日运行自动记录指标+算法文件指纹变更检测，algorithm.html页面随GitHub Pages部署)</div></td>
+<td>72.7% / 0.1995</td>
+<td><span class="pend">数据未满</span> / —</td>
+<td class=""><b>—</b></td></tr><tr>
+<td><b>v20260907</b></td><td>2026-09-07</td>
+<td><b>规则13v2.1球队专属开赛日</b><div class="sum">UCL_TEAM_MD_DATES按队判定MD开赛日间隔，修复全局窗口假阳性(周三开战队周六联赛4天间隔不再误标)</div></td>
+<td>74.0% / 0.1961</td>
+<td><span class="pend">数据未满</span> / —</td>
+<td class=""><b>—</b></td></tr><tr>
+<td><b>v20260906</b></td><td>2026-09-06</td>
+<td><b>规则12+规则13欧冠轮换</b><div class="sum">规则12客让1球双选结构修正；规则13欧冠联赛阶段日历36队+客场豪门核心特征(客战五大欧冠队客不败双选封顶70，晚72→70)</div></td>
+<td>72.8% / 0.2022</td>
+<td><span class="pend">数据未满</span> / —</td>
+<td class=""><b>—</b></td></tr><tr>
+<td><b>v20260905c</b></td><td>2026-09-05</td>
+<td><b>大小球v5动态校准</b><div class="sum">固定+0.40改为滚动14天偏差自调，clip[0.10,0.45]，样本不足回退0.40</div></td>
+<td>72.3% / 0.2055</td>
+<td><span class="pend">数据未满</span> / —</td>
+<td class=""><b>—</b></td></tr><tr>
+<td><b>v20260905b</b></td><td>2026-09-05</td>
+<td><b>规则9让1预警+规则11结构修正</b><div class="sum">规则9让1球恰好净胜预警(热门腿≥50降信心78不换向，晚间修复触发条件)；P3-1规则11主让1球双选结构修正</div></td>
+<td>72.3% / 0.2055</td>
+<td><span class="pend">数据未满</span> / —</td>
+<td class=""><b>—</b></td></tr><tr>
+<td><b>v20260905a</b></td><td>2026-09-05</td>
+<td><b>平局环境动态检测(P1-1/P1-2/P2-3)+规则10</b><div class="sum">pd平局概率动态校准；draw_mode(14天真平局率≥28%且样本≥100)；hcp1让1球失稳(<65%)；动态高平局联赛并入名单；规则10平局环境信心封顶78/让1含平局封顶74</div></td>
+<td>72.3% / 0.2055</td>
+<td><span class="pend">数据未满</span> / —</td>
+<td class=""><b>—</b></td></tr><tr>
+<td><b>v20260902</b></td><td>2026-09-02</td>
+<td><b>英乙加入双名单</b><div class="sum">09-01复盘4场推荐未中全在英乙且全是平局，追加观察+低命中名单</div></td>
+<td>73.2% / 0.2029</td>
+<td><span class="pend">数据未满</span> / —</td>
+<td class=""><b>—</b></td></tr><tr>
+<td><b>v20260901</b></td><td>2026-09-01</td>
+<td><b>大小球v5重做+预测明细合并</b><div class="sum">大小球v5独立方向预测重做(8月687场回测66.6%/覆盖45%，基线57%)；预测明细合并模式保留已完赛场次赛前预测(修复08-31覆盖事故)</div></td>
+<td>73.6% / 0.2006</td>
+<td><span class="pend">数据未满</span> / —</td>
+<td class=""><b>—</b></td></tr><tr>
+<td><b>v20260831</b></td><td>2026-08-31</td>
+<td><b>规则6/7+联赛双名单</b><div class="sum">规则6高平局联赛双选换向(8月回测78.9%)；规则7低70联赛/深让盘信心封顶72；高平局联赛名单(平局率≥35%)与低命中率联赛名单(<70%)</div></td>
+<td>73.3% / 0.202</td>
+<td><span class="pend">数据未满</span> / —</td>
+<td class=""><b>—</b></td></tr><tr>
+<td><b>v20260828</b></td><td>2026-08-28</td>
+<td><b>凯利判读回退：筛除→降信心</b><div class="sum">生产连续反例（08-26被筛2场全中、6天374场验证）后回退为"降信心不筛除"</div></td>
+<td>71.7% / 0.209</td>
+<td>72.1% / 0.2032</td>
+<td class="up"><b>+0.4pp</b></td></tr><tr>
+<td><b>v20260825</b></td><td>2026-08-25</td>
+<td><b>风控基础层（规则1-5）</b><div class="sum">规则1让1球物理概率带(19-28%)；规则2同赔反向冲突检测；规则3极端信心封顶；规则4观察名单；规则5凯利三项结构判读；SP合理性校验；完场页缓存策略修复</div></td>
+<td>70.8% / 0.2139</td>
+<td>74.1% / 0.1937</td>
+<td class="up"><b>+3.3pp</b></td></tr></table>
+<table><tr><th>复盘日期</th><th>生效版本</th><th>场次</th><th>命中率</th><th>通过筛选</th><th>大小球</th><th>滚动14天</th><th>滚动Brier</th></tr>
+<tr><td>2026-09-11</td><td>v20260912</td><td>66</td><td><b>81.8%</b></td><td>80.5%</td><td>51.6%</td><td>72.7%</td><td>0.1995</td></tr><tr><td>2026-09-10</td><td>v20260907</td><td>23</td><td><b>65.2%</b></td><td>58.3%</td><td>54.5%</td><td>72.1%</td><td>0.2032</td></tr><tr><td>2026-09-09</td><td>v20260907</td><td>45</td><td><b>57.8%</b></td><td>51.7%</td><td>61.5%</td><td>72.4%</td><td>0.2016</td></tr><tr><td>2026-09-08</td><td>v20260907</td><td>31</td><td><b>61.3%</b></td><td>59.1%</td><td>60.0%</td><td>73.3%</td><td>0.1975</td></tr><tr><td>2026-09-07</td><td>v20260907</td><td>27</td><td><b>59.3%</b></td><td>56.2%</td><td>38.9%</td><td>74.1%</td><td>0.1937</td></tr><tr><td>2026-09-06</td><td>v20260906</td><td>116</td><td><b>75.9%</b></td><td>83.1%</td><td>58.0%</td><td>74.0%</td><td>0.1961</td></tr><tr><td>2026-09-05</td><td>v20260905c</td><td>180</td><td><b>72.2%</b></td><td>77.5%</td><td>48.0%</td><td>72.8%</td><td>0.2022</td></tr><tr><td>2026-09-04</td><td>v20260902</td><td>60</td><td><b>61.7%</b></td><td>44.4%</td><td>50.0%</td><td>72.3%</td><td>0.2055</td></tr><tr><td>2026-09-03</td><td>v20260902</td><td>15</td><td><b>66.7%</b></td><td>75.0%</td><td>28.6%</td><td>73.2%</td><td>0.2023</td></tr><tr><td>2026-09-02</td><td>v20260902</td><td>47</td><td><b>70.2%</b></td><td>71.4%</td><td>50.0%</td><td>73.2%</td><td>0.2031</td></tr><tr><td>2026-09-01</td><td>v20260901</td><td>42</td><td><b>66.7%</b></td><td>62.5%</td><td>75.0%</td><td>73.2%</td><td>0.2029</td></tr><tr><td>2026-08-31</td><td>v20260831</td><td>35</td><td><b>74.3%</b></td><td>66.7%</td><td>0.0%</td><td>73.6%</td><td>0.2006</td></tr><tr><td>2026-08-30</td><td>v20260828</td><td>79</td><td><b>82.3%</b></td><td>82.9%</td><td>50.0%</td><td>73.3%</td><td>0.202</td></tr><tr><td>2026-08-29</td><td>v20260828</td><td>176</td><td><b>75.6%</b></td><td>78.4%</td><td>75.0%</td><td>73.4%</td><td>0.2018</td></tr><tr><td>2026-08-28</td><td>v20260828</td><td>65</td><td><b>72.3%</b></td><td>75.6%</td><td>80.0%</td><td>72.1%</td><td>0.2076</td></tr><tr><td>2026-08-27</td><td>v20260825</td><td>32</td><td><b>78.1%</b></td><td>84.0%</td><td>0%</td><td>71.7%</td><td>0.209</td></tr><tr><td>2026-08-26</td><td>v20260825</td><td>25</td><td><b>80.0%</b></td><td>84.6%</td><td>0%</td><td>71.6%</td><td>0.2098</td></tr><tr><td>2026-08-25</td><td>v20260825</td><td>27</td><td><b>85.2%</b></td><td>87.0%</td><td>0.0%</td><td>71.3%</td><td>0.2111</td></tr><tr><td>2026-08-24</td><td>—</td><td>28</td><td><b>57.1%</b></td><td>55.6%</td><td>50.0%</td><td>70.8%</td><td>0.2139</td></tr><tr><td>2026-08-23</td><td>—</td><td>97</td><td><b>64.9%</b></td><td>65.5%</td><td>62.5%</td><td>71.3%</td><td>0.2088</td></tr><tr><td>2026-08-22</td><td>—</td><td>129</td><td><b>69.8%</b></td><td>66.3%</td><td>55.6%</td><td>72.3%</td><td>0.2038</td></tr><tr><td>2026-08-21</td><td>—</td><td>54</td><td><b>74.1%</b></td><td>68.4%</td><td>36.4%</td><td>73.0%</td><td>0.2005</td></tr><tr><td>2026-08-20</td><td>—</td><td>35</td><td><b>71.4%</b></td><td>75.0%</td><td>66.7%</td><td>72.9%</td><td>0.1996</td></tr><tr><td>2026-08-19</td><td>—</td><td>31</td><td><b>67.7%</b></td><td>69.6%</td><td>100.0%</td><td>73.0%</td><td>0.1965</td></tr><tr><td>2026-08-18</td><td>—</td><td>11</td><td><b>81.8%</b></td><td>75.0%</td><td>66.7%</td><td>73.4%</td><td>0.1951</td></tr><tr><td>2026-08-17</td><td>—</td><td>30</td><td><b>66.7%</b></td><td>63.6%</td><td>100.0%</td><td>73.2%</td><td>0.1965</td></tr><tr><td>2026-08-16</td><td>—</td><td>110</td><td><b>80.0%</b></td><td>78.2%</td><td>81.2%</td><td>73.7%</td><td>0.1936</td></tr><tr><td>2026-08-15</td><td>—</td><td>145</td><td><b>71.0%</b></td><td>71.9%</td><td>56.5%</td><td>70.4%</td><td>0.21</td></tr><tr><td>2026-08-14</td><td>—</td><td>54</td><td><b>66.7%</b></td><td>68.9%</td><td>80.0%</td><td>69.1%</td><td>0.2161</td></tr><tr><td>2026-08-13</td><td>—</td><td>28</td><td><b>71.4%</b></td><td>70.4%</td><td>0%</td><td>74.1%</td><td>0.1889</td></tr></table>
+<div class="note">口径说明：metrics_before = [版本日-14, 版本日-1]；metrics_after = [版本日, 版本日+13]（数据满14天后自动补齐）。
+Brier = mean((预测概率 - 是否命中)²)，衡量概率质量，越低越好；75%信心完美校准时≈0.1875。
+算法文件指纹变化时自动登记新版本条目（摘要待人工标注）。同日多规则上线时前后窗口有重叠，对比仅作参考。</div>
+</body></html>
