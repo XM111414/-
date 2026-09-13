@@ -6,15 +6,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>每日预测复盘仪表盘 - 第26094期</title>
 <style>
-:root {
-  --bg: #f0f4f8;
+ :root {
+  --bg: #eef1f6;
   --bg2: #ffffff;
-  --ink: #1e293b;
-  --muted: #64748b;
-  --rule: #e2e8f0;
-  --accent: #3b82f6;
-  --accent2: #10b981;
-  --danger: #ef4444;
+  --ink: #152238;
+  --muted: #5a6b8c;
+  --rule: #dfe4ee;
+  --accent: #1848c0;
+  --accent-soft: #e7edfb;
+  --accent2: #0c9d6c;
+  --danger: #dc2626;
   --warning: #f59e0b;
   --purple: #8b5cf6;
   --orange: #f97316;
@@ -1662,9 +1663,79 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
   #history-detail-body .col-actual { grid-area: result; }
   #history-detail-body .col-status { grid-area: status; justify-content: flex-end; }
 }
+
+/* ===== 顶部蓝色导航条（模板风格 #1848c0）===== */
+.topbar {
+  background: linear-gradient(135deg, #1848c0 0%, #2a5fd0 55%, #3b74e0 100%);
+  color: #fff;
+  box-shadow: 0 2px 16px rgba(24, 72, 192, 0.30);
+  border-bottom: 3px solid #ffffff;
+  z-index: 50;
+  position: sticky;
+  top: 0;
+}
+.topbar-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 16px 20px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.topbar .brand { display: flex; align-items: center; gap: 12px; }
+.topbar .logo {
+  width: 42px; height: 42px; border-radius: 11px; flex: 0 0 auto;
+  background: rgba(255, 255, 255, 0.18);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.35rem;
+}
+.topbar h1 { font-size: 1.18rem; font-weight: 700; letter-spacing: 0.4px; margin: 0; line-height: 1.2; }
+.topbar .sub { font-size: 0.76rem; opacity: 0.86; margin-top: 2px; }
+.topbar .badges { display: flex; gap: 8px; flex-wrap: wrap; }
+.topbar .chip {
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+
+/* ===== 星级把握 + 首选/次选/慎重标签（2026-09-13，参考haoduomi北单AI）===== */
+.grasp-row { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; flex-wrap: wrap; }
+.rec-badge { display: inline-block; padding: 2px 9px; border-radius: 999px; font-size: 0.72rem; font-weight: 700; line-height: 1.4; letter-spacing: 0.5px; }
+.rec-badge.first { background: #dcfce7; color: #15803d; border: 1px solid #86efac; }
+.rec-badge.second { background: #e7edfb; color: #1848c0; border: 1px solid #bfdbfe; }
+.rec-badge.caution { background: #fff7ed; color: #c2410c; border: 1px solid #fdba74; }
+.stars { font-size: 0.82rem; letter-spacing: 1px; color: #f59e0b; white-space: nowrap; }
+.stars.dim { color: #cbd5e1; }
+
+
+/* ===== 星级把握 + 首选/次选/慎重标签（2026-09-13，参考haoduomi北单AI）===== */
+.grasp-row { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; flex-wrap: wrap; }
+.rec-badge { display: inline-block; padding: 2px 9px; border-radius: 999px; font-size: 0.72rem; font-weight: 700; line-height: 1.4; letter-spacing: 0.5px; }
+.rec-badge.first { background: #dcfce7; color: #15803d; border: 1px solid #86efac; }
+.rec-badge.second { background: #e7edfb; color: #1848c0; border: 1px solid #bfdbfe; }
+.rec-badge.caution { background: #fff7ed; color: #c2410c; border: 1px solid #fdba74; }
+.stars { font-size: 0.82rem; letter-spacing: 1px; color: #f59e0b; white-space: nowrap; }
+.stars.dim { color: #cbd5e1; }
+
+/* ===== 星级把握 + 推荐档位说明卡片 ===== */
+.grasp-legend { display: flex; flex-direction: column; gap: 8px; padding: 12px 14px; margin-bottom: 12px; background: linear-gradient(135deg, #eef3ff 0%, #f8fafc 100%); border: 1px solid #c7d8f5; border-left: 4px solid #1848c0; border-radius: 10px; font-size: 0.74rem; color: #334155; }
+.grasp-legend .gl-title { font-size: 0.82rem; font-weight: 700; color: #1848c0; }
+.grasp-legend .gl-badges { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.grasp-legend .gl-rules p { margin: 3px 0; line-height: 1.55; }
+.grasp-legend .gl-rules b { color: #1e293b; font-weight: 700; }
+.grasp-legend .gl-risk { color: #b45309; }
+
 </style>
 </head>
 <body>
+<div class="topbar"><div class="topbar-inner"><div class="brand"><div class="logo">&#9917;</div><div><h1>北京单场 · AI 预测复盘系统</h1><div class="sub">v5 算法引擎 · bjlot 官方数据源 · 场次周期 10:00-次日 10:00</div></div></div><div class="badges"><span class="chip">第 26094 期</span><span class="chip">2026-09-13</span></div></div></div>
 <div class="container">
 
   <!-- 主导航Tab -->
@@ -2064,6 +2135,24 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <span class="lg-item"><b>大小球</b>＝盘口线·大/小概率</span>
       </div>
 
+      <!-- 星级把握 + 推荐档位说明 -->
+      <div class="grasp-legend">
+        <div class="gl-title">&#11088; 星级把握 &amp; 推荐档位说明</div>
+        <div class="gl-badges">
+          <span class="rec-badge first">首选</span>
+          <span class="rec-badge second">次选</span>
+          <span class="rec-badge caution">慎重</span>
+          <span class="stars" style="margin-left:4px;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <span class="stars dim">&#9733;&#9733;&#9734;&#9734;&#9734;</span>
+        </div>
+        <div class="gl-rules">
+          <p><b>星级＝把握度</b>：按双选总概率细分 —— ≥78 五星 / 73-77 四星 / 68-72 三星 / 63-67 二星 / &lt;63 一星；筛除场次显示为灰星。</p>
+          <p><b>首选</b>＝五星且无风险；<b>次选</b>＝四星且无风险；<b>慎重</b>＝三星及以下、或存在风险、或 C 级赛事。</p>
+          <p class="gl-risk"><b>风险因子</b>：冷门 · 轮换 · 陷阱 · 失稳 · 恰好净胜 · 客胜盲区 · 平局风险 —— 出现任一即标「慎重」。星级仅反映概率强度，不等同于推荐等级。</p>
+        </div>
+      </div>
+
+
       <!-- 全部比赛 -->
       <div id="sub-pred-all" class="sub-panel">
         <div class="filter-bar">
@@ -2169,6 +2258,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">江原FC</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 69.5%">★★★☆☆</span></div>
           <span class="double-text">客胜+主胜</span>
           
           <div class="double-chips">
@@ -2224,6 +2314,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">城南FC</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 72.5%">★★★☆☆</span></div>
           <span class="double-text">平局+客胜</span>
           
           <div class="double-chips">
@@ -2279,6 +2370,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">金浦FC</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 70.2%">★★★☆☆</span></div>
           <span class="double-text">客胜+主胜</span>
           
           <div class="double-chips">
@@ -2334,6 +2426,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">圣珀尔滕</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge first">首选</span><span class="stars" title="把握度 79.3%">★★★★★</span></div>
           <span class="double-text">主胜+客胜</span>
           
           <div class="double-chips">
@@ -2389,6 +2482,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">千叶市原</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 68.2%">★★★☆☆</span></div>
           <span class="double-text">主胜+客胜</span>
           
           <div class="double-chips">
@@ -2444,6 +2538,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">北海道札幌冈萨多</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 76.7%">★★★★☆</span></div>
           <span class="double-text">主胜+客胜</span>
           
           <div class="double-chips">
@@ -2499,6 +2594,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">山形山神</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 68.5%">★★★☆☆</span></div>
           <span class="double-text">主胜+客胜</span>
           
           <div class="double-chips">
@@ -2554,6 +2650,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">冈山绿雉</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 70.0%">★★★☆☆</span></div>
           <span class="double-text">主胜+平局</span>
           
           <div class="double-chips">
@@ -2609,6 +2706,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">FC安养</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 71.3%">★★★☆☆</span></div>
           <span class="double-text">客胜+平局</span>
           
           <div class="double-chips">
@@ -2664,6 +2762,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">金海FC</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge second">次选</span><span class="stars" title="把握度 76.0%">★★★★☆</span></div>
           <span class="double-text">客胜+主胜</span>
           
           <div class="double-chips">
@@ -2710,6 +2809,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">天安城</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 74.0%">★★★★☆</span></div>
           <span class="double-text">客胜+平局</span>
           
           <div class="double-chips">
@@ -2765,6 +2865,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">SC法伦斯</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 72.3%">★★★☆☆</span></div>
           <span class="double-text">客胜+平局</span>
           
           <div class="double-chips">
@@ -2811,6 +2912,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">乌德勒支</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 79.3%">★★★★★</span></div>
           <span class="double-text">主胜+客胜</span>
           
           <div class="double-chips">
@@ -2866,6 +2968,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">克拉科维亚</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge second">次选</span><span class="stars" title="把握度 75.9%">★★★★☆</span></div>
           <span class="double-text">客胜+平局</span>
           
           <div class="double-chips">
@@ -2921,6 +3024,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">狼队</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 77.8%">★★★★☆</span></div>
           <span class="double-text">客胜+平局</span>
           
           <div class="double-chips">
@@ -2976,6 +3080,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">帕尔杜比采</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 71.9%">★★★☆☆</span></div>
           <span class="double-text">客胜+主胜</span>
           
           <div class="double-chips">
@@ -3022,6 +3127,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">凯尔特人</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge second">次选</span><span class="stars" title="把握度 77.2%">★★★★☆</span></div>
           <span class="double-text">客胜+平局</span>
           
           <div class="double-chips">
@@ -3077,6 +3183,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">基尔</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 78.2%">★★★★★</span></div>
           <span class="double-text">主胜+客胜</span>
           
           <div class="double-chips">
@@ -3132,6 +3239,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">科特布斯</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 78.0%">★★★★★</span></div>
           <span class="double-text">客胜+主胜</span>
           
           <div class="double-chips">
@@ -3187,6 +3295,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">柏林赫塔</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 77.8%">★★★★☆</span></div>
           <span class="double-text">客胜+主胜</span>
           
           <div class="double-chips">
@@ -3242,6 +3351,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">安特卫普</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 72.0%">★★★☆☆</span></div>
           <span class="double-text">客胜+主胜</span>
           
           <div class="double-chips">
@@ -3297,6 +3407,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">马拉加</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 72.0%">★★★☆☆</span></div>
           <span class="double-text">客胜+主胜</span>
           
           <div class="double-chips">
@@ -3352,6 +3463,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">埃尔登斯</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 72.0%">★★★☆☆</span></div>
           <span class="double-text">客胜+平局</span>
           
           <div class="double-chips">
@@ -3407,6 +3519,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">瓦杜兹</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 65.3%">★★☆☆☆</span></div>
           <span class="double-text">客胜+平局</span>
           
           <div class="double-chips">
@@ -3462,6 +3575,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">维堡</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 74.1%">★★★★☆</span></div>
           <span class="double-text">主胜+客胜</span>
           
           <div class="double-chips">
@@ -3517,6 +3631,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">桑德捷斯基</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 74.0%">★★★★☆</span></div>
           <span class="double-text">客胜+平局</span>
           
           <div class="double-chips">
@@ -3572,6 +3687,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">布鲁马波卡纳</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 72.0%">★★★☆☆</span></div>
           <span class="double-text">客胜+主胜</span>
           
           <div class="double-chips">
@@ -3627,6 +3743,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">卡尔马</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 74.0%">★★★★☆</span></div>
           <span class="double-text">客胜+平局</span>
           
           <div class="double-chips">
@@ -3682,6 +3799,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">博托沙尼</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 70.0%">★★★☆☆</span></div>
           <span class="double-text">主胜+平局</span>
           
           <div class="double-chips">
@@ -3728,6 +3846,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">赫尔辛基</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge second">次选</span><span class="stars" title="把握度 77.7%">★★★★☆</span></div>
           <span class="double-text">客胜+主胜</span>
           
           <div class="double-chips">
@@ -3783,6 +3902,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">特尔斯达</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 78.0%">★★★★★</span></div>
           <span class="double-text">客胜+主胜</span>
           
           <div class="double-chips">
@@ -3838,6 +3958,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">奥地利卢斯特瑙</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 70.5%">★★★☆☆</span></div>
           <span class="double-text">主胜+客胜</span>
           
           <div class="double-chips">
@@ -3893,6 +4014,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">哈特贝格</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 73.1%">★★★★☆</span></div>
           <span class="double-text">客胜+平局</span>
           
           <div class="double-chips">
@@ -3948,6 +4070,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">克里斯蒂安松</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 72.0%">★★★☆☆</span></div>
           <span class="double-text">客胜+主胜</span>
           
           <div class="double-chips">
@@ -4003,6 +4126,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">克拉科夫维切斯塔</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge first">首选</span><span class="stars" title="把握度 78.8%">★★★★★</span></div>
           <span class="double-text">客胜+主胜</span>
           
           <div class="double-chips">
@@ -4058,6 +4182,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">蒙扎</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 71.9%">★★★☆☆</span></div>
           <span class="double-text">主胜+客胜</span>
           
           <div class="double-chips">
@@ -4113,6 +4238,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">特鲁瓦</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 78.0%">★★★★★</span></div>
           <span class="double-text">客胜+主胜</span>
           
           <div class="double-chips">
@@ -4168,6 +4294,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">奥洛穆茨</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 72.0%">★★★☆☆</span></div>
           <span class="double-text">客胜+平局</span>
           
           <div class="double-chips">
@@ -4214,6 +4341,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">赫拉德茨克拉洛韦</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 68.2%">★★★☆☆</span></div>
           <span class="double-text">平局+客胜</span>
           
           <div class="double-chips">
@@ -4260,6 +4388,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">CD费伦斯</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge second">次选</span><span class="stars" title="把握度 76.5%">★★★★☆</span></div>
           <span class="double-text">客胜+主胜</span>
           
           <div class="double-chips">
@@ -4306,6 +4435,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">奥迪沃德</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 72.0%">★★★☆☆</span></div>
           <span class="double-text">客胜+主胜</span>
           
           <div class="double-chips">
@@ -4361,6 +4491,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">汉堡</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge first">首选</span><span class="stars" title="把握度 79.8%">★★★★★</span></div>
           <span class="double-text">主胜+客胜</span>
           
           <div class="double-chips">
@@ -4416,6 +4547,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">根特</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 70.0%">★★★☆☆</span></div>
           <span class="double-text">主胜+客胜</span>
           
           <div class="double-chips">
@@ -4471,6 +4603,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">欧登塞</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 70.0%">★★★☆☆</span></div>
           <span class="double-text">主胜+平局</span>
           
           <div class="double-chips">
@@ -4526,6 +4659,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">IA阿克拉内斯</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 78.0%">★★★★★</span></div>
           <span class="double-text">客胜+主胜</span>
           
           <div class="double-chips">
@@ -4581,6 +4715,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">IBV韦斯特曼纳</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 78.0%">★★★★★</span></div>
           <span class="double-text">客胜+主胜</span>
           
           <div class="double-chips">
@@ -4636,6 +4771,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">KA阿克雷里</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 69.5%">★★★☆☆</span></div>
           <span class="double-text">客胜+平局</span>
           
           <div class="double-chips">
@@ -4691,6 +4827,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">托尔</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 78.0%">★★★★★</span></div>
           <span class="double-text">客胜+主胜</span>
           
           <div class="double-chips">
@@ -4746,6 +4883,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">布鲁日NXT</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 68.9%">★★★☆☆</span></div>
           <span class="double-text">客胜+平局</span>
           
           <div class="double-chips">
@@ -4801,6 +4939,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">巴塞罗那</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 72.0%">★★★☆☆</span></div>
           <span class="double-text">主胜+客胜</span>
           
           <div class="double-chips">
@@ -4856,6 +4995,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">皇家奥维耶多</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 68.9%">★★★☆☆</span></div>
           <span class="double-text">主胜+平局</span>
           
           <div class="double-chips">
@@ -4911,6 +5051,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">巴塞尔</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 68.5%">★★★☆☆</span></div>
           <span class="double-text">客胜+平局</span>
           
           <div class="double-chips">
@@ -4966,6 +5107,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">塞尔维特</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 66.7%">★★☆☆☆</span></div>
           <span class="double-text">平局+主胜</span>
           
           <div class="double-chips">
@@ -5021,6 +5163,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">厄尔格里特</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 78.0%">★★★★★</span></div>
           <span class="double-text">客胜+主胜</span>
           
           <div class="double-chips">
@@ -5076,6 +5219,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">莱里亚</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 68.6%">★★★☆☆</span></div>
           <span class="double-text">平局+客胜</span>
           
           <div class="double-chips">
@@ -5131,6 +5275,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">费耶诺德</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge first">首选</span><span class="stars" title="把握度 82.6%">★★★★★</span></div>
           <span class="double-text">主胜+客胜</span>
           
           <div class="double-chips">
@@ -5186,6 +5331,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">邓伯什</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 78.0%">★★★★★</span></div>
           <span class="double-text">客胜+主胜</span>
           
           <div class="double-chips">
@@ -5241,6 +5387,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">LASK林茨</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 70.4%">★★★☆☆</span></div>
           <span class="double-text">客胜+主胜</span>
           
           <div class="double-chips">
@@ -5296,6 +5443,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">沃洛斯</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 69.4%">★★★☆☆</span></div>
           <span class="double-text">主胜+平局</span>
           
           <div class="double-chips">
@@ -5351,6 +5499,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">莫尔德</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 72.0%">★★★☆☆</span></div>
           <span class="double-text">主胜+客胜</span>
           
           <div class="double-chips">
@@ -5406,6 +5555,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">奥勒松</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 72.0%">★★★☆☆</span></div>
           <span class="double-text">客胜+主胜</span>
           
           <div class="double-chips">
@@ -5461,6 +5611,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">布兰</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 70.0%">★★★☆☆</span></div>
           <span class="double-text">主胜+平局</span>
           
           <div class="double-chips">
@@ -5516,6 +5667,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">孔斯温厄尔</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 78.0%">★★★★★</span></div>
           <span class="double-text">主胜+客胜</span>
           
           <div class="double-chips">
@@ -5562,6 +5714,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">利恩</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 68.2%">★★★☆☆</span></div>
           <span class="double-text">客胜+平局</span>
           
           <div class="double-chips">
@@ -5608,6 +5761,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">海于格松</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 78.0%">★★★★★</span></div>
           <span class="double-text">主胜+客胜</span>
           
           <div class="double-chips">
@@ -5663,6 +5817,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">奥桑内</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 78.0%">★★★★★</span></div>
           <span class="double-text">客胜+主胜</span>
           
           <div class="double-chips">
@@ -5709,6 +5864,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">奥德</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 94.8%">★★★★★</span></div>
           <span class="double-text">主胜+客胜</span>
           
           <div class="double-chips">
@@ -5764,6 +5920,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">斯托曼</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 69.2%">★★★☆☆</span></div>
           <span class="double-text">主胜+平局</span>
           
           <div class="double-chips">
@@ -5819,6 +5976,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">桑内斯乌尔夫</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 78.0%">★★★★★</span></div>
           <span class="double-text">客胜+平局</span>
           
           <div class="double-chips">
@@ -5874,6 +6032,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">法尔肯贝里</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 70.0%">★★★☆☆</span></div>
           <span class="double-text">主胜+平局</span>
           
           <div class="double-chips">
@@ -5929,6 +6088,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">朗斯</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge first">首选</span><span class="stars" title="把握度 78.0%">★★★★★</span></div>
           <span class="double-text">主胜+客胜</span>
           
           <div class="double-chips">
@@ -5984,6 +6144,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">巴勒莫</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 69.9%">★★★☆☆</span></div>
           <span class="double-text">主胜+平局</span>
           
           <div class="double-chips">
@@ -6039,6 +6200,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">桑普多利亚</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 70.1%">★★★☆☆</span></div>
           <span class="double-text">主胜+平局</span>
           
           <div class="double-chips">
@@ -6094,6 +6256,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">曼彻斯特城</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 72.0%">★★★☆☆</span></div>
           <span class="double-text">客胜+主胜</span>
           
           <div class="double-chips">
@@ -6149,6 +6312,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">拜仁慕尼黑</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 72.0%">★★★☆☆</span></div>
           <span class="double-text">主胜+客胜</span>
           
           <div class="double-chips">
@@ -6195,6 +6359,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">罗兹维德祖</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 74.0%">★★★★☆</span></div>
           <span class="double-text">客胜+平局</span>
           
           <div class="double-chips">
@@ -6250,6 +6415,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">博洛尼亚</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 72.0%">★★★☆☆</span></div>
           <span class="double-text">客胜+主胜</span>
           
           <div class="double-chips">
@@ -6305,6 +6471,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">雅典AEK</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge first">首选</span><span class="stars" title="把握度 80.0%">★★★★★</span></div>
           <span class="double-text">主胜+客胜</span>
           
           <div class="double-chips">
@@ -6360,6 +6527,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">布拉格斯拉维亚</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 72.0%">★★★☆☆</span></div>
           <span class="double-text">主胜+客胜</span>
           
           <div class="double-chips">
@@ -6406,6 +6574,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">奥胡斯</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 78.0%">★★★★★</span></div>
           <span class="double-text">客胜+主胜</span>
           
           <div class="double-chips">
@@ -6461,6 +6630,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">拉科鲁尼亚</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 71.9%">★★★☆☆</span></div>
           <span class="double-text">客胜+平局</span>
           
           <div class="double-chips">
@@ -6516,6 +6686,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">萨瓦德尔</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 72.0%">★★★☆☆</span></div>
           <span class="double-text">客胜+平局</span>
           
           <div class="double-chips">
@@ -6571,6 +6742,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">圣塔克拉拉</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 72.1%">★★★☆☆</span></div>
           <span class="double-text">平局+客胜</span>
           
           <div class="double-chips">
@@ -6626,6 +6798,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">吉尔维森特</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 72.0%">★★★☆☆</span></div>
           <span class="double-text">客胜+主胜</span>
           
           <div class="double-chips">
@@ -6681,6 +6854,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">科特赖克</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 71.2%">★★★☆☆</span></div>
           <span class="double-text">平局+主胜</span>
           
           <div class="double-chips">
@@ -6736,6 +6910,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">萨尔普斯堡</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 67.0%">★★☆☆☆</span></div>
           <span class="double-text">主胜+平局</span>
           
           <div class="double-chips">
@@ -6791,6 +6966,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">欧本</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 69.1%">★★★☆☆</span></div>
           <span class="double-text">平局+客胜</span>
           
           <div class="double-chips">
@@ -6846,6 +7022,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">CS克拉约瓦大学</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 71.8%">★★★☆☆</span></div>
           <span class="double-text">客胜+平局</span>
           
           <div class="double-chips">
@@ -6901,6 +7078,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">贝尔格拉诺</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 70.2%">★★★☆☆</span></div>
           <span class="double-text">平局+客胜</span>
           
           <div class="double-chips">
@@ -6956,6 +7134,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">罗萨里奥中央</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 74.6%">★★★★☆</span></div>
           <span class="double-text">客胜+平局</span>
           
           <div class="double-chips">
@@ -7011,6 +7190,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">鹿特丹斯巴达</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 72.0%">★★★☆☆</span></div>
           <span class="double-text">客胜+主胜</span>
           
           <div class="double-chips">
@@ -7066,6 +7246,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">莱瓦贾科斯</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge second">次选</span><span class="stars" title="把握度 76.6%">★★★★☆</span></div>
           <span class="double-text">客胜+主胜</span>
           
           <div class="double-chips">
@@ -7121,6 +7302,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">阿瑞斯</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 78.0%">★★★★★</span></div>
           <span class="double-text">客胜+主胜</span>
           
           <div class="double-chips">
@@ -7176,6 +7358,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">帕纳多里科斯</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 78.0%">★★★★★</span></div>
           <span class="double-text">客胜+平局</span>
           
           <div class="double-chips">
@@ -7231,6 +7414,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">尤文图斯</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 72.0%">★★★☆☆</span></div>
           <span class="double-text">主胜+客胜</span>
           
           <div class="double-chips">
@@ -7286,6 +7470,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">巴黎圣日耳曼</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 72.0%">★★★☆☆</span></div>
           <span class="double-text">主胜+客胜</span>
           
           <div class="double-chips">
@@ -7341,6 +7526,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">马德里竞技</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 66.4%">★★☆☆☆</span></div>
           <span class="double-text">主胜+平局</span>
           
           <div class="double-chips">
@@ -7396,6 +7582,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">莱加内斯</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 72.0%">★★★☆☆</span></div>
           <span class="double-text">平局+客胜</span>
           
           <div class="double-chips">
@@ -7451,6 +7638,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">维多利亚</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 72.0%">★★★☆☆</span></div>
           <span class="double-text">客胜+平局</span>
           
           <div class="double-chips">
@@ -7506,6 +7694,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">克里西乌马</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 73.7%">★★★★☆</span></div>
           <span class="double-text">客胜+主胜</span>
           
           <div class="double-chips">
@@ -7561,6 +7750,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">葡萄牙体育</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 72.0%">★★★☆☆</span></div>
           <span class="double-text">主胜+客胜</span>
           
           <div class="double-chips">
@@ -7616,6 +7806,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">拉普拉塔体操</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 74.0%">★★★★☆</span></div>
           <span class="double-text">客胜+平局</span>
           
           <div class="double-chips">
@@ -7671,6 +7862,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">科林蒂安</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 72.0%">★★★☆☆</span></div>
           <span class="double-text">客胜+主胜</span>
           
           <div class="double-chips">
@@ -7726,6 +7918,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">米纳斯吉拉斯竞技</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 74.0%">★★★★☆</span></div>
           <span class="double-text">客胜+平局</span>
           
           <div class="double-chips">
@@ -7781,6 +7974,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">新英格兰革命</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 74.0%">★★★★☆</span></div>
           <span class="double-text">客胜+平局</span>
           
           <div class="double-chips">
@@ -7836,6 +8030,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">塞阿拉</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 74.0%">★★★★☆</span></div>
           <span class="double-text">客胜+平局</span>
           
           <div class="double-chips">
@@ -7891,6 +8086,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">圣洛伦索</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 72.4%">★★★☆☆</span></div>
           <span class="double-text">客胜+平局</span>
           
           <div class="double-chips">
@@ -7946,6 +8142,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">奥斯汀FC</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge first">首选</span><span class="stars" title="把握度 78.0%">★★★★★</span></div>
           <span class="double-text">客胜+平局</span>
           
           <div class="double-chips">
@@ -8001,6 +8198,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">竞技俱乐部</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 74.1%">★★★★☆</span></div>
           <span class="double-text">客胜+平局</span>
           
           <div class="double-chips">
@@ -8056,6 +8254,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">费城联合</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 69.2%">★★★☆☆</span></div>
           <span class="double-text">主胜+客胜</span>
           
           <div class="double-chips">
@@ -8111,6 +8310,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">华雷斯</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 72.0%">★★★☆☆</span></div>
           <span class="double-text">客胜+主胜</span>
           
           <div class="double-chips">
@@ -8166,6 +8366,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">普马斯</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="stars dim" title="把握度 72.0%">★★★☆☆</span></div>
           <span class="double-text">客胜+平局</span>
           
           <div class="double-chips">
@@ -8306,6 +8507,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">城南FC</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 72.5%">★★★☆☆</span></div>
           <span class="double-text">平局+客胜</span>
           
           <div class="double-chips">
@@ -8357,6 +8559,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">金浦FC</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 70.2%">★★★☆☆</span></div>
           <span class="double-text">客胜+主胜</span>
           
           <div class="double-chips">
@@ -8408,6 +8611,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">圣珀尔滕</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge first">首选</span><span class="stars" title="把握度 79.3%">★★★★★</span></div>
           <span class="double-text">主胜+客胜</span>
           
           <div class="double-chips">
@@ -8459,6 +8663,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">冈山绿雉</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 70.0%">★★★☆☆</span></div>
           <span class="double-text">主胜+平局</span>
           
           <div class="double-chips">
@@ -8510,6 +8715,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">FC安养</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 71.3%">★★★☆☆</span></div>
           <span class="double-text">客胜+平局</span>
           
           <div class="double-chips">
@@ -8561,6 +8767,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">金海FC</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge second">次选</span><span class="stars" title="把握度 76.0%">★★★★☆</span></div>
           <span class="double-text">客胜+主胜</span>
           
           <div class="double-chips">
@@ -8603,6 +8810,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">SC法伦斯</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 72.3%">★★★☆☆</span></div>
           <span class="double-text">客胜+平局</span>
           
           <div class="double-chips">
@@ -8645,6 +8853,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">克拉科维亚</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge second">次选</span><span class="stars" title="把握度 75.9%">★★★★☆</span></div>
           <span class="double-text">客胜+平局</span>
           
           <div class="double-chips">
@@ -8696,6 +8905,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">帕尔杜比采</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 71.9%">★★★☆☆</span></div>
           <span class="double-text">客胜+主胜</span>
           
           <div class="double-chips">
@@ -8738,6 +8948,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">凯尔特人</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge second">次选</span><span class="stars" title="把握度 77.2%">★★★★☆</span></div>
           <span class="double-text">客胜+平局</span>
           
           <div class="double-chips">
@@ -8789,6 +9000,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">维堡</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 74.1%">★★★★☆</span></div>
           <span class="double-text">主胜+客胜</span>
           <div class="trap-badge">&#9888; 凯利陷阱·降信心</div>
           <div class="double-chips">
@@ -8840,6 +9052,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">布鲁马波卡纳</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 72.0%">★★★☆☆</span></div>
           <span class="double-text">客胜+主胜</span>
           
           <div class="double-chips">
@@ -8891,6 +9104,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">赫尔辛基</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge second">次选</span><span class="stars" title="把握度 77.7%">★★★★☆</span></div>
           <span class="double-text">客胜+主胜</span>
           
           <div class="double-chips">
@@ -8942,6 +9156,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">奥地利卢斯特瑙</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 70.5%">★★★☆☆</span></div>
           <span class="double-text">主胜+客胜</span>
           <div class="trap-badge">&#9888; 凯利陷阱·降信心</div>
           <div class="double-chips">
@@ -8993,6 +9208,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">克拉科夫维切斯塔</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge first">首选</span><span class="stars" title="把握度 78.8%">★★★★★</span></div>
           <span class="double-text">客胜+主胜</span>
           
           <div class="double-chips">
@@ -9044,6 +9260,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">特鲁瓦</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 78.0%">★★★★★</span></div>
           <span class="double-text">客胜+主胜</span>
           
           <div class="double-chips">
@@ -9095,6 +9312,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">赫拉德茨克拉洛韦</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 68.2%">★★★☆☆</span></div>
           <span class="double-text">平局+客胜</span>
           
           <div class="double-chips">
@@ -9137,6 +9355,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">CD费伦斯</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge second">次选</span><span class="stars" title="把握度 76.5%">★★★★☆</span></div>
           <span class="double-text">客胜+主胜</span>
           
           <div class="double-chips">
@@ -9179,6 +9398,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">汉堡</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge first">首选</span><span class="stars" title="把握度 79.8%">★★★★★</span></div>
           <span class="double-text">主胜+客胜</span>
           
           <div class="double-chips">
@@ -9230,6 +9450,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">欧登塞</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 70.0%">★★★☆☆</span></div>
           <span class="double-text">主胜+平局</span>
           
           <div class="double-chips">
@@ -9281,6 +9502,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">IA阿克拉内斯</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 78.0%">★★★★★</span></div>
           <span class="double-text">客胜+主胜</span>
           
           <div class="double-chips">
@@ -9332,6 +9554,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">IBV韦斯特曼纳</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 78.0%">★★★★★</span></div>
           <span class="double-text">客胜+主胜</span>
           
           <div class="double-chips">
@@ -9383,6 +9606,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">KA阿克雷里</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 69.5%">★★★☆☆</span></div>
           <span class="double-text">客胜+平局</span>
           
           <div class="double-chips">
@@ -9434,6 +9658,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">托尔</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 78.0%">★★★★★</span></div>
           <span class="double-text">客胜+主胜</span>
           
           <div class="double-chips">
@@ -9485,6 +9710,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">布鲁日NXT</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 68.9%">★★★☆☆</span></div>
           <span class="double-text">客胜+平局</span>
           
           <div class="double-chips">
@@ -9536,6 +9762,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">皇家奥维耶多</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 68.9%">★★★☆☆</span></div>
           <span class="double-text">主胜+平局</span>
           <div class="trap-badge">&#9888; 凯利陷阱·降信心</div>
           <div class="double-chips">
@@ -9587,6 +9814,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">厄尔格里特</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 78.0%">★★★★★</span></div>
           <span class="double-text">客胜+主胜</span>
           
           <div class="double-chips">
@@ -9638,6 +9866,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">莱里亚</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 68.6%">★★★☆☆</span></div>
           <span class="double-text">平局+客胜</span>
           <div class="trap-badge">&#9888; 凯利陷阱·降信心</div>
           <div class="double-chips">
@@ -9689,6 +9918,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">费耶诺德</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge first">首选</span><span class="stars" title="把握度 82.6%">★★★★★</span></div>
           <span class="double-text">主胜+客胜</span>
           
           <div class="double-chips">
@@ -9740,6 +9970,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">LASK林茨</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 70.4%">★★★☆☆</span></div>
           <span class="double-text">客胜+主胜</span>
           <div class="trap-badge">&#9888; 凯利陷阱·降信心</div>
           <div class="double-chips">
@@ -9791,6 +10022,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">沃洛斯</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 69.4%">★★★☆☆</span></div>
           <span class="double-text">主胜+平局</span>
           
           <div class="double-chips">
@@ -9842,6 +10074,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">法尔肯贝里</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 70.0%">★★★☆☆</span></div>
           <span class="double-text">主胜+平局</span>
           
           <div class="double-chips">
@@ -9893,6 +10126,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">朗斯</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge first">首选</span><span class="stars" title="把握度 78.0%">★★★★★</span></div>
           <span class="double-text">主胜+客胜</span>
           
           <div class="double-chips">
@@ -9944,6 +10178,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">巴勒莫</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 69.9%">★★★☆☆</span></div>
           <span class="double-text">主胜+平局</span>
           
           <div class="double-chips">
@@ -9995,6 +10230,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">桑普多利亚</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 70.1%">★★★☆☆</span></div>
           <span class="double-text">主胜+平局</span>
           <div class="trap-badge">&#9888; 凯利陷阱·降信心</div>
           <div class="double-chips">
@@ -10046,6 +10282,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">雅典AEK</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge first">首选</span><span class="stars" title="把握度 80.0%">★★★★★</span></div>
           <span class="double-text">主胜+客胜</span>
           
           <div class="double-chips">
@@ -10097,6 +10334,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">布拉格斯拉维亚</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 72.0%">★★★☆☆</span></div>
           <span class="double-text">主胜+客胜</span>
           
           <div class="double-chips">
@@ -10139,6 +10377,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">奥胡斯</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 78.0%">★★★★★</span></div>
           <span class="double-text">客胜+主胜</span>
           
           <div class="double-chips">
@@ -10190,6 +10429,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">拉科鲁尼亚</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 71.9%">★★★☆☆</span></div>
           <span class="double-text">客胜+平局</span>
           
           <div class="double-chips">
@@ -10241,6 +10481,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">圣塔克拉拉</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 72.1%">★★★☆☆</span></div>
           <span class="double-text">平局+客胜</span>
           
           <div class="double-chips">
@@ -10292,6 +10533,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">欧本</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 69.1%">★★★☆☆</span></div>
           <span class="double-text">平局+客胜</span>
           
           <div class="double-chips">
@@ -10343,6 +10585,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">CS克拉约瓦大学</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 71.8%">★★★☆☆</span></div>
           <span class="double-text">客胜+平局</span>
           <div class="trap-badge">&#9888; 凯利陷阱·降信心</div>
           <div class="double-chips">
@@ -10394,6 +10637,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">莱瓦贾科斯</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge second">次选</span><span class="stars" title="把握度 76.6%">★★★★☆</span></div>
           <span class="double-text">客胜+主胜</span>
           
           <div class="double-chips">
@@ -10445,6 +10689,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">阿瑞斯</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 78.0%">★★★★★</span></div>
           <span class="double-text">客胜+主胜</span>
           
           <div class="double-chips">
@@ -10496,6 +10741,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">尤文图斯</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 72.0%">★★★☆☆</span></div>
           <span class="double-text">主胜+客胜</span>
           
           <div class="double-chips">
@@ -10547,6 +10793,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">莱加内斯</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge caution">慎重</span><span class="stars" title="把握度 72.0%">★★★☆☆</span></div>
           <span class="double-text">平局+客胜</span>
           
           <div class="double-chips">
@@ -10598,6 +10845,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="away">奥斯汀FC</span>
         </td>
         <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge first">首选</span><span class="stars" title="把握度 78.0%">★★★★★</span></div>
           <span class="double-text">客胜+平局</span>
           
           <div class="double-chips">
