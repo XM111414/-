@@ -933,6 +933,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
 .col-7m .m7-jq { color: var(--muted); font-size: 0.62rem; max-width: 122px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-bottom: 2px; cursor: help; }
 .col-7m .m7-link { color: #3b82f6; font-size: 0.62rem; text-decoration: none; }
 .col-7m .m7-link:hover { text-decoration: underline; }
+.col-7m .m7-jqc { font-weight: 700; color: #ef4444; background: rgba(239,68,68,.12); font-size: 0.62rem; padding: 2px 6px; border-radius: 8px; display: inline-block; margin-bottom: 3px; cursor: help; }
 /* Statarea预测列（www.statarea.com第三方统计模型参考） */
 .col-sta { min-width: 100px; max-width: 124px; font-size: 0.68rem; }
 .col-sta .sta-rec { font-weight: 700; font-size: 0.7rem; padding: 2px 6px; border-radius: 8px; display: inline-block; margin-bottom: 3px; }
@@ -2001,7 +2002,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <span class="lg-item"><b>双选方案</b>＝模型推荐两项·含各自概率</span>
         <span class="lg-item"><b>SP</b>＝北单赔率 胜/平/负（蓝色为双选选中项）</span>
         <span class="lg-item"><b>同赔</b>＝威廉希尔历史同赔统计·历史场次（非模型概率）</span>
-        <span class="lg-item"><b>7M</b>＝7M体育媒体推介方向+軍情伤停·第三方参考（✓与双选一致 / ⚠不一致）</span>
+        <span class="lg-item"><b>7M</b>＝7M体育媒体推介方向+軍情伤停·第三方参考（✓与双选一致 / ⚠不一致 / ⚠军情与推介相左＝该队伤停≥2处仍被推介）</span>
         <span class="lg-item"><b>ST</b>＝Statarea统计模型TIP方向+三向/大小球概率·第三方参考（✓一致 ◐部分重叠 ⚠不一致）</span>
         <span class="lg-item"><b>YC</b>＝预测家(yucejia.com)中文军情·伤停/停赛/轮换/状态·悬浮看全文</span>
         <span class="lg-item"><b>大小球</b>＝盘口线·大/小概率</span>
@@ -2605,7 +2606,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-total">威初盘同赔·历史30场</div>
           <div class="so-trend so-neutral">分布均匀</div>
         </td>
-        <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-7m">
+          <div class="m7-rec m7-agree" title="7M推介客胜&#10;奥摩尼亚上仗欧霸附排出“4-4-2”阵式，虽然去季首席射手赖恩马伊已离队，但球队签入的新兵路易斯迪安尼该仗发">&#10003; 7M荐客胜</div><div class="m7-jq" title="奥摩尼亚上仗欧霸附排出“4-4-2”阵式，虽然去季首席射手赖恩马伊已离队，但球队签入的新兵路易斯迪安尼该仗发">奥摩尼亚上仗欧霸附排出“4-4-2”阵式，虽然去季首席射手赖恩马伊已离队，但球队签入的新兵路易斯迪安尼该仗发</div><a href="https://news.7m.com.cn/news/20260916/739405.shtml" target="_blank" class="m7-link">原文&#8599;</a>
+        </td>
         <td class="col-sta">
           <div class="sta-rec sta-agree" title="Statarea TIP: 客胜 | 1X2: 21/28/51 | 大球概率: 1.5球68% 2.5球43% 3.5球27% | BTS 54% | 社区票 9/2 | INTERNATIONAL - EUROPA LEAGUE">&#10003; 客胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">21/28/51</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率43%">2.5球 57%小</div>
         </td>
@@ -2674,7 +2677,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-total">威初盘同赔·历史19场</div>
           <div class="so-trend so-neutral">分布均匀</div>
         </td>
-        <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-7m">
+          <div class="m7-rec m7-diff" title="7M推介平局&#10;艾拉华特阿美尼亚上仗欧霸附加赛排出“4-2-3-1”阵式，新兵辛度利马担任正箭头；此子亦成为球队晋级的功臣，在">&#9888; 7M荐平局</div><div class="m7-jq" title="艾拉华特阿美尼亚上仗欧霸附加赛排出“4-2-3-1”阵式，新兵辛度利马担任正箭头；此子亦成为球队晋级的功臣，在">艾拉华特阿美尼亚上仗欧霸附加赛排出“4-2-3-1”阵式，新兵辛度利马担任正箭头；此子亦成为球队晋级的功臣，在</div><a href="https://news.7m.com.cn/news/20260916/739404.shtml" target="_blank" class="m7-link">原文&#8599;</a>
+        </td>
         <td class="col-sta"><span class="so-none">—</span></td>
         <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
@@ -2733,7 +2738,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-total">威初盘同赔·历史29场</div>
           <div class="so-trend so-agree">✓ 同赔支持主胜</div>
         </td>
-        <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-7m">
+          <div class="m7-rec m7-agree" title="7M推介主胜&#10;马德里体育会上仗联赛转踢“3-4-2-1”阵式，新兵中坚基斯甸罗美路首度担正，表现突出稳健，尽显级数。左翼卫">&#10003; 7M荐主胜</div><div class="m7-jq" title="马德里体育会上仗联赛转踢“3-4-2-1”阵式，新兵中坚基斯甸罗美路首度担正，表现突出稳健，尽显级数。左翼卫">马德里体育会上仗联赛转踢“3-4-2-1”阵式，新兵中坚基斯甸罗美路首度担正，表现突出稳健，尽显级数。左翼卫</div><a href="https://news.7m.com.cn/news/20260916/739417.shtml" target="_blank" class="m7-link">原文&#8599;</a>
+        </td>
         <td class="col-sta">
           <div class="sta-rec sta-agree" title="Statarea TIP: 主胜 | 1X2: 59/24/17 | 大球概率: 1.5球87% 2.5球62% 3.5球36% | BTS 52% | 社区票 12/3 | SPAIN - LALIGA">&#10003; 主胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">59/24/17</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率62%">2.5球 62%大</div>
         </td>
@@ -2804,7 +2811,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-total">威初盘同赔·历史30场</div>
           <div class="so-trend so-conflict">⚠ 同赔倾向主胜</div>
         </td>
-        <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-7m">
+          <div class="m7-rec m7-agree" title="7M推介平局&#10;拉科鲁尼亚上仗联赛转踢“4-1-3-2”阵式，新兵借将防中马克卡沙度首度担正，展现实力，在中场线控制节奏，整体">&#10003; 7M荐平局</div><div class="m7-jq" title="拉科鲁尼亚上仗联赛转踢“4-1-3-2”阵式，新兵借将防中马克卡沙度首度担正，展现实力，在中场线控制节奏，整体">拉科鲁尼亚上仗联赛转踢“4-1-3-2”阵式，新兵借将防中马克卡沙度首度担正，展现实力，在中场线控制节奏，整体</div><a href="https://news.7m.com.cn/news/20260916/739416.shtml" target="_blank" class="m7-link">原文&#8599;</a>
+        </td>
         <td class="col-sta">
           <div class="sta-rec sta-diff" title="Statarea TIP: 主胜 | 1X2: 45/28/27 | 大球概率: 1.5球72% 2.5球49% 3.5球26% | BTS 58% | 社区票 9/3 | SPAIN - LALIGA">&#9888; 主胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">45/28/27</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率49%">2.5球 51%小</div>
         </td>
@@ -2936,7 +2945,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-total">威初盘同赔·历史30场</div>
           <div class="so-trend so-neutral">分布均匀</div>
         </td>
-        <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-7m">
+          <div class="m7-rec m7-agree" title="7M推介主胜&#10;卢加诺上仗瑞士超续派蒙卡达伙拍史迪芬挂帅踢双箭头，虽然他们表现麻麻，再次食白果，但中场杜斯山度士续有好表现先">&#10003; 7M荐主胜</div><div class="m7-jq" title="卢加诺上仗瑞士超续派蒙卡达伙拍史迪芬挂帅踢双箭头，虽然他们表现麻麻，再次食白果，但中场杜斯山度士续有好表现先">卢加诺上仗瑞士超续派蒙卡达伙拍史迪芬挂帅踢双箭头，虽然他们表现麻麻，再次食白果，但中场杜斯山度士续有好表现先</div><a href="https://news.7m.com.cn/news/20260916/739421.shtml" target="_blank" class="m7-link">原文&#8599;</a>
+        </td>
         <td class="col-sta">
           <div class="sta-rec sta-agree" title="Statarea TIP: 主胜 | 1X2: 52/23/25 | 大球概率: 1.5球78% 2.5球56% 3.5球39% | BTS 57% | 社区票 1/0 | SWITZERLAND - SUPER LEAGUE">&#10003; 主胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">52/23/25</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率56%">2.5球 56%大</div>
         </td>
@@ -3178,7 +3189,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-total">威初盘同赔·历史30场</div>
           <div class="so-trend so-agree">✓ 同赔支持主胜</div>
         </td>
-        <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-7m">
+          <div class="m7-rec m7-agree" title="7M推介主胜&#10;爱华顿上圈英联杯排“4-2-3-1”强阵出击，泰亚路巴利挂帅，当时未离队的伊尼文尼戴耶，跟迪比宁及达斯贝利贺">&#10003; 7M荐主胜</div><div class="m7-jq" title="爱华顿上圈英联杯排“4-2-3-1”强阵出击，泰亚路巴利挂帅，当时未离队的伊尼文尼戴耶，跟迪比宁及达斯贝利贺">爱华顿上圈英联杯排“4-2-3-1”强阵出击，泰亚路巴利挂帅，当时未离队的伊尼文尼戴耶，跟迪比宁及达斯贝利贺</div><a href="https://news.7m.com.cn/news/20260916/739413.shtml" target="_blank" class="m7-link">原文&#8599;</a>
+        </td>
         <td class="col-sta">
           <div class="sta-rec sta-agree" title="Statarea TIP: 主胜 | 1X2: 55/26/19 | 大球概率: 1.5球84% 2.5球55% 3.5球35% | BTS 53% | 社区票 5/2 | ENGLAND - EFL CUP">&#10003; 主胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">55/26/19</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率55%">2.5球 55%大</div>
         </td>
@@ -3300,7 +3313,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-total">威初盘同赔·历史30场</div>
           <div class="so-trend so-agree">✓ 同赔支持主胜</div>
         </td>
-        <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-7m">
+          <div class="m7-rec m7-agree" title="7M推介主胜&#10;利华古逊今季主要以“4-2-3-1”阵式出战，球队季前有新帅卡利斯马天尼斯上任；虽然放走了过去几季表现出色的">&#10003; 7M荐主胜</div><div class="m7-jq" title="利华古逊今季主要以“4-2-3-1”阵式出战，球队季前有新帅卡利斯马天尼斯上任；虽然放走了过去几季表现出色的">利华古逊今季主要以“4-2-3-1”阵式出战，球队季前有新帅卡利斯马天尼斯上任；虽然放走了过去几季表现出色的</div><a href="https://news.7m.com.cn/news/20260916/739407.shtml" target="_blank" class="m7-link">原文&#8599;</a>
+        </td>
         <td class="col-sta">
           <div class="sta-rec sta-agree" title="Statarea TIP: 主胜 | 1X2: 80/13/7 | 大球概率: 1.5球95% 2.5球81% 3.5球56% | BTS 55% | 社区票 7/0 | INTERNATIONAL - EUROPA LEAGUE">&#10003; 主胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">80/13/7</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率81%">2.5球 81%大</div>
         </td>
@@ -3372,7 +3387,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-neutral">分布均匀</div>
         </td>
         <td class="col-7m">
-          <div class="m7-none" title="欧罗巴前瞻： AC米兰 VS 本菲卡">前瞻2篇</div><a href="https://news.7m.com.cn/news/20260916/739371.shtml" target="_blank" class="m7-link">原文&#8599;</a>
+          <div class="m7-rec m7-diff" title="7M推介平局&#10;AC米兰今季主要以“3-4-2-1”阵式出战，球队季前换上新帅艾摩廉执掌，大手笔引入干卡路拉莫斯及迪亚高莫连拿">&#9888; 7M荐平局</div><div class="m7-jq" title="AC米兰今季主要以“3-4-2-1”阵式出战，球队季前换上新帅艾摩廉执掌，大手笔引入干卡路拉莫斯及迪亚高莫连拿">AC米兰今季主要以“3-4-2-1”阵式出战，球队季前换上新帅艾摩廉执掌，大手笔引入干卡路拉莫斯及迪亚高莫连拿</div><a href="https://news.7m.com.cn/news/20260916/739409.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
         <td class="col-sta">
           <div class="sta-rec sta-agree" title="Statarea TIP: 主胜+客胜 | 1X2: 41/29/30 | 大球概率: 1.5球85% 2.5球61% 3.5球40% | BTS 62% | 社区票 6/7 | INTERNATIONAL - EUROPA LEAGUE">&#10003; 主胜+客胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">41/29/30</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率61%">2.5球 61%大</div>
@@ -3435,7 +3450,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-odds"><span class="odd highlight"><i>胜</i>2.95</span> <span class="odd "><i>平</i>26.29</span> <span class="odd highlight"><i>负</i>1.6</span> </td>
         <td class="col-so"><span class="so-none">—</span></td>
-        <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-7m">
+          <div class="m7-rec m7-agree" title="7M推介主胜&#10;奥林比亚高斯今季主要以“4-2-3-1”阵式出战，球队去季的两位主力、门将迪祖基斯及中场莫沙基迪斯同时转投侯">&#10003; 7M荐主胜</div><div class="m7-jq" title="奥林比亚高斯今季主要以“4-2-3-1”阵式出战，球队去季的两位主力、门将迪祖基斯及中场莫沙基迪斯同时转投侯">奥林比亚高斯今季主要以“4-2-3-1”阵式出战，球队去季的两位主力、门将迪祖基斯及中场莫沙基迪斯同时转投侯</div><a href="https://news.7m.com.cn/news/20260916/739408.shtml" target="_blank" class="m7-link">原文&#8599;</a>
+        </td>
         <td class="col-sta">
           <div class="sta-rec sta-agree" title="Statarea TIP: 主胜 | 1X2: 55/26/19 | 大球概率: 1.5球82% 2.5球55% 3.5球33% | BTS 52% | 社区票 11/2 | INTERNATIONAL - EUROPA LEAGUE">&#10003; 主胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">55/26/19</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率55%">2.5球 55%大</div>
         </td>
@@ -3496,7 +3513,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-total">威初盘同赔·历史30场</div>
           <div class="so-trend so-agree">✓ 同赔支持客胜</div>
         </td>
-        <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-7m">
+          <div class="m7-rec m7-agree" title="7M推介主胜&#10;安德列治上仗欧霸附排出“4-2-3-1”阵式，小将米哈路施维高域担任前锋，丹奴施坚后上支援，二人分别各建一功">&#10003; 7M荐主胜</div><div class="m7-jq" title="安德列治上仗欧霸附排出“4-2-3-1”阵式，小将米哈路施维高域担任前锋，丹奴施坚后上支援，二人分别各建一功">安德列治上仗欧霸附排出“4-2-3-1”阵式，小将米哈路施维高域担任前锋，丹奴施坚后上支援，二人分别各建一功</div><a href="https://news.7m.com.cn/news/20260916/739406.shtml" target="_blank" class="m7-link">原文&#8599;</a>
+        </td>
         <td class="col-sta">
           <div class="sta-rec sta-part" title="Statarea TIP: 平局+客胜 | 1X2: 31/34/35 | 大球概率: 1.5球83% 2.5球60% 3.5球36% | BTS 57% | 社区票 11/2 | INTERNATIONAL - EUROPA LEAGUE">&#9678; 平局+客胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">31/34/35</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率60%">2.5球 60%大</div>
         </td>
@@ -3568,7 +3587,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-agree">✓ 同赔支持客胜</div>
         </td>
         <td class="col-7m">
-          <div class="m7-none" title="雷恩火力强“格”杀勿论">前瞻1篇</div><a href="https://news.7m.com.cn/news/20260916/739352.shtml" target="_blank" class="m7-link">原文&#8599;</a>
+          <div class="m7-rec m7-agree" title="7M推介客胜&#10;格拉茨今季主要以“4-4-2”阵式出战，球队去季首席射手奥达基迪舒维利仍在阵中。球队为加强攻力，季前特意借用">&#10003; 7M荐客胜</div><div class="m7-jq" title="格拉茨今季主要以“4-4-2”阵式出战，球队去季首席射手奥达基迪舒维利仍在阵中。球队为加强攻力，季前特意借用">格拉茨今季主要以“4-4-2”阵式出战，球队去季首席射手奥达基迪舒维利仍在阵中。球队为加强攻力，季前特意借用</div><a href="https://news.7m.com.cn/news/20260916/739412.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
         <td class="col-sta">
           <div class="sta-rec sta-agree" title="Statarea TIP: 客胜 | 1X2: 23/21/56 | 大球概率: 1.5球86% 2.5球71% 3.5球47% | BTS 62% | 社区票 11/1 | INTERNATIONAL - EUROPA LEAGUE">&#10003; 客胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">23/21/56</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率71%">2.5球 71%大</div>
@@ -3639,7 +3658,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-agree">✓ 同赔支持主胜</div>
         </td>
         <td class="col-7m">
-          <div class="m7-none" title="艾克马亚硬闯新特兰">前瞻1篇</div><a href="https://news.7m.com.cn/news/20260916/739353.shtml" target="_blank" class="m7-link">原文&#8599;</a>
+          <div class="m7-rec m7-diff" title="7M推介平局&#10;新特兰今季主要以“4-2-3-1”阵式出战，球队季前大手笔签入翼锋马历克科芬拿，另外亦罗致左闸美迪亚利及中坚奇云丹">&#9888; 7M荐平局</div><div class="m7-jq" title="新特兰今季主要以“4-2-3-1”阵式出战，球队季前大手笔签入翼锋马历克科芬拿，另外亦罗致左闸美迪亚利及中坚奇云丹">新特兰今季主要以“4-2-3-1”阵式出战，球队季前大手笔签入翼锋马历克科芬拿，另外亦罗致左闸美迪亚利及中坚奇云丹</div><a href="https://news.7m.com.cn/news/20260916/739410.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
         <td class="col-sta">
           <div class="sta-rec sta-agree" title="Statarea TIP: 主胜 | 1X2: 55/23/22 | 大球概率: 1.5球83% 2.5球59% 3.5球33% | BTS 43% | 社区票 8/3 | INTERNATIONAL - EUROPA LEAGUE">&#10003; 主胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">55/23/22</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率59%">2.5球 59%大</div>
@@ -3709,7 +3728,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-total">威初盘同赔·历史30场</div>
           <div class="so-trend so-agree">✓ 同赔支持客胜</div>
         </td>
-        <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-7m">
+          <div class="m7-rec m7-diff" title="7M推介平局&#10;高云地利上仗英联杯排“4-2-3-1”阵式，新兵艾禾尼尔挂帅；坂元达裕、古斯达禾咸马及积鲁当尼，后上支援攻坚。">&#9888; 7M荐平局</div><div class="m7-jq" title="高云地利上仗英联杯排“4-2-3-1”阵式，新兵艾禾尼尔挂帅；坂元达裕、古斯达禾咸马及积鲁当尼，后上支援攻坚。">高云地利上仗英联杯排“4-2-3-1”阵式，新兵艾禾尼尔挂帅；坂元达裕、古斯达禾咸马及积鲁当尼，后上支援攻坚。</div><a href="https://news.7m.com.cn/news/20260916/739414.shtml" target="_blank" class="m7-link">原文&#8599;</a>
+        </td>
         <td class="col-sta">
           <div class="sta-rec sta-agree" title="Statarea TIP: 客胜 | 1X2: 40/22/38 | 大球概率: 1.5球90% 2.5球73% 3.5球52% | BTS 63% | 社区票 3/0 | ENGLAND - EFL CUP">&#10003; 客胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">40/22/38</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率73%">2.5球 73%大</div>
         </td>
@@ -3781,7 +3802,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-neutral">分布均匀</div>
         </td>
         <td class="col-7m">
-          <div class="m7-none" title="巴塞取胜之路平“坦”">前瞻1篇</div><a href="https://news.7m.com.cn/news/20260916/739354.shtml" target="_blank" class="m7-link">原文&#8599;</a>
+          <div class="m7-rec m7-agree" title="7M推介主胜&#10;巴塞隆拿上仗联赛以原班人马的“4-3-3”阵式出战，队长前锋拉芬夏比洛尼连续4场联赛入波走势断缆，但同场联赛">&#10003; 7M荐主胜</div><div class="m7-jq" title="巴塞隆拿上仗联赛以原班人马的“4-3-3”阵式出战，队长前锋拉芬夏比洛尼连续4场联赛入波走势断缆，但同场联赛">巴塞隆拿上仗联赛以原班人马的“4-3-3”阵式出战，队长前锋拉芬夏比洛尼连续4场联赛入波走势断缆，但同场联赛</div><a href="https://news.7m.com.cn/news/20260916/739418.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
         <td class="col-sta">
           <div class="sta-rec sta-agree" title="Statarea TIP: 主胜 | 1X2: 78/14/8 | 大球概率: 1.5球95% 2.5球82% 3.5球61% | BTS 55% | 社区票 10/1 | SPAIN - LALIGA">&#10003; 主胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">78/14/8</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率82%">2.5球 82%大</div>
@@ -3856,7 +3877,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-neutral">分布均匀</div>
         </td>
         <td class="col-7m">
-          <div class="m7-none" title="毕尔包作客剑指胜“利”">前瞻1篇</div><a href="https://news.7m.com.cn/news/20260916/739355.shtml" target="_blank" class="m7-link">原文&#8599;</a>
+          <div class="m7-rec m7-diff" title="7M推介平局&#10;利云特上仗联赛转踢“4-4-2”阵式，改以丹尼列基拿及彼得拉高夫出任双箭头，可惜效果一般。前锋艾云罗美路同场改">&#9888; 7M荐平局</div><div class="m7-jq" title="利云特上仗联赛转踢“4-4-2”阵式，改以丹尼列基拿及彼得拉高夫出任双箭头，可惜效果一般。前锋艾云罗美路同场改">利云特上仗联赛转踢“4-4-2”阵式，改以丹尼列基拿及彼得拉高夫出任双箭头，可惜效果一般。前锋艾云罗美路同场改</div><a href="https://news.7m.com.cn/news/20260916/739419.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
         <td class="col-sta">
           <div class="sta-rec sta-agree" title="Statarea TIP: 客胜 | 1X2: 35/25/40 | 大球概率: 1.5球87% 2.5球60% 3.5球30% | BTS 53% | 社区票 4/6 | SPAIN - LALIGA">&#10003; 客胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">35/25/40</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率60%">2.5球 60%大</div>
@@ -3929,7 +3950,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-neutral">分布均匀</div>
         </td>
         <td class="col-7m">
-          <div class="m7-none" title="彭美拉斯“加”官进爵">前瞻1篇</div><a href="https://news.7m.com.cn/news/20260916/739356.shtml" target="_blank" class="m7-link">原文&#8599;</a>
+          <div class="m7-rec m7-agree" title="7M推介主胜&#10;利加大学上仗自由杯排出“3-4-1-2”阵式，米高艾斯查达及高路素艾文组成双箭头。球队客场作战踢得极为被动，">&#10003; 7M荐主胜</div><div class="m7-jq" title="利加大学上仗自由杯排出“3-4-1-2”阵式，米高艾斯查达及高路素艾文组成双箭头。球队客场作战踢得极为被动，">利加大学上仗自由杯排出“3-4-1-2”阵式，米高艾斯查达及高路素艾文组成双箭头。球队客场作战踢得极为被动，</div><a href="https://news.7m.com.cn/news/20260916/739423.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
         <td class="col-sta">
           <div class="sta-rec sta-part" title="Statarea TIP: 平局+客胜 | 1X2: 32/36/32 | 大球概率: 1.5球65% 2.5球41% 3.5球26% | BTS 38% | 社区票 0/3 | INTERNATIONAL - COPA LIBERTADORES KNOCKOUT STAGE">&#9678; 平局+客胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">32/36/32</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率41%">2.5球 59%小</div>
@@ -4001,7 +4022,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-total">威初盘同赔·历史30场</div>
           <div class="so-trend so-neutral">分布均匀</div>
         </td>
-        <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-7m">
+          <div class="m7-rec m7-agree" title="7M推介主胜&#10;明尼路上仗南球杯改派卡比沙斯踢正中锋，配合翼锋贝拿特安尼斯奥及阿伦法兰高攻坚，但他们表现令人失望，一同食白果">&#10003; 7M荐主胜</div><div class="m7-jq" title="明尼路上仗南球杯改派卡比沙斯踢正中锋，配合翼锋贝拿特安尼斯奥及阿伦法兰高攻坚，但他们表现令人失望，一同食白果">明尼路上仗南球杯改派卡比沙斯踢正中锋，配合翼锋贝拿特安尼斯奥及阿伦法兰高攻坚，但他们表现令人失望，一同食白果</div><a href="https://news.7m.com.cn/news/20260916/739422.shtml" target="_blank" class="m7-link">原文&#8599;</a>
+        </td>
         <td class="col-sta"><span class="so-none">—</span></td>
         <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
@@ -4249,7 +4272,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-total">威初盘同赔·历史6场</div>
           <div class="so-trend so-neutral">分布均匀</div>
         </td>
-        <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-7m">
+          <div class="m7-none" title="解放者杯分析：科林蒂安 VS 拉普拉塔大学生">前瞻1篇</div><a href="https://news.7m.com.cn/news/20260916/739454.shtml" target="_blank" class="m7-link">原文&#8599;</a>
+        </td>
         <td class="col-sta">
           <div class="sta-rec sta-agree" title="Statarea TIP: 主胜 | 1X2: 56/25/19 | 大球概率: 1.5球63% 2.5球32% 3.5球14% | BTS 31% | 社区票 0/0 | INTERNATIONAL - COPA LIBERTADORES KNOCKOUT STAGE">&#10003; 主胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">56/25/19</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率32%">2.5球 68%小</div>
         </td>
@@ -4665,7 +4690,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-total">威初盘同赔·历史30场</div>
           <div class="so-trend so-neutral">分布均匀</div>
         </td>
-        <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-7m">
+          <div class="m7-rec m7-agree" title="7M推介客胜&#10;奥摩尼亚上仗欧霸附排出“4-4-2”阵式，虽然去季首席射手赖恩马伊已离队，但球队签入的新兵路易斯迪安尼该仗发">&#10003; 7M荐客胜</div><div class="m7-jq" title="奥摩尼亚上仗欧霸附排出“4-4-2”阵式，虽然去季首席射手赖恩马伊已离队，但球队签入的新兵路易斯迪安尼该仗发">奥摩尼亚上仗欧霸附排出“4-4-2”阵式，虽然去季首席射手赖恩马伊已离队，但球队签入的新兵路易斯迪安尼该仗发</div><a href="https://news.7m.com.cn/news/20260916/739405.shtml" target="_blank" class="m7-link">原文&#8599;</a>
+        </td>
         <td class="col-sta">
           <div class="sta-rec sta-agree" title="Statarea TIP: 客胜 | 1X2: 21/28/51 | 大球概率: 1.5球68% 2.5球43% 3.5球27% | BTS 54% | 社区票 9/2 | INTERNATIONAL - EUROPA LEAGUE">&#10003; 客胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">21/28/51</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率43%">2.5球 57%小</div>
         </td>
@@ -4730,7 +4757,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-total">威初盘同赔·历史19场</div>
           <div class="so-trend so-neutral">分布均匀</div>
         </td>
-        <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-7m">
+          <div class="m7-rec m7-diff" title="7M推介平局&#10;艾拉华特阿美尼亚上仗欧霸附加赛排出“4-2-3-1”阵式，新兵辛度利马担任正箭头；此子亦成为球队晋级的功臣，在">&#9888; 7M荐平局</div><div class="m7-jq" title="艾拉华特阿美尼亚上仗欧霸附加赛排出“4-2-3-1”阵式，新兵辛度利马担任正箭头；此子亦成为球队晋级的功臣，在">艾拉华特阿美尼亚上仗欧霸附加赛排出“4-2-3-1”阵式，新兵辛度利马担任正箭头；此子亦成为球队晋级的功臣，在</div><a href="https://news.7m.com.cn/news/20260916/739404.shtml" target="_blank" class="m7-link">原文&#8599;</a>
+        </td>
         <td class="col-sta"><span class="so-none">—</span></td>
         <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
@@ -4954,7 +4983,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-total">威初盘同赔·历史30场</div>
           <div class="so-trend so-agree">✓ 同赔支持主胜</div>
         </td>
-        <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-7m">
+          <div class="m7-rec m7-agree" title="7M推介主胜&#10;爱华顿上圈英联杯排“4-2-3-1”强阵出击，泰亚路巴利挂帅，当时未离队的伊尼文尼戴耶，跟迪比宁及达斯贝利贺">&#10003; 7M荐主胜</div><div class="m7-jq" title="爱华顿上圈英联杯排“4-2-3-1”强阵出击，泰亚路巴利挂帅，当时未离队的伊尼文尼戴耶，跟迪比宁及达斯贝利贺">爱华顿上圈英联杯排“4-2-3-1”强阵出击，泰亚路巴利挂帅，当时未离队的伊尼文尼戴耶，跟迪比宁及达斯贝利贺</div><a href="https://news.7m.com.cn/news/20260916/739413.shtml" target="_blank" class="m7-link">原文&#8599;</a>
+        </td>
         <td class="col-sta">
           <div class="sta-rec sta-agree" title="Statarea TIP: 主胜 | 1X2: 55/26/19 | 大球概率: 1.5球84% 2.5球55% 3.5球35% | BTS 53% | 社区票 5/2 | ENGLAND - EFL CUP">&#10003; 主胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">55/26/19</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率55%">2.5球 55%大</div>
         </td>
@@ -5069,7 +5100,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-neutral">分布均匀</div>
         </td>
         <td class="col-7m">
-          <div class="m7-none" title="欧罗巴前瞻： AC米兰 VS 本菲卡">前瞻2篇</div><a href="https://news.7m.com.cn/news/20260916/739371.shtml" target="_blank" class="m7-link">原文&#8599;</a>
+          <div class="m7-rec m7-diff" title="7M推介平局&#10;AC米兰今季主要以“3-4-2-1”阵式出战，球队季前换上新帅艾摩廉执掌，大手笔引入干卡路拉莫斯及迪亚高莫连拿">&#9888; 7M荐平局</div><div class="m7-jq" title="AC米兰今季主要以“3-4-2-1”阵式出战，球队季前换上新帅艾摩廉执掌，大手笔引入干卡路拉莫斯及迪亚高莫连拿">AC米兰今季主要以“3-4-2-1”阵式出战，球队季前换上新帅艾摩廉执掌，大手笔引入干卡路拉莫斯及迪亚高莫连拿</div><a href="https://news.7m.com.cn/news/20260916/739409.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
         <td class="col-sta">
           <div class="sta-rec sta-agree" title="Statarea TIP: 主胜+客胜 | 1X2: 41/29/30 | 大球概率: 1.5球85% 2.5球61% 3.5球40% | BTS 62% | 社区票 6/7 | INTERNATIONAL - EUROPA LEAGUE">&#10003; 主胜+客胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">41/29/30</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率61%">2.5球 61%大</div>
@@ -5128,7 +5159,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-odds"><span class="odd highlight"><i>胜</i>2.95</span> <span class="odd "><i>平</i>26.29</span> <span class="odd highlight"><i>负</i>1.6</span> </td>
         <td class="col-so"><span class="so-none">—</span></td>
-        <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-7m">
+          <div class="m7-rec m7-agree" title="7M推介主胜&#10;奥林比亚高斯今季主要以“4-2-3-1”阵式出战，球队去季的两位主力、门将迪祖基斯及中场莫沙基迪斯同时转投侯">&#10003; 7M荐主胜</div><div class="m7-jq" title="奥林比亚高斯今季主要以“4-2-3-1”阵式出战，球队去季的两位主力、门将迪祖基斯及中场莫沙基迪斯同时转投侯">奥林比亚高斯今季主要以“4-2-3-1”阵式出战，球队去季的两位主力、门将迪祖基斯及中场莫沙基迪斯同时转投侯</div><a href="https://news.7m.com.cn/news/20260916/739408.shtml" target="_blank" class="m7-link">原文&#8599;</a>
+        </td>
         <td class="col-sta">
           <div class="sta-rec sta-agree" title="Statarea TIP: 主胜 | 1X2: 55/26/19 | 大球概率: 1.5球82% 2.5球55% 3.5球33% | BTS 52% | 社区票 11/2 | INTERNATIONAL - EUROPA LEAGUE">&#10003; 主胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">55/26/19</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率55%">2.5球 55%大</div>
         </td>
@@ -5185,7 +5218,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-total">威初盘同赔·历史30场</div>
           <div class="so-trend so-agree">✓ 同赔支持客胜</div>
         </td>
-        <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-7m">
+          <div class="m7-rec m7-agree" title="7M推介主胜&#10;安德列治上仗欧霸附排出“4-2-3-1”阵式，小将米哈路施维高域担任前锋，丹奴施坚后上支援，二人分别各建一功">&#10003; 7M荐主胜</div><div class="m7-jq" title="安德列治上仗欧霸附排出“4-2-3-1”阵式，小将米哈路施维高域担任前锋，丹奴施坚后上支援，二人分别各建一功">安德列治上仗欧霸附排出“4-2-3-1”阵式，小将米哈路施维高域担任前锋，丹奴施坚后上支援，二人分别各建一功</div><a href="https://news.7m.com.cn/news/20260916/739406.shtml" target="_blank" class="m7-link">原文&#8599;</a>
+        </td>
         <td class="col-sta">
           <div class="sta-rec sta-part" title="Statarea TIP: 平局+客胜 | 1X2: 31/34/35 | 大球概率: 1.5球83% 2.5球60% 3.5球36% | BTS 57% | 社区票 11/2 | INTERNATIONAL - EUROPA LEAGUE">&#9678; 平局+客胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">31/34/35</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率60%">2.5球 60%大</div>
         </td>
@@ -5253,7 +5288,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-agree">✓ 同赔支持客胜</div>
         </td>
         <td class="col-7m">
-          <div class="m7-none" title="雷恩火力强“格”杀勿论">前瞻1篇</div><a href="https://news.7m.com.cn/news/20260916/739352.shtml" target="_blank" class="m7-link">原文&#8599;</a>
+          <div class="m7-rec m7-agree" title="7M推介客胜&#10;格拉茨今季主要以“4-4-2”阵式出战，球队去季首席射手奥达基迪舒维利仍在阵中。球队为加强攻力，季前特意借用">&#10003; 7M荐客胜</div><div class="m7-jq" title="格拉茨今季主要以“4-4-2”阵式出战，球队去季首席射手奥达基迪舒维利仍在阵中。球队为加强攻力，季前特意借用">格拉茨今季主要以“4-4-2”阵式出战，球队去季首席射手奥达基迪舒维利仍在阵中。球队为加强攻力，季前特意借用</div><a href="https://news.7m.com.cn/news/20260916/739412.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
         <td class="col-sta">
           <div class="sta-rec sta-agree" title="Statarea TIP: 客胜 | 1X2: 23/21/56 | 大球概率: 1.5球86% 2.5球71% 3.5球47% | BTS 62% | 社区票 11/1 | INTERNATIONAL - EUROPA LEAGUE">&#10003; 客胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">23/21/56</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率71%">2.5球 71%大</div>
@@ -5320,7 +5355,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-agree">✓ 同赔支持主胜</div>
         </td>
         <td class="col-7m">
-          <div class="m7-none" title="艾克马亚硬闯新特兰">前瞻1篇</div><a href="https://news.7m.com.cn/news/20260916/739353.shtml" target="_blank" class="m7-link">原文&#8599;</a>
+          <div class="m7-rec m7-diff" title="7M推介平局&#10;新特兰今季主要以“4-2-3-1”阵式出战，球队季前大手笔签入翼锋马历克科芬拿，另外亦罗致左闸美迪亚利及中坚奇云丹">&#9888; 7M荐平局</div><div class="m7-jq" title="新特兰今季主要以“4-2-3-1”阵式出战，球队季前大手笔签入翼锋马历克科芬拿，另外亦罗致左闸美迪亚利及中坚奇云丹">新特兰今季主要以“4-2-3-1”阵式出战，球队季前大手笔签入翼锋马历克科芬拿，另外亦罗致左闸美迪亚利及中坚奇云丹</div><a href="https://news.7m.com.cn/news/20260916/739410.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
         <td class="col-sta">
           <div class="sta-rec sta-agree" title="Statarea TIP: 主胜 | 1X2: 55/23/22 | 大球概率: 1.5球83% 2.5球59% 3.5球33% | BTS 43% | 社区票 8/3 | INTERNATIONAL - EUROPA LEAGUE">&#10003; 主胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">55/23/22</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率59%">2.5球 59%大</div>
@@ -5386,7 +5421,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-total">威初盘同赔·历史30场</div>
           <div class="so-trend so-agree">✓ 同赔支持客胜</div>
         </td>
-        <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-7m">
+          <div class="m7-rec m7-diff" title="7M推介平局&#10;高云地利上仗英联杯排“4-2-3-1”阵式，新兵艾禾尼尔挂帅；坂元达裕、古斯达禾咸马及积鲁当尼，后上支援攻坚。">&#9888; 7M荐平局</div><div class="m7-jq" title="高云地利上仗英联杯排“4-2-3-1”阵式，新兵艾禾尼尔挂帅；坂元达裕、古斯达禾咸马及积鲁当尼，后上支援攻坚。">高云地利上仗英联杯排“4-2-3-1”阵式，新兵艾禾尼尔挂帅；坂元达裕、古斯达禾咸马及积鲁当尼，后上支援攻坚。</div><a href="https://news.7m.com.cn/news/20260916/739414.shtml" target="_blank" class="m7-link">原文&#8599;</a>
+        </td>
         <td class="col-sta">
           <div class="sta-rec sta-agree" title="Statarea TIP: 客胜 | 1X2: 40/22/38 | 大球概率: 1.5球90% 2.5球73% 3.5球52% | BTS 63% | 社区票 3/0 | ENGLAND - EFL CUP">&#10003; 客胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">40/22/38</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率73%">2.5球 73%大</div>
         </td>
@@ -5454,7 +5491,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-neutral">分布均匀</div>
         </td>
         <td class="col-7m">
-          <div class="m7-none" title="彭美拉斯“加”官进爵">前瞻1篇</div><a href="https://news.7m.com.cn/news/20260916/739356.shtml" target="_blank" class="m7-link">原文&#8599;</a>
+          <div class="m7-rec m7-agree" title="7M推介主胜&#10;利加大学上仗自由杯排出“3-4-1-2”阵式，米高艾斯查达及高路素艾文组成双箭头。球队客场作战踢得极为被动，">&#10003; 7M荐主胜</div><div class="m7-jq" title="利加大学上仗自由杯排出“3-4-1-2”阵式，米高艾斯查达及高路素艾文组成双箭头。球队客场作战踢得极为被动，">利加大学上仗自由杯排出“3-4-1-2”阵式，米高艾斯查达及高路素艾文组成双箭头。球队客场作战踢得极为被动，</div><a href="https://news.7m.com.cn/news/20260916/739423.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
         <td class="col-sta">
           <div class="sta-rec sta-part" title="Statarea TIP: 平局+客胜 | 1X2: 32/36/32 | 大球概率: 1.5球65% 2.5球41% 3.5球26% | BTS 38% | 社区票 0/3 | INTERNATIONAL - COPA LIBERTADORES KNOCKOUT STAGE">&#9678; 平局+客胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">32/36/32</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率41%">2.5球 59%小</div>
