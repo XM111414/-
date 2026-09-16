@@ -933,6 +933,15 @@ tbody tr.match-miss:hover { background: #fee2e2; }
 .col-7m .m7-jq { color: var(--muted); font-size: 0.62rem; max-width: 122px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-bottom: 2px; cursor: help; }
 .col-7m .m7-link { color: #3b82f6; font-size: 0.62rem; text-decoration: none; }
 .col-7m .m7-link:hover { text-decoration: underline; }
+/* Statarea预测列（www.statarea.com第三方统计模型参考） */
+.col-sta { min-width: 100px; max-width: 124px; font-size: 0.68rem; }
+.col-sta .sta-rec { font-weight: 700; font-size: 0.7rem; padding: 2px 6px; border-radius: 8px; display: inline-block; margin-bottom: 3px; }
+.col-sta .sta-agree { color: #10b981; background: rgba(16,185,129,.12); }
+.col-sta .sta-diff { color: #f59e0b; background: rgba(245,158,11,.12); }
+.col-sta .sta-part { color: #3b82f6; background: rgba(59,130,246,.12); }
+.col-sta .sta-none { color: var(--muted); }
+.col-sta .sta-prob { color: var(--muted); font-size: 0.62rem; margin-bottom: 2px; cursor: help; }
+.col-sta .sta-ou { color: var(--muted); font-size: 0.62rem; cursor: help; }
 
 /* 大小球列 */
 .col-ou { min-width: 100px; }
@@ -1986,6 +1995,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <span class="lg-item"><b>SP</b>＝北单赔率 胜/平/负（蓝色为双选选中项）</span>
         <span class="lg-item"><b>同赔</b>＝威廉希尔历史同赔统计·历史场次（非模型概率）</span>
         <span class="lg-item"><b>7M</b>＝7M体育媒体推介方向+軍情伤停·第三方参考（✓与双选一致 / ⚠不一致）</span>
+        <span class="lg-item"><b>ST</b>＝Statarea统计模型TIP方向+三向/大小球概率·第三方参考（✓一致 ◐部分重叠 ⚠不一致）</span>
         <span class="lg-item"><b>大小球</b>＝盘口线·大/小概率</span>
       </div>
 
@@ -2066,6 +2076,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
                 <th>SP</th>
                 <th>同赔</th>
                 <th>7M</th>
+                <th>ST</th>
                 <th>大小球</th>
                 <th class="col-status">筛选</th>
               </tr>
@@ -2105,6 +2116,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-odds"><span class="odd "><i>胜</i>3.38</span> <span class="odd highlight"><i>平</i>3.43</span> <span class="odd highlight"><i>负</i>2.41</span> </td>
         <td class="col-so"><span class="so-none">—</span></td>
         <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-sta"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -2153,6 +2165,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-odds"><span class="odd highlight"><i>胜</i>2.78</span> <span class="odd "><i>平</i>3.82</span> <span class="odd highlight"><i>负</i>2.63</span> </td>
         <td class="col-so"><span class="so-none">—</span></td>
         <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-sta"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -2201,6 +2214,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-odds"><span class="odd highlight"><i>胜</i>2.23</span> <span class="odd "><i>平</i>4.23</span> <span class="odd highlight"><i>负</i>3.15</span> </td>
         <td class="col-so"><span class="so-none">—</span></td>
         <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-sta"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -2260,6 +2274,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-none" title="亚冠赛事前瞻：全北现代vs柏太阳神">前瞻1篇</div><a href="https://news.7m.com.cn/news/20260916/739361.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
+        <td class="col-sta"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -2308,6 +2323,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-odds"><span class="odd highlight"><i>胜</i>1.92</span> <span class="odd "><i>平</i>4.53</span> <span class="odd highlight"><i>负</i>3.85</span> </td>
         <td class="col-so"><span class="so-none">—</span></td>
         <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-sta"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-over">↑ 大球</div>
@@ -2365,6 +2381,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-neutral">分布均匀</div>
         </td>
         <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-sta"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-over">↑ 大球</div>
@@ -2422,6 +2439,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-neutral">分布均匀</div>
         </td>
         <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-sta">
+          <div class="sta-rec sta-agree" title="Statarea TIP: 客胜 | 1X2: 26/27/47 | 大球概率: 1.5球85% 2.5球62% 3.5球30% | BTS 47% | 社区票 1/0 | GREECE - SUPERBET GREEK CUP MAIN ROUND">&#10003; 客胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">26/27/47</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率62%">2.5球 62%大</div>
+        </td>
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-over">↑ 大球</div>
@@ -2479,6 +2499,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-neutral">分布均匀</div>
         </td>
         <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-sta">
+          <div class="sta-rec sta-agree" title="Statarea TIP: 客胜 | 1X2: 39/28/33 | 大球概率: 1.5球89% 2.5球58% 3.5球37% | BTS 57% | 社区票 0/0 | DENMARK - DBU POKALEN">&#10003; 客胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">39/28/33</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率58%">2.5球 58%大</div>
+        </td>
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -2536,6 +2559,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-neutral">分布均匀</div>
         </td>
         <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-sta">
+          <div class="sta-rec sta-agree" title="Statarea TIP: 客胜 | 1X2: 21/28/51 | 大球概率: 1.5球68% 2.5球43% 3.5球27% | BTS 54% | 社区票 9/2 | INTERNATIONAL - EUROPA LEAGUE">&#10003; 客胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">21/28/51</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率43%">2.5球 57%小</div>
+        </td>
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -2593,6 +2619,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-neutral">分布均匀</div>
         </td>
         <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-sta"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-over">↑ 大球</div>
@@ -2650,6 +2677,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-agree">✓ 同赔支持主胜</div>
         </td>
         <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-sta">
+          <div class="sta-rec sta-agree" title="Statarea TIP: 主胜 | 1X2: 59/24/17 | 大球概率: 1.5球87% 2.5球62% 3.5球36% | BTS 52% | 社区票 12/3 | SPAIN - LALIGA">&#10003; 主胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">59/24/17</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率62%">2.5球 62%大</div>
+        </td>
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-over">↑ 大球</div>
@@ -2707,6 +2737,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-conflict">⚠ 同赔倾向主胜</div>
         </td>
         <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-sta">
+          <div class="sta-rec sta-diff" title="Statarea TIP: 主胜 | 1X2: 45/28/27 | 大球概率: 1.5球72% 2.5球49% 3.5球26% | BTS 58% | 社区票 9/3 | SPAIN - LALIGA">&#9888; 主胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">45/28/27</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率49%">2.5球 51%小</div>
+        </td>
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -2764,6 +2797,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-neutral">分布均匀</div>
         </td>
         <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-sta">
+          <div class="sta-rec sta-part" title="Statarea TIP: 平局+客胜 | 1X2: 34/33/33 | 大球概率: 1.5球82% 2.5球63% 3.5球40% | BTS 58% | 社区票 1/2 | SWITZERLAND - SUPER LEAGUE">&#9678; 平局+客胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">34/33/33</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率63%">2.5球 63%大</div>
+        </td>
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-over">↑ 大球</div>
@@ -2821,6 +2857,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-neutral">分布均匀</div>
         </td>
         <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-sta">
+          <div class="sta-rec sta-agree" title="Statarea TIP: 主胜 | 1X2: 52/23/25 | 大球概率: 1.5球78% 2.5球56% 3.5球39% | BTS 57% | 社区票 1/0 | SWITZERLAND - SUPER LEAGUE">&#10003; 主胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">52/23/25</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率56%">2.5球 56%大</div>
+        </td>
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-over">↑ 大球</div>
@@ -2878,6 +2917,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-neutral">分布均匀</div>
         </td>
         <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-sta"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -2935,6 +2975,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-agree">✓ 同赔支持客胜</div>
         </td>
         <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-sta">
+          <div class="sta-rec sta-agree" title="Statarea TIP: 客胜 | 1X2: 33/26/41 | 大球概率: 1.5球87% 2.5球64% 3.5球33% | BTS 56% | 社区票 2/1 | GREECE - SUPERBET GREEK CUP MAIN ROUND">&#10003; 客胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">33/26/41</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率64%">2.5球 64%大</div>
+        </td>
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-over">↑ 大球</div>
@@ -2992,6 +3035,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-neutral">分布均匀</div>
         </td>
         <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-sta">
+          <div class="sta-rec sta-agree" title="Statarea TIP: 客胜 | 1X2: 35/26/39 | 大球概率: 1.5球80% 2.5球62% 3.5球37% | BTS 51% | 社区票 0/0 | DENMARK - DBU POKALEN">&#10003; 客胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">35/26/39</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率62%">2.5球 62%大</div>
+        </td>
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-over">↑ 大球</div>
@@ -3049,6 +3095,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-agree">✓ 同赔支持主胜</div>
         </td>
         <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-sta">
+          <div class="sta-rec sta-agree" title="Statarea TIP: 主胜 | 1X2: 55/26/19 | 大球概率: 1.5球84% 2.5球55% 3.5球35% | BTS 53% | 社区票 5/2 | ENGLAND - EFL CUP">&#10003; 主胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">55/26/19</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率55%">2.5球 55%大</div>
+        </td>
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-over">↑ 大球</div>
@@ -3106,6 +3155,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-neutral">分布均匀</div>
         </td>
         <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-sta">
+          <div class="sta-rec sta-agree" title="Statarea TIP: 客胜 | 1X2: 22/31/47 | 大球概率: 1.5球89% 2.5球62% 3.5球33% | BTS 52% | 社区票 3/0 | ENGLAND - EFL CUP">&#10003; 客胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">22/31/47</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率62%">2.5球 62%大</div>
+        </td>
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-over">↑ 大球</div>
@@ -3163,6 +3215,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-agree">✓ 同赔支持主胜</div>
         </td>
         <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-sta">
+          <div class="sta-rec sta-agree" title="Statarea TIP: 主胜 | 1X2: 80/13/7 | 大球概率: 1.5球95% 2.5球81% 3.5球56% | BTS 55% | 社区票 7/0 | INTERNATIONAL - EUROPA LEAGUE">&#10003; 主胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">80/13/7</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率81%">2.5球 81%大</div>
+        </td>
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-over">↑ 大球</div>
@@ -3222,6 +3277,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-none" title="欧罗巴前瞻： AC米兰 VS 本菲卡">前瞻2篇</div><a href="https://news.7m.com.cn/news/20260916/739371.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
+        <td class="col-sta">
+          <div class="sta-rec sta-agree" title="Statarea TIP: 主胜+客胜 | 1X2: 41/29/30 | 大球概率: 1.5球85% 2.5球61% 3.5球40% | BTS 62% | 社区票 6/7 | INTERNATIONAL - EUROPA LEAGUE">&#10003; 主胜+客胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">41/29/30</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率61%">2.5球 61%大</div>
+        </td>
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -3270,6 +3328,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-odds"><span class="odd highlight"><i>胜</i>2.95</span> <span class="odd "><i>平</i>26.29</span> <span class="odd highlight"><i>负</i>1.6</span> </td>
         <td class="col-so"><span class="so-none">—</span></td>
         <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-sta">
+          <div class="sta-rec sta-agree" title="Statarea TIP: 主胜 | 1X2: 55/26/19 | 大球概率: 1.5球82% 2.5球55% 3.5球33% | BTS 52% | 社区票 11/2 | INTERNATIONAL - EUROPA LEAGUE">&#10003; 主胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">55/26/19</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率55%">2.5球 55%大</div>
+        </td>
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-over">↑ 大球</div>
@@ -3327,6 +3388,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-agree">✓ 同赔支持客胜</div>
         </td>
         <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-sta">
+          <div class="sta-rec sta-part" title="Statarea TIP: 平局+客胜 | 1X2: 31/34/35 | 大球概率: 1.5球83% 2.5球60% 3.5球36% | BTS 57% | 社区票 11/2 | INTERNATIONAL - EUROPA LEAGUE">&#9678; 平局+客胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">31/34/35</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率60%">2.5球 60%大</div>
+        </td>
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -3385,6 +3449,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-7m">
           <div class="m7-none" title="雷恩火力强“格”杀勿论">前瞻1篇</div><a href="https://news.7m.com.cn/news/20260916/739352.shtml" target="_blank" class="m7-link">原文&#8599;</a>
+        </td>
+        <td class="col-sta">
+          <div class="sta-rec sta-agree" title="Statarea TIP: 客胜 | 1X2: 23/21/56 | 大球概率: 1.5球86% 2.5球71% 3.5球47% | BTS 62% | 社区票 11/1 | INTERNATIONAL - EUROPA LEAGUE">&#10003; 客胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">23/21/56</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率71%">2.5球 71%大</div>
         </td>
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
@@ -3445,6 +3512,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-none" title="艾克马亚硬闯新特兰">前瞻1篇</div><a href="https://news.7m.com.cn/news/20260916/739353.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
+        <td class="col-sta">
+          <div class="sta-rec sta-agree" title="Statarea TIP: 主胜 | 1X2: 55/23/22 | 大球概率: 1.5球83% 2.5球59% 3.5球33% | BTS 43% | 社区票 8/3 | INTERNATIONAL - EUROPA LEAGUE">&#10003; 主胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">55/23/22</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率59%">2.5球 59%大</div>
+        </td>
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-over">↑ 大球</div>
@@ -3502,6 +3572,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-agree">✓ 同赔支持客胜</div>
         </td>
         <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-sta">
+          <div class="sta-rec sta-agree" title="Statarea TIP: 客胜 | 1X2: 40/22/38 | 大球概率: 1.5球90% 2.5球73% 3.5球52% | BTS 63% | 社区票 3/0 | ENGLAND - EFL CUP">&#10003; 客胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">40/22/38</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率73%">2.5球 73%大</div>
+        </td>
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -3560,6 +3633,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-7m">
           <div class="m7-none" title="巴塞取胜之路平“坦”">前瞻1篇</div><a href="https://news.7m.com.cn/news/20260916/739354.shtml" target="_blank" class="m7-link">原文&#8599;</a>
+        </td>
+        <td class="col-sta">
+          <div class="sta-rec sta-agree" title="Statarea TIP: 主胜 | 1X2: 78/14/8 | 大球概率: 1.5球95% 2.5球82% 3.5球61% | BTS 55% | 社区票 10/1 | SPAIN - LALIGA">&#10003; 主胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">78/14/8</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率82%">2.5球 82%大</div>
         </td>
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
@@ -3620,6 +3696,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-none" title="毕尔包作客剑指胜“利”">前瞻1篇</div><a href="https://news.7m.com.cn/news/20260916/739355.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
+        <td class="col-sta">
+          <div class="sta-rec sta-agree" title="Statarea TIP: 客胜 | 1X2: 35/25/40 | 大球概率: 1.5球87% 2.5球60% 3.5球30% | BTS 53% | 社区票 4/6 | SPAIN - LALIGA">&#10003; 客胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">35/25/40</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率60%">2.5球 60%大</div>
+        </td>
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -3679,6 +3758,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-none" title="彭美拉斯“加”官进爵">前瞻1篇</div><a href="https://news.7m.com.cn/news/20260916/739356.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
+        <td class="col-sta">
+          <div class="sta-rec sta-part" title="Statarea TIP: 平局+客胜 | 1X2: 32/36/32 | 大球概率: 1.5球65% 2.5球41% 3.5球26% | BTS 38% | 社区票 0/3 | INTERNATIONAL - COPA LIBERTADORES KNOCKOUT STAGE">&#9678; 平局+客胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">32/36/32</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率41%">2.5球 59%小</div>
+        </td>
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-under">↓ 小球</div>
@@ -3736,6 +3818,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-neutral">分布均匀</div>
         </td>
         <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-sta"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -3793,6 +3876,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-neutral">分布均匀</div>
         </td>
         <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-sta"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -3850,6 +3934,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-agree">✓ 同赔支持主胜</div>
         </td>
         <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-sta"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -3907,6 +3992,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-neutral">分布均匀</div>
         </td>
         <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-sta">
+          <div class="sta-rec sta-agree" title="Statarea TIP: 主胜+客胜 | 1X2: 41/26/33 | 大球概率: 1.5球92% 2.5球71% 3.5球49% | BTS 72% | 社区票 0/0 | USA - US OPEN CUP">&#10003; 主胜+客胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">41/26/33</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率71%">2.5球 71%大</div>
+        </td>
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -3964,6 +4052,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-neutral">分布均匀</div>
         </td>
         <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-sta">
+          <div class="sta-rec sta-agree" title="Statarea TIP: 主胜 | 1X2: 56/25/19 | 大球概率: 1.5球63% 2.5球32% 3.5球14% | BTS 31% | 社区票 0/0 | INTERNATIONAL - COPA LIBERTADORES KNOCKOUT STAGE">&#10003; 主胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">56/25/19</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率32%">2.5球 68%小</div>
+        </td>
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-under">↓ 小球</div>
@@ -4021,6 +4112,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-neutral">分布均匀</div>
         </td>
         <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-sta">
+          <div class="sta-rec sta-part" title="Statarea TIP: 平局+客胜 | 1X2: 39/31/30 | 大球概率: 1.5球88% 2.5球55% 3.5球37% | BTS 58% | 社区票 0/0 | USA - US OPEN CUP">&#9678; 平局+客胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">39/31/30</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率55%">2.5球 55%大</div>
+        </td>
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -4099,6 +4193,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
                 <th>SP</th>
                 <th>同赔</th>
                 <th>7M</th>
+                <th>ST</th>
                 <th>大小球</th>
               </tr>
             </thead>
@@ -4137,6 +4232,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-odds"><span class="odd "><i>胜</i>3.38</span> <span class="odd highlight"><i>平</i>3.43</span> <span class="odd highlight"><i>负</i>2.41</span> </td>
         <td class="col-so"><span class="so-none">—</span></td>
         <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-sta"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -4181,6 +4277,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-odds"><span class="odd highlight"><i>胜</i>2.23</span> <span class="odd "><i>平</i>4.23</span> <span class="odd highlight"><i>负</i>3.15</span> </td>
         <td class="col-so"><span class="so-none">—</span></td>
         <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-sta"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -4234,6 +4331,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-neutral">分布均匀</div>
         </td>
         <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-sta"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-over">↑ 大球</div>
@@ -4287,6 +4385,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-neutral">分布均匀</div>
         </td>
         <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-sta">
+          <div class="sta-rec sta-agree" title="Statarea TIP: 客胜 | 1X2: 26/27/47 | 大球概率: 1.5球85% 2.5球62% 3.5球30% | BTS 47% | 社区票 1/0 | GREECE - SUPERBET GREEK CUP MAIN ROUND">&#10003; 客胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">26/27/47</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率62%">2.5球 62%大</div>
+        </td>
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-over">↑ 大球</div>
@@ -4340,6 +4441,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-neutral">分布均匀</div>
         </td>
         <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-sta">
+          <div class="sta-rec sta-agree" title="Statarea TIP: 客胜 | 1X2: 21/28/51 | 大球概率: 1.5球68% 2.5球43% 3.5球27% | BTS 54% | 社区票 9/2 | INTERNATIONAL - EUROPA LEAGUE">&#10003; 客胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">21/28/51</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率43%">2.5球 57%小</div>
+        </td>
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -4393,6 +4497,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-neutral">分布均匀</div>
         </td>
         <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-sta"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-over">↑ 大球</div>
@@ -4446,6 +4551,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-neutral">分布均匀</div>
         </td>
         <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-sta"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -4499,6 +4605,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-agree">✓ 同赔支持客胜</div>
         </td>
         <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-sta">
+          <div class="sta-rec sta-agree" title="Statarea TIP: 客胜 | 1X2: 33/26/41 | 大球概率: 1.5球87% 2.5球64% 3.5球33% | BTS 56% | 社区票 2/1 | GREECE - SUPERBET GREEK CUP MAIN ROUND">&#10003; 客胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">33/26/41</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率64%">2.5球 64%大</div>
+        </td>
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-over">↑ 大球</div>
@@ -4552,6 +4661,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-neutral">分布均匀</div>
         </td>
         <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-sta">
+          <div class="sta-rec sta-agree" title="Statarea TIP: 客胜 | 1X2: 35/26/39 | 大球概率: 1.5球80% 2.5球62% 3.5球37% | BTS 51% | 社区票 0/0 | DENMARK - DBU POKALEN">&#10003; 客胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">35/26/39</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率62%">2.5球 62%大</div>
+        </td>
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-over">↑ 大球</div>
@@ -4605,6 +4717,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-agree">✓ 同赔支持主胜</div>
         </td>
         <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-sta">
+          <div class="sta-rec sta-agree" title="Statarea TIP: 主胜 | 1X2: 55/26/19 | 大球概率: 1.5球84% 2.5球55% 3.5球35% | BTS 53% | 社区票 5/2 | ENGLAND - EFL CUP">&#10003; 主胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">55/26/19</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率55%">2.5球 55%大</div>
+        </td>
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-over">↑ 大球</div>
@@ -4658,6 +4773,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-neutral">分布均匀</div>
         </td>
         <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-sta">
+          <div class="sta-rec sta-agree" title="Statarea TIP: 客胜 | 1X2: 22/31/47 | 大球概率: 1.5球89% 2.5球62% 3.5球33% | BTS 52% | 社区票 3/0 | ENGLAND - EFL CUP">&#10003; 客胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">22/31/47</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率62%">2.5球 62%大</div>
+        </td>
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-over">↑ 大球</div>
@@ -4713,6 +4831,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-none" title="欧罗巴前瞻： AC米兰 VS 本菲卡">前瞻2篇</div><a href="https://news.7m.com.cn/news/20260916/739371.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
+        <td class="col-sta">
+          <div class="sta-rec sta-agree" title="Statarea TIP: 主胜+客胜 | 1X2: 41/29/30 | 大球概率: 1.5球85% 2.5球61% 3.5球40% | BTS 62% | 社区票 6/7 | INTERNATIONAL - EUROPA LEAGUE">&#10003; 主胜+客胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">41/29/30</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率61%">2.5球 61%大</div>
+        </td>
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -4757,6 +4878,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-odds"><span class="odd highlight"><i>胜</i>2.95</span> <span class="odd "><i>平</i>26.29</span> <span class="odd highlight"><i>负</i>1.6</span> </td>
         <td class="col-so"><span class="so-none">—</span></td>
         <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-sta">
+          <div class="sta-rec sta-agree" title="Statarea TIP: 主胜 | 1X2: 55/26/19 | 大球概率: 1.5球82% 2.5球55% 3.5球33% | BTS 52% | 社区票 11/2 | INTERNATIONAL - EUROPA LEAGUE">&#10003; 主胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">55/26/19</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率55%">2.5球 55%大</div>
+        </td>
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-over">↑ 大球</div>
@@ -4810,6 +4934,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-agree">✓ 同赔支持客胜</div>
         </td>
         <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-sta">
+          <div class="sta-rec sta-part" title="Statarea TIP: 平局+客胜 | 1X2: 31/34/35 | 大球概率: 1.5球83% 2.5球60% 3.5球36% | BTS 57% | 社区票 11/2 | INTERNATIONAL - EUROPA LEAGUE">&#9678; 平局+客胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">31/34/35</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率60%">2.5球 60%大</div>
+        </td>
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -4864,6 +4991,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-7m">
           <div class="m7-none" title="雷恩火力强“格”杀勿论">前瞻1篇</div><a href="https://news.7m.com.cn/news/20260916/739352.shtml" target="_blank" class="m7-link">原文&#8599;</a>
+        </td>
+        <td class="col-sta">
+          <div class="sta-rec sta-agree" title="Statarea TIP: 客胜 | 1X2: 23/21/56 | 大球概率: 1.5球86% 2.5球71% 3.5球47% | BTS 62% | 社区票 11/1 | INTERNATIONAL - EUROPA LEAGUE">&#10003; 客胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">23/21/56</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率71%">2.5球 71%大</div>
         </td>
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
@@ -4920,6 +5050,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-none" title="艾克马亚硬闯新特兰">前瞻1篇</div><a href="https://news.7m.com.cn/news/20260916/739353.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
+        <td class="col-sta">
+          <div class="sta-rec sta-agree" title="Statarea TIP: 主胜 | 1X2: 55/23/22 | 大球概率: 1.5球83% 2.5球59% 3.5球33% | BTS 43% | 社区票 8/3 | INTERNATIONAL - EUROPA LEAGUE">&#10003; 主胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">55/23/22</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率59%">2.5球 59%大</div>
+        </td>
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-over">↑ 大球</div>
@@ -4973,6 +5106,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-agree">✓ 同赔支持客胜</div>
         </td>
         <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-sta">
+          <div class="sta-rec sta-agree" title="Statarea TIP: 客胜 | 1X2: 40/22/38 | 大球概率: 1.5球90% 2.5球73% 3.5球52% | BTS 63% | 社区票 3/0 | ENGLAND - EFL CUP">&#10003; 客胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">40/22/38</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率73%">2.5球 73%大</div>
+        </td>
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -5028,6 +5164,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-none" title="彭美拉斯“加”官进爵">前瞻1篇</div><a href="https://news.7m.com.cn/news/20260916/739356.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
+        <td class="col-sta">
+          <div class="sta-rec sta-part" title="Statarea TIP: 平局+客胜 | 1X2: 32/36/32 | 大球概率: 1.5球65% 2.5球41% 3.5球26% | BTS 38% | 社区票 0/3 | INTERNATIONAL - COPA LIBERTADORES KNOCKOUT STAGE">&#9678; 平局+客胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">32/36/32</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率41%">2.5球 59%小</div>
+        </td>
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-under">↓ 小球</div>
@@ -5081,6 +5220,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-neutral">分布均匀</div>
         </td>
         <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-sta"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -5134,6 +5274,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-neutral">分布均匀</div>
         </td>
         <td class="col-7m"><span class="so-none">—</span></td>
+        <td class="col-sta">
+          <div class="sta-rec sta-part" title="Statarea TIP: 平局+客胜 | 1X2: 39/31/30 | 大球概率: 1.5球88% 2.5球55% 3.5球37% | BTS 58% | 社区票 0/0 | USA - US OPEN CUP">&#9678; 平局+客胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">39/31/30</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率55%">2.5球 55%大</div>
+        </td>
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-wait">— 观望</div>
