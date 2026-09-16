@@ -1277,7 +1277,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
     white-space: normal;
   }
   
-  /* 预测卡片布局：按表头顺序逐区展示（对阵/双选/SP/同赔/大小球/筛选） */
+  /* 预测卡片布局：按表头顺序逐区展示（对阵/双选/SP/同赔/7M+ST/军情/大小球/筛选） */
   #pred-all-body tr, #pred-passed-body tr {
     grid-template-areas:
       "seq league"
@@ -1285,6 +1285,8 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
       "double double"
       "odds odds"
       "so so"
+      "m7 sta"
+      "yj yj"
       "ou ou"
       "status status";
     grid-template-columns: 1fr 1fr;
@@ -1298,6 +1300,8 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
       "double double"
       "odds odds"
       "so so"
+      "m7 sta"
+      "yj yj"
       "ou ou";
   }
 
@@ -1306,12 +1310,18 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
   #pred-all-body .col-double::before, #pred-passed-body .col-double::before { content: "双选方案"; }
   #pred-all-body .col-odds::before, #pred-passed-body .col-odds::before { content: "SP"; }
   #pred-all-body .col-so::before, #pred-passed-body .col-so::before { content: "同 赔"; }
+  #pred-all-body .col-7m::before, #pred-passed-body .col-7m::before { content: "7M推介"; }
+  #pred-all-body .col-sta::before, #pred-passed-body .col-sta::before { content: "ST模型"; }
+  #pred-all-body .col-yj::before, #pred-passed-body .col-yj::before { content: "军情"; }
   #pred-all-body .col-ou::before, #pred-passed-body .col-ou::before { content: "大小球"; }
   #pred-all-body .col-status::before { content: "筛 选"; }
   #pred-all-body .col-teams::before, #pred-passed-body .col-teams::before,
   #pred-all-body .col-double::before, #pred-passed-body .col-double::before,
   #pred-all-body .col-odds::before, #pred-passed-body .col-odds::before,
   #pred-all-body .col-so::before, #pred-passed-body .col-so::before,
+  #pred-all-body .col-7m::before, #pred-passed-body .col-7m::before,
+  #pred-all-body .col-sta::before, #pred-passed-body .col-sta::before,
+  #pred-all-body .col-yj::before, #pred-passed-body .col-yj::before,
   #pred-all-body .col-ou::before, #pred-passed-body .col-ou::before,
   #pred-all-body .col-status::before {
     width: 100%;
@@ -1321,6 +1331,52 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
     opacity: 0.75;
     letter-spacing: 1px;
     margin-bottom: 2px;
+  }
+
+  /* 7M/ST 并排，内容纵向居中堆叠 */
+  #pred-all-body .col-7m, #pred-passed-body .col-7m,
+  #pred-all-body .col-sta, #pred-passed-body .col-sta {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 3px;
+    padding: 6px 2px;
+    min-width: 0;
+    max-width: none;
+    border-top: 1px dashed var(--rule);
+  }
+
+  #pred-all-body .col-7m, #pred-passed-body .col-7m { grid-area: m7; }
+
+  #pred-all-body .col-sta, #pred-passed-body .col-sta { grid-area: sta; }
+
+  #pred-all-body .col-7m .m7-jq, #pred-passed-body .col-7m .m7-jq {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  #pred-all-body .col-sta .sta-prob, #pred-passed-body .col-sta .sta-prob,
+  #pred-all-body .col-sta .sta-ou, #pred-passed-body .col-sta .sta-ou {
+    margin-bottom: 0;
+    text-align: center;
+  }
+
+  /* 预测家军情：整行展示 */
+  #pred-all-body .col-yj, #pred-passed-body .col-yj {
+    grid-area: yj;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 3px;
+    padding: 6px 0;
+    min-width: 0;
+    max-width: none;
+    border-top: 1px dashed var(--rule);
+  }
+
+  #pred-all-body .col-yj .yj-brief, #pred-passed-body .col-yj .yj-brief {
+    max-width: 100%;
+    text-align: center;
   }
 
   #pred-all-body .col-so, #pred-passed-body .col-so {
