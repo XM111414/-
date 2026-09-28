@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026年度历史回测复核</title>
+<style>
+body{font-family:-apple-system,'Microsoft YaHei',sans-serif;background:#f5f6fa;margin:0;padding:24px;color:#2c3e50}
+.wrap{max-width:1080px;margin:0 auto}
+h1{font-size:22px} h2{font-size:17px;margin:28px 0 10px;border-left:4px solid #3498db;padding-left:10px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:16px 0}
+.card{background:#fff;border-radius:10px;padding:14px;box-shadow:0 1px 4px rgba(0,0,0,.08)}
+.card .v{font-size:24px;font-weight:700} .card .l{font-size:12px;color:#7f8c8d;margin-top:4px}
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.08);font-size:13px}
+th{background:#34495e;color:#fff;padding:8px;text-align:left;font-weight:500}
+td{padding:7px 8px;border-bottom:1px solid #ecf0f1}
+tr:hover td{background:#f8f9fa} .b{font-weight:700} .ok{color:#27ae60} .bad{color:#e74c3c;font-weight:700}
+.meta{color:#95a5a6;font-size:12px;margin-top:24px}
+</style></head><body><div class="wrap">
+<h1>&#128202; 2026年度历史回测复核（部分年度·数据更新至2026-09-27）</h1>
+<div class="cards">
+<div class="card"><div class="v">41</div><div class="l">复盘天数</div></div>
+<div class="card"><div class="v">2455</div><div class="l">预测场次</div></div>
+<div class="card"><div class="v">2438</div><div class="l">已判定场次</div></div>
+<div class="card"><div class="v">1736</div><div class="l">命中</div></div>
+<div class="card"><div class="v">71.2%</div><div class="l">年度命中率</div></div>
+<div class="card"><div class="v">0.2084</div><div class="l">Brier分数</div></div>
+<div class="card"><div class="v">3.7pp</div><div class="l">校准差(声称-实际)</div></div>
+<div class="card"><div class="v">2026-08-18~2026-09-27</div><div class="l">数据覆盖</div></div>
+</div>
+
+<h2>月度走势</h2>
+<table><tr><th>月份</th><th>天数</th><th>场次</th><th>已判定</th><th>命中</th><th>命中率</th><th>Brier</th></tr><tr><td>08月</td><td>14</td><td>824</td><td>824</td><td>603</td><td class='b'>73.2%</td><td>0.2029</td></tr><tr><td>09月</td><td>27</td><td>1631</td><td>1614</td><td>1133</td><td class='b'>70.2%</td><td>0.2113</td></tr></table>
+
+<h2>算法版本分段（重大复核：版本演进战绩史）</h2>
+<table><tr><th>上线日</th><th>版本</th><th>天数</th><th>已判定</th><th>命中</th><th>命中率</th><th>Brier</th><th>校准差</th></tr><tr><td></td><td title="复盘系统上线前">无版本登记</td><td>7</td><td>385</td><td>264</td><td class='b'>68.6%</td><td>0.2303</td><td>11.3pp</td></tr><tr><td>2026-08-25</td><td title="风控基础层（规则1-5）">v20260825</td><td>3</td><td>84</td><td>68</td><td class='b'>81.0%</td><td>0.1588</td><td>-3.5pp</td></tr><tr><td>2026-08-28</td><td title="凯利判读回退：筛除→降信心">v20260828</td><td>3</td><td>320</td><td>245</td><td class='b'>76.6%</td><td>0.1826</td><td>-1.3pp</td></tr><tr><td>2026-08-31</td><td title="规则6/7+联赛双名单">v20260831</td><td>1</td><td>35</td><td>26</td><td class='b'>74.3%</td><td>0.1919</td><td>0.9pp</td></tr><tr><td>2026-09-01</td><td title="大小球v5重做+预测明细合并">v20260901</td><td>1</td><td>42</td><td>28</td><td class='b'>66.7%</td><td>0.2337</td><td>10.2pp</td></tr><tr><td>2026-09-02</td><td title="英乙加入双名单">v20260902</td><td>3</td><td>122</td><td>80</td><td class='b'>65.6%</td><td>0.2352</td><td>8.8pp</td></tr><tr><td>2026-09-05</td><td title="大小球v5动态校准">v20260905c</td><td>1</td><td>180</td><td>130</td><td class='b'>72.2%</td><td>0.2006</td><td>0.8pp</td></tr><tr><td>2026-09-06</td><td title="规则12+规则13欧冠轮换">v20260906</td><td>1</td><td>116</td><td>88</td><td class='b'>75.9%</td><td>0.1864</td><td>-2.5pp</td></tr><tr><td>2026-09-07</td><td title="规则13v2.1球队专属开赛日">v20260907</td><td>5</td><td>192</td><td>130</td><td class='b'>67.7%</td><td>0.2225</td><td>6.0pp</td></tr><tr><td>2026-09-12</td><td title="复盘完整性+平局双窗口(P3-2)">v20260912</td><td>1</td><td>163</td><td>114</td><td class='b'>69.9%</td><td>0.215</td><td>4.1pp</td></tr><tr><td>2026-09-13</td><td title="P5-1让球结构修正扩展+P6-1主平校准封顶">v20260913</td><td>1</td><td>112</td><td>85</td><td class='b'>75.9%</td><td>0.1796</td><td>-2.8pp</td></tr><tr><td>2026-09-14</td><td title="7M赛前分析数据源接入（仅参考列，不改算法行为）">2026-09-14-auto</td><td>1</td><td>40</td><td>26</td><td class='b'>65.0%</td><td>0.229</td><td>5.5pp</td></tr><tr><td>2026-09-15</td><td title="statarea/预测家接入+process_match prob_override参数（影子融合准备，行为不变）">2026-09-15-auto</td><td>2</td><td>74</td><td>48</td><td class='b'>64.9%</td><td>0.2403</td><td>8.2pp</td></tr><tr><td>2026-09-17</td><td title="（自动检测到算法变更，待标注）">2026-09-17-auto</td><td>2</td><td>90</td><td>58</td><td class='b'>64.4%</td><td>0.2411</td><td>8.8pp</td></tr><tr><td>2026-09-19</td><td title="（自动检测到算法变更，待标注）">2026-09-19-auto</td><td>6</td><td>357</td><td>255</td><td class='b'>71.4%</td><td>0.2048</td><td>1.8pp</td></tr><tr><td>2026-09-25</td><td title="（自动检测到算法变更，待标注）">2026-09-25-auto</td><td>1</td><td>36</td><td>27</td><td class='b'>75.0%</td><td>0.1954</td><td>-0.6pp</td></tr><tr><td>2026-09-26</td><td title="（自动检测到算法变更，待标注）">2026-09-26-auto</td><td>2</td><td>90</td><td>64</td><td class='b'>71.1%</td><td>0.2013</td><td>1.9pp</td></tr></table>
+
+<h2>双选类型 × 校准（虚高类型暴露区，+pp=声称高于实际）</h2>
+<table><tr><th>双选类型</th><th>场次</th><th>已判定</th><th>命中</th><th>实际命中率</th><th>声称概率均值</th><th>校准差</th></tr><tr><td>客胜+主胜</td><td>718</td><td>715</td><td>517</td><td class='b'>72.3%</td><td>76.6%</td><td class="bad">+4.3pp</td></tr><tr><td>主胜+客胜</td><td>664</td><td>657</td><td>475</td><td class='b'>72.3%</td><td>74.9%</td><td class="ok">+2.7pp</td></tr><tr><td>主胜+平局</td><td>464</td><td>464</td><td>310</td><td class='b'>66.8%</td><td>73.5%</td><td class="bad">+6.6pp</td></tr><tr><td>客胜+平局</td><td>449</td><td>442</td><td>318</td><td class='b'>71.9%</td><td>74.5%</td><td class="ok">+2.5pp</td></tr><tr><td>平局+主胜</td><td>93</td><td>93</td><td>70</td><td class='b'>75.3%</td><td>71.6%</td><td class="ok">-3.6pp</td></tr><tr><td>平局+客胜</td><td>67</td><td>67</td><td>46</td><td class='b'>68.7%</td><td>71.7%</td><td class="bad">+3.1pp</td></tr></table>
+
+<h2>让球盘分布</h2>
+<table><tr><th>让球</th><th>场次</th><th>已判定</th><th>命中</th><th>命中率</th><th>校准差</th></tr><tr><td>-4</td><td>2</td><td>2</td><td>2</td><td class='b'>100.0%</td><td>-28.0pp</td></tr><tr><td>-3</td><td>8</td><td>8</td><td>7</td><td class='b'>87.5%</td><td>-15.8pp</td></tr><tr><td>-2</td><td>112</td><td>112</td><td>75</td><td class='b'>67.0%</td><td>8.6pp</td></tr><tr><td>-1</td><td>536</td><td>523</td><td>384</td><td class='b'>73.4%</td><td>3.7pp</td></tr><tr><td>+0</td><td>1576</td><td>1576</td><td>1111</td><td class='b'>70.5%</td><td>3.3pp</td></tr><tr><td>+1</td><td>174</td><td>170</td><td>121</td><td class='b'>71.2%</td><td>6.8pp</td></tr><tr><td>+2</td><td>42</td><td>42</td><td>32</td><td class='b'>76.2%</td><td>-2.4pp</td></tr><tr><td>+3</td><td>4</td><td>4</td><td>4</td><td class='b'>100.0%</td><td>-26.5pp</td></tr><tr><td>+4</td><td>1</td><td>1</td><td>0</td><td class='b'>0.0%</td><td>72.1pp</td></tr></table>
+
+<h2>概率档校准</h2>
+<table><tr><th>概率档</th><th>场次</th><th>已判定</th><th>命中</th><th>实际命中率</th><th>校准差</th></tr><tr><td>80%以上</td><td>291</td><td>291</td><td>209</td><td class='b'>71.8%</td><td class="bad">+14.4pp</td></tr><tr><td>75-80%</td><td>711</td><td>704</td><td>500</td><td class='b'>71.0%</td><td class="bad">+6.5pp</td></tr><tr><td>70-75%</td><td>1124</td><td>1114</td><td>802</td><td class='b'>72.0%</td><td class="ok">+0.1pp</td></tr><tr><td>65-70%</td><td>320</td><td>320</td><td>220</td><td class='b'>68.8%</td><td class="ok">-0.1pp</td></tr><tr><td>65%以下</td><td>9</td><td>9</td><td>5</td><td class='b'>55.6%</td><td class="bad">+7.1pp</td></tr></table>
+
+<h2>评级分布</h2>
+<table><tr><th>评级</th><th>场次</th><th>已判定</th><th>命中</th><th>命中率</th></tr><tr><td>B级</td><td>1384</td><td>1369</td><td>976</td><td class='b'>71.3%</td></tr><tr><td>A级</td><td>760</td><td>760</td><td>547</td><td class='b'>72.0%</td></tr><tr><td>C级</td><td>311</td><td>309</td><td>213</td><td class='b'>68.9%</td></tr></table>
+
+<h2>联赛聚合（≥10场，TOP20）</h2>
+<table><tr><th>联赛</th><th>场次</th><th>已判定</th><th>命中</th><th>命中率</th></tr><tr><td>美职</td><td>104</td><td>104</td><td>76</td><td class='b'>73.1%</td></tr><tr><td>英冠</td><td>83</td><td>83</td><td>64</td><td class='b'>77.1%</td></tr><tr><td>英乙</td><td>82</td><td>82</td><td>61</td><td class='b'>74.4%</td></tr><tr><td>阿职联</td><td>75</td><td>75</td><td>58</td><td class='b'>77.3%</td></tr><tr><td>英甲</td><td>71</td><td>71</td><td>51</td><td class='b'>71.8%</td></tr><tr><td>巴西乙</td><td>69</td><td>69</td><td>48</td><td class='b'>69.6%</td></tr><tr><td>西甲</td><td>65</td><td>65</td><td>44</td><td class='b'>67.7%</td></tr><tr><td>西乙</td><td>65</td><td>65</td><td>42</td><td class='b'>64.6%</td></tr><tr><td>荷乙</td><td>57</td><td>55</td><td>40</td><td class='b'>72.7%</td></tr><tr><td>J1联赛</td><td>51</td><td>51</td><td>37</td><td class='b'>72.5%</td></tr><tr><td>意乙</td><td>50</td><td>50</td><td>37</td><td class='b'>74.0%</td></tr><tr><td>意甲</td><td>50</td><td>50</td><td>36</td><td class='b'>72.0%</td></tr><tr><td>瑞典甲</td><td>47</td><td>47</td><td>26</td><td class='b'>55.3%</td></tr><tr><td>波兰甲</td><td>46</td><td>46</td><td>29</td><td class='b'>63.0%</td></tr><tr><td>巴西甲</td><td>46</td><td>46</td><td>28</td><td class='b'>60.9%</td></tr><tr><td>法乙</td><td>45</td><td>45</td><td>30</td><td class='b'>66.7%</td></tr><tr><td>J2联赛</td><td>45</td><td>45</td><td>37</td><td class='b'>82.2%</td></tr><tr><td>葡超</td><td>44</td><td>44</td><td>23</td><td class='b'>52.3%</td></tr><tr><td>法甲</td><td>43</td><td>43</td><td>32</td><td class='b'>74.4%</td></tr><tr><td>英超</td><td>43</td><td>43</td><td>24</td><td class='b'>55.8%</td></tr></table>
+
+<h2>大小球复盘（2026年度）</h2>
+<table><tr><th>推荐场数</th><th>命中</th><th>命中率</th><th>大球推荐/命中/率</th><th>小球推荐/命中/率</th><th>观望</th><th>缺比分</th></tr>
+<tr><td class="b">918</td><td>462</td><td class="b">50.3%</td>
+<td>853 / 438 / 51.3%</td>
+<td>65 / 24 / 36.9%</td>
+<td>1537</td><td>416</td></tr></table>
+
+<div class="meta">生成时间 2026-09-28 15:25:51 | 数据源 data/review_history/（永久保留） | 年度复核每年1月首个运行日自动生成，本页随每日部署更新至 annual.html</div>
+</div></body></html>
