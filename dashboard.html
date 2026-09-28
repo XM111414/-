@@ -963,6 +963,16 @@ tbody tr.match-miss:hover { background: #fee2e2; }
 .ou-bar .ou-over { height: 100%; background: var(--orange); }
 .ou-probs { font-size: 0.62rem; color: var(--muted); margin-top: 1px; }
 
+/* TC跳球水位法徽章（B站视频方法论，与v5大小球一致性着色） */
+.tc-rec { font-size: 0.68rem; font-weight: 600; margin: 1px 0 2px; cursor: help; }
+.tc-rec.tc-agree { color: #16a34a; }
+.tc-rec.tc-diff { color: #d97706; }
+.tc-rec.tc-wait { color: var(--muted); }
+.tc-rec .tc-num { font-size: 0.6rem; color: #7c3aed; font-weight: 500; }
+.tc-strip { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 6px 12px; margin: 6px 0 10px; font-size: 0.72rem; color: var(--muted); cursor: help; }
+.tc-strip-label { font-weight: 700; color: #475569; }
+.tc-strip-rate { font-weight: 700; color: #16a34a; }
+
 .ou-mini {
   display: inline-block;
   padding: 2px 10px;
@@ -2180,6 +2190,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-over">↑ 大球</div>
+          <div class="tc-rec tc-agree" title="TC跳球水位法(大球 | 500.com盘2.5→2.5 大0.67/小1.10 | 水位:大水低0.43(强)；跳球:盘口未动 | TC参考:3球/4球)">&#10003; TC大球·强 <span class="tc-num">3球/4球</span></div>
           <div class="ou-bar">
             <div class="ou-over" style="width:58.0%"></div>
           </div>
@@ -2242,6 +2253,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-wait">— 观望</div>
+          <div class="tc-rec tc-diff" title="TC跳球水位法(小球 | 500.com盘2.5→2.5 大1.20/小0.60 | 水位:小水低0.60(强)；跳球:盘口未动 | TC参考:1/2球)">&#9888; TC小球·强 <span class="tc-num">1/2球</span></div>
           <div class="ou-bar">
             <div class="ou-over" style="width:58.0%"></div>
           </div>
@@ -2304,6 +2316,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-wait">— 观望</div>
+          <div class="tc-rec tc-diff" title="TC跳球水位法(小球 | 500.com盘2.5→2.5 大1.15/小0.62 | 水位:小水低0.53(强)；跳球:盘口未动 | TC参考:1/2球)">&#9888; TC小球·强 <span class="tc-num">1/2球</span></div>
           <div class="ou-bar">
             <div class="ou-over" style="width:57.0%"></div>
           </div>
@@ -2366,6 +2379,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-wait">— 观望</div>
+          <div class="tc-rec tc-diff" title="TC跳球水位法(小球 | 500.com盘2.5→2.5 大1.30/小0.55 | 水位:小水低0.75(强)；跳球:盘口未动 | TC参考:1/2球)">&#9888; TC小球·强 <span class="tc-num">1/2球</span></div>
           <div class="ou-bar">
             <div class="ou-over" style="width:57.0%"></div>
           </div>
@@ -2428,6 +2442,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-over">↑ 大球</div>
+          <div class="tc-rec tc-agree" title="TC跳球水位法(大球 | 500.com盘2.5→2.5 大0.83/小0.89 | 水位:大水低0.06(强)；跳球:盘口未动 | TC参考:3球/4球)">&#10003; TC大球·强 <span class="tc-num">3球/4球</span></div>
           <div class="ou-bar">
             <div class="ou-over" style="width:58.0%"></div>
           </div>
@@ -2490,6 +2505,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-over">↑ 大球</div>
+          <div class="tc-rec tc-diff" title="TC跳球水位法(小球 | 500.com盘2.5→2.5 大0.95/小0.75 | 水位:小水低0.20(强)；跳球:盘口未动 | TC参考:1/2球)">&#9888; TC小球·强 <span class="tc-num">1/2球</span></div>
           <div class="ou-bar">
             <div class="ou-over" style="width:58.0%"></div>
           </div>
@@ -2552,6 +2568,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-over">↑ 大球</div>
+          <div class="tc-rec tc-wait" title="TC跳球水位法(观望 | 500.com盘2.5→2.5 大0.85/小0.85 | 水位:走水；跳球:盘口未动 | TC参考:)">&#9679; TC观望</div>
           <div class="ou-bar">
             <div class="ou-over" style="width:58.0%"></div>
           </div>
@@ -2614,6 +2631,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-over">↑ 大球</div>
+          <div class="tc-rec tc-agree" title="TC跳球水位法(大球 | 500.com盘2.0→1.5 大0.44/小1.50 | 水位:大水低1.06(强)；跳球:2.0降1.5；反向取舍:水位强盖跳球弱 | TC参考:3球/4球)">&#10003; TC大球·强 <span class="tc-num">3球/4球</span></div>
           <div class="ou-bar">
             <div class="ou-over" style="width:58.0%"></div>
           </div>
@@ -2676,6 +2694,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-over">↑ 大球</div>
+          <div class="tc-rec tc-agree" title="TC跳球水位法(大球 | 500.com盘3.0→2.5 大0.70/小1.05 | 水位:大水低0.35(强)；跳球:3.0降2.5；反向取舍:水位强盖跳球弱 | TC参考:3球/4球)">&#10003; TC大球·强 <span class="tc-num">3球/4球</span></div>
           <div class="ou-bar">
             <div class="ou-over" style="width:58.0%"></div>
           </div>
@@ -2738,6 +2757,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-over">↑ 大球</div>
+          <div class="tc-rec tc-diff" title="TC跳球水位法(小球 | 500.com盘3.0→2.5 大0.95/小0.75 | 水位:小水低0.20(强)；跳球:3.0降2.5 | TC参考:1/2球)">&#9888; TC小球·强 <span class="tc-num">1/2球</span></div>
           <div class="ou-bar">
             <div class="ou-over" style="width:58.0%"></div>
           </div>
@@ -2800,6 +2820,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-wait">— 观望</div>
+          <div class="tc-rec tc-wait" title="TC跳球水位法(观望 | 500.com盘1.5→2.5 大1.15/小0.61 | 水位:小水低0.54(强)；跳球:1.5跳升2.5(强)；信号冲突:水位与跳球反向,观望 | TC参考:)">&#9679; TC观望</div>
           <div class="ou-bar">
             <div class="ou-over" style="width:54.0%"></div>
           </div>
@@ -2921,6 +2942,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-over">↑ 大球</div>
+          <div class="tc-rec tc-agree" title="TC跳球水位法(大球 | 500.com盘2.5→2.5 大0.67/小1.10 | 水位:大水低0.43(强)；跳球:盘口未动 | TC参考:3球/4球)">&#10003; TC大球·强 <span class="tc-num">3球/4球</span></div>
           <div class="ou-bar">
             <div class="ou-over" style="width:58.0%"></div>
           </div>
@@ -2979,6 +3001,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-wait">— 观望</div>
+          <div class="tc-rec tc-diff" title="TC跳球水位法(小球 | 500.com盘2.5→2.5 大1.15/小0.62 | 水位:小水低0.53(强)；跳球:盘口未动 | TC参考:1/2球)">&#9888; TC小球·强 <span class="tc-num">1/2球</span></div>
           <div class="ou-bar">
             <div class="ou-over" style="width:57.0%"></div>
           </div>
@@ -3037,6 +3060,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-wait">— 观望</div>
+          <div class="tc-rec tc-diff" title="TC跳球水位法(小球 | 500.com盘2.5→2.5 大1.30/小0.55 | 水位:小水低0.75(强)；跳球:盘口未动 | TC参考:1/2球)">&#9888; TC小球·强 <span class="tc-num">1/2球</span></div>
           <div class="ou-bar">
             <div class="ou-over" style="width:57.0%"></div>
           </div>
@@ -3095,6 +3119,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-over">↑ 大球</div>
+          <div class="tc-rec tc-wait" title="TC跳球水位法(观望 | 500.com盘2.5→2.5 大0.85/小0.85 | 水位:走水；跳球:盘口未动 | TC参考:)">&#9679; TC观望</div>
           <div class="ou-bar">
             <div class="ou-over" style="width:58.0%"></div>
           </div>
@@ -3153,6 +3178,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-over">↑ 大球</div>
+          <div class="tc-rec tc-agree" title="TC跳球水位法(大球 | 500.com盘2.0→1.5 大0.44/小1.50 | 水位:大水低1.06(强)；跳球:2.0降1.5；反向取舍:水位强盖跳球弱 | TC参考:3球/4球)">&#10003; TC大球·强 <span class="tc-num">3球/4球</span></div>
           <div class="ou-bar">
             <div class="ou-over" style="width:58.0%"></div>
           </div>
@@ -3211,6 +3237,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-over">↑ 大球</div>
+          <div class="tc-rec tc-agree" title="TC跳球水位法(大球 | 500.com盘3.0→2.5 大0.70/小1.05 | 水位:大水低0.35(强)；跳球:3.0降2.5；反向取舍:水位强盖跳球弱 | TC参考:3球/4球)">&#10003; TC大球·强 <span class="tc-num">3球/4球</span></div>
           <div class="ou-bar">
             <div class="ou-over" style="width:58.0%"></div>
           </div>
@@ -3269,6 +3296,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-over">↑ 大球</div>
+          <div class="tc-rec tc-diff" title="TC跳球水位法(小球 | 500.com盘3.0→2.5 大0.95/小0.75 | 水位:小水低0.20(强)；跳球:3.0降2.5 | TC参考:1/2球)">&#9888; TC小球·强 <span class="tc-num">1/2球</span></div>
           <div class="ou-bar">
             <div class="ou-over" style="width:58.0%"></div>
           </div>
@@ -3327,6 +3355,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-ou">
           <div class="ou-line">盘口2.25球</div>
           <div class="ou-rec ou-wait">— 观望</div>
+          <div class="tc-rec tc-wait" title="TC跳球水位法(观望 | 500.com盘1.5→2.5 大1.15/小0.61 | 水位:小水低0.54(强)；跳球:1.5跳升2.5(强)；信号冲突:水位与跳球反向,观望 | TC参考:)">&#9679; TC观望</div>
           <div class="ou-bar">
             <div class="ou-over" style="width:54.0%"></div>
           </div>
@@ -7214,6 +7243,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             <div class="sub">大球58.3% / 小球0%</div>
           </div>
         </div>
+
 
         <div class="analysis-row">
           <div class="analysis-card">
