@@ -1,0 +1,33 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>规则14/15监控 · 北京单场系统</title><style>
+body{font-family:-apple-system,'Microsoft YaHei',sans-serif;background:#0f172a;color:#e2e8f0;margin:0;padding:24px;}
+h1{font-size:22px;margin:0 0 4px;} .sub{color:#64748b;font-size:13px;margin-bottom:20px;}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-bottom:24px;}
+.card{background:#1e293b;border:1px solid #334155;border-radius:10px;padding:16px;}
+.card.ok{border-color:#14532d;} .card.warn{border-color:#78350f;} .card.bad{border-color:#7f1d1d;}
+.ct{font-size:14px;font-weight:600;} .cs{color:#64748b;font-size:12px;margin:2px 0 10px;}
+.big{font-size:26px;font-weight:700;} .sub2{color:#94a3b8;font-size:12px;margin-top:6px;}
+h2{font-size:16px;margin:24px 0 10px;color:#94a3b8;}
+table{border-collapse:collapse;width:100%;font-size:13px;margin-bottom:20px;}
+th{background:#1e293b;color:#94a3b8;text-align:left;padding:8px 10px;font-weight:600;border-bottom:1px solid #334155;}
+td{padding:7px 10px;border-bottom:1px solid #1e293b;}
+.hrow{padding:8px 12px;background:#1e293b;border-radius:8px;margin-bottom:8px;font-size:13px;}
+.note{color:#64748b;font-size:12px;margin-top:16px;line-height:1.7;}
+</style></head><body>
+<h1>规则14/15 上线监控看板</h1>
+<div class="sub">R14轻热门封顶68 + R15高信心滚动校准 · 上线 2026-10-06 · 生成 2026-10-06 12:28:11 · 每日流水线复盘段后自动更新</div>
+<div class="cards"><div class="card info"><div class="ct">R14 触发组</div><div class="cs">轻热门封顶68</div><div class="big">—</div><div class="sub2">上线后暂无已判场次</div></div><div class="card info"><div class="ct">R14 豁免组</div><div class="cs">有同赔印证(≥60%)</div><div class="big">—</div><div class="sub2">上线后暂无已判场次</div></div><div class="card info"><div class="ct">R15 回压组</div><div class="cs">≥78滚动桶校准</div><div class="big">—</div><div class="sub2">上线后暂无已判场次</div></div><div class="card info"><div class="ct">≥78档 校准gap</div><div class="cs">声称-实测偏差</div><div class="big">—</div><div class="sub2">上线后暂无已判场次</div></div></div>
+<h2>健康判定</h2>
+<div class="hrow"><span style="color:#64748b">●</span> <b>—</b> 上线后暂无已判场次（首跑2026-10-06，晚完场次日回填）</div>
+<h2>上线后逐日明细</h2>
+<table><tr><th>日期</th><th>已判</th><th>R14触发</th><th>R14豁免</th><th>R15回压</th><th>≥78档gap</th><th>Brier</th></tr><tr><td colspan="7" style="color:#64748b">暂无数据（首跑后次日晚完场回填开始积累）</td></tr></table>
+<h2>上线后概率分桶校准（回压后声称口径）</h2>
+<table><tr><th>total_p档</th><th>n</th><th>声称均值</th><th>实测命中</th><th>gap</th></tr><tr><td colspan="5" style="color:#64748b">上线后暂无已判场次</td></tr></table>
+<h2>上线前基线（30天，R14触发组为条件重放口径）</h2>
+<table><tr><th>组</th><th>n</th><th>实测</th><th>声称均值</th><th>虚高gap</th></tr><tr><td>R14触发组(条件重放)</td><td>170</td><td>62.4%</td><td>74.9%</td><td>-12.5pp</td></tr><tr><td>R14豁免组</td><td>41</td><td>78.0%</td><td>75.1%</td><td>2.9pp</td></tr><tr><td>≥78档全部</td><td>417</td><td>71.0%</td><td>79.5%</td><td>-8.5pp</td></tr><tr><td>全集Brier</td><td colspan="4">0.207（30天）</td></tr></table>
+<div class="note">口径说明：R14触发组上线前用条件重放标记（1.6≤主胜赔<2.0 且 无换向/结构修正 且 声称>68 且 无同赔印证），上线后直接读生产标记 lite_hot_capped；
+R15回压组上线前基线=声称≥78全部场次（回测该子集Brier 0.2189→0.2070）；≥78档上线后为"映射过的原≥78场 ∪ 现存≥78场"并集（回压后声称已降，该档gap收敛是R15目标）。
+健康判据样本下限20场；晚完场比分次日回填后本页自动刷新。<br>
+预期锚点：R14触发63.0% / 豁免78.1% / R15回压71.8%（上线时点滚动30天桶实测）。</div>
+</body></html>
