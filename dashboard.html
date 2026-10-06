@@ -979,6 +979,9 @@ tbody tr.match-miss:hover { background: #fee2e2; }
 .ou-mini.ou-over { background: #fff7ed; color: var(--orange); }
 .ou-mini.ou-under { background: #eff6ff; color: var(--accent); }
 .ou-mini.ou-wait { background: #f1f5f9; color: var(--muted); }
+.ou-hit-mark { display: inline-block; margin-left: 4px; font-size: 0.68rem; font-weight: 700; vertical-align: 1px; }
+.ou-hit-mark.hit { color: #16a34a; }
+.ou-hit-mark.miss { color: #dc2626; }
 
 /* 筛选状态列 */
 .col-status { width: 85px; }
@@ -11091,6 +11094,9 @@ function renderHistoryDetail(matches) {
     else if (m.actual_result === '客胜') resultClass = 'result-lose';
     
     var ouClass = m.ou_recommend === '大球' ? 'ou-over' : (m.ou_recommend === '小球' ? 'ou-under' : 'ou-wait');
+    var ouMark = '';
+    if (m.ou_is_hit === true) ouMark = '<span class="ou-hit-mark hit">&#10003;</span>';
+    else if (m.ou_is_hit === false) ouMark = '<span class="ou-hit-mark miss">&#10007;</span>';
     
     var dcParts = (m.double_choice || '').split('+');
     
@@ -11124,7 +11130,7 @@ function renderHistoryDetail(matches) {
         '<div class="pred-prob">' + m.p1 + '% + ' + m.p2 + '% = ' + m.total_p + '%</div>' +
         (isTrap ? '<div class="trap-badge">&#9888; 凯利陷阱·降信心</div>' : '') +
       '</td>' +
-      '<td class="col-ou"><span class="ou-mini ' + ouClass + '">' + (m.ou_recommend || '-') + '</span></td>' +
+      '<td class="col-ou"><span class="ou-mini ' + ouClass + '">' + (m.ou_recommend || '-') + '</span>' + ouMark + '</td>' +
       '<td class="col-actual">' +
         '<div class="actual-result ' + resultClass + '">' + (m.actual_result || '-') + '</div>' +
       '</td>' +
