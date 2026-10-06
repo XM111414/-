@@ -800,16 +800,18 @@ tbody tr.match-miss:hover { background: #fee2e2; }
 .col-seq { width: 40px; font-weight: 700; color: var(--muted); text-align: center; }
 .col-time { width: 48px; color: var(--muted); font-size: 0.68rem; text-align: center; }
 
-.col-league { display: flex; align-items: center; gap: 4px; }
-.league-tag { display: inline-block; padding: 2px 6px; background: #eff6ff; color: #1d4ed8; border-radius: 4px; font-size: 0.68rem; font-weight: 500; }
-.grade-badge { display: inline-block; padding: 1px 4px; border-radius: 3px; font-size: 0.6rem; font-weight: 600; }
+/* 修复UI错乱(2026-10-07)：桌面端td必须保持table-cell，不能display:flex，
+   否则该列脱离表格列框导致联赛/对阵两列错位合并。内部元素用inline-block横排。 */
+.col-league { vertical-align: middle; }
+.league-tag { display: inline-block; padding: 2px 6px; background: #eff6ff; color: #1d4ed8; border-radius: 4px; font-size: 0.68rem; font-weight: 500; vertical-align: middle; }
+.grade-badge { display: inline-block; padding: 1px 4px; border-radius: 3px; font-size: 0.6rem; font-weight: 600; margin-left: 4px; vertical-align: middle; }
 .grade-badge.a { background: #dcfce7; color: #166534; }
 .grade-badge.b { background: #dbeafe; color: #1e40af; }
 .grade-badge.c { background: #fef3c7; color: #92400e; }
 
-.col-teams { display: flex; align-items: center; gap: 0; flex-wrap: wrap; }
-.col-teams .home, .col-teams .away { font-weight: 500; font-size: 0.78rem; }
-.col-teams .vs-wrap { display: inline-flex; flex-direction: column; align-items: center; margin: 0 6px; gap: 1px; }
+.col-teams { vertical-align: middle; }
+.col-teams .home, .col-teams .away { font-weight: 500; font-size: 0.78rem; vertical-align: middle; }
+.col-teams .vs-wrap { display: inline-flex; flex-direction: column; align-items: center; margin: 0 6px; gap: 1px; vertical-align: middle; }
 .col-teams .vs-handicap { font-weight: 700; color: var(--warning); font-size: 0.65rem; line-height: 1; }
 .col-teams .vs { color: var(--muted); font-size: 0.65rem; line-height: 1; }
 
@@ -935,22 +937,7 @@ tbody tr.match-miss:hover { background: #fee2e2; }
 .col-7m .m7-link { color: #3b82f6; font-size: 0.62rem; text-decoration: none; }
 .col-7m .m7-link:hover { text-decoration: underline; }
 .col-7m .m7-jqc { font-weight: 700; color: #ef4444; background: rgba(239,68,68,.12); font-size: 0.62rem; padding: 2px 6px; border-radius: 8px; display: inline-block; margin-bottom: 3px; cursor: help; }
-/* Statarea预测列（www.statarea.com第三方统计模型参考） */
-.col-sta { min-width: 100px; max-width: 124px; font-size: 0.68rem; }
-.col-sta .sta-rec { font-weight: 700; font-size: 0.7rem; padding: 2px 6px; border-radius: 8px; display: inline-block; margin-bottom: 3px; }
-.col-sta .sta-agree { color: #10b981; background: rgba(16,185,129,.12); }
-.col-sta .sta-diff { color: #f59e0b; background: rgba(245,158,11,.12); }
-.col-sta .sta-part { color: #3b82f6; background: rgba(59,130,246,.12); }
-.col-sta .sta-none { color: var(--muted); }
-.col-sta .sta-prob { color: var(--muted); font-size: 0.62rem; margin-bottom: 2px; cursor: help; }
-.col-sta .sta-ou { color: var(--muted); font-size: 0.62rem; cursor: help; }
-/* 预测家军情列（www.yucejia.com第三方中文军情） */
-.col-yj { min-width: 108px; max-width: 130px; font-size: 0.68rem; }
-.col-yj .yj-rec { font-weight: 700; font-size: 0.7rem; padding: 2px 6px; border-radius: 8px; display: inline-block; margin-bottom: 3px; color: #0d9488; background: rgba(13,148,136,.12); }
-.col-yj .yj-none { color: var(--muted); }
-.col-yj .yj-brief { color: var(--muted); font-size: 0.62rem; max-width: 122px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-bottom: 2px; cursor: help; }
-.col-yj .yj-link { color: #3b82f6; font-size: 0.62rem; text-decoration: none; }
-.col-yj .yj-link:hover { text-decoration: underline; }
+/* 2026-10-07：ST(statarea)/YC(预测家军情)列已按用户要求移除，桌面端样式同步删除 */
 
 /* 大小球列 */
 .col-ou { min-width: 100px; }
@@ -1314,7 +1301,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
       "ou ou";
   }
 
-  /* 展开参考列（同赔/7M+ST/军情） */
+  /* 展开参考列（同赔/7M；ST/YC已于2026-10-07移除） */
   #pred-all-body tr.ref-open {
     grid-template-areas:
       "seq league"
@@ -1323,8 +1310,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
       "odds odds"
       "refbtn refbtn"
       "so so"
-      "m7 sta"
-      "yj yj"
+      "m7 m7"
       "ou ou"
       "status status";
   }
@@ -1336,22 +1322,17 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
       "odds odds"
       "refbtn refbtn"
       "so so"
-      "m7 sta"
-      "yj yj"
+      "m7 m7"
       "ou ou";
   }
 
   /* 参考列默认折叠隐藏，展开态显示 */
   #pred-all-body .col-so, #pred-passed-body .col-so,
-  #pred-all-body .col-7m, #pred-passed-body .col-7m,
-  #pred-all-body .col-sta, #pred-passed-body .col-sta,
-  #pred-all-body .col-yj, #pred-passed-body .col-yj {
+  #pred-all-body .col-7m, #pred-passed-body .col-7m {
     display: none;
   }
   #pred-all-body tr.ref-open .col-so, #pred-passed-body tr.ref-open .col-so,
-  #pred-all-body tr.ref-open .col-7m, #pred-passed-body tr.ref-open .col-7m,
-  #pred-all-body tr.ref-open .col-sta, #pred-passed-body tr.ref-open .col-sta,
-  #pred-all-body tr.ref-open .col-yj, #pred-passed-body tr.ref-open .col-yj {
+  #pred-all-body tr.ref-open .col-7m, #pred-passed-body tr.ref-open .col-7m {
     display: flex;
   }
 
@@ -1383,8 +1364,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
   #pred-all-body .col-odds::before, #pred-passed-body .col-odds::before { content: "SP"; }
   #pred-all-body .col-so::before, #pred-passed-body .col-so::before { content: "同 赔"; }
   #pred-all-body .col-7m::before, #pred-passed-body .col-7m::before { content: "7M推介"; }
-  #pred-all-body .col-sta::before, #pred-passed-body .col-sta::before { content: "ST模型"; }
-  #pred-all-body .col-yj::before, #pred-passed-body .col-yj::before { content: "军情"; }
   #pred-all-body .col-ou::before, #pred-passed-body .col-ou::before { content: "大小球"; }
   #pred-all-body .col-status::before { content: "筛 选"; }
   #pred-all-body .col-teams::before, #pred-passed-body .col-teams::before,
@@ -1392,8 +1371,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
   #pred-all-body .col-odds::before, #pred-passed-body .col-odds::before,
   #pred-all-body .col-so::before, #pred-passed-body .col-so::before,
   #pred-all-body .col-7m::before, #pred-passed-body .col-7m::before,
-  #pred-all-body .col-sta::before, #pred-passed-body .col-sta::before,
-  #pred-all-body .col-yj::before, #pred-passed-body .col-yj::before,
   #pred-all-body .col-ou::before, #pred-passed-body .col-ou::before,
   #pred-all-body .col-status::before {
     width: 100%;
@@ -1405,9 +1382,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
     margin-bottom: 2px;
   }
 
-  /* 7M/ST 并排，内容纵向居中堆叠 */
-  #pred-all-body .col-7m, #pred-passed-body .col-7m,
-  #pred-all-body .col-sta, #pred-passed-body .col-sta {
+  /* 7M列：内容纵向居中堆叠（ST/YC已于2026-10-07移除） */
+  #pred-all-body .col-7m, #pred-passed-body .col-7m {
+    grid-area: m7;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
@@ -1418,35 +1395,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
     border-top: 1px dashed var(--rule);
   }
 
-  #pred-all-body .col-7m, #pred-passed-body .col-7m { grid-area: m7; }
-
-  #pred-all-body .col-sta, #pred-passed-body .col-sta { grid-area: sta; }
-
   #pred-all-body .col-7m .m7-jq, #pred-passed-body .col-7m .m7-jq {
-    max-width: 100%;
-    text-align: center;
-  }
-
-  #pred-all-body .col-sta .sta-prob, #pred-passed-body .col-sta .sta-prob,
-  #pred-all-body .col-sta .sta-ou, #pred-passed-body .col-sta .sta-ou {
-    margin-bottom: 0;
-    text-align: center;
-  }
-
-  /* 预测家军情：整行展示 */
-  #pred-all-body .col-yj, #pred-passed-body .col-yj {
-    grid-area: yj;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 3px;
-    padding: 6px 0;
-    min-width: 0;
-    max-width: none;
-    border-top: 1px dashed var(--rule);
-  }
-
-  #pred-all-body .col-yj .yj-brief, #pred-passed-body .col-yj .yj-brief {
     max-width: 100%;
     text-align: center;
   }
@@ -2160,8 +2109,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <span class="lg-item"><b>SP</b>＝北单赔率 胜/平/负（蓝色为双选选中项）</span>
         <span class="lg-item"><b>同赔</b>＝威廉希尔历史同赔统计·历史场次（非模型概率）</span>
         <span class="lg-item"><b>7M</b>＝7M体育媒体推介方向+軍情伤停·第三方参考（✓与双选一致 / ⚠不一致 / ⚠军情与推介相左＝该队伤停≥2处仍被推介）</span>
-        <span class="lg-item"><b>ST</b>＝Statarea统计模型TIP方向+三向/大小球概率·第三方参考（✓一致 ◐部分重叠 ⚠不一致）</span>
-        <span class="lg-item"><b>YC</b>＝预测家(yucejia.com)中文军情·伤停/停赛/轮换/状态·悬浮看全文</span>
         <span class="lg-item"><b>大小球</b>＝盘口线·大/小概率</span>
       </div>
 
@@ -2235,8 +2182,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
                 <th>SP</th>
                 <th>同赔</th>
                 <th>7M</th>
-                <th>ST</th>
-                <th>YC</th>
                 <th>大小球</th>
                 <th class="col-status">筛选</th>
               </tr>
@@ -2288,8 +2233,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-none" title="南韩世界排名32，上仗国际赛排出“4-4-2”，孙兴民及吴贤揆组成前锋组合，李康仁及金敏洙负责两翼侧击。球队鲜有具威胁埋门，后防重心金玟哉赛后指队">前瞻1篇</div><div class="m7-rec m7-agree" title="澳门推介客胜 &amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;（乌兹别克斯坦 国际友谊赛 2026-10-06 19:00）">&#10003; 澳荐客胜 <span class="m7-stars">&#9733;&#9733;&#9733;&#9733;</span></div><div class="m7-jq" title="南韩世界排名32，上仗国际赛排出“4-4-2”，孙兴民及吴贤揆组成前锋组合，李康仁及金敏洙负责两翼侧击。球队鲜有具威胁埋门，后防重心金玟哉赛后指队">南韩世界排名32，上仗国际赛排出“4-4-2”，孙兴民及吴贤揆组成前锋组合，李康仁及金敏洙负责两翼侧击。球队鲜有具威胁埋门，后防重心金玟哉赛后指队</div><a href="https://news.7m.com.cn/news/20261006/741605.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分3.11</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -2351,8 +2294,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-none" title="中国世界排名91，上仗国际赛排出“4-4-2”，韦世豪及陶强龙出任前锋组合，陈蒲及杨铭锐负责两翼侧击。球队上半场连番失误，半场已落后0比3；易边后">前瞻1篇</div><div class="m7-rec m7-agree" title="澳门推介平局 &amp;#9733;&amp;#9733;&amp;#9733;（和局 国际友谊赛 2026-10-06 19:35）">&#10003; 澳荐平局 <span class="m7-stars">&#9733;&#9733;&#9733;</span></div><div class="m7-jq" title="中国世界排名91，上仗国际赛排出“4-4-2”，韦世豪及陶强龙出任前锋组合，陈蒲及杨铭锐负责两翼侧击。球队上半场连番失误，半场已落后0比3；易边后">中国世界排名91，上仗国际赛排出“4-4-2”，韦世豪及陶强龙出任前锋组合，陈蒲及杨铭锐负责两翼侧击。球队上半场连番失误，半场已落后0比3；易边后</div><a href="https://news.7m.com.cn/news/20261006/741606.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分3.11</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -2412,8 +2353,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-agree">✓ 同赔支持主胜</div>
         </td>
         <td class="col-7m"><span class="so-none">—</span></td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分3.32</div>
           <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-act">可下手</span></div>
@@ -2475,8 +2414,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-none" title="哈萨克上仗欧国联续以“4-2-3-1”阵式出战，顶替伤兵中场古亚治担正的奥拿素夫，表现一般，但今场会续任正选。中坚阿利比同场替球队破蛋，助攻助守，">前瞻1篇</div><div class="m7-rec m7-agree" title="澳门推介平局 &amp;#9733;&amp;#9733;&amp;#9733;（和局 欧洲国家联赛 2026-10-06 22:00）">&#10003; 澳荐平局 <span class="m7-stars">&#9733;&#9733;&#9733;</span></div><div class="m7-jq" title="哈萨克上仗欧国联续以“4-2-3-1”阵式出战，顶替伤兵中场古亚治担正的奥拿素夫，表现一般，但今场会续任正选。中坚阿利比同场替球队破蛋，助攻助守，">哈萨克上仗欧国联续以“4-2-3-1”阵式出战，顶替伤兵中场古亚治担正的奥拿素夫，表现一般，但今场会续任正选。中坚阿利比同场替球队破蛋，助攻助守，</div><a href="https://news.7m.com.cn/news/20261006/741607.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分2.91</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -2536,8 +2473,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-neutral">分布均匀</div>
         </td>
         <td class="col-7m"><span class="so-none">—</span></td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分2.92</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -2599,8 +2534,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-rec m7-agree" title="澳门推介客胜 &amp;#9733;&amp;#9733;&amp;#9733;（斯达 挪威杯 2026-10-06 23:00）">&#10003; 澳荐客胜 <span class="m7-stars">&#9733;&#9733;&#9733;</span></div><a href="https://news.7m.com.cn/prediction/data/5184927.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分3.11</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -2660,8 +2593,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-neutral">分布均匀</div>
         </td>
         <td class="col-7m"><span class="so-none">—</span></td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分3.52</div>
           <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-act">可下手</span></div>
@@ -2721,8 +2652,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-agree">✓ 同赔支持客胜</div>
         </td>
         <td class="col-7m"><span class="so-none">—</span></td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分3.31</div>
           <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-act">可下手</span></div>
@@ -2782,8 +2711,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-agree">✓ 同赔支持主胜</div>
         </td>
         <td class="col-7m"><span class="so-none">—</span></td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分3.15</div>
           <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-act">可下手</span></div>
@@ -2845,8 +2772,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-rec m7-diff" title="澳门推介平局 &amp;#9733;&amp;#9733;&amp;#9733;（和局 欧洲U21国家杯资格赛 2026-10-07 00:30）">&#9888; 澳荐平局 <span class="m7-stars">&#9733;&#9733;&#9733;</span></div><a href="https://news.7m.com.cn/prediction/data/4872837.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分2.95</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -2908,8 +2833,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-rec m7-agree" title="澳门推介平局 &amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;（和局 欧洲U21国家杯资格赛 2026-10-07 00:30）">&#10003; 澳荐平局 <span class="m7-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div><a href="https://news.7m.com.cn/prediction/data/4872729.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分2.88</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -2969,8 +2892,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-neutral">分布均匀</div>
         </td>
         <td class="col-7m"><span class="so-none">—</span></td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分3.13</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -3030,8 +2951,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-agree">✓ 同赔支持主胜</div>
         </td>
         <td class="col-7m"><span class="so-none">—</span></td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分3.33</div>
           <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-act">可下手</span></div>
@@ -3091,8 +3010,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-neutral">分布均匀</div>
         </td>
         <td class="col-7m"><span class="so-none">—</span></td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分3.51</div>
           <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-act">可下手</span></div>
@@ -3152,8 +3069,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-neutral">分布均匀</div>
         </td>
         <td class="col-7m"><span class="so-none">—</span></td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分3.11</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -3215,8 +3130,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-rec m7-diff" title="澳门推介平局 &amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;（和局 欧洲U21国家杯资格赛 2026-10-07 01:00）">&#9888; 澳荐平局 <span class="m7-stars">&#9733;&#9733;&#9733;&#9733;</span></div><a href="https://news.7m.com.cn/prediction/data/4872885.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分3.15</div>
           <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-act">可下手</span></div>
@@ -3276,8 +3189,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-agree">✓ 同赔支持主胜</div>
         </td>
         <td class="col-7m"><span class="so-none">—</span></td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分3.15</div>
           <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-act">可下手</span></div>
@@ -3337,8 +3248,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-agree">✓ 同赔支持客胜</div>
         </td>
         <td class="col-7m"><span class="so-none">—</span></td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分3.34</div>
           <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-act">可下手</span></div>
@@ -3400,8 +3309,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-rec m7-diff" title="澳门推介平局 &amp;#9733;&amp;#9733;&amp;#9733;（和局 欧洲U21国家杯资格赛 2026-10-07 01:00）">&#9888; 澳荐平局 <span class="m7-stars">&#9733;&#9733;&#9733;</span></div><a href="https://news.7m.com.cn/prediction/data/4872827.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分3.35</div>
           <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-act">可下手</span></div>
@@ -3463,8 +3370,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-rec m7-diff" title="澳门推介平局 &amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;（和局 欧洲U21国家杯资格赛 2026-10-07 01:00）">&#9888; 澳荐平局 <span class="m7-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div><a href="https://news.7m.com.cn/prediction/data/4872831.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分3.15</div>
           <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-act">可下手</span></div>
@@ -3524,8 +3429,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-agree">✓ 同赔支持主胜</div>
         </td>
         <td class="col-7m"><span class="so-none">—</span></td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分3.11</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -3587,8 +3490,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-rec m7-agree" title="澳门推介平局 &amp;#9733;&amp;#9733;&amp;#9733;（和局 英格兰锦标赛 2026-10-07 02:00）">&#10003; 澳荐平局 <span class="m7-stars">&#9733;&#9733;&#9733;</span></div><a href="https://news.7m.com.cn/prediction/data/5094364.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分2.88</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -3650,8 +3551,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-rec m7-agree" title="澳门推介主胜 &amp;#9733;&amp;#9733;&amp;#9733;（AFC温布顿 英格兰锦标赛 2026-10-07 02:00）">&#10003; 澳荐主胜 <span class="m7-stars">&#9733;&#9733;&#9733;</span></div><a href="https://news.7m.com.cn/prediction/data/5094441.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分2.95</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -3713,8 +3612,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-rec m7-agree" title="澳门推介客胜 &amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;（克鲁 英格兰锦标赛 2026-10-07 02:00）">&#10003; 澳荐客胜 <span class="m7-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div><a href="https://news.7m.com.cn/prediction/data/5094368.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分3.06</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -3776,8 +3673,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-rec m7-agree" title="澳门推介主胜 &amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;（剑桥联 英格兰锦标赛 2026-10-07 02:00）">&#10003; 澳荐主胜 <span class="m7-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div><a href="https://news.7m.com.cn/prediction/data/5094448.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分3.13</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -3839,8 +3734,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-rec m7-agree" title="澳门推介客胜 &amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;（牛津联 英格兰锦标赛 2026-10-07 02:00）">&#10003; 澳荐客胜 <span class="m7-stars">&#9733;&#9733;&#9733;&#9733;</span></div><a href="https://news.7m.com.cn/prediction/data/5094410.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分2.95</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -3902,8 +3795,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-rec m7-agree" title="澳门推介客胜 &amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;（巴恩斯利 英格兰锦标赛 2026-10-07 02:00）">&#10003; 澳荐客胜 <span class="m7-stars">&#9733;&#9733;&#9733;&#9733;</span></div><a href="https://news.7m.com.cn/prediction/data/5094398.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分2.91</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -3963,8 +3854,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-neutral">分布均匀</div>
         </td>
         <td class="col-7m"><span class="so-none">—</span></td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分2.95</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -4026,8 +3915,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-rec m7-agree" title="澳门推介客胜 &amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;（罗奇代尔 英格兰锦标赛 2026-10-07 02:00）">&#10003; 澳荐客胜 <span class="m7-stars">&#9733;&#9733;&#9733;&#9733;</span></div><a href="https://news.7m.com.cn/prediction/data/5094407.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分3.35</div>
           <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-act">可下手</span></div>
@@ -4089,8 +3976,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-rec m7-agree" title="澳门推介客胜 &amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;（普利茅斯 英格兰锦标赛 2026-10-07 02:00）">&#10003; 澳荐客胜 <span class="m7-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div><a href="https://news.7m.com.cn/prediction/data/5094438.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分3.11</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -4152,8 +4037,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-rec m7-diff" title="澳门推介平局 &amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;（和局 英格兰锦标赛 2026-10-07 02:00）">&#9888; 澳荐平局 <span class="m7-stars">&#9733;&#9733;&#9733;&#9733;</span></div><a href="https://news.7m.com.cn/prediction/data/5094383.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分2.94</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -4215,8 +4098,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-rec m7-agree" title="澳门推介客胜 &amp;#9733;&amp;#9733;&amp;#9733;（布拉德福德 英格兰锦标赛 2026-10-07 02:00）">&#10003; 澳荐客胜 <span class="m7-stars">&#9733;&#9733;&#9733;</span></div><a href="https://news.7m.com.cn/prediction/data/5094374.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分2.95</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -4278,8 +4159,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-rec m7-agree" title="澳门推介客胜 &amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;（斯托克港 英格兰锦标赛 2026-10-07 02:00）">&#10003; 澳荐客胜 <span class="m7-stars">&#9733;&#9733;&#9733;&#9733;</span></div><a href="https://news.7m.com.cn/prediction/data/5094389.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分3.10</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -4341,8 +4220,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-rec m7-agree" title="澳门推介平局 &amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;（和局 英格兰锦标赛 2026-10-07 02:00）">&#10003; 澳荐平局 <span class="m7-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div><a href="https://news.7m.com.cn/prediction/data/5094416.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分2.94</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -4404,8 +4281,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-rec m7-agree" title="澳门推介主胜 &amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;（威科姆流浪者 英格兰锦标赛 2026-10-07 02:00）">&#10003; 澳荐主胜 <span class="m7-stars">&#9733;&#9733;&#9733;&#9733;</span></div><a href="https://news.7m.com.cn/prediction/data/5094423.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分3.13</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -4467,8 +4342,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-none" title="瑞士上仗欧国联续以“4-2-3-1”阵式出战，在两大主力格列沙卡及比列安保路同时缺阵下，依然交出好演出。翼锋丹尼度耶该仗为球队建功，近2场欧国联录">前瞻1篇</div><div class="m7-rec m7-diff" title="澳门推介主胜 &amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;（瑞士 欧洲国家联赛 2026-10-07 02:45）">&#9888; 澳荐主胜 <span class="m7-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div><div class="m7-jq" title="瑞士上仗欧国联续以“4-2-3-1”阵式出战，在两大主力格列沙卡及比列安保路同时缺阵下，依然交出好演出。翼锋丹尼度耶该仗为球队建功，近2场欧国联录">瑞士上仗欧国联续以“4-2-3-1”阵式出战，在两大主力格列沙卡及比列安保路同时缺阵下，依然交出好演出。翼锋丹尼度耶该仗为球队建功，近2场欧国联录</div><a href="https://news.7m.com.cn/news/20261006/741620.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分3.51</div>
           <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-act">可下手</span></div>
@@ -4530,8 +4403,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-none" title="白俄罗斯上仗欧国联转踢“4-2-3-1”阵式，效果理想，防中耶朗斯基利抢得正选，拦截硬净。左闸柏捷连该仗交出助攻帽子戏法，表现突出，前锋干治施禾则">前瞻1篇</div><div class="m7-rec m7-agree" title="澳门推介平局 &amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;（和局 欧洲国家联赛 2026-10-07 02:45）">&#10003; 澳荐平局 <span class="m7-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div><div class="m7-jq" title="白俄罗斯上仗欧国联转踢“4-2-3-1”阵式，效果理想，防中耶朗斯基利抢得正选，拦截硬净。左闸柏捷连该仗交出助攻帽子戏法，表现突出，前锋干治施禾则">白俄罗斯上仗欧国联转踢“4-2-3-1”阵式，效果理想，防中耶朗斯基利抢得正选，拦截硬净。左闸柏捷连该仗交出助攻帽子戏法，表现突出，前锋干治施禾则</div><a href="https://news.7m.com.cn/news/20261006/741622.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分2.91</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -4593,8 +4464,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-none" title="卢森堡上仗欧国联续以“4-1-4-1”阵式出战，主力中坚马梅杜域表现稳健，但因累积黄牌够数，今场将要停赛，其位置会由迪苏高域顶上担正。前锋维迪拿同">前瞻1篇</div><div class="m7-rec m7-agree" title="澳门推介平局 &amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;（和局 欧洲国家联赛 2026-10-07 02:45）">&#10003; 澳荐平局 <span class="m7-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div><div class="m7-jq" title="卢森堡上仗欧国联续以“4-1-4-1”阵式出战，主力中坚马梅杜域表现稳健，但因累积黄牌够数，今场将要停赛，其位置会由迪苏高域顶上担正。前锋维迪拿同">卢森堡上仗欧国联续以“4-1-4-1”阵式出战，主力中坚马梅杜域表现稳健，但因累积黄牌够数，今场将要停赛，其位置会由迪苏高域顶上担正。前锋维迪拿同</div><a href="https://news.7m.com.cn/news/20261006/741619.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分2.87</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -4656,8 +4525,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-rec m7-agree" title="澳门推介客胜 &amp;#9733;&amp;#9733;&amp;#9733;（斯洛伐克 欧洲国家联赛 2026-10-07 02:45）">&#10003; 澳荐客胜 <span class="m7-stars">&#9733;&#9733;&#9733;</span></div><a href="https://news.7m.com.cn/prediction/data/5077084.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分3.11</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -4719,8 +4586,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-none" title="爱沙尼亚右翼卫柏治臣上仗欧国联一箭定江山，表现突出，赛后被选为该场最佳球员，助攻助守，表现活跃出色。中坚古斯克同场抢得正选，踢法硬净，今场都会继续">前瞻1篇</div><div class="m7-rec m7-agree" title="澳门推介客胜 &amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;（冰岛 欧洲国家联赛 2026-10-07 02:45）">&#10003; 澳荐客胜 <span class="m7-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div><div class="m7-jq" title="爱沙尼亚右翼卫柏治臣上仗欧国联一箭定江山，表现突出，赛后被选为该场最佳球员，助攻助守，表现活跃出色。中坚古斯克同场抢得正选，踢法硬净，今场都会继续">爱沙尼亚右翼卫柏治臣上仗欧国联一箭定江山，表现突出，赛后被选为该场最佳球员，助攻助守，表现活跃出色。中坚古斯克同场抢得正选，踢法硬净，今场都会继续</div><a href="https://news.7m.com.cn/news/20261006/741612.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分3.07</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -4782,8 +4647,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-none" title="克罗地亚上仗欧国联惨败，老将莫迪历担正出战，表现低迷，被提早收起，预计今场会续任正选，期望能稳定军心。中场柏沙历及守将苏达路，同场都在轮换下仅以后">前瞻1篇</div><div class="m7-rec m7-agree" title="澳门推介客胜 &amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;（西班牙 欧洲国家联赛 2026-10-07 02:45）">&#10003; 澳荐客胜 <span class="m7-stars">&#9733;&#9733;&#9733;&#9733;</span></div><div class="m7-jq" title="克罗地亚上仗欧国联惨败，老将莫迪历担正出战，表现低迷，被提早收起，预计今场会续任正选，期望能稳定军心。中场柏沙历及守将苏达路，同场都在轮换下仅以后">克罗地亚上仗欧国联惨败，老将莫迪历担正出战，表现低迷，被提早收起，预计今场会续任正选，期望能稳定军心。中场柏沙历及守将苏达路，同场都在轮换下仅以后</div><a href="https://news.7m.com.cn/news/20261006/741621.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分3.33</div>
           <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-act">可下手</span></div>
@@ -4845,8 +4708,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-none" title="英格兰上仗欧国联再用比克福特担正把关，全场未受考验。队长前锋哈利卡尼与布卡约沙卡该仗各自梅开二度，表现出色；哈利卡尼今场都会继续担正领军，锋力有保">前瞻2篇</div><div class="m7-rec m7-agree" title="澳门推介主胜 &amp;#9733;&amp;#9733;&amp;#9733;（英格兰 欧洲国家联赛 2026-10-07 02:45）">&#10003; 澳荐主胜 <span class="m7-stars">&#9733;&#9733;&#9733;</span></div><div class="m7-jq" title="英格兰上仗欧国联再用比克福特担正把关，全场未受考验。队长前锋哈利卡尼与布卡约沙卡该仗各自梅开二度，表现出色；哈利卡尼今场都会继续担正领军，锋力有保">英格兰上仗欧国联再用比克福特担正把关，全场未受考验。队长前锋哈利卡尼与布卡约沙卡该仗各自梅开二度，表现出色；哈利卡尼今场都会继续担正领军，锋力有保</div><a href="https://news.7m.com.cn/news/20261006/741624.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分3.33</div>
           <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-act">可下手</span></div>
@@ -4908,8 +4769,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-none" title="苏格兰主力中坚史葛麦坚拿上仗欧国联领红牌被逐，今场停赛；可幸另一中坚重心积亨特利及时波监刑满，可以复出顶上，守力可以维持。主帅普干路利该仗取得掌帅">前瞻1篇</div><div class="m7-rec m7-agree" title="澳门推介平局 &amp;#9733;&amp;#9733;&amp;#9733;（和局 欧洲国家联赛 2026-10-07 02:45）">&#10003; 澳荐平局 <span class="m7-stars">&#9733;&#9733;&#9733;</span></div><div class="m7-jq" title="苏格兰主力中坚史葛麦坚拿上仗欧国联领红牌被逐，今场停赛；可幸另一中坚重心积亨特利及时波监刑满，可以复出顶上，守力可以维持。主帅普干路利该仗取得掌帅">苏格兰主力中坚史葛麦坚拿上仗欧国联领红牌被逐，今场停赛；可幸另一中坚重心积亨特利及时波监刑满，可以复出顶上，守力可以维持。主帅普干路利该仗取得掌帅</div><a href="https://news.7m.com.cn/news/20261006/741618.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分2.91</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -4971,8 +4830,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-rec m7-agree" title="澳门推介客胜 &amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;（布罗姆利 英格兰锦标赛 2026-10-07 02:45）">&#10003; 澳荐客胜 <span class="m7-stars">&#9733;&#9733;&#9733;&#9733;</span></div><a href="https://news.7m.com.cn/prediction/data/5094454.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分2.95</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -5034,8 +4891,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-rec m7-diff" title="澳门推介客胜 &amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;（圣贝纳多 巴西乙组联赛 2026-10-07 06:30）">&#9888; 澳荐客胜 <span class="m7-stars">&#9733;&#9733;&#9733;&#9733;</span></div><a href="https://news.7m.com.cn/prediction/data/5036361.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分2.70</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -5097,8 +4952,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-rec m7-agree" title="澳门推介平局 &amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;（和局 巴西乙组联赛 2026-10-07 07:30）">&#10003; 澳荐平局 <span class="m7-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div><a href="https://news.7m.com.cn/prediction/data/5036357.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分2.91</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -5160,8 +5013,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-none" title="国际友谊赛前瞻：美国VS加拿大">前瞻1篇</div><div class="m7-rec m7-agree" title="澳门推介主胜 &amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;（美国 国际友谊赛 2026-10-07 08:10）">&#10003; 澳荐主胜 <span class="m7-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div><a href="https://news.7m.com.cn/news/20261006/741623.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分2.92</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -5223,10 +5074,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-rec m7-agree" title="澳门推介平局 &amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;（和局 美国职业大联盟联赛 2026-10-07 08:30）">&#10003; 澳荐平局 <span class="m7-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div><a href="https://news.7m.com.cn/prediction/data/5126657.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
-        <td class="col-sta">
-          <div class="sta-rec sta-agree" title="Statarea TIP: 平局+客胜 | 1X2: 30/32/38 | 大球概率: 1.5球92% 2.5球72% 3.5球42% | BTS 70% | 社区票 2/1 | USA - MAJOR LEAGUE SOCCER">&#10003; 平局+客胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">30/32/38</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率72%">2.5球 72%大</div>
-        </td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分3.10</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -5288,8 +5135,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-rec m7-agree" title="澳门推介客胜 &amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;（尤文图德 巴西乙组联赛 2026-10-07 08:35）">&#10003; 澳荐客胜 <span class="m7-stars">&#9733;&#9733;&#9733;&#9733;</span></div><a href="https://news.7m.com.cn/prediction/data/5036360.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分3.09</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -5364,8 +5209,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
                 <th>SP</th>
                 <th>同赔</th>
                 <th>7M</th>
-                <th>ST</th>
-                <th>YC</th>
                 <th>大小球</th>
               </tr>
             </thead>
@@ -5416,8 +5259,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-none" title="南韩世界排名32，上仗国际赛排出“4-4-2”，孙兴民及吴贤揆组成前锋组合，李康仁及金敏洙负责两翼侧击。球队鲜有具威胁埋门，后防重心金玟哉赛后指队">前瞻1篇</div><div class="m7-rec m7-agree" title="澳门推介客胜 &amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;（乌兹别克斯坦 国际友谊赛 2026-10-06 19:00）">&#10003; 澳荐客胜 <span class="m7-stars">&#9733;&#9733;&#9733;&#9733;</span></div><div class="m7-jq" title="南韩世界排名32，上仗国际赛排出“4-4-2”，孙兴民及吴贤揆组成前锋组合，李康仁及金敏洙负责两翼侧击。球队鲜有具威胁埋门，后防重心金玟哉赛后指队">南韩世界排名32，上仗国际赛排出“4-4-2”，孙兴民及吴贤揆组成前锋组合，李康仁及金敏洙负责两翼侧击。球队鲜有具威胁埋门，后防重心金玟哉赛后指队</div><a href="https://news.7m.com.cn/news/20261006/741605.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分3.11</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -5475,8 +5316,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-none" title="中国世界排名91，上仗国际赛排出“4-4-2”，韦世豪及陶强龙出任前锋组合，陈蒲及杨铭锐负责两翼侧击。球队上半场连番失误，半场已落后0比3；易边后">前瞻1篇</div><div class="m7-rec m7-agree" title="澳门推介平局 &amp;#9733;&amp;#9733;&amp;#9733;（和局 国际友谊赛 2026-10-06 19:35）">&#10003; 澳荐平局 <span class="m7-stars">&#9733;&#9733;&#9733;</span></div><div class="m7-jq" title="中国世界排名91，上仗国际赛排出“4-4-2”，韦世豪及陶强龙出任前锋组合，陈蒲及杨铭锐负责两翼侧击。球队上半场连番失误，半场已落后0比3；易边后">中国世界排名91，上仗国际赛排出“4-4-2”，韦世豪及陶强龙出任前锋组合，陈蒲及杨铭锐负责两翼侧击。球队上半场连番失误，半场已落后0比3；易边后</div><a href="https://news.7m.com.cn/news/20261006/741606.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分3.11</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -5534,8 +5373,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-none" title="哈萨克上仗欧国联续以“4-2-3-1”阵式出战，顶替伤兵中场古亚治担正的奥拿素夫，表现一般，但今场会续任正选。中坚阿利比同场替球队破蛋，助攻助守，">前瞻1篇</div><div class="m7-rec m7-agree" title="澳门推介平局 &amp;#9733;&amp;#9733;&amp;#9733;（和局 欧洲国家联赛 2026-10-06 22:00）">&#10003; 澳荐平局 <span class="m7-stars">&#9733;&#9733;&#9733;</span></div><div class="m7-jq" title="哈萨克上仗欧国联续以“4-2-3-1”阵式出战，顶替伤兵中场古亚治担正的奥拿素夫，表现一般，但今场会续任正选。中坚阿利比同场替球队破蛋，助攻助守，">哈萨克上仗欧国联续以“4-2-3-1”阵式出战，顶替伤兵中场古亚治担正的奥拿素夫，表现一般，但今场会续任正选。中坚阿利比同场替球队破蛋，助攻助守，</div><a href="https://news.7m.com.cn/news/20261006/741607.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分2.91</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -5591,8 +5428,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-neutral">分布均匀</div>
         </td>
         <td class="col-7m"><span class="so-none">—</span></td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分2.92</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -5648,8 +5483,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-agree">✓ 同赔支持客胜</div>
         </td>
         <td class="col-7m"><span class="so-none">—</span></td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分3.31</div>
           <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-act">可下手</span></div>
@@ -5705,8 +5538,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-agree">✓ 同赔支持主胜</div>
         </td>
         <td class="col-7m"><span class="so-none">—</span></td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分3.15</div>
           <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-act">可下手</span></div>
@@ -5764,8 +5595,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-rec m7-agree" title="澳门推介平局 &amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;（和局 欧洲U21国家杯资格赛 2026-10-07 00:30）">&#10003; 澳荐平局 <span class="m7-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div><a href="https://news.7m.com.cn/prediction/data/4872729.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分2.88</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -5823,8 +5652,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-rec m7-diff" title="澳门推介平局 &amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;（和局 欧洲U21国家杯资格赛 2026-10-07 01:00）">&#9888; 澳荐平局 <span class="m7-stars">&#9733;&#9733;&#9733;&#9733;</span></div><a href="https://news.7m.com.cn/prediction/data/4872885.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分3.15</div>
           <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-act">可下手</span></div>
@@ -5880,8 +5707,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-agree">✓ 同赔支持主胜</div>
         </td>
         <td class="col-7m"><span class="so-none">—</span></td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分3.15</div>
           <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-act">可下手</span></div>
@@ -5937,8 +5762,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-agree">✓ 同赔支持客胜</div>
         </td>
         <td class="col-7m"><span class="so-none">—</span></td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分3.34</div>
           <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-act">可下手</span></div>
@@ -5996,8 +5819,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-rec m7-diff" title="澳门推介平局 &amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;（和局 欧洲U21国家杯资格赛 2026-10-07 01:00）">&#9888; 澳荐平局 <span class="m7-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div><a href="https://news.7m.com.cn/prediction/data/4872831.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分3.15</div>
           <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-act">可下手</span></div>
@@ -6055,8 +5876,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-rec m7-agree" title="澳门推介平局 &amp;#9733;&amp;#9733;&amp;#9733;（和局 英格兰锦标赛 2026-10-07 02:00）">&#10003; 澳荐平局 <span class="m7-stars">&#9733;&#9733;&#9733;</span></div><a href="https://news.7m.com.cn/prediction/data/5094364.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分2.88</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -6114,8 +5933,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-rec m7-agree" title="澳门推介客胜 &amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;（巴恩斯利 英格兰锦标赛 2026-10-07 02:00）">&#10003; 澳荐客胜 <span class="m7-stars">&#9733;&#9733;&#9733;&#9733;</span></div><a href="https://news.7m.com.cn/prediction/data/5094398.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分2.91</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -6171,8 +5988,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="so-trend so-neutral">分布均匀</div>
         </td>
         <td class="col-7m"><span class="so-none">—</span></td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分2.95</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -6230,8 +6045,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-rec m7-agree" title="澳门推介主胜 &amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;（威科姆流浪者 英格兰锦标赛 2026-10-07 02:00）">&#10003; 澳荐主胜 <span class="m7-stars">&#9733;&#9733;&#9733;&#9733;</span></div><a href="https://news.7m.com.cn/prediction/data/5094423.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分3.13</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -6289,8 +6102,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-none" title="白俄罗斯上仗欧国联转踢“4-2-3-1”阵式，效果理想，防中耶朗斯基利抢得正选，拦截硬净。左闸柏捷连该仗交出助攻帽子戏法，表现突出，前锋干治施禾则">前瞻1篇</div><div class="m7-rec m7-agree" title="澳门推介平局 &amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;（和局 欧洲国家联赛 2026-10-07 02:45）">&#10003; 澳荐平局 <span class="m7-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div><div class="m7-jq" title="白俄罗斯上仗欧国联转踢“4-2-3-1”阵式，效果理想，防中耶朗斯基利抢得正选，拦截硬净。左闸柏捷连该仗交出助攻帽子戏法，表现突出，前锋干治施禾则">白俄罗斯上仗欧国联转踢“4-2-3-1”阵式，效果理想，防中耶朗斯基利抢得正选，拦截硬净。左闸柏捷连该仗交出助攻帽子戏法，表现突出，前锋干治施禾则</div><a href="https://news.7m.com.cn/news/20261006/741622.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分2.91</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -6348,8 +6159,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-none" title="卢森堡上仗欧国联续以“4-1-4-1”阵式出战，主力中坚马梅杜域表现稳健，但因累积黄牌够数，今场将要停赛，其位置会由迪苏高域顶上担正。前锋维迪拿同">前瞻1篇</div><div class="m7-rec m7-agree" title="澳门推介平局 &amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;（和局 欧洲国家联赛 2026-10-07 02:45）">&#10003; 澳荐平局 <span class="m7-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div><div class="m7-jq" title="卢森堡上仗欧国联续以“4-1-4-1”阵式出战，主力中坚马梅杜域表现稳健，但因累积黄牌够数，今场将要停赛，其位置会由迪苏高域顶上担正。前锋维迪拿同">卢森堡上仗欧国联续以“4-1-4-1”阵式出战，主力中坚马梅杜域表现稳健，但因累积黄牌够数，今场将要停赛，其位置会由迪苏高域顶上担正。前锋维迪拿同</div><a href="https://news.7m.com.cn/news/20261006/741619.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分2.87</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -6407,8 +6216,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-none" title="英格兰上仗欧国联再用比克福特担正把关，全场未受考验。队长前锋哈利卡尼与布卡约沙卡该仗各自梅开二度，表现出色；哈利卡尼今场都会继续担正领军，锋力有保">前瞻2篇</div><div class="m7-rec m7-agree" title="澳门推介主胜 &amp;#9733;&amp;#9733;&amp;#9733;（英格兰 欧洲国家联赛 2026-10-07 02:45）">&#10003; 澳荐主胜 <span class="m7-stars">&#9733;&#9733;&#9733;</span></div><div class="m7-jq" title="英格兰上仗欧国联再用比克福特担正把关，全场未受考验。队长前锋哈利卡尼与布卡约沙卡该仗各自梅开二度，表现出色；哈利卡尼今场都会继续担正领军，锋力有保">英格兰上仗欧国联再用比克福特担正把关，全场未受考验。队长前锋哈利卡尼与布卡约沙卡该仗各自梅开二度，表现出色；哈利卡尼今场都会继续担正领军，锋力有保</div><a href="https://news.7m.com.cn/news/20261006/741624.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分3.33</div>
           <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-act">可下手</span></div>
@@ -6466,8 +6273,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-none" title="苏格兰主力中坚史葛麦坚拿上仗欧国联领红牌被逐，今场停赛；可幸另一中坚重心积亨特利及时波监刑满，可以复出顶上，守力可以维持。主帅普干路利该仗取得掌帅">前瞻1篇</div><div class="m7-rec m7-agree" title="澳门推介平局 &amp;#9733;&amp;#9733;&amp;#9733;（和局 欧洲国家联赛 2026-10-07 02:45）">&#10003; 澳荐平局 <span class="m7-stars">&#9733;&#9733;&#9733;</span></div><div class="m7-jq" title="苏格兰主力中坚史葛麦坚拿上仗欧国联领红牌被逐，今场停赛；可幸另一中坚重心积亨特利及时波监刑满，可以复出顶上，守力可以维持。主帅普干路利该仗取得掌帅">苏格兰主力中坚史葛麦坚拿上仗欧国联领红牌被逐，今场停赛；可幸另一中坚重心积亨特利及时波监刑满，可以复出顶上，守力可以维持。主帅普干路利该仗取得掌帅</div><a href="https://news.7m.com.cn/news/20261006/741618.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分2.91</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -6525,8 +6330,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-rec m7-agree" title="澳门推介客胜 &amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;（布罗姆利 英格兰锦标赛 2026-10-07 02:45）">&#10003; 澳荐客胜 <span class="m7-stars">&#9733;&#9733;&#9733;&#9733;</span></div><a href="https://news.7m.com.cn/prediction/data/5094454.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分2.95</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -6584,8 +6387,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-rec m7-diff" title="澳门推介客胜 &amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;（圣贝纳多 巴西乙组联赛 2026-10-07 06:30）">&#9888; 澳荐客胜 <span class="m7-stars">&#9733;&#9733;&#9733;&#9733;</span></div><a href="https://news.7m.com.cn/prediction/data/5036361.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分2.70</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -6643,8 +6444,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-rec m7-agree" title="澳门推介平局 &amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;（和局 巴西乙组联赛 2026-10-07 07:30）">&#10003; 澳荐平局 <span class="m7-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div><a href="https://news.7m.com.cn/prediction/data/5036357.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分2.91</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -6702,8 +6501,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-none" title="国际友谊赛前瞻：美国VS加拿大">前瞻1篇</div><div class="m7-rec m7-agree" title="澳门推介主胜 &amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;（美国 国际友谊赛 2026-10-07 08:10）">&#10003; 澳荐主胜 <span class="m7-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div><a href="https://news.7m.com.cn/news/20261006/741623.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
-        <td class="col-sta"><span class="so-none">—</span></td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分2.92</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -6761,10 +6558,6 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-7m">
           <div class="m7-rec m7-agree" title="澳门推介平局 &amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;&amp;#9733;（和局 美国职业大联盟联赛 2026-10-07 08:30）">&#10003; 澳荐平局 <span class="m7-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div><a href="https://news.7m.com.cn/prediction/data/5126657.shtml" target="_blank" class="m7-link">原文&#8599;</a>
         </td>
-        <td class="col-sta">
-          <div class="sta-rec sta-agree" title="Statarea TIP: 平局+客胜 | 1X2: 30/32/38 | 大球概率: 1.5球92% 2.5球72% 3.5球42% | BTS 70% | 社区票 2/1 | USA - MAJOR LEAGUE SOCCER">&#10003; 平局+客胜</div><div class="sta-prob" title="Statarea三向概率 胜/平/负">30/32/38</div><div class="sta-ou" title="Statarea大小球2.5线：大球概率72%">2.5球 72%大</div>
-        </td>
-        <td class="col-yj"><span class="so-none">—</span></td>
         <td class="col-ou">
           <div class="ou-line">模型线2.25 · ou分3.10</div>
           <div class="ou-rec ou-wait">— 观望</div>
@@ -11305,7 +11098,7 @@ function filterOuReview() {
   document.getElementById('ou-count').textContent = visible;
 }
 
-// ===== 移动端参考详情折叠（2026-09-17）：点击展开同赔/7M/ST/军情 =====
+// ===== 移动端参考详情折叠（2026-09-17）：点击展开同赔/7M（ST/YC已于2026-10-07移除）=====
 (function() {
   document.querySelectorAll('.ref-toggle').forEach(function(btn) {
     btn.addEventListener('click', function() {
