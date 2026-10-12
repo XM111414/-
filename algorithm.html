@@ -12,12 +12,12 @@ tr:hover{background:#1e293b80;} .sum{color:#64748b;font-size:12px;margin-top:3px
 b{color:#f1f5f9;}
 </style></head><body>
 <h1>算法版本注册表</h1>
-<div class="sub">北京单场 v5 系统 · 生成于 2026-10-12 12:48 · 当前版本 2026-10-11-auto</div>
+<div class="sub">北京单场 v5 系统 · 生成于 2026-10-12 12:54 · 当前版本 2026-10-11-auto</div>
 <table><tr><th style="width:90px">版本</th><th style="width:84px">日期</th><th>变更内容</th>
 <th style="width:120px">改动前14天<br>命中率/Brier</th><th style="width:120px">改动后14天<br>命中率/Brier</th><th style="width:70px">Δ命中率</th></tr>
 <tr>
 <td><b>2026-10-11-auto</b></td><td>2026-10-11</td>
-<td><b>（自动检测到算法变更，待标注）</b><div class="sum">算法文件指纹变化，自动登记；请人工补充变更摘要</div></td>
+<td><b>融合监控评分补漏（不改预测算法）</b><div class="sum">v6.1融合共振观望场的原方向事后评分（ou_raw_is_hit）在500比分回填路径漏填：fill_results_into_prediction因北单开奖无比分评不了raw，而backfill_scores_from_500回填比分时填了score/ou_actual/ou_is_hit却漏了raw→10-09的14场共振场全部raw=None，共振陷阱假设无法监控。修复：backfill_scores_from_500的best分支补raw评分（work/daily_update_v2.py line679-682）；10-09历史数据用fix_raw_is_hit_1009.py一次性重算。10-11验证自动生效（10-10共振8场中5场可判全部评出）。纯监控字段修复，不影响预测/筛选行为。</div></td>
 <td>69.2% / 0.2176</td>
 <td><span class="pend">数据未满</span> / —</td>
 <td class=""><b>—</b></td></tr><tr>
