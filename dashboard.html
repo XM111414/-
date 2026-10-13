@@ -685,10 +685,14 @@ body {
 .mini-table .league-name { font-weight: 500; font-size: 0.7rem; }
 .mini-table .count, .mini-table .hits { color: var(--muted); font-size: 0.68rem; }
 
-/* 联赛表滚动容器：限高，避免"联赛行数多"把整块撑到 1800px+ */
+/* 联赛表滚动容器：限高（既压高度又留可滚动兜底）
+   2026-10-13 二次调整（按用户"希望一次看全、尽量不滚动"）：
+   桌面 320→560px、手机 300→420px。560px 可一次显示约 21 行——
+   昨日复盘的联赛准确率（19 个联赛 ≈ 503px）现在完全无需滚动；
+   月度"联赛累计准确率"56 行仍为滚动，但一屏可见行数由 13 → 21 行。 */
 .mini-scroll {
   overflow: auto;
-  max-height: 320px;
+  max-height: 560px;
   border-radius: 6px;
 }
 .mini-scroll .mini-table thead th,
@@ -1784,8 +1788,8 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
     border-bottom: 1px solid var(--rule);
   }
   .mini-table th { position: sticky; top: 0; background: #f1f5f9; z-index: 1; font-size: 0.68rem; }
-  .mini-scroll { max-height: 300px; overflow: auto; }
-  .table-wrap.wt-mini { overflow-x: auto; overflow-y: auto; max-height: 320px; }
+  .mini-scroll { max-height: 420px; overflow: auto; }
+  .table-wrap.wt-mini { overflow-x: auto; overflow-y: auto; max-height: 420px; }
   /* 顶部月度条同步紧凑（手机端 113px → 约 88px） */
   .monthly-overview { padding: 8px 12px; gap: 10px; margin-bottom: 8px; }
   .mo-icon { font-size: 1.2rem; }
