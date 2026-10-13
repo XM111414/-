@@ -12,12 +12,12 @@ tr:hover{background:#1e293b80;} .sum{color:#64748b;font-size:12px;margin-top:3px
 b{color:#f1f5f9;}
 </style></head><body>
 <h1>算法版本注册表</h1>
-<div class="sub">北京单场 v5 系统 · 生成于 2026-10-13 17:12 · 当前版本 2026-10-13-auto</div>
+<div class="sub">北京单场 v5 系统 · 生成于 2026-10-13 17:13 · 当前版本 2026-10-13-auto</div>
 <table><tr><th style="width:90px">版本</th><th style="width:84px">日期</th><th>变更内容</th>
 <th style="width:120px">改动前14天<br>命中率/Brier</th><th style="width:120px">改动后14天<br>命中率/Brier</th><th style="width:70px">Δ命中率</th></tr>
 <tr>
 <td><b>2026-10-13-auto</b></td><td>2026-10-13</td>
-<td><b>（自动检测到算法变更，待标注）</b><div class="sum">算法文件指纹变化，自动登记；请人工补充变更摘要</div></td>
+<td><b>R15滚动校准窗口错位修复 + TC复盘评分补漏</b><div class="sum">R15高信心滚动校准映射build_calib_map窗口双向错位修复：①list_available_days返回'YYYY-MM-DD'而比较串是8位（'-'0x2D小于任意数字）→日期过滤恒真、完全失效；②该函数按日期倒序返回，days[-window:]取到的实为最旧30天而非最近30天。实测（52天/3054可判场）：原实现用8/18~9/16旧窗口得{78:71.8,80:71.8}，最近30天(9/9~10/12)实为{78:68.5,80:67.2}→R15回压幅度偏松3~5pp，恰好放过R15要纠正的高信心虚高档；监控页回压锚点71.8%亦为该bug产物。修复：统一8位比较+升序后取尾部（work/daily_update_v2.py line782-788 与 server/daily_prediction_generator.py line1096-1103 双副本同步）。10-13重跑实测生效：映射71.8/71.8→68.5/67.2，回压3→4场。同批修复（不改方向判定逻辑）：TC复盘评分永久缺失——北单开奖数据无比分，score_tc_ou只能在backfill_scores_from_500的比分回填路径调用，此前该路径漏调致tc_ou.is_hit恒None、tc_ou_stats.scored恒0（全史0），已补调用；10-10重算后首次出数scored=135/161命中73=54.1%。slim补存嵌套tc_ou，防止10-09式自愈重算把tc统计覆盖成全0（10-09：57场有方向→covered=0）。另修日志'封顶68{N}场'缺失分隔符致'683场'歧义。验证方式：AST抽取生产函数直接执行+本次重跑实测。</div></td>
 <td>70.5% / 0.2118</td>
 <td><span class="pend">数据未满</span> / —</td>
 <td class=""><b>—</b></td></tr><tr>
