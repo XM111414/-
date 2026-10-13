@@ -1260,24 +1260,54 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
   .sub-tabs { margin-bottom: 8px; }
   .sub-tab { padding: 8px 14px; font-size: 0.8rem; min-height: 40px; }
   
-  /* 筛选栏：换行铺排（原横向滚动使「共N场」计数滑出视口不可见） */
+  /* 筛选栏（2026-10-13 二次修复）：flex-wrap 在「标签:控件 标签:控件…」扁平序列上
+     无法保证配对——换行点可能落在「标签」与「控件」之间，出现"状态："在一行、
+     下拉框被挤到下一行"的孤儿错位；且搜索框沿用内联 width:80px，手机上过窄。
+     改为 4 列 grid：[标签|控件|标签|控件]，每行两组、标签恒与其控件同行；
+     「搜索」控件跨 2~4 列加宽；「共N场」独占一行右对齐；控件统一 44px 高
+     （iOS/Android 触控推荐值，原 19~21px / 上一版 40px）。 */
   .filter-bar {
-    padding: 8px 10px;
-    gap: 8px;
-    row-gap: 8px;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: center;
+    gap: 6px 8px;
+    padding: 10px;
     border-radius: 8px;
   }
-  .filter-bar label { font-size: 0.78rem; white-space: nowrap; }
-  .filter-bar select, .filter-bar input {
+  .filter-bar > label {
+    font-size: 0.78rem;
+    white-space: nowrap;
+    min-width: 0;
+  }
+  .filter-bar > select,
+  .filter-bar > input {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    min-height: 44px;
     font-size: 0.8rem;
     padding: 8px 10px;
-    min-height: 40px;
     border-radius: 8px;
     white-space: nowrap;
-    max-width: 100%;
   }
-  .filter-bar .count { margin-left: auto; font-size: 0.78rem; white-space: nowrap; }
+  /* 搜索输入框：跨「标签+控件+标签+控件」的后三列，手机上不再只有 80px */
+  .filter-bar > input[type="text"] {
+    grid-column: 2 / -1;
+    width: 100% !important;
+  }
+  /* 「凯利陷阱」自成一个整行胶囊（它是自带勾选框的 label，不能拆对） */
+  .filter-bar > label.trap-check {
+    grid-column: 1 / -1;
+    min-height: 44px;
+    justify-content: center;
+  }
+  .filter-bar > .count {
+    grid-column: 1 / -1;
+    margin-left: 0;
+    text-align: right;
+    font-size: 0.78rem;
+    white-space: nowrap;
+  }
   
   /* 表格卡片化 */
   .table-wrap {
@@ -1744,9 +1774,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
   
   .sub-tab { padding: 8px 12px; font-size: 0.8rem; }
   
-  .filter-bar { padding: 8px; gap: 8px; }
+  .filter-bar { padding: 8px; gap: 6px 8px; }
   .filter-bar label { font-size: 0.78rem; }
-  .filter-bar select, .filter-bar input { font-size: 0.8rem; padding: 8px 10px; min-height: 40px; }
+  .filter-bar select, .filter-bar input { font-size: 0.8rem; padding: 8px 10px; min-height: 44px; }
   
   tbody tr {
     padding: 8px 10px;
