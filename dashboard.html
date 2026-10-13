@@ -548,12 +548,14 @@ body {
 .monthly-overview {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
   background: linear-gradient(135deg, #eff6ff 0%, #ecfdf5 100%);
   border: 1px solid #bfdbfe;
   border-radius: 12px;
-  padding: 14px 18px;
-  margin-bottom: 12px;
+  /* 2026-10-13 紧凑化：原 padding 14px 18px / 图标 1.8rem / 间距 18px → 高度 81px(桌面)
+     113px(手机)，缩到约 58 / 88px，信息一条平铺、不占一屏。 */
+  padding: 9px 14px;
+  margin-bottom: 10px;
   cursor: pointer;
   transition: all 0.2s;
 }
@@ -563,26 +565,27 @@ body {
   transform: translateY(-1px);
 }
 .mo-icon {
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   flex-shrink: 0;
+  line-height: 1;
 }
 .mo-info {
   flex: 1;
 }
 .mo-title {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 600;
   color: var(--ink);
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 .mo-hint {
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   color: var(--muted);
   font-weight: normal;
 }
 .mo-stats {
   display: flex;
-  gap: 18px;
+  gap: 14px;
   flex-wrap: wrap;
 }
 .mo-stats span {
@@ -657,27 +660,44 @@ body {
 .ou-stat-item.wait .num { color: var(--muted); }
 .ou-stat-item .lbl { font-size: 0.7rem; color: var(--muted); margin-top: 2px; }
 
-/* 联赛排行表 */
+/* 联赛排行表（2026-10-13 紧凑化）：原来 31px/行 × 56 行 = 1759px，占整月块 2303px 的 76%
+   —— 这就是"联赛准确率面板太大"的主因；行高压到约 21px，并把容器高度限制在 320px 内滚动，
+   表头吸顶，数据不丢。 */
 .mini-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
 }
 .mini-table th {
   text-align: left;
-  padding: 4px 6px;
-  font-size: 0.68rem;
+  padding: 3px 6px;
+  font-size: 0.66rem;
   color: var(--muted);
   font-weight: 600;
   border-bottom: 2px solid var(--rule);
 }
 .mini-table td {
-  padding: 4px 6px;
+  padding: 2px 6px;
   border-bottom: 1px solid var(--rule);
+  line-height: 1.35;
 }
-.mini-table .rank { width: 20px; color: var(--muted); font-weight: 600; text-align: center; }
-.mini-table .league-name { font-weight: 500; font-size: 0.75rem; }
-.mini-table .count, .mini-table .hits { color: var(--muted); font-size: 0.7rem; }
+.mini-table .rank { width: 18px; color: var(--muted); font-weight: 600; text-align: center; }
+.mini-table .league-name { font-weight: 500; font-size: 0.7rem; }
+.mini-table .count, .mini-table .hits { color: var(--muted); font-size: 0.68rem; }
+
+/* 联赛表滚动容器：限高，避免"联赛行数多"把整块撑到 1800px+ */
+.mini-scroll {
+  overflow: auto;
+  max-height: 320px;
+  border-radius: 6px;
+}
+.mini-scroll .mini-table thead th,
+.wt-mini .mini-table thead th {
+  position: sticky;
+  top: 0;
+  background: #f8fafc;
+  z-index: 1;
+}
 
 .rate-badge {
   display: inline-block;
@@ -1740,6 +1760,35 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
   .date-info .date-value { font-size: 0.82rem; }
   
   .footer { font-size: 0.68rem; margin-top: 10px; }
+
+  /* ===== 2026-10-13：mini-table（联赛准确率排行/联赛累计准确率/每日明细）不参与卡片化 =====
+     全局 "table,tr,td{display:block}" 把这类"多行小汇总表"变成每行一张卡——实测手机端
+     122px/行 × 56 行 = 7258px（联赛准确率面板过大的真正原因）。这三张表是跨行比对型数据，
+     行优于卡片：恢复真实表格布局 + 紧凑行高 + 容器限高滚动，表头吸顶。 */
+  .mini-table { display: table; width: 100%; border-collapse: collapse; font-size: 0.72rem; }
+  .mini-table thead { display: table-header-group; }
+  .mini-table tbody { display: table-row-group; }
+  .mini-table tr {
+    display: table-row;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+  }
+  .mini-table th, .mini-table td {
+    display: table-cell;
+    padding: 3px 6px;
+    white-space: nowrap;
+    text-align: left;
+    border-bottom: 1px solid var(--rule);
+  }
+  .mini-table th { position: sticky; top: 0; background: #f1f5f9; z-index: 1; font-size: 0.68rem; }
+  .mini-scroll { max-height: 300px; overflow: auto; }
+  .table-wrap.wt-mini { overflow-x: auto; overflow-y: auto; max-height: 320px; }
+  /* 顶部月度条同步紧凑（手机端 113px → 约 88px） */
+  .monthly-overview { padding: 8px 12px; gap: 10px; margin-bottom: 8px; }
+  .mo-icon { font-size: 1.2rem; }
 }
 
 /* 小屏手机（<480px）微调 */
@@ -4471,7 +4520,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <div class="analysis-row">
           <div class="analysis-card">
             <h3>&#127942; 联赛准确率排行</h3>
-            <div style="overflow-x: auto;">
+            <div class="mini-scroll">
               <table class="mini-table">
                 <thead>
                   <tr>
@@ -7326,7 +7375,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <div class="analysis-row">
           <div class="analysis-card">
             <h3>&#127942; 联赛累计准确率</h3>
-            <div style="overflow-x: auto;">
+            <div class="mini-scroll">
               <table class="mini-table">
                 <thead>
                   <tr>
@@ -7790,7 +7839,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           </div>
         </div>
         <div class="monthly-daily-title">每日明细</div>
-        <div class="table-wrap">
+        <div class="table-wrap wt-mini">
           <table class="mini-table">
             <thead>
               <tr>
@@ -7918,7 +7967,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <div class="analysis-row">
           <div class="analysis-card">
             <h3>&#127942; 联赛累计准确率</h3>
-            <div style="overflow-x: auto;">
+            <div class="mini-scroll">
               <table class="mini-table">
                 <thead>
                   <tr>
@@ -8656,7 +8705,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           </div>
         </div>
         <div class="monthly-daily-title">每日明细</div>
-        <div class="table-wrap">
+        <div class="table-wrap wt-mini">
           <table class="mini-table">
             <thead>
               <tr>
@@ -9004,7 +9053,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <div class="analysis-row">
           <div class="analysis-card">
             <h3>&#127942; 联赛累计准确率</h3>
-            <div style="overflow-x: auto;">
+            <div class="mini-scroll">
               <table class="mini-table">
                 <thead>
                   <tr>
@@ -9540,7 +9589,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           </div>
         </div>
         <div class="monthly-daily-title">每日明细</div>
-        <div class="table-wrap">
+        <div class="table-wrap wt-mini">
           <table class="mini-table">
             <thead>
               <tr>
