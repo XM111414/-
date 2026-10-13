@@ -14,6 +14,14 @@ th{background:#34495e;color:#fff;padding:8px;text-align:left;font-weight:500}
 td{padding:7px 8px;border-bottom:1px solid #ecf0f1}
 tr:hover td{background:#f8f9fa} .b{font-weight:700} .ok{color:#27ae60} .bad{color:#e74c3c;font-weight:700}
 .meta{color:#95a5a6;font-size:12px;margin-top:24px}
+/* 2026-10-13手机适配：表格最小内容宽 421px > 手机视口，原整页横向溢出
+   （实测 document.scrollWidth=445 vs 390）。改为表格自身横向滚动容器。 */
+@media (max-width:768px){
+  html,body{overflow-x:hidden;max-width:100%;}
+  body{padding:14px}
+  h1{font-size:19px}
+  table{display:block;width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+}
 </style></head><body><div class="wrap">
 <h1>&#128202; 2026年度历史回测复核（部分年度·数据更新至2026-09-27）</h1>
 <div class="cards">
