@@ -754,16 +754,24 @@ body {
 .table-wrap {
   overflow-x: auto;
   overflow-y: auto;
-  max-height: 55vh;
+  max-height: 60vh;
   border: 1px solid var(--rule);
   border-radius: 8px;
   background: var(--bg2);
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 #f1f5f9;
 }
+.table-wrap::-webkit-scrollbar { width: 10px; height: 10px; }
+.table-wrap::-webkit-scrollbar-track { background: #f1f5f9; }
+.table-wrap::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 5px; border: 2px solid #f1f5f9; }
+.table-wrap::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
 
 table {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.76rem;
+  font-variant-numeric: tabular-nums;
 }
 
 thead th {
@@ -976,11 +984,26 @@ tbody tr.match-miss:hover { background: #fee2e2; }
 .ou-hit-mark.miss { color: #dc2626; }
 
 /* 筛选状态列 */
-.col-status { width: 85px; }
-.f-badge { display: inline-block; padding: 2px 7px; border-radius: 7px; font-size: 0.68rem; font-weight: 600; }
+/* 2026-10-13修复：f-reason 长文本受 tbody td 的 white-space:nowrap 影响，该列实际被撑到
+   787px → 桌面表格总宽 1920px 超出容器 1336px，必须横向滚动才能看全筛选理由（最关键的
+   通过/筛除依据反而不在首屏）。改为 140px 限宽+换行+4行截断（完整理由见 title 悬浮提示，
+   移动端卡片态不截断）。 */
+.col-status { width: 140px; max-width: 168px; white-space: normal; }
+.f-badge { display: inline-block; padding: 2px 7px; border-radius: 7px; font-size: 0.68rem; font-weight: 600; white-space: nowrap; }
 .f-badge.pass { background: #dcfce7; color: #166534; }
 .f-badge.fail { background: #fee2e2; color: #991b1b; }
-.f-reason { font-size: 0.62rem; color: var(--muted); margin-top: 2px; }
+.f-reason {
+  font-size: 0.62rem;
+  color: var(--muted);
+  margin-top: 2px;
+  white-space: normal;
+  word-break: break-word;
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 .trap-badge { display: inline-block; margin-top: 3px; padding: 1px 7px; border-radius: 7px; font-size: 0.62rem; font-weight: 600; background: #fef3c7; color: #b45309; }
 tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
 .trap-check { display: inline-flex; align-items: center; gap: 4px; cursor: pointer; font-size: 0.75rem; font-weight: 600; color: #b45309; background: #fef3c7; border: 1px solid #fcd34d; border-radius: 12px; padding: 3px 10px; }
@@ -1199,11 +1222,17 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
 
 /* 平板及以下（<768px）：卡片布局，双选居中醒目 */
 @media (max-width: 768px) {
-  body { font-size: 13px; }
+  /* ===== 2026-10-13 手机端可读性与触控修复 =====
+     ①rem 基准 16px→18px：0.58rem 由 9.3px 升至 10.4px、0.62rem 由 9.9px 升至 11.2px
+       （实测手机端 747 个文本节点字号 <11px，最小 9.3px，手机上几乎不可读）；
+     ②下拉/输入框原高 19~21px（≤480 段更压到 3px 内边距），远低于触控 44px 推荐值 → 统一 ≥40px；
+     ③筛选栏原为横向滚动（内容 618px / 视口 362px），「共N场」计数滑出视口不可见 → 改为换行铺排。 */
+  html { font-size: 18px; }
+  body { font-size: 14px; }
   .container { padding: 8px 6px 16px; }
   
   .main-tabs { border-radius: 10px 10px 0 0; }
-  .main-tab { padding: 12px 12px; font-size: 0.82rem; }
+  .main-tab { padding: 12px 12px; font-size: 0.82rem; min-height: 46px; }
   .main-tab .tab-badge { font-size: 0.65rem; }
   
   .main-content { padding: 10px; border-radius: 0 0 10px 10px; }
@@ -1229,24 +1258,26 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
   .analysis-card h3 { font-size: 0.8rem; margin-bottom: 8px; }
   
   .sub-tabs { margin-bottom: 8px; }
-  .sub-tab { padding: 8px 14px; font-size: 0.8rem; }
+  .sub-tab { padding: 8px 14px; font-size: 0.8rem; min-height: 40px; }
   
-  /* 筛选栏：横向滚动 */
+  /* 筛选栏：换行铺排（原横向滚动使「共N场」计数滑出视口不可见） */
   .filter-bar {
-    padding: 6px 8px;
-    gap: 6px;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    border-radius: 6px;
+    padding: 8px 10px;
+    gap: 8px;
+    row-gap: 8px;
+    flex-wrap: wrap;
+    border-radius: 8px;
   }
-  .filter-bar label { font-size: 0.7rem; white-space: nowrap; }
+  .filter-bar label { font-size: 0.78rem; white-space: nowrap; }
   .filter-bar select, .filter-bar input {
-    font-size: 0.7rem;
-    padding: 4px 8px;
+    font-size: 0.8rem;
+    padding: 8px 10px;
+    min-height: 40px;
+    border-radius: 8px;
     white-space: nowrap;
+    max-width: 100%;
   }
-  .filter-bar .count { margin-left: auto; font-size: 0.72rem; white-space: nowrap; }
+  .filter-bar .count { margin-left: auto; font-size: 0.78rem; white-space: nowrap; }
   
   /* 表格卡片化 */
   .table-wrap {
@@ -1351,10 +1382,12 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
     padding: 2px 0;
     border-top: 1px dashed var(--rule);
   }
+  /* 参考详情折叠按钮（实测 33px 高，低于触控推荐值 → 提到 42px） */
   .ref-toggle {
     width: 100%;
-    padding: 8px 10px;
-    font-size: 0.72rem;
+    padding: 10px 10px;
+    min-height: 42px;
+    font-size: 0.78rem;
     font-weight: 600;
     color: var(--accent);
     background: rgba(59,130,246,.08);
@@ -1364,6 +1397,13 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
     -webkit-tap-highlight-color: transparent;
   }
   .ref-toggle:active { background: rgba(59,130,246,.15); }
+
+  /* 手机卡片态不截断筛选理由（桌面端限宽3行截断，此处放开显示完整文本） */
+  #pred-all-body .f-reason, #pred-passed-body .f-reason {
+    display: block;
+    -webkit-line-clamp: unset;
+    overflow: visible;
+  }
 
   /* 卡片分区标签（移动端替代表头） */
   #pred-all-body .col-teams::before, #pred-passed-body .col-teams::before { content: "对 阵"; }
@@ -1674,37 +1714,39 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
 
 /* 小屏手机（<480px）微调 */
 @media (max-width: 480px) {
-  body { font-size: 12px; }
-  .container { padding: 6px 4px 14px; }
+  /* 2026-10-13修复：原小屏段把字号继续压小（body 12px / select 0.65rem + 3px 内边距 /
+     标签 0.58~0.65rem），屏幕越小字越小属反向适配 → 改为与 ≤768 段同口径（rem 基准 18px）。 */
+  body { font-size: 14px; }
+  .container { padding: 8px 5px 16px; }
   
   .header { padding: 14px 12px; border-radius: 8px; }
   .header h1 { font-size: 1.1rem; }
-  .header .subtitle { font-size: 0.72rem; }
+  .header .subtitle { font-size: 0.78rem; }
   .header .meta { gap: 5px; margin-top: 8px; }
-  .header .meta-item { padding: 4px 8px; font-size: 0.68rem; }
+  .header .meta-item { padding: 4px 8px; font-size: 0.72rem; }
   .header .meta-item .value { font-size: 0.85rem; }
   
-  .main-tab { padding: 10px 8px; font-size: 0.78rem; }
+  .main-tab { padding: 12px 8px; font-size: 0.8rem; }
   .main-tab .tab-icon { font-size: 0.9rem; }
-  .main-tab .tab-badge { font-size: 0.58rem; padding: 1px 5px; }
+  .main-tab .tab-badge { font-size: 0.68rem; padding: 1px 6px; }
   
   .main-content { padding: 8px; }
   
   .overview-grid { gap: 5px; }
   .overview-card { padding: 8px 6px; }
   .overview-card .value { font-size: 1rem; }
-  .overview-card .label { font-size: 0.62rem; }
-  .overview-card .sub { display: none; }
+  .overview-card .label { font-size: 0.72rem; }
+  .overview-card .sub { font-size: 0.68rem; }
   
   .analysis-row { gap: 6px; }
   .analysis-card { padding: 8px; }
-  .analysis-card h3 { font-size: 0.75rem; }
+  .analysis-card h3 { font-size: 0.85rem; }
   
-  .sub-tab { padding: 6px 12px; font-size: 0.75rem; }
+  .sub-tab { padding: 8px 12px; font-size: 0.8rem; }
   
-  .filter-bar { padding: 5px 6px; gap: 4px; }
-  .filter-bar label { font-size: 0.65rem; }
-  .filter-bar select, .filter-bar input { font-size: 0.65rem; padding: 3px 6px; }
+  .filter-bar { padding: 8px; gap: 8px; }
+  .filter-bar label { font-size: 0.78rem; }
+  .filter-bar select, .filter-bar input { font-size: 0.8rem; padding: 8px 10px; min-height: 40px; }
   
   tbody tr {
     padding: 8px 10px;
@@ -1743,10 +1785,10 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
   }
   
   .date-nav { padding: 8px; gap: 8px; }
-  .date-info .date-label { font-size: 0.62rem; }
-  .date-info .date-value { font-size: 0.75rem; }
+  .date-info .date-label { font-size: 0.72rem; }
+  .date-info .date-value { font-size: 0.8rem; }
   
-  .footer { font-size: 0.62rem; margin-top: 8px; }
+  .footer { font-size: 0.72rem; margin-top: 8px; }
 }
 @media print {
   body { background: white; }
@@ -1877,7 +1919,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
     <button class="main-tab active" onclick="switchMainTab('prediction', this)">
       <span class="tab-icon">&#128202;</span>
       今日预测
-      <span class="tab-badge">25</span>
+      <span class="tab-badge">26</span>
     </button>
     <button class="main-tab" onclick="switchMainTab('review', this)">
       <span class="tab-icon">&#128200;</span>
@@ -1894,23 +1936,23 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
       <div class="overview-grid">
         <div class="overview-card all">
           <div class="label">全部比赛</div>
-          <div class="value">25</div>
-          <div class="sub">平均概率 71.5%</div>
+          <div class="value">26</div>
+          <div class="sub">平均概率 71.6%</div>
         </div>
         <div class="overview-card pass">
           <div class="label">通过筛选</div>
-          <div class="value">9</div>
-          <div class="sub">筛选率 36.0%</div>
+          <div class="value">10</div>
+          <div class="sub">筛选率 38.5%</div>
         </div>
         <div class="overview-card filter">
           <div class="label">筛除场次</div>
           <div class="value">16</div>
-          <div class="sub">占比 64.0%</div>
+          <div class="sub">占比 61.5%</div>
         </div>
         <div class="overview-card ou">
           <div class="label">大小球</div>
-<div class="value">大11 · 小0</div>
-<div class="label" style="margin-top:2px">稳度：较稳0 · 可下手11</div>
+<div class="value">大12 · 小0</div>
+<div class="label" style="margin-top:2px">稳度：较稳0 · 可下手12</div>
           <div class="sub">观望 14 场（TC共振降级0 · TC反共识0）</div>
         </div>
       </div>
@@ -1944,9 +1986,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
       <div class="gc-item">
         <div class="gc-label">B级（中等）</div>
         <div class="gc-bar">
-          <div class="gc-fill g-b" style="width:36.0%"></div>
+          <div class="gc-fill g-b" style="width:38.5%"></div>
         </div>
-        <div class="gc-nums">9/25 (36.0%)</div>
+        <div class="gc-nums">10/26 (38.5%)</div>
       </div>
       <div class="gc-item">
         <div class="gc-label">C级（低胜率）</div>
@@ -2030,7 +2072,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <h3>&#9917; 大小球分布</h3>
           <div class="ou-stats">
             <div class="ou-stat-item over">
-              <div class="num">11</div>
+              <div class="num">12</div>
               <div class="lbl">大球</div>
             </div>
             <div class="ou-stat-item under">
@@ -2048,10 +2090,10 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
       <!-- 子Tab -->
       <div class="sub-tabs">
         <button class="sub-tab active" onclick="switchSubTab('pred-all', this)">
-          全部比赛 (25)
+          全部比赛 (26)
         </button>
         <button class="sub-tab" onclick="switchSubTab('pred-passed', this)">
-          优化筛选 (9)
+          优化筛选 (10)
         </button>
       </div>
 
@@ -2119,7 +2161,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           </select>
           <label>搜索：</label>
           <input type="text" id="p-search-all" placeholder="球队" oninput="filterPred('all')" style="width: 80px;">
-          <div class="count"><strong id="p-count-all">25</strong> / 25</div>
+          <div class="count"><strong id="p-count-all">26</strong> / 26</div>
         </div>
         <div class="table-wrap">
           <table>
@@ -2138,6 +2180,67 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
               </tr>
             </thead>
             <tbody id="pred-all-body">
+      <tr class="">
+        <td class="col-seq">1</td>
+        <td class="col-time">15:40</td>
+        <td class="col-league">
+          <span class="league-tag">亚冠精英联赛</span>
+          <span class="grade-badge b">B级</span>
+        </td>
+        <td class="col-teams">
+          <span class="home">纽卡斯尔喷气机</span>
+          <span class="vs-wrap">
+            <span class="vs-handicap">+1</span>
+            <span class="vs">vs</span>
+          </span>
+          <span class="away">大阪钢巴</span>
+        </td>
+        <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge second">次选</span><span class="stars" title="把握度 74.1%">★★★★☆</span></div>
+          <span class="double-text">客胜+主胜</span>
+          
+          <div class="double-chips">
+            <span class="chip chip-1">
+              <span class="chip-label">客胜</span>
+              <span class="chip-prob">37.3%</span>
+            </span>
+            <span class="chip-plus">+</span>
+            <span class="chip chip-2">
+              <span class="chip-label">主胜</span>
+              <span class="chip-prob">36.9%</span>
+            </span>
+          </div>
+        </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.71</span> <span class="odd "><i>平</i>3.86</span> <span class="odd highlight"><i>负</i>2.68</span> </td>
+        <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
+        <td class="col-so">
+          <div class="so-rates">胜5 平12 负13<span class="so-pct">（16.7%/40.0%/43.3%）</span></div>
+          <div class="so-bar">
+            <div class="so-w" style="width:16.7%"></div>
+            <div class="so-d" style="width:40.0%"></div>
+            <div class="so-l" style="width:43.3%"></div>
+          </div>
+          <div class="so-total">威初盘同赔·历史30场</div>
+          <div class="so-trend so-neutral">分布均匀</div>
+        </td>
+        <td class="col-7m">
+          <div class="m7-rec m7-agree" title="澳门推介客胜 &amp;#9733;&amp;#9733;&amp;#9733;（大阪钢巴 亚足联冠军联赛精英赛 2026-10-13 15:45）">&#10003; 澳荐客胜 <span class="m7-stars">&#9733;&#9733;&#9733;</span></div><a href="https://news.7m.com.cn/prediction/data/5170640.shtml" target="_blank" class="m7-link">原文&#8599;</a>
+        </td>
+        <td class="col-ou">
+          <div class="ou-line">模型线2.25 · ou分3.19</div>
+          <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-act">可下手</span></div>
+          
+          <div class="ou-bar">
+            <div class="ou-over" style="width:58.0%"></div>
+          </div>
+          <div class="ou-probs">大58.4% 小41.6%</div>
+        </td>
+        
+        <td class="col-status">
+          <span class="f-badge pass">✓ 通过</span>
+          <div class="f-reason" title="-">-</div>
+        </td>
+      </tr>
       <tr class="">
         <td class="col-seq">2</td>
         <td class="col-time">17:55</td>
@@ -2196,7 +2299,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         
         <td class="col-status">
           <span class="f-badge pass">✓ 通过</span>
-          <div class="f-reason">-</div>
+          <div class="f-reason" title="-">-</div>
         </td>
       </tr>
       <tr class="">
@@ -2257,7 +2360,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         
         <td class="col-status">
           <span class="f-badge pass">✓ 通过</span>
-          <div class="f-reason">高信心校准映射79.4%→68.5%(滚动30天桶实测68%)</div>
+          <div class="f-reason" title="高信心校准映射79.4%→68.5%(滚动30天桶实测68%)">高信心校准映射79.4%→68.5%(滚动30天桶实测68%)</div>
         </td>
       </tr>
       <tr class="">
@@ -2318,7 +2421,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         
         <td class="col-status">
           <span class="f-badge pass">✓ 通过</span>
-          <div class="f-reason">让球结构修正(主+平→主+客,回测+29pp)</div>
+          <div class="f-reason" title="让球结构修正(主+平→主+客,回测+29pp)">让球结构修正(主+平→主+客,回测+29pp)</div>
         </td>
       </tr>
       <tr class="filtered-out kelly-trap">
@@ -2379,7 +2482,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         
         <td class="col-status">
           <span class="f-badge fail">✗ 筛除</span>
-          <div class="f-reason">总概率73.9%<74.0%、凯利共识陷阱-降信心封顶78%(低位主胜+威热门+双选三方一致)</div>
+          <div class="f-reason" title="总概率73.9%<74.0%、凯利共识陷阱-降信心封顶78%(低位主胜+威热门+双选三方一致)">总概率73.9%<74.0%、凯利共识陷阱-降信心封顶78%(低位主胜+威热门+双选三方一致)</div>
         </td>
       </tr>
       <tr class="filtered-out">
@@ -2440,7 +2543,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         
         <td class="col-status">
           <span class="f-badge fail">✗ 筛除</span>
-          <div class="f-reason">低置信平局类型</div>
+          <div class="f-reason" title="低置信平局类型">低置信平局类型</div>
         </td>
       </tr>
       <tr class="">
@@ -2501,7 +2604,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         
         <td class="col-status">
           <span class="f-badge pass">✓ 通过</span>
-          <div class="f-reason">高信心校准映射81.2%→68.0%(滚动30天桶实测67%)</div>
+          <div class="f-reason" title="高信心校准映射81.2%→68.0%(滚动30天桶实测67%)">高信心校准映射81.2%→68.0%(滚动30天桶实测67%)</div>
         </td>
       </tr>
       <tr class="filtered-out">
@@ -2562,7 +2665,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         
         <td class="col-status">
           <span class="f-badge fail">✗ 筛除</span>
-          <div class="f-reason">高平局联赛换向(热门+平局,回测78.9%)、让球结构修正(主+平→主+客,回测+29pp)、低70联赛信心封顶72、观察名单(瑞典甲让球局)、高平局联赛预警:平局风险高(平局率≥35%)</div>
+          <div class="f-reason" title="高平局联赛换向(热门+平局,回测78.9%)、让球结构修正(主+平→主+客,回测+29pp)、低70联赛信心封顶72、观察名单(瑞典甲让球局)、高平局联赛预警:平局风险高(平局率≥35%)">高平局联赛换向(热门+平局,回测78.9%)、让球结构修正(主+平→主+客,回测+29pp)、低70联赛信心封顶72、观察名单(瑞典甲让球局)、高平局联赛预警:平局风险高(平局率≥35%)</div>
         </td>
       </tr>
       <tr class="filtered-out">
@@ -2623,7 +2726,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         
         <td class="col-status">
           <span class="f-badge fail">✗ 筛除</span>
-          <div class="f-reason">轻热门共识封顶68(1.6-2.0无同赔印证,2月实测63%)、低置信平局类型</div>
+          <div class="f-reason" title="轻热门共识封顶68(1.6-2.0无同赔印证,2月实测63%)、低置信平局类型">轻热门共识封顶68(1.6-2.0无同赔印证,2月实测63%)、低置信平局类型</div>
         </td>
       </tr>
       <tr class="filtered-out">
@@ -2684,7 +2787,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         
         <td class="col-status">
           <span class="f-badge fail">✗ 筛除</span>
-          <div class="f-reason">总概率73.9%<74.0%</div>
+          <div class="f-reason" title="总概率73.9%<74.0%">总概率73.9%<74.0%</div>
         </td>
       </tr>
       <tr class="">
@@ -2745,7 +2848,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         
         <td class="col-status">
           <span class="f-badge pass">✓ 通过</span>
-          <div class="f-reason">-</div>
+          <div class="f-reason" title="-">-</div>
         </td>
       </tr>
       <tr class="filtered-out kelly-trap">
@@ -2806,7 +2909,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         
         <td class="col-status">
           <span class="f-badge fail">✗ 筛除</span>
-          <div class="f-reason">总概率72.7%<74.0%、凯利共识陷阱-降信心封顶78%(低位主胜+威热门+双选三方一致)</div>
+          <div class="f-reason" title="总概率72.7%<74.0%、凯利共识陷阱-降信心封顶78%(低位主胜+威热门+双选三方一致)">总概率72.7%<74.0%、凯利共识陷阱-降信心封顶78%(低位主胜+威热门+双选三方一致)</div>
         </td>
       </tr>
       <tr class="">
@@ -2867,7 +2970,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         
         <td class="col-status">
           <span class="f-badge pass">✓ 通过</span>
-          <div class="f-reason">让1球恰好净胜风险(强队赢1球=让球平局)、恰好净胜风险降信心78、高信心校准映射78.0%→68.5%(滚动30天桶实测68%)</div>
+          <div class="f-reason" title="让1球恰好净胜风险(强队赢1球=让球平局)、恰好净胜风险降信心78、高信心校准映射78.0%→68.5%(滚动30天桶实测68%)">让1球恰好净胜风险(强队赢1球=让球平局)、恰好净胜风险降信心78、高信心校准映射78.0%→68.5%(滚动30天桶实测68%)</div>
         </td>
       </tr>
       <tr class="filtered-out kelly-trap">
@@ -2928,7 +3031,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         
         <td class="col-status">
           <span class="f-badge fail">✗ 筛除</span>
-          <div class="f-reason">总概率70.8%<74.0%、凯利共识陷阱-降信心封顶78%(低位主胜+威热门+双选三方一致)</div>
+          <div class="f-reason" title="总概率70.8%<74.0%、凯利共识陷阱-降信心封顶78%(低位主胜+威热门+双选三方一致)">总概率70.8%<74.0%、凯利共识陷阱-降信心封顶78%(低位主胜+威热门+双选三方一致)</div>
         </td>
       </tr>
       <tr class="">
@@ -2987,7 +3090,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         
         <td class="col-status">
           <span class="f-badge pass">✓ 通过</span>
-          <div class="f-reason">-</div>
+          <div class="f-reason" title="-">-</div>
         </td>
       </tr>
       <tr class="filtered-out">
@@ -3048,7 +3151,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         
         <td class="col-status">
           <span class="f-badge fail">✗ 筛除</span>
-          <div class="f-reason">深让盘(|hc|≥2)信心封顶72、总概率72.0%<74.0%</div>
+          <div class="f-reason" title="深让盘(|hc|≥2)信心封顶72、总概率72.0%<74.0%">深让盘(|hc|≥2)信心封顶72、总概率72.0%<74.0%</div>
         </td>
       </tr>
       <tr class="filtered-out">
@@ -3109,7 +3212,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         
         <td class="col-status">
           <span class="f-badge fail">✗ 筛除</span>
-          <div class="f-reason">总概率72.0%<74.0%</div>
+          <div class="f-reason" title="总概率72.0%<74.0%">总概率72.0%<74.0%</div>
         </td>
       </tr>
       <tr class="filtered-out">
@@ -3170,7 +3273,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         
         <td class="col-status">
           <span class="f-badge fail">✗ 筛除</span>
-          <div class="f-reason">轻热门共识封顶68(1.6-2.0无同赔印证,2月实测63%)、低置信平局类型</div>
+          <div class="f-reason" title="轻热门共识封顶68(1.6-2.0无同赔印证,2月实测63%)、低置信平局类型">轻热门共识封顶68(1.6-2.0无同赔印证,2月实测63%)、低置信平局类型</div>
         </td>
       </tr>
       <tr class="">
@@ -3231,7 +3334,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         
         <td class="col-status">
           <span class="f-badge pass">✓ 通过</span>
-          <div class="f-reason">高信心校准映射78.3%→68.5%(滚动30天桶实测68%)</div>
+          <div class="f-reason" title="高信心校准映射78.3%→68.5%(滚动30天桶实测68%)">高信心校准映射78.3%→68.5%(滚动30天桶实测68%)</div>
         </td>
       </tr>
       <tr class="filtered-out">
@@ -3292,7 +3395,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         
         <td class="col-status">
           <span class="f-badge fail">✗ 筛除</span>
-          <div class="f-reason">低置信平局类型、主平双选校准封顶70(实测66.7%,客胜盲区)</div>
+          <div class="f-reason" title="低置信平局类型、主平双选校准封顶70(实测66.7%,客胜盲区)">低置信平局类型、主平双选校准封顶70(实测66.7%,客胜盲区)</div>
         </td>
       </tr>
       <tr class="filtered-out">
@@ -3353,7 +3456,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         
         <td class="col-status">
           <span class="f-badge fail">✗ 筛除</span>
-          <div class="f-reason">深让盘(|hc|≥2)信心封顶72、总概率72.0%<74.0%</div>
+          <div class="f-reason" title="深让盘(|hc|≥2)信心封顶72、总概率72.0%<74.0%">深让盘(|hc|≥2)信心封顶72、总概率72.0%<74.0%</div>
         </td>
       </tr>
       <tr class="filtered-out">
@@ -3405,7 +3508,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         
         <td class="col-status">
           <span class="f-badge fail">✗ 筛除</span>
-          <div class="f-reason">深让盘(|hc|≥2)信心封顶72、总概率72.0%<74.0%</div>
+          <div class="f-reason" title="深让盘(|hc|≥2)信心封顶72、总概率72.0%<74.0%">深让盘(|hc|≥2)信心封顶72、总概率72.0%<74.0%</div>
         </td>
       </tr>
       <tr class="filtered-out">
@@ -3466,7 +3569,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         
         <td class="col-status">
           <span class="f-badge fail">✗ 筛除</span>
-          <div class="f-reason">让球结构修正(主+平→主+客,回测+29pp)、总概率67.6%<68.0%</div>
+          <div class="f-reason" title="让球结构修正(主+平→主+客,回测+29pp)、总概率67.6%<68.0%">让球结构修正(主+平→主+客,回测+29pp)、总概率67.6%<68.0%</div>
         </td>
       </tr>
       <tr class="filtered-out">
@@ -3527,7 +3630,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         
         <td class="col-status">
           <span class="f-badge fail">✗ 筛除</span>
-          <div class="f-reason">低置信平局类型</div>
+          <div class="f-reason" title="低置信平局类型">低置信平局类型</div>
         </td>
       </tr>
       <tr class="filtered-out">
@@ -3588,7 +3691,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         
         <td class="col-status">
           <span class="f-badge fail">✗ 筛除</span>
-          <div class="f-reason">轻热门共识封顶68(1.6-2.0无同赔印证,2月实测63%)、平局双选概率不足</div>
+          <div class="f-reason" title="轻热门共识封顶68(1.6-2.0无同赔印证,2月实测63%)、平局双选概率不足">轻热门共识封顶68(1.6-2.0无同赔印证,2月实测63%)、平局双选概率不足</div>
         </td>
       </tr>
       <tr class="">
@@ -3649,7 +3752,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         
         <td class="col-status">
           <span class="f-badge pass">✓ 通过</span>
-          <div class="f-reason">主平双选校准封顶70(实测66.7%,客胜盲区)</div>
+          <div class="f-reason" title="主平双选校准封顶70(实测66.7%,客胜盲区)">主平双选校准封顶70(实测66.7%,客胜盲区)</div>
         </td>
       </tr>
             </tbody>
@@ -3695,7 +3798,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           </select>
           <label>搜索：</label>
           <input type="text" id="p-search-passed" placeholder="球队" oninput="filterPred('passed')" style="width: 80px;">
-          <div class="count"><strong id="p-count-passed">9</strong> / 9</div>
+          <div class="count"><strong id="p-count-passed">10</strong> / 10</div>
         </div>
         <div class="table-wrap">
           <table>
@@ -3713,6 +3816,63 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
               </tr>
             </thead>
             <tbody id="pred-passed-body">
+      <tr class="">
+        <td class="col-seq">1</td>
+        <td class="col-time">15:40</td>
+        <td class="col-league">
+          <span class="league-tag">亚冠精英联赛</span>
+          <span class="grade-badge b">B级</span>
+        </td>
+        <td class="col-teams">
+          <span class="home">纽卡斯尔喷气机</span>
+          <span class="vs-wrap">
+            <span class="vs-handicap">+1</span>
+            <span class="vs">vs</span>
+          </span>
+          <span class="away">大阪钢巴</span>
+        </td>
+        <td class="col-double">
+          <div class="grasp-row"><span class="rec-badge second">次选</span><span class="stars" title="把握度 74.1%">★★★★☆</span></div>
+          <span class="double-text">客胜+主胜</span>
+          
+          <div class="double-chips">
+            <span class="chip chip-1">
+              <span class="chip-label">客胜</span>
+              <span class="chip-prob">37.3%</span>
+            </span>
+            <span class="chip-plus">+</span>
+            <span class="chip chip-2">
+              <span class="chip-label">主胜</span>
+              <span class="chip-prob">36.9%</span>
+            </span>
+          </div>
+        </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.71</span> <span class="odd "><i>平</i>3.86</span> <span class="odd highlight"><i>负</i>2.68</span> </td>
+        <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
+        <td class="col-so">
+          <div class="so-rates">胜5 平12 负13<span class="so-pct">（16.7%/40.0%/43.3%）</span></div>
+          <div class="so-bar">
+            <div class="so-w" style="width:16.7%"></div>
+            <div class="so-d" style="width:40.0%"></div>
+            <div class="so-l" style="width:43.3%"></div>
+          </div>
+          <div class="so-total">威初盘同赔·历史30场</div>
+          <div class="so-trend so-neutral">分布均匀</div>
+        </td>
+        <td class="col-7m">
+          <div class="m7-rec m7-agree" title="澳门推介客胜 &amp;#9733;&amp;#9733;&amp;#9733;（大阪钢巴 亚足联冠军联赛精英赛 2026-10-13 15:45）">&#10003; 澳荐客胜 <span class="m7-stars">&#9733;&#9733;&#9733;</span></div><a href="https://news.7m.com.cn/prediction/data/5170640.shtml" target="_blank" class="m7-link">原文&#8599;</a>
+        </td>
+        <td class="col-ou">
+          <div class="ou-line">模型线2.25 · ou分3.19</div>
+          <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-act">可下手</span></div>
+          
+          <div class="ou-bar">
+            <div class="ou-over" style="width:58.0%"></div>
+          </div>
+          <div class="ou-probs">大58.4% 小41.6%</div>
+        </td>
+        
+      </tr>
       <tr class="">
         <td class="col-seq">2</td>
         <td class="col-time">17:55</td>
