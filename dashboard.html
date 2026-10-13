@@ -1788,8 +1788,10 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
     border-bottom: 1px solid var(--rule);
   }
   .mini-table th { position: sticky; top: 0; background: #f1f5f9; z-index: 1; font-size: 0.68rem; }
-  .mini-scroll { max-height: 420px; overflow: auto; }
-  .table-wrap.wt-mini { overflow-x: auto; overflow-y: auto; max-height: 420px; }
+  /* 手机端同样放宽到 580px：昨日复盘"联赛准确率排行"19 行 ≈ 558px，
+     现在整表一次看全、无需滚动（月度 56 行累计表仍滚动，一屏可见 19 行）。 */
+  .mini-scroll { max-height: 580px; overflow: auto; }
+  .table-wrap.wt-mini { overflow-x: auto; overflow-y: auto; max-height: 580px; }
   /* 顶部月度条同步紧凑（手机端 113px → 约 88px） */
   .monthly-overview { padding: 8px 12px; gap: 10px; margin-bottom: 8px; }
   .mo-icon { font-size: 1.2rem; }
