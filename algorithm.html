@@ -10,9 +10,18 @@ tr:hover{background:#1e293b80;} .sum{color:#64748b;font-size:12px;margin-top:3px
 .up{color:#34d399;} .down{color:#f87171;} .pend{color:#64748b;font-size:12px;}
 .note{background:#1e293b;border-radius:8px;padding:14px 16px;font-size:13px;color:#94a3b8;line-height:1.8;}
 b{color:#f1f5f9;}
+/* 2026-10-13手机适配：桌面表格最小内容宽约 804px > 手机视口 390px，原报告整页横向溢出
+   （实测 document.scrollWidth=828 vs 视口 390，手机上可左右拖动整页）。改为「表格自身
+   横向滚动」，页面不再横向溢出，窄表格不受影响。 */
+@media (max-width:768px){
+  html,body{overflow-x:hidden;max-width:100%;}
+  body{padding:14px;}
+  h1{font-size:19px;}
+  table{display:block;width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+}
 </style></head><body>
 <h1>算法版本注册表</h1>
-<div class="sub">北京单场 v5 系统 · 生成于 2026-10-13 17:13 · 当前版本 2026-10-13-auto</div>
+<div class="sub">北京单场 v5 系统 · 生成于 2026-10-13 17:29 · 当前版本 2026-10-13-auto</div>
 <table><tr><th style="width:90px">版本</th><th style="width:84px">日期</th><th>变更内容</th>
 <th style="width:120px">改动前14天<br>命中率/Brier</th><th style="width:120px">改动后14天<br>命中率/Brier</th><th style="width:70px">Δ命中率</th></tr>
 <tr>
