@@ -2075,9 +2075,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </div>
         <div class="overview-card ou">
           <div class="label">大小球</div>
-<div class="value">大33 · 小0</div>
-<div class="label" style="margin-top:2px">稳度：较稳6 · 可下手27</div>
-          <div class="sub">观望 71 场（TC共振降级0 · TC共振免杀0 · TC反共识0）</div>
+<div class="value">大21 · 小0</div>
+<div class="label" style="margin-top:2px">稳度：较稳6 · 可下手15</div>
+          <div class="sub">观望 83 场（TC共振降级12 · TC共振免杀2 · TC反共识10）</div>
         </div>
       </div>
 
@@ -2435,7 +2435,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           优化筛选 (42)
         </button>
         <button class="sub-tab" onclick="switchSubTab('ou-pred', this)">
-          大小球预测 (33)
+          大小球预测 (21)
         </button>
       </div>
 
@@ -9880,23 +9880,23 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <div class="overview-grid">
           <div class="overview-card all">
             <div class="label">大小球出手场次</div>
-            <div class="value">33</div>
-            <div class="sub">全部 104 场中 · 观望 71 场</div>
+            <div class="value">21</div>
+            <div class="sub">全部 104 场中 · 观望 83 场</div>
           </div>
           <div class="overview-card ou">
             <div class="label">大球推荐</div>
-            <div class="value">&#8593; 33</div>
+            <div class="value">&#8593; 21</div>
             <div class="sub">较稳 6 场</div>
           </div>
           <div class="overview-card rate">
             <div class="label">小球推荐</div>
             <div class="value">&#8595; 0</div>
-            <div class="sub">可下手 27 场</div>
+            <div class="sub">可下手 15 场</div>
           </div>
           <div class="overview-card filter">
             <div class="label">观望</div>
-            <div class="value">71</div>
-            <div class="sub">TC共振降级 0 · TC共振免杀 0 · TC反共识 0</div>
+            <div class="value">83</div>
+            <div class="sub">TC共振降级 12 · TC共振免杀 2 · TC反共识 10</div>
           </div>
         </div>
 
@@ -9905,7 +9905,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             <h3>&#9917; 大小球分布</h3>
             <div class="ou-stats">
               <div class="ou-stat-item over">
-                <div class="num">33</div>
+                <div class="num">21</div>
                 <div class="lbl">大球</div>
               </div>
               <div class="ou-stat-item under">
@@ -9913,7 +9913,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
                 <div class="lbl">小球</div>
               </div>
               <div class="ou-stat-item wait">
-                <div class="num">71</div>
+                <div class="num">83</div>
                 <div class="lbl">观望</div>
               </div>
             </div>
@@ -9925,7 +9925,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
               <p><b>推荐</b>＝ou分 达阈值方向：&#8593; 大球 / &#8595; 小球 / — 观望（稳度分「较稳·可下手」两档）。</p>
               <p><b>进球数</b>＝λ 取 500.com 盘口线+水位反推的市场隐含总进球期望（水位去水后解泊松），缺盘口/水位的场次回落联赛实测场均基线（2584 场实测）。取档＝EV·市场线锚定窗口：候选先限制在该场推荐大小球方向的赢盘区内（大球 → ceil(线)~7、小球 → 0~floor(线)、观望 → 8 档全开），再按 EV＝p(球数)×北单该档即时SP−1 取 EV 最高的三档、升序拼接（7 表示 7+）。SP 来自北京体彩官网「总进球数」玩法各档即时 SP（已校验档位映射 2189/2189）；某档 p<5% 不入选（抑制泊松尾部伪 EV），SP 未采到或候选不足三档时回落「众数+方向平移」。<b>为何必须锁方向</b>：纯 EV（不限方向）会逆着推荐方向挑冷门——市场看好大球时低档 SP 被抬高（0 档可达 72.73），与模型尾部概率相乘产出 +148% 之类伪正 EV，于是「推荐大球」旁边挂出 123/046，属错误口径，已弃用。悬浮可见各档 p、EV 与 SP。</p>
               <p><b>TC 徽章</b>＝v6.1 融合（v7 口径）：与 500.com 跳球水位法同向强共振且本场档位为「可下手」＝回声确认陷阱，降级观望（原方向留档事后评分）；同向强共振但档位为「较稳」（净胜 ≥1.10）＝免杀，方向保留；反向＝反共识信号，方向保留。</p>
-              <p>本栏目列出全部 104 场（其中出手 33 场）；与「双选方案/筛选」为两套独立口径，互不影响。</p>
+              <p>本栏目列出全部 104 场（其中出手 21 场）；与「双选方案/筛选」为两套独立口径，互不影响。</p>
             </div>
           </div>
         </div>
@@ -10024,9 +10024,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘2.5→临盘2.5 大1.20/小0.60 | 水位:小水低0.60(强)；跳球:盘口未动 | TC参考:1/2球">盘2.5 大1.20/小0.60</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=2.90 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：1球 15.9%·EV+10%@SP6.93、2球 23.1%·EV-0%@SP4.31、4球 16.2%·EV-0%@SP6.16"><span class="goal3">124</span></td>
+        <td class="col-goal3" title="3选进球数（λ=2.36 · 市场反推·盘口线2.5，取档=EV·市场线锚定窗口，各档概率）：1球 22.2%·EV+54%@SP6.93、2球 26.3%·EV+13%@SP4.31、3球 20.7%·EV-19%@SP3.93"><span class="goal3">123</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 56.0%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 44.0%</span></td>
       </tr>
@@ -10049,10 +10049,10 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="ou-line">盘口线2.25 · 预期3.26 · 净胜—</div>
         </td>
         <td class="col-ou">
-          <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-act">可下手</span></div>
-          
+          <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-act">可下手</span><span class="ou-grade g-tcrev" title="TC方向与v6相反=反共识信号（归因v6该子集85.7%），方向保留">TC反共识</span></div>
+          <div class="tc-data" title="500.com真实盘口：初盘3.0→临盘3.0 大0.90/小0.82 | 水位:小水低0.08(强)；跳球:盘口未动；整球盘:3.0球走盘风险 | TC参考:1/2球">盘3.0 大0.90/小0.82</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=2.70 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：3球 22.1%·EV-10%@SP4.08、4球 14.9%·EV-28%@SP4.85、5球 8.1%·EV-30%@SP8.66"><span class="goal3">345</span></td>
+        <td class="col-goal3" title="3选进球数（λ=3.11 · 市场反推·盘口线3，取档=EV·市场线锚定窗口，各档概率）：4球 17.4%、5球 10.8%、6球 5.6%"><span class="goal3">456</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 60.2%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 39.8%</span></td>
       </tr>
@@ -10076,9 +10076,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘2.5→临盘2.5 大0.94/小0.78 | 水位:小水低0.16(强)；跳球:盘口未动 | TC参考:1/2球">盘2.5 大0.94/小0.78</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=2.70 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：1球 18.1%·EV+3%@SP5.68、2球 24.5%·EV-9%@SP3.71、4球 14.9%·EV+5%@SP7.06"><span class="goal3">124</span></td>
+        <td class="col-goal3" title="3选进球数（λ=2.59 · 市场反推·盘口线2.5，取档=EV·市场线锚定窗口，各档概率）：1球 19.5%·EV+11%@SP5.68、2球 25.2%·EV-7%@SP3.71、4球 14.0%·EV-1%@SP7.06"><span class="goal3">124</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 60.1%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 39.9%</span></td>
       </tr>
@@ -10102,9 +10102,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘2.5→临盘2.5 大0.67/小1.10 | 水位:大水低0.43(强)；跳球:盘口未动 | TC参考:3球/4球">盘2.5 大0.67/小1.10</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=2.48 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：1球 20.8%·EV+55%@SP7.43、2球 25.8%·EV+23%@SP4.77、3球 21.3%·EV-9%@SP4.29"><span class="goal3">123</span></td>
+        <td class="col-goal3" title="3选进球数（λ=2.91 · 市场反推·盘口线2.5，取档=EV·市场线锚定窗口，各档概率）：1球 15.8%·EV+18%@SP7.43、2球 23.0%·EV+10%@SP4.77、3球 22.4%·EV-4%@SP4.29"><span class="goal3">123</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 55.5%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 44.5%</span></td>
       </tr>
@@ -10128,9 +10128,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘2.5→临盘2.5 大0.61/小1.15 | 水位:大水低0.54(强)；跳球:盘口未动 | TC参考:3球/4球">盘2.5 大0.61/小1.15</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=2.48 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：1球 20.8%·EV+66%@SP7.99、2球 25.8%·EV+24%@SP4.82、3球 21.3%·EV-7%@SP4.36"><span class="goal3">123</span></td>
+        <td class="col-goal3" title="3选进球数（λ=2.98 · 市场反推·盘口线2.5，取档=EV·市场线锚定窗口，各档概率）：1球 15.2%·EV+21%@SP7.99、2球 22.6%·EV+9%@SP4.82、3球 22.4%·EV-2%@SP4.36"><span class="goal3">123</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 56.1%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 43.9%</span></td>
       </tr>
@@ -10154,13 +10154,13 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘2.5→临盘2.5 大1.05/小0.73 | 水位:小水低0.32(强)；跳球:盘口未动 | TC参考:1/2球">盘2.5 大1.05/小0.73</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=2.90 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：2球 23.1%·EV-17%@SP3.61、3球 22.4%·EV+22%@SP5.45、4球 16.2%·EV+58%@SP9.76"><span class="goal3">234</span></td>
+        <td class="col-goal3" title="3选进球数（λ=2.51 · 市场反推·盘口线2.5，取档=EV·市场线锚定窗口，各档概率）：1球 20.4%·EV-7%@SP4.54、3球 21.4%·EV+17%@SP5.45、4球 13.4%·EV+31%@SP9.76"><span class="goal3">134</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 56.1%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 43.9%</span></td>
       </tr>
-      <tr class="ou-pred-row ou-over">
+      <tr class="ou-pred-row ou-wait">
         <td class="col-seq">245</td>
         <td class="col-time">15:25</td>
         <td class="col-league">
@@ -10179,10 +10179,10 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="ou-line">盘口线2.25 · 预期3.28 · 净胜—</div>
         </td>
         <td class="col-ou">
-          <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-act">可下手</span></div>
-          
+          <div class="ou-rec ou-wait">— 观望<span class="ou-grade g-tckill" title="v6原方向大球与TC大球同向强共振=回声确认陷阱（归因37.5%），降级观望；原方向留档事后评分">TC共振·原大球</span></div>
+          <div class="tc-data" title="500.com真实盘口：初盘3.0→临盘2.5 大0.62/小1.20 | 水位:大水低0.58(强)；跳球:3.0降2.5；反向取舍:水位强盖跳球弱 | TC参考:3球/4球">盘3.0→2.5 大0.62/小1.20</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=2.70 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：3球 22.1%·EV+25%@SP5.67、4球 14.9%·EV+1%@SP6.77、5球 8.1%·EV-3%@SP12.01"><span class="goal3">345</span></td>
+        <td class="col-goal3" title="3选进球数（λ=3.00 · 市场反推·盘口线2.5，取档=EV·市场线锚定窗口，各档概率）：2球 22.4%·EV-13%@SP3.88、3球 22.4%·EV+27%@SP5.67、4球 16.8%·EV+14%@SP6.77"><span class="goal3">234</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 60.6%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 39.4%</span></td>
       </tr>
@@ -10206,9 +10206,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘2.5→临盘2.5 大1.40/小0.53 | 水位:小水低0.87(强)；跳球:盘口未动 | TC参考:1/2球">盘2.5 大1.40/小0.53</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=2.70 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：2球 24.5%·EV-8%@SP3.74、3球 22.1%·EV+21%@SP5.47、4球 14.9%·EV+106%@SP13.85"><span class="goal3">234</span></td>
+        <td class="col-goal3" title="3选进球数（λ=2.24 · 市场反推·盘口线2.5，取档=EV·市场线锚定窗口，各档概率）：2球 26.7%·EV-0%@SP3.74、3球 20.0%·EV+9%@SP5.47、4球 11.2%·EV+55%@SP13.85"><span class="goal3">234</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 59.6%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 40.4%</span></td>
       </tr>
@@ -10232,9 +10232,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘2.5→临盘2.5 大0.99/小0.73 | 水位:小水低0.26(强)；跳球:盘口未动 | TC参考:1/2球">盘2.5 大0.99/小0.73</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=2.70 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：2球 24.5%·EV-12%@SP3.58、3球 22.1%·EV+37%@SP6.20、4球 14.9%·EV+98%@SP13.30"><span class="goal3">234</span></td>
+        <td class="col-goal3" title="3选进球数（λ=2.53 · 市场反推·盘口线2.5，取档=EV·市场线锚定窗口，各档概率）：2球 25.5%·EV-9%@SP3.58、3球 21.5%·EV+33%@SP6.20、4球 13.6%·EV+81%@SP13.30"><span class="goal3">234</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 60.6%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 39.4%</span></td>
       </tr>
@@ -10258,9 +10258,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘2.5→临盘2.5 大0.75/小1.00 | 水位:大水低0.25(强)；跳球:盘口未动 | TC参考:3球/4球">盘2.5 大0.75/小1.00</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=2.48 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：2球 25.8%·EV-7%@SP3.59、3球 21.3%·EV+13%@SP5.33、4球 13.2%·EV+49%@SP11.30"><span class="goal3">234</span></td>
+        <td class="col-goal3" title="3选进球数（λ=2.81 · 市场反推·盘口线2.5，取档=EV·市场线锚定窗口，各档概率）：2球 23.8%·EV-15%@SP3.59、3球 22.3%·EV+19%@SP5.33、4球 15.7%·EV+77%@SP11.30"><span class="goal3">234</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 55.9%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 44.1%</span></td>
       </tr>
@@ -10309,10 +10309,10 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="ou-line">盘口线2.25 · 预期3.42 · 净胜—</div>
         </td>
         <td class="col-ou">
-          <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-act">可下手</span></div>
-          
+          <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-act">可下手</span><span class="ou-grade g-tcrev" title="TC方向与v6相反=反共识信号（归因v6该子集85.7%），方向保留">TC反共识</span></div>
+          <div class="tc-data" title="500.com真实盘口：初盘3.5→临盘3.5 大0.95/小0.75 | 水位:小水低0.20(强)；跳球:盘口未动 | TC参考:1/2球">盘3.5 大0.95/小0.75</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=3.51 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：3球 21.6%·EV+20%@SP5.58、4球 18.9%·EV+57%@SP8.33、5球 13.3%·EV+43%@SP10.82"><span class="goal3">345</span></td>
+        <td class="col-goal3" title="3选进球数（λ=3.54 · 市场反推·盘口线3.5，取档=EV·市场线锚定窗口，各档概率）：4球 19.0%、5球 13.5%、6球 8.0%"><span class="goal3">456</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 67.0%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 33.0%</span></td>
       </tr>
@@ -10361,10 +10361,10 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="ou-line">盘口线2.25 · 预期3.65 · 净胜—</div>
         </td>
         <td class="col-ou">
-          <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-stable">较稳</span></div>
-          
+          <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-stable">较稳</span><span class="ou-grade g-tcex" title="v7较稳档（净胜≥1.10）免于TC共振杀：共振陷阱归因样本以可下手档为主，不足以推翻较稳档净胜优势，方向保留">TC共振·较稳免杀</span></div>
+          <div class="tc-data" title="500.com真实盘口：初盘2.5→临盘2.5 大0.40/小1.80 | 水位:大水低1.40(强)；跳球:盘口未动 | TC参考:3球/4球">盘2.5 大0.40/小1.80</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=3.51 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：3球 21.6%·EV+44%@SP6.67、4球 18.9%·EV+44%@SP7.62、5球 13.3%·EV+6%@SP7.96"><span class="goal3">345</span></td>
+        <td class="col-goal3" title="3选进球数（λ=3.43 · 市场反推·盘口线2.5，取档=EV·市场线锚定窗口，各档概率）：3球 21.8%·EV+45%@SP6.67、4球 18.7%·EV+42%@SP7.62、5球 12.8%·EV+2%@SP7.96"><span class="goal3">345</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 70.7%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 29.3%</span></td>
       </tr>
@@ -10388,9 +10388,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘2.5→临盘2.5 大0.91/小0.85 | 水位:小水低0.06(强)；跳球:盘口未动 | TC参考:1/2球">盘2.5 大0.91/小0.85</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=2.81 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：2球 23.8%·EV-19%@SP3.39、3球 22.3%·EV+17%@SP5.24、4球 15.6%·EV+205%@SP19.50"><span class="goal3">234</span></td>
+        <td class="col-goal3" title="3选进球数（λ=2.64 · 市场反推·盘口线2.5，取档=EV·市场线锚定窗口，各档概率）：2球 24.9%·EV-16%@SP3.39、3球 21.9%·EV+15%@SP5.24、4球 14.5%·EV+182%@SP19.50"><span class="goal3">234</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 58.4%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 41.6%</span></td>
       </tr>
@@ -10420,7 +10420,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-ou-prob"><span class="ou-prob over">大 55.6%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 44.4%</span></td>
       </tr>
-      <tr class="ou-pred-row ou-over">
+      <tr class="ou-pred-row ou-wait">
         <td class="col-seq">255</td>
         <td class="col-time">18:55</td>
         <td class="col-league">
@@ -10439,10 +10439,10 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="ou-line">盘口线2.25 · 预期3.17 · 净胜—</div>
         </td>
         <td class="col-ou">
-          <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-act">可下手</span></div>
-          
+          <div class="ou-rec ou-wait">— 观望<span class="ou-grade g-tckill" title="v6原方向大球与TC大球同向强共振=回声确认陷阱（归因37.5%），降级观望；原方向留档事后评分">TC共振·原大球</span></div>
+          <div class="tc-data" title="500.com真实盘口：初盘2.5→临盘2.5 大0.55/小1.30 | 水位:大水低0.75(强)；跳球:盘口未动 | TC参考:3球/4球">盘2.5 大0.55/小1.30</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=2.50 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：3球 21.4%·EV+10%@SP5.15、4球 13.3%·EV+30%@SP9.78、5球 6.7%·EV+40%@SP21.04"><span class="goal3">345</span></td>
+        <td class="col-goal3" title="3选进球数（λ=3.09 · 市场反推·盘口线2.5，取档=EV·市场线锚定窗口，各档概率）：2球 21.7%·EV-21%@SP3.66、3球 22.4%·EV+15%@SP5.15、4球 17.3%·EV+69%@SP9.78"><span class="goal3">234</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 58.4%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 41.6%</span></td>
       </tr>
@@ -10492,9 +10492,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘2.5→临盘3.5 大1.10/小0.67 | 水位:小水低0.43(强)；跳球:2.5跳升3.5(强)；信号冲突:水位与跳球反向,观望 | TC参考:">盘2.5→3.5 大1.10/小0.67</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=3.31 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：2球 20.0%·EV+21%@SP6.05、3球 22.1%·EV+53%@SP6.93、4球 18.3%·EV+53%@SP8.38"><span class="goal3">234</span></td>
+        <td class="col-goal3" title="3选进球数（λ=3.41 · 市场反推·盘口线3.5，取档=EV·市场线锚定窗口，各档概率）：3球 21.8%·EV+51%@SP6.93、4球 18.6%·EV+56%@SP8.38、5球 12.7%·EV+109%@SP16.52"><span class="goal3">345</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 60.7%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 39.3%</span></td>
       </tr>
@@ -10518,13 +10518,13 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘3.0→临盘3.0 大0.78/小0.94 | 水位:大水低0.16(强)；跳球:盘口未动；整球盘:3.0球走盘风险 | TC参考:4球/5球">盘3.0 大0.78/小0.94</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=3.31 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：2球 20.0%·EV+16%@SP5.78、3球 22.1%·EV-1%@SP4.47、4球 18.3%·EV+26%@SP6.90"><span class="goal3">234</span></td>
+        <td class="col-goal3" title="3选进球数（λ=3.26 · 市场反推·盘口线3，取档=EV·市场线锚定窗口，各档概率）：2球 20.4%·EV+18%@SP5.78、4球 18.1%·EV+25%@SP6.90、5球 11.8%·EV+48%@SP12.57"><span class="goal3">245</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 60.2%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 39.8%</span></td>
       </tr>
-      <tr class="ou-pred-row ou-over">
+      <tr class="ou-pred-row ou-wait">
         <td class="col-seq">259</td>
         <td class="col-time">19:25</td>
         <td class="col-league">
@@ -10543,10 +10543,10 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="ou-line">盘口线2.25 · 预期3.28 · 净胜—</div>
         </td>
         <td class="col-ou">
-          <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-act">可下手</span></div>
-          
+          <div class="ou-rec ou-wait">— 观望<span class="ou-grade g-tckill" title="v6原方向大球与TC大球同向强共振=回声确认陷阱（归因37.5%），降级观望；原方向留档事后评分">TC共振·原大球</span></div>
+          <div class="tc-data" title="500.com真实盘口：初盘2.5→临盘2.5 大0.60/小1.20 | 水位:大水低0.60(强)；跳球:盘口未动 | TC参考:3球/4球">盘2.5 大0.60/小1.20</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=3.31 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：3球 22.1%·EV+16%@SP5.25、4球 18.3%·EV+22%@SP6.68、5球 12.1%·EV+94%@SP16.06"><span class="goal3">345</span></td>
+        <td class="col-goal3" title="3选进球数（λ=3.01 · 市场反推·盘口线2.5，取档=EV·市场线锚定窗口，各档概率）：2球 22.3%·EV+33%@SP5.94、3球 22.4%·EV+18%@SP5.25、4球 16.9%·EV+13%@SP6.68"><span class="goal3">234</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 60.7%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 39.3%</span></td>
       </tr>
@@ -10570,9 +10570,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘3.0→临盘2.5 大0.75/小1.05 | 水位:大水低0.30(强)；跳球:3.0降2.5；反向取舍:水位强盖跳球弱 | TC参考:3球/4球">盘3.0→2.5 大0.75/小1.05</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=3.07 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：2球 21.9%·EV-20%@SP3.66、3球 22.4%·EV+24%@SP5.52、4球 17.2%·EV+76%@SP10.25"><span class="goal3">234</span></td>
+        <td class="col-goal3" title="3选进球数（λ=2.84 · 市场反推·盘口线2.5，取档=EV·市场线锚定窗口，各档概率）：2球 23.6%·EV-14%@SP3.66、3球 22.3%·EV+23%@SP5.52、4球 15.8%·EV+62%@SP10.25"><span class="goal3">234</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 58.4%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 41.6%</span></td>
       </tr>
@@ -10596,9 +10596,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘2.5→临盘2.5 大1.00/小0.70 | 水位:小水低0.30(强)；跳球:盘口未动 | TC参考:1/2球">盘2.5 大1.00/小0.70</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=2.65 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：2球 24.8%·EV-28%@SP2.90、3球 21.9%·EV+35%@SP6.16、4球 14.5%·EV+81%@SP12.49"><span class="goal3">234</span></td>
+        <td class="col-goal3" title="3选进球数（λ=2.51 · 市场反推·盘口线2.5，取档=EV·市场线锚定窗口，各档概率）：2球 25.6%·EV-26%@SP2.90、3球 21.4%·EV+32%@SP6.16、4球 13.5%·EV+68%@SP12.49"><span class="goal3">234</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 58.4%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 41.6%</span></td>
       </tr>
@@ -10622,9 +10622,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘3.0→临盘3.0 大0.86/小0.86 | 水位:走水；跳球:盘口未动；整球盘:3.0球走盘风险 | TC参考:">盘3.0 大0.86/小0.86</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=3.31 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：2球 20.0%·EV-16%@SP4.18、3球 22.1%·EV+34%@SP6.05、4球 18.3%·EV+42%@SP7.79"><span class="goal3">234</span></td>
+        <td class="col-goal3" title="3选进球数（λ=3.16 · 市场反推·盘口线3，取档=EV·市场线锚定窗口，各档概率）：3球 22.3%·EV+35%@SP6.05、4球 17.6%·EV+37%@SP7.79、5球 11.1%·EV+22%@SP10.93"><span class="goal3">345</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 58.1%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 41.9%</span></td>
       </tr>
@@ -10648,9 +10648,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘3.0→临盘3.0 大0.75/小0.97 | 水位:大水低0.22(强)；跳球:盘口未动；整球盘:3.0球走盘风险 | TC参考:4球/5球">盘3.0 大0.75/小0.97</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=3.31 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：2球 20.0%·EV-24%@SP3.80、3球 22.1%·EV+11%@SP5.03、4球 18.3%·EV+40%@SP7.65"><span class="goal3">234</span></td>
+        <td class="col-goal3" title="3选进球数（λ=3.30 · 市场反推·盘口线3，取档=EV·市场线锚定窗口，各档概率）：3球 22.1%·EV+11%@SP5.03、4球 18.2%·EV+39%@SP7.65、5球 12.0%·EV+79%@SP14.89"><span class="goal3">345</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 58.4%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 41.6%</span></td>
       </tr>
@@ -10674,9 +10674,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘2.5→临盘2.5 大0.67/小1.10 | 水位:大水低0.43(强)；跳球:盘口未动 | TC参考:3球/4球">盘2.5 大0.67/小1.10</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=2.64 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：2球 24.9%·EV-6%@SP3.76、3球 21.9%·EV+27%@SP5.79、4球 14.4%·EV+111%@SP14.63"><span class="goal3">234</span></td>
+        <td class="col-goal3" title="3选进球数（λ=2.91 · 市场反推·盘口线2.5，取档=EV·市场线锚定窗口，各档概率）：2球 23.0%·EV-13%@SP3.76、3球 22.4%·EV+30%@SP5.79、4球 16.3%·EV+138%@SP14.63"><span class="goal3">234</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 58.4%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 41.6%</span></td>
       </tr>
@@ -10700,9 +10700,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘2.5→临盘2.5 大0.70/小1.00 | 水位:大水低0.30(强)；跳球:盘口未动 | TC参考:3球/4球">盘2.5 大0.70/小1.00</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=2.64 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：2球 24.9%·EV+92%@SP7.72、3球 21.9%·EV+54%@SP7.02、4球 14.4%·EV+52%@SP10.55"><span class="goal3">234</span></td>
+        <td class="col-goal3" title="3选进球数（λ=2.84 · 市场反推·盘口线2.5，取档=EV·市场线锚定窗口，各档概率）：2球 23.5%·EV+82%@SP7.72、3球 22.3%·EV+57%@SP7.02、4球 15.9%·EV+67%@SP10.55"><span class="goal3">234</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 58.4%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 41.6%</span></td>
       </tr>
@@ -10726,9 +10726,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘2.5→临盘2.5 大0.75/小0.95 | 水位:大水低0.20(强)；跳球:盘口未动 | TC参考:3球/4球">盘2.5 大0.75/小0.95</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=2.33 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：2球 26.4%·EV+127%@SP8.60、3球 20.5%·EV+224%@SP15.76、4球 12.0%·EV+207%@SP25.63"><span class="goal3">234</span></td>
+        <td class="col-goal3" title="3选进球数（λ=2.79 · 市场反推·盘口线2.5，取档=EV·市场线锚定窗口，各档概率）：2球 23.9%·EV+106%@SP8.60、3球 22.2%·EV+250%@SP15.76、4球 15.5%·EV+297%@SP25.63"><span class="goal3">234</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 53.7%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 46.3%</span></td>
       </tr>
@@ -10751,14 +10751,14 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="ou-line">盘口线2.25 · 预期3.62 · 净胜—</div>
         </td>
         <td class="col-ou">
-          <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-stable">较稳</span></div>
-          
+          <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-stable">较稳</span><span class="ou-grade g-tcrev" title="TC方向与v6相反=反共识信号（归因v6该子集85.7%），方向保留">TC反共识</span></div>
+          <div class="tc-data" title="500.com真实盘口：初盘3.5→临盘3.5 大0.95/小0.77 | 水位:小水低0.18(强)；跳球:盘口未动 | TC参考:1/2球">盘3.5 大0.95/小0.77</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=3.51 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：3球 21.6%·EV+175%@SP12.77、4球 18.9%·EV+144%@SP12.91、5球 13.3%·EV+119%@SP16.54"><span class="goal3">345</span></td>
+        <td class="col-goal3" title="3选进球数（λ=3.56 · 市场反推·盘口线3.5，取档=EV·市场线锚定窗口，各档概率）：4球 19.0%、5球 13.5%、6球 8.0%"><span class="goal3">456</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 67.0%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 33.0%</span></td>
       </tr>
-      <tr class="ou-pred-row ou-over">
+      <tr class="ou-pred-row ou-wait">
         <td class="col-seq">268</td>
         <td class="col-time">20:25</td>
         <td class="col-league">
@@ -10777,10 +10777,10 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="ou-line">盘口线2.25 · 预期3.16 · 净胜—</div>
         </td>
         <td class="col-ou">
-          <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-act">可下手</span></div>
-          
+          <div class="ou-rec ou-wait">— 观望<span class="ou-grade g-tckill" title="v6原方向大球与TC大球同向强共振=回声确认陷阱（归因37.5%），降级观望；原方向留档事后评分">TC共振·原大球</span></div>
+          <div class="tc-data" title="500.com真实盘口：初盘3.0→临盘3.0 大0.78/小0.94 | 水位:大水低0.16(强)；跳球:盘口未动；整球盘:3.0球走盘风险 | TC参考:4球/5球">盘3.0 大0.78/小0.94</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=3.14 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：3球 22.3%·EV+53%@SP6.83、4球 17.5%·EV+35%@SP7.68、5球 11.0%·EV+105%@SP18.56"><span class="goal3">345</span></td>
+        <td class="col-goal3" title="3选进球数（λ=3.26 · 市场反推·盘口线3，取档=EV·市场线锚定窗口，各档概率）：3球 22.2%·EV+51%@SP6.83、4球 18.1%·EV+39%@SP7.68、5球 11.8%·EV+119%@SP18.56"><span class="goal3">345</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 58.1%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 41.9%</span></td>
       </tr>
@@ -10804,9 +10804,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘3.0→临盘3.0 大0.94/小0.78 | 水位:小水低0.16(强)；跳球:盘口未动；整球盘:3.0球走盘风险 | TC参考:1/2球">盘3.0 大0.94/小0.78</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=3.14 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：2球 21.3%·EV-22%@SP3.65、3球 22.3%·EV+168%@SP12.02、4球 17.5%·EV+84%@SP10.49"><span class="goal3">234</span></td>
+        <td class="col-goal3" title="3选进球数（λ=3.06 · 市场反推·盘口线3，取档=EV·市场线锚定窗口，各档概率）：3球 22.4%·EV+169%@SP12.02、4球 17.1%·EV+80%@SP10.49、5球 10.5%·EV+341%@SP42.04"><span class="goal3">345</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 58.0%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 42.0%</span></td>
       </tr>
@@ -10830,9 +10830,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘3.5→临盘3.5 大1.30/小0.57 | 水位:小水低0.73(强)；跳球:盘口未动 | TC参考:1/2球">盘3.5 大1.30/小0.57</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=3.36 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：2球 19.6%·EV-45%@SP2.82、3球 22.0%·EV+31%@SP5.98、4球 18.4%·EV+251%@SP19.05"><span class="goal3">234</span></td>
+        <td class="col-goal3" title="3选进球数（λ=3.24 · 市场反推·盘口线3.5，取档=EV·市场线锚定窗口，各档概率）：3球 22.2%·EV+33%@SP5.98、4球 18.0%·EV+242%@SP19.05、5球 11.6%·EV+176%@SP23.73"><span class="goal3">345</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 56.1%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 43.9%</span></td>
       </tr>
@@ -10856,9 +10856,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘2.5→临盘2.5 大0.35/小2.00 | 水位:大水低1.65(强)；跳球:盘口未动 | TC参考:3球/4球">盘2.5 大0.35/小2.00</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=3.34 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：2球 19.7%·EV-46%@SP2.74、3球 22.0%·EV+35%@SP6.13、4球 18.4%·EV+478%@SP31.42"><span class="goal3">234</span></td>
+        <td class="col-goal3" title="3选进球数（λ=3.56 · 市场反推·盘口线2.5，取档=EV·市场线锚定窗口，各档概率）：2球 18.0%·EV-51%@SP2.74、3球 21.4%·EV+31%@SP6.13、4球 19.0%·EV+498%@SP31.42"><span class="goal3">234</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 59.9%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 40.1%</span></td>
       </tr>
@@ -10882,9 +10882,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘2.5→临盘2.5 大0.25/小2.60 | 水位:大水低2.35(强)；跳球:盘口未动 | TC参考:3球/4球">盘2.5 大0.25/小2.60</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=3.34 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：2球 19.7%·EV-28%@SP3.67、3球 22.0%·EV+113%@SP9.69、4球 18.4%·EV+358%@SP24.89"><span class="goal3">234</span></td>
+        <td class="col-goal3" title="3选进球数（λ=3.87 · 市场反推·盘口线2.5，取档=EV·市场线锚定窗口，各档概率）：2球 15.6%·EV-43%@SP3.67、3球 20.1%·EV+95%@SP9.69、4球 19.5%·EV+385%@SP24.89"><span class="goal3">234</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 60.7%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 39.3%</span></td>
       </tr>
@@ -10908,9 +10908,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘2.5→临盘2.5 大0.73/小1.00 | 水位:大水低0.27(强)；跳球:盘口未动 | TC参考:3球/4球">盘2.5 大0.73/小1.00</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=2.94 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：2球 22.8%·EV-43%@SP2.50、3球 22.4%·EV+174%@SP12.24、4球 16.5%·EV+1647%@SP106.10"><span class="goal3">234</span></td>
+        <td class="col-goal3" title="3选进球数（λ=2.82 · 市场反推·盘口线2.5，取档=EV·市场线锚定窗口，各档概率）：2球 23.7%·EV-41%@SP2.50、3球 22.3%·EV+173%@SP12.24、4球 15.7%·EV+1569%@SP106.10"><span class="goal3">234</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 57.0%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 43.0%</span></td>
       </tr>
@@ -10934,9 +10934,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘2.5→临盘2.5 大0.80/小1.00 | 水位:大水低0.20(强)；跳球:盘口未动 | TC参考:3球/4球">盘2.5 大0.80/小1.00</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=2.94 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：2球 22.9%·EV-42%@SP2.55、3球 22.4%·EV+69%@SP7.53、4球 16.4%·EV+388%@SP29.67"><span class="goal3">234</span></td>
+        <td class="col-goal3" title="3选进球数（λ=2.78 · 市场反推·盘口线2.5，取档=EV·市场线锚定窗口，各档概率）：2球 24.0%·EV-39%@SP2.55、3球 22.2%·EV+67%@SP7.53、4球 15.5%·EV+359%@SP29.67"><span class="goal3">234</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 57.4%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 42.6%</span></td>
       </tr>
@@ -10960,9 +10960,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘2.5→临盘2.5 大0.65/小1.15 | 水位:大水低0.50(强)；跳球:盘口未动 | TC参考:3球/4球">盘2.5 大0.65/小1.15</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=2.94 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：2球 22.9%·EV-30%@SP3.07、3球 22.4%·EV+29%@SP5.77、4球 16.4%·EV+164%@SP16.06"><span class="goal3">234</span></td>
+        <td class="col-goal3" title="3选进球数（λ=2.95 · 市场反推·盘口线2.5，取档=EV·市场线锚定窗口，各档概率）：2球 22.8%·EV-30%@SP3.07、3球 22.4%·EV+29%@SP5.77、4球 16.5%·EV+165%@SP16.06"><span class="goal3">234</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 58.1%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 41.9%</span></td>
       </tr>
@@ -10986,9 +10986,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘2.5→临盘2.5 大0.65/小1.10 | 水位:大水低0.45(强)；跳球:盘口未动 | TC参考:3球/4球">盘2.5 大0.65/小1.10</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=2.81 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：2球 23.8%·EV-28%@SP3.05、3球 22.3%·EV+122%@SP9.98、4球 15.6%·EV+218%@SP20.32"><span class="goal3">234</span></td>
+        <td class="col-goal3" title="3选进球数（λ=2.93 · 市场反推·盘口线2.5，取档=EV·市场线锚定窗口，各档概率）：2球 23.0%·EV-30%@SP3.05、3球 22.4%·EV+123%@SP9.98、4球 16.4%·EV+233%@SP20.32"><span class="goal3">234</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 58.4%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 41.6%</span></td>
       </tr>
@@ -11012,9 +11012,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘3.0→临盘3.0 大0.98/小0.82 | 水位:小水低0.16(强)；跳球:盘口未动；整球盘:3.0球走盘风险 | TC参考:1/2球">盘3.0 大0.98/小0.82</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=2.90 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：2球 23.1%·EV-35%@SP2.82、3球 22.4%·EV+98%@SP8.83、4球 16.2%·EV+434%@SP32.86"><span class="goal3">234</span></td>
+        <td class="col-goal3" title="3选进球数（λ=3.06 · 市场反推·盘口线3，取档=EV·市场线锚定窗口，各档概率）：3球 22.4%·EV+98%@SP8.83、4球 17.1%·EV+463%@SP32.86、5球 10.5%·EV+569%@SP63.64"><span class="goal3">345</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 58.4%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 41.6%</span></td>
       </tr>
@@ -11038,9 +11038,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘2.5→临盘2.5 大1.05/小0.70 | 水位:小水低0.35(强)；跳球:盘口未动 | TC参考:1/2球">盘2.5 大1.05/小0.70</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=2.84 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：2球 23.6%·EV-30%@SP2.97、3球 22.3%·EV+190%@SP13.00、4球 15.8%·EV+481%@SP36.67"><span class="goal3">234</span></td>
+        <td class="col-goal3" title="3选进球数（λ=2.49 · 市场反推·盘口线2.5，取档=EV·市场线锚定窗口，各档概率）：2球 25.7%·EV-24%@SP2.97、3球 21.3%·EV+177%@SP13.00、4球 13.3%·EV+387%@SP36.67"><span class="goal3">234</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 57.6%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 42.4%</span></td>
       </tr>
@@ -11116,13 +11116,13 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘3.0→临盘3.0 大0.91/小0.71 | 水位:小水低0.20(强)；跳球:盘口未动；整球盘:3.0球走盘风险 | TC参考:1/2球">盘3.0 大0.91/小0.71</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=2.64 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：2球 24.8%·EV-10%@SP3.63、3球 21.9%·EV+293%@SP17.93、4球 14.5%·EV+418%@SP35.81"><span class="goal3">234</span></td>
+        <td class="col-goal3" title="3选进球数（λ=3.03 · 市场反推·盘口线3，取档=EV·市场线锚定窗口，各档概率）：3球 22.4%·EV+302%@SP17.93、4球 17.0%·EV+508%@SP35.81、5球 10.3%·EV+1455%@SP150.88"><span class="goal3">345</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 53.7%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 46.3%</span></td>
       </tr>
-      <tr class="ou-pred-row ou-over">
+      <tr class="ou-pred-row ou-wait">
         <td class="col-seq">282</td>
         <td class="col-time">21:25</td>
         <td class="col-league">
@@ -11141,14 +11141,14 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="ou-line">盘口线2.25 · 预期3.17 · 净胜—</div>
         </td>
         <td class="col-ou">
-          <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-act">可下手</span></div>
-          
+          <div class="ou-rec ou-wait">— 观望<span class="ou-grade g-tckill" title="v6原方向大球与TC大球同向强共振=回声确认陷阱（归因37.5%），降级观望；原方向留档事后评分">TC共振·原大球</span></div>
+          <div class="tc-data" title="500.com真实盘口：初盘2.5→临盘2.5 大0.44/小1.60 | 水位:大水低1.16(强)；跳球:盘口未动 | TC参考:3球/4球">盘2.5 大0.44/小1.60</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=3.67 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：3球 21.0%·EV+78%@SP8.48、4球 19.3%·EV+558%@SP34.14、5球 14.2%·EV+241%@SP24.07"><span class="goal3">345</span></td>
+        <td class="col-goal3" title="3选进球数（λ=3.31 · 市场反推·盘口线2.5，取档=EV·市场线锚定窗口，各档概率）：2球 20.0%·EV-11%@SP4.47、3球 22.1%·EV+87%@SP8.48、4球 18.3%·EV+524%@SP34.14"><span class="goal3">234</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 58.4%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 41.6%</span></td>
       </tr>
-      <tr class="ou-pred-row ou-over">
+      <tr class="ou-pred-row ou-wait">
         <td class="col-seq">283</td>
         <td class="col-time">21:55</td>
         <td class="col-league">
@@ -11167,10 +11167,10 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="ou-line">盘口线2.25 · 预期3.17 · 净胜—</div>
         </td>
         <td class="col-ou">
-          <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-act">可下手</span></div>
-          
+          <div class="ou-rec ou-wait">— 观望<span class="ou-grade g-tckill" title="v6原方向大球与TC大球同向强共振=回声确认陷阱（归因37.5%），降级观望；原方向留档事后评分">TC共振·原大球</span></div>
+          <div class="tc-data" title="500.com真实盘口：初盘3.0→临盘3.0 大0.77/小0.95 | 水位:大水低0.18(强)；跳球:盘口未动；整球盘:3.0球走盘风险 | TC参考:4球/5球">盘3.0 大0.77/小0.95</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=2.47 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：3球 21.2%·EV+62%@SP7.64、4球 13.1%·EV+204%@SP23.22、5球 6.5%·EV+143%@SP37.48"><span class="goal3">345</span></td>
+        <td class="col-goal3" title="3选进球数（λ=3.27 · 市场反推·盘口线3，取档=EV·市场线锚定窗口，各档概率）：3球 22.1%·EV+69%@SP7.64、4球 18.1%·EV+321%@SP23.22、5球 11.9%·EV+344%@SP37.48"><span class="goal3">345</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 58.4%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 41.6%</span></td>
       </tr>
@@ -11193,10 +11193,10 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="ou-line">盘口线2.25 · 预期3.37 · 净胜—</div>
         </td>
         <td class="col-ou">
-          <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-act">可下手</span></div>
-          
+          <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-act">可下手</span><span class="ou-grade g-tcrev" title="TC方向与v6相反=反共识信号（归因v6该子集85.7%），方向保留">TC反共识</span></div>
+          <div class="tc-data" title="500.com真实盘口：初盘2.5→临盘2.5 大1.00/小0.73 | 水位:小水低0.27(强)；跳球:盘口未动 | TC参考:1/2球">盘2.5 大1.00/小0.73</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=2.71 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：3球 22.1%·EV+2%@SP4.61、4球 14.9%·EV+99%@SP13.36、5球 8.1%·EV+263%@SP44.95"><span class="goal3">345</span></td>
+        <td class="col-goal3" title="3选进球数（λ=2.53 · 市场反推·盘口线2.5，取档=EV·市场线锚定窗口，各档概率）：3球 21.5%·EV-1%@SP4.61、4球 13.6%·EV+82%@SP13.36、5球 6.9%·EV+209%@SP44.95"><span class="goal3">345</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 58.4%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 41.6%</span></td>
       </tr>
@@ -11220,9 +11220,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘3.0→临盘3.0 大0.92/小0.80 | 水位:小水低0.12(强)；跳球:盘口未动；整球盘:3.0球走盘风险 | TC参考:1/2球">盘3.0 大0.92/小0.80</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=3.31 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：2球 20.0%·EV-48%@SP2.59、3球 22.1%·EV+231%@SP14.99、4球 18.3%·EV+264%@SP19.91"><span class="goal3">234</span></td>
+        <td class="col-goal3" title="3选进球数（λ=3.09 · 市场反推·盘口线3，取档=EV·市场线锚定窗口，各档概率）：3球 22.4%·EV+235%@SP14.99、4球 17.3%·EV+244%@SP19.91、5球 10.7%·EV+1070%@SP109.85"><span class="goal3">345</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 58.4%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 41.6%</span></td>
       </tr>
@@ -11246,9 +11246,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘2.5→临盘2.5 大1.15/小0.65 | 水位:小水低0.50(强)；跳球:盘口未动 | TC参考:1/2球">盘2.5 大1.15/小0.65</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=3.07 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：2球 21.9%·EV-39%@SP2.79、3球 22.4%·EV+101%@SP8.99、4球 17.2%·EV+445%@SP31.72"><span class="goal3">234</span></td>
+        <td class="col-goal3" title="3选进球数（λ=2.42 · 市场反推·盘口线2.5，取档=EV·市场线锚定窗口，各档概率）：2球 26.1%·EV-27%@SP2.79、3球 21.0%·EV+89%@SP8.99、4球 12.7%·EV+302%@SP31.72"><span class="goal3">234</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 58.4%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 41.6%</span></td>
       </tr>
@@ -11272,13 +11272,13 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘2.5→临盘2.5 大1.05/小0.70 | 水位:小水低0.35(强)；跳球:盘口未动 | TC参考:1/2球">盘2.5 大1.05/小0.70</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=2.65 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：2球 24.8%·EV-30%@SP2.80、3球 21.9%·EV+92%@SP8.76、4球 14.5%·EV+1752%@SP127.90"><span class="goal3">234</span></td>
+        <td class="col-goal3" title="3选进球数（λ=2.49 · 市场反推·盘口线2.5，取档=EV·市场线锚定窗口，各档概率）：2球 25.7%·EV-28%@SP2.80、3球 21.3%·EV+87%@SP8.76、4球 13.3%·EV+1597%@SP127.90"><span class="goal3">234</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 58.2%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 41.8%</span></td>
       </tr>
-      <tr class="ou-pred-row ou-over">
+      <tr class="ou-pred-row ou-wait">
         <td class="col-seq">288</td>
         <td class="col-time">22:25</td>
         <td class="col-league">
@@ -11297,10 +11297,10 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="ou-line">盘口线2.25 · 预期3.37 · 净胜—</div>
         </td>
         <td class="col-ou">
-          <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-act">可下手</span></div>
-          
+          <div class="ou-rec ou-wait">— 观望<span class="ou-grade g-tckill" title="v6原方向大球与TC大球同向强共振=回声确认陷阱（归因37.5%），降级观望；原方向留档事后评分">TC共振·原大球</span></div>
+          <div class="tc-data" title="500.com真实盘口：初盘2.5→临盘2.5 大0.61/小1.15 | 水位:大水低0.54(强)；跳球:盘口未动 | TC参考:3球/4球">盘2.5 大0.61/小1.15</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=2.71 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：3球 22.1%·EV-9%@SP4.14、4球 14.9%·EV+53%@SP10.24、5球 8.1%·EV+640%@SP91.57"><span class="goal3">345</span></td>
+        <td class="col-goal3" title="3选进球数（λ=2.98 · 市场反推·盘口线2.5，取档=EV·市场线锚定窗口，各档概率）：2球 22.6%·EV-18%@SP3.64、3球 22.4%·EV-7%@SP4.14、4球 16.7%·EV+71%@SP10.24"><span class="goal3">234</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 58.4%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 41.6%</span></td>
       </tr>
@@ -11350,9 +11350,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘3.0→临盘3.0 大0.83/小0.89 | 水位:大水低0.06(强)；跳球:盘口未动；整球盘:3.0球走盘风险 | TC参考:4球/5球">盘3.0 大0.83/小0.89</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=2.64 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：2球 24.9%·EV+69%@SP6.80、3球 21.9%·EV+179%@SP12.76、4球 14.4%·EV+773%@SP60.49"><span class="goal3">234</span></td>
+        <td class="col-goal3" title="3选进球数（λ=3.20 · 市场反推·盘口线3，取档=EV·市场线锚定窗口，各档概率）：2球 20.9%·EV+42%@SP6.80、3球 22.3%·EV+184%@SP12.76、4球 17.8%·EV+976%@SP60.49"><span class="goal3">234</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 58.1%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 41.9%</span></td>
       </tr>
@@ -11376,9 +11376,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-act">可下手</span></div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘2.5→临盘3.5 大1.00/小0.73 | 水位:小水低0.27(强)；跳球:2.5跳升3.5(强)；信号冲突:水位与跳球反向,观望 | TC参考:">盘2.5→3.5 大1.00/小0.73</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=2.64 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：3球 21.9%·EV+30%@SP5.94、4球 14.4%·EV+91%@SP13.25、5球 7.6%·EV+111%@SP27.74"><span class="goal3">345</span></td>
+        <td class="col-goal3" title="3选进球数（λ=3.50 · 市场反推·盘口线3.5，取档=EV·市场线锚定窗口，各档概率）：4球 18.9%、5球 13.2%、6球 7.7%"><span class="goal3">456</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 58.4%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 41.6%</span></td>
       </tr>
@@ -11401,10 +11401,10 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="ou-line">盘口线2.25 · 预期3.62 · 净胜—</div>
         </td>
         <td class="col-ou">
-          <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-stable">较稳</span></div>
-          
+          <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-stable">较稳</span><span class="ou-grade g-tcrev" title="TC方向与v6相反=反共识信号（归因v6该子集85.7%），方向保留">TC反共识</span></div>
+          <div class="tc-data" title="500.com真实盘口：初盘3.5→临盘3.5 大0.95/小0.80 | 水位:小水低0.15(强)；跳球:盘口未动 | TC参考:1/2球">盘3.5 大0.95/小0.80</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=3.51 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：3球 21.6%·EV+76%@SP8.17、4球 18.9%·EV+132%@SP12.29、5球 13.3%·EV+98%@SP14.94"><span class="goal3">345</span></td>
+        <td class="col-goal3" title="3选进球数（λ=3.58 · 市场反推·盘口线3.5，取档=EV·市场线锚定窗口，各档概率）：4球 19.1%、5球 13.6%、6球 8.1%"><span class="goal3">456</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 67.0%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 33.0%</span></td>
       </tr>
@@ -11428,13 +11428,13 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-stable">较稳</span></div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘2.5→临盘3.5 大1.00/小0.73 | 水位:小水低0.27(强)；跳球:2.5跳升3.5(强)；信号冲突:水位与跳球反向,观望 | TC参考:">盘2.5→3.5 大1.00/小0.73</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=3.51 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：3球 21.6%·EV+43%@SP6.62、4球 18.9%·EV+793%@SP47.26、5球 13.3%·EV+469%@SP42.92"><span class="goal3">345</span></td>
+        <td class="col-goal3" title="3选进球数（λ=3.50 · 市场反推·盘口线3.5，取档=EV·市场线锚定窗口，各档概率）：4球 18.9%、5球 13.2%、6球 7.7%"><span class="goal3">456</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 70.7%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 29.3%</span></td>
       </tr>
-      <tr class="ou-pred-row ou-over">
+      <tr class="ou-pred-row ou-wait">
         <td class="col-seq">294</td>
         <td class="col-time">22:55</td>
         <td class="col-league">
@@ -11453,10 +11453,10 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="ou-line">盘口线2.25 · 预期3.17 · 净胜—</div>
         </td>
         <td class="col-ou">
-          <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-act">可下手</span></div>
-          
+          <div class="ou-rec ou-wait">— 观望<span class="ou-grade g-tckill" title="v6原方向大球与TC大球同向强共振=回声确认陷阱（归因37.5%），降级观望；原方向留档事后评分">TC共振·原大球</span></div>
+          <div class="tc-data" title="500.com真实盘口：初盘2.5→临盘2.5 大0.65/小1.10 | 水位:大水低0.45(强)；跳球:盘口未动 | TC参考:3球/4球">盘2.5 大0.65/小1.10</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=3.14 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：3球 22.3%·EV+92%@SP8.60、4球 17.5%·EV+494%@SP33.88、5球 11.0%·EV+243%@SP31.15"><span class="goal3">345</span></td>
+        <td class="col-goal3" title="3选进球数（λ=2.93 · 市场反推·盘口线2.5，取档=EV·市场线锚定窗口，各档概率）：2球 23.0%·EV-34%@SP2.86、3球 22.4%·EV+92%@SP8.60、4球 16.4%·EV+455%@SP33.88"><span class="goal3">234</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 58.4%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 41.6%</span></td>
       </tr>
@@ -11480,9 +11480,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-act">可下手</span></div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘3.5→临盘3.5 大0.84/小0.88 | 水位:大水低0.04(弱)；跳球:盘口未动 | TC参考:4球/5球">盘3.5 大0.84/小0.88</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=3.36 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：3球 22.0%·EV+9%@SP4.96、4球 18.4%·EV+82%@SP9.85、5球 12.4%·EV+49%@SP11.98"><span class="goal3">345</span></td>
+        <td class="col-goal3" title="3选进球数（λ=3.70 · 市场反推·盘口线3.5，取档=EV·市场线锚定窗口，各档概率）：4球 19.3%、5球 14.3%、6球 8.8%"><span class="goal3">456</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 56.1%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 43.9%</span></td>
       </tr>
@@ -11532,9 +11532,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘3.5→临盘3.5 大0.94/小0.78 | 水位:小水低0.16(强)；跳球:盘口未动 | TC参考:1/2球">盘3.5 大0.94/小0.78</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=3.36 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：2球 19.6%·EV-36%@SP3.27、3球 22.0%·EV+37%@SP6.25、4球 18.4%·EV+218%@SP17.25"><span class="goal3">234</span></td>
+        <td class="col-goal3" title="3选进球数（λ=3.57 · 市场反推·盘口线3.5，取档=EV·市场线锚定窗口，各档概率）：3球 21.3%·EV+33%@SP6.25、4球 19.1%·EV+229%@SP17.25、5球 13.6%·EV+130%@SP16.92"><span class="goal3">345</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 56.1%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 43.9%</span></td>
       </tr>
@@ -11558,13 +11558,13 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘2.5→临盘3.5 大1.05/小0.67 | 水位:小水低0.38(强)；跳球:2.5跳升3.5(强)；信号冲突:水位与跳球反向,观望 | TC参考:">盘2.5→3.5 大1.05/小0.67</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=3.34 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：2球 19.7%·EV-53%@SP2.40、3球 22.0%·EV+48%@SP6.74、4球 18.4%·EV+4502%@SP250.24"><span class="goal3">234</span></td>
+        <td class="col-goal3" title="3选进球数（λ=3.43 · 市场反推·盘口线3.5，取档=EV·市场线锚定窗口，各档概率）：3球 21.8%·EV+47%@SP6.74、4球 18.7%·EV+4577%@SP250.24、5球 12.8%·EV+3852%@SP307.99"><span class="goal3">345</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 60.7%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 39.3%</span></td>
       </tr>
-      <tr class="ou-pred-row ou-over">
+      <tr class="ou-pred-row ou-wait">
         <td class="col-seq">299</td>
         <td class="col-time">22:55</td>
         <td class="col-league">
@@ -11583,10 +11583,10 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="ou-line">盘口线2.25 · 预期3.48 · 净胜—</div>
         </td>
         <td class="col-ou">
-          <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-act">可下手</span></div>
-          
+          <div class="ou-rec ou-wait">— 观望<span class="ou-grade g-tckill" title="v6原方向大球与TC大球同向强共振=回声确认陷阱（归因37.5%），降级观望；原方向留档事后评分">TC共振·原大球</span></div>
+          <div class="tc-data" title="500.com真实盘口：初盘2.5→临盘2.5 大0.25/小2.60 | 水位:大水低2.35(强)；跳球:盘口未动 | TC参考:3球/4球">盘2.5 大0.25/小2.60</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=3.34 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：3球 22.0%·EV+31%@SP5.96、4球 18.4%·EV+73%@SP9.43、5球 12.3%·EV+70%@SP13.83"><span class="goal3">345</span></td>
+        <td class="col-goal3" title="3选进球数（λ=3.87 · 市场反推·盘口线2.5，取档=EV·市场线锚定窗口，各档概率）：2球 15.6%·EV-24%@SP4.89、3球 20.1%·EV+20%@SP5.96、4球 19.5%·EV+84%@SP9.43"><span class="goal3">234</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 60.7%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 39.3%</span></td>
       </tr>
@@ -11610,13 +11610,13 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘3.5→临盘3.5 大0.86/小0.76 | 水位:小水低0.10(强)；跳球:盘口未动 | TC参考:1/2球">盘3.5 大0.86/小0.76</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=3.34 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：2球 19.7%·EV-49%@SP2.56、3球 22.0%·EV+48%@SP6.73、4球 18.4%·EV+1141%@SP67.47"><span class="goal3">234</span></td>
+        <td class="col-goal3" title="3选进球数（λ=3.61 · 市场反推·盘口线3.5，取档=EV·市场线锚定窗口，各档概率）：3球 21.2%·EV+43%@SP6.73、4球 19.1%·EV+1191%@SP67.47、5球 13.8%·EV+831%@SP67.45"><span class="goal3">345</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 60.1%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 39.9%</span></td>
       </tr>
-      <tr class="ou-pred-row ou-over">
+      <tr class="ou-pred-row ou-wait">
         <td class="col-seq">301</td>
         <td class="col-time">22:55</td>
         <td class="col-league">
@@ -11635,10 +11635,10 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="ou-line">盘口线2.25 · 预期3.28 · 净胜—</div>
         </td>
         <td class="col-ou">
-          <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-act">可下手</span></div>
-          
+          <div class="ou-rec ou-wait">— 观望<span class="ou-grade g-tckill" title="v6原方向大球与TC大球同向强共振=回声确认陷阱（归因37.5%），降级观望；原方向留档事后评分">TC共振·原大球</span></div>
+          <div class="tc-data" title="500.com真实盘口：初盘2.5→临盘3.5 大0.75/小0.95 | 水位:大水低0.20(强)；跳球:2.5跳升3.5(强) | TC参考:4球/5球">盘2.5→3.5 大0.75/小0.95</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=3.34 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：3球 22.0%·EV+60%@SP7.29、4球 18.4%·EV+366%@SP25.32、5球 12.3%·EV+226%@SP26.49"><span class="goal3">345</span></td>
+        <td class="col-goal3" title="3选进球数（λ=3.80 · 市场反推·盘口线3.5，取档=EV·市场线锚定窗口，各档概率）：3球 20.4%·EV+49%@SP7.29、4球 19.4%·EV+392%@SP25.32、5球 14.8%·EV+292%@SP26.49"><span class="goal3">345</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 60.7%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 39.3%</span></td>
       </tr>
@@ -11662,13 +11662,13 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘2.5→临盘2.5 大0.36/小1.87 | 水位:大水低1.51(强)；跳球:盘口未动 | TC参考:3球/4球">盘2.5 大0.36/小1.87</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=3.34 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：2球 19.7%·EV-39%@SP3.07、3球 22.0%·EV+66%@SP7.56、4球 18.4%·EV+397%@SP27.00"><span class="goal3">234</span></td>
+        <td class="col-goal3" title="3选进球数（λ=3.50 · 市场反推·盘口线2.5，取档=EV·市场线锚定窗口，各档概率）：2球 18.5%·EV-43%@SP3.07、3球 21.6%·EV+63%@SP7.56、4球 18.9%·EV+410%@SP27.00"><span class="goal3">234</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 60.7%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 39.3%</span></td>
       </tr>
-      <tr class="ou-pred-row ou-over">
+      <tr class="ou-pred-row ou-wait">
         <td class="col-seq">303</td>
         <td class="col-time">22:55</td>
         <td class="col-league">
@@ -11687,10 +11687,10 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="ou-line">盘口线2.25 · 预期3.28 · 净胜—</div>
         </td>
         <td class="col-ou">
-          <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-act">可下手</span></div>
-          
+          <div class="ou-rec ou-wait">— 观望<span class="ou-grade g-tckill" title="v6原方向大球与TC大球同向强共振=回声确认陷阱（归因37.5%），降级观望；原方向留档事后评分">TC共振·原大球</span></div>
+          <div class="tc-data" title="500.com真实盘口：初盘2.5→临盘2.5 大0.25/小2.60 | 水位:大水低2.35(强)；跳球:盘口未动 | TC参考:3球/4球">盘2.5 大0.25/小2.60</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=3.34 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：3球 22.0%·EV+79%@SP8.15、4球 18.4%·EV+555%@SP35.63、5球 12.3%·EV+409%@SP41.41"><span class="goal3">345</span></td>
+        <td class="col-goal3" title="3选进球数（λ=3.87 · 市场反推·盘口线2.5，取档=EV·市场线锚定窗口，各档概率）：2球 15.6%·EV-52%@SP3.10、3球 20.1%·EV+64%@SP8.15、4球 19.5%·EV+595%@SP35.63"><span class="goal3">234</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 60.7%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 39.3%</span></td>
       </tr>
@@ -11714,9 +11714,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘2.5→临盘2.5 大0.88/小0.92 | 水位:大水低0.04(弱)；跳球:盘口未动 | TC参考:3球/4球">盘2.5 大0.88/小0.92</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=2.90 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：2球 23.1%·EV-42%@SP2.52、3球 22.4%·EV+473%@SP25.61、4球 16.2%·EV+3549%@SP224.72"><span class="goal3">234</span></td>
+        <td class="col-goal3" title="3选进球数（λ=2.70 · 市场反推·盘口线2.5，取档=EV·市场线锚定窗口，各档概率）：2球 24.5%·EV-38%@SP2.52、3球 22.0%·EV+464%@SP25.61、4球 14.8%·EV+3237%@SP224.72"><span class="goal3">234</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 58.4%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 41.6%</span></td>
       </tr>
@@ -11740,9 +11740,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘2.5→临盘2.5 大0.94/小0.86 | 水位:小水低0.08(强)；跳球:盘口未动 | TC参考:1/2球">盘2.5 大0.94/小0.86</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=2.90 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：2球 23.1%·EV-35%@SP2.83、3球 22.4%·EV+71%@SP7.66、4球 16.2%·EV+343%@SP27.29"><span class="goal3">234</span></td>
+        <td class="col-goal3" title="3选进球数（λ=2.63 · 市场反推·盘口线2.5，取档=EV·市场线锚定窗口，各档概率）：2球 24.9%·EV-29%@SP2.83、3球 21.9%·EV+67%@SP7.66、4球 14.4%·EV+292%@SP27.29"><span class="goal3">234</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 58.4%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 41.6%</span></td>
       </tr>
@@ -11766,9 +11766,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘2.5→临盘2.5 大0.61/小1.15 | 水位:大水低0.54(强)；跳球:盘口未动 | TC参考:3球/4球">盘2.5 大0.61/小1.15</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=2.90 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：2球 23.1%·EV-30%@SP3.02、3球 22.4%·EV+117%@SP9.68、4球 16.2%·EV+230%@SP20.35"><span class="goal3">234</span></td>
+        <td class="col-goal3" title="3选进球数（λ=2.98 · 市场反推·盘口线2.5，取档=EV·市场线锚定窗口，各档概率）：2球 22.6%·EV-32%@SP3.02、3球 22.4%·EV+117%@SP9.68、4球 16.7%·EV+239%@SP20.35"><span class="goal3">234</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 58.2%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 41.8%</span></td>
       </tr>
@@ -11792,9 +11792,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘2.5→临盘2.5 大0.90/小0.82 | 水位:小水低0.08(强)；跳球:盘口未动 | TC参考:1/2球">盘2.5 大0.90/小0.82</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=2.84 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：2球 23.6%·EV-38%@SP2.64、3球 22.3%·EV+256%@SP15.94、4球 15.8%·EV+1275%@SP86.81"><span class="goal3">234</span></td>
+        <td class="col-goal3" title="3选进球数（λ=2.63 · 市场反推·盘口线2.5，取档=EV·市场线锚定窗口，各档概率）：2球 24.9%·EV-34%@SP2.64、3球 21.9%·EV+248%@SP15.94、4球 14.4%·EV+1148%@SP86.81"><span class="goal3">234</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 58.4%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 41.6%</span></td>
       </tr>
@@ -11818,9 +11818,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘2.5→临盘2.5 大0.85/小0.83 | 水位:小水低0.02(弱)；跳球:盘口未动 | TC参考:1/2球">盘2.5 大0.85/小0.83</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=3.19 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：2球 21.0%·EV-45%@SP2.63、3球 22.3%·EV+53%@SP6.87、4球 17.8%·EV+3579%@SP207.17"><span class="goal3">234</span></td>
+        <td class="col-goal3" title="3选进球数（λ=2.66 · 市场反推·盘口线2.5，取档=EV·市场线锚定窗口，各档概率）：2球 24.7%·EV-35%@SP2.63、3球 22.0%·EV+51%@SP6.87、4球 14.6%·EV+2928%@SP207.17"><span class="goal3">234</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 56.0%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 44.0%</span></td>
       </tr>
@@ -11844,9 +11844,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-act">可下手</span></div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘2.5→临盘2.5 大0.90/小0.90 | 水位:走水；跳球:盘口未动 | TC参考:">盘2.5 大0.90/小0.90</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=2.94 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：3球 22.4%·EV+134%@SP10.46、4球 16.4%·EV+290%@SP23.71、5球 9.7%·EV+141%@SP24.95"><span class="goal3">345</span></td>
+        <td class="col-goal3" title="3选进球数（λ=2.67 · 市场反推·盘口线2.5，取档=EV·市场线锚定窗口，各档概率）：3球 22.0%·EV+130%@SP10.46、4球 14.7%·EV+248%@SP23.71、5球 7.9%·EV+96%@SP24.95"><span class="goal3">345</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 58.4%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 41.6%</span></td>
       </tr>
@@ -11870,9 +11870,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘3.5→临盘3.5 大0.94/小0.86 | 水位:小水低0.08(强)；跳球:盘口未动 | TC参考:1/2球">盘3.5 大0.94/小0.86</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=3.67 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：2球 17.1%·EV-43%@SP3.33、3球 21.0%·EV+103%@SP9.67、4球 19.3%·EV+1160%@SP65.42"><span class="goal3">234</span></td>
+        <td class="col-goal3" title="3选进球数（λ=3.62 · 市场反推·盘口线3.5，取档=EV·市场线锚定窗口，各档概率）：3球 21.2%·EV+105%@SP9.67、4球 19.2%·EV+1154%@SP65.42、5球 13.9%·EV+421%@SP37.55"><span class="goal3">345</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 58.4%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 41.6%</span></td>
       </tr>
@@ -11922,9 +11922,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘2.5→临盘2.5 大0.73/小1.00 | 水位:大水低0.27(强)；跳球:盘口未动 | TC参考:3球/4球">盘2.5 大0.73/小1.00</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=2.81 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：2球 23.8%·EV-34%@SP2.78、3球 22.3%·EV+52%@SP6.82、4球 15.6%·EV+282%@SP24.41"><span class="goal3">234</span></td>
+        <td class="col-goal3" title="3选进球数（λ=2.82 · 市场反推·盘口线2.5，取档=EV·市场线锚定窗口，各档概率）：2球 23.7%·EV-34%@SP2.78、3球 22.3%·EV+52%@SP6.82、4球 15.7%·EV+284%@SP24.41"><span class="goal3">234</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 58.4%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 41.6%</span></td>
       </tr>
@@ -11948,9 +11948,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘2.5→临盘2.5 大0.80/小1.00 | 水位:大水低0.20(强)；跳球:盘口未动 | TC参考:3球/4球">盘2.5 大0.80/小1.00</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=2.53 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：2球 25.5%·EV-30%@SP2.76、3球 21.5%·EV+85%@SP8.61、4球 13.6%·EV+751%@SP62.63"><span class="goal3">234</span></td>
+        <td class="col-goal3" title="3选进球数（λ=2.78 · 市场反推·盘口线2.5，取档=EV·市场线锚定窗口，各档概率）：2球 24.0%·EV-34%@SP2.76、3球 22.2%·EV+91%@SP8.61、4球 15.5%·EV+868%@SP62.63"><span class="goal3">234</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 55.3%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 44.7%</span></td>
       </tr>
@@ -11973,10 +11973,10 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="ou-line">盘口线2.25 · 预期3.17 · 净胜—</div>
         </td>
         <td class="col-ou">
-          <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-act">可下手</span></div>
-          
+          <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-act">可下手</span><span class="ou-grade g-tcrev" title="TC方向与v6相反=反共识信号（归因v6该子集85.7%），方向保留">TC反共识</span></div>
+          <div class="tc-data" title="500.com真实盘口：初盘3.0→临盘3.0 大1.00/小0.72 | 水位:小水低0.28(强)；跳球:盘口未动；整球盘:3.0球走盘风险 | TC参考:1/2球">盘3.0 大1.00/小0.72</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=3.31 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：3球 22.1%·EV+28%@SP5.80、4球 18.3%·EV+67%@SP9.17、5球 12.1%·EV+972%@SP88.69"><span class="goal3">345</span></td>
+        <td class="col-goal3" title="3选进球数（λ=2.99 · 市场反推·盘口线3，取档=EV·市场线锚定窗口，各档概率）：4球 16.7%、5球 10.0%、6球 5.0%"><span class="goal3">456</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 58.4%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 41.6%</span></td>
       </tr>
@@ -12000,9 +12000,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘2.5→临盘2.5 大0.75/小1.00 | 水位:大水低0.25(强)；跳球:盘口未动 | TC参考:3球/4球">盘2.5 大0.75/小1.00</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=3.07 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：2球 21.9%·EV-43%@SP2.61、3球 22.4%·EV+141%@SP10.75、4球 17.2%·EV+304%@SP23.52"><span class="goal3">234</span></td>
+        <td class="col-goal3" title="3选进球数（λ=2.81 · 市场反推·盘口线2.5，取档=EV·市场线锚定窗口，各档概率）：2球 23.8%·EV-38%@SP2.61、3球 22.3%·EV+139%@SP10.75、4球 15.7%·EV+268%@SP23.52"><span class="goal3">234</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 58.4%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 41.6%</span></td>
       </tr>
@@ -12026,9 +12026,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘2.5→临盘2.5 大0.67/小1.10 | 水位:大水低0.43(强)；跳球:盘口未动 | TC参考:3球/4球">盘2.5 大0.67/小1.10</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=2.65 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：2球 24.8%·EV-32%@SP2.74、3球 21.9%·EV+74%@SP7.95、4球 14.5%·EV+1009%@SP76.62"><span class="goal3">234</span></td>
+        <td class="col-goal3" title="3选进球数（λ=2.91 · 市场反推·盘口线2.5，取档=EV·市场线锚定窗口，各档概率）：2球 23.0%·EV-37%@SP2.74、3球 22.4%·EV+78%@SP7.95、4球 16.3%·EV+1148%@SP76.62"><span class="goal3">234</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 58.4%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 41.6%</span></td>
       </tr>
@@ -12052,9 +12052,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘2.5→临盘2.5 大0.97/小0.75 | 水位:小水低0.22(强)；跳球:盘口未动 | TC参考:1/2球">盘2.5 大0.97/小0.75</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=2.65 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：2球 24.8%·EV-33%@SP2.70、3球 21.9%·EV+328%@SP19.53、4球 14.5%·EV+661%@SP52.58"><span class="goal3">234</span></td>
+        <td class="col-goal3" title="3选进球数（λ=2.56 · 市场反推·盘口线2.5，取档=EV·市场线锚定窗口，各档概率）：2球 25.4%·EV-32%@SP2.70、3球 21.6%·EV+322%@SP19.53、4球 13.8%·EV+626%@SP52.58"><span class="goal3">234</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 58.1%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 41.9%</span></td>
       </tr>
@@ -12130,9 +12130,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘2.5→临盘2.5 大0.61/小1.15 | 水位:大水低0.54(强)；跳球:盘口未动 | TC参考:3球/4球">盘2.5 大0.61/小1.15</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=3.36 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：2球 19.6%·EV-49%@SP2.59、3球 22.0%·EV+21%@SP5.53、4球 18.4%·EV+153%@SP13.70"><span class="goal3">234</span></td>
+        <td class="col-goal3" title="3选进球数（λ=2.98 · 市场反推·盘口线2.5，取档=EV·市场线锚定窗口，各档概率）：2球 22.6%·EV-42%@SP2.59、3球 22.4%·EV+24%@SP5.53、4球 16.7%·EV+128%@SP13.70"><span class="goal3">234</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 56.1%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 43.9%</span></td>
       </tr>
@@ -12156,9 +12156,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘2.5→临盘2.5 大0.98/小0.74 | 水位:小水低0.24(强)；跳球:盘口未动 | TC参考:1/2球">盘2.5 大0.98/小0.74</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=2.84 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：2球 23.6%·EV-39%@SP2.59、3球 22.3%·EV+159%@SP11.60、4球 15.8%·EV+5412%@SP348.03"><span class="goal3">234</span></td>
+        <td class="col-goal3" title="3选进球数（λ=2.55 · 市场反推·盘口线2.5，取档=EV·市场线锚定窗口，各档概率）：2球 25.4%·EV-34%@SP2.59、3球 21.6%·EV+150%@SP11.60、4球 13.7%·EV+4675%@SP348.03"><span class="goal3">234</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 58.4%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 41.6%</span></td>
       </tr>
@@ -12182,9 +12182,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘2.5→临盘2.5 大1.25/小0.57 | 水位:小水低0.68(强)；跳球:盘口未动 | TC参考:1/2球">盘2.5 大1.25/小0.57</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=2.56 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：2球 25.4%·EV-38%@SP2.45、3球 21.6%·EV+195%@SP13.67、4球 13.8%·EV+1683%@SP129.16"><span class="goal3">234</span></td>
+        <td class="col-goal3" title="3选进球数（λ=2.33 · 市场反推·盘口线2.5，取档=EV·市场线锚定窗口，各档概率）：2球 26.4%·EV-35%@SP2.45、3球 20.5%·EV+180%@SP13.67、4球 11.9%·EV+1439%@SP129.16"><span class="goal3">234</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 60.7%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 39.3%</span></td>
       </tr>
@@ -12207,10 +12207,10 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="ou-line">盘口线2.25 · 预期3.62 · 净胜—</div>
         </td>
         <td class="col-ou">
-          <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-stable">较稳</span></div>
-          
+          <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-stable">较稳</span><span class="ou-grade g-tcrev" title="TC方向与v6相反=反共识信号（归因v6该子集85.7%），方向保留">TC反共识</span></div>
+          <div class="tc-data" title="500.com真实盘口：初盘3.5→临盘3.5 大0.91/小0.81 | 水位:小水低0.10(强)；跳球:盘口未动 | TC参考:1/2球">盘3.5 大0.91/小0.81</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=3.51 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：3球 21.6%·EV+17%@SP5.42、4球 18.9%·EV+222%@SP17.02、5球 13.3%·EV+167%@SP20.13"><span class="goal3">345</span></td>
+        <td class="col-goal3" title="3选进球数（λ=3.61 · 市场反推·盘口线3.5，取档=EV·市场线锚定窗口，各档概率）：4球 19.1%、5球 13.8%、6球 8.3%"><span class="goal3">456</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 67.0%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 33.0%</span></td>
       </tr>
@@ -12233,10 +12233,10 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="ou-line">盘口线2.25 · 预期3.82 · 净胜—</div>
         </td>
         <td class="col-ou">
-          <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-stable">较稳</span></div>
-          
+          <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-stable">较稳</span><span class="ou-grade g-tcex" title="v7较稳档（净胜≥1.10）免于TC共振杀：共振陷阱归因样本以可下手档为主，不足以推翻较稳档净胜优势，方向保留">TC共振·较稳免杀</span></div>
+          <div class="tc-data" title="500.com真实盘口：初盘3.5→临盘3.5 大0.81/小0.91 | 水位:大水低0.10(强)；跳球:盘口未动 | TC参考:4球/5球">盘3.5 大0.81/小0.91</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=3.51 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：3球 21.6%·EV-8%@SP4.27、4球 18.9%·EV+26%@SP6.68、5球 13.3%·EV+472%@SP43.14"><span class="goal3">345</span></td>
+        <td class="col-goal3" title="3选进球数（λ=3.74 · 市场反推·盘口线3.5，取档=EV·市场线锚定窗口，各档概率）：4球 19.4%、5球 14.5%、6球 9.0%"><span class="goal3">456</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 67.0%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 33.0%</span></td>
       </tr>
@@ -12259,10 +12259,10 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="ou-line">盘口线2.25 · 预期3.37 · 净胜—</div>
         </td>
         <td class="col-ou">
-          <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-act">可下手</span></div>
-          
+          <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-act">可下手</span><span class="ou-grade g-tcrev" title="TC方向与v6相反=反共识信号（归因v6该子集85.7%），方向保留">TC反共识</span></div>
+          <div class="tc-data" title="500.com真实盘口：初盘3.0→临盘3.0 大0.92/小0.80 | 水位:小水低0.12(强)；跳球:盘口未动；整球盘:3.0球走盘风险 | TC参考:1/2球">盘3.0 大0.92/小0.80</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=2.71 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：3球 22.1%·EV-4%@SP4.34、4球 14.9%·EV+45%@SP9.69、5球 8.1%·EV+629%@SP90.18"><span class="goal3">345</span></td>
+        <td class="col-goal3" title="3选进球数（λ=3.09 · 市场反推·盘口线3，取档=EV·市场线锚定窗口，各档概率）：4球 17.3%、5球 10.7%、6球 5.5%"><span class="goal3">456</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 58.4%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 41.6%</span></td>
       </tr>
@@ -12286,9 +12286,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘2.5→临盘2.5 大0.67/小1.05 | 水位:大水低0.38(强)；跳球:盘口未动 | TC参考:3球/4球">盘2.5 大0.67/小1.05</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=3.19 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：2球 21.0%·EV-42%@SP2.75、3球 22.3%·EV+48%@SP6.66、4球 17.8%·EV+704%@SP45.28"><span class="goal3">234</span></td>
+        <td class="col-goal3" title="3选进球数（λ=2.89 · 市场反推·盘口线2.5，取档=EV·市场线锚定窗口，各档概率）：2球 23.2%·EV-36%@SP2.75、3球 22.4%·EV+49%@SP6.66、4球 16.1%·EV+631%@SP45.28"><span class="goal3">234</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 56.1%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 43.9%</span></td>
       </tr>
@@ -12311,10 +12311,10 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="ou-line">盘口线2.25 · 预期3.17 · 净胜—</div>
         </td>
         <td class="col-ou">
-          <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-act">可下手</span></div>
-          
+          <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-act">可下手</span><span class="ou-grade g-tcrev" title="TC方向与v6相反=反共识信号（归因v6该子集85.7%），方向保留">TC反共识</span></div>
+          <div class="tc-data" title="500.com真实盘口：初盘2.5→临盘2.5 大0.94/小0.86 | 水位:小水低0.08(强)；跳球:盘口未动 | TC参考:1/2球">盘2.5 大0.94/小0.86</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=2.81 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：3球 22.3%·EV+95%@SP8.77、4球 15.6%·EV+610%@SP45.40、5球 8.8%·EV+801%@SP102.52"><span class="goal3">345</span></td>
+        <td class="col-goal3" title="3选进球数（λ=2.63 · 市场反推·盘口线2.5，取档=EV·市场线锚定窗口，各档概率）：3球 21.9%·EV+92%@SP8.77、4球 14.4%·EV+553%@SP45.40、5球 7.6%·EV+676%@SP102.52"><span class="goal3">345</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 58.4%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 41.6%</span></td>
       </tr>
@@ -12337,14 +12337,14 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="ou-line">盘口线2.25 · 预期3.17 · 净胜—</div>
         </td>
         <td class="col-ou">
-          <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-act">可下手</span></div>
-          
+          <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-act">可下手</span><span class="ou-grade g-tcrev" title="TC方向与v6相反=反共识信号（归因v6该子集85.7%），方向保留">TC反共识</span></div>
+          <div class="tc-data" title="500.com真实盘口：初盘3.0→临盘3.0 大1.02/小0.78 | 水位:小水低0.24(强)；跳球:盘口未动；整球盘:3.0球走盘风险 | TC参考:1/2球">盘3.0 大1.02/小0.78</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=2.90 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：3球 22.4%·EV+225%@SP14.51、4球 16.2%·EV+492%@SP36.48、5球 9.4%·EV+1054%@SP122.31"><span class="goal3">345</span></td>
+        <td class="col-goal3" title="3选进球数（λ=3.02 · 市场反推·盘口线3，取档=EV·市场线锚定窗口，各档概率）：4球 16.9%、5球 10.2%、6球 5.1%"><span class="goal3">456</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 58.4%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 41.6%</span></td>
       </tr>
-      <tr class="ou-pred-row ou-over">
+      <tr class="ou-pred-row ou-wait">
         <td class="col-seq">329</td>
         <td class="col-time">02:55</td>
         <td class="col-league">
@@ -12363,10 +12363,10 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <div class="ou-line">盘口线2.25 · 预期3.37 · 净胜—</div>
         </td>
         <td class="col-ou">
-          <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-act">可下手</span></div>
-          
+          <div class="ou-rec ou-wait">— 观望<span class="ou-grade g-tckill" title="v6原方向大球与TC大球同向强共振=回声确认陷阱（归因37.5%），降级观望；原方向留档事后评分">TC共振·原大球</span></div>
+          <div class="tc-data" title="500.com真实盘口：初盘2.5→临盘2.5 大0.40/小1.75 | 水位:大水低1.35(强)；跳球:盘口未动 | TC参考:3球/4球">盘2.5 大0.40/小1.75</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=3.07 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：3球 22.4%·EV+6%@SP4.74、4球 17.2%·EV+41%@SP8.22、5球 10.6%·EV+192%@SP27.66"><span class="goal3">345</span></td>
+        <td class="col-goal3" title="3选进球数（λ=3.41 · 市场反推·盘口线2.5，取档=EV·市场线锚定窗口，各档概率）：2球 19.2%·EV-28%@SP3.73、3球 21.8%·EV+3%@SP4.74、4球 18.6%·EV+53%@SP8.22"><span class="goal3">234</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 58.4%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 41.6%</span></td>
       </tr>
@@ -12390,9 +12390,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘2.0→临盘2.0 大0.85/小0.87 | 水位:大水低0.02(弱)；跳球:盘口未动；整球盘:2.0球走盘风险 | TC参考:3球/4球">盘2.0 大0.85/小0.87</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=2.65 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：2球 24.8%·EV-29%@SP2.84、3球 21.9%·EV+299%@SP18.23、4球 14.5%·EV+1373%@SP101.71"><span class="goal3">234</span></td>
+        <td class="col-goal3" title="3选进球数（λ=2.17 · 市场反推·盘口线2，取档=EV·市场线锚定窗口，各档概率）：2球 26.9%·EV-24%@SP2.84、3球 19.4%·EV+254%@SP18.23、4球 10.5%·EV+970%@SP101.71"><span class="goal3">234</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 58.4%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 41.6%</span></td>
       </tr>
@@ -12416,9 +12416,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘2.5→临盘2.5 大1.00/小0.75 | 水位:小水低0.25(强)；跳球:盘口未动 | TC参考:1/2球">盘2.5 大1.00/小0.75</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=2.74 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：2球 24.2%·EV-38%@SP2.56、3球 22.1%·EV+157%@SP11.63、4球 15.2%·EV+1019%@SP73.73"><span class="goal3">234</span></td>
+        <td class="col-goal3" title="3选进球数（λ=2.54 · 市场反推·盘口线2.5，取档=EV·市场线锚定窗口，各档概率）：2球 25.4%·EV-35%@SP2.56、3球 21.5%·EV+151%@SP11.63、4球 13.7%·EV+909%@SP73.73"><span class="goal3">234</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 53.7%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 46.3%</span></td>
       </tr>
@@ -12520,9 +12520,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘3.5→临盘3.5 大0.65/小1.05 | 水位:大水低0.40(强)；跳球:盘口未动 | TC参考:4球/5球">盘3.5 大0.65/小1.05</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=3.61 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：2球 17.6%·EV-32%@SP3.83、3球 21.2%·EV+23%@SP5.82、4球 19.1%·EV+674%@SP40.41"><span class="goal3">234</span></td>
+        <td class="col-goal3" title="3选进球数（λ=3.94 · 市场反推·盘口线3.5，取档=EV·市场线锚定窗口，各档概率）：3球 19.8%·EV+15%@SP5.82、4球 19.5%·EV+689%@SP40.41、5球 15.4%·EV+316%@SP27.06"><span class="goal3">345</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 58.4%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 41.6%</span></td>
       </tr>
@@ -12546,9 +12546,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘2.5→临盘1.5 大0.55/小1.30 | 水位:大水低0.75(强)；跳球:2.5降1.5；反向取舍:水位强盖跳球弱 | TC参考:3球/4球">盘2.5→1.5 大0.55/小1.30</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=2.56 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：2球 25.4%·EV-31%@SP2.72、3球 21.6%·EV+354%@SP21.04、4球 13.8%·EV+7543%@SP553.74"><span class="goal3">234</span></td>
+        <td class="col-goal3" title="3选进球数（λ=2.01 · 市场反推·盘口线1.5，取档=EV·市场线锚定窗口，各档概率）：0球 13.4%·EV-23%@SP5.73、2球 27.1%·EV-26%@SP2.72、3球 18.2%·EV+282%@SP21.04"><span class="goal3">023</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 60.7%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 39.3%</span></td>
       </tr>
@@ -12598,9 +12598,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-over">↑ 大球<span class="ou-grade g-act">可下手</span></div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘3.5→临盘3.5 大0.86/小0.86 | 水位:走水；跳球:盘口未动 | TC参考:">盘3.5 大0.86/小0.86</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=3.27 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：3球 22.2%·EV+62%@SP7.29、4球 18.1%·EV+917%@SP56.20、5球 11.8%·EV+250%@SP29.57"><span class="goal3">345</span></td>
+        <td class="col-goal3" title="3选进球数（λ=3.67 · 市场反推·盘口线3.5，取档=EV·市场线锚定窗口，各档概率）：4球 19.3%、5球 14.1%、6球 8.7%"><span class="goal3">456</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 62.9%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 37.1%</span></td>
       </tr>
@@ -12650,9 +12650,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘2.5→临盘2.5 大0.61/小1.15 | 水位:大水低0.54(强)；跳球:盘口未动 | TC参考:3球/4球">盘2.5 大0.61/小1.15</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=2.74 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：2球 24.2%·EV-34%@SP2.73、3球 22.1%·EV+212%@SP14.10、4球 15.2%·EV+999%@SP72.41"><span class="goal3">234</span></td>
+        <td class="col-goal3" title="3选进球数（λ=2.98 · 市场反推·盘口线2.5，取档=EV·市场线锚定窗口，各档概率）：2球 22.6%·EV-38%@SP2.73、3球 22.4%·EV+216%@SP14.10、4球 16.7%·EV+1108%@SP72.41"><span class="goal3">234</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 53.7%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 46.3%</span></td>
       </tr>
@@ -12702,9 +12702,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         </td>
         <td class="col-ou">
           <div class="ou-rec ou-wait">— 观望</div>
-          
+          <div class="tc-data" title="500.com真实盘口：初盘2.0→临盘2.0 大0.89/小0.83 | 水位:小水低0.06(强)；跳球:盘口未动；整球盘:2.0球走盘风险 | TC参考:1/2球">盘2.0 大0.89/小0.83</div>
         </td>
-        <td class="col-goal3" title="3选进球数（λ=2.56 · 联赛实测基线，取档=EV·市场线锚定窗口，各档概率）：2球 25.4%·EV-29%@SP2.82、3球 21.6%·EV+71%@SP7.90、4球 13.8%·EV+921%@SP73.98"><span class="goal3">234</span></td>
+        <td class="col-goal3" title="3选进球数（λ=2.12 · 市场反推·盘口线2，取档=EV·市场线锚定窗口，各档概率）：2球 27.0%·EV-24%@SP2.82、3球 19.1%·EV+51%@SP7.90、4球 10.1%·EV+651%@SP73.98"><span class="goal3">234</span></td>
         <td class="col-ou-prob"><span class="ou-prob over">大 60.1%</span></td>
         <td class="col-ou-prob"><span class="ou-prob under">小 39.9%</span></td>
       </tr>
