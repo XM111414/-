@@ -21,12 +21,12 @@ b{color:#f1f5f9;}
 }
 </style></head><body>
 <h1>算法版本注册表</h1>
-<div class="sub">北京单场 v5 系统 · 生成于 2026-10-20 16:41 · 当前版本 2026-10-20-auto</div>
+<div class="sub">北京单场 v5 系统 · 生成于 2026-10-20 16:43 · 当前版本 2026-10-20-auto</div>
 <table><tr><th style="width:90px">版本</th><th style="width:84px">日期</th><th>变更内容</th>
 <th style="width:120px">改动前14天<br>命中率/Brier</th><th style="width:120px">改动后14天<br>命中率/Brier</th><th style="width:70px">Δ命中率</th></tr>
 <tr>
 <td><b>2026-10-20-auto</b></td><td>2026-10-20</td>
-<td><b>（自动检测到算法变更，待标注）</b><div class="sum">算法文件指纹变化，自动登记；请人工补充变更摘要</div></td>
+<td><b>算法注册表指纹覆盖修复：由执行体单文件扩展为执行体 + 17 个 server 依赖模块</b><div class="sum">修复指纹盲区。原 algo_files=[os.path.abspath(__file__)] 只覆盖执行体单文件，server/ 下被 import 的模块发生算法改动时指纹不变 → 版本登记静默失效。10-20 实测暴露该盲区：4 个 server 模块（daily_dashboard / daily_prediction_generator / review_history_manager / tc_ou_method）同日被改而注册表仍报“当前指纹一致、无变更”。改为纳入 A 任务的完整 import 闭包，共 18 个文件＝执行体 + 17 模块（daily_prediction_generator / daily_dashboard / tc_ou_method / review_history_manager / r14_r15_monitor / shadow_fusion / shadow_score / ml_challenger / bjlot_ttg / com500_over_under / sevenm_news / yucejia_intel / statarea_data / zgzcw_history / annual_review / algorithm_registry / app）；顺序为显式固定列表以保证 md5 可复现，缺失文件由 algorithm_registry._fingerprint 以路径字符串兜底不报错。执行体 L2985-L3005。指纹 c0853f84a1 → f1af93ad09。⚠️本改动只影响版本登记口径，不改任何预测逻辑；副作用是显示层模块的改动从此也会登记新版本（用少量条目噪音换取覆盖度）。验证：覆盖 18 文件 0 缺失、幂等、py_compile 通过，且本条即由本次 A 任务自动登记。</div></td>
 <td>74.0% / 0.1951</td>
 <td><span class="pend">数据未满</span> / —</td>
 <td class=""><b>—</b></td></tr><tr>
@@ -36,17 +36,17 @@ b{color:#f1f5f9;}
 <td><span class="pend">数据未满</span> / —</td>
 <td class=""><b>—</b></td></tr><tr>
 <td><b>2026-10-17-auto</b></td><td>2026-10-17</td>
-<td><b>（自动检测到算法变更，待标注）</b><div class="sum">算法文件指纹变化，自动登记；请人工补充变更摘要</div></td>
+<td><b>R15 全档化（阈值 78→74）+ 进球数三选复盘含观望场次</b><div class="sum">①规则15 由单边界 78 全档化为 74：桶 [74,76)/[76,78)/[78,80)/[80,+) 各自 min_n=20，某桶不足则回退该下界累积口径 [lo,+)（min_n=25），仍不足则跳过该桶不做映射。依据 walk-forward（无前视，3085 可判场）：现行单边界使 [74,78) 整档漏校准（声称 75.4% vs 实测 69.2~71.7%，gap +5.5pp）；扩到 74 后总体校准差 +1.3pp→+0.4pp，各档残差 ≤+2.9pp，Brier 0.2067→0.2065。执行体 L1314。②进球数三选复盘口径扩展：观望场次既然也给了三选就必须一并评分（此前只评有方向场次），使三选统计不再系统性乐观。执行体 L1637。</div></td>
 <td>73.1% / 0.199</td>
 <td><span class="pend">数据未满</span> / —</td>
 <td class=""><b>—</b></td></tr><tr>
 <td><b>2026-10-16-auto</b></td><td>2026-10-16</td>
-<td><b>（自动检测到算法变更，待标注）</b><div class="sum">算法文件指纹变化，自动登记；请人工补充变更摘要</div></td>
+<td><b>v7：大小球按每场真实市场线判定 + λ 主客拆分留档 + 展示列改「预期/净胜」</b><div class="sum">三处 v7 改动（执行体 L112 / L901 / L2175）：①复盘大小球胜负按该场**真实市场线**判定（此前用统一标准线 2.25，与市场口径不符），缺线回落 2.5；②留档 λ 的主客拆分(ou_lam_h / ou_lam_a，与 calculate_over_under 内部同源 estimate_team_goals，无随机性)，供在任意盘口线上复算大小球概率；③预测表该列由「ou分(=校准预期)」改为「预期/净胜」，净胜 = 预期 − 市场盘口线，口径更直观。配套（daily_dashboard.backfill_market_line）：把 500.com 真实即时盘口线回填为展示/取档用的 ou_line，原模型统一线留档 ou_line_model；安全性：方向判定(ou_score/ou_recommend)与盘口线无关，回填不改变任何方向、不影响滚动30天校准与命中率，只改变「盘口线」展示值与三选缺线时的回退线。</div></td>
 <td>74.1% / 0.1944</td>
 <td><span class="pend">数据未满</span> / —</td>
 <td class=""><b>—</b></td></tr><tr>
 <td><b>2026-10-15-auto</b></td><td>2026-10-15</td>
-<td><b>（自动检测到算法变更，待标注）</b><div class="sum">算法文件指纹变化，自动登记；请人工补充变更摘要</div></td>
+<td><b>北单总进球各档 SP 回采（gameid230 结算 SP）+ 进球数三选(goal3)链路启用</b><div class="sum">①SP 回采：build_review_data 新增结算后从北单总进球玩法(gameid230)取开奖 SP 填 zgjq_sp_win，供「三选码型分布」卡计算真实 ROI；预测时点写入的 8 档即时 SP 快照(zgjq_sp) 不被结算页覆盖（collect 内部仅在信息更全时覆盖）；抓取失败不中断主流程。执行体 L1456。②三选链路：server/daily_dashboard.py 的 goal3_ctx 以 500.com 盘口线+水位反推市场隐含λ 优先，缺盘口/水位时回落联赛实测基线 tc_ou_method.LEAGUE_GOALS_ACTUAL（2584 场实测，62 联赛，全局兜底 2.927）；取该泊松分布下概率最高的三档总进球数，7 表示 7+ 归并档。同日实测覆盖：市场λ 65.8%、联赛基线回落 61.1%、模型λ 59.7%。</div></td>
 <td>74.1% / 0.1944</td>
 <td><span class="pend">数据未满</span> / —</td>
 <td class=""><b>—</b></td></tr><tr>
@@ -71,7 +71,7 @@ b{color:#f1f5f9;}
 <td><span class="pend">数据未满</span> / —</td>
 <td class=""><b>—</b></td></tr><tr>
 <td><b>2026-10-08-auto</b></td><td>2026-10-08</td>
-<td><b>（自动检测到算法变更，待标注）</b><div class="sum">算法文件指纹变化，自动登记；请人工补充变更摘要</div></td>
+<td><b>停售期误报修复（整日缺失补齐：两期均取到数但缺该日 → 判停售期跳过）</b><div class="sum">原「整日缺失补齐」逻辑在“当前期与上期都成功取到场次、但都不含该缺失日”时误报“需人工补齐”；改为识别为停售期（如 2026 国庆 10-01~10-04 四天为零场次）并跳过，仅当任一期取数异常时才保留人工补齐告警。同时明确不造空 review 文件——否则会把月度汇总的“2 天 66 场”污染成“6 天 66 场”。执行体 L2458。⚠️本条在执行体内无带日期注释，依据为代码位置与 10-07 的修复记录；条目日期是流水线首次捕获新指纹的日期。</div></td>
 <td>68.8% / 0.2214</td>
 <td><span class="pend">数据未满</span> / —</td>
 <td class=""><b>—</b></td></tr><tr>
@@ -101,12 +101,12 @@ b{color:#f1f5f9;}
 <td>68.8% / 0.221</td>
 <td class="down"><b>-2.3pp</b></td></tr><tr>
 <td><b>2026-09-19-auto</b></td><td>2026-09-19</td>
-<td><b>（自动检测到算法变更，待标注）</b><div class="sum">算法文件指纹变化，自动登记；请人工补充变更摘要</div></td>
+<td><b>澳门推介数据源接入（7M prediction）+ 影子变体由五扩六（新增 MAC）</b><div class="sum">执行体新增 7M 澳门推介抓取：news.7m.com.cn/prediction → sevenm_news.collect_macau_for_matches，解析澳门推介方向(主胜/平局/客胜)与星级信心(1~5★)、开赛时间、链接，简体页与北单译名相似度匹配，按北单销售窗口(D 10:00~D+1 10:00)过滤，注入 m['sevenm']['macau']，仅作参考信息注入，不参与筛选/降信心，算法行为不变。同时影子变体集合由五扩六，新增 MAC（推介方向 +1pp×星级，重归一化），shadow_score.VARIANT_IDS 同步。执行体 L2700。首日 16/16 全匹配。</div></td>
 <td>70.4% / 0.2102</td>
 <td>69.4% / 0.2159</td>
 <td class="down"><b>-1.0pp</b></td></tr><tr>
 <td><b>2026-09-17-auto</b></td><td>2026-09-17</td>
-<td><b>（自动检测到算法变更，待标注）</b><div class="sum">算法文件指纹变化，自动登记；请人工补充变更摘要</div></td>
+<td><b>影子融合并行验证上线（六变体 prob_override 重跑）+ 影子评分自动化</b><div class="sum">①影子实验上线：statarea 概率融合(F07/F08/F09 权重 0.7/0.8/0.9)、VOTE(TIP 方向投票 +4pp/单)、YJ(yc 伤停侧概率压制 -10%/句上限30%)、MAC(澳门推介方向 +1pp×星级) 六变体，在预测段用 process_match(prob_override=融合后三向概率) 重跑全规则链并复刻 R2 同赔冲突/R5 凯利陷阱，存 data/shadow_predictions/shadow_{变体}_{日期}.json；生产不受影响（影子仅在赛果回填前生成，避免前视）。②评分自动化：复盘段后自动调 shadow_score.auto_score()，扫描影子存档+复盘赛果齐备日期评分，按日累积 score_history.json（重跑覆盖刷新，晚完场比分回填次日自动更新），免手动跑 CLI。执行体 L2946（影子实验）/ L2548（评分自动化）。转正预注册四判据：全量命中≥v5、Brier 改善≥0.01、dc 变化子集影子命中≥生产、VOTE/YJ/MAC 各自改动子集净获益。</div></td>
 <td>70.4% / 0.2104</td>
 <td>70.2% / 0.2112</td>
 <td class="down"><b>-0.2pp</b></td></tr><tr>
@@ -126,7 +126,7 @@ b{color:#f1f5f9;}
 <td>70.5% / 0.2093</td>
 <td class="down"><b>-1.2pp</b></td></tr><tr>
 <td><b>2026-09-13-auto</b></td><td>2026-09-13</td>
-<td><b>（自动检测到算法变更，待标注）</b><div class="sum">算法文件指纹变化，自动登记；请人工补充变更摘要</div></td>
+<td><b>P5-1/P6-1：主胜+平局双选治理（规则11 扩展到全部 |hc|≥1 + 该型封顶70）</b><div class="sum">30 天归因：主胜+平局型通过筛选 201 场实际命中 66.7% 而声称 74.4%（校准差 +7.7pp，六类中唯一虚高），未中 106 场 100% 为客胜（放弃客腿的结构盲区）。T1/P5-1：规则11 让球结构转换条件从 hc=-1 放宽到全部 |hc|≥1（回测 45 场 57.8%→86.7%）；T2/P6-1：hc=0 时该型信心封顶 70（只修正校准不筛除；规则6 换向场豁免）。执行体 L1061 / L1295。已与 server/daily_prediction_generator.py 双同步。改动前基线：763 场 71.7% / Brier 0.2044。</div></td>
 <td>71.4% / 0.206</td>
 <td>70.5% / 0.2093</td>
 <td class="down"><b>-0.9pp</b></td></tr><tr>
