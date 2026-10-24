@@ -627,6 +627,15 @@ body {
   margin-bottom: 8px;
 }
 
+/* 昨日复盘分析行（2026-10-24）：联赛准确率排行内部是左右两张 mini-table，
+   只给 1/3 宽度会把「联赛/场次/命中/命中率」压成窄条 → 宽屏下给它 2 份宽度。
+   ≤900px 已由下方 @media (max-width:900px) 统一改为单列，无需在此处理。 */
+@media (min-width: 901px) {
+  .analysis-row.review-analysis {
+    grid-template-columns: minmax(0, 2fr) minmax(240px, 1fr) minmax(240px, 1fr);
+  }
+}
+
 /* 等级通过率 */
 .gc-item { margin-bottom: 6px; }
 .gc-item:last-child { margin-bottom: 0; }
@@ -22307,7 +22316,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           </div>
         </div>
 
-        <div class="analysis-row">
+        <div class="analysis-row review-analysis">
           <div class="analysis-card">
             <h3>&#127942; 联赛准确率排行</h3>
 <div class="mini-dual"><div class="mini-scroll"><table class="mini-table"><thead><tr><th class="rank">#</th><th>联赛</th><th>场次</th><th>命中</th><th>命中率</th></tr></thead><tbody>          <tr>
