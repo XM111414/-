@@ -786,6 +786,65 @@ body {
 .filter-bar .count { margin-left: auto; font-size: 0.78rem; color: var(--muted); }
 .filter-bar .count strong { color: var(--accent); font-weight: 700; }
 
+/* 联赛多选（2026-10-24）：原生 select 只能单选，改为「按钮 + 复选面板」 */
+.ms { position: relative; display: inline-block; }
+.ms-toggle {
+  background: var(--bg2);
+  border: 1px solid var(--rule);
+  color: var(--ink);
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  min-width: 110px;
+  text-align: left;
+  white-space: nowrap;
+}
+.ms.open .ms-toggle { border-color: var(--accent); }
+.ms-menu {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: calc(100% + 4px);
+  z-index: 60;
+  min-width: 170px;
+  max-height: 320px;
+  overflow-y: auto;
+  background: var(--bg2);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, .18);
+  padding: 4px;
+}
+.ms.open .ms-menu { display: block; }
+.ms-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  color: var(--ink);
+  cursor: pointer;
+  white-space: nowrap;
+  border-radius: 5px;
+}
+.ms-item:hover { background: rgba(148, 163, 184, .16); }
+.ms-item input { margin: 0; }
+/* 「全部」快捷按钮（2026-10-24）：不展开面板即可一键清空该联赛筛选 */
+.ms-reset {
+  margin-left: 4px;
+  background: transparent;
+  border: 1px solid var(--rule);
+  color: var(--muted);
+  padding: 4px 7px;
+  border-radius: 5px;
+  font-size: 0.72rem;
+  cursor: pointer;
+  vertical-align: middle;
+}
+.ms-reset:hover:not([disabled]) { border-color: var(--accent); color: var(--accent); }
+.ms-reset[disabled] { opacity: .45; cursor: default; }
+
 /* 表格 */
 .table-wrap {
   overflow-x: auto;
@@ -2596,56 +2655,60 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             <option value="C">C级</option>
           </select>
           <label>联赛：</label>
-          <select id="p-league-all" onchange="filterPred('all')">
-            <option value="all">全部</option>
-        <option value="J1联赛">J1联赛</option>
-        <option value="J2联赛">J2联赛</option>
-        <option value="K1联赛">K1联赛</option>
-        <option value="K2联赛">K2联赛</option>
-        <option value="丹甲">丹甲</option>
-        <option value="冰岛超">冰岛超</option>
-        <option value="墨超">墨超</option>
-        <option value="奥乙">奥乙</option>
-        <option value="奥甲">奥甲</option>
-        <option value="巴西乙">巴西乙</option>
-        <option value="巴西甲">巴西甲</option>
-        <option value="希腊超">希腊超</option>
-        <option value="德乙">德乙</option>
-        <option value="德甲">德甲</option>
-        <option value="意乙">意乙</option>
-        <option value="意甲">意甲</option>
-        <option value="挪甲">挪甲</option>
-        <option value="挪超">挪超</option>
-        <option value="捷克甲">捷克甲</option>
-        <option value="智利甲">智利甲</option>
-        <option value="比乙">比乙</option>
-        <option value="比甲">比甲</option>
-        <option value="法乙">法乙</option>
-        <option value="法甲">法甲</option>
-        <option value="波兰甲">波兰甲</option>
-        <option value="澳超">澳超</option>
-        <option value="爱甲">爱甲</option>
-        <option value="瑞典甲">瑞典甲</option>
-        <option value="瑞典超">瑞典超</option>
-        <option value="瑞士甲">瑞士甲</option>
-        <option value="瑞士超">瑞士超</option>
-        <option value="罗甲">罗甲</option>
-        <option value="美职">美职</option>
-        <option value="芬超">芬超</option>
-        <option value="苏冠">苏冠</option>
-        <option value="苏超">苏超</option>
-        <option value="英乙">英乙</option>
-        <option value="英冠">英冠</option>
-        <option value="英甲">英甲</option>
-        <option value="英超">英超</option>
-        <option value="荷乙">荷乙</option>
-        <option value="荷甲">荷甲</option>
-        <option value="葡甲">葡甲</option>
-        <option value="葡超">葡超</option>
-        <option value="西乙">西乙</option>
-        <option value="西甲">西甲</option>
-        <option value="阿职联">阿职联</option>
-          </select>
+          <div class="ms" id="p-league-all" data-filter="filterPred" data-arg="all">
+            <button type="button" class="ms-toggle" onclick="msToggle(this)" aria-expanded="false" aria-haspopup="true">全部 ▾</button>
+            <button type="button" class="ms-reset" onclick="msReset(this)" title="显示全部联赛" disabled>全部</button>
+            <div class="ms-menu">
+              <label class="ms-item ms-all"><input type="checkbox" checked onchange="msChange(this)"> 全部</label>
+              <label class="ms-item"><input type="checkbox" value="J1联赛" onchange="msChange(this)"> J1联赛</label>
+              <label class="ms-item"><input type="checkbox" value="J2联赛" onchange="msChange(this)"> J2联赛</label>
+              <label class="ms-item"><input type="checkbox" value="K1联赛" onchange="msChange(this)"> K1联赛</label>
+              <label class="ms-item"><input type="checkbox" value="K2联赛" onchange="msChange(this)"> K2联赛</label>
+              <label class="ms-item"><input type="checkbox" value="丹甲" onchange="msChange(this)"> 丹甲</label>
+              <label class="ms-item"><input type="checkbox" value="冰岛超" onchange="msChange(this)"> 冰岛超</label>
+              <label class="ms-item"><input type="checkbox" value="墨超" onchange="msChange(this)"> 墨超</label>
+              <label class="ms-item"><input type="checkbox" value="奥乙" onchange="msChange(this)"> 奥乙</label>
+              <label class="ms-item"><input type="checkbox" value="奥甲" onchange="msChange(this)"> 奥甲</label>
+              <label class="ms-item"><input type="checkbox" value="巴西乙" onchange="msChange(this)"> 巴西乙</label>
+              <label class="ms-item"><input type="checkbox" value="巴西甲" onchange="msChange(this)"> 巴西甲</label>
+              <label class="ms-item"><input type="checkbox" value="希腊超" onchange="msChange(this)"> 希腊超</label>
+              <label class="ms-item"><input type="checkbox" value="德乙" onchange="msChange(this)"> 德乙</label>
+              <label class="ms-item"><input type="checkbox" value="德甲" onchange="msChange(this)"> 德甲</label>
+              <label class="ms-item"><input type="checkbox" value="意乙" onchange="msChange(this)"> 意乙</label>
+              <label class="ms-item"><input type="checkbox" value="意甲" onchange="msChange(this)"> 意甲</label>
+              <label class="ms-item"><input type="checkbox" value="挪甲" onchange="msChange(this)"> 挪甲</label>
+              <label class="ms-item"><input type="checkbox" value="挪超" onchange="msChange(this)"> 挪超</label>
+              <label class="ms-item"><input type="checkbox" value="捷克甲" onchange="msChange(this)"> 捷克甲</label>
+              <label class="ms-item"><input type="checkbox" value="智利甲" onchange="msChange(this)"> 智利甲</label>
+              <label class="ms-item"><input type="checkbox" value="比乙" onchange="msChange(this)"> 比乙</label>
+              <label class="ms-item"><input type="checkbox" value="比甲" onchange="msChange(this)"> 比甲</label>
+              <label class="ms-item"><input type="checkbox" value="法乙" onchange="msChange(this)"> 法乙</label>
+              <label class="ms-item"><input type="checkbox" value="法甲" onchange="msChange(this)"> 法甲</label>
+              <label class="ms-item"><input type="checkbox" value="波兰甲" onchange="msChange(this)"> 波兰甲</label>
+              <label class="ms-item"><input type="checkbox" value="澳超" onchange="msChange(this)"> 澳超</label>
+              <label class="ms-item"><input type="checkbox" value="爱甲" onchange="msChange(this)"> 爱甲</label>
+              <label class="ms-item"><input type="checkbox" value="瑞典甲" onchange="msChange(this)"> 瑞典甲</label>
+              <label class="ms-item"><input type="checkbox" value="瑞典超" onchange="msChange(this)"> 瑞典超</label>
+              <label class="ms-item"><input type="checkbox" value="瑞士甲" onchange="msChange(this)"> 瑞士甲</label>
+              <label class="ms-item"><input type="checkbox" value="瑞士超" onchange="msChange(this)"> 瑞士超</label>
+              <label class="ms-item"><input type="checkbox" value="罗甲" onchange="msChange(this)"> 罗甲</label>
+              <label class="ms-item"><input type="checkbox" value="美职" onchange="msChange(this)"> 美职</label>
+              <label class="ms-item"><input type="checkbox" value="芬超" onchange="msChange(this)"> 芬超</label>
+              <label class="ms-item"><input type="checkbox" value="苏冠" onchange="msChange(this)"> 苏冠</label>
+              <label class="ms-item"><input type="checkbox" value="苏超" onchange="msChange(this)"> 苏超</label>
+              <label class="ms-item"><input type="checkbox" value="英乙" onchange="msChange(this)"> 英乙</label>
+              <label class="ms-item"><input type="checkbox" value="英冠" onchange="msChange(this)"> 英冠</label>
+              <label class="ms-item"><input type="checkbox" value="英甲" onchange="msChange(this)"> 英甲</label>
+              <label class="ms-item"><input type="checkbox" value="英超" onchange="msChange(this)"> 英超</label>
+              <label class="ms-item"><input type="checkbox" value="荷乙" onchange="msChange(this)"> 荷乙</label>
+              <label class="ms-item"><input type="checkbox" value="荷甲" onchange="msChange(this)"> 荷甲</label>
+              <label class="ms-item"><input type="checkbox" value="葡甲" onchange="msChange(this)"> 葡甲</label>
+              <label class="ms-item"><input type="checkbox" value="葡超" onchange="msChange(this)"> 葡超</label>
+              <label class="ms-item"><input type="checkbox" value="西乙" onchange="msChange(this)"> 西乙</label>
+              <label class="ms-item"><input type="checkbox" value="西甲" onchange="msChange(this)"> 西甲</label>
+              <label class="ms-item"><input type="checkbox" value="阿职联" onchange="msChange(this)"> 阿职联</label>
+            </div>
+          </div>
           <label>搜索：</label>
           <input type="text" id="p-search-all" placeholder="球队" oninput="filterPred('all')" style="width: 80px;">
           <div class="count"><strong id="p-count-all">195</strong> / 195</div>
@@ -12662,56 +12725,60 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <option value="平局+客胜">平局+客胜</option>
           </select>
           <label>联赛：</label>
-          <select id="p-league-passed" onchange="filterPred('passed')">
-            <option value="all">全部</option>
-        <option value="J1联赛">J1联赛</option>
-        <option value="J2联赛">J2联赛</option>
-        <option value="K1联赛">K1联赛</option>
-        <option value="K2联赛">K2联赛</option>
-        <option value="丹甲">丹甲</option>
-        <option value="冰岛超">冰岛超</option>
-        <option value="墨超">墨超</option>
-        <option value="奥乙">奥乙</option>
-        <option value="奥甲">奥甲</option>
-        <option value="巴西乙">巴西乙</option>
-        <option value="巴西甲">巴西甲</option>
-        <option value="希腊超">希腊超</option>
-        <option value="德乙">德乙</option>
-        <option value="德甲">德甲</option>
-        <option value="意乙">意乙</option>
-        <option value="意甲">意甲</option>
-        <option value="挪甲">挪甲</option>
-        <option value="挪超">挪超</option>
-        <option value="捷克甲">捷克甲</option>
-        <option value="智利甲">智利甲</option>
-        <option value="比乙">比乙</option>
-        <option value="比甲">比甲</option>
-        <option value="法乙">法乙</option>
-        <option value="法甲">法甲</option>
-        <option value="波兰甲">波兰甲</option>
-        <option value="澳超">澳超</option>
-        <option value="爱甲">爱甲</option>
-        <option value="瑞典甲">瑞典甲</option>
-        <option value="瑞典超">瑞典超</option>
-        <option value="瑞士甲">瑞士甲</option>
-        <option value="瑞士超">瑞士超</option>
-        <option value="罗甲">罗甲</option>
-        <option value="美职">美职</option>
-        <option value="芬超">芬超</option>
-        <option value="苏冠">苏冠</option>
-        <option value="苏超">苏超</option>
-        <option value="英乙">英乙</option>
-        <option value="英冠">英冠</option>
-        <option value="英甲">英甲</option>
-        <option value="英超">英超</option>
-        <option value="荷乙">荷乙</option>
-        <option value="荷甲">荷甲</option>
-        <option value="葡甲">葡甲</option>
-        <option value="葡超">葡超</option>
-        <option value="西乙">西乙</option>
-        <option value="西甲">西甲</option>
-        <option value="阿职联">阿职联</option>
-          </select>
+          <div class="ms" id="p-league-passed" data-filter="filterPred" data-arg="passed">
+            <button type="button" class="ms-toggle" onclick="msToggle(this)" aria-expanded="false" aria-haspopup="true">全部 ▾</button>
+            <button type="button" class="ms-reset" onclick="msReset(this)" title="显示全部联赛" disabled>全部</button>
+            <div class="ms-menu">
+              <label class="ms-item ms-all"><input type="checkbox" checked onchange="msChange(this)"> 全部</label>
+              <label class="ms-item"><input type="checkbox" value="J1联赛" onchange="msChange(this)"> J1联赛</label>
+              <label class="ms-item"><input type="checkbox" value="J2联赛" onchange="msChange(this)"> J2联赛</label>
+              <label class="ms-item"><input type="checkbox" value="K1联赛" onchange="msChange(this)"> K1联赛</label>
+              <label class="ms-item"><input type="checkbox" value="K2联赛" onchange="msChange(this)"> K2联赛</label>
+              <label class="ms-item"><input type="checkbox" value="丹甲" onchange="msChange(this)"> 丹甲</label>
+              <label class="ms-item"><input type="checkbox" value="冰岛超" onchange="msChange(this)"> 冰岛超</label>
+              <label class="ms-item"><input type="checkbox" value="墨超" onchange="msChange(this)"> 墨超</label>
+              <label class="ms-item"><input type="checkbox" value="奥乙" onchange="msChange(this)"> 奥乙</label>
+              <label class="ms-item"><input type="checkbox" value="奥甲" onchange="msChange(this)"> 奥甲</label>
+              <label class="ms-item"><input type="checkbox" value="巴西乙" onchange="msChange(this)"> 巴西乙</label>
+              <label class="ms-item"><input type="checkbox" value="巴西甲" onchange="msChange(this)"> 巴西甲</label>
+              <label class="ms-item"><input type="checkbox" value="希腊超" onchange="msChange(this)"> 希腊超</label>
+              <label class="ms-item"><input type="checkbox" value="德乙" onchange="msChange(this)"> 德乙</label>
+              <label class="ms-item"><input type="checkbox" value="德甲" onchange="msChange(this)"> 德甲</label>
+              <label class="ms-item"><input type="checkbox" value="意乙" onchange="msChange(this)"> 意乙</label>
+              <label class="ms-item"><input type="checkbox" value="意甲" onchange="msChange(this)"> 意甲</label>
+              <label class="ms-item"><input type="checkbox" value="挪甲" onchange="msChange(this)"> 挪甲</label>
+              <label class="ms-item"><input type="checkbox" value="挪超" onchange="msChange(this)"> 挪超</label>
+              <label class="ms-item"><input type="checkbox" value="捷克甲" onchange="msChange(this)"> 捷克甲</label>
+              <label class="ms-item"><input type="checkbox" value="智利甲" onchange="msChange(this)"> 智利甲</label>
+              <label class="ms-item"><input type="checkbox" value="比乙" onchange="msChange(this)"> 比乙</label>
+              <label class="ms-item"><input type="checkbox" value="比甲" onchange="msChange(this)"> 比甲</label>
+              <label class="ms-item"><input type="checkbox" value="法乙" onchange="msChange(this)"> 法乙</label>
+              <label class="ms-item"><input type="checkbox" value="法甲" onchange="msChange(this)"> 法甲</label>
+              <label class="ms-item"><input type="checkbox" value="波兰甲" onchange="msChange(this)"> 波兰甲</label>
+              <label class="ms-item"><input type="checkbox" value="澳超" onchange="msChange(this)"> 澳超</label>
+              <label class="ms-item"><input type="checkbox" value="爱甲" onchange="msChange(this)"> 爱甲</label>
+              <label class="ms-item"><input type="checkbox" value="瑞典甲" onchange="msChange(this)"> 瑞典甲</label>
+              <label class="ms-item"><input type="checkbox" value="瑞典超" onchange="msChange(this)"> 瑞典超</label>
+              <label class="ms-item"><input type="checkbox" value="瑞士甲" onchange="msChange(this)"> 瑞士甲</label>
+              <label class="ms-item"><input type="checkbox" value="瑞士超" onchange="msChange(this)"> 瑞士超</label>
+              <label class="ms-item"><input type="checkbox" value="罗甲" onchange="msChange(this)"> 罗甲</label>
+              <label class="ms-item"><input type="checkbox" value="美职" onchange="msChange(this)"> 美职</label>
+              <label class="ms-item"><input type="checkbox" value="芬超" onchange="msChange(this)"> 芬超</label>
+              <label class="ms-item"><input type="checkbox" value="苏冠" onchange="msChange(this)"> 苏冠</label>
+              <label class="ms-item"><input type="checkbox" value="苏超" onchange="msChange(this)"> 苏超</label>
+              <label class="ms-item"><input type="checkbox" value="英乙" onchange="msChange(this)"> 英乙</label>
+              <label class="ms-item"><input type="checkbox" value="英冠" onchange="msChange(this)"> 英冠</label>
+              <label class="ms-item"><input type="checkbox" value="英甲" onchange="msChange(this)"> 英甲</label>
+              <label class="ms-item"><input type="checkbox" value="英超" onchange="msChange(this)"> 英超</label>
+              <label class="ms-item"><input type="checkbox" value="荷乙" onchange="msChange(this)"> 荷乙</label>
+              <label class="ms-item"><input type="checkbox" value="荷甲" onchange="msChange(this)"> 荷甲</label>
+              <label class="ms-item"><input type="checkbox" value="葡甲" onchange="msChange(this)"> 葡甲</label>
+              <label class="ms-item"><input type="checkbox" value="葡超" onchange="msChange(this)"> 葡超</label>
+              <label class="ms-item"><input type="checkbox" value="西乙" onchange="msChange(this)"> 西乙</label>
+              <label class="ms-item"><input type="checkbox" value="西甲" onchange="msChange(this)"> 西甲</label>
+              <label class="ms-item"><input type="checkbox" value="阿职联" onchange="msChange(this)"> 阿职联</label>
+            </div>
+          </div>
           <label>搜索：</label>
           <input type="text" id="p-search-passed" placeholder="球队" oninput="filterPred('passed')" style="width: 80px;">
           <div class="count"><strong id="p-count-passed">90</strong> / 90</div>
@@ -17042,56 +17109,60 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             <option value="观望">观望</option>
           </select>
           <label>联赛：</label>
-          <select id="op-league" onchange="filterOuPred()">
-            <option value="all">全部</option>
-        <option value="J1联赛">J1联赛</option>
-        <option value="J2联赛">J2联赛</option>
-        <option value="K1联赛">K1联赛</option>
-        <option value="K2联赛">K2联赛</option>
-        <option value="丹甲">丹甲</option>
-        <option value="冰岛超">冰岛超</option>
-        <option value="墨超">墨超</option>
-        <option value="奥乙">奥乙</option>
-        <option value="奥甲">奥甲</option>
-        <option value="巴西乙">巴西乙</option>
-        <option value="巴西甲">巴西甲</option>
-        <option value="希腊超">希腊超</option>
-        <option value="德乙">德乙</option>
-        <option value="德甲">德甲</option>
-        <option value="意乙">意乙</option>
-        <option value="意甲">意甲</option>
-        <option value="挪甲">挪甲</option>
-        <option value="挪超">挪超</option>
-        <option value="捷克甲">捷克甲</option>
-        <option value="智利甲">智利甲</option>
-        <option value="比乙">比乙</option>
-        <option value="比甲">比甲</option>
-        <option value="法乙">法乙</option>
-        <option value="法甲">法甲</option>
-        <option value="波兰甲">波兰甲</option>
-        <option value="澳超">澳超</option>
-        <option value="爱甲">爱甲</option>
-        <option value="瑞典甲">瑞典甲</option>
-        <option value="瑞典超">瑞典超</option>
-        <option value="瑞士甲">瑞士甲</option>
-        <option value="瑞士超">瑞士超</option>
-        <option value="罗甲">罗甲</option>
-        <option value="美职">美职</option>
-        <option value="芬超">芬超</option>
-        <option value="苏冠">苏冠</option>
-        <option value="苏超">苏超</option>
-        <option value="英乙">英乙</option>
-        <option value="英冠">英冠</option>
-        <option value="英甲">英甲</option>
-        <option value="英超">英超</option>
-        <option value="荷乙">荷乙</option>
-        <option value="荷甲">荷甲</option>
-        <option value="葡甲">葡甲</option>
-        <option value="葡超">葡超</option>
-        <option value="西乙">西乙</option>
-        <option value="西甲">西甲</option>
-        <option value="阿职联">阿职联</option>
-          </select>
+          <div class="ms" id="op-league" data-filter="filterOuPred">
+            <button type="button" class="ms-toggle" onclick="msToggle(this)" aria-expanded="false" aria-haspopup="true">全部 ▾</button>
+            <button type="button" class="ms-reset" onclick="msReset(this)" title="显示全部联赛" disabled>全部</button>
+            <div class="ms-menu">
+              <label class="ms-item ms-all"><input type="checkbox" checked onchange="msChange(this)"> 全部</label>
+              <label class="ms-item"><input type="checkbox" value="J1联赛" onchange="msChange(this)"> J1联赛</label>
+              <label class="ms-item"><input type="checkbox" value="J2联赛" onchange="msChange(this)"> J2联赛</label>
+              <label class="ms-item"><input type="checkbox" value="K1联赛" onchange="msChange(this)"> K1联赛</label>
+              <label class="ms-item"><input type="checkbox" value="K2联赛" onchange="msChange(this)"> K2联赛</label>
+              <label class="ms-item"><input type="checkbox" value="丹甲" onchange="msChange(this)"> 丹甲</label>
+              <label class="ms-item"><input type="checkbox" value="冰岛超" onchange="msChange(this)"> 冰岛超</label>
+              <label class="ms-item"><input type="checkbox" value="墨超" onchange="msChange(this)"> 墨超</label>
+              <label class="ms-item"><input type="checkbox" value="奥乙" onchange="msChange(this)"> 奥乙</label>
+              <label class="ms-item"><input type="checkbox" value="奥甲" onchange="msChange(this)"> 奥甲</label>
+              <label class="ms-item"><input type="checkbox" value="巴西乙" onchange="msChange(this)"> 巴西乙</label>
+              <label class="ms-item"><input type="checkbox" value="巴西甲" onchange="msChange(this)"> 巴西甲</label>
+              <label class="ms-item"><input type="checkbox" value="希腊超" onchange="msChange(this)"> 希腊超</label>
+              <label class="ms-item"><input type="checkbox" value="德乙" onchange="msChange(this)"> 德乙</label>
+              <label class="ms-item"><input type="checkbox" value="德甲" onchange="msChange(this)"> 德甲</label>
+              <label class="ms-item"><input type="checkbox" value="意乙" onchange="msChange(this)"> 意乙</label>
+              <label class="ms-item"><input type="checkbox" value="意甲" onchange="msChange(this)"> 意甲</label>
+              <label class="ms-item"><input type="checkbox" value="挪甲" onchange="msChange(this)"> 挪甲</label>
+              <label class="ms-item"><input type="checkbox" value="挪超" onchange="msChange(this)"> 挪超</label>
+              <label class="ms-item"><input type="checkbox" value="捷克甲" onchange="msChange(this)"> 捷克甲</label>
+              <label class="ms-item"><input type="checkbox" value="智利甲" onchange="msChange(this)"> 智利甲</label>
+              <label class="ms-item"><input type="checkbox" value="比乙" onchange="msChange(this)"> 比乙</label>
+              <label class="ms-item"><input type="checkbox" value="比甲" onchange="msChange(this)"> 比甲</label>
+              <label class="ms-item"><input type="checkbox" value="法乙" onchange="msChange(this)"> 法乙</label>
+              <label class="ms-item"><input type="checkbox" value="法甲" onchange="msChange(this)"> 法甲</label>
+              <label class="ms-item"><input type="checkbox" value="波兰甲" onchange="msChange(this)"> 波兰甲</label>
+              <label class="ms-item"><input type="checkbox" value="澳超" onchange="msChange(this)"> 澳超</label>
+              <label class="ms-item"><input type="checkbox" value="爱甲" onchange="msChange(this)"> 爱甲</label>
+              <label class="ms-item"><input type="checkbox" value="瑞典甲" onchange="msChange(this)"> 瑞典甲</label>
+              <label class="ms-item"><input type="checkbox" value="瑞典超" onchange="msChange(this)"> 瑞典超</label>
+              <label class="ms-item"><input type="checkbox" value="瑞士甲" onchange="msChange(this)"> 瑞士甲</label>
+              <label class="ms-item"><input type="checkbox" value="瑞士超" onchange="msChange(this)"> 瑞士超</label>
+              <label class="ms-item"><input type="checkbox" value="罗甲" onchange="msChange(this)"> 罗甲</label>
+              <label class="ms-item"><input type="checkbox" value="美职" onchange="msChange(this)"> 美职</label>
+              <label class="ms-item"><input type="checkbox" value="芬超" onchange="msChange(this)"> 芬超</label>
+              <label class="ms-item"><input type="checkbox" value="苏冠" onchange="msChange(this)"> 苏冠</label>
+              <label class="ms-item"><input type="checkbox" value="苏超" onchange="msChange(this)"> 苏超</label>
+              <label class="ms-item"><input type="checkbox" value="英乙" onchange="msChange(this)"> 英乙</label>
+              <label class="ms-item"><input type="checkbox" value="英冠" onchange="msChange(this)"> 英冠</label>
+              <label class="ms-item"><input type="checkbox" value="英甲" onchange="msChange(this)"> 英甲</label>
+              <label class="ms-item"><input type="checkbox" value="英超" onchange="msChange(this)"> 英超</label>
+              <label class="ms-item"><input type="checkbox" value="荷乙" onchange="msChange(this)"> 荷乙</label>
+              <label class="ms-item"><input type="checkbox" value="荷甲" onchange="msChange(this)"> 荷甲</label>
+              <label class="ms-item"><input type="checkbox" value="葡甲" onchange="msChange(this)"> 葡甲</label>
+              <label class="ms-item"><input type="checkbox" value="葡超" onchange="msChange(this)"> 葡超</label>
+              <label class="ms-item"><input type="checkbox" value="西乙" onchange="msChange(this)"> 西乙</label>
+              <label class="ms-item"><input type="checkbox" value="西甲" onchange="msChange(this)"> 西甲</label>
+              <label class="ms-item"><input type="checkbox" value="阿职联" onchange="msChange(this)"> 阿职联</label>
+            </div>
+          </div>
           <label>搜索：</label>
           <input type="text" id="op-search" placeholder="球队" oninput="filterOuPred()" style="width: 80px;">
           <div class="count"><strong id="op-count">195</strong> / 195</div>
@@ -22532,39 +22603,43 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             <option value="trap">凯利陷阱</option>
           </select>
           <label>联赛：</label>
-          <select id="r-league" onchange="filterReview()">
-            <option value="all">全部</option>
-      <option value="丹甲">丹甲</option>
-      <option value="丹超">丹超</option>
-      <option value="墨超">墨超</option>
-      <option value="奥乙">奥乙</option>
-      <option value="奥甲">奥甲</option>
-      <option value="巴西乙">巴西乙</option>
-      <option value="德乙">德乙</option>
-      <option value="德甲">德甲</option>
-      <option value="意乙">意乙</option>
-      <option value="意甲">意甲</option>
-      <option value="智利甲">智利甲</option>
-      <option value="比乙">比乙</option>
-      <option value="法乙">法乙</option>
-      <option value="法甲">法甲</option>
-      <option value="波兰甲">波兰甲</option>
-      <option value="澳超">澳超</option>
-      <option value="爱超">爱超</option>
-      <option value="瑞典甲">瑞典甲</option>
-      <option value="瑞典超">瑞典超</option>
-      <option value="瑞士甲">瑞士甲</option>
-      <option value="罗甲">罗甲</option>
-      <option value="英冠">英冠</option>
-      <option value="英超">英超</option>
-      <option value="荷乙">荷乙</option>
-      <option value="荷甲">荷甲</option>
-      <option value="葡甲">葡甲</option>
-      <option value="葡超">葡超</option>
-      <option value="西乙">西乙</option>
-      <option value="西甲">西甲</option>
-      <option value="阿职联">阿职联</option>
-          </select>
+          <div class="ms" id="r-league" data-filter="filterReview">
+            <button type="button" class="ms-toggle" onclick="msToggle(this)" aria-expanded="false" aria-haspopup="true">全部 ▾</button>
+            <button type="button" class="ms-reset" onclick="msReset(this)" title="显示全部联赛" disabled>全部</button>
+            <div class="ms-menu">
+              <label class="ms-item ms-all"><input type="checkbox" checked onchange="msChange(this)"> 全部</label>
+              <label class="ms-item"><input type="checkbox" value="丹甲" onchange="msChange(this)"> 丹甲</label>
+              <label class="ms-item"><input type="checkbox" value="丹超" onchange="msChange(this)"> 丹超</label>
+              <label class="ms-item"><input type="checkbox" value="墨超" onchange="msChange(this)"> 墨超</label>
+              <label class="ms-item"><input type="checkbox" value="奥乙" onchange="msChange(this)"> 奥乙</label>
+              <label class="ms-item"><input type="checkbox" value="奥甲" onchange="msChange(this)"> 奥甲</label>
+              <label class="ms-item"><input type="checkbox" value="巴西乙" onchange="msChange(this)"> 巴西乙</label>
+              <label class="ms-item"><input type="checkbox" value="德乙" onchange="msChange(this)"> 德乙</label>
+              <label class="ms-item"><input type="checkbox" value="德甲" onchange="msChange(this)"> 德甲</label>
+              <label class="ms-item"><input type="checkbox" value="意乙" onchange="msChange(this)"> 意乙</label>
+              <label class="ms-item"><input type="checkbox" value="意甲" onchange="msChange(this)"> 意甲</label>
+              <label class="ms-item"><input type="checkbox" value="智利甲" onchange="msChange(this)"> 智利甲</label>
+              <label class="ms-item"><input type="checkbox" value="比乙" onchange="msChange(this)"> 比乙</label>
+              <label class="ms-item"><input type="checkbox" value="法乙" onchange="msChange(this)"> 法乙</label>
+              <label class="ms-item"><input type="checkbox" value="法甲" onchange="msChange(this)"> 法甲</label>
+              <label class="ms-item"><input type="checkbox" value="波兰甲" onchange="msChange(this)"> 波兰甲</label>
+              <label class="ms-item"><input type="checkbox" value="澳超" onchange="msChange(this)"> 澳超</label>
+              <label class="ms-item"><input type="checkbox" value="爱超" onchange="msChange(this)"> 爱超</label>
+              <label class="ms-item"><input type="checkbox" value="瑞典甲" onchange="msChange(this)"> 瑞典甲</label>
+              <label class="ms-item"><input type="checkbox" value="瑞典超" onchange="msChange(this)"> 瑞典超</label>
+              <label class="ms-item"><input type="checkbox" value="瑞士甲" onchange="msChange(this)"> 瑞士甲</label>
+              <label class="ms-item"><input type="checkbox" value="罗甲" onchange="msChange(this)"> 罗甲</label>
+              <label class="ms-item"><input type="checkbox" value="英冠" onchange="msChange(this)"> 英冠</label>
+              <label class="ms-item"><input type="checkbox" value="英超" onchange="msChange(this)"> 英超</label>
+              <label class="ms-item"><input type="checkbox" value="荷乙" onchange="msChange(this)"> 荷乙</label>
+              <label class="ms-item"><input type="checkbox" value="荷甲" onchange="msChange(this)"> 荷甲</label>
+              <label class="ms-item"><input type="checkbox" value="葡甲" onchange="msChange(this)"> 葡甲</label>
+              <label class="ms-item"><input type="checkbox" value="葡超" onchange="msChange(this)"> 葡超</label>
+              <label class="ms-item"><input type="checkbox" value="西乙" onchange="msChange(this)"> 西乙</label>
+              <label class="ms-item"><input type="checkbox" value="西甲" onchange="msChange(this)"> 西甲</label>
+              <label class="ms-item"><input type="checkbox" value="阿职联" onchange="msChange(this)"> 阿职联</label>
+            </div>
+          </div>
           <label>搜索：</label>
           <input type="text" id="r-search" placeholder="球队" oninput="filterReview()" style="width: 80px;">
           <div class="count"><strong id="r-count">61</strong> / 61</div>
@@ -26468,9 +26543,14 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
               <option value="trap">凯利陷阱</option>
             </select>
             <label>联赛：</label>
-            <select id="h-league" onchange="filterHistoryDetail()">
-              <option value="all">全部</option>
-            </select>
+            <!-- 历史详情的联赛项随所选日期动态重建（见 showHistoryDetail），此处只保留固定结构 -->
+            <div class="ms" id="h-league" data-filter="filterHistoryDetail">
+              <button type="button" class="ms-toggle" onclick="msToggle(this)" aria-expanded="false" aria-haspopup="true">全部 ▾</button>
+              <button type="button" class="ms-reset" onclick="msReset(this)" title="显示全部联赛" disabled>全部</button>
+              <div class="ms-menu">
+                <label class="ms-item ms-all"><input type="checkbox" checked onchange="msChange(this)"> 全部</label>
+              </div>
+            </div>
             <label>搜索：</label>
             <input type="text" id="h-search" placeholder="球队" oninput="filterHistoryDetail()" style="width: 80px;">
             <div class="count"><strong id="h-count">0</strong> / <span id="h-total">0</span></div>
@@ -29443,13 +29523,21 @@ function showHistoryDetail(dateStr) {
   document.getElementById('detail-rate').textContent = (summary.hit_rate || 0) + '%';
   document.getElementById('detail-league-count').textContent = (summary.league_count || 0) + '个联赛';
   
-  // 更新联赛下拉
-  var leagueSelect = document.getElementById('h-league');
-  leagueSelect.innerHTML = '<option value="all">全部</option>';
+  // 更新联赛多选（2026-10-24）：原为单选 <select>，现重建复选框面板，
+  // 支持同时勾选多个联赛。固定的「全部」项保留，只替换其后的联赛项。
+  var leagueBox = document.getElementById('h-league');
+  var leagueMenu = leagueBox.querySelector('.ms-menu');
+  leagueMenu.querySelectorAll('.ms-item:not(.ms-all)').forEach(function(el) { el.remove(); });
+  var leagueAllCb = leagueBox.querySelector('.ms-all input');
+  if (leagueAllCb) leagueAllCb.checked = true;
   var leagues = HISTORY_LEAGUES[dateStr] || [];
   leagues.forEach(function(lg) {
-    leagueSelect.innerHTML += '<option value="' + lg + '">' + lg + '</option>';
+    var label = document.createElement('label');
+    label.className = 'ms-item';
+    label.innerHTML = '<input type="checkbox" value="' + lg + '" onchange="msChange(this)"> ' + lg;
+    leagueMenu.appendChild(label);
   });
+  msSync(leagueBox);
   
   // 重置筛选
   document.getElementById('h-status').value = 'all';
@@ -29538,14 +29626,14 @@ function filterHistoryDetail() {
   
   var matches = HISTORY_MATCHES[currentHistoryDate] || [];
   var status = document.getElementById('h-status').value;
-  var league = document.getElementById('h-league').value;
+  var leagueSel = msGet('h-league');
   var search = document.getElementById('h-search').value.toLowerCase();
   
   var filtered = matches.filter(function(m) {
     if (status === 'hit' && !m.is_hit) return false;
     if (status === 'miss' && m.is_hit) return false;
     if (status === 'trap' && !isKellyTrap(m)) return false;
-    if (league !== 'all' && m.league !== league) return false;
+    if (leagueSel && leagueSel.indexOf(m.league) === -1) return false;
     if (search && m.home.toLowerCase().indexOf(search) === -1 && m.away.toLowerCase().indexOf(search) === -1) return false;
     return true;
   });
@@ -29553,6 +29641,107 @@ function filterHistoryDetail() {
   renderHistoryDetail(filtered);
   document.getElementById('h-count').textContent = filtered.length;
 }
+
+// ===== 联赛多选控件（2026-10-24）=====
+// 原生 <select> 只能单选，无法「同时看几个联赛」，这里用「按钮 + 复选面板」替代：
+//   .ms        容器；data-filter 指定勾选变化后要重跑的筛选函数，data-arg 传给该函数
+//   .ms-toggle 按钮；文案显示「全部」或「N个联赛」
+//   .ms-menu   面板；第一项固定是「全部」，其余为各联赛复选框
+// 语义约定：msGet() 返回 null = 不按联赛过滤（全部）；否则返回已选联赛名数组。
+function msAllCb(box) {
+  return box.querySelector('.ms-all input');
+}
+
+// 读取某联赛面板的选中项：null=全部，数组=限定这些联赛。
+// 单个联赛都不勾时同样按「全部」处理，避免用户误清空后表格空白且无从排查。
+function msGet(elOrId) {
+  var box = typeof elOrId === 'string' ? document.getElementById(elOrId) : elOrId;
+  if (!box || !box.classList || !box.classList.contains('ms')) return null;
+  var all = msAllCb(box);
+  if (all && all.checked) return null;
+  var picked = Array.prototype.slice
+    .call(box.querySelectorAll('.ms-menu .ms-item:not(.ms-all) input'))
+    .filter(function(cb) { return cb.checked; })
+    .map(function(cb) { return cb.value; });
+  return picked.length ? picked : null;
+}
+
+// 依据「全部项 + 各联赛项」的勾选状态刷新按钮文案。
+function msSync(box) {
+  var btn = box.querySelector('.ms-toggle');
+  if (!btn) return;
+  var all = msAllCb(box);
+  var picked = Array.prototype.slice
+    .call(box.querySelectorAll('.ms-menu .ms-item:not(.ms-all) input'))
+    .filter(function(cb) { return cb.checked; });
+  if (!all || all.checked || picked.length === 0) {
+    btn.textContent = '全部 ▾';
+  } else if (picked.length === 1) {
+    btn.textContent = picked[0].value + ' ▾';
+  } else {
+    btn.textContent = picked.length + '个联赛 ▾';
+  }
+  // 「全部」快捷按钮：已处于全部状态时点击无意义，置灰
+  var reset = box.querySelector('.ms-reset');
+  if (reset) reset.disabled = (!all || all.checked || picked.length === 0);
+}
+
+// 展开/收起面板；同一时刻只允许一个面板展开，避免相互叠压。
+function msToggle(btn) {
+  var box = btn.closest('.ms');
+  if (!box) return;
+  var willOpen = !box.classList.contains('open');
+  document.querySelectorAll('.ms.open').forEach(function(b) { b.classList.remove('open'); });
+  box.classList.toggle('open', willOpen);
+  btn.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+}
+
+// 勾选联动：点「全部」= 一键全选/全清；勾具体联赛则取消「全部」；
+// 取消具体联赛后若一个都不剩，自动回到「全部」。
+function msChange(cb) {
+  var box = cb.closest('.ms');
+  if (!box) return;
+  var isAll = cb.parentElement.classList.contains('ms-all');
+  var items = Array.prototype.slice.call(box.querySelectorAll('.ms-menu .ms-item:not(.ms-all) input'));
+  var all = msAllCb(box);
+  if (isAll) {
+    items.forEach(function(c) { c.checked = cb.checked; });
+  } else if (cb.checked) {
+    if (all) all.checked = false;
+  } else if (all && !items.some(function(c) { return c.checked; })) {
+    all.checked = true;
+  }
+  msSync(box);
+  // 面板自带 data-filter，勾选变化后立即重跑对应筛选（无需额外绑定）
+  var fn = box.getAttribute('data-filter');
+  if (fn && typeof window[fn] === 'function') {
+    var arg = box.getAttribute('data-arg');
+    if (arg) window[fn](arg); else window[fn]();
+  }
+}
+
+// 「全部」快捷按钮（2026-10-24）：不展开面板，一键清空该联赛筛选并立即重跑。
+function msReset(btn) {
+  var box = btn.closest('.ms');
+  if (!box) return;
+  var all = msAllCb(box);
+  if (all) all.checked = true;
+  Array.prototype.slice.call(box.querySelectorAll('.ms-menu .ms-item:not(.ms-all) input'))
+    .forEach(function(cb) { cb.checked = false; });
+  msSync(box);
+  var fn = box.getAttribute('data-filter');
+  if (fn && typeof window[fn] === 'function') {
+    var arg = box.getAttribute('data-arg');
+    if (arg) window[fn](arg); else window[fn]();
+  }
+}
+
+// 点击面板之外区域时收起所有面板（点面板内部/按钮不收起）
+document.addEventListener('click', function(e) {
+  document.querySelectorAll('.ms.open').forEach(function(b) {
+    if (!b.contains(e.target)) b.classList.remove('open');
+  });
+});
 
 // 预测表格筛选
 function filterPred(tab) {
@@ -29568,7 +29757,7 @@ function filterPred(tab) {
   
   const status = statusEl ? statusEl.value : 'all';
   const grade = gradeEl ? gradeEl.value : 'all';
-  const league = leagueEl ? leagueEl.value : 'all';
+  const leagueSel = leagueEl ? msGet(leagueEl) : null;
   const search = searchEl ? searchEl.value.toLowerCase() : '';
   const type = typeEl ? typeEl.value : 'all';
 
@@ -29593,9 +29782,9 @@ function filterPred(tab) {
       if (badge && !badge.classList.contains(grade.toLowerCase())) show = false;
     }
     
-    if (league !== 'all') {
+    if (leagueSel) {
       const tag = row.querySelector('.league-tag');
-      if (tag && tag.textContent !== league) show = false;
+      if (tag && leagueSel.indexOf(tag.textContent) === -1) show = false;
     }
     
     if (type && type !== 'all') {
@@ -29622,7 +29811,7 @@ function filterReview() {
   let visible = 0;
   
   const status = document.getElementById('r-status').value;
-  const league = document.getElementById('r-league').value;
+  const leagueSel = msGet('r-league');
   const search = document.getElementById('r-search').value.toLowerCase();
   
   rows.forEach(row => {
@@ -29632,9 +29821,9 @@ function filterReview() {
     if (status === 'miss' && !row.classList.contains('match-miss')) show = false;
     if (status === 'trap' && !row.classList.contains('kelly-trap')) show = false;
     
-    if (league !== 'all') {
+    if (leagueSel) {
       const tag = row.querySelector('.league-tag');
-      if (tag && tag.textContent !== league) show = false;
+      if (tag && leagueSel.indexOf(tag.textContent) === -1) show = false;
     }
     
     if (search) {
@@ -29691,7 +29880,7 @@ function filterOuReview() {
 // 大小球预测表格筛选（2026-10-15：大小球预测独立栏目）
 function filterOuPred() {
   var type = document.getElementById('op-type').value;
-  var league = document.getElementById('op-league').value;
+  var leagueSel = msGet('op-league');
   var search = document.getElementById('op-search').value.toLowerCase();
   
   var rows = document.querySelectorAll('#ou-pred-body tr');
@@ -29708,9 +29897,9 @@ function filterOuPred() {
       else if (type === '观望' && !rec.classList.contains('ou-wait')) show = false;
     }
     
-    if (league !== 'all' && show) {
+    if (leagueSel && show) {
       var tag = row.querySelector('.league-tag');
-      if (tag && tag.textContent !== league) show = false;
+      if (tag && leagueSel.indexOf(tag.textContent) === -1) show = false;
     }
     
     if (search && show) {
