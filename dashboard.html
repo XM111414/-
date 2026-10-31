@@ -1118,6 +1118,31 @@ tbody tr.match-miss:hover { background: #fee2e2; }
 .ms-vrow > b { width: 18px; text-align: right; font-size: 0.62rem; color: var(--muted); font-weight: 600; }
 .ms-cell-foot { margin-top: 7px; font-size: 0.6rem; color: #7b8baa; }
 
+/* 初终翻转斜率图 */
+.ms-flip-panel { margin: 9px 0 11px; padding: 9px 11px 5px; border: 1px solid #e6ebf4; border-radius: 10px; background: #fcfdff; }
+.ms-flip-title { font-size: 0.63rem; color: var(--muted); }
+.ms-flip-svg { width: 100%; max-width: 420px; display: block; margin: 2px auto 0; }
+.ms-flip-axis { font-size: 10px; fill: #8b9ab8; }
+.ms-flip-scale { font-size: 9px; fill: #a7b3ca; }
+.ms-flip-val { font-size: 9px; font-weight: 600; }
+.ms-flip-cross { font-size: 8px; fill: #b45309; font-weight: 600; }
+.ms-flip-legend { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; padding: 0 2px 3px; font-size: 0.6rem; color: var(--muted); }
+.ms-flip-legend i { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; vertical-align: middle; }
+.ms-flip-legend .ms-flip-cap { margin-left: auto; color: #7b8baa; }
+
+/* 欧亚方向对比图 */
+.ms-ea-panel { margin-bottom: 10px; padding: 9px 11px 5px; border: 1px solid #e6ebf4; border-radius: 10px; background: #fcfdff; }
+.ms-ea-title { font-size: 0.63rem; color: var(--muted); }
+.ms-ea-svg { width: 100%; max-width: 420px; display: block; margin: 2px auto 0; }
+.ms-ea-axis { font-size: 10px; fill: #8b9ab8; }
+.ms-ea-label { font-size: 10px; font-weight: 700; fill: var(--ink); }
+.ms-ea-val { font-size: 9.5px; font-weight: 600; }
+.ms-ea-flag { font-size: 8.5px; font-weight: 700; fill: #64748b; }
+.ms-ea-flag.red { fill: #b91c1c; }
+.ms-ea-flag.green { fill: #0a7d55; }
+.ms-ea-cap { padding: 0 2px 3px; font-size: 0.6rem; color: var(--muted); }
+.ms-ea-cap b { color: var(--ink); }
+
 .ms-split { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 .ms-panel { background: #fcfdff; border: 1px solid #e6ebf4; border-radius: 10px; padding: 11px 12px; }
 .ms-eyebrow { font-size: 0.62rem; color: var(--muted); }
@@ -27095,6 +27120,112 @@ var MICRO_DATA = {"54": {"home": "纽卡斯尔喷气机", "away": "惠灵顿凤�
   function idx(fav) { return NAMES.indexOf(fav); }
   function votesAt(v, i) { return (v && v[i]) ? v[i] : 0; }
 
+  // 初终翻转：三向票数迁移斜率图（曲线交叉 = 翻转）
+  function flipChart(m, n) {
+    var W = 420, H = 170;
+    var xL = 86, xR = 330, yTop = 26, yBot = 132;
+    var maxV = Math.max(n || 0, 1);
+    function yv(v) { return yBot - (v / maxV) * (yBot - yTop); }
+    var colors = ['#1848c0', '#94a3b8', '#f97316'];
+    var openV = m.open_votes || [], closeV = m.close_votes || [];
+    var svg = '<svg class="ms-flip-svg" viewBox="0 0 ' + W + ' ' + H + '" aria-hidden="true">';
+    svg += '<line x1="' + xL + '" y1="' + yTop + '" x2="' + xL + '" y2="' + yBot + '" stroke="#e3e8f1"/>';
+    svg += '<line x1="' + xR + '" y1="' + yTop + '" x2="' + xR + '" y2="' + yBot + '" stroke="#e3e8f1"/>';
+    svg += '<line x1="' + xL + '" y1="' + yBot + '" x2="' + xR + '" y2="' + yBot + '" stroke="#edf1f8"/>';
+    svg += '<text x="' + xL + '" y="' + (H - 8) + '" text-anchor="middle" class="ms-flip-axis">初盘</text>';
+    svg += '<text x="' + xR + '" y="' + (H - 8) + '" text-anchor="middle" class="ms-flip-axis">终盘</text>';
+    svg += '<text x="' + (xL - 12) + '" y="' + (yBot + 3) + '" text-anchor="end" class="ms-flip-scale">0</text>';
+    svg += '<text x="' + (xL - 12) + '" y="' + (yTop + 3) + '" text-anchor="end" class="ms-flip-scale">' + maxV + '</text>';
+
+    for (var i = 0; i < 3; i++) {
+      var vo = votesAt(openV, i), vc = votesAt(closeV, i);
+      if (vo === 0 && vc === 0) continue;
+      var y1 = yv(vo), y2 = yv(vc);
+      svg += '<line x1="' + xL + '" y1="' + y1 + '" x2="' + xR + '" y2="' + y2 + '" stroke="' + colors[i] + '" stroke-width="2.4" stroke-linecap="round" opacity="0.9"/>';
+      svg += '<circle cx="' + xL + '" cy="' + y1 + '" r="4" fill="' + colors[i] + '"/>';
+      svg += '<circle cx="' + xR + '" cy="' + y2 + '" r="4" fill="' + colors[i] + '"/>';
+      if (vo > 0) svg += '<text x="' + (xL - 10) + '" y="' + (y1 - 6) + '" text-anchor="end" class="ms-flip-val" fill="' + colors[i] + '">' + vo + '</text>';
+      if (vc > 0) svg += '<text x="' + (xR + 10) + '" y="' + (y2 - 6) + '" text-anchor="start" class="ms-flip-val" fill="' + colors[i] + '">' + vc + '</text>';
+    }
+
+    if (m.flip) {
+      var oi = idx(m.open_fav), ci = idx(m.close_fav);
+      if (oi >= 0 && ci >= 0 && oi !== ci) {
+        var a1 = yv(votesAt(openV, oi)), a2 = yv(votesAt(closeV, oi));
+        var b1 = yv(votesAt(openV, ci)), b2 = yv(votesAt(closeV, ci));
+        var den = (a1 - b1) - (a2 - b2);
+        if (Math.abs(den) > 0.001) {
+          var t = (a1 - b1) / den;
+          if (t > 0.05 && t < 0.95) {
+            var xi = xL + (xR - xL) * t, yi = a1 + (a2 - a1) * t;
+            svg += '<circle cx="' + xi + '" cy="' + yi + '" r="5.5" fill="#ffffff" stroke="#d97706" stroke-width="2"/>';
+            svg += '<text x="' + xi + '" y="' + (yi - 10) + '" text-anchor="middle" class="ms-flip-cross">翻转点</text>';
+          }
+        }
+      }
+    }
+    svg += '</svg>';
+
+    var legend = '<div class="ms-flip-legend">' +
+      '<span><i style="background:#1848c0"></i>主胜</span>' +
+      '<span><i style="background:#94a3b8"></i>平局</span>' +
+      '<span><i style="background:#f97316"></i>客胜</span>' +
+      '<span class="ms-flip-cap">' + (m.flip ? '曲线交叉 = 初终翻转' : '曲线未交叉 = 方向稳定') + '</span>' +
+    '</div>';
+    return '<div class="ms-flip-panel"><div class="ms-flip-title">票数迁移 · ' + (n || 0) + ' 家公司</div>' + svg + legend + '</div>';
+  }
+
+  // 欧亚背离：欧赔热门方向 vs 亚盘低水方向
+  function eaChart(m) {
+    var euFav = m.close_fav || '';
+    var euSide = euFav === '主胜' ? 'home' : (euFav === '客胜' ? 'away' : 'mid');
+    var asHome = m.asian_conv && m.asian_conv.home_water <= m.asian_conv.away_water;
+    var div = m.eu_asian_div === true;
+    var W = 420, H = 122, xL = 86, xR = 350, mid = 218, euY = 40, asY = 88;
+    var euX = euSide === 'home' ? xL + 16 : (euSide === 'away' ? xR - 16 : mid);
+    var asX = asHome ? xL + 16 : xR - 16;
+    var euColor = euSide === 'home' ? '#1848c0' : (euSide === 'away' ? '#f97316' : '#94a3b8');
+    var asColor = asHome ? '#1848c0' : '#f97316';
+    var probs = m.close_probs || [];
+    var euText = euFav === '主胜' ? '主胜 ' + fmt(probs[0], 1) + '%'
+      : (euFav === '客胜' ? '客胜 ' + fmt(probs[2], 1) + '%' : '平局 ' + fmt(probs[1], 1) + '%');
+    var asText = (asHome ? '主队低水 ' : '客队低水 ') + fmt(asHome ? m.asian_conv.home_water : m.asian_conv.away_water);
+    var euAnchor = euSide === 'home' ? 'start' : (euSide === 'away' ? 'end' : 'middle');
+    var euTx = euSide === 'home' ? euX + 12 : (euSide === 'away' ? euX - 12 : euX);
+    var asAnchor = asHome ? 'start' : 'end';
+    var asTx = asHome ? asX + 12 : asX - 12;
+
+    var svg = '<svg class="ms-ea-svg" viewBox="0 0 ' + W + ' ' + H + '" aria-hidden="true">';
+    svg += '<text x="' + xL + '" y="14" text-anchor="start" class="ms-ea-axis">主队</text>';
+    svg += '<text x="' + xR + '" y="14" text-anchor="end" class="ms-ea-axis">客队</text>';
+    svg += '<text x="' + mid + '" y="14" text-anchor="middle" class="ms-ea-axis">中性</text>';
+    svg += '<line x1="' + mid + '" y1="20" x2="' + mid + '" y2="104" stroke="#dfe4ee" stroke-dasharray="3 3"/>';
+    svg += '<line x1="' + xL + '" y1="' + euY + '" x2="' + xR + '" y2="' + euY + '" stroke="#e9edf5" stroke-width="4" stroke-linecap="round"/>';
+    svg += '<line x1="' + xL + '" y1="' + asY + '" x2="' + xR + '" y2="' + asY + '" stroke="#e9edf5" stroke-width="4" stroke-linecap="round"/>';
+    svg += '<text x="6" y="' + (euY + 4) + '" class="ms-ea-label">欧赔</text>';
+    svg += '<text x="6" y="' + (asY + 4) + '" class="ms-ea-label">亚盘</text>';
+    svg += '<circle cx="' + euX + '" cy="' + euY + '" r="7" fill="' + euColor + '" stroke="#ffffff" stroke-width="2"/>';
+    svg += '<circle cx="' + asX + '" cy="' + asY + '" r="7" fill="' + asColor + '" stroke="#ffffff" stroke-width="2"/>';
+    svg += '<text x="' + euTx + '" y="' + (euY - 11) + '" text-anchor="' + euAnchor + '" class="ms-ea-val" fill="' + euColor + '">' + euText + '</text>';
+    svg += '<text x="' + asTx + '" y="' + (asY - 11) + '" text-anchor="' + asAnchor + '" class="ms-ea-val" fill="' + asColor + '">' + asText + '</text>';
+
+    if (div) {
+      svg += '<line x1="' + euX + '" y1="' + (euY + 7) + '" x2="' + asX + '" y2="' + (asY - 7) + '" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4 3"/>';
+      svg += '<rect x="' + (mid - 30) + '" y="56" width="60" height="16" rx="8" fill="#fdeaea" stroke="#f6cfcf"/>';
+      svg += '<text x="' + mid + '" y="67" text-anchor="middle" class="ms-ea-flag red">欧亚背离</text>';
+    } else if (m.eu_asian_div === false) {
+      svg += '<rect x="' + (mid - 30) + '" y="56" width="60" height="16" rx="8" fill="#e9f7f1" stroke="#cfeadd"/>';
+      svg += '<text x="' + mid + '" y="67" text-anchor="middle" class="ms-ea-flag green">方向一致</text>';
+    } else {
+      svg += '<rect x="' + (mid - 30) + '" y="56" width="60" height="16" rx="8" fill="#f1f4fa" stroke="#e2e8f2"/>';
+      svg += '<text x="' + mid + '" y="67" text-anchor="middle" class="ms-ea-flag">无法判定</text>';
+    }
+    svg += '</svg>';
+    var cap = '欧赔终盘 <b>' + esc(euFav || '—') + '</b> · 亚盘低水 <b>' + (asHome ? '主队' : '客队') + '</b> · ' +
+      (div ? '两套定价方向相反' : (m.eu_asian_div === false ? '两套定价方向一致' : '无法判定方向'));
+    return '<div class="ms-ea-panel"><div class="ms-ea-title">方向对比 · 欧赔 vs 转亚盘</div>' + svg + '<div class="ms-ea-cap">' + cap + '</div></div>';
+  }
+
   function render(seq) {
     var d = MICRO_DATA[String(seq)];
     if (!d || !d.micro) return '<div class="ms-unavailable">该场暂无 market_micro 数据</div>';
@@ -27219,6 +27350,7 @@ var MICRO_DATA = {"54": {"home": "纽卡斯尔喷气机", "away": "惠灵顿凤�
       '<div class="ms-sec">' +
         '<div class="ms-sec-head"><h4>方向与赔率</h4><span>初盘 → 终盘 · 三向均值</span></div>' +
         note +
+        flipChart(m, n) +
         '<div class="ms-dir">' + cells + '</div>' +
       '</div>' +
 
@@ -27246,6 +27378,7 @@ var MICRO_DATA = {"54": {"home": "纽卡斯尔喷气机", "away": "惠灵顿凤�
 
       '<div class="ms-sec">' +
         '<div class="ms-sec-head"><h4>欧亚结构</h4>' + asianBadge + '</div>' +
+        (m.asian_conv ? eaChart(m) : '') +
         asianBlock +
       '</div>' +
 
