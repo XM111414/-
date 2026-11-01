@@ -794,6 +794,8 @@ body {
 }
 .filter-bar .count { margin-left: auto; font-size: 0.78rem; color: var(--muted); }
 .filter-bar .count strong { color: var(--accent); font-weight: 700; }
+/* 搜索组（2026-11-02）：标签+输入框放在同一容器，桌面内联；手机端由媒体查询改为整行 grid */
+.filter-search { display: flex; align-items: center; gap: 6px; }
 
 /* 联赛多选（2026-10-24）：原生 select 只能单选，改为「按钮 + 复选面板」 */
 .ms { position: relative; display: inline-block; }
@@ -1578,7 +1580,8 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
     min-width: 0;
   }
   .filter-bar > select,
-  .filter-bar > input {
+  .filter-bar > input,
+  .filter-bar > .filter-search > input {
     width: 100%;
     max-width: 100%;
     min-width: 0;
@@ -1588,9 +1591,26 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
     border-radius: 8px;
     white-space: nowrap;
   }
-  /* 搜索输入框：跨「标签+控件+标签+控件」的后三列，手机上不再只有 80px */
-  .filter-bar > input[type="text"] {
-    grid-column: 2 / -1;
+  /* 搜索组（2026-11-02 UI 体检修复）：原「搜索：」标签与输入框是 grid 的两个独立项，
+     输入框被强制 grid-column:2/-1 后落到下一行 → 标签成孤儿（390px 实测标签 y=3323、
+     输入框 y=3368）。改为把标签+输入框包进同一容器，容器整行占位，配对恒定。 */
+  .filter-search {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .filter-search > label {
+    font-size: 0.78rem;
+    white-space: nowrap;
+  }
+  .filter-bar > .filter-search {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 8px;
+    align-items: center;
+  }
+  .filter-bar > .filter-search > input {
     width: 100% !important;
   }
   /* 「凯利陷阱」自成一个整行胶囊（它是自带勾选框的 label，不能拆对） */
@@ -2696,8 +2716,10 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
               <label class="ms-item"><input type="checkbox" value="阿职联" onchange="msChange(this)"> 阿职联</label>
             </div>
           </div>
-          <label>搜索：</label>
-          <input type="text" id="p-search-all" placeholder="球队" oninput="filterPred('all')" style="width: 80px;">
+          <div class="filter-search">
+            <label>搜索：</label>
+            <input type="text" id="p-search-all" placeholder="球队" oninput="filterPred('all')" style="width: 80px;">
+          </div>
           <div class="count"><strong id="p-count-all">63</strong> / 63</div>
         </div>
         <div class="table-wrap">
@@ -6043,8 +6065,10 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
               <label class="ms-item"><input type="checkbox" value="阿职联" onchange="msChange(this)"> 阿职联</label>
             </div>
           </div>
-          <label>搜索：</label>
-          <input type="text" id="p-search-passed" placeholder="球队" oninput="filterPred('passed')" style="width: 80px;">
+          <div class="filter-search">
+            <label>搜索：</label>
+            <input type="text" id="p-search-passed" placeholder="球队" oninput="filterPred('passed')" style="width: 80px;">
+          </div>
           <div class="count"><strong id="p-count-passed">15</strong> / 15</div>
         </div>
         <div class="table-wrap">
@@ -6907,8 +6931,10 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
               <label class="ms-item"><input type="checkbox" value="阿职联" onchange="msChange(this)"> 阿职联</label>
             </div>
           </div>
-          <label>搜索：</label>
-          <input type="text" id="op-search" placeholder="球队" oninput="filterOuPred()" style="width: 80px;">
+          <div class="filter-search">
+            <label>搜索：</label>
+            <input type="text" id="op-search" placeholder="球队" oninput="filterOuPred()" style="width: 80px;">
+          </div>
           <div class="count"><strong id="op-count">63</strong> / 63</div>
         </div>
         <div class="table-wrap">
@@ -9050,8 +9076,10 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
               <label class="ms-item"><input type="checkbox" value="阿职联" onchange="msChange(this)"> 阿职联</label>
             </div>
           </div>
-          <label>搜索：</label>
-          <input type="text" id="r-search" placeholder="球队" oninput="filterReview()" style="width: 80px;">
+          <div class="filter-search">
+            <label>搜索：</label>
+            <input type="text" id="r-search" placeholder="球队" oninput="filterReview()" style="width: 80px;">
+          </div>
           <div class="count"><strong id="r-count">171</strong> / 171</div>
         </div>
 
@@ -17361,8 +17389,10 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
                 <label class="ms-item ms-all"><input type="checkbox" checked onchange="msChange(this)"> 全部</label>
               </div>
             </div>
-            <label>搜索：</label>
-            <input type="text" id="h-search" placeholder="球队" oninput="filterHistoryDetail()" style="width: 80px;">
+            <div class="filter-search">
+              <label>搜索：</label>
+              <input type="text" id="h-search" placeholder="球队" oninput="filterHistoryDetail()" style="width: 80px;">
+            </div>
             <div class="count"><strong id="h-count">0</strong> / <span id="h-total">0</span></div>
           </div>
 
