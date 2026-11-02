@@ -1026,6 +1026,8 @@ tbody tr.match-miss:hover { background: #fee2e2; }
 .col-odds .odd i { font-style: normal; font-size: 0.58rem; color: var(--muted); opacity: 0.8; margin-right: 1px; }
 .col-odds .odd.highlight { color: var(--accent); font-weight: 700; }
 .col-odds .odd.highlight i { color: var(--accent); opacity: 1; }
+.col-odds .kelly-mini { display: block; margin-top: 2px; font-size: 0.6rem; color: #64748b; white-space: nowrap; }
+.col-odds .kelly-mini.kelly-na { color: #94a3b8; }
 .col-so { min-width: 120px; font-size: 0.68rem; }
 .col-so .so-rates { color: var(--muted); margin-bottom: 3px; white-space: nowrap; }
 .col-so .so-pct { font-size: 0.58rem; opacity: 0.75; }
@@ -1944,6 +1946,10 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
     justify-content: center;
     padding: 4px 0;
   }
+  #pred-all-body .col-odds .kelly-mini, #pred-passed-body .col-odds .kelly-mini {
+    flex-basis: 100%;
+    text-align: center;
+  }
   
   /* 大小球预测独立栏目（2026-10-15 拆出）：移动端卡片态按通用两列自动排布 */
   #ou-pred-body .col-ou {
@@ -2601,6 +2607,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <span class="lg-item"><b>双选方案</b>＝模型推荐两项·含各自概率</span>
         <span class="lg-item"><b>概率</b>＝双选总概率，显示值已按滚动30天同档实测回压（规则15全档化：声称 ≥74 一律以该档实测为准、只降不升）——因此出手场的显示概率可能低于校准前的筛选阈值，属正常口径（筛选决策在校准前完成，不受回压影响）</span>
         <span class="lg-item"><b>SP</b>＝北单赔率 胜/平/负（蓝色为双选选中项）</span>
+        <span class="lg-item"><b>K</b>＝北单凯利指数（不让球 K3=威胜÷胜SP、K1=威平÷平SP、K0=威负÷负SP；让1球只算让球方 K；让球≥2 不可测；缺威廉参考赔率时不显示数值）</span>
         <span class="lg-item"><b>同赔</b>＝威廉希尔历史同赔统计·历史场次（非模型概率）</span>
         <span class="lg-item"><b>7M</b>＝7M体育媒体推介方向+軍情伤停·第三方参考（✓与双选一致 / ⚠不一致 / ⚠军情与推介相左＝该队伤停≥2处仍被推介）</span>
       </div>
@@ -2724,7 +2731,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             </span>
           </div>
         </td>
-        <td class="col-odds"><span class="odd highlight"><i>胜</i>10.78</span> <span class="odd "><i>平</i>11.16</span> <span class="odd highlight"><i>负</i>1.22</span> </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>10.78</span> <span class="odd "><i>平</i>11.16</span> <span class="odd highlight"><i>负</i>1.22</span> <span class="kelly-mini" title="主队让1球：K3=主胜赔率−主胜赔率÷让负SP（1.73−1.73÷1.22）">让K 0.31</span></td>
         <td class="col-ms"><button type="button" class="ms-open div" data-seq="350" aria-haspopup="dialog" title="市场结构：偏一致 · 熵 1.006 · 凯利异常 2 家 · 欧亚背离"><span class="ms-dot"></span>结构<span class="ms-sub">偏一致</span></button></td>
         <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
         <td class="col-so">
@@ -2777,7 +2784,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             </span>
           </div>
         </td>
-        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.65</span> <span class="odd "><i>平</i>4.08</span> <span class="odd highlight"><i>负</i>2.64</span> </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.65</span> <span class="odd "><i>平</i>4.08</span> <span class="odd highlight"><i>负</i>2.64</span> <span class="kelly-mini" title="北单凯利（不让球）：K3=威胜÷胜SP 1.087 · K1=威平÷平SP 0.809 · K0=威负÷负SP 0.871">K 1.09/0.81/0.87</span></td>
         <td class="col-ms"><button type="button" class="ms-open div" data-seq="351" aria-haspopup="dialog" title="市场结构：高分歧 · 熵 1.080 · 凯利异常 1 家 · 欧亚背离"><span class="ms-dot"></span>结构<span class="ms-sub">高分歧</span></button></td>
         <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
         <td class="col-so">
@@ -2828,7 +2835,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             </span>
           </div>
         </td>
-        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.18</span> <span class="odd "><i>平</i>3.95</span> <span class="odd highlight"><i>负</i>3.46</span> </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.18</span> <span class="odd "><i>平</i>3.95</span> <span class="odd highlight"><i>负</i>3.46</span> <span class="kelly-mini" title="北单凯利（不让球）：K3=威胜÷胜SP 0.894 · K1=威平÷平SP 0.823 · K0=威负÷负SP 1.069">K 0.89/0.82/1.07</span></td>
         <td class="col-ms"><button type="button" class="ms-open div" data-seq="352" aria-haspopup="dialog" title="市场结构：偏一致 · 熵 1.042 · 凯利异常 0 家 · 欧亚背离"><span class="ms-dot"></span>结构<span class="ms-sub">偏一致</span></button></td>
         <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
         <td class="col-so">
@@ -2881,7 +2888,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             </span>
           </div>
         </td>
-        <td class="col-odds"><span class="odd highlight"><i>胜</i>4.45</span> <span class="odd "><i>平</i>6.0</span> <span class="odd highlight"><i>负</i>1.64</span> </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>4.45</span> <span class="odd "><i>平</i>6.0</span> <span class="odd highlight"><i>负</i>1.64</span> <span class="kelly-mini" title="主队让1球：K3=主胜赔率−主胜赔率÷让负SP（1.36−1.36÷1.64）">让K 0.53</span></td>
         <td class="col-ms"><button type="button" class="ms-open" data-seq="353" aria-haspopup="dialog" title="市场结构：一致 · 熵 0.869 · 凯利异常 2 家"><span class="ms-dot"></span>结构<span class="ms-sub">一致</span></button></td>
         <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
         <td class="col-so">
@@ -2934,7 +2941,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             </span>
           </div>
         </td>
-        <td class="col-odds"><span class="odd highlight"><i>胜</i>1.24</span> <span class="odd "><i>平</i>19.87</span> <span class="odd highlight"><i>负</i>6.91</span> </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>1.24</span> <span class="odd "><i>平</i>19.87</span> <span class="odd highlight"><i>负</i>6.91</span> <span class="kelly-mini" title="客队让1球：K0=客胜赔率−客胜赔率÷让胜SP（1.40−1.40÷1.24）">让K 0.27</span></td>
         <td class="col-ms"><button type="button" class="ms-open div" data-seq="354" aria-haspopup="dialog" title="市场结构：一致 · 熵 0.832 · 凯利异常 2 家 · 欧亚背离"><span class="ms-dot"></span>结构<span class="ms-sub">一致</span></button></td>
         <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
         <td class="col-so">
@@ -2987,7 +2994,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             </span>
           </div>
         </td>
-        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.34</span> <span class="odd highlight"><i>平</i>3.22</span> <span class="odd "><i>负</i>3.8</span> </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.34</span> <span class="odd highlight"><i>平</i>3.22</span> <span class="odd "><i>负</i>3.8</span> <span class="kelly-mini" title="北单凯利（不让球）：K3=威胜÷胜SP 1.124 · K1=威平÷平SP 0.963 · K0=威负÷负SP 0.684">K 1.12/0.96/0.68</span></td>
         <td class="col-ms"><button type="button" class="ms-open" data-seq="355" aria-haspopup="dialog" title="市场结构：高分歧 · 熵 1.092 · 凯利异常 0 家"><span class="ms-dot"></span>结构<span class="ms-sub">高分歧</span></button></td>
         <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
         <td class="col-so">
@@ -3038,7 +3045,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             </span>
           </div>
         </td>
-        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.62</span> <span class="odd "><i>平</i>3.28</span> <span class="odd highlight"><i>负</i>3.17</span> </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.62</span> <span class="odd "><i>平</i>3.28</span> <span class="odd highlight"><i>负</i>3.17</span> <span class="kelly-mini" title="北单凯利（不让球）：K3=威胜÷胜SP 0.840 · K1=威平÷平SP 1.006 · K0=威负÷负SP 0.946">K 0.84/1.01/0.95</span></td>
         <td class="col-ms"><button type="button" class="ms-open div" data-seq="356" aria-haspopup="dialog" title="市场结构：高分歧 · 熵 1.075 · 凯利异常 0 家 · 欧亚背离"><span class="ms-dot"></span>结构<span class="ms-sub">高分歧</span></button></td>
         <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
         <td class="col-so">
@@ -3089,7 +3096,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             </span>
           </div>
         </td>
-        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.57</span> <span class="odd "><i>平</i>3.99</span> <span class="odd highlight"><i>负</i>2.76</span> </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.57</span> <span class="odd "><i>平</i>3.99</span> <span class="odd highlight"><i>负</i>2.76</span> <span class="kelly-mini" title="北单凯利（不让球）：K3=威胜÷胜SP 1.070 · K1=威平÷平SP 0.877 · K0=威负÷负SP 0.833">K 1.07/0.88/0.83</span></td>
         <td class="col-ms"><button type="button" class="ms-open" data-seq="357" aria-haspopup="dialog" title="市场结构：高分歧 · 熵 1.083 · 凯利异常 0 家"><span class="ms-dot"></span>结构<span class="ms-sub">高分歧</span></button></td>
         <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
         <td class="col-so">
@@ -3142,7 +3149,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             </span>
           </div>
         </td>
-        <td class="col-odds"><span class="odd highlight"><i>胜</i>18.03</span> <span class="odd "><i>平</i>20.26</span> <span class="odd highlight"><i>负</i>1.11</span> </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>18.03</span> <span class="odd "><i>平</i>20.26</span> <span class="odd highlight"><i>负</i>1.11</span> <span class="kelly-mini" title="主队让1球：K3=主胜赔率−主胜赔率÷让负SP（1.95−1.95÷1.11）">让K 0.19</span></td>
         <td class="col-ms"><button type="button" class="ms-open div" data-seq="358" aria-haspopup="dialog" title="市场结构：分歧 · 熵 1.061 · 凯利异常 3 家 · 欧亚背离"><span class="ms-dot"></span>结构<span class="ms-sub">分歧</span></button></td>
         <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
         <td class="col-so">
@@ -3195,7 +3202,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             </span>
           </div>
         </td>
-        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.45</span> <span class="odd "><i>平</i>3.49</span> <span class="odd highlight"><i>负</i>3.26</span> </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.45</span> <span class="odd "><i>平</i>3.49</span> <span class="odd highlight"><i>负</i>3.26</span> <span class="kelly-mini" title="北单凯利（不让球）：K3=威胜÷胜SP 1.000 · K1=威平÷平SP 0.888 · K0=威负÷负SP 0.844">K 1.00/0.89/0.84</span></td>
         <td class="col-ms"><button type="button" class="ms-open div" data-seq="359" aria-haspopup="dialog" title="市场结构：高分歧 · 熵 1.088 · 凯利异常 0 家 · 欧亚背离"><span class="ms-dot"></span>结构<span class="ms-sub">高分歧</span></button></td>
         <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
         <td class="col-so">
@@ -3248,7 +3255,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             </span>
           </div>
         </td>
-        <td class="col-odds"><span class="odd highlight"><i>胜</i>1.11</span> <span class="odd "><i>平</i>26.0</span> <span class="odd highlight"><i>负</i>16.45</span> </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>1.11</span> <span class="odd "><i>平</i>26.0</span> <span class="odd highlight"><i>负</i>16.45</span> <span class="kelly-mini" title="客队让1球：K0=客胜赔率−客胜赔率÷让胜SP（1.36−1.36÷1.11）">让K 0.13</span></td>
         <td class="col-ms"><button type="button" class="ms-open div" data-seq="360" aria-haspopup="dialog" title="市场结构：一致 · 熵 0.883 · 凯利异常 3 家 · 欧亚背离"><span class="ms-dot"></span>结构<span class="ms-sub">一致</span></button></td>
         <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
         <td class="col-so">
@@ -3301,7 +3308,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             </span>
           </div>
         </td>
-        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.13</span> <span class="odd "><i>平</i>4.37</span> <span class="odd highlight"><i>负</i>3.29</span> </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.13</span> <span class="odd "><i>平</i>4.37</span> <span class="odd highlight"><i>负</i>3.29</span> <span class="kelly-mini kelly-na">缺参考欧赔</span></td>
         <td class="col-ms"><span class="so-none">—</span></td>
         <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
         <td class="col-so"><span class="so-none">—</span></td>
@@ -3345,7 +3352,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             </span>
           </div>
         </td>
-        <td class="col-odds"><span class="odd highlight"><i>胜</i>1.96</span> <span class="odd highlight"><i>平</i>3.97</span> <span class="odd "><i>负</i>4.19</span> </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>1.96</span> <span class="odd highlight"><i>平</i>3.97</span> <span class="odd "><i>负</i>4.19</span> <span class="kelly-mini" title="北单凯利（不让球）：K3=威胜÷胜SP 1.173 · K1=威平÷平SP 0.806 · K0=威负÷负SP 0.692">K 1.17/0.81/0.69</span></td>
         <td class="col-ms"><button type="button" class="ms-open" data-seq="362" aria-haspopup="dialog" title="市场结构：高分歧 · 熵 1.090 · 凯利异常 1 家"><span class="ms-dot"></span>结构<span class="ms-sub">高分歧</span></button></td>
         <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
         <td class="col-so">
@@ -3398,7 +3405,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             </span>
           </div>
         </td>
-        <td class="col-odds"><span class="odd highlight"><i>胜</i>20.08</span> <span class="odd "><i>平</i>39.48</span> <span class="odd highlight"><i>负</i>1.08</span> </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>20.08</span> <span class="odd "><i>平</i>39.48</span> <span class="odd highlight"><i>负</i>1.08</span> <span class="kelly-mini" title="主队让1球：K3=主胜赔率−主胜赔率÷让负SP（1.91−1.91÷1.08）">让K 0.14</span></td>
         <td class="col-ms"><button type="button" class="ms-open div" data-seq="363" aria-haspopup="dialog" title="市场结构：偏一致 · 熵 1.045 · 凯利异常 3 家 · 欧亚背离"><span class="ms-dot"></span>结构<span class="ms-sub">偏一致</span></button></td>
         <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
         <td class="col-so">
@@ -3449,7 +3456,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             </span>
           </div>
         </td>
-        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.67</span> <span class="odd "><i>平</i>3.85</span> <span class="odd highlight"><i>负</i>2.73</span> </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.67</span> <span class="odd "><i>平</i>3.85</span> <span class="odd highlight"><i>负</i>2.73</span> <span class="kelly-mini" title="北单凯利（不让球）：K3=威胜÷胜SP 0.749 · K1=威平÷平SP 1.013 · K0=威负÷负SP 1.026">K 0.75/1.01/1.03</span></td>
         <td class="col-ms"><button type="button" class="ms-open div" data-seq="364" aria-haspopup="dialog" title="市场结构：分歧 · 熵 1.065 · 凯利异常 0 家 · 欧亚背离"><span class="ms-dot"></span>结构<span class="ms-sub">分歧</span></button></td>
         <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
         <td class="col-so">
@@ -3502,7 +3509,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             </span>
           </div>
         </td>
-        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.57</span> <span class="odd highlight"><i>平</i>3.5</span> <span class="odd "><i>负</i>3.06</span> </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.57</span> <span class="odd highlight"><i>平</i>3.5</span> <span class="odd "><i>负</i>3.06</span> <span class="kelly-mini" title="北单凯利（不让球）：K3=威胜÷胜SP 0.837 · K1=威平÷平SP 0.929 · K0=威负÷负SP 0.948">K 0.84/0.93/0.95</span></td>
         <td class="col-ms"><button type="button" class="ms-open" data-seq="365" aria-haspopup="dialog" title="市场结构：高分歧 · 熵 1.085 · 凯利异常 1 家"><span class="ms-dot"></span>结构<span class="ms-sub">高分歧</span></button></td>
         <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
         <td class="col-so">
@@ -3555,7 +3562,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             </span>
           </div>
         </td>
-        <td class="col-odds"><span class="odd highlight"><i>胜</i>41.41</span> <span class="odd "><i>平</i>52.15</span> <span class="odd highlight"><i>负</i>1.04</span> </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>41.41</span> <span class="odd "><i>平</i>52.15</span> <span class="odd highlight"><i>负</i>1.04</span> <span class="kelly-mini kelly-na">缺参考欧赔</span></td>
         <td class="col-ms"><span class="so-none">—</span></td>
         <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
         <td class="col-so"><span class="so-none">—</span></td>
@@ -3599,7 +3606,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             </span>
           </div>
         </td>
-        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.42</span> <span class="odd highlight"><i>平</i>3.33</span> <span class="odd "><i>负</i>3.47</span> </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.42</span> <span class="odd highlight"><i>平</i>3.33</span> <span class="odd "><i>负</i>3.47</span> <span class="kelly-mini" title="北单凯利（不让球）：K3=威胜÷胜SP 1.087 · K1=威平÷平SP 1.021 · K0=威负÷负SP 0.692">K 1.09/1.02/0.69</span></td>
         <td class="col-ms"><button type="button" class="ms-open flip" data-seq="367" aria-haspopup="dialog" title="市场结构：高分歧 · 熵 1.087 · 凯利异常 0 家 · 方向翻转 · 欧亚背离"><span class="ms-dot"></span>结构<span class="ms-sub">高分歧</span></button></td>
         <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
         <td class="col-so">
@@ -3650,7 +3657,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             </span>
           </div>
         </td>
-        <td class="col-odds"><span class="odd highlight"><i>胜</i>1.16</span> <span class="odd "><i>平</i>15.32</span> <span class="odd highlight"><i>负</i>13.39</span> </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>1.16</span> <span class="odd "><i>平</i>15.32</span> <span class="odd highlight"><i>负</i>13.39</span> <span class="kelly-mini" title="客队让1球：K0=客胜赔率−客胜赔率÷让胜SP（1.57−1.57÷1.16）">让K 0.22</span></td>
         <td class="col-ms"><button type="button" class="ms-open" data-seq="368" aria-haspopup="dialog" title="市场结构：一致 · 熵 0.957 · 凯利异常 1 家"><span class="ms-dot"></span>结构<span class="ms-sub">一致</span></button></td>
         <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
         <td class="col-so">
@@ -3703,7 +3710,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             </span>
           </div>
         </td>
-        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.06</span> <span class="odd "><i>平</i>4.19</span> <span class="odd highlight"><i>负</i>3.59</span> </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.06</span> <span class="odd "><i>平</i>4.19</span> <span class="odd highlight"><i>负</i>3.59</span> <span class="kelly-mini" title="北单凯利（不让球）：K3=威胜÷胜SP 1.117 · K1=威平÷平SP 0.811 · K0=威负÷负SP 0.752">K 1.12/0.81/0.75</span></td>
         <td class="col-ms"><button type="button" class="ms-open div" data-seq="369" aria-haspopup="dialog" title="市场结构：高分歧 · 熵 1.079 · 凯利异常 0 家 · 欧亚背离"><span class="ms-dot"></span>结构<span class="ms-sub">高分歧</span></button></td>
         <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
         <td class="col-so">
@@ -3756,7 +3763,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             </span>
           </div>
         </td>
-        <td class="col-odds"><span class="odd highlight"><i>胜</i>8.06</span> <span class="odd "><i>平</i>24.24</span> <span class="odd highlight"><i>负</i>1.19</span> </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>8.06</span> <span class="odd "><i>平</i>24.24</span> <span class="odd highlight"><i>负</i>1.19</span> <span class="kelly-mini kelly-na">让球≥2·不可测</span></td>
         <td class="col-ms"><button type="button" class="ms-open" data-seq="370" aria-haspopup="dialog" title="市场结构：一致 · 熵 0.668 · 凯利异常 5 家"><span class="ms-dot"></span>结构<span class="ms-sub">一致</span></button></td>
         <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
         <td class="col-so">
@@ -3809,7 +3816,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             </span>
           </div>
         </td>
-        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.26</span> <span class="odd "><i>平</i>3.62</span> <span class="odd highlight"><i>负</i>3.52</span> </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.26</span> <span class="odd "><i>平</i>3.62</span> <span class="odd highlight"><i>负</i>3.52</span> <span class="kelly-mini" title="北单凯利（不让球）：K3=威胜÷胜SP 0.819 · K1=威平÷平SP 0.884 · K0=威负÷负SP 1.136">K 0.82/0.88/1.14</span></td>
         <td class="col-ms"><button type="button" class="ms-open" data-seq="371" aria-haspopup="dialog" title="市场结构：高分歧 · 熵 1.075 · 凯利异常 1 家"><span class="ms-dot"></span>结构<span class="ms-sub">高分歧</span></button></td>
         <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
         <td class="col-so">
@@ -3862,7 +3869,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             </span>
           </div>
         </td>
-        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.83</span> <span class="odd "><i>平</i>3.35</span> <span class="odd highlight"><i>负</i>2.86</span> </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.83</span> <span class="odd "><i>平</i>3.35</span> <span class="odd highlight"><i>负</i>2.86</span> <span class="kelly-mini" title="北单凯利（不让球）：K3=威胜÷胜SP 0.795 · K1=威平÷平SP 1.045 · K0=威负÷负SP 0.979">K 0.80/1.04/0.98</span></td>
         <td class="col-ms"><button type="button" class="ms-open div" data-seq="372" aria-haspopup="dialog" title="市场结构：高分歧 · 熵 1.079 · 凯利异常 0 家 · 欧亚背离"><span class="ms-dot"></span>结构<span class="ms-sub">高分歧</span></button></td>
         <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
         <td class="col-so">
@@ -3913,7 +3920,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             </span>
           </div>
         </td>
-        <td class="col-odds"><span class="odd highlight"><i>胜</i>8.56</span> <span class="odd "><i>平</i>26.18</span> <span class="odd highlight"><i>负</i>1.18</span> </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>8.56</span> <span class="odd "><i>平</i>26.18</span> <span class="odd highlight"><i>负</i>1.18</span> <span class="kelly-mini" title="主队让1球：K3=主胜赔率−主胜赔率÷让负SP（1.30−1.30÷1.18）">让K 0.20</span></td>
         <td class="col-ms"><button type="button" class="ms-open" data-seq="373" aria-haspopup="dialog" title="市场结构：一致 · 熵 0.912 · 凯利异常 0 家"><span class="ms-dot"></span>结构<span class="ms-sub">一致</span></button></td>
         <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
         <td class="col-so">
@@ -3966,7 +3973,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             </span>
           </div>
         </td>
-        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.4</span> <span class="odd "><i>平</i>3.56</span> <span class="odd highlight"><i>负</i>3.29</span> </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.4</span> <span class="odd "><i>平</i>3.56</span> <span class="odd highlight"><i>负</i>3.29</span> <span class="kelly-mini" title="北单凯利（不让球）：K3=威胜÷胜SP 1.167 · K1=威平÷平SP 0.927 · K0=威负÷负SP 0.729">K 1.17/0.93/0.73</span></td>
         <td class="col-ms"><button type="button" class="ms-open" data-seq="374" aria-haspopup="dialog" title="市场结构：高分歧 · 熵 1.091 · 凯利异常 1 家"><span class="ms-dot"></span>结构<span class="ms-sub">高分歧</span></button></td>
         <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
         <td class="col-so">
@@ -4019,7 +4026,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             </span>
           </div>
         </td>
-        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.38</span> <span class="odd "><i>平</i>3.55</span> <span class="odd highlight"><i>负</i>3.34</span> </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.38</span> <span class="odd "><i>平</i>3.55</span> <span class="odd highlight"><i>负</i>3.34</span> <span class="kelly-mini" title="北单凯利（不让球）：K3=威胜÷胜SP 0.945 · K1=威平÷平SP 0.901 · K0=威负÷负SP 0.868">K 0.94/0.90/0.87</span></td>
         <td class="col-ms"><button type="button" class="ms-open div" data-seq="375" aria-haspopup="dialog" title="市场结构：高分歧 · 熵 1.087 · 凯利异常 0 家 · 欧亚背离"><span class="ms-dot"></span>结构<span class="ms-sub">高分歧</span></button></td>
         <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
         <td class="col-so">
@@ -4072,7 +4079,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             </span>
           </div>
         </td>
-        <td class="col-odds"><span class="odd highlight"><i>胜</i>17.65</span> <span class="odd "><i>平</i>26.49</span> <span class="odd highlight"><i>负</i>1.1</span> </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>17.65</span> <span class="odd "><i>平</i>26.49</span> <span class="odd highlight"><i>负</i>1.1</span> <span class="kelly-mini" title="主队让1球：K3=主胜赔率−主胜赔率÷让负SP（1.62−1.62÷1.10）">让K 0.15</span></td>
         <td class="col-ms"><button type="button" class="ms-open div" data-seq="376" aria-haspopup="dialog" title="市场结构：偏一致 · 熵 1.005 · 凯利异常 0 家 · 欧亚背离"><span class="ms-dot"></span>结构<span class="ms-sub">偏一致</span></button></td>
         <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
         <td class="col-so">
@@ -4125,7 +4132,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             </span>
           </div>
         </td>
-        <td class="col-odds"><span class="odd highlight"><i>胜</i>3.17</span> <span class="odd "><i>平</i>3.82</span> <span class="odd highlight"><i>负</i>2.35</span> </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>3.17</span> <span class="odd "><i>平</i>3.82</span> <span class="odd highlight"><i>负</i>2.35</span> <span class="kelly-mini" title="北单凯利（不让球）：K3=威胜÷胜SP 0.678 · K1=威平÷平SP 0.916 · K0=威负÷负SP 1.277">K 0.68/0.92/1.28</span></td>
         <td class="col-ms"><button type="button" class="ms-open div" data-seq="377" aria-haspopup="dialog" title="市场结构：高分歧 · 熵 1.083 · 凯利异常 0 家 · 欧亚背离"><span class="ms-dot"></span>结构<span class="ms-sub">高分歧</span></button></td>
         <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
         <td class="col-so">
@@ -4178,7 +4185,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             </span>
           </div>
         </td>
-        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.39</span> <span class="odd highlight"><i>平</i>3.69</span> <span class="odd "><i>负</i>3.21</span> </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.39</span> <span class="odd highlight"><i>平</i>3.69</span> <span class="odd "><i>负</i>3.21</span> <span class="kelly-mini" title="北单凯利（不让球）：K3=威胜÷胜SP 0.941 · K1=威平÷平SP 0.840 · K0=威负÷负SP 0.997">K 0.94/0.84/1.00</span></td>
         <td class="col-ms"><button type="button" class="ms-open div" data-seq="378" aria-haspopup="dialog" title="市场结构：高分歧 · 熵 1.075 · 凯利异常 1 家 · 欧亚背离"><span class="ms-dot"></span>结构<span class="ms-sub">高分歧</span></button></td>
         <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
         <td class="col-so">
@@ -4231,7 +4238,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             </span>
           </div>
         </td>
-        <td class="col-odds"><span class="odd highlight"><i>胜</i>5.2</span> <span class="odd "><i>平</i>10.19</span> <span class="odd highlight"><i>负</i>1.4</span> </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>5.2</span> <span class="odd "><i>平</i>10.19</span> <span class="odd highlight"><i>负</i>1.4</span> <span class="kelly-mini" title="主队让1球：K3=主胜赔率−主胜赔率÷让负SP（1.36−1.36÷1.40）">让K 0.39</span></td>
         <td class="col-ms"><button type="button" class="ms-open div" data-seq="379" aria-haspopup="dialog" title="市场结构：一致 · 熵 0.916 · 凯利异常 4 家 · 欧亚背离"><span class="ms-dot"></span>结构<span class="ms-sub">一致</span></button></td>
         <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
         <td class="col-so">
@@ -4284,7 +4291,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             </span>
           </div>
         </td>
-        <td class="col-odds"><span class="odd highlight"><i>胜</i>5.74</span> <span class="odd "><i>平</i>9.04</span> <span class="odd highlight"><i>负</i>1.39</span> </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>5.74</span> <span class="odd "><i>平</i>9.04</span> <span class="odd highlight"><i>负</i>1.39</span> <span class="kelly-mini kelly-na">让球≥2·不可测</span></td>
         <td class="col-ms"><button type="button" class="ms-open" data-seq="380" aria-haspopup="dialog" title="市场结构：一致 · 熵 0.610 · 凯利异常 19 家"><span class="ms-dot"></span>结构<span class="ms-sub">一致</span></button></td>
         <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
         <td class="col-so">
@@ -4337,7 +4344,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             </span>
           </div>
         </td>
-        <td class="col-odds"><span class="odd highlight"><i>胜</i>3.38</span> <span class="odd "><i>平</i>3.93</span> <span class="odd highlight"><i>负</i>2.22</span> </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>3.38</span> <span class="odd "><i>平</i>3.93</span> <span class="odd highlight"><i>负</i>2.22</span> <span class="kelly-mini" title="北单凯利（不让球）：K3=威胜÷胜SP 0.814 · K1=威平÷平SP 0.738 · K0=威负÷负SP 1.185">K 0.81/0.74/1.19</span></td>
         <td class="col-ms"><button type="button" class="ms-open div" data-seq="381" aria-haspopup="dialog" title="市场结构：高分歧 · 熵 1.095 · 凯利异常 1 家 · 欧亚背离"><span class="ms-dot"></span>结构<span class="ms-sub">高分歧</span></button></td>
         <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
         <td class="col-so">
@@ -4390,7 +4397,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             </span>
           </div>
         </td>
-        <td class="col-odds"><span class="odd highlight"><i>胜</i>3.9</span> <span class="odd "><i>平</i>5.27</span> <span class="odd highlight"><i>负</i>1.8</span> </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>3.9</span> <span class="odd "><i>平</i>5.27</span> <span class="odd highlight"><i>负</i>1.8</span> <span class="kelly-mini" title="北单凯利（不让球）：K3=威胜÷胜SP 0.526 · K1=威平÷平SP 0.645 · K0=威负÷负SP 1.667">K 0.53/0.65/1.67</span></td>
         <td class="col-ms"><button type="button" class="ms-open" data-seq="382" aria-haspopup="dialog" title="市场结构：高分歧 · 熵 1.072 · 凯利异常 0 家"><span class="ms-dot"></span>结构<span class="ms-sub">高分歧</span></button></td>
         <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
         <td class="col-so">
@@ -4443,7 +4450,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             </span>
           </div>
         </td>
-        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.75</span> <span class="odd highlight"><i>平</i>3.0</span> <span class="odd "><i>负</i>3.28</span> </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.75</span> <span class="odd highlight"><i>平</i>3.0</span> <span class="odd "><i>负</i>3.28</span> <span class="kelly-mini" title="北单凯利（不让球）：K3=威胜÷胜SP 0.800 · K1=威平÷平SP 1.033 · K0=威负÷负SP 0.976">K 0.80/1.03/0.98</span></td>
         <td class="col-ms"><button type="button" class="ms-open" data-seq="383" aria-haspopup="dialog" title="市场结构：高分歧 · 熵 1.091 · 凯利异常 1 家"><span class="ms-dot"></span>结构<span class="ms-sub">高分歧</span></button></td>
         <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
         <td class="col-so">
@@ -4496,7 +4503,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             </span>
           </div>
         </td>
-        <td class="col-odds"><span class="odd "><i>胜</i>4.95</span> <span class="odd highlight"><i>平</i>4.56</span> <span class="odd highlight"><i>负</i>1.72</span> </td>
+        <td class="col-odds"><span class="odd "><i>胜</i>4.95</span> <span class="odd highlight"><i>平</i>4.56</span> <span class="odd highlight"><i>负</i>1.72</span> <span class="kelly-mini" title="北单凯利（不让球）：K3=威胜÷胜SP 0.444 · K1=威平÷平SP 0.658 · K0=威负÷负SP 1.919">K 0.44/0.66/1.92</span></td>
         <td class="col-ms"><button type="button" class="ms-open div" data-seq="384" aria-haspopup="dialog" title="市场结构：高分歧 · 熵 1.081 · 凯利异常 2 家 · 欧亚背离"><span class="ms-dot"></span>结构<span class="ms-sub">高分歧</span></button></td>
         <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
         <td class="col-so">
@@ -4549,7 +4556,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             </span>
           </div>
         </td>
-        <td class="col-odds"><span class="odd highlight"><i>胜</i>29.85</span> <span class="odd "><i>平</i>33.08</span> <span class="odd highlight"><i>负</i>1.06</span> </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>29.85</span> <span class="odd "><i>平</i>33.08</span> <span class="odd highlight"><i>负</i>1.06</span> <span class="kelly-mini" title="主队让1球：K3=主胜赔率−主胜赔率÷让负SP（1.85−1.85÷1.06）">让K 0.10</span></td>
         <td class="col-ms"><button type="button" class="ms-open" data-seq="385" aria-haspopup="dialog" title="市场结构：一致 · 熵 0.936 · 凯利异常 2 家"><span class="ms-dot"></span>结构<span class="ms-sub">一致</span></button></td>
         <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
         <td class="col-so">
@@ -4602,7 +4609,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             </span>
           </div>
         </td>
-        <td class="col-odds"><span class="odd highlight"><i>胜</i>3.32</span> <span class="odd "><i>平</i>5.99</span> <span class="odd highlight"><i>负</i>1.87</span> </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>3.32</span> <span class="odd "><i>平</i>5.99</span> <span class="odd highlight"><i>负</i>1.87</span> <span class="kelly-mini" title="北单凯利（不让球）：K3=威胜÷胜SP 0.575 · K1=威平÷平SP 0.568 · K0=威负÷负SP 2.005">K 0.57/0.57/2.00</span></td>
         <td class="col-ms"><button type="button" class="ms-open div" data-seq="386" aria-haspopup="dialog" title="市场结构：高分歧 · 熵 1.074 · 凯利异常 0 家 · 欧亚背离"><span class="ms-dot"></span>结构<span class="ms-sub">高分歧</span></button></td>
         <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
         <td class="col-so">
@@ -4655,7 +4662,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             </span>
           </div>
         </td>
-        <td class="col-odds"><span class="odd highlight"><i>胜</i>3.12</span> <span class="odd "><i>平</i>3.15</span> <span class="odd highlight"><i>负</i>2.75</span> </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>3.12</span> <span class="odd "><i>平</i>3.15</span> <span class="odd highlight"><i>负</i>2.75</span> <span class="kelly-mini" title="北单凯利（不让球）：K3=威胜÷胜SP 0.833 · K1=威平÷平SP 0.952 · K0=威负÷负SP 0.909">K 0.83/0.95/0.91</span></td>
         <td class="col-ms"><button type="button" class="ms-open div" data-seq="387" aria-haspopup="dialog" title="市场结构：高分歧 · 熵 1.092 · 凯利异常 0 家 · 欧亚背离"><span class="ms-dot"></span>结构<span class="ms-sub">高分歧</span></button></td>
         <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
         <td class="col-so">
@@ -4708,7 +4715,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             </span>
           </div>
         </td>
-        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.48</span> <span class="odd highlight"><i>平</i>3.3</span> <span class="odd "><i>负</i>3.39</span> </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.48</span> <span class="odd highlight"><i>平</i>3.3</span> <span class="odd "><i>负</i>3.39</span> <span class="kelly-mini" title="北单凯利（不让球）：K3=威胜÷胜SP 0.988 · K1=威平÷平SP 0.970 · K0=威负÷负SP 0.776">K 0.99/0.97/0.78</span></td>
         <td class="col-ms"><button type="button" class="ms-open" data-seq="388" aria-haspopup="dialog" title="市场结构：高分歧 · 熵 1.089 · 凯利异常 0 家"><span class="ms-dot"></span>结构<span class="ms-sub">高分歧</span></button></td>
         <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
         <td class="col-so">
@@ -4761,7 +4768,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             </span>
           </div>
         </td>
-        <td class="col-odds"><span class="odd highlight"><i>胜</i>1.41</span> <span class="odd "><i>平</i>7.32</span> <span class="odd highlight"><i>负</i>6.4</span> </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>1.41</span> <span class="odd "><i>平</i>7.32</span> <span class="odd highlight"><i>负</i>6.4</span> <span class="kelly-mini" title="北单凯利（不让球）：K3=威胜÷胜SP 2.270 · K1=威平÷平SP 0.396 · K0=威负÷负SP 0.359">K 2.27/0.40/0.36</span></td>
         <td class="col-ms"><button type="button" class="ms-open div" data-seq="389" aria-haspopup="dialog" title="市场结构：高分歧 · 熵 1.096 · 凯利异常 0 家 · 欧亚背离"><span class="ms-dot"></span>结构<span class="ms-sub">高分歧</span></button></td>
         <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
         <td class="col-so">
@@ -4814,7 +4821,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             </span>
           </div>
         </td>
-        <td class="col-odds"><span class="odd highlight"><i>胜</i>27.47</span> <span class="odd "><i>平</i>44.22</span> <span class="odd highlight"><i>负</i>1.06</span> </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>27.47</span> <span class="odd "><i>平</i>44.22</span> <span class="odd highlight"><i>负</i>1.06</span> <span class="kelly-mini" title="主队让1球：K3=主胜赔率−主胜赔率÷让负SP（1.50−1.50÷1.06）">让K 0.08</span></td>
         <td class="col-ms"><button type="button" class="ms-open" data-seq="390" aria-haspopup="dialog" title="市场结构：一致 · 熵 0.942 · 凯利异常 1 家"><span class="ms-dot"></span>结构<span class="ms-sub">一致</span></button></td>
         <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
         <td class="col-so">
@@ -4942,7 +4949,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             </span>
           </div>
         </td>
-        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.18</span> <span class="odd "><i>平</i>3.95</span> <span class="odd highlight"><i>负</i>3.46</span> </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.18</span> <span class="odd "><i>平</i>3.95</span> <span class="odd highlight"><i>负</i>3.46</span> <span class="kelly-mini" title="北单凯利（不让球）：K3=威胜÷胜SP 0.894 · K1=威平÷平SP 0.823 · K0=威负÷负SP 1.069">K 0.89/0.82/1.07</span></td>
         <td class="col-ms"><button type="button" class="ms-open div" data-seq="352" aria-haspopup="dialog" title="市场结构：偏一致 · 熵 1.042 · 凯利异常 0 家 · 欧亚背离"><span class="ms-dot"></span>结构<span class="ms-sub">偏一致</span></button></td>
         <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
         <td class="col-so">
@@ -4991,7 +4998,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             </span>
           </div>
         </td>
-        <td class="col-odds"><span class="odd highlight"><i>胜</i>4.45</span> <span class="odd "><i>平</i>6.0</span> <span class="odd highlight"><i>负</i>1.64</span> </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>4.45</span> <span class="odd "><i>平</i>6.0</span> <span class="odd highlight"><i>负</i>1.64</span> <span class="kelly-mini" title="主队让1球：K3=主胜赔率−主胜赔率÷让负SP（1.36−1.36÷1.64）">让K 0.53</span></td>
         <td class="col-ms"><button type="button" class="ms-open" data-seq="353" aria-haspopup="dialog" title="市场结构：一致 · 熵 0.869 · 凯利异常 2 家"><span class="ms-dot"></span>结构<span class="ms-sub">一致</span></button></td>
         <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
         <td class="col-so">
@@ -5040,7 +5047,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             </span>
           </div>
         </td>
-        <td class="col-odds"><span class="odd highlight"><i>胜</i>1.24</span> <span class="odd "><i>平</i>19.87</span> <span class="odd highlight"><i>负</i>6.91</span> </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>1.24</span> <span class="odd "><i>平</i>19.87</span> <span class="odd highlight"><i>负</i>6.91</span> <span class="kelly-mini" title="客队让1球：K0=客胜赔率−客胜赔率÷让胜SP（1.40−1.40÷1.24）">让K 0.27</span></td>
         <td class="col-ms"><button type="button" class="ms-open div" data-seq="354" aria-haspopup="dialog" title="市场结构：一致 · 熵 0.832 · 凯利异常 2 家 · 欧亚背离"><span class="ms-dot"></span>结构<span class="ms-sub">一致</span></button></td>
         <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
         <td class="col-so">
@@ -5089,7 +5096,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             </span>
           </div>
         </td>
-        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.34</span> <span class="odd highlight"><i>平</i>3.22</span> <span class="odd "><i>负</i>3.8</span> </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.34</span> <span class="odd highlight"><i>平</i>3.22</span> <span class="odd "><i>负</i>3.8</span> <span class="kelly-mini" title="北单凯利（不让球）：K3=威胜÷胜SP 1.124 · K1=威平÷平SP 0.963 · K0=威负÷负SP 0.684">K 1.12/0.96/0.68</span></td>
         <td class="col-ms"><button type="button" class="ms-open" data-seq="355" aria-haspopup="dialog" title="市场结构：高分歧 · 熵 1.092 · 凯利异常 0 家"><span class="ms-dot"></span>结构<span class="ms-sub">高分歧</span></button></td>
         <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
         <td class="col-so">
@@ -5136,7 +5143,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             </span>
           </div>
         </td>
-        <td class="col-odds"><span class="odd highlight"><i>胜</i>1.11</span> <span class="odd "><i>平</i>26.0</span> <span class="odd highlight"><i>负</i>16.45</span> </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>1.11</span> <span class="odd "><i>平</i>26.0</span> <span class="odd highlight"><i>负</i>16.45</span> <span class="kelly-mini" title="客队让1球：K0=客胜赔率−客胜赔率÷让胜SP（1.36−1.36÷1.11）">让K 0.13</span></td>
         <td class="col-ms"><button type="button" class="ms-open div" data-seq="360" aria-haspopup="dialog" title="市场结构：一致 · 熵 0.883 · 凯利异常 3 家 · 欧亚背离"><span class="ms-dot"></span>结构<span class="ms-sub">一致</span></button></td>
         <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
         <td class="col-so">
@@ -5185,7 +5192,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             </span>
           </div>
         </td>
-        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.13</span> <span class="odd "><i>平</i>4.37</span> <span class="odd highlight"><i>负</i>3.29</span> </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.13</span> <span class="odd "><i>平</i>4.37</span> <span class="odd highlight"><i>负</i>3.29</span> <span class="kelly-mini kelly-na">缺参考欧赔</span></td>
         <td class="col-ms"><span class="so-none">—</span></td>
         <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
         <td class="col-so"><span class="so-none">—</span></td>
@@ -5225,7 +5232,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             </span>
           </div>
         </td>
-        <td class="col-odds"><span class="odd highlight"><i>胜</i>20.08</span> <span class="odd "><i>平</i>39.48</span> <span class="odd highlight"><i>负</i>1.08</span> </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>20.08</span> <span class="odd "><i>平</i>39.48</span> <span class="odd highlight"><i>负</i>1.08</span> <span class="kelly-mini" title="主队让1球：K3=主胜赔率−主胜赔率÷让负SP（1.91−1.91÷1.08）">让K 0.14</span></td>
         <td class="col-ms"><button type="button" class="ms-open div" data-seq="363" aria-haspopup="dialog" title="市场结构：偏一致 · 熵 1.045 · 凯利异常 3 家 · 欧亚背离"><span class="ms-dot"></span>结构<span class="ms-sub">偏一致</span></button></td>
         <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
         <td class="col-so">
@@ -5272,7 +5279,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             </span>
           </div>
         </td>
-        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.42</span> <span class="odd highlight"><i>平</i>3.33</span> <span class="odd "><i>负</i>3.47</span> </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.42</span> <span class="odd highlight"><i>平</i>3.33</span> <span class="odd "><i>负</i>3.47</span> <span class="kelly-mini" title="北单凯利（不让球）：K3=威胜÷胜SP 1.087 · K1=威平÷平SP 1.021 · K0=威负÷负SP 0.692">K 1.09/1.02/0.69</span></td>
         <td class="col-ms"><button type="button" class="ms-open flip" data-seq="367" aria-haspopup="dialog" title="市场结构：高分歧 · 熵 1.087 · 凯利异常 0 家 · 方向翻转 · 欧亚背离"><span class="ms-dot"></span>结构<span class="ms-sub">高分歧</span></button></td>
         <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
         <td class="col-so">
@@ -5319,7 +5326,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             </span>
           </div>
         </td>
-        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.83</span> <span class="odd "><i>平</i>3.35</span> <span class="odd highlight"><i>负</i>2.86</span> </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.83</span> <span class="odd "><i>平</i>3.35</span> <span class="odd highlight"><i>负</i>2.86</span> <span class="kelly-mini" title="北单凯利（不让球）：K3=威胜÷胜SP 0.795 · K1=威平÷平SP 1.045 · K0=威负÷负SP 0.979">K 0.80/1.04/0.98</span></td>
         <td class="col-ms"><button type="button" class="ms-open div" data-seq="372" aria-haspopup="dialog" title="市场结构：高分歧 · 熵 1.079 · 凯利异常 0 家 · 欧亚背离"><span class="ms-dot"></span>结构<span class="ms-sub">高分歧</span></button></td>
         <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
         <td class="col-so">
@@ -5366,7 +5373,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             </span>
           </div>
         </td>
-        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.38</span> <span class="odd "><i>平</i>3.55</span> <span class="odd highlight"><i>负</i>3.34</span> </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.38</span> <span class="odd "><i>平</i>3.55</span> <span class="odd highlight"><i>负</i>3.34</span> <span class="kelly-mini" title="北单凯利（不让球）：K3=威胜÷胜SP 0.945 · K1=威平÷平SP 0.901 · K0=威负÷负SP 0.868">K 0.94/0.90/0.87</span></td>
         <td class="col-ms"><button type="button" class="ms-open div" data-seq="375" aria-haspopup="dialog" title="市场结构：高分歧 · 熵 1.087 · 凯利异常 0 家 · 欧亚背离"><span class="ms-dot"></span>结构<span class="ms-sub">高分歧</span></button></td>
         <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
         <td class="col-so">
@@ -5415,7 +5422,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             </span>
           </div>
         </td>
-        <td class="col-odds"><span class="odd highlight"><i>胜</i>17.65</span> <span class="odd "><i>平</i>26.49</span> <span class="odd highlight"><i>负</i>1.1</span> </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>17.65</span> <span class="odd "><i>平</i>26.49</span> <span class="odd highlight"><i>负</i>1.1</span> <span class="kelly-mini" title="主队让1球：K3=主胜赔率−主胜赔率÷让负SP（1.62−1.62÷1.10）">让K 0.15</span></td>
         <td class="col-ms"><button type="button" class="ms-open div" data-seq="376" aria-haspopup="dialog" title="市场结构：偏一致 · 熵 1.005 · 凯利异常 0 家 · 欧亚背离"><span class="ms-dot"></span>结构<span class="ms-sub">偏一致</span></button></td>
         <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
         <td class="col-so">
@@ -5464,7 +5471,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             </span>
           </div>
         </td>
-        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.39</span> <span class="odd highlight"><i>平</i>3.69</span> <span class="odd "><i>负</i>3.21</span> </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.39</span> <span class="odd highlight"><i>平</i>3.69</span> <span class="odd "><i>负</i>3.21</span> <span class="kelly-mini" title="北单凯利（不让球）：K3=威胜÷胜SP 0.941 · K1=威平÷平SP 0.840 · K0=威负÷负SP 0.997">K 0.94/0.84/1.00</span></td>
         <td class="col-ms"><button type="button" class="ms-open div" data-seq="378" aria-haspopup="dialog" title="市场结构：高分歧 · 熵 1.075 · 凯利异常 1 家 · 欧亚背离"><span class="ms-dot"></span>结构<span class="ms-sub">高分歧</span></button></td>
         <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
         <td class="col-so">
@@ -5513,7 +5520,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             </span>
           </div>
         </td>
-        <td class="col-odds"><span class="odd highlight"><i>胜</i>3.9</span> <span class="odd "><i>平</i>5.27</span> <span class="odd highlight"><i>负</i>1.8</span> </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>3.9</span> <span class="odd "><i>平</i>5.27</span> <span class="odd highlight"><i>负</i>1.8</span> <span class="kelly-mini" title="北单凯利（不让球）：K3=威胜÷胜SP 0.526 · K1=威平÷平SP 0.645 · K0=威负÷负SP 1.667">K 0.53/0.65/1.67</span></td>
         <td class="col-ms"><button type="button" class="ms-open" data-seq="382" aria-haspopup="dialog" title="市场结构：高分歧 · 熵 1.072 · 凯利异常 0 家"><span class="ms-dot"></span>结构<span class="ms-sub">高分歧</span></button></td>
         <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
         <td class="col-so">
@@ -5562,7 +5569,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             </span>
           </div>
         </td>
-        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.75</span> <span class="odd highlight"><i>平</i>3.0</span> <span class="odd "><i>负</i>3.28</span> </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.75</span> <span class="odd highlight"><i>平</i>3.0</span> <span class="odd "><i>负</i>3.28</span> <span class="kelly-mini" title="北单凯利（不让球）：K3=威胜÷胜SP 0.800 · K1=威平÷平SP 1.033 · K0=威负÷负SP 0.976">K 0.80/1.03/0.98</span></td>
         <td class="col-ms"><button type="button" class="ms-open" data-seq="383" aria-haspopup="dialog" title="市场结构：高分歧 · 熵 1.091 · 凯利异常 1 家"><span class="ms-dot"></span>结构<span class="ms-sub">高分歧</span></button></td>
         <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
         <td class="col-so">
@@ -5611,7 +5618,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             </span>
           </div>
         </td>
-        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.48</span> <span class="odd highlight"><i>平</i>3.3</span> <span class="odd "><i>负</i>3.39</span> </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.48</span> <span class="odd highlight"><i>平</i>3.3</span> <span class="odd "><i>负</i>3.39</span> <span class="kelly-mini" title="北单凯利（不让球）：K3=威胜÷胜SP 0.988 · K1=威平÷平SP 0.970 · K0=威负÷负SP 0.776">K 0.99/0.97/0.78</span></td>
         <td class="col-ms"><button type="button" class="ms-open" data-seq="388" aria-haspopup="dialog" title="市场结构：高分歧 · 熵 1.089 · 凯利异常 0 家"><span class="ms-dot"></span>结构<span class="ms-sub">高分歧</span></button></td>
         <td class="col-refbtn"><button type="button" class="ref-toggle" aria-expanded="false">&#9660; 参考详情</button></td>
         <td class="col-so">
