@@ -2168,13 +2168,20 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
   /* 顶部月度条同步紧凑（手机端 113px → 约 88px） */
   .monthly-overview { padding: 8px 12px; gap: 10px; margin-bottom: 8px; }
   .mo-icon { font-size: 1.2rem; }
-  /* 复盘子Tab移动端（2026-11-02）：5 个标签不换行、横向滚动、触控目标 ≥44px。
+  /* 复盘子Tab移动端（2026-11-02）：5 个标签一屏全显、不横滑、不换行、触控 ≥44px。
+     做法：手机端隐藏图标，标签与徽标在按钮内上下堆叠，字号/内边距/徽标同步收紧；
+     390/414 用 0.67rem，≤380 再降一档到 0.64rem，避免 360px 下“大小球复盘”被截断。
      注意：这一段必须留在 ≤768 媒体块内；原规则误放在 @media print 里，屏幕端从未生效。 */
-  .review-subtabs { padding: 3px; margin-bottom: 12px; overflow-x: auto; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; }
-  .review-subtabs .sub-tab { flex: 0 0 auto; min-height: 44px; white-space: nowrap; padding: 8px 10px; font-size: 0.72rem; }
-  .review-subtabs .sub-tab .tab-icon { margin-right: 2px; font-size: 0.85rem; }
-  .review-subtabs .sub-tab .tab-badge { margin-left: 3px; font-size: 0.6rem; padding: 1px 5px; }
+  .review-subtabs { padding: 3px; margin-bottom: 12px; overflow: visible; flex-wrap: nowrap; gap: 3px; }
+  .review-subtabs .sub-tab { flex: 1 1 0; min-width: 0; min-height: 44px; white-space: nowrap; padding: 4px 2px; font-size: 0.67rem; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; line-height: 1.15; }
+  .review-subtabs .sub-tab .tab-icon { display: none; }
+  .review-subtabs .sub-tab .tab-badge { margin-left: 0; font-size: 0.58rem; padding: 0 5px; line-height: 1.5; }
   .annual-metrics { grid-template-columns: 1fr; }
+}
+
+/* 360px 极窄屏：标签再收 0.03rem，保证 5 个标签不截断 */
+@media (max-width: 380px) {
+  .review-subtabs .sub-tab { font-size: 0.64rem; padding: 4px 1px; }
 }
 
 /* 小屏手机（<480px）微调 */
