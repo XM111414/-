@@ -469,6 +469,34 @@ body {
 .ym-name { font-size: 0.9rem; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
 .ym-stats { display: flex; justify-content: center; gap: 10px; font-size: 0.75rem; color: var(--muted); margin-bottom: 6px; }
 .ym-rate { font-size: 0.85rem; }
+.ym-card.empty { cursor: default; opacity: 0.55; background: #f8fafc; }
+.ym-card.empty:hover { transform: none; box-shadow: none; border-color: #e2e8f0; }
+.ym-empty { font-size: 0.72rem; color: var(--muted); margin-top: 8px; }
+
+/* 年度总汇（2026-11-02） */
+.annual-head { text-align: center; margin-bottom: 12px; }
+.annual-scope { font-size: 0.72rem; color: var(--muted); margin-top: 4px; }
+.annual-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: 12px 0;
+}
+.am-item {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 10px 12px;
+  text-align: center;
+}
+.am-item span { display: block; font-size: 0.68rem; color: var(--muted); }
+.am-item strong { display: block; font-size: 1.05rem; color: var(--ink); margin: 2px 0; }
+.am-item em { font-style: normal; font-size: 0.62rem; color: var(--muted); }
+.annual-months { margin-top: 14px; }
+.annual-months h3 { margin: 0 0 4px; font-size: 1rem; text-align: center; }
+.annual-note { font-size: 0.62rem; color: var(--muted); margin-top: 6px; }
+.annual-empty { font-size: 0.72rem; color: var(--muted); padding: 8px; }
+.annual-year-tabs { margin-top: 10px; }
 
 
 /* 每日走势 */
@@ -2140,6 +2168,13 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
   /* 顶部月度条同步紧凑（手机端 113px → 约 88px） */
   .monthly-overview { padding: 8px 12px; gap: 10px; margin-bottom: 8px; }
   .mo-icon { font-size: 1.2rem; }
+  /* 复盘子Tab移动端（2026-11-02）：5 个标签不换行、横向滚动、触控目标 ≥44px。
+     注意：这一段必须留在 ≤768 媒体块内；原规则误放在 @media print 里，屏幕端从未生效。 */
+  .review-subtabs { padding: 3px; margin-bottom: 12px; overflow-x: auto; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; }
+  .review-subtabs .sub-tab { flex: 0 0 auto; min-height: 44px; white-space: nowrap; padding: 8px 10px; font-size: 0.72rem; }
+  .review-subtabs .sub-tab .tab-icon { margin-right: 2px; font-size: 0.85rem; }
+  .review-subtabs .sub-tab .tab-badge { margin-left: 3px; font-size: 0.6rem; padding: 1px 5px; }
+  .annual-metrics { grid-template-columns: 1fr; }
 }
 
 /* 小屏手机（<480px）微调 */
@@ -2245,11 +2280,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
   .trend-item .trend-date { width: 48px; font-size: 0.7rem; }
   .trend-item .trend-rate { width: 40px; font-size: 0.7rem; }
   
-  /* 复盘子Tab移动端 */
-  .review-subtabs { padding: 3px; margin-bottom: 12px; }
-  .review-subtabs .sub-tab { padding: 8px 6px; font-size: 0.72rem; }
-  .review-subtabs .sub-tab .tab-icon { margin-right: 2px; font-size: 0.85rem; }
-  .review-subtabs .sub-tab .tab-badge { margin-left: 3px; font-size: 0.6rem; padding: 1px 5px; }
+  /* 复盘子Tab移动端规则已移入 ≤768 媒体块（2026-11-02：原先误落在 print 块） */
   
   /* 历史详情移动端 */
   .detail-header { padding: 10px 2px 12px; margin-bottom: 12px; gap: 8px; }
@@ -2386,7 +2417,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
       </div>
 
       <!-- 月度汇总概览 -->
-      <div class="monthly-overview" onclick="switchMainTab('review', document.querySelectorAll('.main-tab')[1]); setTimeout(() => switchReviewTab('monthly', document.querySelectorAll('.review-subtabs .sub-tab')[2]), 50);">
+      <div class="monthly-overview" onclick="switchMainTab('review', document.querySelectorAll('.main-tab')[1]); setTimeout(() => switchReviewTab('monthly', document.querySelector('.review-subtabs .sub-tab[data-review-tab=monthly]')), 50);">
         <div class="mo-icon">&#128202;</div>
         <div class="mo-info">
           <div class="mo-title">2026年11月 月度汇总 <span class="mo-hint">（点击查看详情）</span></div>
@@ -6829,19 +6860,23 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
       
       <!-- 复盘子Tab -->
       <div class="sub-tabs review-subtabs">
-        <button class="sub-tab active" onclick="switchReviewTab('yesterday', this)">
+        <button class="sub-tab active" data-review-tab="yesterday" onclick="switchReviewTab('yesterday', this)">
           <span class="tab-icon">&#128200;</span> 昨日复盘
           <span class="tab-badge">109场</span>
         </button>
-        <button class="sub-tab" onclick="switchReviewTab('history', this)">
+        <button class="sub-tab" data-review-tab="history" onclick="switchReviewTab('history', this)">
           <span class="tab-icon">&#128197;</span> 历史记录
           <span class="tab-badge">60天</span>
         </button>
-        <button class="sub-tab" onclick="switchReviewTab('monthly', this)">
+        <button class="sub-tab" data-review-tab="monthly" onclick="switchReviewTab('monthly', this)">
           <span class="tab-icon">&#128202;</span> 月度汇总
           <span class="tab-badge">1天</span>
         </button>
-        <button class="sub-tab" onclick="switchReviewTab('ou', this)">
+        <button class="sub-tab" data-review-tab="annual" onclick="switchReviewTab('annual', this)">
+          <span class="tab-icon">&#128198;</span> 年度总汇
+          <span class="tab-badge">72天</span>
+        </button>
+        <button class="sub-tab" data-review-tab="ou" onclick="switchReviewTab('ou', this)">
           <span class="tab-icon">&#9917;</span> 大小球复盘
           <span class="tab-badge">15场</span>
         </button>
@@ -13742,52 +13777,9 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
       <div id="review-monthly" class="review-subpanel">
         <div class="monthly-header">
           <h3>&#128202; 月度汇总 · 支持月份切换</h3>
-          <p class="history-subtitle">当前显示月份可切换，年度汇总见下方</p>
+          <p class="history-subtitle">当前显示月份可切换；年度累计请切换上方「年度总汇」标签</p>
           <div class="month-tabs"><button class="month-btn active" data-ym="2026-11" onclick="switchMonth('2026-11')">11月<span class="month-btn-sub">1天</span></button><button class="month-btn" data-ym="2026-10" onclick="switchMonth('2026-10')">10月<span class="month-btn-sub">27天</span></button><button class="month-btn" data-ym="2026-09" onclick="switchMonth('2026-09')">9月<span class="month-btn-sub">30天</span></button><button class="month-btn" data-ym="2026-08" onclick="switchMonth('2026-08')">8月<span class="month-btn-sub">14天</span></button></div>
         </div>
-<div class="yearly-summary">
-        <h3>&#128197; 2026年 年度汇总</h3>
-        <div class="overview-grid">
-          <div class="overview-card all">
-            <div class="label">年度累计场次</div>
-            <div class="value">4490</div>
-            <div class="sub">72 天</div>
-          </div>
-          <div class="overview-card hit">
-            <div class="label">年度累计命中</div>
-            <div class="value">3242</div>
-            <div class="sub">命中率 72.2%</div>
-          </div>
-          <div class="overview-card miss">
-            <div class="label">年度累计未中</div>
-            <div class="value">1248</div>
-            <div class="sub">预测错误</div>
-          </div>
-          <div class="overview-card rate">
-            <div class="label">年度总命中率</div>
-            <div class="value">72.2%</div>
-            <div class="sub">通过筛选后 70.6%</div>
-          </div>
-        </div>
-        <div class="year-months-grid">
-<div class="ym-card" onclick="switchMonth('2026-11')">
-            <div class="ym-name">11月</div>
-            <div class="ym-stats"><span>1天</span><span>109场</span></div>
-            <div class="ym-rate rate-badge high">78.0%</div>
-          </div><div class="ym-card" onclick="switchMonth('2026-10')">
-            <div class="ym-name">10月</div>
-            <div class="ym-stats"><span>27天</span><span>1817场</span></div>
-            <div class="ym-rate rate-badge mid">74.1%</div>
-          </div><div class="ym-card" onclick="switchMonth('2026-09')">
-            <div class="ym-name">9月</div>
-            <div class="ym-stats"><span>30天</span><span>1740场</span></div>
-            <div class="ym-rate rate-badge mid">69.4%</div>
-          </div><div class="ym-card" onclick="switchMonth('2026-08')">
-            <div class="ym-name">8月</div>
-            <div class="ym-stats"><span>14天</span><span>824场</span></div>
-            <div class="ym-rate rate-badge mid">73.2%</div>
-          </div>        </div>
-      </div>
 <div class="month-block" id="month-block-2026-11">
         <div class="month-block-header">
           <h4>2026年11月 · 累计 1 天数据</h4>
@@ -16974,6 +16966,217 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
       </div>
       </div>
 
+      <!-- ===== 子面板：年度总汇（2026-11-02）===== -->
+      <div id="review-annual" class="review-subpanel">
+        <div class="monthly-header">
+          <h3>&#128198; 年度总汇 · 支持年份切换</h3>
+          <p class="history-subtitle">场次/命中/推荐池与「月度汇总」同口径逐月相加；Brier 为双选二分类口径；数据区间按实际历史起止标注</p>
+          <div class="month-tabs annual-year-tabs"><button class="month-btn year-btn active" data-year="2026" onclick="switchAnnualYear('2026')">2026年<span class="month-btn-sub">72天</span></button></div>
+        </div>
+<div class="yearly-summary annual-block" id="annual-block-2026">
+  <div class="annual-head">
+    <h3>&#128198; 2026年 年度总汇</h3>
+    <div class="annual-scope">统计区间：2026-08-18 至 2026-11-01（72 天，系统历史起点/截点，非完整自然年）</div>
+  </div>
+  <div class="overview-grid">
+    <div class="overview-card all">
+      <div class="label">年度累计场次</div>
+      <div class="value">4490</div>
+      <div class="sub">72 天 · 4 个月</div>
+    </div>
+    <div class="overview-card hit">
+      <div class="label">年度累计命中</div>
+      <div class="value">3242</div>
+      <div class="sub">命中率 72.2%</div>
+    </div>
+    <div class="overview-card miss">
+      <div class="label">年度累计未中</div>
+      <div class="value">1248</div>
+      <div class="sub">预测错误</div>
+    </div>
+    <div class="overview-card rate">
+      <div class="label">年度总命中率</div>
+      <div class="value">72.2%</div>
+      <div class="sub">推荐池 70.6%</div>
+    </div>
+  </div>
+  <div class="annual-metrics">
+    <div class="am-item"><span>推荐池命中率</span><strong>70.6%</strong><em>1623/2298 场</em></div>
+    <div class="am-item"><span>双选 Brier</span><strong>0.2023</strong><em>4470 场有概率明细 · 越低越好</em></div>
+    <div class="am-item"><span>数据覆盖</span><strong>99.3%</strong><em>4490/4522 场已判 · 缺失 32 场（2 天）</em></div>
+  </div>
+  <div class="annual-months">
+    <h3>&#128197; 月度分布（12 个月）</h3>
+    <div class="year-months-grid"><div class="ym-card empty">
+  <div class="ym-name">1月</div>
+  <div class="ym-empty">起点前</div>
+</div><div class="ym-card empty">
+  <div class="ym-name">2月</div>
+  <div class="ym-empty">起点前</div>
+</div><div class="ym-card empty">
+  <div class="ym-name">3月</div>
+  <div class="ym-empty">起点前</div>
+</div><div class="ym-card empty">
+  <div class="ym-name">4月</div>
+  <div class="ym-empty">起点前</div>
+</div><div class="ym-card empty">
+  <div class="ym-name">5月</div>
+  <div class="ym-empty">起点前</div>
+</div><div class="ym-card empty">
+  <div class="ym-name">6月</div>
+  <div class="ym-empty">起点前</div>
+</div><div class="ym-card empty">
+  <div class="ym-name">7月</div>
+  <div class="ym-empty">起点前</div>
+</div><div class="ym-card" onclick="goMonthly('2026-08')">
+  <div class="ym-name">8月</div>
+  <div class="ym-stats"><span>14天</span><span>824场</span></div>
+  <div class="ym-rate rate-badge mid">73.2%</div>
+</div><div class="ym-card" onclick="goMonthly('2026-09')">
+  <div class="ym-name">9月</div>
+  <div class="ym-stats"><span>30天</span><span>1740场</span></div>
+  <div class="ym-rate rate-badge mid">69.4%</div>
+</div><div class="ym-card" onclick="goMonthly('2026-10')">
+  <div class="ym-name">10月</div>
+  <div class="ym-stats"><span>27天</span><span>1817场</span></div>
+  <div class="ym-rate rate-badge mid">74.1%</div>
+</div><div class="ym-card" onclick="goMonthly('2026-11')">
+  <div class="ym-name">11月</div>
+  <div class="ym-stats"><span>1天</span><span>109场</span></div>
+  <div class="ym-rate rate-badge high">78.0%</div>
+</div><div class="ym-card empty">
+  <div class="ym-name">12月</div>
+  <div class="ym-empty">未到</div>
+</div></div>
+  </div>
+  <div class="analysis-row review-analysis">
+    <div class="analysis-card">
+      <h3>&#127942; 年度联赛排行</h3>
+      <div class="mini-dual"><div class="mini-scroll"><table class="mini-table"><thead><tr><th class="rank">#</th><th>联赛</th><th>场次</th><th>命中</th><th>命中率</th></tr></thead><tbody>          <tr>
+            <td class="rank">1</td>
+            <td class="league-name">挪威杯</td>
+            <td class="count">10 场</td>
+            <td class="hits">10 中</td>
+            <td><span class="rate-badge high">100.0%</span></td>
+          </tr>          <tr>
+            <td class="rank">2</td>
+            <td class="league-name">奥地利杯</td>
+            <td class="count">14 场</td>
+            <td class="hits">13 中</td>
+            <td><span class="rate-badge high">92.9%</span></td>
+          </tr>          <tr>
+            <td class="rank">3</td>
+            <td class="league-name">欧冠资格</td>
+            <td class="count">10 场</td>
+            <td class="hits">9 中</td>
+            <td><span class="rate-badge high">90.0%</span></td>
+          </tr>          <tr>
+            <td class="rank">4</td>
+            <td class="league-name">U21欧预赛</td>
+            <td class="count">38 场</td>
+            <td class="hits">34 中</td>
+            <td><span class="rate-badge high">89.5%</span></td>
+          </tr>          <tr>
+            <td class="rank">5</td>
+            <td class="league-name">南俱杯</td>
+            <td class="count">21 场</td>
+            <td class="hits">18 中</td>
+            <td><span class="rate-badge high">85.7%</span></td>
+          </tr>          <tr>
+            <td class="rank">6</td>
+            <td class="league-name">奥甲</td>
+            <td class="count">48 场</td>
+            <td class="hits">41 中</td>
+            <td><span class="rate-badge high">85.4%</span></td>
+          </tr> </tbody></table></div><div class="mini-scroll"><table class="mini-table"><thead><tr><th class="rank">#</th><th>联赛</th><th>场次</th><th>命中</th><th>命中率</th></tr></thead><tbody>         <tr>
+            <td class="rank">7</td>
+            <td class="league-name">奥乙</td>
+            <td class="count">63 场</td>
+            <td class="hits">53 中</td>
+            <td><span class="rate-badge high">84.1%</span></td>
+          </tr>          <tr>
+            <td class="rank">8</td>
+            <td class="league-name">德国杯</td>
+            <td class="count">17 场</td>
+            <td class="hits">14 中</td>
+            <td><span class="rate-badge high">82.4%</span></td>
+          </tr>          <tr>
+            <td class="rank">9</td>
+            <td class="league-name">欧罗巴联赛</td>
+            <td class="count">51 场</td>
+            <td class="hits">42 中</td>
+            <td><span class="rate-badge high">82.4%</span></td>
+          </tr>          <tr>
+            <td class="rank">10</td>
+            <td class="league-name">欧罗巴资格</td>
+            <td class="count">16 场</td>
+            <td class="hits">13 中</td>
+            <td><span class="rate-badge high">81.2%</span></td>
+          </tr>          <tr>
+            <td class="rank">11</td>
+            <td class="league-name">亚运男足</td>
+            <td class="count">26 场</td>
+            <td class="hits">21 中</td>
+            <td><span class="rate-badge high">80.8%</span></td>
+          </tr>          <tr>
+            <td class="rank">12</td>
+            <td class="league-name">苏冠</td>
+            <td class="count">55 场</td>
+            <td class="hits">44 中</td>
+            <td><span class="rate-badge high">80.0%</span></td>
+          </tr></tbody></table></div></div>
+      <div class="annual-note">共 91 个联赛；展示样本≥10场的前 12 个（按命中率）</div>
+    </div>
+    <div class="analysis-card">
+      <h3>&#127919; 年度双选类型</h3>
+      <div class="type-grid">
+      <div class="type-card">
+        <div class="type-name">客胜+主胜</div>
+        <div class="type-stats">
+          <span class="type-count">1444场</span>
+          <span class="rate-badge mid">73.9%</span>
+        </div>
+      </div>
+      <div class="type-card">
+        <div class="type-name">平局+主胜</div>
+        <div class="type-stats">
+          <span class="type-count">118场</span>
+          <span class="rate-badge mid">72.0%</span>
+        </div>
+      </div>
+      <div class="type-card">
+        <div class="type-name">主胜+客胜</div>
+        <div class="type-stats">
+          <span class="type-count">1308场</span>
+          <span class="rate-badge mid">71.3%</span>
+        </div>
+      </div>
+      <div class="type-card">
+        <div class="type-name">主胜+平局</div>
+        <div class="type-stats">
+          <span class="type-count">796场</span>
+          <span class="rate-badge mid">70.5%</span>
+        </div>
+      </div>
+      <div class="type-card">
+        <div class="type-name">客胜+平局</div>
+        <div class="type-stats">
+          <span class="type-count">753场</span>
+          <span class="rate-badge mid">70.0%</span>
+        </div>
+      </div>
+      <div class="type-card">
+        <div class="type-name">平局+客胜</div>
+        <div class="type-stats">
+          <span class="type-count">103场</span>
+          <span class="rate-badge mid">68.0%</span>
+        </div>
+      </div></div>
+    </div>
+  </div>
+</div>
+      </div>
+
       <!-- ===== 子面板：大小球复盘 ===== -->
       <div id="review-ou" class="review-subpanel">
         <div class="overview-grid">
@@ -17293,13 +17496,37 @@ function switchMonth(ym) {
   if (target) {
     target.style.display = 'block';
   }
-  document.querySelectorAll('.month-btn').forEach(function(b) {
+  document.querySelectorAll('#review-monthly .month-btn').forEach(function(b) {
     if (b.getAttribute('data-ym') === ym) {
       b.classList.add('active');
     } else {
       b.classList.remove('active');
     }
   });
+}
+
+// ===== 年度总汇年份切换（2026-11-02） =====
+function switchAnnualYear(year) {
+  document.querySelectorAll('.annual-block').forEach(function(b) {
+    b.style.display = 'none';
+  });
+  var target = document.getElementById('annual-block-' + year);
+  if (target) {
+    target.style.display = 'block';
+  }
+  document.querySelectorAll('.year-btn').forEach(function(b) {
+    if (b.getAttribute('data-year') === year) {
+      b.classList.add('active');
+    } else {
+      b.classList.remove('active');
+    }
+  });
+}
+
+// 年度月度卡片：跳到月度汇总对应月份
+function goMonthly(ym) {
+  switchReviewTab('monthly', document.querySelector('.review-subtabs .sub-tab[data-review-tab=monthly]'));
+  switchMonth(ym);
 }
 
 // ===== 历史记录详情 =====
