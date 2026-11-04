@@ -1506,6 +1506,12 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
 .result-draw { background: #fef3c7; color: #92400e; }
 .result-lose { background: #fee2e2; color: #991b1b; }
 
+/* 历史详情「比分」列（2026-11-04）：复用 .score-box 的等宽字体，但去掉灰底，
+   避免与命中/未中的行底色（match-hit/match-miss）叠加成双色块；缺失显示 —。 */
+#history-detail-body .col-score { text-align: center; white-space: nowrap; }
+#history-detail-body .col-score .score-box { background: transparent; padding: 2px 0; }
+#history-detail-body .col-score .score-none { color: var(--muted); font-size: 0.8rem; }
+
 .s-badge { display: inline-block; padding: 3px 9px; border-radius: 7px; font-size: 0.7rem; font-weight: 600; }
 .s-badge.hit { background: #dcfce7; color: #166534; }
 .s-badge.miss { background: #fee2e2; color: #991b1b; }
@@ -2154,6 +2160,32 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
     width: auto;
   }
   
+  /* 历史详情卡片（2026-11-04）：新增「比分」列后显式排版——「实际赛果 | 比分」并排便于对照，
+     状态独占一行居中；此前无 grid-area 时靠 2 列自动流，7 个格子会挤成 4 行且顺序不直观。 */
+  #history-detail-body tr {
+    grid-template-areas:
+      "seq league"
+      "teams teams"
+      "pred pred"
+      "actual score"
+      "status status";
+    grid-template-columns: 1fr 1fr;
+  }
+  #history-detail-body .col-seq { grid-area: seq; text-align: left; font-weight: 600; color: var(--accent); }
+  #history-detail-body .col-league { grid-area: league; justify-content: flex-end; }
+  #history-detail-body .col-teams {
+    grid-area: teams; font-size: 0.9rem;
+    padding: 6px 0 8px; border-bottom: 1px solid var(--rule);
+    justify-content: center;
+  }
+  #history-detail-body .col-pred {
+    grid-area: pred; min-width: 0; text-align: center;
+    justify-content: center; padding: 4px 0 6px;
+  }
+  #history-detail-body .col-actual { grid-area: actual; justify-content: center; text-align: center; }
+  #history-detail-body .col-score { grid-area: score; justify-content: center; text-align: center; min-width: 0; }
+  #history-detail-body .col-status { grid-area: status; justify-content: center; text-align: center; }
+  
   .date-nav { margin-top: 10px; padding: 10px; gap: 10px; border-radius: 8px; }
   .date-info .date-label { font-size: 0.7rem; }
   .date-info .date-value { font-size: 0.82rem; }
@@ -2327,7 +2359,8 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
       "seq league"
       "teams teams"
       "double double"
-      "result status";
+      "result score"
+      "status status";
     grid-template-columns: 1fr 1fr;
   }
   #history-detail-body .col-seq { grid-area: seq; text-align: left; font-weight: 600; color: var(--accent); }
@@ -2385,6 +2418,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
     font-size: 0.72rem; color: var(--muted); margin-top: 4px;
   }
   #history-detail-body .col-actual { grid-area: result; }
+  #history-detail-body .col-score { grid-area: score; text-align: center; justify-content: center; }
   #history-detail-body .col-status { grid-area: status; justify-content: flex-end; }
 }
 </style>
@@ -8199,6 +8233,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
                   <th>对阵</th>
                   <th>预测双选</th>
                   <th>实际赛果</th>
+                  <th class="col-score">比分</th>
                   <th class="col-status">状态</th>
                 </tr>
               </thead>
@@ -12074,6 +12109,14 @@ function renderHistoryDetail(matches) {
     else if (m.actual_result === '客胜') resultClass = 'result-lose';
     
     var dcParts = (m.double_choice || '').split('+');
+
+    // 2026-11-04：历史详情新增「比分」列（紧随实际赛果）。缺失时显示「—」并附 title 说明，
+    // 不留空单元格；只认「数字:数字」，'-' / '' / null 一律按缺失处理。
+    var _sc = (m.score == null ? '' : String(m.score)).trim();
+    var _hasScore = /^[0-9]+:[0-9]+$/.test(_sc);
+    var scoreCell = _hasScore
+      ? '<span class="score-box">' + _sc + '</span>'
+      : '<span class="score-none" title="源限制·未回填">—</span>';
     
     var tr = document.createElement('tr');
     tr.className = rowClass;
@@ -12108,6 +12151,7 @@ function renderHistoryDetail(matches) {
       '<td class="col-actual">' +
         '<div class="actual-result ' + resultClass + '">' + (m.actual_result || '-') + '</div>' +
       '</td>' +
+      '<td class="col-score">' + scoreCell + '</td>' +
       '<td class="col-status">' +
         '<span class="s-badge ' + statusClass + '">' + statusText + '</span>' +
       '</td>';
