@@ -2267,6 +2267,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
       "seq league"
       "teams teams"
       "pred pred"
+      "odds odds"
       "status status"
       "actual actual";
     grid-template-columns: 1fr 1fr;
@@ -2356,6 +2357,12 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
     width: 100%;
   }
   
+  #review-body .col-odds {
+    grid-area: odds;
+    text-align: center;
+    padding: 2px 0 4px;
+  }
+  
   #review-body .col-actual {
     grid-area: actual;
     width: auto;
@@ -2382,6 +2389,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
       "seq league"
       "teams teams"
       "pred pred"
+      "odds odds"
       "actual score"
       "status status";
     grid-template-columns: 1fr 1fr;
@@ -2397,6 +2405,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
     grid-area: pred; min-width: 0; text-align: center;
     justify-content: center; padding: 4px 0 6px;
   }
+  #history-detail-body .col-odds { grid-area: odds; justify-content: center; text-align: center; padding: 2px 0 4px; }
   #history-detail-body .col-actual { grid-area: actual; justify-content: center; text-align: center; }
   #history-detail-body .col-score { grid-area: score; justify-content: center; text-align: center; min-width: 0; }
   #history-detail-body .col-status { grid-area: status; justify-content: center; text-align: center; }
@@ -8418,6 +8427,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
                 <th>联赛</th>
                 <th>对阵</th>
                 <th>预测双选</th>
+                <th title="赛前 SP 赔率 + 北单凯利 K">SP / 凯利</th>
                 <th>实际赛果</th>
                 <th class="col-status">状态</th>
               </tr>
@@ -8455,6 +8465,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             <div class="p2" style="width:45.0%"></div>
           </div>
         </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.46</span> <span class="odd "><i>平</i>3.87</span> <span class="odd highlight"><i>负</i>2.97</span> <span class="kelly-mini kelly-na">让球≥2·不可测</span></td>
         <td class="col-actual">
           <div class="actual-result result-draw">平局</div>
         </td>
@@ -8495,6 +8506,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             <div class="p2" style="width:32.0%"></div>
           </div>
         </td>
+        <td class="col-odds"><span class="odd "><i>胜</i>6.00</span> <span class="odd highlight"><i>平</i>3.80</span> <span class="odd highlight"><i>负</i>1.75</span> <span class="kelly-mini" title="北单凯利（不让球）：K3=威胜÷胜SP 0.750 · K1=威平÷平SP 0.868 · K0=威负÷负SP 0.989">K 0.75/0.87/0.99</span></td>
         <td class="col-actual">
           <div class="actual-result result-win">主胜</div>
         </td>
@@ -8535,6 +8547,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             <div class="p2" style="width:31.0%"></div>
           </div>
         </td>
+        <td class="col-odds"><span class="odd "><i>胜</i>6.12</span> <span class="odd highlight"><i>平</i>3.87</span> <span class="odd highlight"><i>负</i>1.72</span> <span class="kelly-mini" title="北单凯利（不让球）：K3=威胜÷胜SP 0.490 · K1=威平÷平SP 0.775 · K0=威负÷负SP 1.279">K 0.49/0.78/1.28</span></td>
         <td class="col-actual">
           <div class="actual-result result-lose">客胜</div>
         </td>
@@ -8575,6 +8588,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             <div class="p2" style="width:36.0%"></div>
           </div>
         </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>1.98</span> <span class="odd highlight"><i>平</i>3.57</span> <span class="odd "><i>负</i>4.62</span> <span class="kelly-mini" title="北单凯利（不让球）：K3=威胜÷胜SP 1.202 · K1=威平÷平SP 0.840 · K0=威负÷负SP 0.584">K 1.20/0.84/0.58</span></td>
         <td class="col-actual">
           <div class="actual-result result-lose">客胜</div>
         </td>
@@ -8615,6 +8629,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             <div class="p2" style="width:26.0%"></div>
           </div>
         </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>1.62</span> <span class="odd highlight"><i>平</i>4.72</span> <span class="odd "><i>负</i>5.74</span> <span class="kelly-mini" title="北单凯利（不让球）：K3=威胜÷胜SP 1.296 · K1=威平÷平SP 0.636 · K0=威负÷负SP 0.540">K 1.30/0.64/0.54</span></td>
         <td class="col-actual">
           <div class="actual-result result-win">主胜</div>
         </td>
@@ -8655,6 +8670,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             <div class="p2" style="width:47.0%"></div>
           </div>
         </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.65</span> <span class="odd highlight"><i>平</i>2.99</span> <span class="odd "><i>负</i>3.45</span> <span class="kelly-mini" title="北单凯利（不让球）：K3=威胜÷胜SP 0.992 · K1=威平÷平SP 0.970 · K0=威负÷负SP 0.783">K 0.99/0.97/0.78</span></td>
         <td class="col-actual">
           <div class="actual-result result-win">主胜</div>
         </td>
@@ -8695,6 +8711,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             <div class="p2" style="width:35.0%"></div>
           </div>
         </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>3.75</span> <span class="odd "><i>平</i>4.17</span> <span class="odd highlight"><i>负</i>2.02</span> <span class="kelly-mini" title="北单凯利（不让球）：K3=威胜÷胜SP 0.701 · K1=威平÷平SP 0.743 · K0=威负÷负SP 1.139">K 0.70/0.74/1.14</span></td>
         <td class="col-actual">
           <div class="actual-result result-lose">客胜</div>
         </td>
@@ -8735,6 +8752,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             <div class="p2" style="width:40.0%"></div>
           </div>
         </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>3.36</span> <span class="odd "><i>平</i>3.93</span> <span class="odd highlight"><i>负</i>2.22</span> <span class="kelly-mini" title="北单凯利（不让球）：K3=威胜÷胜SP 0.640 · K1=威平÷平SP 0.763 · K0=威负÷负SP 1.486">K 0.64/0.76/1.49</span></td>
         <td class="col-actual">
           <div class="actual-result result-win">主胜</div>
         </td>
@@ -8775,6 +8793,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             <div class="p2" style="width:29.0%"></div>
           </div>
         </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>1.99</span> <span class="odd "><i>平</i>3.42</span> <span class="odd highlight"><i>负</i>4.84</span> <span class="kelly-mini" title="主队让1球：K3=主胜赔率−主胜赔率÷让负SP（1.25−1.25÷4.84）">让K 0.99</span></td>
         <td class="col-actual">
           <div class="actual-result result-lose">客胜</div>
         </td>
@@ -8815,6 +8834,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             <div class="p2" style="width:50.0%"></div>
           </div>
         </td>
+        <td class="col-odds"><span class="odd "><i>胜</i>3.32</span> <span class="odd highlight"><i>平</i>2.88</span> <span class="odd highlight"><i>负</i>2.84</span> <span class="kelly-mini" title="北单凯利（不让球）：K3=威胜÷胜SP 0.557 · K1=威平÷平SP 1.076 · K0=威负÷负SP 1.408">K 0.56/1.08/1.41</span></td>
         <td class="col-actual">
           <div class="actual-result result-lose">客胜</div>
         </td>
@@ -8855,6 +8875,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             <div class="p2" style="width:42.0%"></div>
           </div>
         </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.59</span> <span class="odd "><i>平</i>3.03</span> <span class="odd highlight"><i>负</i>3.51</span> <span class="kelly-mini" title="客队让1球：K0=客胜赔率−客胜赔率÷让胜SP（1.95−1.95÷2.59）">让K 1.20</span></td>
         <td class="col-actual">
           <div class="actual-result result-lose">客胜</div>
         </td>
@@ -8895,6 +8916,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             <div class="p2" style="width:36.0%"></div>
           </div>
         </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>1.87</span> <span class="odd highlight"><i>平</i>3.34</span> <span class="odd "><i>负</i>5.96</span> <span class="kelly-mini" title="北单凯利（不让球）：K3=威胜÷胜SP 0.963 · K1=威平÷平SP 0.868 · K0=威负÷负SP 0.839">K 0.96/0.87/0.84</span></td>
         <td class="col-actual">
           <div class="actual-result result-win">主胜</div>
         </td>
@@ -8935,6 +8957,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             <div class="p2" style="width:35.0%"></div>
           </div>
         </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.08</span> <span class="odd "><i>平</i>3.74</span> <span class="odd highlight"><i>负</i>3.93</span> <span class="kelly-mini kelly-na">让球≥2·不可测</span></td>
         <td class="col-actual">
           <div class="actual-result result-win">主胜</div>
         </td>
@@ -8975,6 +8998,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             <div class="p2" style="width:49.0%"></div>
           </div>
         </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.99</span> <span class="odd "><i>平</i>3.07</span> <span class="odd highlight"><i>负</i>2.93</span> <span class="kelly-mini" title="主队让1球：K3=主胜赔率−主胜赔率÷让负SP（1.40−1.40÷2.93）">让K 0.92</span></td>
         <td class="col-actual">
           <div class="actual-result result-win">主胜</div>
         </td>
@@ -9015,6 +9039,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             <div class="p2" style="width:46.0%"></div>
           </div>
         </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.56</span> <span class="odd "><i>平</i>3.64</span> <span class="odd highlight"><i>负</i>2.98</span> <span class="kelly-mini kelly-na">让球≥2·不可测</span></td>
         <td class="col-actual">
           <div class="actual-result result-draw">平局</div>
         </td>
@@ -9055,6 +9080,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             <div class="p2" style="width:47.0%"></div>
           </div>
         </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.67</span> <span class="odd "><i>平</i>3.46</span> <span class="odd highlight"><i>负</i>2.95</span> <span class="kelly-mini kelly-na">让球≥2·不可测</span></td>
         <td class="col-actual">
           <div class="actual-result result-lose">客胜</div>
         </td>
@@ -9095,6 +9121,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             <div class="p2" style="width:41.0%"></div>
           </div>
         </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.44</span> <span class="odd "><i>平</i>3.22</span> <span class="odd highlight"><i>负</i>3.55</span> <span class="kelly-mini" title="客队让1球：K0=客胜赔率−客胜赔率÷让胜SP（1.67−1.67÷2.44）">让K 0.99</span></td>
         <td class="col-actual">
           <div class="actual-result result-win">主胜</div>
         </td>
@@ -9135,6 +9162,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             <div class="p2" style="width:46.0%"></div>
           </div>
         </td>
+        <td class="col-odds"><span class="odd "><i>胜</i>3.28</span> <span class="odd highlight"><i>平</i>3.11</span> <span class="odd highlight"><i>负</i>2.66</span> <span class="kelly-mini" title="主队让1球：K3=主胜赔率−主胜赔率÷让负SP（1.62−1.62÷2.66）">让K 1.01</span></td>
         <td class="col-actual">
           <div class="actual-result result-lose">客胜</div>
         </td>
@@ -9175,6 +9203,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             <div class="p2" style="width:32.0%"></div>
           </div>
         </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>2.00</span> <span class="odd "><i>平</i>3.80</span> <span class="odd highlight"><i>负</i>4.21</span> <span class="kelly-mini" title="主队让1球：K3=主胜赔率−主胜赔率÷让负SP（1.44−1.44÷4.21）">让K 1.10</span></td>
         <td class="col-actual">
           <div class="actual-result result-draw">平局</div>
         </td>
@@ -9215,6 +9244,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             <div class="p2" style="width:39.0%"></div>
           </div>
         </td>
+        <td class="col-odds"><span class="odd highlight"><i>胜</i>3.46</span> <span class="odd "><i>平</i>3.92</span> <span class="odd highlight"><i>负</i>2.19</span> <span class="kelly-mini" title="客队让1球：K0=客胜赔率−客胜赔率÷让胜SP（1.40−1.40÷3.46）">让K 1.00</span></td>
         <td class="col-actual">
           <div class="actual-result result-draw">平局</div>
         </td>
@@ -10691,6 +10721,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
                   <th>联赛</th>
                   <th>对阵</th>
                   <th>预测双选</th>
+                  <th title="赛前 SP 赔率 + 北单凯利 K">SP / 凯利</th>
                   <th>实际赛果</th>
                   <th class="col-score">比分</th>
                   <th class="col-status">状态</th>
@@ -14803,6 +14834,50 @@ function isKellyTrap(m) {
   return false;
 }
 
+function reviewOddsCell(m) {
+  // 2026-11-14：历史详情补「SP / 凯利」列，口径与当日复盘、预测表 SP 列一致。
+  // 赔率取 sp_*（缺失回退 odds_*）；K 用 wh_odds 现算（历史存档无 kelly_structure）。
+  var dc = (m.double_choice || '').split('+');
+  var src = ['sp_win', 'sp_draw', 'sp_lose'];
+  var alt = ['odds_win', 'odds_draw', 'odds_lose'];
+  var vals = [];
+  for (var i = 0; i < 3; i++) {
+    var v = m[src[i]];
+    if (v === null || v === undefined || v === '') v = m[alt[i]];
+    v = parseFloat(v);
+    vals.push(isFinite(v) && v > 0 ? v : 0);
+  }
+  var labels = [['主胜', '胜'], ['平局', '平'], ['客胜', '负']];
+  var html = '';
+  for (var j = 0; j < 3; j++) {
+    var hl = dc.indexOf(labels[j][0]) !== -1 ? ' highlight' : '';
+    html += '<span class="odd' + hl + '"><i>' + labels[j][1] + '</i>' +
+            (vals[j] ? vals[j].toFixed(2) : '—') + '</span> ';
+  }
+  var hc = parseInt(m.handicap || 0, 10) || 0;
+  var wh = m.wh_odds || {};
+  var ww = parseFloat(wh.win), wd = parseFloat(wh.draw), wl = parseFloat(wh.lose);
+  var ow = vals[0], od = vals[1], ol = vals[2];
+  if (hc === 0 && ww > 0 && wd > 0 && wl > 0 && ow > 0 && od > 0 && ol > 0) {
+    html += '<span class="kelly-mini" title="北单凯利（不让球）：K3=威胜÷胜SP ' + (ww / ow).toFixed(3) +
+            ' · K1=威平÷平SP ' + (wd / od).toFixed(3) + ' · K0=威负÷负SP ' + (wl / ol).toFixed(3) +
+            '">K ' + (ww / ow).toFixed(2) + '/' + (wd / od).toFixed(2) + '/' + (wl / ol).toFixed(2) + '</span>';
+  } else if (hc === -1 && ww > 0 && ol > 0) {
+    var k3 = ww - ww / ol;
+    html += '<span class="kelly-mini" title="主队让1球：K3=主胜赔率−主胜赔率÷让负SP（' +
+            ww.toFixed(2) + '−' + ww.toFixed(2) + '÷' + ol.toFixed(2) + '）">让K ' + k3.toFixed(2) + '</span>';
+  } else if (hc === 1 && wl > 0 && ow > 0) {
+    var k0 = wl - wl / ow;
+    html += '<span class="kelly-mini" title="客队让1球：K0=客胜赔率−客胜赔率÷让胜SP（' +
+            wl.toFixed(2) + '−' + wl.toFixed(2) + '÷' + ow.toFixed(2) + '）">让K ' + k0.toFixed(2) + '</span>';
+  } else if (Math.abs(hc) >= 2) {
+    html += '<span class="kelly-mini kelly-na">让球≥2·不可测</span>';
+  } else {
+    html += '<span class="kelly-mini kelly-na">缺参考欧赔</span>';
+  }
+  return html;
+}
+
 function renderHistoryDetail(matches) {
   var tbody = document.getElementById('history-detail-body');
   tbody.innerHTML = '';
@@ -14861,6 +14936,7 @@ function renderHistoryDetail(matches) {
         '<div class="pred-prob">' + m.p1 + '% + ' + m.p2 + '% = ' + m.total_p + '%</div>' +
         (isTrap ? '<div class="trap-badge">&#9888; 凯利陷阱·降信心</div>' : '') +
       '</td>' +
+      '<td class="col-odds">' + reviewOddsCell(m) + '</td>' +
       '<td class="col-actual">' +
         '<div class="actual-result ' + resultClass + '">' + (m.actual_result || '-') + '</div>' +
       '</td>' +
