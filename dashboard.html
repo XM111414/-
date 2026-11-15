@@ -1086,6 +1086,21 @@ tbody tr.match-miss:hover { background: #fee2e2; }
 
 .col-seq { width: 40px; font-weight: 700; color: var(--muted); text-align: center; }
 .col-time { width: 48px; color: var(--muted); font-size: 0.68rem; text-align: center; }
+/* 已开赛标记（2026-11-15）：服务端给初始状态，前端按 data-ko 时间戳每 30 秒刷新 */
+.started-badge {
+  display: inline-block;
+  margin-right: 5px;
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: #fee2e2;
+  color: #b91c1c;
+  font-size: 0.6rem;
+  font-weight: 700;
+  line-height: 1.4;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+tr.is-started .col-time { color: #b91c1c; font-weight: 700; }
 
 /* 修复UI错乱(2026-10-07)：桌面端td必须保持table-cell，不能display:flex，
    否则该列脱离表格列框导致联赛/对阵两列错位合并。内部元素用inline-block横排。 */
@@ -2928,7 +2943,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="grade-badge b">B级</span>
         </td>
         <td class="col-teams">
-          <span class="home">通德拉</span>
+          <span class="started-badge" data-ko="1794740100000" title="开赛时间 11-15 18:55（北京时间）" style="display:none">已开赛</span><span class="home">通德拉</span>
           <span class="vs-wrap">
             <span class="vs-handicap">0</span>
             <span class="vs">vs</span>
@@ -2979,7 +2994,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="grade-badge b">B级</span>
         </td>
         <td class="col-teams">
-          <span class="home">阿马兰蒂</span>
+          <span class="started-badge" data-ko="1794740100000" title="开赛时间 11-15 18:55（北京时间）" style="display:none">已开赛</span><span class="home">阿马兰蒂</span>
           <span class="vs-wrap">
             <span class="vs-handicap">0</span>
             <span class="vs">vs</span>
@@ -3030,7 +3045,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="grade-badge b">B级</span>
         </td>
         <td class="col-teams">
-          <span class="home">特内里费</span>
+          <span class="started-badge" data-ko="1794747300000" title="开赛时间 11-15 20:55（北京时间）" style="display:none">已开赛</span><span class="home">特内里费</span>
           <span class="vs-wrap">
             <span class="vs-handicap">0</span>
             <span class="vs">vs</span>
@@ -3083,7 +3098,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="grade-badge b">B级</span>
         </td>
         <td class="col-teams">
-          <span class="home">拉脱维亚</span>
+          <span class="started-badge" data-ko="1794750900000" title="开赛时间 11-15 21:55（北京时间）" style="display:none">已开赛</span><span class="home">拉脱维亚</span>
           <span class="vs-wrap">
             <span class="vs-handicap">0</span>
             <span class="vs">vs</span>
@@ -3136,7 +3151,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="grade-badge b">B级</span>
         </td>
         <td class="col-teams">
-          <span class="home">塞浦路斯</span>
+          <span class="started-badge" data-ko="1794750900000" title="开赛时间 11-15 21:55（北京时间）" style="display:none">已开赛</span><span class="home">塞浦路斯</span>
           <span class="vs-wrap">
             <span class="vs-handicap">0</span>
             <span class="vs">vs</span>
@@ -3189,7 +3204,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="grade-badge b">B级</span>
         </td>
         <td class="col-teams">
-          <span class="home">波尔蒂芒斯</span>
+          <span class="started-badge" data-ko="1794750900000" title="开赛时间 11-15 21:55（北京时间）" style="display:none">已开赛</span><span class="home">波尔蒂芒斯</span>
           <span class="vs-wrap">
             <span class="vs-handicap">0</span>
             <span class="vs">vs</span>
@@ -3240,7 +3255,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="grade-badge b">B级</span>
         </td>
         <td class="col-teams">
-          <span class="home">格拉纳达</span>
+          <span class="started-badge" data-ko="1794755400000" title="开赛时间 11-15 23:10（北京时间）" style="display:none">已开赛</span><span class="home">格拉纳达</span>
           <span class="vs-wrap">
             <span class="vs-handicap">0</span>
             <span class="vs">vs</span>
@@ -3293,7 +3308,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="grade-badge b">B级</span>
         </td>
         <td class="col-teams">
-          <span class="home">佩纳菲耶尔</span>
+          <span class="started-badge" data-ko="1794756300000" title="开赛时间 11-15 23:25（北京时间）" style="display:none">已开赛</span><span class="home">佩纳菲耶尔</span>
           <span class="vs-wrap">
             <span class="vs-handicap">0</span>
             <span class="vs">vs</span>
@@ -3344,7 +3359,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="grade-badge b">B级</span>
         </td>
         <td class="col-teams">
-          <span class="home">白俄罗斯</span>
+          <span class="started-badge" data-ko="1794761700000" title="开赛时间 11-16 00:55（北京时间）" style="display:none">已开赛</span><span class="home">白俄罗斯</span>
           <span class="vs-wrap">
             <span class="vs-handicap">0</span>
             <span class="vs">vs</span>
@@ -3397,7 +3412,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="grade-badge b">B级</span>
         </td>
         <td class="col-teams">
-          <span class="home">埃瓦尔</span>
+          <span class="started-badge" data-ko="1794763500000" title="开赛时间 11-16 01:25（北京时间）" style="display:none">已开赛</span><span class="home">埃瓦尔</span>
           <span class="vs-wrap">
             <span class="vs-handicap">-1</span>
             <span class="vs">vs</span>
@@ -3450,7 +3465,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="grade-badge b">B级</span>
         </td>
         <td class="col-teams">
-          <span class="home">埃尔登斯</span>
+          <span class="started-badge" data-ko="1794763500000" title="开赛时间 11-16 01:25（北京时间）" style="display:none">已开赛</span><span class="home">埃尔登斯</span>
           <span class="vs-wrap">
             <span class="vs-handicap">0</span>
             <span class="vs">vs</span>
@@ -3503,7 +3518,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="grade-badge b">B级</span>
         </td>
         <td class="col-teams">
-          <span class="home">雷克索斯</span>
+          <span class="started-badge" data-ko="1794765300000" title="开赛时间 11-16 01:55（北京时间）" style="display:none">已开赛</span><span class="home">雷克索斯</span>
           <span class="vs-wrap">
             <span class="vs-handicap">0</span>
             <span class="vs">vs</span>
@@ -3554,7 +3569,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="grade-badge b">B级</span>
         </td>
         <td class="col-teams">
-          <span class="home">比利时</span>
+          <span class="started-badge" data-ko="1794771600000" title="开赛时间 11-16 03:40（北京时间）" style="display:none">已开赛</span><span class="home">比利时</span>
           <span class="vs-wrap">
             <span class="vs-handicap">0</span>
             <span class="vs">vs</span>
@@ -3607,7 +3622,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="grade-badge b">B级</span>
         </td>
         <td class="col-teams">
-          <span class="home">克罗地亚</span>
+          <span class="started-badge" data-ko="1794771600000" title="开赛时间 11-16 03:40（北京时间）" style="display:none">已开赛</span><span class="home">克罗地亚</span>
           <span class="vs-wrap">
             <span class="vs-handicap">-1</span>
             <span class="vs">vs</span>
@@ -3660,7 +3675,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="grade-badge b">B级</span>
         </td>
         <td class="col-teams">
-          <span class="home">西班牙</span>
+          <span class="started-badge" data-ko="1794771600000" title="开赛时间 11-16 03:40（北京时间）" style="display:none">已开赛</span><span class="home">西班牙</span>
           <span class="vs-wrap">
             <span class="vs-handicap">-1</span>
             <span class="vs">vs</span>
@@ -3770,7 +3785,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="grade-badge b">B级</span>
         </td>
         <td class="col-teams">
-          <span class="home">通德拉</span>
+          <span class="started-badge" data-ko="1794740100000" title="开赛时间 11-15 18:55（北京时间）" style="display:none">已开赛</span><span class="home">通德拉</span>
           <span class="vs-wrap">
             <span class="vs-handicap">0</span>
             <span class="vs">vs</span>
@@ -3817,7 +3832,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="grade-badge b">B级</span>
         </td>
         <td class="col-teams">
-          <span class="home">阿马兰蒂</span>
+          <span class="started-badge" data-ko="1794740100000" title="开赛时间 11-15 18:55（北京时间）" style="display:none">已开赛</span><span class="home">阿马兰蒂</span>
           <span class="vs-wrap">
             <span class="vs-handicap">0</span>
             <span class="vs">vs</span>
@@ -3864,7 +3879,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="grade-badge b">B级</span>
         </td>
         <td class="col-teams">
-          <span class="home">塞浦路斯</span>
+          <span class="started-badge" data-ko="1794750900000" title="开赛时间 11-15 21:55（北京时间）" style="display:none">已开赛</span><span class="home">塞浦路斯</span>
           <span class="vs-wrap">
             <span class="vs-handicap">0</span>
             <span class="vs">vs</span>
@@ -3913,7 +3928,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="grade-badge b">B级</span>
         </td>
         <td class="col-teams">
-          <span class="home">格拉纳达</span>
+          <span class="started-badge" data-ko="1794755400000" title="开赛时间 11-15 23:10（北京时间）" style="display:none">已开赛</span><span class="home">格拉纳达</span>
           <span class="vs-wrap">
             <span class="vs-handicap">0</span>
             <span class="vs">vs</span>
@@ -3962,7 +3977,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="grade-badge b">B级</span>
         </td>
         <td class="col-teams">
-          <span class="home">佩纳菲耶尔</span>
+          <span class="started-badge" data-ko="1794756300000" title="开赛时间 11-15 23:25（北京时间）" style="display:none">已开赛</span><span class="home">佩纳菲耶尔</span>
           <span class="vs-wrap">
             <span class="vs-handicap">0</span>
             <span class="vs">vs</span>
@@ -4009,7 +4024,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="grade-badge b">B级</span>
         </td>
         <td class="col-teams">
-          <span class="home">白俄罗斯</span>
+          <span class="started-badge" data-ko="1794761700000" title="开赛时间 11-16 00:55（北京时间）" style="display:none">已开赛</span><span class="home">白俄罗斯</span>
           <span class="vs-wrap">
             <span class="vs-handicap">0</span>
             <span class="vs">vs</span>
@@ -4058,7 +4073,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="grade-badge b">B级</span>
         </td>
         <td class="col-teams">
-          <span class="home">雷克索斯</span>
+          <span class="started-badge" data-ko="1794765300000" title="开赛时间 11-16 01:55（北京时间）" style="display:none">已开赛</span><span class="home">雷克索斯</span>
           <span class="vs-wrap">
             <span class="vs-handicap">0</span>
             <span class="vs">vs</span>
@@ -4105,7 +4120,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="grade-badge b">B级</span>
         </td>
         <td class="col-teams">
-          <span class="home">克罗地亚</span>
+          <span class="started-badge" data-ko="1794771600000" title="开赛时间 11-16 03:40（北京时间）" style="display:none">已开赛</span><span class="home">克罗地亚</span>
           <span class="vs-wrap">
             <span class="vs-handicap">-1</span>
             <span class="vs">vs</span>
@@ -4265,7 +4280,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="grade-badge b">B级</span>
         </td>
         <td class="col-teams">
-          <span class="home">通德拉</span>
+          <span class="started-badge" data-ko="1794740100000" title="开赛时间 11-15 18:55（北京时间）" style="display:none">已开赛</span><span class="home">通德拉</span>
           <span class="vs-wrap">
             <span class="vs-handicap">0</span>
             <span class="vs">vs</span>
@@ -4291,7 +4306,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="grade-badge b">B级</span>
         </td>
         <td class="col-teams">
-          <span class="home">阿马兰蒂</span>
+          <span class="started-badge" data-ko="1794740100000" title="开赛时间 11-15 18:55（北京时间）" style="display:none">已开赛</span><span class="home">阿马兰蒂</span>
           <span class="vs-wrap">
             <span class="vs-handicap">0</span>
             <span class="vs">vs</span>
@@ -4317,7 +4332,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="grade-badge b">B级</span>
         </td>
         <td class="col-teams">
-          <span class="home">特内里费</span>
+          <span class="started-badge" data-ko="1794747300000" title="开赛时间 11-15 20:55（北京时间）" style="display:none">已开赛</span><span class="home">特内里费</span>
           <span class="vs-wrap">
             <span class="vs-handicap">0</span>
             <span class="vs">vs</span>
@@ -4343,7 +4358,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="grade-badge b">B级</span>
         </td>
         <td class="col-teams">
-          <span class="home">拉脱维亚</span>
+          <span class="started-badge" data-ko="1794750900000" title="开赛时间 11-15 21:55（北京时间）" style="display:none">已开赛</span><span class="home">拉脱维亚</span>
           <span class="vs-wrap">
             <span class="vs-handicap">0</span>
             <span class="vs">vs</span>
@@ -4369,7 +4384,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="grade-badge b">B级</span>
         </td>
         <td class="col-teams">
-          <span class="home">塞浦路斯</span>
+          <span class="started-badge" data-ko="1794750900000" title="开赛时间 11-15 21:55（北京时间）" style="display:none">已开赛</span><span class="home">塞浦路斯</span>
           <span class="vs-wrap">
             <span class="vs-handicap">0</span>
             <span class="vs">vs</span>
@@ -4395,7 +4410,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="grade-badge b">B级</span>
         </td>
         <td class="col-teams">
-          <span class="home">波尔蒂芒斯</span>
+          <span class="started-badge" data-ko="1794750900000" title="开赛时间 11-15 21:55（北京时间）" style="display:none">已开赛</span><span class="home">波尔蒂芒斯</span>
           <span class="vs-wrap">
             <span class="vs-handicap">0</span>
             <span class="vs">vs</span>
@@ -4421,7 +4436,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="grade-badge b">B级</span>
         </td>
         <td class="col-teams">
-          <span class="home">格拉纳达</span>
+          <span class="started-badge" data-ko="1794755400000" title="开赛时间 11-15 23:10（北京时间）" style="display:none">已开赛</span><span class="home">格拉纳达</span>
           <span class="vs-wrap">
             <span class="vs-handicap">0</span>
             <span class="vs">vs</span>
@@ -4447,7 +4462,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="grade-badge b">B级</span>
         </td>
         <td class="col-teams">
-          <span class="home">佩纳菲耶尔</span>
+          <span class="started-badge" data-ko="1794756300000" title="开赛时间 11-15 23:25（北京时间）" style="display:none">已开赛</span><span class="home">佩纳菲耶尔</span>
           <span class="vs-wrap">
             <span class="vs-handicap">0</span>
             <span class="vs">vs</span>
@@ -4473,7 +4488,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="grade-badge b">B级</span>
         </td>
         <td class="col-teams">
-          <span class="home">白俄罗斯</span>
+          <span class="started-badge" data-ko="1794761700000" title="开赛时间 11-16 00:55（北京时间）" style="display:none">已开赛</span><span class="home">白俄罗斯</span>
           <span class="vs-wrap">
             <span class="vs-handicap">0</span>
             <span class="vs">vs</span>
@@ -4499,7 +4514,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="grade-badge b">B级</span>
         </td>
         <td class="col-teams">
-          <span class="home">埃瓦尔</span>
+          <span class="started-badge" data-ko="1794763500000" title="开赛时间 11-16 01:25（北京时间）" style="display:none">已开赛</span><span class="home">埃瓦尔</span>
           <span class="vs-wrap">
             <span class="vs-handicap">-1</span>
             <span class="vs">vs</span>
@@ -4525,7 +4540,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="grade-badge b">B级</span>
         </td>
         <td class="col-teams">
-          <span class="home">埃尔登斯</span>
+          <span class="started-badge" data-ko="1794763500000" title="开赛时间 11-16 01:25（北京时间）" style="display:none">已开赛</span><span class="home">埃尔登斯</span>
           <span class="vs-wrap">
             <span class="vs-handicap">0</span>
             <span class="vs">vs</span>
@@ -4551,7 +4566,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="grade-badge b">B级</span>
         </td>
         <td class="col-teams">
-          <span class="home">雷克索斯</span>
+          <span class="started-badge" data-ko="1794765300000" title="开赛时间 11-16 01:55（北京时间）" style="display:none">已开赛</span><span class="home">雷克索斯</span>
           <span class="vs-wrap">
             <span class="vs-handicap">0</span>
             <span class="vs">vs</span>
@@ -4577,7 +4592,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="grade-badge b">B级</span>
         </td>
         <td class="col-teams">
-          <span class="home">比利时</span>
+          <span class="started-badge" data-ko="1794771600000" title="开赛时间 11-16 03:40（北京时间）" style="display:none">已开赛</span><span class="home">比利时</span>
           <span class="vs-wrap">
             <span class="vs-handicap">0</span>
             <span class="vs">vs</span>
@@ -4603,7 +4618,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="grade-badge b">B级</span>
         </td>
         <td class="col-teams">
-          <span class="home">克罗地亚</span>
+          <span class="started-badge" data-ko="1794771600000" title="开赛时间 11-16 03:40（北京时间）" style="display:none">已开赛</span><span class="home">克罗地亚</span>
           <span class="vs-wrap">
             <span class="vs-handicap">-1</span>
             <span class="vs">vs</span>
@@ -4629,7 +4644,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
           <span class="grade-badge b">B级</span>
         </td>
         <td class="col-teams">
-          <span class="home">西班牙</span>
+          <span class="started-badge" data-ko="1794771600000" title="开赛时间 11-16 03:40（北京时间）" style="display:none">已开赛</span><span class="home">西班牙</span>
           <span class="vs-wrap">
             <span class="vs-handicap">-1</span>
             <span class="vs">vs</span>
@@ -13307,6 +13322,25 @@ function filterOuPred() {
     });
   });
 })();
+
+// ===== 已开赛标记（2026-11-15）=====
+// 页面是静态快照；开赛状态按 data-ko（开赛时间戳）在浏览器端实时判断，
+// 与整页刷新解耦：两次刷新之间跨过开赛时间也会自动切换。
+function updateStartedBadges() {
+  var now = Date.now();
+  document.querySelectorAll('.started-badge[data-ko]').forEach(function(el) {
+    var ko = parseInt(el.getAttribute('data-ko'), 10) || 0;
+    var on = ko > 0 && now >= ko;
+    el.style.display = on ? '' : 'none';
+    var tr = el.closest('tr');
+    if (tr) {
+      if (on) tr.classList.add('is-started');
+      else tr.classList.remove('is-started');
+    }
+  });
+}
+updateStartedBadges();
+setInterval(updateStartedBadges, 30000);
 
 // ===== 市场结构卡片弹层（2026-11-01）=====
 
