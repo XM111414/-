@@ -2306,14 +2306,14 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
   #pred-all-body .col-status .f-badge { font-size: 0.62rem; padding: 1px 6px; }
   #pred-all-body .col-status .f-reason { font-size: 0.68rem; line-height: 1.35; text-align: left; }
   
-  /* 复盘卡片布局（2026-11-19 紧凑版：头部并入开赛时间，赛果与状态同行） */
+  /* 复盘卡片布局（2026-11-19 紧凑版：头部并入开赛时间，赛果/比分/状态同行） */
   #review-body tr {
     grid-template-areas:
       "seq time league"
       "teams teams teams"
       "pred pred pred"
       "odds odds odds"
-      "actual status status";
+      "actual score status";
     grid-template-columns: auto auto minmax(0, 1fr);
     padding: 8px 10px;
     margin-bottom: 8px;
@@ -2432,6 +2432,20 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
     padding: 4px 14px;
     font-size: 0.82rem;
   }
+  
+  /* 复盘比分（2026-11-19）：与赛果、状态同排，紧凑展示 */
+  #review-body .col-score {
+    grid-area: score;
+    justify-content: center;
+    text-align: center;
+    min-width: 0;
+  }
+  #review-body .col-score .score-box {
+    font-size: 0.78rem;
+    padding: 1px 6px;
+    background: transparent;
+  }
+  #review-body .col-score .score-none { color: var(--muted); font-size: 0.78rem; }
   
   #review-body .col-status {
     grid-area: status;
@@ -4181,6 +4195,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
                 <th>预测双选</th>
                 <th title="赛前 SP 赔率 + 北单凯利 K">SP / 凯利</th>
                 <th>实际赛果</th>
+                <th class="col-score">比分</th>
                 <th class="col-status">状态</th>
               </tr>
             </thead>
@@ -4222,6 +4237,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-actual">
           <div class="actual-result result-lose">客胜</div>
         </td>
+        <td class="col-score"><span class="score-box">0:7</span></td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
           
@@ -4264,6 +4280,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-actual">
           <div class="actual-result result-draw">平局</div>
         </td>
+        <td class="col-score"><span class="score-box">2:2</span></td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
           
@@ -4306,6 +4323,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-actual">
           <div class="actual-result result-lose">客胜</div>
         </td>
+        <td class="col-score"><span class="score-box">1:2</span></td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
           
@@ -4348,6 +4366,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-actual">
           <div class="actual-result result-draw">平局</div>
         </td>
+        <td class="col-score"><span class="score-box">0:1</span></td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
           
@@ -4390,6 +4409,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-actual">
           <div class="actual-result result-draw">平局</div>
         </td>
+        <td class="col-score"><span class="score-box">1:1</span></td>
         <td class="col-status">
           <span class="s-badge miss">✗ 未中</span>
           
@@ -4432,6 +4452,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-actual">
           <div class="actual-result result-lose">客胜</div>
         </td>
+        <td class="col-score"><span class="score-box">2:3</span></td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
           
@@ -4474,6 +4495,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-actual">
           <div class="actual-result result-win">主胜</div>
         </td>
+        <td class="col-score"><span class="score-box">2:1</span></td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
           
@@ -4516,6 +4538,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-actual">
           <div class="actual-result result-win">主胜</div>
         </td>
+        <td class="col-score"><span class="score-box">3:0</span></td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
           
@@ -4558,6 +4581,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-actual">
           <div class="actual-result result-win">主胜</div>
         </td>
+        <td class="col-score"><span class="score-box">2:1</span></td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
           
@@ -4600,6 +4624,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-actual">
           <div class="actual-result result-lose">客胜</div>
         </td>
+        <td class="col-score"><span class="score-box">2:3</span></td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
           
@@ -4642,6 +4667,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-actual">
           <div class="actual-result result-draw">平局</div>
         </td>
+        <td class="col-score"><span class="score-box">2:3</span></td>
         <td class="col-status">
           <span class="s-badge miss">✗ 未中</span>
           
@@ -4684,6 +4710,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-actual">
           <div class="actual-result result-draw">平局</div>
         </td>
+        <td class="col-score"><span class="score-box">1:1</span></td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
           
@@ -4726,6 +4753,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-actual">
           <div class="actual-result result-draw">平局</div>
         </td>
+        <td class="col-score"><span class="score-box">1:1</span></td>
         <td class="col-status">
           <span class="s-badge miss">✗ 未中</span>
           
@@ -4768,6 +4796,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-actual">
           <div class="actual-result result-win">主胜</div>
         </td>
+        <td class="col-score"><span class="score-box">3:0</span></td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
           
@@ -4810,6 +4839,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-actual">
           <div class="actual-result result-draw">平局</div>
         </td>
+        <td class="col-score"><span class="score-box">0:0</span></td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
           
@@ -4852,6 +4882,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-actual">
           <div class="actual-result result-win">主胜</div>
         </td>
+        <td class="col-score"><span class="score-box">7:0</span></td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
           
@@ -4894,6 +4925,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
         <td class="col-actual">
           <div class="actual-result result-lose">客胜</div>
         </td>
+        <td class="col-score"><span class="score-box">2:0</span></td>
         <td class="col-status">
           <span class="s-badge hit">✓ 命中</span>
           
