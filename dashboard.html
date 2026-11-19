@@ -2354,10 +2354,25 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
     width: auto;
   }
   
+  /* 复盘双选概率（2026-11-19）：chips、概率条改为纵向居中排列，
+     去掉与 chip 重复的「47.8% + 23.7% = 71.5%」文本，避免横排错位。 */
   #review-body .col-pred {
     grid-area: pred;
-    min-width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
     padding: 0;
+    width: 100%;
+    min-width: 0;
+  }
+  #review-body .col-pred .pred-choice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    width: 100%;
   }
   
   #review-body .col-pred .pred-choice-text {
@@ -2369,7 +2384,7 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
     align-items: center;
     justify-content: center;
     gap: 6px;
-    width: 100%;
+    width: auto;
   }
   
   #review-body .col-pred .review-chips .chip {
@@ -2408,9 +2423,15 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
     display: inline-block !important;
   }
   
+  /* 百分比已显示在 chip 内，移动端不再重复整行「x% + y% = z%」 */
+  #review-body .col-pred .pred-prob {
+    display: none !important;
+  }
+  
   #review-body .col-pred .prob-bar {
-    width: 100%;
-    margin-top: 2px;
+    width: 126px;
+    height: 4px;
+    margin: 2px auto 0;
   }
   
   #review-body .col-odds {
