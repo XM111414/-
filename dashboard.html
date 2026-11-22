@@ -16542,18 +16542,13 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
               <option value="all">全部</option>
               <option value="hit">命中</option>
               <option value="miss">未中</option>
-              <option value="uphigh">爆冷高危（4★+）</option>
+              <option value="up5">爆冷 5★</option>
+              <option value="up4">爆冷 4★</option>
+              <option value="up3">爆冷 3★</option>
+              <option value="up2">爆冷 2★</option>
+              <option value="up1">爆冷 1★</option>
               <option value="uphit">爆冷猜中</option>
               <option value="trap">凯利陷阱</option>
-            </select>
-            <label>爆冷星级：</label>
-            <select id="h-stars" onchange="filterHistoryDetail()">
-              <option value="0">全部</option>
-              <option value="5">5★</option>
-              <option value="4">4★及以上</option>
-              <option value="3">3★及以上</option>
-              <option value="2">2★及以上</option>
-              <option value="1">1★及以上</option>
             </select>
             <label>联赛：</label>
             <!-- 历史详情的联赛项随所选日期动态重建（见 showHistoryDetail），此处只保留固定结构 -->
@@ -20301,7 +20296,6 @@ function showHistoryDetail(dateStr) {
   
   // 重置筛选
   document.getElementById('h-status').value = 'all';
-  if (document.getElementById('h-stars')) document.getElementById('h-stars').value = '0';
   document.getElementById('h-search').value = '';
   
   // 渲染表格
@@ -20488,17 +20482,15 @@ function filterHistoryDetail() {
   
   var matches = HISTORY_MATCHES[currentHistoryDate] || [];
   var status = document.getElementById('h-status').value;
-  var starEl = document.getElementById('h-stars');
-  var starMin = starEl ? (parseInt(starEl.value, 10) || 0) : 0;
   var leagueSel = msGet('h-league');
   var search = document.getElementById('h-search').value.toLowerCase();
   
   var filtered = matches.filter(function(m) {
     if (status === 'hit' && !m.is_hit) return false;
     if (status === 'miss' && m.is_hit) return false;
-    if (status === 'uphigh' && !(m.up && (m.up.s || 0) >= 4)) return false;
     if (status === 'uphit' && !(m.up && (m.up.s || 0) >= 4 && m.up.u === true)) return false;
-    if (starMin && !(m.up && (m.up.s || 0) >= starMin)) return false;
+    var um = status.match(/^up([1-5])$/);
+    if (um && !(m.up && (m.up.s || 0) === parseInt(um[1], 10))) return false;
     if (status === 'trap' && !isKellyTrap(m)) return false;
     if (leagueSel && leagueSel.indexOf(m.league) === -1) return false;
     if (search && m.home.toLowerCase().indexOf(search) === -1 && m.away.toLowerCase().indexOf(search) === -1) return false;
