@@ -3201,6 +3201,15 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             <option value="so_agree">同赔支持</option>
             <option value="so_conflict">同赔冲突</option>
           </select>
+          <label>爆冷：</label>
+          <select id="p-upset-all" onchange="filterPred('all')">
+            <option value="all">全部</option>
+            <option value="5">5★</option>
+            <option value="4">4★</option>
+            <option value="3">3★</option>
+            <option value="2">2★</option>
+            <option value="1">1★</option>
+          </select>
           <label>等级：</label>
           <select id="p-grade-all" onchange="filterPred('all')">
             <option value="all">全部</option>
@@ -7972,6 +7981,15 @@ tr.kelly-trap td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
             <option value="A">A级</option>
             <option value="B">B级</option>
             <option value="C">C级</option>
+          </select>
+          <label>爆冷：</label>
+          <select id="p-upset-passed" onchange="filterPred('passed')">
+            <option value="all">全部</option>
+            <option value="5">5★</option>
+            <option value="4">4★</option>
+            <option value="3">3★</option>
+            <option value="2">2★</option>
+            <option value="1">1★</option>
           </select>
           <label>双选：</label>
           <select id="p-type-passed" onchange="filterPred('passed')">
@@ -20613,12 +20631,14 @@ function filterPred(tab) {
   const leagueEl = document.getElementById('p-league-' + tab);
   const searchEl = document.getElementById('p-search-' + tab);
   const typeEl = document.getElementById('p-type-' + tab);
+  const upsetEl = document.getElementById('p-upset-' + tab);
   
   const status = statusEl ? statusEl.value : 'all';
   const grade = gradeEl ? gradeEl.value : 'all';
   const leagueSel = leagueEl ? msGet(leagueEl) : null;
   const search = searchEl ? searchEl.value.toLowerCase() : '';
   const type = typeEl ? typeEl.value : 'all';
+  const upsetStar = upsetEl ? upsetEl.value : 'all';
 
   const trapEl = document.getElementById('p-trap-passed');
   const trapOnly = (tab === 'passed' && trapEl) ? trapEl.checked : false;
@@ -20635,6 +20655,8 @@ function filterPred(tab) {
     }
 
     if (trapOnly && !row.classList.contains('kelly-trap')) show = false;
+    
+    if (upsetStar !== 'all' && !row.querySelector('.up-cell-s' + upsetStar)) show = false;
     
     if (grade !== 'all') {
       const badge = row.querySelector('.grade-badge');
