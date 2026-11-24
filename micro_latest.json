@@ -1,10 +1,10 @@
 {
  "meta": {
   "date": "2026-11-24",
-  "updated_at": "2026-11-24 15:25:03",
-  "total": 76,
+  "updated_at": "2026-11-24 22:11:04",
+  "total": 73,
   "with_micro": 76,
-  "coverage": 100.0,
+  "coverage": 104.1,
   "source": "zgzcw_bjop",
   "ttl_minutes": 360,
   "version": 1
@@ -72,7 +72,7 @@
    "match_date": "2026-11-25",
    "handicap": 0,
    "double_choice": "客胜+主胜",
-   "total_p": 71.6,
+   "total_p": 72.7,
    "grade": "A"
   },
   "47": {
@@ -136,7 +136,7 @@
    "time": "17:55",
    "match_date": "2026-11-25",
    "handicap": 0,
-   "double_choice": "客胜+平局",
+   "double_choice": "主胜+客胜",
    "total_p": 68.0,
    "grade": "A"
   },
@@ -202,7 +202,7 @@
    "match_date": "2026-11-25",
    "handicap": 0,
    "double_choice": "主胜+平局",
-   "total_p": 70.0,
+   "total_p": 68.4,
    "grade": "B"
   },
   "22": {
@@ -267,7 +267,7 @@
    "match_date": "2026-11-24",
    "handicap": 0,
    "double_choice": "客胜+主胜",
-   "total_p": 71.9,
+   "total_p": 72.0,
    "grade": "B"
   },
   "31": {
@@ -396,8 +396,8 @@
    "time": "03:40",
    "match_date": "2026-11-25",
    "handicap": 0,
-   "double_choice": "平局+主胜",
-   "total_p": 62.6,
+   "double_choice": "客胜+平局",
+   "total_p": 70.3,
    "grade": "B"
   },
   "11": {
@@ -461,8 +461,8 @@
    "time": "02:55",
    "match_date": "2026-11-24",
    "handicap": 0,
-   "double_choice": "客胜+主胜",
-   "total_p": 72.7,
+   "double_choice": "客胜+平局",
+   "total_p": 70.6,
    "grade": "B"
   },
   "32": {
@@ -526,8 +526,8 @@
    "time": "03:55",
    "match_date": "2026-11-24",
    "handicap": 2,
-   "double_choice": "客胜+主胜",
-   "total_p": 72.0,
+   "double_choice": "主胜+客胜",
+   "total_p": 71.7,
    "grade": "B"
   },
   "73": {
@@ -592,7 +592,7 @@
    "match_date": "2026-11-25",
    "handicap": 0,
    "double_choice": "客胜+主胜",
-   "total_p": 71.9,
+   "total_p": 72.0,
    "grade": "C"
   },
   "61": {
@@ -656,8 +656,8 @@
    "time": "02:55",
    "match_date": "2026-11-25",
    "handicap": 0,
-   "double_choice": "主胜+客胜",
-   "total_p": 68.1,
+   "double_choice": "主胜+平局",
+   "total_p": 67.5,
    "grade": "B"
   },
   "17": {
@@ -722,7 +722,7 @@
    "match_date": "2026-11-24",
    "handicap": -1,
    "double_choice": "主胜+客胜",
-   "total_p": 68.0,
+   "total_p": 64.5,
    "grade": "B"
   },
   "56": {
@@ -786,7 +786,7 @@
    "time": "18:25",
    "match_date": "2026-11-25",
    "handicap": 0,
-   "double_choice": "主胜+平局",
+   "double_choice": "客胜+主胜",
    "total_p": 68.0,
    "grade": "A"
   },
@@ -852,7 +852,7 @@
    "match_date": "2026-11-24",
    "handicap": 0,
    "double_choice": "主胜+平局",
-   "total_p": 68.0,
+   "total_p": 68.1,
    "grade": "B"
   },
   "29": {
@@ -917,7 +917,7 @@
    "match_date": "2026-11-24",
    "handicap": -1,
    "double_choice": "主胜+客胜",
-   "total_p": 70.8,
+   "total_p": 65.1,
    "grade": "B"
   },
   "59": {
@@ -981,8 +981,8 @@
    "time": "01:55",
    "match_date": "2026-11-25",
    "handicap": 0,
-   "double_choice": "客胜+主胜",
-   "total_p": 72.7,
+   "double_choice": "主胜+平局",
+   "total_p": 69.5,
    "grade": "B"
   },
   "41": {
@@ -1112,7 +1112,7 @@
    "match_date": "2026-11-24",
    "handicap": -1,
    "double_choice": "主胜+客胜",
-   "total_p": 72.9,
+   "total_p": 66.2,
    "grade": "B"
   },
   "46": {
@@ -1176,7 +1176,7 @@
    "time": "17:55",
    "match_date": "2026-11-25",
    "handicap": 0,
-   "double_choice": "客胜+主胜",
+   "double_choice": "主胜+客胜",
    "total_p": 67.9,
    "grade": "A"
   },
@@ -1242,7 +1242,7 @@
    "match_date": "2026-11-25",
    "handicap": -1,
    "double_choice": "客胜+主胜",
-   "total_p": 68.0,
+   "total_p": 70.2,
    "grade": "C"
   },
   "55": {
@@ -1306,8 +1306,8 @@
    "time": "17:55",
    "match_date": "2026-11-25",
    "handicap": -1,
-   "double_choice": "客胜+平局",
-   "total_p": 72.7,
+   "double_choice": "客胜+主胜",
+   "total_p": 68.0,
    "grade": "A"
   },
   "52": {
@@ -1502,7 +1502,7 @@
    "match_date": "2026-11-24",
    "handicap": -1,
    "double_choice": "主胜+客胜",
-   "total_p": 68.0,
+   "total_p": 72.0,
    "grade": "B"
   },
   "10": {
@@ -1566,8 +1566,8 @@
    "time": "02:55",
    "match_date": "2026-11-24",
    "handicap": 0,
-   "double_choice": "主胜+客胜",
-   "total_p": 73.2,
+   "double_choice": "主胜+平局",
+   "total_p": 67.8,
    "grade": "B"
   },
   "13": {
@@ -1696,7 +1696,7 @@
    "time": "10:55",
    "match_date": "2026-11-26",
    "handicap": 0,
-   "double_choice": "主胜+客胜",
+   "double_choice": "客胜+主胜",
    "total_p": 71.8,
    "grade": "B"
   },
@@ -1761,8 +1761,8 @@
    "time": "03:40",
    "match_date": "2026-11-24",
    "handicap": -1,
-   "double_choice": "主胜+客胜",
-   "total_p": 72.0,
+   "double_choice": "客胜+主胜",
+   "total_p": 71.4,
    "grade": "B"
   },
   "30": {
@@ -1827,7 +1827,7 @@
    "match_date": "2026-11-24",
    "handicap": 0,
    "double_choice": "客胜+主胜",
-   "total_p": 68.0,
+   "total_p": 72.7,
    "grade": "B"
   },
   "3": {
@@ -1892,7 +1892,7 @@
    "match_date": "2026-11-24",
    "handicap": -1,
    "double_choice": "主胜+客胜",
-   "total_p": 71.0,
+   "total_p": 70.0,
    "grade": "B"
   },
   "7": {
@@ -2021,8 +2021,8 @@
    "time": "17:55",
    "match_date": "2026-11-25",
    "handicap": 0,
-   "double_choice": "主胜+客胜",
-   "total_p": 72.7,
+   "double_choice": "客胜+主胜",
+   "total_p": 70.6,
    "grade": "A"
   },
   "60": {
@@ -2281,7 +2281,7 @@
    "time": "01:40",
    "match_date": "2026-11-25",
    "handicap": 0,
-   "double_choice": "客胜+主胜",
+   "double_choice": "主胜+客胜",
    "total_p": 68.0,
    "grade": "B"
   },
@@ -2346,8 +2346,8 @@
    "time": "03:40",
    "match_date": "2026-11-25",
    "handicap": 0,
-   "double_choice": "客胜+主胜",
-   "total_p": 68.0,
+   "double_choice": "主胜+客胜",
+   "total_p": 73.4,
    "grade": "B"
   },
   "8": {
@@ -2607,7 +2607,7 @@
    "match_date": "2026-11-24",
    "handicap": 0,
    "double_choice": "客胜+主胜",
-   "total_p": 72.7,
+   "total_p": 68.0,
    "grade": "B"
   },
   "4": {
@@ -2672,7 +2672,7 @@
    "match_date": "2026-11-24",
    "handicap": 1,
    "double_choice": "客胜+平局",
-   "total_p": 73.9,
+   "total_p": 72.7,
    "grade": "B"
   },
   "28": {
@@ -2801,8 +2801,8 @@
    "time": "10:55",
    "match_date": "2026-11-25",
    "handicap": 0,
-   "double_choice": "主胜+客胜",
-   "total_p": 68.1,
+   "double_choice": "平局+主胜",
+   "total_p": 72.4,
    "grade": "A"
   },
   "25": {
@@ -2867,7 +2867,7 @@
    "match_date": "2026-11-24",
    "handicap": 1,
    "double_choice": "主胜+客胜",
-   "total_p": 71.2,
+   "total_p": 71.9,
    "grade": "B"
   },
   "2": {
@@ -2931,8 +2931,8 @@
    "time": "17:55",
    "match_date": "2026-11-24",
    "handicap": -1,
-   "double_choice": "主胜+客胜",
-   "total_p": 69.5,
+   "double_choice": "客胜+主胜",
+   "total_p": 70.8,
    "grade": "B"
   },
   "70": {
@@ -3061,8 +3061,8 @@
    "time": "03:40",
    "match_date": "2026-11-24",
    "handicap": -1,
-   "double_choice": "主胜+客胜",
-   "total_p": 68.0,
+   "double_choice": "客胜+主胜",
+   "total_p": 73.2,
    "grade": "B"
   },
   "9": {
@@ -3126,8 +3126,8 @@
    "time": "02:55",
    "match_date": "2026-11-24",
    "handicap": -1,
-   "double_choice": "客胜+主胜",
-   "total_p": 72.6,
+   "double_choice": "客胜+平局",
+   "total_p": 73.3,
    "grade": "B"
   },
   "39": {
@@ -3256,8 +3256,8 @@
    "time": "03:40",
    "match_date": "2026-11-24",
    "handicap": 0,
-   "double_choice": "客胜+主胜",
-   "total_p": 73.0,
+   "double_choice": "主胜+客胜",
+   "total_p": 72.7,
    "grade": "B"
   },
   "38": {
@@ -3321,8 +3321,8 @@
    "time": "17:25",
    "match_date": "2026-11-25",
    "handicap": 0,
-   "double_choice": "主胜+客胜",
-   "total_p": 72.7,
+   "double_choice": "客胜+主胜",
+   "total_p": 68.1,
    "grade": "A"
   },
   "44": {
@@ -3386,8 +3386,8 @@
    "time": "17:55",
    "match_date": "2026-11-25",
    "handicap": 0,
-   "double_choice": "主胜+客胜",
-   "total_p": 68.0,
+   "double_choice": "客胜+主胜",
+   "total_p": 68.1,
    "grade": "A"
   },
   "51": {
@@ -3451,8 +3451,8 @@
    "time": "17:55",
    "match_date": "2026-11-25",
    "handicap": 0,
-   "double_choice": "主胜+平局",
-   "total_p": 67.3,
+   "double_choice": "主胜+客胜",
+   "total_p": 67.9,
    "grade": "A"
   },
   "35": {
@@ -3517,7 +3517,7 @@
    "match_date": "2026-11-24",
    "handicap": -2,
    "double_choice": "客胜+主胜",
-   "total_p": 72.0,
+   "total_p": 71.9,
    "grade": "A"
   },
   "54": {
@@ -3906,8 +3906,8 @@
    "time": "17:55",
    "match_date": "2026-11-25",
    "handicap": 0,
-   "double_choice": "主胜+平局",
-   "total_p": 63.0,
+   "double_choice": "主胜+客胜",
+   "total_p": 68.0,
    "grade": "A"
   },
   "72": {
@@ -3971,8 +3971,8 @@
    "time": "03:55",
    "match_date": "2026-11-25",
    "handicap": 0,
-   "double_choice": "客胜+平局",
-   "total_p": 69.3,
+   "double_choice": "主胜+客胜",
+   "total_p": 71.4,
    "grade": "B"
   },
   "27": {
@@ -4037,7 +4037,7 @@
    "match_date": "2026-11-24",
    "handicap": -1,
    "double_choice": "客胜+主胜",
-   "total_p": 72.7,
+   "total_p": 68.1,
    "grade": "A"
   },
   "58": {
@@ -4166,8 +4166,8 @@
    "time": "17:55",
    "match_date": "2026-11-25",
    "handicap": 0,
-   "double_choice": "主胜+平局",
-   "total_p": 70.0,
+   "double_choice": "客胜+平局",
+   "total_p": 70.2,
    "grade": "A"
   },
   "62": {
@@ -4231,8 +4231,8 @@
    "time": "02:55",
    "match_date": "2026-11-25",
    "handicap": 0,
-   "double_choice": "客胜+平局",
-   "total_p": 69.1,
+   "double_choice": "客胜+主胜",
+   "total_p": 70.2,
    "grade": "B"
   },
   "45": {
@@ -4296,8 +4296,8 @@
    "time": "17:55",
    "match_date": "2026-11-25",
    "handicap": 0,
-   "double_choice": "主胜+客胜",
-   "total_p": 72.8,
+   "double_choice": "客胜+主胜",
+   "total_p": 68.0,
    "grade": "A"
   },
   "16": {
@@ -4361,8 +4361,8 @@
    "time": "03:40",
    "match_date": "2026-11-24",
    "handicap": 0,
-   "double_choice": "主胜+平局",
-   "total_p": 69.9,
+   "double_choice": "主胜+客胜",
+   "total_p": 72.5,
    "grade": "B"
   },
   "68": {
@@ -4432,58 +4432,58 @@
   },
   "36": {
    "mid": "4465907",
-   "n_companies": 53,
+   "n_companies": 55,
    "open_fav": "客胜",
    "close_fav": "客胜",
    "open_votes": [
     0,
     0,
-    53
+    55
    ],
    "close_votes": [
     0,
     0,
-    53
+    55
    ],
    "flip": false,
    "moved": {
-    "主胜": 51,
+    "主胜": 53,
     "平局": 51,
-    "客胜": 52
+    "客胜": 53
    },
    "avg_open": [
-    4.1,
-    4.313,
-    1.682
+    4.071,
+    4.28,
+    1.692
    ],
    "avg_close": [
-    3.343,
-    3.483,
-    2.05
+    3.184,
+    3.447,
+    2.13
    ],
    "close_probs": [
-    27.85,
-    26.73,
-    45.42
+    29.25,
+    27.02,
+    43.73
    ],
-   "entropy": 1.0672,
+   "entropy": 1.0749,
    "dispersion": [
-    6.37,
-    4.77,
-    5.51
+    5.92,
+    4.86,
+    5.94
    ],
    "variance": [
-    0.045,
+    0.036,
     0.028,
-    0.013
+    0.016
    ],
-   "kelly_max": 1.12,
-   "kelly_over1": 8,
-   "payout_avg": 0.928,
+   "kelly_max": 1.13,
+   "kelly_over1": 7,
+   "payout_avg": 0.929,
    "asian_conv": null,
    "eu_asian_div": null,
-   "first_time": "2026-11-24 15:21:33",
-   "last_time_ms": 1795504893968,
+   "first_time": "2026-11-24 22:10:22",
+   "last_time_ms": 1795529422053,
    "quality": "ok",
    "home": "沙佩科恩斯",
    "away": "帕尔梅拉斯",
@@ -4622,7 +4622,7 @@
    "match_date": "2026-11-24",
    "handicap": -2,
    "double_choice": "主胜+客胜",
-   "total_p": 72.0,
+   "total_p": 72.1,
    "grade": "B"
   },
   "1": {
@@ -4816,8 +4816,8 @@
    "time": "17:55",
    "match_date": "2026-11-25",
    "handicap": 0,
-   "double_choice": "主胜+客胜",
-   "total_p": 71.5,
+   "double_choice": "客胜+主胜",
+   "total_p": 70.2,
    "grade": "A"
   },
   "53": {
@@ -4881,7 +4881,7 @@
    "time": "17:55",
    "match_date": "2026-11-25",
    "handicap": 0,
-   "double_choice": "平局+客胜",
+   "double_choice": "主胜+客胜",
    "total_p": 67.1,
    "grade": "A"
   },
@@ -4946,8 +4946,8 @@
    "time": "03:55",
    "match_date": "2026-11-25",
    "handicap": 0,
-   "double_choice": "主胜+客胜",
-   "total_p": 68.0,
+   "double_choice": "客胜+主胜",
+   "total_p": 68.1,
    "grade": "B"
   }
  }
