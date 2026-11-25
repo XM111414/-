@@ -3087,6 +3087,36 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
 @media (max-width: 768px) {
   .m-fold-btn { display: flex; }
   .is-folded { display: none !important; }
+
+  /* 昨日复盘卡片：新增「爆冷」整行（与今日预测卡同款，含亚盘弹层） */
+  #review-body tr {
+    grid-template-areas:
+      "seq time league"
+      "teams teams teams"
+      "upset upset upset"
+      "pred pred pred"
+      "odds odds odds"
+      "actual score status";
+  }
+  #review-body .col-upset {
+    grid-area: upset; display: flex; align-items: center; justify-content: flex-start;
+    flex-wrap: wrap; gap: 6px 8px; width: auto; padding: 5px 8px;
+    margin: 1px 0 0; text-align: left; white-space: normal;
+    background: #f8fafc; border: 1px solid var(--rule); border-radius: 8px;
+  }
+  #review-body .col-upset::before {
+    content: "爆冷"; flex: 0 0 auto; padding: 2px 6px; border-radius: 5px;
+    font-size: .6rem; font-weight: 700; line-height: 1.25;
+    color: #9a3412; background: #ffedd5;
+  }
+  #review-body .col-upset.up-cell-s2::before,
+  #review-body .col-upset.up-cell-s3::before { color: #64748b; background: #eef2f7; }
+  #review-body .col-upset.up-cell-s4 { background: #fff7ed; border-color: #fdba74; }
+  #review-body .col-upset.up-cell-s5 { background: #fef2f2; border-color: #fca5a5; }
+  #review-body .col-upset .up-detail { display: flex; flex: 1 1 140px; flex-direction: column; gap: 1px; min-width: 0; }
+  #review-body .col-upset .up-detail em { font-style: normal; display: block; font-size: .64rem; line-height: 1.4; color: #475569; }
+  #review-body .col-upset .up-badge .up-lv { font-size: .62rem; }
+  #review-body .col-upset .up-tip { font-size: .6rem; color: #94a3b8; }
 }
 @media (min-width: 769px) { .m-fold-btn { display: none; } }
 
@@ -3538,7 +3568,7 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
 实力3.8 机构1.7 战意5.0 历史0.0 出货5.0
 两队近期状态与实力不吻合，冷门风险高于平常，请谨慎对待。
 点击查看五维星形拆解" aria-label="爆冷指数 2.68，2星，点击查看五维拆解"><b>2.68</b><i>★★</i><span class="up-lv">弱</span><span class="up-pc">冷门28%</span></span><span class="up-detail"><em class="up-dims">实力3.8 · 机构1.7 · 战意5.0 · 历史0.0 · 出货5.0</em></span></td>
-        <td class="col-time">11-25 17:55</td>
+        <td class="col-time">11-25 17:55<span class="started-badge">已开赛</span></td>
         <td class="col-league">
           <span class="league-tag">亚冠精英联赛</span>
           <span class="grade-badge b">B级</span>
@@ -3596,7 +3626,7 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
 实力2.3 机构5.0 战意5.8 历史0.9 出货5.0
 强队处于复赛长休或欧战（欧冠/欧罗巴）备战窗口，存在轮换与状态生疏风险，冷门风险高于平常，请谨慎对待。
 点击查看五维星形拆解" aria-label="爆冷指数 3.53，2星，点击查看五维拆解"><b>3.53</b><i>★★</i><span class="up-lv">弱</span><span class="up-pc">冷门35%</span></span><span class="up-detail"><em class="up-dims">实力2.3 · 机构5.0 · 战意5.8 · 历史0.9 · 出货5.0</em></span></td>
-        <td class="col-time">11-25 17:55</td>
+        <td class="col-time">11-25 17:55<span class="started-badge">已开赛</span></td>
         <td class="col-league">
           <span class="league-tag">亚冠精英联赛</span>
           <span class="grade-badge b">B级</span>
@@ -3654,7 +3684,7 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
 实力6.1 机构5.6 战意5.1 历史8.7 出货5.0
 相似对手历史爆冷率偏高，冷门风险高于平常，请谨慎对待。
 点击查看五维星形拆解" aria-label="爆冷指数 6.14，3星，点击查看五维拆解"><b>6.14</b><i>★★★</i><span class="up-lv">中</span><span class="up-pc">冷门58%</span></span><span class="up-detail"><em class="up-dims">实力6.1 · 机构5.6 · 战意5.1 · 历史8.7 · 出货5.0</em></span></td>
-        <td class="col-time">11-25 17:55</td>
+        <td class="col-time">11-25 17:55<span class="started-badge">已开赛</span></td>
         <td class="col-league">
           <span class="league-tag">J1联赛</span>
           <span class="grade-badge a">A级</span>
@@ -3712,7 +3742,7 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
 实力5.4 机构5.1 战意5.0 历史8.7 出货5.0
 相似对手历史爆冷率偏高，冷门风险高于平常，请谨慎对待。
 点击查看五维星形拆解" aria-label="爆冷指数 5.71，2星，点击查看五维拆解"><b>5.71</b><i>★★</i><span class="up-lv">弱</span><span class="up-pc">冷门54%</span></span><span class="up-detail"><em class="up-dims">实力5.4 · 机构5.1 · 战意5.0 · 历史8.7 · 出货5.0</em></span></td>
-        <td class="col-time">11-25 17:55</td>
+        <td class="col-time">11-25 17:55<span class="started-badge">已开赛</span></td>
         <td class="col-league">
           <span class="league-tag">J1联赛</span>
           <span class="grade-badge a">A级</span>
@@ -3770,7 +3800,7 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
 实力2.3 机构10.0 战意5.0 历史8.7 出货5.0
 机构对强队支撑力度不足，冷门风险高于平常，请谨慎对待。
 点击查看五维星形拆解" aria-label="爆冷指数 6.31，3星，点击查看五维拆解"><b>6.31</b><i>★★★</i><span class="up-lv">中</span><span class="up-pc">冷门59%</span></span><span class="up-detail"><em class="up-dims">实力2.3 · 机构10.0 · 战意5.0 · 历史8.7 · 出货5.0</em></span></td>
-        <td class="col-time">11-25 17:55</td>
+        <td class="col-time">11-25 17:55<span class="started-badge">已开赛</span></td>
         <td class="col-league">
           <span class="league-tag">J1联赛</span>
           <span class="grade-badge a">A级</span>
@@ -3828,7 +3858,7 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
 实力3.4 机构8.8 战意5.0 历史8.7 出货5.0
 机构对强队支撑力度不足，冷门风险高于平常，请谨慎对待。
 点击查看五维星形拆解" aria-label="爆冷指数 6.29，3星，点击查看五维拆解"><b>6.29</b><i>★★★</i><span class="up-lv">中</span><span class="up-pc">冷门59%</span></span><span class="up-detail"><em class="up-dims">实力3.4 · 机构8.8 · 战意5.0 · 历史8.7 · 出货5.0</em></span></td>
-        <td class="col-time">11-25 17:55</td>
+        <td class="col-time">11-25 17:55<span class="started-badge">已开赛</span></td>
         <td class="col-league">
           <span class="league-tag">J1联赛</span>
           <span class="grade-badge a">A级</span>
@@ -3886,7 +3916,7 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
 实力2.5 机构9.9 战意6.2 历史8.7 出货5.0
 机构对强队支撑力度不足，冷门风险高于平常，请谨慎对待。
 点击查看五维星形拆解" aria-label="爆冷指数 6.51，4星，点击查看五维拆解"><b>6.51</b><i>★★★★</i><span class="up-lv">较强</span><span class="up-pc">冷门61%</span></span><span class="up-detail"><em class="up-dims">实力2.5 · 机构9.9 · 战意6.2 · 历史8.7 · 出货5.0</em><em class="up-tip">机构对强队支撑力度不足，冷门风险高于平常，请谨慎对待。</em></span></td>
-        <td class="col-time">11-25 17:55</td>
+        <td class="col-time">11-25 17:55<span class="started-badge">已开赛</span></td>
         <td class="col-league">
           <span class="league-tag">J1联赛</span>
           <span class="grade-badge a">A级</span>
@@ -3944,7 +3974,7 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
 实力3.9 机构7.2 战意5.0 历史3.5 出货5.0
 机构对强队支撑力度不足，冷门风险高于平常，请谨慎对待。
 点击查看五维星形拆解" aria-label="爆冷指数 5.21，2星，点击查看五维拆解"><b>5.21</b><i>★★</i><span class="up-lv">弱</span><span class="up-pc">冷门49%</span></span><span class="up-detail"><em class="up-dims">实力3.9 · 机构7.2 · 战意5.0 · 历史3.5 · 出货5.0</em></span></td>
-        <td class="col-time">11-25 17:55</td>
+        <td class="col-time">11-25 17:55<span class="started-badge">已开赛</span></td>
         <td class="col-league">
           <span class="league-tag">J1联赛</span>
           <span class="grade-badge a">A级</span>
@@ -4002,7 +4032,7 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
 实力3.6 机构8.8 战意5.0 历史8.7 出货5.0
 机构对强队支撑力度不足，冷门风险高于平常，请谨慎对待。
 点击查看五维星形拆解" aria-label="爆冷指数 6.37，3星，点击查看五维拆解"><b>6.37</b><i>★★★</i><span class="up-lv">中</span><span class="up-pc">冷门60%</span></span><span class="up-detail"><em class="up-dims">实力3.6 · 机构8.8 · 战意5.0 · 历史8.7 · 出货5.0</em></span></td>
-        <td class="col-time">11-25 17:55</td>
+        <td class="col-time">11-25 17:55<span class="started-badge">已开赛</span></td>
         <td class="col-league">
           <span class="league-tag">J2联赛</span>
           <span class="grade-badge a">A级</span>
@@ -4060,7 +4090,7 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
 实力2.9 机构7.7 战意5.0 历史8.7 出货5.0
 机构对强队支撑力度不足，冷门风险高于平常，请谨慎对待。
 点击查看五维星形拆解" aria-label="爆冷指数 5.73，2星，点击查看五维拆解"><b>5.73</b><i>★★</i><span class="up-lv">弱</span><span class="up-pc">冷门54%</span></span><span class="up-detail"><em class="up-dims">实力2.9 · 机构7.7 · 战意5.0 · 历史8.7 · 出货5.0</em></span></td>
-        <td class="col-time">11-25 17:55</td>
+        <td class="col-time">11-25 17:55<span class="started-badge">已开赛</span></td>
         <td class="col-league">
           <span class="league-tag">J2联赛</span>
           <span class="grade-badge a">A级</span>
@@ -4118,7 +4148,7 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
 实力5.1 机构7.2 战意5.0 历史8.7 出货5.0
 机构对强队支撑力度不足，冷门风险高于平常，请谨慎对待。
 点击查看五维星形拆解" aria-label="爆冷指数 6.33，3星，点击查看五维拆解"><b>6.33</b><i>★★★</i><span class="up-lv">中</span><span class="up-pc">冷门59%</span></span><span class="up-detail"><em class="up-dims">实力5.1 · 机构7.2 · 战意5.0 · 历史8.7 · 出货5.0</em></span></td>
-        <td class="col-time">11-25 17:55</td>
+        <td class="col-time">11-25 17:55<span class="started-badge">已开赛</span></td>
         <td class="col-league">
           <span class="league-tag">J2联赛</span>
           <span class="grade-badge a">A级</span>
@@ -4176,7 +4206,7 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
 实力3.9 机构8.4 战意5.0 历史8.7 出货5.0
 机构对强队支撑力度不足，冷门风险高于平常，请谨慎对待。
 点击查看五维星形拆解" aria-label="爆冷指数 6.34，3星，点击查看五维拆解"><b>6.34</b><i>★★★</i><span class="up-lv">中</span><span class="up-pc">冷门59%</span></span><span class="up-detail"><em class="up-dims">实力3.9 · 机构8.4 · 战意5.0 · 历史8.7 · 出货5.0</em></span></td>
-        <td class="col-time">11-25 17:55</td>
+        <td class="col-time">11-25 17:55<span class="started-badge">已开赛</span></td>
         <td class="col-league">
           <span class="league-tag">J2联赛</span>
           <span class="grade-badge a">A级</span>
@@ -4234,7 +4264,7 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
 实力3.9 机构4.4 战意5.0 历史5.4 出货5.0
 相似对手历史爆冷率偏高，冷门风险高于平常，请谨慎对待。
 点击查看五维星形拆解" aria-label="爆冷指数 4.44，2星，点击查看五维拆解"><b>4.44</b><i>★★</i><span class="up-lv">弱</span><span class="up-pc">冷门42%</span></span><span class="up-detail"><em class="up-dims">实力3.9 · 机构4.4 · 战意5.0 · 历史5.4 · 出货5.0</em></span></td>
-        <td class="col-time">11-25 17:55</td>
+        <td class="col-time">11-25 17:55<span class="started-badge">已开赛</span></td>
         <td class="col-league">
           <span class="league-tag">J2联赛</span>
           <span class="grade-badge a">A级</span>
@@ -4292,7 +4322,7 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
 实力4.3 机构8.0 战意5.0 历史8.7 出货5.0
 机构对强队支撑力度不足，冷门风险高于平常，请谨慎对待。
 点击查看五维星形拆解" aria-label="爆冷指数 6.34，3星，点击查看五维拆解"><b>6.34</b><i>★★★</i><span class="up-lv">中</span><span class="up-pc">冷门59%</span></span><span class="up-detail"><em class="up-dims">实力4.3 · 机构8.0 · 战意5.0 · 历史8.7 · 出货5.0</em></span></td>
-        <td class="col-time">11-25 17:55</td>
+        <td class="col-time">11-25 17:55<span class="started-badge">已开赛</span></td>
         <td class="col-league">
           <span class="league-tag">J2联赛</span>
           <span class="grade-badge a">A级</span>
@@ -4350,7 +4380,7 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
 实力1.0 机构6.9 战意5.7 历史0.9 出货5.0
 机构对强队支撑力度不足，冷门风险高于平常，请谨慎对待。
 点击查看五维星形拆解" aria-label="爆冷指数 3.73，2星，点击查看五维拆解"><b>3.73</b><i>★★</i><span class="up-lv">弱</span><span class="up-pc">冷门36%</span></span><span class="up-detail"><em class="up-dims">实力1.0 · 机构6.9 · 战意5.7 · 历史0.9 · 出货5.0</em></span></td>
-        <td class="col-time">11-25 17:55</td>
+        <td class="col-time">11-25 17:55<span class="started-badge">已开赛</span></td>
         <td class="col-league">
           <span class="league-tag">J2联赛</span>
           <span class="grade-badge a">A级</span>
@@ -4408,7 +4438,7 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
 实力4.1 机构3.0 战意5.0 历史0.9 出货5.0
 两队近期状态与实力不吻合，冷门风险高于平常，请谨慎对待。
 点击查看五维星形拆解" aria-label="爆冷指数 3.41，2星，点击查看五维拆解"><b>3.41</b><i>★★</i><span class="up-lv">弱</span><span class="up-pc">冷门34%</span></span><span class="up-detail"><em class="up-dims">实力4.1 · 机构3.0 · 战意5.0 · 历史0.9 · 出货5.0</em></span></td>
-        <td class="col-time">11-25 17:55</td>
+        <td class="col-time">11-25 17:55<span class="started-badge">已开赛</span></td>
         <td class="col-league">
           <span class="league-tag">J2联赛</span>
           <span class="grade-badge a">A级</span>
@@ -7874,7 +7904,7 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
 实力3.8 机构1.7 战意5.0 历史0.0 出货5.0
 两队近期状态与实力不吻合，冷门风险高于平常，请谨慎对待。
 点击查看五维星形拆解" aria-label="爆冷指数 2.68，2星，点击查看五维拆解"><b>2.68</b><i>★★</i><span class="up-lv">弱</span><span class="up-pc">冷门28%</span></span><span class="up-detail"><em class="up-dims">实力3.8 · 机构1.7 · 战意5.0 · 历史0.0 · 出货5.0</em></span></td>
-        <td class="col-time">11-25 17:55</td>
+        <td class="col-time">11-25 17:55<span class="started-badge">已开赛</span></td>
         <td class="col-league">
           <span class="league-tag">亚冠精英联赛</span>
           <span class="grade-badge b">B级</span>
@@ -7928,7 +7958,7 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
 实力6.1 机构5.6 战意5.1 历史8.7 出货5.0
 相似对手历史爆冷率偏高，冷门风险高于平常，请谨慎对待。
 点击查看五维星形拆解" aria-label="爆冷指数 6.14，3星，点击查看五维拆解"><b>6.14</b><i>★★★</i><span class="up-lv">中</span><span class="up-pc">冷门58%</span></span><span class="up-detail"><em class="up-dims">实力6.1 · 机构5.6 · 战意5.1 · 历史8.7 · 出货5.0</em></span></td>
-        <td class="col-time">11-25 17:55</td>
+        <td class="col-time">11-25 17:55<span class="started-badge">已开赛</span></td>
         <td class="col-league">
           <span class="league-tag">J1联赛</span>
           <span class="grade-badge a">A级</span>
@@ -7982,7 +8012,7 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
 实力3.9 机构7.2 战意5.0 历史3.5 出货5.0
 机构对强队支撑力度不足，冷门风险高于平常，请谨慎对待。
 点击查看五维星形拆解" aria-label="爆冷指数 5.21，2星，点击查看五维拆解"><b>5.21</b><i>★★</i><span class="up-lv">弱</span><span class="up-pc">冷门49%</span></span><span class="up-detail"><em class="up-dims">实力3.9 · 机构7.2 · 战意5.0 · 历史3.5 · 出货5.0</em></span></td>
-        <td class="col-time">11-25 17:55</td>
+        <td class="col-time">11-25 17:55<span class="started-badge">已开赛</span></td>
         <td class="col-league">
           <span class="league-tag">J1联赛</span>
           <span class="grade-badge a">A级</span>
@@ -8036,7 +8066,7 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
 实力3.6 机构8.8 战意5.0 历史8.7 出货5.0
 机构对强队支撑力度不足，冷门风险高于平常，请谨慎对待。
 点击查看五维星形拆解" aria-label="爆冷指数 6.37，3星，点击查看五维拆解"><b>6.37</b><i>★★★</i><span class="up-lv">中</span><span class="up-pc">冷门60%</span></span><span class="up-detail"><em class="up-dims">实力3.6 · 机构8.8 · 战意5.0 · 历史8.7 · 出货5.0</em></span></td>
-        <td class="col-time">11-25 17:55</td>
+        <td class="col-time">11-25 17:55<span class="started-badge">已开赛</span></td>
         <td class="col-league">
           <span class="league-tag">J2联赛</span>
           <span class="grade-badge a">A级</span>
@@ -8090,7 +8120,7 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
 实力2.9 机构7.7 战意5.0 历史8.7 出货5.0
 机构对强队支撑力度不足，冷门风险高于平常，请谨慎对待。
 点击查看五维星形拆解" aria-label="爆冷指数 5.73，2星，点击查看五维拆解"><b>5.73</b><i>★★</i><span class="up-lv">弱</span><span class="up-pc">冷门54%</span></span><span class="up-detail"><em class="up-dims">实力2.9 · 机构7.7 · 战意5.0 · 历史8.7 · 出货5.0</em></span></td>
-        <td class="col-time">11-25 17:55</td>
+        <td class="col-time">11-25 17:55<span class="started-badge">已开赛</span></td>
         <td class="col-league">
           <span class="league-tag">J2联赛</span>
           <span class="grade-badge a">A级</span>
@@ -8144,7 +8174,7 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
 实力5.1 机构7.2 战意5.0 历史8.7 出货5.0
 机构对强队支撑力度不足，冷门风险高于平常，请谨慎对待。
 点击查看五维星形拆解" aria-label="爆冷指数 6.33，3星，点击查看五维拆解"><b>6.33</b><i>★★★</i><span class="up-lv">中</span><span class="up-pc">冷门59%</span></span><span class="up-detail"><em class="up-dims">实力5.1 · 机构7.2 · 战意5.0 · 历史8.7 · 出货5.0</em></span></td>
-        <td class="col-time">11-25 17:55</td>
+        <td class="col-time">11-25 17:55<span class="started-badge">已开赛</span></td>
         <td class="col-league">
           <span class="league-tag">J2联赛</span>
           <span class="grade-badge a">A级</span>
@@ -8198,7 +8228,7 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
 实力3.9 机构8.4 战意5.0 历史8.7 出货5.0
 机构对强队支撑力度不足，冷门风险高于平常，请谨慎对待。
 点击查看五维星形拆解" aria-label="爆冷指数 6.34，3星，点击查看五维拆解"><b>6.34</b><i>★★★</i><span class="up-lv">中</span><span class="up-pc">冷门59%</span></span><span class="up-detail"><em class="up-dims">实力3.9 · 机构8.4 · 战意5.0 · 历史8.7 · 出货5.0</em></span></td>
-        <td class="col-time">11-25 17:55</td>
+        <td class="col-time">11-25 17:55<span class="started-badge">已开赛</span></td>
         <td class="col-league">
           <span class="league-tag">J2联赛</span>
           <span class="grade-badge a">A级</span>
@@ -8252,7 +8282,7 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
 实力3.9 机构4.4 战意5.0 历史5.4 出货5.0
 相似对手历史爆冷率偏高，冷门风险高于平常，请谨慎对待。
 点击查看五维星形拆解" aria-label="爆冷指数 4.44，2星，点击查看五维拆解"><b>4.44</b><i>★★</i><span class="up-lv">弱</span><span class="up-pc">冷门42%</span></span><span class="up-detail"><em class="up-dims">实力3.9 · 机构4.4 · 战意5.0 · 历史5.4 · 出货5.0</em></span></td>
-        <td class="col-time">11-25 17:55</td>
+        <td class="col-time">11-25 17:55<span class="started-badge">已开赛</span></td>
         <td class="col-league">
           <span class="league-tag">J2联赛</span>
           <span class="grade-badge a">A级</span>
@@ -8306,7 +8336,7 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
 实力4.3 机构8.0 战意5.0 历史8.7 出货5.0
 机构对强队支撑力度不足，冷门风险高于平常，请谨慎对待。
 点击查看五维星形拆解" aria-label="爆冷指数 6.34，3星，点击查看五维拆解"><b>6.34</b><i>★★★</i><span class="up-lv">中</span><span class="up-pc">冷门59%</span></span><span class="up-detail"><em class="up-dims">实力4.3 · 机构8.0 · 战意5.0 · 历史8.7 · 出货5.0</em></span></td>
-        <td class="col-time">11-25 17:55</td>
+        <td class="col-time">11-25 17:55<span class="started-badge">已开赛</span></td>
         <td class="col-league">
           <span class="league-tag">J2联赛</span>
           <span class="grade-badge a">A级</span>
@@ -8360,7 +8390,7 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
 实力1.0 机构6.9 战意5.7 历史0.9 出货5.0
 机构对强队支撑力度不足，冷门风险高于平常，请谨慎对待。
 点击查看五维星形拆解" aria-label="爆冷指数 3.73，2星，点击查看五维拆解"><b>3.73</b><i>★★</i><span class="up-lv">弱</span><span class="up-pc">冷门36%</span></span><span class="up-detail"><em class="up-dims">实力1.0 · 机构6.9 · 战意5.7 · 历史0.9 · 出货5.0</em></span></td>
-        <td class="col-time">11-25 17:55</td>
+        <td class="col-time">11-25 17:55<span class="started-badge">已开赛</span></td>
         <td class="col-league">
           <span class="league-tag">J2联赛</span>
           <span class="grade-badge a">A级</span>
@@ -9639,7 +9669,7 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
       </tr>
       <tr class="ou-pred-row ou-wait">
         <td class="col-seq">40</td>
-        <td class="col-time">11-25 17:55</td>
+        <td class="col-time">11-25 17:55<span class="started-badge">已开赛</span></td>
         <td class="col-league">
           <span class="league-tag">亚冠精英联赛</span>
           <span class="grade-badge b">B级</span>
@@ -9665,7 +9695,7 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
       </tr>
       <tr class="ou-pred-row ou-wait">
         <td class="col-seq">41</td>
-        <td class="col-time">11-25 17:55</td>
+        <td class="col-time">11-25 17:55<span class="started-badge">已开赛</span></td>
         <td class="col-league">
           <span class="league-tag">亚冠精英联赛</span>
           <span class="grade-badge b">B级</span>
@@ -9691,7 +9721,7 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
       </tr>
       <tr class="ou-pred-row ou-over">
         <td class="col-seq">42</td>
-        <td class="col-time">11-25 17:55</td>
+        <td class="col-time">11-25 17:55<span class="started-badge">已开赛</span></td>
         <td class="col-league">
           <span class="league-tag">J1联赛</span>
           <span class="grade-badge a">A级</span>
@@ -9717,7 +9747,7 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
       </tr>
       <tr class="ou-pred-row ou-wait">
         <td class="col-seq">43</td>
-        <td class="col-time">11-25 17:55</td>
+        <td class="col-time">11-25 17:55<span class="started-badge">已开赛</span></td>
         <td class="col-league">
           <span class="league-tag">J1联赛</span>
           <span class="grade-badge a">A级</span>
@@ -9743,7 +9773,7 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
       </tr>
       <tr class="ou-pred-row ou-wait">
         <td class="col-seq">44</td>
-        <td class="col-time">11-25 17:55</td>
+        <td class="col-time">11-25 17:55<span class="started-badge">已开赛</span></td>
         <td class="col-league">
           <span class="league-tag">J1联赛</span>
           <span class="grade-badge a">A级</span>
@@ -9769,7 +9799,7 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
       </tr>
       <tr class="ou-pred-row ou-over">
         <td class="col-seq">45</td>
-        <td class="col-time">11-25 17:55</td>
+        <td class="col-time">11-25 17:55<span class="started-badge">已开赛</span></td>
         <td class="col-league">
           <span class="league-tag">J1联赛</span>
           <span class="grade-badge a">A级</span>
@@ -9795,7 +9825,7 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
       </tr>
       <tr class="ou-pred-row ou-wait">
         <td class="col-seq">46</td>
-        <td class="col-time">11-25 17:55</td>
+        <td class="col-time">11-25 17:55<span class="started-badge">已开赛</span></td>
         <td class="col-league">
           <span class="league-tag">J1联赛</span>
           <span class="grade-badge a">A级</span>
@@ -9821,7 +9851,7 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
       </tr>
       <tr class="ou-pred-row ou-wait">
         <td class="col-seq">47</td>
-        <td class="col-time">11-25 17:55</td>
+        <td class="col-time">11-25 17:55<span class="started-badge">已开赛</span></td>
         <td class="col-league">
           <span class="league-tag">J1联赛</span>
           <span class="grade-badge a">A级</span>
@@ -9847,7 +9877,7 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
       </tr>
       <tr class="ou-pred-row ou-wait">
         <td class="col-seq">48</td>
-        <td class="col-time">11-25 17:55</td>
+        <td class="col-time">11-25 17:55<span class="started-badge">已开赛</span></td>
         <td class="col-league">
           <span class="league-tag">J2联赛</span>
           <span class="grade-badge a">A级</span>
@@ -9873,7 +9903,7 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
       </tr>
       <tr class="ou-pred-row ou-wait">
         <td class="col-seq">49</td>
-        <td class="col-time">11-25 17:55</td>
+        <td class="col-time">11-25 17:55<span class="started-badge">已开赛</span></td>
         <td class="col-league">
           <span class="league-tag">J2联赛</span>
           <span class="grade-badge a">A级</span>
@@ -9899,7 +9929,7 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
       </tr>
       <tr class="ou-pred-row ou-wait">
         <td class="col-seq">50</td>
-        <td class="col-time">11-25 17:55</td>
+        <td class="col-time">11-25 17:55<span class="started-badge">已开赛</span></td>
         <td class="col-league">
           <span class="league-tag">J2联赛</span>
           <span class="grade-badge a">A级</span>
@@ -9925,7 +9955,7 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
       </tr>
       <tr class="ou-pred-row ou-wait">
         <td class="col-seq">51</td>
-        <td class="col-time">11-25 17:55</td>
+        <td class="col-time">11-25 17:55<span class="started-badge">已开赛</span></td>
         <td class="col-league">
           <span class="league-tag">J2联赛</span>
           <span class="grade-badge a">A级</span>
@@ -9951,7 +9981,7 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
       </tr>
       <tr class="ou-pred-row ou-wait">
         <td class="col-seq">52</td>
-        <td class="col-time">11-25 17:55</td>
+        <td class="col-time">11-25 17:55<span class="started-badge">已开赛</span></td>
         <td class="col-league">
           <span class="league-tag">J2联赛</span>
           <span class="grade-badge a">A级</span>
@@ -9977,7 +10007,7 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
       </tr>
       <tr class="ou-pred-row ou-wait">
         <td class="col-seq">53</td>
-        <td class="col-time">11-25 17:55</td>
+        <td class="col-time">11-25 17:55<span class="started-badge">已开赛</span></td>
         <td class="col-league">
           <span class="league-tag">J2联赛</span>
           <span class="grade-badge a">A级</span>
@@ -10003,7 +10033,7 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
       </tr>
       <tr class="ou-pred-row ou-wait">
         <td class="col-seq">54</td>
-        <td class="col-time">11-25 17:55</td>
+        <td class="col-time">11-25 17:55<span class="started-badge">已开赛</span></td>
         <td class="col-league">
           <span class="league-tag">J2联赛</span>
           <span class="grade-badge a">A级</span>
@@ -10029,7 +10059,7 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
       </tr>
       <tr class="ou-pred-row ou-wait">
         <td class="col-seq">55</td>
-        <td class="col-time">11-25 17:55</td>
+        <td class="col-time">11-25 17:55<span class="started-badge">已开赛</span></td>
         <td class="col-league">
           <span class="league-tag">J2联赛</span>
           <span class="grade-badge a">A级</span>
@@ -11750,6 +11780,7 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
             <thead>
               <tr>
                 <th class="col-seq">场次</th>
+                <th class="col-upset" title="五维爆冷指数(0-10)：点击徽章查看五维拆解与亚盘">爆冷</th>
                 <th class="col-time">开赛</th>
                 <th>联赛</th>
                 <th>对阵</th>
@@ -11762,7 +11793,11 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
             </thead>
             <tbody id="review-body">
       <tr class="match-hit">
-        <td class="col-seq">1</td>
+        <td class="col-seq">1</td><td class="col-upset up-cell-s2"><span class="up-badge up-s2" role="button" tabindex="0" data-up-i="2.59" data-up-s="2" data-up-d="2.5,1.4,9.7,0.0,5.0" data-up-tip="强队处于复赛长休或欧战（欧冠/欧罗巴）备战窗口，存在轮换与状态生疏风险，冷门风险高于平常，请谨慎对待。" data-up-m="亚冠精英联赛 · 纽卡斯尔喷气机 vs 柏太阳神" data-up-detail="{&quot;strength&quot;:[[&quot;Elo（主 / 客）&quot;,&quot;1442 / 1587&quot;],[&quot;近6场场均积分（主 / 客）&quot;,&quot;0.33 / 1.67&quot;],[&quot;近6场净胜球/场（主 / 客）&quot;,&quot;-2.83 / 0.17&quot;]],&quot;market&quot;:[[&quot;欧赔 主/平/客&quot;,&quot;6.50 / 5.00 / 1.36&quot;],[&quot;去水强队胜率&quot;,&quot;67.5%&quot;],[&quot;模型 Elo 强队胜率&quot;,&quot;52.9%&quot;],[&quot;模型 − 市场&quot;,&quot;-14.6 pct&quot;],[&quot;让球&quot;,&quot;+1&quot;],[&quot;亚盘即时（主水/盘口/客水）&quot;,&quot;0.92 / 客让两球 / 0.87&quot;],[&quot;亚盘初盘（主水/盘口/客水）&quot;,&quot;0.89 / 客让一/球半 / 0.88&quot;],[&quot;盘口变化 / 水位变动&quot;,&quot;-0.75 / 0.04&quot;],[&quot;亚盘倾向&quot;,&quot;客 · 主 49.3% / 客 50.7% · 16家&quot;]],&quot;motivation&quot;:[[&quot;休息天数（冷门方 / 强队）&quot;,&quot;28 / 3&quot;],[&quot;赛程密度（冷门方 / 强队）&quot;,&quot;0 / 4&quot;],[&quot;欧战备战窗口&quot;,&quot;不在欧战赛前窗口&quot;],[&quot;强队连续休整&quot;,&quot;3 天（正常间隔）&quot;]],&quot;history&quot;:[[&quot;相似对手爆冷率&quot;,&quot;23.2%&quot;],[&quot;样本场次&quot;,&quot;194&quot;],[&quot;基准爆冷率&quot;,&quot;49.8%&quot;],[&quot;高于 / 低于基准&quot;,&quot;-26.6 pct&quot;]],&quot;activity&quot;:[[&quot;出货活跃度&quot;,&quot;无数据（按中性 5.0 计）&quot;]]}" data-up-fav="away" data-up-ph="0.1413" data-up-pd="0.1836" data-up-pa="0.6751" data-up-h="纽卡斯尔喷气机" data-up-a="柏太阳神" title="五维爆冷指数 2.59 · 2星
+历史同档实测冷门率约 27%
+实力2.5 机构1.4 战意9.7 历史0.0 出货5.0
+强队处于复赛长休或欧战（欧冠/欧罗巴）备战窗口，存在轮换与状态生疏风险，冷门风险高于平常，请谨慎对待。
+点击查看五维星形拆解" aria-label="爆冷指数 2.59，2星，点击查看五维拆解"><b>2.59</b><i>★★</i><span class="up-lv">弱</span><span class="up-pc">冷门27%</span></span><span class="up-detail"><em class="up-dims">实力2.5 · 机构1.4 · 战意9.7 · 历史0.0 · 出货5.0</em></span></td>
         <td class="col-time">11-24 15:40</td>
         <td class="col-league"><span class="league-tag">亚冠精英联赛</span></td>
         <td class="col-teams">
@@ -11805,7 +11840,11 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
         </td>
       </tr>
       <tr class="match-miss">
-        <td class="col-seq">2</td>
+        <td class="col-seq">2</td><td class="col-upset up-cell-s2"><span class="up-badge up-s2" role="button" tabindex="0" data-up-i="3.42" data-up-s="2" data-up-d="3.8,3.3,5.0,1.1,5.0" data-up-tip="两队近期状态与实力不吻合，冷门风险高于平常，请谨慎对待。" data-up-m="亚冠精英联赛 · 京都不死鸟 vs 浦项铁人" data-up-detail="{&quot;strength&quot;:[[&quot;Elo（主 / 客）&quot;,&quot;1528 / 1500&quot;],[&quot;近6场场均积分（主 / 客）&quot;,&quot;1.50 / —&quot;],[&quot;近6场净胜球/场（主 / 客）&quot;,&quot;0.17 / —&quot;]],&quot;market&quot;:[[&quot;欧赔 主/平/客&quot;,&quot;1.62 / 3.75 / 4.80&quot;],[&quot;去水强队胜率&quot;,&quot;56.5%&quot;],[&quot;模型 Elo 强队胜率&quot;,&quot;50.2%&quot;],[&quot;模型 − 市场&quot;,&quot;-6.3 pct&quot;],[&quot;让球&quot;,&quot;-1&quot;],[&quot;亚盘即时（主水/盘口/客水）&quot;,&quot;0.91 / 主让半/一 / 0.90&quot;],[&quot;亚盘初盘（主水/盘口/客水）&quot;,&quot;0.85 / 主让半/一 / 0.95&quot;],[&quot;盘口变化 / 水位变动&quot;,&quot;+0 / 0.11&quot;],[&quot;亚盘倾向&quot;,&quot;主 · 主 49.9% / 客 50.1% · 16家&quot;]],&quot;motivation&quot;:[[&quot;休息天数（冷门方 / 强队）&quot;,&quot;— / 2&quot;],[&quot;赛程密度（冷门方 / 强队）&quot;,&quot;0 / 1&quot;],[&quot;欧战备战窗口&quot;,&quot;不在欧战赛前窗口&quot;],[&quot;强队连续休整&quot;,&quot;2 天（正常间隔）&quot;]],&quot;history&quot;:[[&quot;相似对手爆冷率&quot;,&quot;38.3%&quot;],[&quot;样本场次&quot;,&quot;389&quot;],[&quot;基准爆冷率&quot;,&quot;49.8%&quot;],[&quot;高于 / 低于基准&quot;,&quot;-11.5 pct&quot;]],&quot;activity&quot;:[[&quot;出货活跃度&quot;,&quot;无数据（按中性 5.0 计）&quot;]]}" data-up-fav="home" data-up-ph="0.5651" data-up-pd="0.2441" data-up-pa="0.1907" data-up-h="京都不死鸟" data-up-a="浦项铁人" title="五维爆冷指数 3.42 · 2星
+历史同档实测冷门率约 34%
+实力3.8 机构3.3 战意5.0 历史1.1 出货5.0
+两队近期状态与实力不吻合，冷门风险高于平常，请谨慎对待。
+点击查看五维星形拆解" aria-label="爆冷指数 3.42，2星，点击查看五维拆解"><b>3.42</b><i>★★</i><span class="up-lv">弱</span><span class="up-pc">冷门34%</span></span><span class="up-detail"><em class="up-dims">实力3.8 · 机构3.3 · 战意5.0 · 历史1.1 · 出货5.0</em></span></td>
         <td class="col-time">11-24 17:55</td>
         <td class="col-league"><span class="league-tag">亚冠精英联赛</span></td>
         <td class="col-teams">
@@ -11848,7 +11887,11 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
         </td>
       </tr>
       <tr class="match-miss">
-        <td class="col-seq">3</td>
+        <td class="col-seq">3</td><td class="col-upset up-cell-s3"><span class="up-badge up-s3" role="button" tabindex="0" data-up-i="6.27" data-up-s="3" data-up-d="4.1,8.0,5.0,8.6,5.0" data-up-tip="机构对强队支撑力度不足，冷门风险高于平常，请谨慎对待。" data-up-m="亚冠精英联赛 · 大田韩亚市民 vs 北京FC" data-up-detail="{&quot;strength&quot;:[[&quot;Elo（主 / 客）&quot;,&quot;1500 / 1500&quot;],[&quot;近6场场均积分（主 / 客）&quot;,&quot;— / —&quot;],[&quot;近6场净胜球/场（主 / 客）&quot;,&quot;— / —&quot;]],&quot;market&quot;:[[&quot;欧赔 主/平/客&quot;,&quot;2.30 / 3.40 / 2.80&quot;],[&quot;去水强队胜率&quot;,&quot;40.0%&quot;],[&quot;模型 Elo 强队胜率&quot;,&quot;45.0%&quot;],[&quot;模型 − 市场&quot;,&quot;+5.0 pct&quot;],[&quot;让球&quot;,&quot;-1&quot;],[&quot;亚盘即时（主水/盘口/客水）&quot;,&quot;0.96 / 主让一/球半 / 0.84&quot;],[&quot;亚盘初盘（主水/盘口/客水）&quot;,&quot;0.94 / 平手 / 0.79&quot;],[&quot;盘口变化 / 水位变动&quot;,&quot;+1.25 / -0.03&quot;],[&quot;亚盘倾向&quot;,&quot;主 · 主 48.4% / 客 51.6% · 16家&quot;]],&quot;motivation&quot;:[[&quot;休息天数（冷门方 / 强队）&quot;,&quot;— / —&quot;],[&quot;赛程密度（冷门方 / 强队）&quot;,&quot;0 / 0&quot;],[&quot;欧战备战窗口&quot;,&quot;不在欧战赛前窗口&quot;],[&quot;强队连续休整&quot;,&quot;— 天（正常间隔）&quot;]],&quot;history&quot;:[[&quot;相似对手爆冷率&quot;,&quot;60.8%&quot;],[&quot;样本场次&quot;,&quot;1096&quot;],[&quot;基准爆冷率&quot;,&quot;49.8%&quot;],[&quot;高于 / 低于基准&quot;,&quot;+10.9 pct&quot;]],&quot;activity&quot;:[[&quot;出货活跃度&quot;,&quot;无数据（按中性 5.0 计）&quot;]]}" data-up-fav="home" data-up-ph="0.4003" data-up-pd="0.2708" data-up-pa="0.3288" data-up-h="大田韩亚市民" data-up-a="北京FC" title="五维爆冷指数 6.27 · 3星
+历史同档实测冷门率约 59%
+实力4.1 机构8.0 战意5.0 历史8.6 出货5.0
+机构对强队支撑力度不足，冷门风险高于平常，请谨慎对待。
+点击查看五维星形拆解" aria-label="爆冷指数 6.27，3星，点击查看五维拆解"><b>6.27</b><i>★★★</i><span class="up-lv">中</span><span class="up-pc">冷门59%</span></span><span class="up-detail"><em class="up-dims">实力4.1 · 机构8.0 · 战意5.0 · 历史8.6 · 出货5.0</em></span></td>
         <td class="col-time">11-24 17:55</td>
         <td class="col-league"><span class="league-tag">亚冠精英联赛</span></td>
         <td class="col-teams">
@@ -11891,7 +11934,11 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
         </td>
       </tr>
       <tr class="match-miss">
-        <td class="col-seq">4</td>
+        <td class="col-seq">4</td><td class="col-upset up-cell-s2"><span class="up-badge up-s2" role="button" tabindex="0" data-up-i="4.14" data-up-s="2" data-up-d="2.8,6.3,5.0,1.1,5.0" data-up-tip="机构对强队支撑力度不足，冷门风险高于平常，请谨慎对待。" data-up-m="亚冠精英联赛 · 叻武里 vs 柔佛" data-up-detail="{&quot;strength&quot;:[[&quot;Elo（主 / 客）&quot;,&quot;1500 / 1746&quot;],[&quot;近6场场均积分（主 / 客）&quot;,&quot;— / 3.00&quot;],[&quot;近6场净胜球/场（主 / 客）&quot;,&quot;— / 3.17&quot;]],&quot;market&quot;:[[&quot;欧赔 主/平/客&quot;,&quot;4.50 / 4.00 / 1.62&quot;],[&quot;去水强队胜率&quot;,&quot;56.7%&quot;],[&quot;模型 Elo 强队胜率&quot;,&quot;63.0%&quot;],[&quot;模型 − 市场&quot;,&quot;+6.3 pct&quot;],[&quot;让球&quot;,&quot;+1&quot;],[&quot;亚盘即时（主水/盘口/客水）&quot;,&quot;0.84 / 客让一/球半 / 0.96&quot;],[&quot;亚盘初盘（主水/盘口/客水）&quot;,&quot;0.79 / 客让半球 / 0.94&quot;],[&quot;盘口变化 / 水位变动&quot;,&quot;-0.75 / 0.03&quot;],[&quot;亚盘倾向&quot;,&quot;客 · 主 51.6% / 客 48.4% · 16家&quot;]],&quot;motivation&quot;:[[&quot;休息天数（冷门方 / 强队）&quot;,&quot;— / 28&quot;],[&quot;赛程密度（冷门方 / 强队）&quot;,&quot;0 / 0&quot;],[&quot;欧战备战窗口&quot;,&quot;不在欧战赛前窗口&quot;],[&quot;强队连续休整&quot;,&quot;28 天（复赛长休，状态存疑）&quot;]],&quot;history&quot;:[[&quot;相似对手爆冷率&quot;,&quot;38.3%&quot;],[&quot;样本场次&quot;,&quot;389&quot;],[&quot;基准爆冷率&quot;,&quot;49.8%&quot;],[&quot;高于 / 低于基准&quot;,&quot;-11.5 pct&quot;]],&quot;activity&quot;:[[&quot;出货活跃度&quot;,&quot;无数据（按中性 5.0 计）&quot;]]}" data-up-fav="away" data-up-ph="0.2040" data-up-pd="0.2295" data-up-pa="0.5666" data-up-h="叻武里" data-up-a="柔佛" title="五维爆冷指数 4.14 · 2星
+历史同档实测冷门率约 40%
+实力2.8 机构6.3 战意5.0 历史1.1 出货5.0
+机构对强队支撑力度不足，冷门风险高于平常，请谨慎对待。
+点击查看五维星形拆解" aria-label="爆冷指数 4.14，2星，点击查看五维拆解"><b>4.14</b><i>★★</i><span class="up-lv">弱</span><span class="up-pc">冷门40%</span></span><span class="up-detail"><em class="up-dims">实力2.8 · 机构6.3 · 战意5.0 · 历史1.1 · 出货5.0</em></span></td>
         <td class="col-time">11-24 20:10</td>
         <td class="col-league"><span class="league-tag">亚冠精英联赛</span></td>
         <td class="col-teams">
@@ -11934,7 +11981,11 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
         </td>
       </tr>
       <tr class="match-hit">
-        <td class="col-seq">5</td>
+        <td class="col-seq">5</td><td class="col-upset up-cell-s2"><span class="up-badge up-s2" role="button" tabindex="0" data-up-i="5.28" data-up-s="2" data-up-d="3.0,7.3,6.4,5.2,5.0" data-up-tip="机构对强队支撑力度不足，冷门风险高于平常，请谨慎对待。" data-up-m="亚冠精英联赛 · 上海海港 vs 武里南联" data-up-detail="{&quot;strength&quot;:[[&quot;Elo（主 / 客）&quot;,&quot;1660 / 1583&quot;],[&quot;近6场场均积分（主 / 客）&quot;,&quot;2.17 / 1.17&quot;],[&quot;近6场净胜球/场（主 / 客）&quot;,&quot;1.33 / 2.17&quot;]],&quot;market&quot;:[[&quot;欧赔 主/平/客&quot;,&quot;1.73 / 3.90 / 3.90&quot;],[&quot;去水强队胜率&quot;,&quot;53.0%&quot;],[&quot;模型 Elo 强队胜率&quot;,&quot;57.0%&quot;],[&quot;模型 − 市场&quot;,&quot;+4.0 pct&quot;],[&quot;让球&quot;,&quot;+0&quot;],[&quot;亚盘即时（主水/盘口/客水）&quot;,&quot;0.95 / 主让半球 / 0.85&quot;],[&quot;亚盘初盘（主水/盘口/客水）&quot;,&quot;0.92 / 主让一球 / 0.86&quot;],[&quot;盘口变化 / 水位变动&quot;,&quot;-0.5 / 0.04&quot;],[&quot;亚盘倾向&quot;,&quot;主 · 主 48.7% / 客 51.3% · 16家&quot;]],&quot;motivation&quot;:[[&quot;休息天数（冷门方 / 强队）&quot;,&quot;5 / 3&quot;],[&quot;赛程密度（冷门方 / 强队）&quot;,&quot;2 / 2&quot;],[&quot;欧战备战窗口&quot;,&quot;不在欧战赛前窗口&quot;],[&quot;强队连续休整&quot;,&quot;3 天（正常间隔）&quot;]],&quot;history&quot;:[[&quot;相似对手爆冷率&quot;,&quot;50.6%&quot;],[&quot;样本场次&quot;,&quot;714&quot;],[&quot;基准爆冷率&quot;,&quot;49.8%&quot;],[&quot;高于 / 低于基准&quot;,&quot;+0.7 pct&quot;]],&quot;activity&quot;:[[&quot;出货活跃度&quot;,&quot;无数据（按中性 5.0 计）&quot;]]}" data-up-fav="home" data-up-ph="0.5299" data-up-pd="0.2351" data-up-pa="0.2351" data-up-h="上海海港" data-up-a="武里南联" title="五维爆冷指数 5.28 · 2星
+历史同档实测冷门率约 50%
+实力3.0 机构7.3 战意6.4 历史5.2 出货5.0
+机构对强队支撑力度不足，冷门风险高于平常，请谨慎对待。
+点击查看五维星形拆解" aria-label="爆冷指数 5.28，2星，点击查看五维拆解"><b>5.28</b><i>★★</i><span class="up-lv">弱</span><span class="up-pc">冷门50%</span></span><span class="up-detail"><em class="up-dims">实力3.0 · 机构7.3 · 战意6.4 · 历史5.2 · 出货5.0</em></span></td>
         <td class="col-time">11-24 20:10</td>
         <td class="col-league"><span class="league-tag">亚冠精英联赛</span></td>
         <td class="col-teams">
@@ -11977,7 +12028,7 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
         </td>
       </tr>
       <tr class="match-miss">
-        <td class="col-seq">6</td>
+        <td class="col-seq">6</td><td class="col-upset"><span class="up-na">—</span></td>
         <td class="col-time">11-25 01:40</td>
         <td class="col-league"><span class="league-tag">欧冠联赛</span></td>
         <td class="col-teams">
@@ -12020,7 +12071,11 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
         </td>
       </tr>
       <tr class="match-hit">
-        <td class="col-seq">7</td>
+        <td class="col-seq">7</td><td class="col-upset up-cell-s2"><span class="up-badge up-s2" role="button" tabindex="0" data-up-i="5.26" data-up-s="2" data-up-d="5.9,4.7,5.0,5.3,5.0" data-up-tip="两队近期状态与实力不吻合，冷门风险高于平常，请谨慎对待。" data-up-m="欧冠联赛 · 加拉塔萨雷 vs 阿斯顿维拉" data-up-detail="{&quot;strength&quot;:[[&quot;Elo（主 / 客）&quot;,&quot;1568 / 1581&quot;],[&quot;近6场场均积分（主 / 客）&quot;,&quot;2.50 / 2.17&quot;],[&quot;近6场净胜球/场（主 / 客）&quot;,&quot;0.83 / 0.50&quot;]],&quot;market&quot;:[[&quot;欧赔 主/平/客&quot;,&quot;3.54 / 4.11 / 2.10&quot;],[&quot;去水强队胜率&quot;,&quot;47.5%&quot;],[&quot;模型 Elo 强队胜率&quot;,&quot;31.2%&quot;],[&quot;模型 − 市场&quot;,&quot;-16.3 pct&quot;],[&quot;让球&quot;,&quot;+0&quot;],[&quot;亚盘即时（主水/盘口/客水）&quot;,&quot;0.88 / 客让半球 / 0.98&quot;],[&quot;亚盘初盘（主水/盘口/客水）&quot;,&quot;0.92 / 平手 / 0.91&quot;],[&quot;盘口变化 / 水位变动&quot;,&quot;-0.5 / -0.11&quot;],[&quot;亚盘倾向&quot;,&quot;客 · 主 51.3% / 客 48.7% · 16家&quot;]],&quot;motivation&quot;:[[&quot;休息天数（冷门方 / 强队）&quot;,&quot;2 / 2&quot;],[&quot;赛程密度（冷门方 / 强队）&quot;,&quot;1 / 1&quot;],[&quot;欧战备战窗口&quot;,&quot;不在欧战赛前窗口&quot;],[&quot;强队连续休整&quot;,&quot;2 天（正常间隔）&quot;]],&quot;history&quot;:[[&quot;相似对手爆冷率&quot;,&quot;50.5%&quot;],[&quot;样本场次&quot;,&quot;734&quot;],[&quot;基准爆冷率&quot;,&quot;49.7%&quot;],[&quot;高于 / 低于基准&quot;,&quot;+0.8 pct&quot;]],&quot;activity&quot;:[[&quot;出货活跃度&quot;,&quot;无数据（按中性 5.0 计）&quot;]]}" data-up-fav="away" data-up-ph="0.2819" data-up-pd="0.2428" data-up-pa="0.4752" data-up-h="加拉塔萨雷" data-up-a="阿斯顿维拉" title="五维爆冷指数 5.26 · 2星
+历史同档实测冷门率约 50%
+实力5.9 机构4.7 战意5.0 历史5.3 出货5.0
+两队近期状态与实力不吻合，冷门风险高于平常，请谨慎对待。
+点击查看五维星形拆解" aria-label="爆冷指数 5.26，2星，点击查看五维拆解"><b>5.26</b><i>★★</i><span class="up-lv">弱</span><span class="up-pc">冷门50%</span></span><span class="up-detail"><em class="up-dims">实力5.9 · 机构4.7 · 战意5.0 · 历史5.3 · 出货5.0</em></span></td>
         <td class="col-time">11-25 01:40</td>
         <td class="col-league"><span class="league-tag">欧冠联赛</span></td>
         <td class="col-teams">
@@ -12063,7 +12118,11 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
         </td>
       </tr>
       <tr class="match-miss">
-        <td class="col-seq">8</td>
+        <td class="col-seq">8</td><td class="col-upset up-cell-s2"><span class="up-badge up-s2" role="button" tabindex="0" data-up-i="4.81" data-up-s="2" data-up-d="4.1,5.2,5.0,5.3,5.0" data-up-tip="机构对强队支撑力度不足，冷门风险高于平常，请谨慎对待。" data-up-m="意乙 · 尤维斯塔比亚 vs 卡坦扎罗" data-up-detail="{&quot;strength&quot;:[[&quot;Elo（主 / 客）&quot;,&quot;1500 / 1500&quot;],[&quot;近6场场均积分（主 / 客）&quot;,&quot;— / —&quot;],[&quot;近6场净胜球/场（主 / 客）&quot;,&quot;— / —&quot;]],&quot;market&quot;:[[&quot;欧赔 主/平/客&quot;,&quot;2.02 / 3.30 / 4.91&quot;],[&quot;去水强队胜率&quot;,&quot;49.4%&quot;],[&quot;模型 Elo 强队胜率&quot;,&quot;43.4%&quot;],[&quot;模型 − 市场&quot;,&quot;-6.0 pct&quot;],[&quot;让球&quot;,&quot;+0&quot;],[&quot;亚盘即时（主水/盘口/客水）&quot;,&quot;0.91 / 主让半球 / 0.91&quot;],[&quot;亚盘初盘（主水/盘口/客水）&quot;,&quot;0.50 / 平手 / 1.41&quot;],[&quot;盘口变化 / 水位变动&quot;,&quot;+0.5 / 0.91&quot;],[&quot;亚盘倾向&quot;,&quot;主 · 主 50.0% / 客 50.0% · 15家&quot;]],&quot;motivation&quot;:[[&quot;休息天数（冷门方 / 强队）&quot;,&quot;— / —&quot;],[&quot;赛程密度（冷门方 / 强队）&quot;,&quot;0 / 0&quot;],[&quot;欧战备战窗口&quot;,&quot;不在欧战赛前窗口&quot;],[&quot;强队连续休整&quot;,&quot;— 天（正常间隔）&quot;]],&quot;history&quot;:[[&quot;相似对手爆冷率&quot;,&quot;50.5%&quot;],[&quot;样本场次&quot;,&quot;734&quot;],[&quot;基准爆冷率&quot;,&quot;49.7%&quot;],[&quot;高于 / 低于基准&quot;,&quot;+0.8 pct&quot;]],&quot;activity&quot;:[[&quot;出货活跃度&quot;,&quot;无数据（按中性 5.0 计）&quot;]]}" data-up-fav="home" data-up-ph="0.4942" data-up-pd="0.3025" data-up-pa="0.2033" data-up-h="尤维斯塔比亚" data-up-a="卡坦扎罗" title="五维爆冷指数 4.81 · 2星
+历史同档实测冷门率约 46%
+实力4.1 机构5.2 战意5.0 历史5.3 出货5.0
+机构对强队支撑力度不足，冷门风险高于平常，请谨慎对待。
+点击查看五维星形拆解" aria-label="爆冷指数 4.81，2星，点击查看五维拆解"><b>4.81</b><i>★★</i><span class="up-lv">弱</span><span class="up-pc">冷门46%</span></span><span class="up-detail"><em class="up-dims">实力4.1 · 机构5.2 · 战意5.0 · 历史5.3 · 出货5.0</em></span></td>
         <td class="col-time">11-25 01:55</td>
         <td class="col-league"><span class="league-tag">意乙</span></td>
         <td class="col-teams">
@@ -12106,7 +12165,11 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
         </td>
       </tr>
       <tr class="match-hit">
-        <td class="col-seq">9</td>
+        <td class="col-seq">9</td><td class="col-upset up-cell-s2"><span class="up-badge up-s2" role="button" tabindex="0" data-up-i="3.02" data-up-s="2" data-up-d="2.4,3.5,5.0,1.1,5.0" data-up-tip="两队近期状态与实力不吻合，冷门风险高于平常，请谨慎对待。" data-up-m="意乙 · 贝内文托 vs 恩波利" data-up-detail="{&quot;strength&quot;:[[&quot;Elo（主 / 客）&quot;,&quot;1508 / 1438&quot;],[&quot;近6场场均积分（主 / 客）&quot;,&quot;1.33 / 0.17&quot;],[&quot;近6场净胜球/场（主 / 客）&quot;,&quot;0.33 / -1.17&quot;]],&quot;market&quot;:[[&quot;欧赔 主/平/客&quot;,&quot;1.55 / 3.90 / 5.50&quot;],[&quot;去水强队胜率&quot;,&quot;59.6%&quot;],[&quot;模型 Elo 强队胜率&quot;,&quot;56.1%&quot;],[&quot;模型 − 市场&quot;,&quot;-3.5 pct&quot;],[&quot;让球&quot;,&quot;-1&quot;],[&quot;亚盘即时（主水/盘口/客水）&quot;,&quot;0.85 / 主让一球 / 0.97&quot;],[&quot;亚盘初盘（主水/盘口/客水）&quot;,&quot;0.31 / 平手 / 2.05&quot;],[&quot;盘口变化 / 水位变动&quot;,&quot;+1 / 1.62&quot;],[&quot;亚盘倾向&quot;,&quot;主 · 主 51.6% / 客 48.4% · 15家&quot;]],&quot;motivation&quot;:[[&quot;休息天数（冷门方 / 强队）&quot;,&quot;2 / 2&quot;],[&quot;赛程密度（冷门方 / 强队）&quot;,&quot;1 / 1&quot;],[&quot;欧战备战窗口&quot;,&quot;不在欧战赛前窗口&quot;],[&quot;强队连续休整&quot;,&quot;2 天（正常间隔）&quot;]],&quot;history&quot;:[[&quot;相似对手爆冷率&quot;,&quot;38.1%&quot;],[&quot;样本场次&quot;,&quot;401&quot;],[&quot;基准爆冷率&quot;,&quot;49.7%&quot;],[&quot;高于 / 低于基准&quot;,&quot;-11.6 pct&quot;]],&quot;activity&quot;:[[&quot;出货活跃度&quot;,&quot;无数据（按中性 5.0 计）&quot;]]}" data-up-fav="home" data-up-ph="0.5955" data-up-pd="0.2367" data-up-pa="0.1678" data-up-h="贝内文托" data-up-a="恩波利" title="五维爆冷指数 3.02 · 2星
+历史同档实测冷门率约 31%
+实力2.4 机构3.5 战意5.0 历史1.1 出货5.0
+两队近期状态与实力不吻合，冷门风险高于平常，请谨慎对待。
+点击查看五维星形拆解" aria-label="爆冷指数 3.02，2星，点击查看五维拆解"><b>3.02</b><i>★★</i><span class="up-lv">弱</span><span class="up-pc">冷门31%</span></span><span class="up-detail"><em class="up-dims">实力2.4 · 机构3.5 · 战意5.0 · 历史1.1 · 出货5.0</em></span></td>
         <td class="col-time">11-25 02:55</td>
         <td class="col-league"><span class="league-tag">意乙</span></td>
         <td class="col-teams">
@@ -12149,7 +12212,11 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
         </td>
       </tr>
       <tr class="match-hit kelly-trap">
-        <td class="col-seq">10</td>
+        <td class="col-seq">10</td><td class="col-upset up-cell-s2"><span class="up-badge up-s2" role="button" tabindex="0" data-up-i="5.87" data-up-s="2" data-up-d="4.7,7.1,5.1,6.6,5.0" data-up-tip="机构对强队支撑力度不足，冷门风险高于平常，请谨慎对待。" data-up-m="意乙 · 切塞纳 vs 阿斯科利" data-up-detail="{&quot;strength&quot;:[[&quot;Elo（主 / 客）&quot;,&quot;1515 / 1564&quot;],[&quot;近6场场均积分（主 / 客）&quot;,&quot;1.67 / 2.00&quot;],[&quot;近6场净胜球/场（主 / 客）&quot;,&quot;0.00 / 1.50&quot;]],&quot;market&quot;:[[&quot;欧赔 主/平/客&quot;,&quot;2.60 / 3.10 / 2.50&quot;],[&quot;去水强队胜率&quot;,&quot;36.1%&quot;],[&quot;模型 Elo 强队胜率&quot;,&quot;33.9%&quot;],[&quot;模型 − 市场&quot;,&quot;-2.3 pct&quot;],[&quot;让球&quot;,&quot;+0&quot;],[&quot;亚盘即时（主水/盘口/客水）&quot;,&quot;0.94 / 主让平/半 / 0.91&quot;],[&quot;亚盘初盘（主水/盘口/客水）&quot;,&quot;0.84 / 平手 / 0.89&quot;],[&quot;盘口变化 / 水位变动&quot;,&quot;+0.25 / 0.08&quot;],[&quot;亚盘倾向&quot;,&quot;主 · 主 49.6% / 客 50.4% · 15家&quot;]],&quot;motivation&quot;:[[&quot;休息天数（冷门方 / 强队）&quot;,&quot;3 / 2&quot;],[&quot;赛程密度（冷门方 / 强队）&quot;,&quot;2 / 1&quot;],[&quot;欧战备战窗口&quot;,&quot;不在欧战赛前窗口&quot;],[&quot;强队连续休整&quot;,&quot;2 天（正常间隔）&quot;]],&quot;history&quot;:[[&quot;相似对手爆冷率&quot;,&quot;54.5%&quot;],[&quot;样本场次&quot;,&quot;44&quot;],[&quot;基准爆冷率&quot;,&quot;49.7%&quot;],[&quot;高于 / 低于基准&quot;,&quot;+4.8 pct&quot;]],&quot;activity&quot;:[[&quot;出货活跃度&quot;,&quot;无数据（按中性 5.0 计）&quot;]]}" data-up-fav="away" data-up-ph="0.3474" data-up-pd="0.2913" data-up-pa="0.3613" data-up-h="切塞纳" data-up-a="阿斯科利" title="五维爆冷指数 5.87 · 2星
+历史同档实测冷门率约 55%
+实力4.7 机构7.1 战意5.1 历史6.6 出货5.0
+机构对强队支撑力度不足，冷门风险高于平常，请谨慎对待。
+点击查看五维星形拆解" aria-label="爆冷指数 5.87，2星，点击查看五维拆解"><b>5.87</b><i>★★</i><span class="up-lv">弱</span><span class="up-pc">冷门55%</span></span><span class="up-detail"><em class="up-dims">实力4.7 · 机构7.1 · 战意5.1 · 历史6.6 · 出货5.0</em></span></td>
         <td class="col-time">11-25 02:55</td>
         <td class="col-league"><span class="league-tag">意乙</span></td>
         <td class="col-teams">
@@ -12192,7 +12259,11 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
         </td>
       </tr>
       <tr class="match-hit">
-        <td class="col-seq">11</td>
+        <td class="col-seq">11</td><td class="col-upset up-cell-s3"><span class="up-badge up-s3" role="button" tabindex="0" data-up-i="6.06" data-up-s="3" data-up-d="5.1,7.2,5.0,6.6,5.0" data-up-tip="机构对强队支撑力度不足，冷门风险高于平常，请谨慎对待。" data-up-m="意乙 · 维琴察 vs 卡拉拉" data-up-detail="{&quot;strength&quot;:[[&quot;Elo（主 / 客）&quot;,&quot;1446 / 1500&quot;],[&quot;近6场场均积分（主 / 客）&quot;,&quot;0.83 / —&quot;],[&quot;近6场净胜球/场（主 / 客）&quot;,&quot;-0.50 / —&quot;]],&quot;market&quot;:[[&quot;欧赔 主/平/客&quot;,&quot;2.63 / 3.00 / 2.50&quot;],[&quot;去水强队胜率&quot;,&quot;35.9%&quot;],[&quot;模型 Elo 强队胜率&quot;,&quot;34.1%&quot;],[&quot;模型 − 市场&quot;,&quot;-1.8 pct&quot;],[&quot;让球&quot;,&quot;+0&quot;],[&quot;亚盘即时（主水/盘口/客水）&quot;,&quot;0.90 / 客让平/半 / 0.95&quot;],[&quot;亚盘初盘（主水/盘口/客水）&quot;,&quot;0.55 / 平手 / 1.29&quot;],[&quot;盘口变化 / 水位变动&quot;,&quot;-0.25 / 0.69&quot;],[&quot;亚盘倾向&quot;,&quot;客 · 主 50.6% / 客 49.4% · 15家&quot;]],&quot;motivation&quot;:[[&quot;休息天数（冷门方 / 强队）&quot;,&quot;2 / —&quot;],[&quot;赛程密度（冷门方 / 强队）&quot;,&quot;1 / 0&quot;],[&quot;欧战备战窗口&quot;,&quot;不在欧战赛前窗口&quot;],[&quot;强队连续休整&quot;,&quot;— 天（正常间隔）&quot;]],&quot;history&quot;:[[&quot;相似对手爆冷率&quot;,&quot;54.5%&quot;],[&quot;样本场次&quot;,&quot;44&quot;],[&quot;基准爆冷率&quot;,&quot;49.7%&quot;],[&quot;高于 / 低于基准&quot;,&quot;+4.8 pct&quot;]],&quot;activity&quot;:[[&quot;出货活跃度&quot;,&quot;无数据（按中性 5.0 计）&quot;]]}" data-up-fav="away" data-up-ph="0.3415" data-up-pd="0.2993" data-up-pa="0.3592" data-up-h="维琴察" data-up-a="卡拉拉" title="五维爆冷指数 6.06 · 3星
+历史同档实测冷门率约 57%
+实力5.1 机构7.2 战意5.0 历史6.6 出货5.0
+机构对强队支撑力度不足，冷门风险高于平常，请谨慎对待。
+点击查看五维星形拆解" aria-label="爆冷指数 6.06，3星，点击查看五维拆解"><b>6.06</b><i>★★★</i><span class="up-lv">中</span><span class="up-pc">冷门57%</span></span><span class="up-detail"><em class="up-dims">实力5.1 · 机构7.2 · 战意5.0 · 历史6.6 · 出货5.0</em></span></td>
         <td class="col-time">11-25 02:55</td>
         <td class="col-league"><span class="league-tag">意乙</span></td>
         <td class="col-teams">
@@ -12235,7 +12306,11 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
         </td>
       </tr>
       <tr class="match-hit">
-        <td class="col-seq">12</td>
+        <td class="col-seq">12</td><td class="col-upset up-cell-s2"><span class="up-badge up-s2" role="button" tabindex="0" data-up-i="2.87" data-up-s="2" data-up-d="2.0,3.5,5.0,1.1,5.0" data-up-tip="两队近期状态与实力不吻合，冷门风险高于平常，请谨慎对待。" data-up-m="意乙 · 巴勒莫 vs 南蒂罗尔" data-up-detail="{&quot;strength&quot;:[[&quot;Elo（主 / 客）&quot;,&quot;1623 / 1514&quot;],[&quot;近6场场均积分（主 / 客）&quot;,&quot;2.17 / 0.83&quot;],[&quot;近6场净胜球/场（主 / 客）&quot;,&quot;0.67 / -0.83&quot;]],&quot;market&quot;:[[&quot;欧赔 主/平/客&quot;,&quot;1.44 / 4.33 / 6.00&quot;],[&quot;去水强队胜率&quot;,&quot;63.6%&quot;],[&quot;模型 Elo 强队胜率&quot;,&quot;61.9%&quot;],[&quot;模型 − 市场&quot;,&quot;-1.7 pct&quot;],[&quot;让球&quot;,&quot;-1&quot;],[&quot;亚盘即时（主水/盘口/客水）&quot;,&quot;0.92 / 主让一/球半 / 0.91&quot;],[&quot;亚盘初盘（主水/盘口/客水）&quot;,&quot;0.99 / 主让一/球半 / 0.80&quot;],[&quot;盘口变化 / 水位变动&quot;,&quot;+0 / -0.18&quot;],[&quot;亚盘倾向&quot;,&quot;主 · 主 49.9% / 客 50.1% · 15家&quot;]],&quot;motivation&quot;:[[&quot;休息天数（冷门方 / 强队）&quot;,&quot;2 / 2&quot;],[&quot;赛程密度（冷门方 / 强队）&quot;,&quot;1 / 1&quot;],[&quot;欧战备战窗口&quot;,&quot;不在欧战赛前窗口&quot;],[&quot;强队连续休整&quot;,&quot;2 天（正常间隔）&quot;]],&quot;history&quot;:[[&quot;相似对手爆冷率&quot;,&quot;38.1%&quot;],[&quot;样本场次&quot;,&quot;401&quot;],[&quot;基准爆冷率&quot;,&quot;49.7%&quot;],[&quot;高于 / 低于基准&quot;,&quot;-11.6 pct&quot;]],&quot;activity&quot;:[[&quot;出货活跃度&quot;,&quot;无数据（按中性 5.0 计）&quot;]]}" data-up-fav="home" data-up-ph="0.6359" data-up-pd="0.2115" data-up-pa="0.1526" data-up-h="巴勒莫" data-up-a="南蒂罗尔" title="五维爆冷指数 2.87 · 2星
+历史同档实测冷门率约 29%
+实力2.0 机构3.5 战意5.0 历史1.1 出货5.0
+两队近期状态与实力不吻合，冷门风险高于平常，请谨慎对待。
+点击查看五维星形拆解" aria-label="爆冷指数 2.87，2星，点击查看五维拆解"><b>2.87</b><i>★★</i><span class="up-lv">弱</span><span class="up-pc">冷门29%</span></span><span class="up-detail"><em class="up-dims">实力2.0 · 机构3.5 · 战意5.0 · 历史1.1 · 出货5.0</em></span></td>
         <td class="col-time">11-25 02:55</td>
         <td class="col-league"><span class="league-tag">意乙</span></td>
         <td class="col-teams">
@@ -12278,7 +12353,11 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
         </td>
       </tr>
       <tr class="match-miss">
-        <td class="col-seq">13</td>
+        <td class="col-seq">13</td><td class="col-upset up-cell-s2"><span class="up-badge up-s2" role="button" tabindex="0" data-up-i="5.79" data-up-s="2" data-up-d="6.0,5.6,4.9,6.6,5.0" data-up-tip="两队近期状态与实力不吻合，冷门风险高于平常，请谨慎对待。" data-up-m="意乙 · 恩特拉 vs 维罗纳" data-up-detail="{&quot;strength&quot;:[[&quot;Elo（主 / 客）&quot;,&quot;1491 / 1495&quot;],[&quot;近6场场均积分（主 / 客）&quot;,&quot;1.00 / 0.83&quot;],[&quot;近6场净胜球/场（主 / 客）&quot;,&quot;-0.17 / -0.67&quot;]],&quot;market&quot;:[[&quot;欧赔 主/平/客&quot;,&quot;3.10 / 3.00 / 2.25&quot;],[&quot;去水强队胜率&quot;,&quot;40.4%&quot;],[&quot;模型 Elo 强队胜率&quot;,&quot;26.9%&quot;],[&quot;模型 − 市场&quot;,&quot;-13.5 pct&quot;],[&quot;让球&quot;,&quot;+0&quot;],[&quot;亚盘即时（主水/盘口/客水）&quot;,&quot;0.96 / 客让半球 / 0.88&quot;],[&quot;亚盘初盘（主水/盘口/客水）&quot;,&quot;0.94 / 平手 / 0.80&quot;],[&quot;盘口变化 / 水位变动&quot;,&quot;-0.5 / -0.06&quot;],[&quot;亚盘倾向&quot;,&quot;客 · 主 49.0% / 客 51.0% · 15家&quot;]],&quot;motivation&quot;:[[&quot;休息天数（冷门方 / 强队）&quot;,&quot;2 / 3&quot;],[&quot;赛程密度（冷门方 / 强队）&quot;,&quot;1 / 2&quot;],[&quot;欧战备战窗口&quot;,&quot;不在欧战赛前窗口&quot;],[&quot;强队连续休整&quot;,&quot;3 天（正常间隔）&quot;]],&quot;history&quot;:[[&quot;相似对手爆冷率&quot;,&quot;54.5%&quot;],[&quot;样本场次&quot;,&quot;44&quot;],[&quot;基准爆冷率&quot;,&quot;49.7%&quot;],[&quot;高于 / 低于基准&quot;,&quot;+4.8 pct&quot;]],&quot;activity&quot;:[[&quot;出货活跃度&quot;,&quot;无数据（按中性 5.0 计）&quot;]]}" data-up-fav="away" data-up-ph="0.2932" data-up-pd="0.3029" data-up-pa="0.4039" data-up-h="恩特拉" data-up-a="维罗纳" title="五维爆冷指数 5.79 · 2星
+历史同档实测冷门率约 55%
+实力6.0 机构5.6 战意4.9 历史6.6 出货5.0
+两队近期状态与实力不吻合，冷门风险高于平常，请谨慎对待。
+点击查看五维星形拆解" aria-label="爆冷指数 5.79，2星，点击查看五维拆解"><b>5.79</b><i>★★</i><span class="up-lv">弱</span><span class="up-pc">冷门55%</span></span><span class="up-detail"><em class="up-dims">实力6.0 · 机构5.6 · 战意4.9 · 历史6.6 · 出货5.0</em></span></td>
         <td class="col-time">11-25 02:55</td>
         <td class="col-league"><span class="league-tag">意乙</span></td>
         <td class="col-teams">
@@ -12321,7 +12400,11 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
         </td>
       </tr>
       <tr class="match-miss kelly-trap">
-        <td class="col-seq">14</td>
+        <td class="col-seq">14</td><td class="col-upset up-cell-s4"><span class="up-badge up-s4" role="button" tabindex="0" data-up-i="6.67" data-up-s="4" data-up-d="4.0,9.3,5.0,8.6,5.0" data-up-tip="机构对强队支撑力度不足，冷门风险高于平常，请谨慎对待。" data-up-m="英冠 · 布里斯托尔城 vs 雷克瑟姆" data-up-detail="{&quot;strength&quot;:[[&quot;Elo（主 / 客）&quot;,&quot;1513 / 1500&quot;],[&quot;近6场场均积分（主 / 客）&quot;,&quot;0.83 / —&quot;],[&quot;近6场净胜球/场（主 / 客）&quot;,&quot;-0.33 / —&quot;]],&quot;market&quot;:[[&quot;欧赔 主/平/客&quot;,&quot;2.40 / 3.10 / 2.90&quot;],[&quot;去水强队胜率&quot;,&quot;38.4%&quot;],[&quot;模型 Elo 强队胜率&quot;,&quot;45.5%&quot;],[&quot;模型 − 市场&quot;,&quot;+7.1 pct&quot;],[&quot;让球&quot;,&quot;+0&quot;],[&quot;亚盘即时（主水/盘口/客水）&quot;,&quot;0.96 / 主让平/半 / 0.88&quot;],[&quot;亚盘初盘（主水/盘口/客水）&quot;,&quot;0.65 / 平手 / 1.15&quot;],[&quot;盘口变化 / 水位变动&quot;,&quot;+0.25 / 0.58&quot;],[&quot;亚盘倾向&quot;,&quot;主 · 主 49.0% / 客 51.0% · 16家&quot;]],&quot;motivation&quot;:[[&quot;休息天数（冷门方 / 强队）&quot;,&quot;— / 2&quot;],[&quot;赛程密度（冷门方 / 强队）&quot;,&quot;0 / 1&quot;],[&quot;欧战备战窗口&quot;,&quot;不在欧战赛前窗口&quot;],[&quot;强队连续休整&quot;,&quot;2 天（正常间隔）&quot;]],&quot;history&quot;:[[&quot;相似对手爆冷率&quot;,&quot;60.4%&quot;],[&quot;样本场次&quot;,&quot;53&quot;],[&quot;基准爆冷率&quot;,&quot;49.7%&quot;],[&quot;高于 / 低于基准&quot;,&quot;+10.7 pct&quot;]],&quot;activity&quot;:[[&quot;出货活跃度&quot;,&quot;无数据（按中性 5.0 计）&quot;]]}" data-up-fav="home" data-up-ph="0.3844" data-up-pd="0.2976" data-up-pa="0.3181" data-up-h="布里斯托尔城" data-up-a="雷克瑟姆" title="五维爆冷指数 6.67 · 4星
+历史同档实测冷门率约 62%
+实力4.0 机构9.3 战意5.0 历史8.6 出货5.0
+机构对强队支撑力度不足，冷门风险高于平常，请谨慎对待。
+点击查看五维星形拆解" aria-label="爆冷指数 6.67，4星，点击查看五维拆解"><b>6.67</b><i>★★★★</i><span class="up-lv">较强</span><span class="up-pc">冷门62%</span></span><span class="up-detail"><em class="up-dims">实力4.0 · 机构9.3 · 战意5.0 · 历史8.6 · 出货5.0</em><em class="up-tip">机构对强队支撑力度不足，冷门风险高于平常，请谨慎对待。</em></span></td>
         <td class="col-time">11-25 03:40</td>
         <td class="col-league"><span class="league-tag">英冠</span></td>
         <td class="col-teams">
@@ -12364,7 +12447,11 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
         </td>
       </tr>
       <tr class="match-hit">
-        <td class="col-seq">15</td>
+        <td class="col-seq">15</td><td class="col-upset up-cell-s2"><span class="up-badge up-s2" role="button" tabindex="0" data-up-i="3.38" data-up-s="2" data-up-d="2.8,4.2,5.0,1.1,5.0" data-up-tip="两队近期状态与实力不吻合，冷门风险高于平常，请谨慎对待。" data-up-m="英冠 · 卡迪夫城 vs 普雷斯顿" data-up-detail="{&quot;strength&quot;:[[&quot;Elo（主 / 客）&quot;,&quot;1500 / 1374&quot;],[&quot;近6场场均积分（主 / 客）&quot;,&quot;— / 0.50&quot;],[&quot;近6场净胜球/场（主 / 客）&quot;,&quot;— / -1.33&quot;]],&quot;market&quot;:[[&quot;欧赔 主/平/客&quot;,&quot;1.44 / 4.80 / 5.50&quot;],[&quot;去水强队胜率&quot;,&quot;64.0%&quot;],[&quot;模型 Elo 强队胜率&quot;,&quot;64.8%&quot;],[&quot;模型 − 市场&quot;,&quot;+0.8 pct&quot;],[&quot;让球&quot;,&quot;-1&quot;],[&quot;亚盘即时（主水/盘口/客水）&quot;,&quot;0.89 / 主让一/球半 / 0.95&quot;],[&quot;亚盘初盘（主水/盘口/客水）&quot;,&quot;0.22 / 平手 / 2.70&quot;],[&quot;盘口变化 / 水位变动&quot;,&quot;+1.25 / 2.42&quot;],[&quot;亚盘倾向&quot;,&quot;主 · 主 50.8% / 客 49.2% · 15家&quot;]],&quot;motivation&quot;:[[&quot;休息天数（冷门方 / 强队）&quot;,&quot;2 / —&quot;],[&quot;赛程密度（冷门方 / 强队）&quot;,&quot;1 / 0&quot;],[&quot;欧战备战窗口&quot;,&quot;不在欧战赛前窗口&quot;],[&quot;强队连续休整&quot;,&quot;— 天（正常间隔）&quot;]],&quot;history&quot;:[[&quot;相似对手爆冷率&quot;,&quot;38.1%&quot;],[&quot;样本场次&quot;,&quot;401&quot;],[&quot;基准爆冷率&quot;,&quot;49.7%&quot;],[&quot;高于 / 低于基准&quot;,&quot;-11.6 pct&quot;]],&quot;activity&quot;:[[&quot;出货活跃度&quot;,&quot;无数据（按中性 5.0 计）&quot;]]}" data-up-fav="home" data-up-ph="0.6403" data-up-pd="0.1921" data-up-pa="0.1676" data-up-h="卡迪夫城" data-up-a="普雷斯顿" title="五维爆冷指数 3.38 · 2星
+历史同档实测冷门率约 33%
+实力2.8 机构4.2 战意5.0 历史1.1 出货5.0
+两队近期状态与实力不吻合，冷门风险高于平常，请谨慎对待。
+点击查看五维星形拆解" aria-label="爆冷指数 3.38，2星，点击查看五维拆解"><b>3.38</b><i>★★</i><span class="up-lv">弱</span><span class="up-pc">冷门33%</span></span><span class="up-detail"><em class="up-dims">实力2.8 · 机构4.2 · 战意5.0 · 历史1.1 · 出货5.0</em></span></td>
         <td class="col-time">11-25 03:40</td>
         <td class="col-league"><span class="league-tag">英冠</span></td>
         <td class="col-teams">
@@ -12407,7 +12494,11 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
         </td>
       </tr>
       <tr class="match-hit">
-        <td class="col-seq">16</td>
+        <td class="col-seq">16</td><td class="col-upset up-cell-s3"><span class="up-badge up-s3" role="button" tabindex="0" data-up-i="6.45" data-up-s="3" data-up-d="5.1,7.6,5.0,8.6,5.0" data-up-tip="机构对强队支撑力度不足，冷门风险高于平常，请谨慎对待。" data-up-m="英冠 · 查尔顿 vs 林肯城" data-up-detail="{&quot;strength&quot;:[[&quot;Elo（主 / 客）&quot;,&quot;1422 / 1481&quot;],[&quot;近6场场均积分（主 / 客）&quot;,&quot;0.33 / 0.67&quot;],[&quot;近6场净胜球/场（主 / 客）&quot;,&quot;-1.17 / -1.33&quot;]],&quot;market&quot;:[[&quot;欧赔 主/平/客&quot;,&quot;2.60 / 3.10 / 2.70&quot;],[&quot;去水强队胜率&quot;,&quot;35.7%&quot;],[&quot;模型 Elo 强队胜率&quot;,&quot;35.1%&quot;],[&quot;模型 − 市场&quot;,&quot;-0.6 pct&quot;],[&quot;让球&quot;,&quot;+0&quot;],[&quot;亚盘即时（主水/盘口/客水）&quot;,&quot;0.83 / 平手 / 1.01&quot;],[&quot;亚盘初盘（主水/盘口/客水）&quot;,&quot;0.77 / 平手 / 0.98&quot;],[&quot;盘口变化 / 水位变动&quot;,&quot;+0 / 0.03&quot;],[&quot;亚盘倾向&quot;,&quot;主 · 主 52.3% / 客 47.7% · 15家&quot;]],&quot;motivation&quot;:[[&quot;休息天数（冷门方 / 强队）&quot;,&quot;2 / 2&quot;],[&quot;赛程密度（冷门方 / 强队）&quot;,&quot;1 / 1&quot;],[&quot;欧战备战窗口&quot;,&quot;不在欧战赛前窗口&quot;],[&quot;强队连续休整&quot;,&quot;2 天（正常间隔）&quot;]],&quot;history&quot;:[[&quot;相似对手爆冷率&quot;,&quot;60.4%&quot;],[&quot;样本场次&quot;,&quot;53&quot;],[&quot;基准爆冷率&quot;,&quot;49.7%&quot;],[&quot;高于 / 低于基准&quot;,&quot;+10.7 pct&quot;]],&quot;activity&quot;:[[&quot;出货活跃度&quot;,&quot;无数据（按中性 5.0 计）&quot;]]}" data-up-fav="home" data-up-ph="0.3569" data-up-pd="0.2994" data-up-pa="0.3437" data-up-h="查尔顿" data-up-a="林肯城" title="五维爆冷指数 6.45 · 3星
+历史同档实测冷门率约 60%
+实力5.1 机构7.6 战意5.0 历史8.6 出货5.0
+机构对强队支撑力度不足，冷门风险高于平常，请谨慎对待。
+点击查看五维星形拆解" aria-label="爆冷指数 6.45，3星，点击查看五维拆解"><b>6.45</b><i>★★★</i><span class="up-lv">中</span><span class="up-pc">冷门60%</span></span><span class="up-detail"><em class="up-dims">实力5.1 · 机构7.6 · 战意5.0 · 历史8.6 · 出货5.0</em></span></td>
         <td class="col-time">11-25 03:40</td>
         <td class="col-league"><span class="league-tag">英冠</span></td>
         <td class="col-teams">
@@ -12450,7 +12541,11 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
         </td>
       </tr>
       <tr class="match-miss">
-        <td class="col-seq">17</td>
+        <td class="col-seq">17</td><td class="col-upset up-cell-s2"><span class="up-badge up-s2" role="button" tabindex="0" data-up-i="2.84" data-up-s="2" data-up-d="2.8,2.7,5.0,1.1,5.0" data-up-tip="两队近期状态与实力不吻合，冷门风险高于平常，请谨慎对待。" data-up-m="英冠 · 米德尔斯堡 vs 斯旺西" data-up-detail="{&quot;strength&quot;:[[&quot;Elo（主 / 客）&quot;,&quot;1592 / 1540&quot;],[&quot;近6场场均积分（主 / 客）&quot;,&quot;2.33 / 1.67&quot;],[&quot;近6场净胜球/场（主 / 客）&quot;,&quot;1.33 / -0.50&quot;]],&quot;market&quot;:[[&quot;欧赔 主/平/客&quot;,&quot;1.50 / 4.20 / 5.50&quot;],[&quot;去水强队胜率&quot;,&quot;61.4%&quot;],[&quot;模型 Elo 强队胜率&quot;,&quot;54.5%&quot;],[&quot;模型 − 市场&quot;,&quot;-6.8 pct&quot;],[&quot;让球&quot;,&quot;-1&quot;],[&quot;亚盘即时（主水/盘口/客水）&quot;,&quot;0.99 / 主让一/球半 / 0.84&quot;],[&quot;亚盘初盘（主水/盘口/客水）&quot;,&quot;0.79 / 主让一球 / 1.05&quot;],[&quot;盘口变化 / 水位变动&quot;,&quot;+0.25 / 0.41&quot;],[&quot;亚盘倾向&quot;,&quot;主 · 主 48.0% / 客 52.0% · 16家&quot;]],&quot;motivation&quot;:[[&quot;休息天数（冷门方 / 强队）&quot;,&quot;2 / 2&quot;],[&quot;赛程密度（冷门方 / 强队）&quot;,&quot;1 / 1&quot;],[&quot;欧战备战窗口&quot;,&quot;不在欧战赛前窗口&quot;],[&quot;强队连续休整&quot;,&quot;2 天（正常间隔）&quot;]],&quot;history&quot;:[[&quot;相似对手爆冷率&quot;,&quot;38.1%&quot;],[&quot;样本场次&quot;,&quot;401&quot;],[&quot;基准爆冷率&quot;,&quot;49.7%&quot;],[&quot;高于 / 低于基准&quot;,&quot;-11.6 pct&quot;]],&quot;activity&quot;:[[&quot;出货活跃度&quot;,&quot;无数据（按中性 5.0 计）&quot;]]}" data-up-fav="home" data-up-ph="0.6135" data-up-pd="0.2191" data-up-pa="0.1673" data-up-h="米德尔斯堡" data-up-a="斯旺西" title="五维爆冷指数 2.84 · 2星
+历史同档实测冷门率约 29%
+实力2.8 机构2.7 战意5.0 历史1.1 出货5.0
+两队近期状态与实力不吻合，冷门风险高于平常，请谨慎对待。
+点击查看五维星形拆解" aria-label="爆冷指数 2.84，2星，点击查看五维拆解"><b>2.84</b><i>★★</i><span class="up-lv">弱</span><span class="up-pc">冷门29%</span></span><span class="up-detail"><em class="up-dims">实力2.8 · 机构2.7 · 战意5.0 · 历史1.1 · 出货5.0</em></span></td>
         <td class="col-time">11-25 03:40</td>
         <td class="col-league"><span class="league-tag">英冠</span></td>
         <td class="col-teams">
@@ -12493,7 +12588,11 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
         </td>
       </tr>
       <tr class="match-hit">
-        <td class="col-seq">18</td>
+        <td class="col-seq">18</td><td class="col-upset up-cell-s2"><span class="up-badge up-s2" role="button" tabindex="0" data-up-i="5.24" data-up-s="2" data-up-d="5.5,5.1,5.0,5.3,5.0" data-up-tip="两队近期状态与实力不吻合，冷门风险高于平常，请谨慎对待。" data-up-m="英冠 · 诺维奇 vs 女王公园巡游者" data-up-detail="{&quot;strength&quot;:[[&quot;Elo（主 / 客）&quot;,&quot;1486 / 1537&quot;],[&quot;近6场场均积分（主 / 客）&quot;,&quot;1.00 / 1.83&quot;],[&quot;近6场净胜球/场（主 / 客）&quot;,&quot;-0.17 / 1.00&quot;]],&quot;market&quot;:[[&quot;欧赔 主/平/客&quot;,&quot;1.95 / 3.50 / 3.50&quot;],[&quot;去水强队胜率&quot;,&quot;47.3%&quot;],[&quot;模型 Elo 强队胜率&quot;,&quot;38.1%&quot;],[&quot;模型 − 市场&quot;,&quot;-9.2 pct&quot;],[&quot;让球&quot;,&quot;+0&quot;],[&quot;亚盘即时（主水/盘口/客水）&quot;,&quot;0.95 / 主让半球 / 0.90&quot;],[&quot;亚盘初盘（主水/盘口/客水）&quot;,&quot;0.47 / 平手 / 1.50&quot;],[&quot;盘口变化 / 水位变动&quot;,&quot;+0.5 / 1.08&quot;],[&quot;亚盘倾向&quot;,&quot;主 · 主 49.4% / 客 50.6% · 14家&quot;]],&quot;motivation&quot;:[[&quot;休息天数（冷门方 / 强队）&quot;,&quot;2 / 2&quot;],[&quot;赛程密度（冷门方 / 强队）&quot;,&quot;1 / 1&quot;],[&quot;欧战备战窗口&quot;,&quot;不在欧战赛前窗口&quot;],[&quot;强队连续休整&quot;,&quot;2 天（正常间隔）&quot;]],&quot;history&quot;:[[&quot;相似对手爆冷率&quot;,&quot;50.5%&quot;],[&quot;样本场次&quot;,&quot;734&quot;],[&quot;基准爆冷率&quot;,&quot;49.7%&quot;],[&quot;高于 / 低于基准&quot;,&quot;+0.8 pct&quot;]],&quot;activity&quot;:[[&quot;出货活跃度&quot;,&quot;无数据（按中性 5.0 计）&quot;]]}" data-up-fav="home" data-up-ph="0.4730" data-up-pd="0.2635" data-up-pa="0.2635" data-up-h="诺维奇" data-up-a="女王公园巡游者" title="五维爆冷指数 5.24 · 2星
+历史同档实测冷门率约 50%
+实力5.5 机构5.1 战意5.0 历史5.3 出货5.0
+两队近期状态与实力不吻合，冷门风险高于平常，请谨慎对待。
+点击查看五维星形拆解" aria-label="爆冷指数 5.24，2星，点击查看五维拆解"><b>5.24</b><i>★★</i><span class="up-lv">弱</span><span class="up-pc">冷门50%</span></span><span class="up-detail"><em class="up-dims">实力5.5 · 机构5.1 · 战意5.0 · 历史5.3 · 出货5.0</em></span></td>
         <td class="col-time">11-25 03:40</td>
         <td class="col-league"><span class="league-tag">英冠</span></td>
         <td class="col-teams">
@@ -12536,7 +12635,11 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
         </td>
       </tr>
       <tr class="match-miss">
-        <td class="col-seq">19</td>
+        <td class="col-seq">19</td><td class="col-upset up-cell-s2"><span class="up-badge up-s2" role="button" tabindex="0" data-up-i="4.87" data-up-s="2" data-up-d="4.7,4.9,5.0,5.3,5.0" data-up-tip="两队近期状态与实力不吻合，冷门风险高于平常，请谨慎对待。" data-up-m="英冠 · 朴茨茅斯 vs 西汉姆联" data-up-detail="{&quot;strength&quot;:[[&quot;Elo（主 / 客）&quot;,&quot;1508 / 1596&quot;],[&quot;近6场场均积分（主 / 客）&quot;,&quot;2.00 / 1.50&quot;],[&quot;近6场净胜球/场（主 / 客）&quot;,&quot;0.50 / 1.00&quot;]],&quot;market&quot;:[[&quot;欧赔 主/平/客&quot;,&quot;3.75 / 3.50 / 1.85&quot;],[&quot;去水强队胜率&quot;,&quot;49.5%&quot;],[&quot;模型 Elo 强队胜率&quot;,&quot;41.0%&quot;],[&quot;模型 − 市场&quot;,&quot;-8.5 pct&quot;],[&quot;让球&quot;,&quot;+0&quot;],[&quot;亚盘即时（主水/盘口/客水）&quot;,&quot;0.91 / 客让半/一 / 0.92&quot;],[&quot;亚盘初盘（主水/盘口/客水）&quot;,&quot;0.97 / 客让半球 / 0.88&quot;],[&quot;盘口变化 / 水位变动&quot;,&quot;-0.25 / -0.10&quot;],[&quot;亚盘倾向&quot;,&quot;客 · 主 50.1% / 客 49.9% · 16家&quot;]],&quot;motivation&quot;:[[&quot;休息天数（冷门方 / 强队）&quot;,&quot;2 / 2&quot;],[&quot;赛程密度（冷门方 / 强队）&quot;,&quot;1 / 1&quot;],[&quot;欧战备战窗口&quot;,&quot;不在欧战赛前窗口&quot;],[&quot;强队连续休整&quot;,&quot;2 天（正常间隔）&quot;]],&quot;history&quot;:[[&quot;相似对手爆冷率&quot;,&quot;50.5%&quot;],[&quot;样本场次&quot;,&quot;734&quot;],[&quot;基准爆冷率&quot;,&quot;49.7%&quot;],[&quot;高于 / 低于基准&quot;,&quot;+0.8 pct&quot;]],&quot;activity&quot;:[[&quot;出货活跃度&quot;,&quot;无数据（按中性 5.0 计）&quot;]]}" data-up-fav="away" data-up-ph="0.2440" data-up-pd="0.2614" data-up-pa="0.4946" data-up-h="朴茨茅斯" data-up-a="西汉姆联" title="五维爆冷指数 4.87 · 2星
+历史同档实测冷门率约 46%
+实力4.7 机构4.9 战意5.0 历史5.3 出货5.0
+两队近期状态与实力不吻合，冷门风险高于平常，请谨慎对待。
+点击查看五维星形拆解" aria-label="爆冷指数 4.87，2星，点击查看五维拆解"><b>4.87</b><i>★★</i><span class="up-lv">弱</span><span class="up-pc">冷门46%</span></span><span class="up-detail"><em class="up-dims">实力4.7 · 机构4.9 · 战意5.0 · 历史5.3 · 出货5.0</em></span></td>
         <td class="col-time">11-25 03:40</td>
         <td class="col-league"><span class="league-tag">英冠</span></td>
         <td class="col-teams">
@@ -12579,7 +12682,11 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
         </td>
       </tr>
       <tr class="match-miss">
-        <td class="col-seq">20</td>
+        <td class="col-seq">20</td><td class="col-upset up-cell-s3"><span class="up-badge up-s3" role="button" tabindex="0" data-up-i="6.16" data-up-s="3" data-up-d="6.1,5.8,5.0,8.6,5.0" data-up-tip="相似对手历史爆冷率偏高，冷门风险高于平常，请谨慎对待。" data-up-m="英冠 · 谢菲尔德联 vs 南安普顿" data-up-detail="{&quot;strength&quot;:[[&quot;Elo（主 / 客）&quot;,&quot;1514 / 1500&quot;],[&quot;近6场场均积分（主 / 客）&quot;,&quot;1.67 / —&quot;],[&quot;近6场净胜球/场（主 / 客）&quot;,&quot;1.00 / —&quot;]],&quot;market&quot;:[[&quot;欧赔 主/平/客&quot;,&quot;2.50 / 3.50 / 2.45&quot;],[&quot;去水强队胜率&quot;,&quot;37.3%&quot;],[&quot;模型 Elo 强队胜率&quot;,&quot;26.5%&quot;],[&quot;模型 − 市场&quot;,&quot;-10.8 pct&quot;],[&quot;让球&quot;,&quot;+0&quot;],[&quot;亚盘即时（主水/盘口/客水）&quot;,&quot;0.90 / 主让平/半 / 0.95&quot;],[&quot;亚盘初盘（主水/盘口/客水）&quot;,&quot;0.85 / 平手 / 0.95&quot;],[&quot;盘口变化 / 水位变动&quot;,&quot;+0.25 / 0.05&quot;],[&quot;亚盘倾向&quot;,&quot;主 · 主 50.6% / 客 49.4% · 16家&quot;]],&quot;motivation&quot;:[[&quot;休息天数（冷门方 / 强队）&quot;,&quot;2 / —&quot;],[&quot;赛程密度（冷门方 / 强队）&quot;,&quot;1 / 0&quot;],[&quot;欧战备战窗口&quot;,&quot;不在欧战赛前窗口&quot;],[&quot;强队连续休整&quot;,&quot;— 天（正常间隔）&quot;]],&quot;history&quot;:[[&quot;相似对手爆冷率&quot;,&quot;60.4%&quot;],[&quot;样本场次&quot;,&quot;53&quot;],[&quot;基准爆冷率&quot;,&quot;49.7%&quot;],[&quot;高于 / 低于基准&quot;,&quot;+10.7 pct&quot;]],&quot;activity&quot;:[[&quot;出货活跃度&quot;,&quot;无数据（按中性 5.0 计）&quot;]]}" data-up-fav="away" data-up-ph="0.3657" data-up-pd="0.2612" data-up-pa="0.3731" data-up-h="谢菲尔德联" data-up-a="南安普顿" title="五维爆冷指数 6.16 · 3星
+历史同档实测冷门率约 58%
+实力6.1 机构5.8 战意5.0 历史8.6 出货5.0
+相似对手历史爆冷率偏高，冷门风险高于平常，请谨慎对待。
+点击查看五维星形拆解" aria-label="爆冷指数 6.16，3星，点击查看五维拆解"><b>6.16</b><i>★★★</i><span class="up-lv">中</span><span class="up-pc">冷门58%</span></span><span class="up-detail"><em class="up-dims">实力6.1 · 机构5.8 · 战意5.0 · 历史8.6 · 出货5.0</em></span></td>
         <td class="col-time">11-25 03:40</td>
         <td class="col-league"><span class="league-tag">英冠</span></td>
         <td class="col-teams">
@@ -12622,7 +12729,11 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
         </td>
       </tr>
       <tr class="match-hit">
-        <td class="col-seq">21</td>
+        <td class="col-seq">21</td><td class="col-upset up-cell-s2"><span class="up-badge up-s2" role="button" tabindex="0" data-up-i="3.79" data-up-s="2" data-up-d="3.0,5.2,5.0,1.1,5.0" data-up-tip="机构对强队支撑力度不足，冷门风险高于平常，请谨慎对待。" data-up-m="英甲 · 布拉德福德城 vs 巴恩斯利" data-up-detail="{&quot;strength&quot;:[[&quot;Elo（主 / 客）&quot;,&quot;1500 / 1393&quot;],[&quot;近6场场均积分（主 / 客）&quot;,&quot;— / 0.50&quot;],[&quot;近6场净胜球/场（主 / 客）&quot;,&quot;— / -0.33&quot;]],&quot;market&quot;:[[&quot;欧赔 主/平/客&quot;,&quot;1.57 / 4.00 / 5.00&quot;],[&quot;去水强队胜率&quot;,&quot;58.6%&quot;],[&quot;模型 Elo 强队胜率&quot;,&quot;60.8%&quot;],[&quot;模型 − 市场&quot;,&quot;+2.2 pct&quot;],[&quot;让球&quot;,&quot;-1&quot;],[&quot;亚盘即时（主水/盘口/客水）&quot;,&quot;0.93 / 主让半/一 / 0.89&quot;],[&quot;亚盘初盘（主水/盘口/客水）&quot;,&quot;0.97 / 主让一球 / 0.83&quot;],[&quot;盘口变化 / 水位变动&quot;,&quot;-0.25 / -0.10&quot;],[&quot;亚盘倾向&quot;,&quot;主 · 主 49.5% / 客 50.5% · 15家&quot;]],&quot;motivation&quot;:[[&quot;休息天数（冷门方 / 强队）&quot;,&quot;3 / —&quot;],[&quot;赛程密度（冷门方 / 强队）&quot;,&quot;4 / 0&quot;],[&quot;欧战备战窗口&quot;,&quot;不在欧战赛前窗口&quot;],[&quot;强队连续休整&quot;,&quot;— 天（正常间隔）&quot;]],&quot;history&quot;:[[&quot;相似对手爆冷率&quot;,&quot;38.1%&quot;],[&quot;样本场次&quot;,&quot;401&quot;],[&quot;基准爆冷率&quot;,&quot;49.7%&quot;],[&quot;高于 / 低于基准&quot;,&quot;-11.6 pct&quot;]],&quot;activity&quot;:[[&quot;出货活跃度&quot;,&quot;无数据（按中性 5.0 计）&quot;]]}" data-up-fav="home" data-up-ph="0.5860" data-up-pd="0.2300" data-up-pa="0.1840" data-up-h="布拉德福德城" data-up-a="巴恩斯利" title="五维爆冷指数 3.79 · 2星
+历史同档实测冷门率约 37%
+实力3.0 机构5.2 战意5.0 历史1.1 出货5.0
+机构对强队支撑力度不足，冷门风险高于平常，请谨慎对待。
+点击查看五维星形拆解" aria-label="爆冷指数 3.79，2星，点击查看五维拆解"><b>3.79</b><i>★★</i><span class="up-lv">弱</span><span class="up-pc">冷门37%</span></span><span class="up-detail"><em class="up-dims">实力3.0 · 机构5.2 · 战意5.0 · 历史1.1 · 出货5.0</em></span></td>
         <td class="col-time">11-25 03:40</td>
         <td class="col-league"><span class="league-tag">英甲</span></td>
         <td class="col-teams">
@@ -12665,7 +12776,11 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
         </td>
       </tr>
       <tr class="match-miss">
-        <td class="col-seq">22</td>
+        <td class="col-seq">22</td><td class="col-upset up-cell-s2"><span class="up-badge up-s2" role="button" tabindex="0" data-up-i="4.99" data-up-s="2" data-up-d="5.2,4.7,5.0,5.3,5.0" data-up-tip="两队近期状态与实力不吻合，冷门风险高于平常，请谨慎对待。" data-up-m="英甲 · 斯蒂夫尼奇 vs 谢菲尔德星期三" data-up-detail="{&quot;strength&quot;:[[&quot;Elo（主 / 客）&quot;,&quot;1500 / 1546&quot;],[&quot;近6场场均积分（主 / 客）&quot;,&quot;— / 1.67&quot;],[&quot;近6场净胜球/场（主 / 客）&quot;,&quot;— / -0.17&quot;]],&quot;market&quot;:[[&quot;欧赔 主/平/客&quot;,&quot;3.46 / 4.51 / 2.04&quot;],[&quot;去水强队胜率&quot;,&quot;49.0%&quot;],[&quot;模型 Elo 强队胜率&quot;,&quot;36.9%&quot;],[&quot;模型 − 市场&quot;,&quot;-12.1 pct&quot;],[&quot;让球&quot;,&quot;+0&quot;],[&quot;亚盘即时（主水/盘口/客水）&quot;,&quot;0.93 / 客让平/半 / 0.90&quot;],[&quot;亚盘初盘（主水/盘口/客水）&quot;,&quot;0.94 / 平手 / 0.83&quot;],[&quot;盘口变化 / 水位变动&quot;,&quot;-0.25 / -0.08&quot;],[&quot;亚盘倾向&quot;,&quot;客 · 主 49.6% / 客 50.4% · 15家&quot;]],&quot;motivation&quot;:[[&quot;休息天数（冷门方 / 强队）&quot;,&quot;— / 3&quot;],[&quot;赛程密度（冷门方 / 强队）&quot;,&quot;0 / 4&quot;],[&quot;欧战备战窗口&quot;,&quot;不在欧战赛前窗口&quot;],[&quot;强队连续休整&quot;,&quot;3 天（正常间隔）&quot;]],&quot;history&quot;:[[&quot;相似对手爆冷率&quot;,&quot;50.5%&quot;],[&quot;样本场次&quot;,&quot;734&quot;],[&quot;基准爆冷率&quot;,&quot;49.7%&quot;],[&quot;高于 / 低于基准&quot;,&quot;+0.8 pct&quot;]],&quot;activity&quot;:[[&quot;出货活跃度&quot;,&quot;无数据（按中性 5.0 计）&quot;]]}" data-up-fav="away" data-up-ph="0.2887" data-up-pd="0.2215" data-up-pa="0.4897" data-up-h="斯蒂夫尼奇" data-up-a="谢菲尔德星期三" title="五维爆冷指数 4.99 · 2星
+历史同档实测冷门率约 47%
+实力5.2 机构4.7 战意5.0 历史5.3 出货5.0
+两队近期状态与实力不吻合，冷门风险高于平常，请谨慎对待。
+点击查看五维星形拆解" aria-label="爆冷指数 4.99，2星，点击查看五维拆解"><b>4.99</b><i>★★</i><span class="up-lv">弱</span><span class="up-pc">冷门47%</span></span><span class="up-detail"><em class="up-dims">实力5.2 · 机构4.7 · 战意5.0 · 历史5.3 · 出货5.0</em></span></td>
         <td class="col-time">11-25 03:40</td>
         <td class="col-league"><span class="league-tag">英甲</span></td>
         <td class="col-teams">
@@ -12708,7 +12823,11 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
         </td>
       </tr>
       <tr class="match-miss">
-        <td class="col-seq">23</td>
+        <td class="col-seq">23</td><td class="col-upset up-cell-s2"><span class="up-badge up-s2" role="button" tabindex="0" data-up-i="4.74" data-up-s="2" data-up-d="4.6,4.5,5.0,5.3,5.0" data-up-tip="两队近期状态与实力不吻合，冷门风险高于平常，请谨慎对待。" data-up-m="英甲 · 布莱克浦 vs 莱斯特城" data-up-detail="{&quot;strength&quot;:[[&quot;Elo（主 / 客）&quot;,&quot;1416 / 1500&quot;],[&quot;近6场场均积分（主 / 客）&quot;,&quot;1.00 / —&quot;],[&quot;近6场净胜球/场（主 / 客）&quot;,&quot;-0.50 / —&quot;]],&quot;market&quot;:[[&quot;欧赔 主/平/客&quot;,&quot;3.25 / 3.70 / 1.95&quot;],[&quot;去水强队胜率&quot;,&quot;47.0%&quot;],[&quot;模型 Elo 强队胜率&quot;,&quot;41.1%&quot;],[&quot;模型 − 市场&quot;,&quot;-5.9 pct&quot;],[&quot;让球&quot;,&quot;+1&quot;],[&quot;亚盘即时（主水/盘口/客水）&quot;,&quot;0.96 / 客让半/一 / 0.85&quot;],[&quot;亚盘初盘（主水/盘口/客水）&quot;,&quot;0.83 / 客让半球 / 0.97&quot;],[&quot;盘口变化 / 水位变动&quot;,&quot;-0.25 / 0.25&quot;],[&quot;亚盘倾向&quot;,&quot;客 · 主 48.6% / 客 51.4% · 15家&quot;]],&quot;motivation&quot;:[[&quot;休息天数（冷门方 / 强队）&quot;,&quot;2 / —&quot;],[&quot;赛程密度（冷门方 / 强队）&quot;,&quot;2 / 0&quot;],[&quot;欧战备战窗口&quot;,&quot;不在欧战赛前窗口&quot;],[&quot;强队连续休整&quot;,&quot;— 天（正常间隔）&quot;]],&quot;history&quot;:[[&quot;相似对手爆冷率&quot;,&quot;50.5%&quot;],[&quot;样本场次&quot;,&quot;734&quot;],[&quot;基准爆冷率&quot;,&quot;49.7%&quot;],[&quot;高于 / 低于基准&quot;,&quot;+0.8 pct&quot;]],&quot;activity&quot;:[[&quot;出货活跃度&quot;,&quot;无数据（按中性 5.0 计）&quot;]]}" data-up-fav="away" data-up-ph="0.2821" data-up-pd="0.2478" data-up-pa="0.4701" data-up-h="布莱克浦" data-up-a="莱斯特城" title="五维爆冷指数 4.74 · 2星
+历史同档实测冷门率约 45%
+实力4.6 机构4.5 战意5.0 历史5.3 出货5.0
+两队近期状态与实力不吻合，冷门风险高于平常，请谨慎对待。
+点击查看五维星形拆解" aria-label="爆冷指数 4.74，2星，点击查看五维拆解"><b>4.74</b><i>★★</i><span class="up-lv">弱</span><span class="up-pc">冷门45%</span></span><span class="up-detail"><em class="up-dims">实力4.6 · 机构4.5 · 战意5.0 · 历史5.3 · 出货5.0</em></span></td>
         <td class="col-time">11-25 03:40</td>
         <td class="col-league"><span class="league-tag">英甲</span></td>
         <td class="col-teams">
@@ -12751,7 +12870,11 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
         </td>
       </tr>
       <tr class="match-hit">
-        <td class="col-seq">24</td>
+        <td class="col-seq">24</td><td class="col-upset up-cell-s3"><span class="up-badge up-s3" role="button" tabindex="0" data-up-i="6.30" data-up-s="3" data-up-d="3.0,9.1,5.0,9.0,5.0" data-up-tip="机构对强队支撑力度不足，冷门风险高于平常，请谨慎对待。" data-up-m="英甲 · 布罗姆利 vs 威科姆流浪者" data-up-detail="{&quot;strength&quot;:[[&quot;Elo（主 / 客）&quot;,&quot;1348 / 1519&quot;],[&quot;近6场场均积分（主 / 客）&quot;,&quot;0.67 / 1.00&quot;],[&quot;近6场净胜球/场（主 / 客）&quot;,&quot;-1.83 / -0.33&quot;]],&quot;market&quot;:[[&quot;欧赔 主/平/客&quot;,&quot;3.10 / 3.40 / 2.10&quot;],[&quot;去水强队胜率&quot;,&quot;43.6%&quot;],[&quot;模型 Elo 强队胜率&quot;,&quot;52.0%&quot;],[&quot;模型 − 市场&quot;,&quot;+8.5 pct&quot;],[&quot;让球&quot;,&quot;+0&quot;],[&quot;亚盘即时（主水/盘口/客水）&quot;,&quot;0.86 / 客让一球 / 0.97&quot;],[&quot;亚盘初盘（主水/盘口/客水）&quot;,&quot;0.68 / 客让半球 / 0.93&quot;],[&quot;盘口变化 / 水位变动&quot;,&quot;-0.5 / 0.14&quot;],[&quot;亚盘倾向&quot;,&quot;客 · 主 51.4% / 客 48.6% · 15家&quot;]],&quot;motivation&quot;:[[&quot;休息天数（冷门方 / 强队）&quot;,&quot;2 / 2&quot;],[&quot;赛程密度（冷门方 / 强队）&quot;,&quot;1 / 1&quot;],[&quot;欧战备战窗口&quot;,&quot;不在欧战赛前窗口&quot;],[&quot;强队连续休整&quot;,&quot;2 天（正常间隔）&quot;]],&quot;history&quot;:[[&quot;相似对手爆冷率&quot;,&quot;61.7%&quot;],[&quot;样本场次&quot;,&quot;60&quot;],[&quot;基准爆冷率&quot;,&quot;49.7%&quot;],[&quot;高于 / 低于基准&quot;,&quot;+12.0 pct&quot;]],&quot;activity&quot;:[[&quot;出货活跃度&quot;,&quot;无数据（按中性 5.0 计）&quot;]]}" data-up-fav="away" data-up-ph="0.2952" data-up-pd="0.2691" data-up-pa="0.4357" data-up-h="布罗姆利" data-up-a="威科姆流浪者" title="五维爆冷指数 6.30 · 3星
+历史同档实测冷门率约 59%
+实力3.0 机构9.1 战意5.0 历史9.0 出货5.0
+机构对强队支撑力度不足，冷门风险高于平常，请谨慎对待。
+点击查看五维星形拆解" aria-label="爆冷指数 6.30，3星，点击查看五维拆解"><b>6.30</b><i>★★★</i><span class="up-lv">中</span><span class="up-pc">冷门59%</span></span><span class="up-detail"><em class="up-dims">实力3.0 · 机构9.1 · 战意5.0 · 历史9.0 · 出货5.0</em></span></td>
         <td class="col-time">11-25 03:40</td>
         <td class="col-league"><span class="league-tag">英甲</span></td>
         <td class="col-teams">
@@ -12794,7 +12917,11 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
         </td>
       </tr>
       <tr class="match-hit">
-        <td class="col-seq">25</td>
+        <td class="col-seq">25</td><td class="col-upset up-cell-s2"><span class="up-badge up-s2" role="button" tabindex="0" data-up-i="4.71" data-up-s="2" data-up-d="3.4,5.7,5.0,5.3,5.0" data-up-tip="机构对强队支撑力度不足，冷门风险高于平常，请谨慎对待。" data-up-m="英乙 · 克劳利 vs 巴尼特" data-up-detail="{&quot;strength&quot;:[[&quot;Elo（主 / 客）&quot;,&quot;1411 / 1554&quot;],[&quot;近6场场均积分（主 / 客）&quot;,&quot;0.83 / 1.67&quot;],[&quot;近6场净胜球/场（主 / 客）&quot;,&quot;-0.33 / 0.00&quot;]],&quot;market&quot;:[[&quot;欧赔 主/平/客&quot;,&quot;3.50 / 3.75 / 1.85&quot;],[&quot;去水强队胜率&quot;,&quot;49.5%&quot;],[&quot;模型 Elo 强队胜率&quot;,&quot;49.6%&quot;],[&quot;模型 − 市场&quot;,&quot;+0.1 pct&quot;],[&quot;让球&quot;,&quot;+1&quot;],[&quot;亚盘即时（主水/盘口/客水）&quot;,&quot;0.91 / 客让半球 / 0.91&quot;],[&quot;亚盘初盘（主水/盘口/客水）&quot;,&quot;0.92 / 客让半/一 / 0.83&quot;],[&quot;盘口变化 / 水位变动&quot;,&quot;+0.25 / -0.09&quot;],[&quot;亚盘倾向&quot;,&quot;客 · 主 50.0% / 客 50.0% · 15家&quot;]],&quot;motivation&quot;:[[&quot;休息天数（冷门方 / 强队）&quot;,&quot;2 / 2&quot;],[&quot;赛程密度（冷门方 / 强队）&quot;,&quot;1 / 1&quot;],[&quot;欧战备战窗口&quot;,&quot;不在欧战赛前窗口&quot;],[&quot;强队连续休整&quot;,&quot;2 天（正常间隔）&quot;]],&quot;history&quot;:[[&quot;相似对手爆冷率&quot;,&quot;50.5%&quot;],[&quot;样本场次&quot;,&quot;734&quot;],[&quot;基准爆冷率&quot;,&quot;49.7%&quot;],[&quot;高于 / 低于基准&quot;,&quot;+0.8 pct&quot;]],&quot;activity&quot;:[[&quot;出货活跃度&quot;,&quot;无数据（按中性 5.0 计）&quot;]]}" data-up-fav="away" data-up-ph="0.2614" data-up-pd="0.2440" data-up-pa="0.4946" data-up-h="克劳利" data-up-a="巴尼特" title="五维爆冷指数 4.71 · 2星
+历史同档实测冷门率约 45%
+实力3.4 机构5.7 战意5.0 历史5.3 出货5.0
+机构对强队支撑力度不足，冷门风险高于平常，请谨慎对待。
+点击查看五维星形拆解" aria-label="爆冷指数 4.71，2星，点击查看五维拆解"><b>4.71</b><i>★★</i><span class="up-lv">弱</span><span class="up-pc">冷门45%</span></span><span class="up-detail"><em class="up-dims">实力3.4 · 机构5.7 · 战意5.0 · 历史5.3 · 出货5.0</em></span></td>
         <td class="col-time">11-25 03:40</td>
         <td class="col-league"><span class="league-tag">英乙</span></td>
         <td class="col-teams">
@@ -12837,7 +12964,11 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
         </td>
       </tr>
       <tr class="match-hit">
-        <td class="col-seq">26</td>
+        <td class="col-seq">26</td><td class="col-upset up-cell-s3"><span class="up-badge up-s3" role="button" tabindex="0" data-up-i="6.14" data-up-s="3" data-up-d="4.1,7.2,5.0,9.9,5.0" data-up-tip="机构对强队支撑力度不足，冷门风险高于平常，请谨慎对待。" data-up-m="英乙 · 维尔港 vs 北安普顿" data-up-detail="{&quot;strength&quot;:[[&quot;Elo（主 / 客）&quot;,&quot;1504 / 1500&quot;],[&quot;近6场场均积分（主 / 客）&quot;,&quot;1.33 / —&quot;],[&quot;近6场净胜球/场（主 / 客）&quot;,&quot;0.67 / —&quot;]],&quot;market&quot;:[[&quot;欧赔 主/平/客&quot;,&quot;2.05 / 3.10 / 3.50&quot;],[&quot;去水强队胜率&quot;,&quot;44.5%&quot;],[&quot;模型 Elo 强队胜率&quot;,&quot;44.3%&quot;],[&quot;模型 − 市场&quot;,&quot;-0.2 pct&quot;],[&quot;让球&quot;,&quot;+0&quot;],[&quot;亚盘即时（主水/盘口/客水）&quot;,&quot;0.96 / 主让平/半 / 0.87&quot;],[&quot;亚盘初盘（主水/盘口/客水）&quot;,&quot;0.85 / 主让平/半 / 0.92&quot;],[&quot;盘口变化 / 水位变动&quot;,&quot;+0 / 0.16&quot;],[&quot;亚盘倾向&quot;,&quot;主 · 主 48.8% / 客 51.2% · 15家&quot;]],&quot;motivation&quot;:[[&quot;休息天数（冷门方 / 强队）&quot;,&quot;— / 2&quot;],[&quot;赛程密度（冷门方 / 强队）&quot;,&quot;0 / 2&quot;],[&quot;欧战备战窗口&quot;,&quot;不在欧战赛前窗口&quot;],[&quot;强队连续休整&quot;,&quot;2 天（正常间隔）&quot;]],&quot;history&quot;:[[&quot;相似对手爆冷率&quot;,&quot;64.4%&quot;],[&quot;样本场次&quot;,&quot;45&quot;],[&quot;基准爆冷率&quot;,&quot;49.7%&quot;],[&quot;高于 / 低于基准&quot;,&quot;+14.7 pct&quot;]],&quot;activity&quot;:[[&quot;出货活跃度&quot;,&quot;无数据（按中性 5.0 计）&quot;]]}" data-up-fav="home" data-up-ph="0.4450" data-up-pd="0.2943" data-up-pa="0.2607" data-up-h="维尔港" data-up-a="北安普顿" title="五维爆冷指数 6.14 · 3星
+历史同档实测冷门率约 58%
+实力4.1 机构7.2 战意5.0 历史9.9 出货5.0
+机构对强队支撑力度不足，冷门风险高于平常，请谨慎对待。
+点击查看五维星形拆解" aria-label="爆冷指数 6.14，3星，点击查看五维拆解"><b>6.14</b><i>★★★</i><span class="up-lv">中</span><span class="up-pc">冷门58%</span></span><span class="up-detail"><em class="up-dims">实力4.1 · 机构7.2 · 战意5.0 · 历史9.9 · 出货5.0</em></span></td>
         <td class="col-time">11-25 03:40</td>
         <td class="col-league"><span class="league-tag">英乙</span></td>
         <td class="col-teams">
@@ -12880,7 +13011,11 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
         </td>
       </tr>
       <tr class="match-miss">
-        <td class="col-seq">27</td>
+        <td class="col-seq">27</td><td class="col-upset up-cell-s2"><span class="up-badge up-s2" role="button" tabindex="0" data-up-i="3.73" data-up-s="2" data-up-d="5.4,2.5,5.0,1.1,5.0" data-up-tip="两队近期状态与实力不吻合，冷门风险高于平常，请谨慎对待。" data-up-m="苏超 · 希伯尼安 vs 邓迪FC" data-up-detail="{&quot;strength&quot;:[[&quot;Elo（主 / 客）&quot;,&quot;1446 / 1492&quot;],[&quot;近6场场均积分（主 / 客）&quot;,&quot;0.33 / 1.67&quot;],[&quot;近6场净胜球/场（主 / 客）&quot;,&quot;-1.17 / -0.83&quot;]],&quot;market&quot;:[[&quot;欧赔 主/平/客&quot;,&quot;1.62 / 4.00 / 4.75&quot;],[&quot;去水强队胜率&quot;,&quot;57.3%&quot;],[&quot;模型 Elo 强队胜率&quot;,&quot;40.5%&quot;],[&quot;模型 − 市场&quot;,&quot;-16.8 pct&quot;],[&quot;让球&quot;,&quot;-1&quot;],[&quot;亚盘即时（主水/盘口/客水）&quot;,&quot;0.87 / 主让一球 / 0.96&quot;],[&quot;亚盘初盘（主水/盘口/客水）&quot;,&quot;0.99 / 主让一球 / 0.80&quot;],[&quot;盘口变化 / 水位变动&quot;,&quot;+0 / -0.28&quot;],[&quot;亚盘倾向&quot;,&quot;主 · 主 51.2% / 客 48.8% · 15家&quot;]],&quot;motivation&quot;:[[&quot;休息天数（冷门方 / 强队）&quot;,&quot;2 / 2&quot;],[&quot;赛程密度（冷门方 / 强队）&quot;,&quot;1 / 1&quot;],[&quot;欧战备战窗口&quot;,&quot;不在欧战赛前窗口&quot;],[&quot;强队连续休整&quot;,&quot;2 天（正常间隔）&quot;]],&quot;history&quot;:[[&quot;相似对手爆冷率&quot;,&quot;38.1%&quot;],[&quot;样本场次&quot;,&quot;401&quot;],[&quot;基准爆冷率&quot;,&quot;49.7%&quot;],[&quot;高于 / 低于基准&quot;,&quot;-11.6 pct&quot;]],&quot;activity&quot;:[[&quot;出货活跃度&quot;,&quot;无数据（按中性 5.0 计）&quot;]]}" data-up-fav="home" data-up-ph="0.5727" data-up-pd="0.2320" data-up-pa="0.1953" data-up-h="希伯尼安" data-up-a="邓迪FC" title="五维爆冷指数 3.73 · 2星
+历史同档实测冷门率约 36%
+实力5.4 机构2.5 战意5.0 历史1.1 出货5.0
+两队近期状态与实力不吻合，冷门风险高于平常，请谨慎对待。
+点击查看五维星形拆解" aria-label="爆冷指数 3.73，2星，点击查看五维拆解"><b>3.73</b><i>★★</i><span class="up-lv">弱</span><span class="up-pc">冷门36%</span></span><span class="up-detail"><em class="up-dims">实力5.4 · 机构2.5 · 战意5.0 · 历史1.1 · 出货5.0</em></span></td>
         <td class="col-time">11-25 03:40</td>
         <td class="col-league"><span class="league-tag">苏超</span></td>
         <td class="col-teams">
@@ -12923,7 +13058,11 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
         </td>
       </tr>
       <tr class="match-hit">
-        <td class="col-seq">28</td>
+        <td class="col-seq">28</td><td class="col-upset up-cell-s2"><span class="up-badge up-s2" role="button" tabindex="0" data-up-i="2.09" data-up-s="2" data-up-d="3.7,0.1,5.0,0.0,5.0" data-up-tip="两队近期状态与实力不吻合，冷门风险高于平常，请谨慎对待。" data-up-m="欧冠联赛 · 曼彻斯特城 vs 那不勒斯" data-up-detail="{&quot;strength&quot;:[[&quot;Elo（主 / 客）&quot;,&quot;1663 / 1605&quot;],[&quot;近6场场均积分（主 / 客）&quot;,&quot;1.83 / 2.67&quot;],[&quot;近6场净胜球/场（主 / 客）&quot;,&quot;1.33 / 1.17&quot;]],&quot;market&quot;:[[&quot;欧赔 主/平/客&quot;,&quot;1.29 / 5.00 / 10.00&quot;],[&quot;去水强队胜率&quot;,&quot;72.1%&quot;],[&quot;模型 Elo 强队胜率&quot;,&quot;57.0%&quot;],[&quot;模型 − 市场&quot;,&quot;-15.1 pct&quot;],[&quot;让球&quot;,&quot;-2&quot;],[&quot;亚盘即时（主水/盘口/客水）&quot;,&quot;0.91 / 主让球半/两 / 0.92&quot;],[&quot;亚盘初盘（主水/盘口/客水）&quot;,&quot;0.91 / 主让球半/两 / 0.99&quot;],[&quot;盘口变化 / 水位变动&quot;,&quot;+0 / 0.07&quot;],[&quot;亚盘倾向&quot;,&quot;主 · 主 50.1% / 客 49.9% · 16家&quot;]],&quot;motivation&quot;:[[&quot;休息天数（冷门方 / 强队）&quot;,&quot;2 / 2&quot;],[&quot;赛程密度（冷门方 / 强队）&quot;,&quot;1 / 1&quot;],[&quot;欧战备战窗口&quot;,&quot;不在欧战赛前窗口&quot;],[&quot;强队连续休整&quot;,&quot;2 天（正常间隔）&quot;]],&quot;history&quot;:[[&quot;相似对手爆冷率&quot;,&quot;23.1%&quot;],[&quot;样本场次&quot;,&quot;199&quot;],[&quot;基准爆冷率&quot;,&quot;49.7%&quot;],[&quot;高于 / 低于基准&quot;,&quot;-26.6 pct&quot;]],&quot;activity&quot;:[[&quot;出货活跃度&quot;,&quot;无数据（按中性 5.0 计）&quot;]]}" data-up-fav="home" data-up-ph="0.7210" data-up-pd="0.1860" data-up-pa="0.0930" data-up-h="曼彻斯特城" data-up-a="那不勒斯" title="五维爆冷指数 2.09 · 2星
+历史同档实测冷门率约 24%
+实力3.7 机构0.1 战意5.0 历史0.0 出货5.0
+两队近期状态与实力不吻合，冷门风险高于平常，请谨慎对待。
+点击查看五维星形拆解" aria-label="爆冷指数 2.09，2星，点击查看五维拆解"><b>2.09</b><i>★★</i><span class="up-lv">弱</span><span class="up-pc">冷门24%</span></span><span class="up-detail"><em class="up-dims">实力3.7 · 机构0.1 · 战意5.0 · 历史0.0 · 出货5.0</em></span></td>
         <td class="col-time">11-25 03:55</td>
         <td class="col-league"><span class="league-tag">欧冠联赛</span></td>
         <td class="col-teams">
@@ -12966,7 +13105,11 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
         </td>
       </tr>
       <tr class="match-hit">
-        <td class="col-seq">29</td>
+        <td class="col-seq">29</td><td class="col-upset up-cell-s2"><span class="up-badge up-s2" role="button" tabindex="0" data-up-i="2.95" data-up-s="2" data-up-d="4.7,1.5,5.0,0.0,5.0" data-up-tip="两队近期状态与实力不吻合，冷门风险高于平常，请谨慎对待。" data-up-m="欧冠联赛 · 阿森纳 vs 多特蒙德" data-up-detail="{&quot;strength&quot;:[[&quot;Elo（主 / 客）&quot;,&quot;1654 / 1661&quot;],[&quot;近6场场均积分（主 / 客）&quot;,&quot;1.67 / 2.67&quot;],[&quot;近6场净胜球/场（主 / 客）&quot;,&quot;0.50 / 0.83&quot;]],&quot;market&quot;:[[&quot;欧赔 主/平/客&quot;,&quot;1.40 / 4.75 / 6.50&quot;],[&quot;去水强队胜率&quot;,&quot;66.2%&quot;],[&quot;模型 Elo 强队胜率&quot;,&quot;47.7%&quot;],[&quot;模型 − 市场&quot;,&quot;-18.5 pct&quot;],[&quot;让球&quot;,&quot;-1&quot;],[&quot;亚盘即时（主水/盘口/客水）&quot;,&quot;1.01 / 主让一/球半 / 0.84&quot;],[&quot;亚盘初盘（主水/盘口/客水）&quot;,&quot;0.89 / 主让一/球半 / 1.04&quot;],[&quot;盘口变化 / 水位变动&quot;,&quot;+0 / 0.32&quot;],[&quot;亚盘倾向&quot;,&quot;主 · 主 47.8% / 客 52.2% · 16家&quot;]],&quot;motivation&quot;:[[&quot;休息天数（冷门方 / 强队）&quot;,&quot;2 / 2&quot;],[&quot;赛程密度（冷门方 / 强队）&quot;,&quot;1 / 1&quot;],[&quot;欧战备战窗口&quot;,&quot;不在欧战赛前窗口&quot;],[&quot;强队连续休整&quot;,&quot;2 天（正常间隔）&quot;]],&quot;history&quot;:[[&quot;相似对手爆冷率&quot;,&quot;23.1%&quot;],[&quot;样本场次&quot;,&quot;199&quot;],[&quot;基准爆冷率&quot;,&quot;49.7%&quot;],[&quot;高于 / 低于基准&quot;,&quot;-26.6 pct&quot;]],&quot;activity&quot;:[[&quot;出货活跃度&quot;,&quot;50.0%&quot;]]}" data-up-fav="home" data-up-ph="0.6622" data-up-pd="0.1952" data-up-pa="0.1426" data-up-h="阿森纳" data-up-a="多特蒙德" title="五维爆冷指数 2.95 · 2星
+历史同档实测冷门率约 30%
+实力4.7 机构1.5 战意5.0 历史0.0 出货5.0
+两队近期状态与实力不吻合，冷门风险高于平常，请谨慎对待。
+点击查看五维星形拆解" aria-label="爆冷指数 2.95，2星，点击查看五维拆解"><b>2.95</b><i>★★</i><span class="up-lv">弱</span><span class="up-pc">冷门30%</span></span><span class="up-detail"><em class="up-dims">实力4.7 · 机构1.5 · 战意5.0 · 历史0.0 · 出货5.0</em></span></td>
         <td class="col-time">11-25 03:55</td>
         <td class="col-league"><span class="league-tag">欧冠联赛</span></td>
         <td class="col-teams">
@@ -13009,7 +13152,11 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
         </td>
       </tr>
       <tr class="match-hit">
-        <td class="col-seq">30</td>
+        <td class="col-seq">30</td><td class="col-upset up-cell-s3"><span class="up-badge up-s3" role="button" tabindex="0" data-up-i="5.92" data-up-s="3" data-up-d="5.4,5.7,4.9,8.7,5.0" data-up-tip="相似对手历史爆冷率偏高，冷门风险高于平常，请谨慎对待。" data-up-m="欧冠联赛 · 费耶诺德 vs 波尔图" data-up-detail="{&quot;strength&quot;:[[&quot;Elo（主 / 客）&quot;,&quot;1594 / 1617&quot;],[&quot;近6场场均积分（主 / 客）&quot;,&quot;1.17 / 1.33&quot;],[&quot;近6场净胜球/场（主 / 客）&quot;,&quot;-0.17 / 0.00&quot;]],&quot;market&quot;:[[&quot;欧赔 主/平/客&quot;,&quot;2.80 / 3.75 / 2.25&quot;],[&quot;去水强队胜率&quot;,&quot;41.6%&quot;],[&quot;模型 Elo 强队胜率&quot;,&quot;32.3%&quot;],[&quot;模型 − 市场&quot;,&quot;-9.3 pct&quot;],[&quot;让球&quot;,&quot;+0&quot;],[&quot;亚盘即时（主水/盘口/客水）&quot;,&quot;0.92 / 客让半球 / 0.94&quot;],[&quot;亚盘初盘（主水/盘口/客水）&quot;,&quot;0.89 / 客让平/半 / 1.05&quot;],[&quot;盘口变化 / 水位变动&quot;,&quot;-0.25 / 0.14&quot;],[&quot;亚盘倾向&quot;,&quot;客 · 主 50.3% / 客 49.7% · 16家&quot;]],&quot;motivation&quot;:[[&quot;休息天数（冷门方 / 强队）&quot;,&quot;2 / 3&quot;],[&quot;赛程密度（冷门方 / 强队）&quot;,&quot;1 / 2&quot;],[&quot;欧战备战窗口&quot;,&quot;不在欧战赛前窗口&quot;],[&quot;强队连续休整&quot;,&quot;3 天（正常间隔）&quot;]],&quot;history&quot;:[[&quot;相似对手爆冷率&quot;,&quot;60.8%&quot;],[&quot;样本场次&quot;,&quot;1117&quot;],[&quot;基准爆冷率&quot;,&quot;49.7%&quot;],[&quot;高于 / 低于基准&quot;,&quot;+11.1 pct&quot;]],&quot;activity&quot;:[[&quot;出货活跃度&quot;,&quot;50.0%&quot;]]}" data-up-fav="away" data-up-ph="0.3343" data-up-pd="0.2496" data-up-pa="0.4160" data-up-h="费耶诺德" data-up-a="波尔图" title="五维爆冷指数 5.92 · 3星
+历史同档实测冷门率约 56%
+实力5.4 机构5.7 战意4.9 历史8.7 出货5.0
+相似对手历史爆冷率偏高，冷门风险高于平常，请谨慎对待。
+点击查看五维星形拆解" aria-label="爆冷指数 5.92，3星，点击查看五维拆解"><b>5.92</b><i>★★★</i><span class="up-lv">中</span><span class="up-pc">冷门56%</span></span><span class="up-detail"><em class="up-dims">实力5.4 · 机构5.7 · 战意4.9 · 历史8.7 · 出货5.0</em></span></td>
         <td class="col-time">11-25 03:55</td>
         <td class="col-league"><span class="league-tag">欧冠联赛</span></td>
         <td class="col-teams">
@@ -13052,7 +13199,11 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
         </td>
       </tr>
       <tr class="match-hit">
-        <td class="col-seq">31</td>
+        <td class="col-seq">31</td><td class="col-upset up-cell-s2"><span class="up-badge up-s2" role="button" tabindex="0" data-up-i="2.67" data-up-s="2" data-up-d="4.2,1.2,5.0,0.0,5.0" data-up-tip="两队近期状态与实力不吻合，冷门风险高于平常，请谨慎对待。" data-up-m="欧冠联赛 · RB莱比锡 vs 朗斯" data-up-detail="{&quot;strength&quot;:[[&quot;Elo（主 / 客）&quot;,&quot;1500 / 1506&quot;],[&quot;近6场场均积分（主 / 客）&quot;,&quot;— / 1.17&quot;],[&quot;近6场净胜球/场（主 / 客）&quot;,&quot;— / -0.83&quot;]],&quot;market&quot;:[[&quot;欧赔 主/平/客&quot;,&quot;1.36 / 5.00 / 7.00&quot;],[&quot;去水强队胜率&quot;,&quot;68.2%&quot;],[&quot;模型 Elo 强队胜率&quot;,&quot;48.5%&quot;],[&quot;模型 − 市场&quot;,&quot;-19.7 pct&quot;],[&quot;让球&quot;,&quot;-1&quot;],[&quot;亚盘即时（主水/盘口/客水）&quot;,&quot;0.97 / 主让球半 / 0.89&quot;],[&quot;亚盘初盘（主水/盘口/客水）&quot;,&quot;0.97 / 主让一/球半 / 0.92&quot;],[&quot;盘口变化 / 水位变动&quot;,&quot;+0.25 / 0.03&quot;],[&quot;亚盘倾向&quot;,&quot;主 · 主 49.0% / 客 51.0% · 16家&quot;]],&quot;motivation&quot;:[[&quot;休息天数（冷门方 / 强队）&quot;,&quot;2 / —&quot;],[&quot;赛程密度（冷门方 / 强队）&quot;,&quot;1 / 0&quot;],[&quot;欧战备战窗口&quot;,&quot;不在欧战赛前窗口&quot;],[&quot;强队连续休整&quot;,&quot;— 天（正常间隔）&quot;]],&quot;history&quot;:[[&quot;相似对手爆冷率&quot;,&quot;23.1%&quot;],[&quot;样本场次&quot;,&quot;199&quot;],[&quot;基准爆冷率&quot;,&quot;49.7%&quot;],[&quot;高于 / 低于基准&quot;,&quot;-26.6 pct&quot;]],&quot;activity&quot;:[[&quot;出货活跃度&quot;,&quot;无数据（按中性 5.0 计）&quot;]]}" data-up-fav="home" data-up-ph="0.6820" data-up-pd="0.1855" data-up-pa="0.1325" data-up-h="RB莱比锡" data-up-a="朗斯" title="五维爆冷指数 2.67 · 2星
+历史同档实测冷门率约 28%
+实力4.2 机构1.2 战意5.0 历史0.0 出货5.0
+两队近期状态与实力不吻合，冷门风险高于平常，请谨慎对待。
+点击查看五维星形拆解" aria-label="爆冷指数 2.67，2星，点击查看五维拆解"><b>2.67</b><i>★★</i><span class="up-lv">弱</span><span class="up-pc">冷门28%</span></span><span class="up-detail"><em class="up-dims">实力4.2 · 机构1.2 · 战意5.0 · 历史0.0 · 出货5.0</em></span></td>
         <td class="col-time">11-25 03:55</td>
         <td class="col-league"><span class="league-tag">欧冠联赛</span></td>
         <td class="col-teams">
@@ -13095,7 +13246,11 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
         </td>
       </tr>
       <tr class="match-miss">
-        <td class="col-seq">32</td>
+        <td class="col-seq">32</td><td class="col-upset up-cell-s2"><span class="up-badge up-s2" role="button" tabindex="0" data-up-i="2.68" data-up-s="2" data-up-d="5.3,0.0,5.6,0.0,5.0" data-up-tip="两队近期状态与实力不吻合，冷门风险高于平常，请谨慎对待。" data-up-m="欧冠联赛 · 布拉迪斯拉发 vs 皇家贝蒂斯" data-up-detail="{&quot;strength&quot;:[[&quot;Elo（主 / 客）&quot;,&quot;1556 / 1599&quot;],[&quot;近6场场均积分（主 / 客）&quot;,&quot;1.67 / 1.50&quot;],[&quot;近6场净胜球/场（主 / 客）&quot;,&quot;-0.33 / -0.17&quot;]],&quot;market&quot;:[[&quot;欧赔 主/平/客&quot;,&quot;8.50 / 6.00 / 1.29&quot;],[&quot;去水强队胜率&quot;,&quot;73.2%&quot;],[&quot;模型 Elo 强队胜率&quot;,&quot;39.7%&quot;],[&quot;模型 − 市场&quot;,&quot;-33.5 pct&quot;],[&quot;让球&quot;,&quot;+2&quot;],[&quot;亚盘即时（主水/盘口/客水）&quot;,&quot;0.87 / 客让球半 / 0.98&quot;],[&quot;亚盘初盘（主水/盘口/客水）&quot;,&quot;0.89 / 客让球半/两 / 0.94&quot;],[&quot;盘口变化 / 水位变动&quot;,&quot;+0.25 / -0.06&quot;],[&quot;亚盘倾向&quot;,&quot;客 · 主 51.4% / 客 48.6% · 16家&quot;]],&quot;motivation&quot;:[[&quot;休息天数（冷门方 / 强队）&quot;,&quot;2 / 2&quot;],[&quot;赛程密度（冷门方 / 强队）&quot;,&quot;1 / 2&quot;],[&quot;欧战备战窗口&quot;,&quot;不在欧战赛前窗口&quot;],[&quot;强队连续休整&quot;,&quot;2 天（正常间隔）&quot;]],&quot;history&quot;:[[&quot;相似对手爆冷率&quot;,&quot;23.1%&quot;],[&quot;样本场次&quot;,&quot;199&quot;],[&quot;基准爆冷率&quot;,&quot;49.7%&quot;],[&quot;高于 / 低于基准&quot;,&quot;-26.6 pct&quot;]],&quot;activity&quot;:[[&quot;出货活跃度&quot;,&quot;无数据（按中性 5.0 计）&quot;]]}" data-up-fav="away" data-up-ph="0.1110" data-up-pd="0.1573" data-up-pa="0.7317" data-up-h="布拉迪斯拉发" data-up-a="皇家贝蒂斯" title="五维爆冷指数 2.68 · 2星
+历史同档实测冷门率约 28%
+实力5.3 机构0.0 战意5.6 历史0.0 出货5.0
+两队近期状态与实力不吻合，冷门风险高于平常，请谨慎对待。
+点击查看五维星形拆解" aria-label="爆冷指数 2.68，2星，点击查看五维拆解"><b>2.68</b><i>★★</i><span class="up-lv">弱</span><span class="up-pc">冷门28%</span></span><span class="up-detail"><em class="up-dims">实力5.3 · 机构0.0 · 战意5.6 · 历史0.0 · 出货5.0</em></span></td>
         <td class="col-time">11-25 03:55</td>
         <td class="col-league"><span class="league-tag">欧冠联赛</span></td>
         <td class="col-teams">
@@ -13138,7 +13293,11 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
         </td>
       </tr>
       <tr class="match-hit">
-        <td class="col-seq">33</td>
+        <td class="col-seq">33</td><td class="col-upset up-cell-s2"><span class="up-badge up-s2" role="button" tabindex="0" data-up-i="1.86" data-up-s="2" data-up-d="3.3,0.0,4.4,0.0,5.0" data-up-tip="两队近期状态与实力不吻合，冷门风险高于平常，请谨慎对待。" data-up-m="欧冠联赛 · 科莫 vs 雅典AEK" data-up-detail="{&quot;strength&quot;:[[&quot;Elo（主 / 客）&quot;,&quot;1624 / 1657&quot;],[&quot;近6场场均积分（主 / 客）&quot;,&quot;3.00 / 1.50&quot;],[&quot;近6场净胜球/场（主 / 客）&quot;,&quot;2.33 / -0.17&quot;]],&quot;market&quot;:[[&quot;欧赔 主/平/客&quot;,&quot;1.33 / 5.00 / 9.00&quot;],[&quot;去水强队胜率&quot;,&quot;70.7%&quot;],[&quot;模型 Elo 强队胜率&quot;,&quot;44.6%&quot;],[&quot;模型 − 市场&quot;,&quot;-26.2 pct&quot;],[&quot;让球&quot;,&quot;-2&quot;],[&quot;亚盘即时（主水/盘口/客水）&quot;,&quot;0.87 / 主让球半/两 / 0.97&quot;],[&quot;亚盘初盘（主水/盘口/客水）&quot;,&quot;0.96 / 主让球半 / 0.98&quot;],[&quot;盘口变化 / 水位变动&quot;,&quot;+0.25 / -0.08&quot;],[&quot;亚盘倾向&quot;,&quot;主 · 主 51.3% / 客 48.7% · 16家&quot;]],&quot;motivation&quot;:[[&quot;休息天数（冷门方 / 强队）&quot;,&quot;2 / 2&quot;],[&quot;赛程密度（冷门方 / 强队）&quot;,&quot;2 / 1&quot;],[&quot;欧战备战窗口&quot;,&quot;不在欧战赛前窗口&quot;],[&quot;强队连续休整&quot;,&quot;2 天（正常间隔）&quot;]],&quot;history&quot;:[[&quot;相似对手爆冷率&quot;,&quot;23.1%&quot;],[&quot;样本场次&quot;,&quot;199&quot;],[&quot;基准爆冷率&quot;,&quot;49.7%&quot;],[&quot;高于 / 低于基准&quot;,&quot;-26.6 pct&quot;]],&quot;activity&quot;:[[&quot;出货活跃度&quot;,&quot;50.0%&quot;]]}" data-up-fav="home" data-up-ph="0.7073" data-up-pd="0.1881" data-up-pa="0.1045" data-up-h="科莫" data-up-a="雅典AEK" title="五维爆冷指数 1.86 · 2星
+历史同档实测冷门率约 22%
+实力3.3 机构0.0 战意4.4 历史0.0 出货5.0
+两队近期状态与实力不吻合，冷门风险高于平常，请谨慎对待。
+点击查看五维星形拆解" aria-label="爆冷指数 1.86，2星，点击查看五维拆解"><b>1.86</b><i>★★</i><span class="up-lv">弱</span><span class="up-pc">冷门22%</span></span><span class="up-detail"><em class="up-dims">实力3.3 · 机构0.0 · 战意4.4 · 历史0.0 · 出货5.0</em></span></td>
         <td class="col-time">11-25 03:55</td>
         <td class="col-league"><span class="league-tag">欧冠联赛</span></td>
         <td class="col-teams">
@@ -13181,7 +13340,11 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
         </td>
       </tr>
       <tr class="match-hit">
-        <td class="col-seq">34</td>
+        <td class="col-seq">34</td><td class="col-upset up-cell-s2"><span class="up-badge up-s2" role="button" tabindex="0" data-up-i="2.11" data-up-s="2" data-up-d="1.8,2.1,5.0,0.0,5.0" data-up-tip="两队近期状态与实力不吻合，冷门风险高于平常，请谨慎对待。" data-up-m="英冠 · 狼队 vs 德比郡" data-up-detail="{&quot;strength&quot;:[[&quot;Elo（主 / 客）&quot;,&quot;1562 / 1406&quot;],[&quot;近6场场均积分（主 / 客）&quot;,&quot;1.83 / 0.50&quot;],[&quot;近6场净胜球/场（主 / 客）&quot;,&quot;0.17 / -1.00&quot;]],&quot;market&quot;:[[&quot;欧赔 主/平/客&quot;,&quot;1.35 / 4.80 / 8.00&quot;],[&quot;去水强队胜率&quot;,&quot;69.0%&quot;],[&quot;模型 Elo 强队胜率&quot;,&quot;67.9%&quot;],[&quot;模型 − 市场&quot;,&quot;-1.0 pct&quot;],[&quot;让球&quot;,&quot;-2&quot;],[&quot;亚盘即时（主水/盘口/客水）&quot;,&quot;0.94 / 主让球半/两 / 0.89&quot;],[&quot;亚盘初盘（主水/盘口/客水）&quot;,&quot;0.86 / 主让球半 / 0.95&quot;],[&quot;盘口变化 / 水位变动&quot;,&quot;+0.25 / 0.14&quot;],[&quot;亚盘倾向&quot;,&quot;主 · 主 49.4% / 客 50.6% · 15家&quot;]],&quot;motivation&quot;:[[&quot;休息天数（冷门方 / 强队）&quot;,&quot;2 / 2&quot;],[&quot;赛程密度（冷门方 / 强队）&quot;,&quot;1 / 1&quot;],[&quot;欧战备战窗口&quot;,&quot;不在欧战赛前窗口&quot;],[&quot;强队连续休整&quot;,&quot;2 天（正常间隔）&quot;]],&quot;history&quot;:[[&quot;相似对手爆冷率&quot;,&quot;23.1%&quot;],[&quot;样本场次&quot;,&quot;199&quot;],[&quot;基准爆冷率&quot;,&quot;49.7%&quot;],[&quot;高于 / 低于基准&quot;,&quot;-26.6 pct&quot;]],&quot;activity&quot;:[[&quot;出货活跃度&quot;,&quot;无数据（按中性 5.0 计）&quot;]]}" data-up-fav="home" data-up-ph="0.6897" data-up-pd="0.1940" data-up-pa="0.1164" data-up-h="狼队" data-up-a="德比郡" title="五维爆冷指数 2.11 · 2星
+历史同档实测冷门率约 24%
+实力1.8 机构2.1 战意5.0 历史0.0 出货5.0
+两队近期状态与实力不吻合，冷门风险高于平常，请谨慎对待。
+点击查看五维星形拆解" aria-label="爆冷指数 2.11，2星，点击查看五维拆解"><b>2.11</b><i>★★</i><span class="up-lv">弱</span><span class="up-pc">冷门24%</span></span><span class="up-detail"><em class="up-dims">实力1.8 · 机构2.1 · 战意5.0 · 历史0.0 · 出货5.0</em></span></td>
         <td class="col-time">11-25 03:55</td>
         <td class="col-league"><span class="league-tag">英冠</span></td>
         <td class="col-teams">
@@ -13224,7 +13387,11 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
         </td>
       </tr>
       <tr class="match-hit">
-        <td class="col-seq">35</td>
+        <td class="col-seq">35</td><td class="col-upset up-cell-s2"><span class="up-badge up-s2" role="button" tabindex="0" data-up-i="1.73" data-up-s="2" data-up-d="2.4,0.4,5.0,0.0,5.0" data-up-tip="两队近期状态与实力不吻合，冷门风险高于平常，请谨慎对待。" data-up-m="苏超 · 格拉斯哥流浪者 vs 阿伯丁" data-up-detail="{&quot;strength&quot;:[[&quot;Elo（主 / 客）&quot;,&quot;1650 / 1538&quot;],[&quot;近6场场均积分（主 / 客）&quot;,&quot;2.33 / 1.50&quot;],[&quot;近6场净胜球/场（主 / 客）&quot;,&quot;1.33 / 0.67&quot;]],&quot;market&quot;:[[&quot;欧赔 主/平/客&quot;,&quot;1.25 / 5.50 / 10.00&quot;],[&quot;去水强队胜率&quot;,&quot;74.0%&quot;],[&quot;模型 Elo 强队胜率&quot;,&quot;64.5%&quot;],[&quot;模型 − 市场&quot;,&quot;-9.5 pct&quot;],[&quot;让球&quot;,&quot;-2&quot;],[&quot;亚盘即时（主水/盘口/客水）&quot;,&quot;0.92 / 主让两球 / 0.90&quot;],[&quot;亚盘初盘（主水/盘口/客水）&quot;,&quot;0.61 / 主让球半 / 1.13&quot;],[&quot;盘口变化 / 水位变动&quot;,&quot;+0.5 / 0.54&quot;],[&quot;亚盘倾向&quot;,&quot;主 · 主 49.7% / 客 50.3% · 15家&quot;]],&quot;motivation&quot;:[[&quot;休息天数（冷门方 / 强队）&quot;,&quot;2 / 2&quot;],[&quot;赛程密度（冷门方 / 强队）&quot;,&quot;1 / 1&quot;],[&quot;欧战备战窗口&quot;,&quot;不在欧战赛前窗口&quot;],[&quot;强队连续休整&quot;,&quot;2 天（正常间隔）&quot;]],&quot;history&quot;:[[&quot;相似对手爆冷率&quot;,&quot;23.1%&quot;],[&quot;样本场次&quot;,&quot;199&quot;],[&quot;基准爆冷率&quot;,&quot;49.7%&quot;],[&quot;高于 / 低于基准&quot;,&quot;-26.6 pct&quot;]],&quot;activity&quot;:[[&quot;出货活跃度&quot;,&quot;无数据（按中性 5.0 计）&quot;]]}" data-up-fav="home" data-up-ph="0.7395" data-up-pd="0.1681" data-up-pa="0.0924" data-up-h="格拉斯哥流浪者" data-up-a="阿伯丁" title="五维爆冷指数 1.73 · 2星
+历史同档实测冷门率约 22%
+实力2.4 机构0.4 战意5.0 历史0.0 出货5.0
+两队近期状态与实力不吻合，冷门风险高于平常，请谨慎对待。
+点击查看五维星形拆解" aria-label="爆冷指数 1.73，2星，点击查看五维拆解"><b>1.73</b><i>★★</i><span class="up-lv">弱</span><span class="up-pc">冷门22%</span></span><span class="up-detail"><em class="up-dims">实力2.4 · 机构0.4 · 战意5.0 · 历史0.0 · 出货5.0</em></span></td>
         <td class="col-time">11-25 03:55</td>
         <td class="col-league"><span class="league-tag">苏超</span></td>
         <td class="col-teams">
@@ -13267,7 +13434,7 @@ tbody tr:hover:not(.match-hit):not(.match-miss):not(.filtered-out) { background:
         </td>
       </tr>
       <tr class="match-hit">
-        <td class="col-seq">36</td>
+        <td class="col-seq">36</td><td class="col-upset"><span class="up-na">—</span></td>
         <td class="col-time">11-25 04:55</td>
         <td class="col-league"><span class="league-tag">巴西甲</span></td>
         <td class="col-teams">
