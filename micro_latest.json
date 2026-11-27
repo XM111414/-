@@ -1,10 +1,10 @@
 {
  "meta": {
   "date": "2026-11-27",
-  "updated_at": "2026-11-27 16:16:21",
+  "updated_at": "2026-11-27 18:31:06",
   "total": 185,
-  "with_micro": 116,
-  "coverage": 62.7,
+  "with_micro": 183,
+  "coverage": 98.9,
   "source": "zgzcw_bjop",
   "ttl_minutes": 360,
   "version": 1
@@ -71,8 +71,8 @@
    "time": "19:55",
    "match_date": "2026-11-28",
    "handicap": 0,
-   "double_choice": "客胜+主胜",
-   "total_p": 68.0,
+   "double_choice": "平局+客胜",
+   "total_p": 67.8,
    "grade": "B"
   },
   "1": {
@@ -137,7 +137,7 @@
    "match_date": "2026-11-27",
    "handicap": 0,
    "double_choice": "客胜+主胜",
-   "total_p": 68.0,
+   "total_p": 71.9,
    "grade": "B"
   },
   "142": {
@@ -201,8 +201,8 @@
    "time": "00:55",
    "match_date": "2026-11-28",
    "handicap": 0,
-   "double_choice": "主胜+客胜",
-   "total_p": 68.0,
+   "double_choice": "平局+主胜",
+   "total_p": 71.7,
    "grade": "C"
   },
   "13": {
@@ -266,7 +266,7 @@
    "time": "02:25",
    "match_date": "2026-11-27",
    "handicap": 0,
-   "double_choice": "客胜+主胜",
+   "double_choice": "主胜+客胜",
    "total_p": 68.0,
    "grade": "B"
   },
@@ -332,7 +332,7 @@
    "match_date": "2026-11-28",
    "handicap": 0,
    "double_choice": "平局+主胜",
-   "total_p": 68.0,
+   "total_p": 68.1,
    "grade": "B"
   },
   "65": {
@@ -461,7 +461,7 @@
    "time": "01:55",
    "match_date": "2026-11-28",
    "handicap": -2,
-   "double_choice": "客胜+平局",
+   "double_choice": "客胜+主胜",
    "total_p": 72.0,
    "grade": "B"
   },
@@ -591,7 +591,7 @@
    "time": "12:55",
    "match_date": "2026-11-28",
    "handicap": 0,
-   "double_choice": "客胜+主胜",
+   "double_choice": "主胜+客胜",
    "total_p": 68.0,
    "grade": "A"
   },
@@ -656,7 +656,7 @@
    "time": "22:55",
    "match_date": "2026-11-28",
    "handicap": -3,
-   "double_choice": "主胜+客胜",
+   "double_choice": "客胜+主胜",
    "total_p": 72.0,
    "grade": "C"
   },
@@ -722,7 +722,7 @@
    "match_date": "2026-11-27",
    "handicap": 0,
    "double_choice": "主胜+客胜",
-   "total_p": 68.0,
+   "total_p": 72.0,
    "grade": "B"
   },
   "62": {
@@ -787,7 +787,7 @@
    "match_date": "2026-11-28",
    "handicap": 0,
    "double_choice": "客胜+主胜",
-   "total_p": 72.0,
+   "total_p": 71.9,
    "grade": "B"
   },
   "169": {
@@ -851,8 +851,8 @@
    "time": "03:55",
    "match_date": "2026-11-28",
    "handicap": 0,
-   "double_choice": "客胜+主胜",
-   "total_p": 72.0,
+   "double_choice": "主胜+平局",
+   "total_p": 70.0,
    "grade": "B"
   },
   "145": {
@@ -917,7 +917,7 @@
    "match_date": "2026-11-28",
    "handicap": 0,
    "double_choice": "主胜+客胜",
-   "total_p": 72.0,
+   "total_p": 68.0,
    "grade": "B"
   },
   "179": {
@@ -982,7 +982,7 @@
    "match_date": "2026-11-28",
    "handicap": 0,
    "double_choice": "主胜+平局",
-   "total_p": 70.0,
+   "total_p": 67.8,
    "grade": "C"
   },
   "82": {
@@ -1046,7 +1046,7 @@
    "time": "22:25",
    "match_date": "2026-11-28",
    "handicap": 0,
-   "double_choice": "客胜+主胜",
+   "double_choice": "主胜+客胜",
    "total_p": 68.0,
    "grade": "A"
   },
@@ -1111,7 +1111,7 @@
    "time": "03:40",
    "match_date": "2026-11-28",
    "handicap": 0,
-   "double_choice": "客胜+平局",
+   "double_choice": "客胜+主胜",
    "total_p": 68.0,
    "grade": "B"
   },
@@ -1176,7 +1176,7 @@
    "time": "22:55",
    "match_date": "2026-11-28",
    "handicap": -1,
-   "double_choice": "主胜+客胜",
+   "double_choice": "客胜+主胜",
    "total_p": 72.0,
    "grade": "B"
   },
@@ -1241,8 +1241,8 @@
    "time": "01:55",
    "match_date": "2026-11-27",
    "handicap": 0,
-   "double_choice": "主胜+客胜",
-   "total_p": 71.9,
+   "double_choice": "客胜+主胜",
+   "total_p": 73.3,
    "grade": "B"
   },
   "12": {
@@ -1307,7 +1307,7 @@
    "match_date": "2026-11-27",
    "handicap": 0,
    "double_choice": "主胜+客胜",
-   "total_p": 72.0,
+   "total_p": 67.9,
    "grade": "B"
   },
   "18": {
@@ -1371,8 +1371,8 @@
    "time": "02:55",
    "match_date": "2026-11-27",
    "handicap": 1,
-   "double_choice": "客胜+主胜",
-   "total_p": 71.9,
+   "double_choice": "主胜+客胜",
+   "total_p": 67.9,
    "grade": "C"
   },
   "87": {
@@ -1436,7 +1436,7 @@
    "time": "22:55",
    "match_date": "2026-11-28",
    "handicap": 0,
-   "double_choice": "主胜+客胜",
+   "double_choice": "客胜+主胜",
    "total_p": 72.0,
    "grade": "B"
   },
@@ -1501,8 +1501,8 @@
    "time": "01:25",
    "match_date": "2026-11-28",
    "handicap": 1,
-   "double_choice": "客胜+平局",
-   "total_p": 72.0,
+   "double_choice": "主胜+客胜",
+   "total_p": 68.0,
    "grade": "B"
   },
   "32": {
@@ -1567,7 +1567,7 @@
    "match_date": "2026-11-27",
    "handicap": 0,
    "double_choice": "客胜+主胜",
-   "total_p": 71.9,
+   "total_p": 72.0,
    "grade": "B"
   },
   "160": {
@@ -1631,8 +1631,8 @@
    "time": "03:10",
    "match_date": "2026-11-28",
    "handicap": -1,
-   "double_choice": "主胜+客胜",
-   "total_p": 67.1,
+   "double_choice": "客胜+平局",
+   "total_p": 71.9,
    "grade": "A"
   },
   "137": {
@@ -1762,7 +1762,7 @@
    "match_date": "2026-11-28",
    "handicap": 0,
    "double_choice": "主胜+客胜",
-   "total_p": 68.0,
+   "total_p": 71.8,
    "grade": "B"
   },
   "133": {
@@ -2022,7 +2022,7 @@
    "match_date": "2026-11-27",
    "handicap": -1,
    "double_choice": "主胜+客胜",
-   "total_p": 71.8,
+   "total_p": 68.0,
    "grade": "B"
   },
   "102": {
@@ -2086,8 +2086,8 @@
    "time": "22:55",
    "match_date": "2026-11-28",
    "handicap": 0,
-   "double_choice": "主胜+客胜",
-   "total_p": 68.0,
+   "double_choice": "主胜+平局",
+   "total_p": 66.2,
    "grade": "B"
   },
   "126": {
@@ -2152,7 +2152,7 @@
    "match_date": "2026-11-28",
    "handicap": 0,
    "double_choice": "平局+主胜",
-   "total_p": 71.9,
+   "total_p": 67.7,
    "grade": "B"
   },
   "176": {
@@ -2281,7 +2281,7 @@
    "time": "22:55",
    "match_date": "2026-11-28",
    "handicap": -1,
-   "double_choice": "客胜+平局",
+   "double_choice": "客胜+主胜",
    "total_p": 72.0,
    "grade": "B"
   },
@@ -2346,8 +2346,8 @@
    "time": "22:55",
    "match_date": "2026-11-28",
    "handicap": -1,
-   "double_choice": "主胜+客胜",
-   "total_p": 60.7,
+   "double_choice": "客胜+主胜",
+   "total_p": 67.9,
    "grade": "B"
   },
   "182": {
@@ -2411,7 +2411,7 @@
    "time": "06:00",
    "match_date": "2026-11-28",
    "handicap": -1,
-   "double_choice": "平局+客胜",
+   "double_choice": "客胜+平局",
    "total_p": 71.9,
    "grade": "A"
   },
@@ -2476,7 +2476,7 @@
    "time": "22:55",
    "match_date": "2026-11-28",
    "handicap": 1,
-   "double_choice": "客胜+主胜",
+   "double_choice": "主胜+客胜",
    "total_p": 72.0,
    "grade": "B"
   },
@@ -2607,7 +2607,7 @@
    "match_date": "2026-11-28",
    "handicap": 0,
    "double_choice": "平局+客胜",
-   "total_p": 68.0,
+   "total_p": 70.3,
    "grade": "B"
   },
   "84": {
@@ -2672,7 +2672,7 @@
    "match_date": "2026-11-28",
    "handicap": 0,
    "double_choice": "客胜+主胜",
-   "total_p": 68.0,
+   "total_p": 68.4,
    "grade": "A"
   },
   "49": {
@@ -2736,8 +2736,8 @@
    "time": "15:25",
    "match_date": "2026-11-28",
    "handicap": 0,
-   "double_choice": "主胜+平局",
-   "total_p": 70.0,
+   "double_choice": "客胜+主胜",
+   "total_p": 68.0,
    "grade": "A"
   },
   "158": {
@@ -2866,7 +2866,7 @@
    "time": "21:55",
    "match_date": "2026-11-28",
    "handicap": 1,
-   "double_choice": "客胜+主胜",
+   "double_choice": "主胜+客胜",
    "total_p": 68.0,
    "grade": "B"
   },
@@ -2931,8 +2931,8 @@
    "time": "01:25",
    "match_date": "2026-11-28",
    "handicap": -1,
-   "double_choice": "主胜+客胜",
-   "total_p": 65.3,
+   "double_choice": "客胜+主胜",
+   "total_p": 68.0,
    "grade": "B"
   },
   "122": {
@@ -2997,7 +2997,7 @@
    "match_date": "2026-11-28",
    "handicap": 0,
    "double_choice": "客胜+平局",
-   "total_p": 72.0,
+   "total_p": 63.7,
    "grade": "B"
   },
   "37": {
@@ -3256,8 +3256,8 @@
    "time": "06:00",
    "match_date": "2026-11-28",
    "handicap": 0,
-   "double_choice": "主胜+客胜",
-   "total_p": 71.9,
+   "double_choice": "客胜+平局",
+   "total_p": 70.9,
    "grade": "C"
   },
   "89": {
@@ -3322,7 +3322,7 @@
    "match_date": "2026-11-28",
    "handicap": 0,
    "double_choice": "客胜+主胜",
-   "total_p": 68.0,
+   "total_p": 71.8,
    "grade": "B"
   },
   "113": {
@@ -3387,7 +3387,7 @@
    "match_date": "2026-11-28",
    "handicap": 0,
    "double_choice": "主胜+平局",
-   "total_p": 68.0,
+   "total_p": 68.6,
    "grade": "B"
   },
   "140": {
@@ -3452,7 +3452,7 @@
    "match_date": "2026-11-28",
    "handicap": 0,
    "double_choice": "客胜+平局",
-   "total_p": 72.0,
+   "total_p": 68.2,
    "grade": "C"
   },
   "71": {
@@ -3517,7 +3517,7 @@
    "match_date": "2026-11-28",
    "handicap": 0,
    "double_choice": "客胜+主胜",
-   "total_p": 68.0,
+   "total_p": 71.8,
    "grade": "B"
   },
   "129": {
@@ -3582,7 +3582,7 @@
    "match_date": "2026-11-28",
    "handicap": 0,
    "double_choice": "客胜+平局",
-   "total_p": 72.0,
+   "total_p": 71.4,
    "grade": "B"
   },
   "26": {
@@ -3647,7 +3647,7 @@
    "match_date": "2026-11-27",
    "handicap": 0,
    "double_choice": "主胜+平局",
-   "total_p": 68.0,
+   "total_p": 70.0,
    "grade": "B"
   },
   "165": {
@@ -3712,7 +3712,7 @@
    "match_date": "2026-11-28",
    "handicap": 0,
    "double_choice": "主胜+客胜",
-   "total_p": 68.0,
+   "total_p": 68.7,
    "grade": "B"
   },
   "128": {
@@ -3842,7 +3842,7 @@
    "match_date": "2026-11-28",
    "handicap": 0,
    "double_choice": "主胜+客胜",
-   "total_p": 68.0,
+   "total_p": 71.6,
    "grade": "A"
   },
   "39": {
@@ -3971,8 +3971,8 @@
    "time": "01:55",
    "match_date": "2026-11-28",
    "handicap": 0,
-   "double_choice": "客胜+主胜",
-   "total_p": 72.0,
+   "double_choice": "客胜+平局",
+   "total_p": 64.3,
    "grade": "B"
   },
   "174": {
@@ -4101,8 +4101,8 @@
    "time": "03:40",
    "match_date": "2026-11-27",
    "handicap": -1,
-   "double_choice": "主胜+客胜",
-   "total_p": 71.0,
+   "double_choice": "客胜+主胜",
+   "total_p": 71.9,
    "grade": "C"
   },
   "157": {
@@ -4166,7 +4166,7 @@
    "time": "02:25",
    "match_date": "2026-11-28",
    "handicap": -1,
-   "double_choice": "主胜+客胜",
+   "double_choice": "客胜+主胜",
    "total_p": 68.0,
    "grade": "B"
   },
@@ -4232,7 +4232,7 @@
    "match_date": "2026-11-28",
    "handicap": 0,
    "double_choice": "主胜+客胜",
-   "total_p": 72.0,
+   "total_p": 68.0,
    "grade": "B"
   },
   "104": {
@@ -4296,8 +4296,8 @@
    "time": "22:55",
    "match_date": "2026-11-28",
    "handicap": 0,
-   "double_choice": "客胜+主胜",
-   "total_p": 72.0,
+   "double_choice": "客胜+平局",
+   "total_p": 68.3,
    "grade": "B"
   },
   "163": {
@@ -4361,8 +4361,8 @@
    "time": "03:25",
    "match_date": "2026-11-28",
    "handicap": 0,
-   "double_choice": "平局+主胜",
-   "total_p": 68.0,
+   "double_choice": "主胜+平局",
+   "total_p": 70.1,
    "grade": "A"
   },
   "124": {
@@ -4491,8 +4491,8 @@
    "time": "12:55",
    "match_date": "2026-11-28",
    "handicap": 0,
-   "double_choice": "主胜+平局",
-   "total_p": 69.9,
+   "double_choice": "客胜+主胜",
+   "total_p": 68.0,
    "grade": "A"
   },
   "34": {
@@ -4621,7 +4621,7 @@
    "time": "19:55",
    "match_date": "2026-11-28",
    "handicap": -1,
-   "double_choice": "主胜+客胜",
+   "double_choice": "客胜+主胜",
    "total_p": 68.0,
    "grade": "B"
   },
@@ -4751,8 +4751,8 @@
    "time": "01:25",
    "match_date": "2026-11-28",
    "handicap": 0,
-   "double_choice": "主胜+客胜",
-   "total_p": 68.0,
+   "double_choice": "主胜+平局",
+   "total_p": 67.2,
    "grade": "A"
   },
   "162": {
@@ -4881,8 +4881,8 @@
    "time": "22:55",
    "match_date": "2026-11-28",
    "handicap": 0,
-   "double_choice": "平局+主胜",
-   "total_p": 72.0,
+   "double_choice": "主胜+平局",
+   "total_p": 70.0,
    "grade": "B"
   },
   "99": {
@@ -4946,8 +4946,8 @@
    "time": "22:55",
    "match_date": "2026-11-28",
    "handicap": 0,
-   "double_choice": "主胜+客胜",
-   "total_p": 72.0,
+   "double_choice": "主胜+平局",
+   "total_p": 69.5,
    "grade": "B"
   },
   "6": {
@@ -5012,7 +5012,7 @@
    "match_date": "2026-11-27",
    "handicap": -1,
    "double_choice": "客胜+平局",
-   "total_p": 70.8,
+   "total_p": 73.7,
    "grade": "B"
   },
   "93": {
@@ -5141,8 +5141,8 @@
    "time": "21:55",
    "match_date": "2026-11-28",
    "handicap": 0,
-   "double_choice": "客胜+平局",
-   "total_p": 68.0,
+   "double_choice": "主胜+客胜",
+   "total_p": 72.3,
    "grade": "B"
   },
   "135": {
@@ -5271,8 +5271,8 @@
    "time": "20:25",
    "match_date": "2026-11-28",
    "handicap": -1,
-   "double_choice": "平局+客胜",
-   "total_p": 71.9,
+   "double_choice": "客胜+主胜",
+   "total_p": 72.0,
    "grade": "B"
   },
   "119": {
@@ -5336,8 +5336,8 @@
    "time": "22:55",
    "match_date": "2026-11-28",
    "handicap": 0,
-   "double_choice": "主胜+客胜",
-   "total_p": 67.9,
+   "double_choice": "客胜+主胜",
+   "total_p": 73.0,
    "grade": "B"
   },
   "2": {
@@ -5402,7 +5402,7 @@
    "match_date": "2026-11-27",
    "handicap": -1,
    "double_choice": "主胜+客胜",
-   "total_p": 66.2,
+   "total_p": 71.5,
    "grade": "B"
   },
   "58": {
@@ -5531,8 +5531,8 @@
    "time": "22:55",
    "match_date": "2026-11-28",
    "handicap": 0,
-   "double_choice": "平局+主胜",
-   "total_p": 73.5,
+   "double_choice": "主胜+平局",
+   "total_p": 67.1,
    "grade": "A"
   },
   "153": {
@@ -5596,8 +5596,8 @@
    "time": "01:55",
    "match_date": "2026-11-28",
    "handicap": 0,
-   "double_choice": "平局+主胜",
-   "total_p": 68.0,
+   "double_choice": "主胜+平局",
+   "total_p": 70.0,
    "grade": "B"
   },
   "85": {
@@ -5661,7 +5661,7 @@
    "time": "22:25",
    "match_date": "2026-11-28",
    "handicap": -1,
-   "double_choice": "主胜+客胜",
+   "double_choice": "客胜+主胜",
    "total_p": 68.0,
    "grade": "A"
   },
@@ -5922,7 +5922,7 @@
    "match_date": "2026-11-28",
    "handicap": 0,
    "double_choice": "主胜+客胜",
-   "total_p": 68.0,
+   "total_p": 69.2,
    "grade": "B"
   },
   "74": {
@@ -5987,7 +5987,7 @@
    "match_date": "2026-11-28",
    "handicap": 0,
    "double_choice": "主胜+客胜",
-   "total_p": 69.8,
+   "total_p": 67.3,
    "grade": "A"
   },
   "103": {
@@ -6052,7 +6052,7 @@
    "match_date": "2026-11-28",
    "handicap": 0,
    "double_choice": "客胜+平局",
-   "total_p": 63.3,
+   "total_p": 69.1,
    "grade": "B"
   },
   "183": {
@@ -6117,7 +6117,7 @@
    "match_date": "2026-11-29",
    "handicap": 0,
    "double_choice": "客胜+主胜",
-   "total_p": 72.0,
+   "total_p": 72.1,
    "grade": "B"
   },
   "41": {
@@ -6246,8 +6246,8 @@
    "time": "02:55",
    "match_date": "2026-11-27",
    "handicap": 1,
-   "double_choice": "客胜+主胜",
-   "total_p": 68.0,
+   "double_choice": "主胜+客胜",
+   "total_p": 68.1,
    "grade": "C"
   },
   "107": {
@@ -6311,8 +6311,8 @@
    "time": "22:55",
    "match_date": "2026-11-28",
    "handicap": 0,
-   "double_choice": "主胜+客胜",
-   "total_p": 72.0,
+   "double_choice": "主胜+平局",
+   "total_p": 70.0,
    "grade": "B"
   },
   "50": {
@@ -6377,7 +6377,7 @@
    "match_date": "2026-11-28",
    "handicap": 0,
    "double_choice": "客胜+平局",
-   "total_p": 71.3,
+   "total_p": 68.2,
    "grade": "A"
   },
   "184": {
@@ -6442,7 +6442,7 @@
    "match_date": "2026-11-29",
    "handicap": 0,
    "double_choice": "平局+主胜",
-   "total_p": 68.0,
+   "total_p": 71.1,
    "grade": "A"
   },
   "67": {
@@ -6571,7 +6571,7 @@
    "time": "01:55",
    "match_date": "2026-11-27",
    "handicap": 1,
-   "double_choice": "客胜+主胜",
+   "double_choice": "主胜+客胜",
    "total_p": 71.9,
    "grade": "A"
   },
@@ -6636,7 +6636,7 @@
    "time": "22:55",
    "match_date": "2026-11-28",
    "handicap": -1,
-   "double_choice": "主胜+客胜",
+   "double_choice": "客胜+主胜",
    "total_p": 68.0,
    "grade": "B"
   },
@@ -6766,7 +6766,7 @@
    "time": "20:25",
    "match_date": "2026-11-28",
    "handicap": -1,
-   "double_choice": "主胜+客胜",
+   "double_choice": "客胜+主胜",
    "total_p": 72.0,
    "grade": "B"
   },
@@ -6831,7 +6831,7 @@
    "time": "16:35",
    "match_date": "2026-11-28",
    "handicap": 0,
-   "double_choice": "客胜+主胜",
+   "double_choice": "主胜+平局",
    "total_p": 68.0,
    "grade": "B"
   },
@@ -6897,7 +6897,7 @@
    "match_date": "2026-11-27",
    "handicap": 0,
    "double_choice": "主胜+平局",
-   "total_p": 68.0,
+   "total_p": 70.0,
    "grade": "B"
   },
   "118": {
@@ -6961,8 +6961,8 @@
    "time": "22:55",
    "match_date": "2026-11-28",
    "handicap": -1,
-   "double_choice": "客胜+主胜",
-   "total_p": 68.0,
+   "double_choice": "客胜+平局",
+   "total_p": 71.9,
    "grade": "C"
   },
   "10": {
@@ -7027,7 +7027,7 @@
    "match_date": "2026-11-27",
    "handicap": 0,
    "double_choice": "客胜+平局",
-   "total_p": 71.8,
+   "total_p": 72.0,
    "grade": "A"
   },
   "43": {
@@ -7156,7 +7156,7 @@
    "time": "21:55",
    "match_date": "2026-11-28",
    "handicap": -1,
-   "double_choice": "主胜+客胜",
+   "double_choice": "客胜+主胜",
    "total_p": 72.0,
    "grade": "B"
   },
@@ -7221,7 +7221,7 @@
    "time": "00:55",
    "match_date": "2026-11-28",
    "handicap": 0,
-   "double_choice": "客胜+主胜",
+   "double_choice": "主胜+客胜",
    "total_p": 72.0,
    "grade": "B"
   },
@@ -7286,8 +7286,8 @@
    "time": "22:55",
    "match_date": "2026-11-28",
    "handicap": -1,
-   "double_choice": "主胜+客胜",
-   "total_p": 64.3,
+   "double_choice": "客胜+主胜",
+   "total_p": 68.0,
    "grade": "A"
   },
   "134": {
@@ -7417,7 +7417,7 @@
    "match_date": "2026-11-27",
    "handicap": -1,
    "double_choice": "主胜+客胜",
-   "total_p": 71.4,
+   "total_p": 72.1,
    "grade": "A"
   },
   "177": {
@@ -7481,7 +7481,7 @@
    "time": "06:00",
    "match_date": "2026-11-28",
    "handicap": -1,
-   "double_choice": "主胜+客胜",
+   "double_choice": "客胜+主胜",
    "total_p": 68.0,
    "grade": "A"
   },
@@ -7502,9 +7502,9 @@
    ],
    "flip": false,
    "moved": {
-    "主胜": 44,
-    "平局": 33,
-    "客胜": 46
+    "主胜": 43,
+    "平局": 34,
+    "客胜": 45
    },
    "avg_open": [
     2.61,
@@ -7512,23 +7512,23 @@
     2.339
    ],
    "avg_close": [
-    2.65,
-    3.64,
-    2.335
+    2.674,
+    3.63,
+    2.32
    ],
    "close_probs": [
-    34.93,
-    25.43,
-    39.64
+    34.61,
+    25.5,
+    39.89
    ],
-   "entropy": 1.0824,
+   "entropy": 1.0823,
    "dispersion": [
-    3.36,
-    2.99,
-    2.93
+    3.52,
+    3.01,
+    3.15
    ],
    "variance": [
-    0.008,
+    0.009,
     0.012,
     0.005
    ],
@@ -7537,13 +7537,4368 @@
    "payout_avg": 0.925,
    "asian_conv": null,
    "eu_asian_div": null,
-   "first_time": "2026-11-27 16:15:21",
-   "last_time_ms": 1795767321306,
+   "first_time": "2026-11-27 17:51:28",
+   "last_time_ms": 1795773088857,
    "quality": "ok",
    "home": "皇家盐湖城",
    "away": "温哥华白浪",
    "league": "美职",
    "time": "10:55",
+   "match_date": "2026-11-28",
+   "handicap": 0,
+   "double_choice": "客胜+主胜",
+   "total_p": 71.9,
+   "grade": "A"
+  },
+  "123": {
+   "mid": "4561158",
+   "n_companies": 34,
+   "open_fav": "主胜",
+   "close_fav": "主胜",
+   "open_votes": [
+    34,
+    0,
+    0
+   ],
+   "close_votes": [
+    34,
+    0,
+    0
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 18,
+    "平局": 18,
+    "客胜": 19
+   },
+   "avg_open": [
+    2.073,
+    3.498,
+    2.872
+   ],
+   "avg_close": [
+    2.096,
+    3.492,
+    2.859
+   ],
+   "close_probs": [
+    42.86,
+    25.72,
+    31.42
+   ],
+   "entropy": 1.0762,
+   "dispersion": [
+    2.12,
+    3.58,
+    3.0
+   ],
+   "variance": [
+    0.002,
+    0.016,
+    0.007
+   ],
+   "kelly_max": 0.96,
+   "kelly_over1": 0,
+   "payout_avg": 0.898,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 17:49:17",
+   "last_time_ms": 1795772957758,
+   "quality": "ok",
+   "home": "布鲁日NXT",
+   "away": "利尔斯",
+   "league": "比乙",
+   "time": "22:55",
+   "match_date": "2026-11-28",
+   "handicap": 0,
+   "double_choice": "平局+客胜",
+   "total_p": 65.9,
+   "grade": "B"
+  },
+  "79": {
+   "mid": "4566431",
+   "n_companies": 50,
+   "open_fav": "主胜",
+   "close_fav": "主胜",
+   "open_votes": [
+    50,
+    0,
+    0
+   ],
+   "close_votes": [
+    50,
+    0,
+    0
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 29,
+    "平局": 34,
+    "客胜": 34
+   },
+   "avg_open": [
+    1.968,
+    3.809,
+    3.309
+   ],
+   "avg_close": [
+    1.985,
+    3.737,
+    3.375
+   ],
+   "close_probs": [
+    47.18,
+    25.06,
+    27.75
+   ],
+   "entropy": 1.057,
+   "dispersion": [
+    2.53,
+    3.4,
+    4.12
+   ],
+   "variance": [
+    0.003,
+    0.016,
+    0.019
+   ],
+   "kelly_max": 1.03,
+   "kelly_over1": 2,
+   "payout_avg": 0.936,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 17:50:02",
+   "last_time_ms": 1795773002919,
+   "quality": "ok",
+   "home": "科隆",
+   "away": "埃尔沃斯贝格",
+   "league": "德甲",
+   "time": "22:25",
+   "match_date": "2026-11-28",
+   "handicap": 0,
+   "double_choice": "客胜+主胜",
+   "total_p": 68.0,
+   "grade": "B"
+  },
+  "105": {
+   "mid": "4563138",
+   "n_companies": 48,
+   "open_fav": "客胜",
+   "close_fav": "客胜",
+   "open_votes": [
+    0,
+    0,
+    48
+   ],
+   "close_votes": [
+    0,
+    0,
+    48
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 36,
+    "平局": 24,
+    "客胜": 30
+   },
+   "avg_open": [
+    2.972,
+    3.481,
+    2.109
+   ],
+   "avg_close": [
+    3.062,
+    3.508,
+    2.072
+   ],
+   "close_probs": [
+    29.84,
+    26.05,
+    44.1
+   ],
+   "entropy": 1.0723,
+   "dispersion": [
+    3.33,
+    2.89,
+    2.46
+   ],
+   "variance": [
+    0.01,
+    0.01,
+    0.003
+   ],
+   "kelly_max": 0.98,
+   "kelly_over1": 0,
+   "payout_avg": 0.915,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 17:50:31",
+   "last_time_ms": 1795773031955,
+   "quality": "ok",
+   "home": "克鲁",
+   "away": "格里姆斯比",
+   "league": "英乙",
+   "time": "22:55",
+   "match_date": "2026-11-28",
+   "handicap": 0,
+   "double_choice": "客胜+平局",
+   "total_p": 68.1,
+   "grade": "B"
+  },
+  "3": {
+   "mid": "4568962",
+   "n_companies": 15,
+   "open_fav": "主胜",
+   "close_fav": "主胜",
+   "open_votes": [
+    15,
+    0,
+    0
+   ],
+   "close_votes": [
+    15,
+    0,
+    0
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 6,
+    "平局": 8,
+    "客胜": 6
+   },
+   "avg_open": [
+    2.316,
+    3.331,
+    2.8
+   ],
+   "avg_close": [
+    2.335,
+    3.312,
+    2.798
+   ],
+   "close_probs": [
+    39.38,
+    27.76,
+    32.86
+   ],
+   "entropy": 1.0885,
+   "dispersion": [
+    2.57,
+    3.97,
+    3.45
+   ],
+   "variance": [
+    0.004,
+    0.017,
+    0.009
+   ],
+   "kelly_max": 0.98,
+   "kelly_over1": 0,
+   "payout_avg": 0.92,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 17:51:02",
+   "last_time_ms": 1795773062319,
+   "quality": "ok",
+   "home": "布尔诺阿特斯",
+   "away": "斯洛瓦茨科",
+   "league": "捷克甲",
+   "time": "00:55",
+   "match_date": "2026-11-27",
+   "handicap": 0,
+   "double_choice": "主胜+客胜",
+   "total_p": 72.0,
+   "grade": "A"
+  },
+  "127": {
+   "mid": "4567383",
+   "n_companies": 49,
+   "open_fav": "客胜",
+   "close_fav": "客胜",
+   "open_votes": [
+    0,
+    0,
+    49
+   ],
+   "close_votes": [
+    0,
+    0,
+    49
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 37,
+    "平局": 24,
+    "客胜": 33
+   },
+   "avg_open": [
+    2.897,
+    3.231,
+    2.279
+   ],
+   "avg_close": [
+    3.015,
+    3.201,
+    2.244
+   ],
+   "close_probs": [
+    30.44,
+    28.67,
+    40.89
+   ],
+   "entropy": 1.0859,
+   "dispersion": [
+    3.68,
+    3.01,
+    2.53
+   ],
+   "variance": [
+    0.012,
+    0.009,
+    0.003
+   ],
+   "kelly_max": 0.99,
+   "kelly_over1": 0,
+   "payout_avg": 0.918,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 17:51:56",
+   "last_time_ms": 1795773116850,
+   "quality": "ok",
+   "home": "埃尔登斯",
+   "away": "赫罗纳",
+   "league": "西乙",
+   "time": "23:10",
+   "match_date": "2026-11-28",
+   "handicap": 0,
+   "double_choice": "客胜+主胜",
+   "total_p": 72.0,
+   "grade": "B"
+  },
+  "164": {
+   "mid": "4549171",
+   "n_companies": 55,
+   "open_fav": "主胜",
+   "close_fav": "主胜",
+   "open_votes": [
+    55,
+    0,
+    0
+   ],
+   "close_votes": [
+    55,
+    0,
+    0
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 43,
+    "平局": 45,
+    "客胜": 45
+   },
+   "avg_open": [
+    1.266,
+    5.74,
+    9.607
+   ],
+   "avg_close": [
+    1.296,
+    5.505,
+    9.032
+   ],
+   "close_probs": [
+    72.52,
+    17.07,
+    10.41
+   ],
+   "entropy": 0.7703,
+   "dispersion": [
+    2.65,
+    5.75,
+    8.94
+   ],
+   "variance": [
+    0.001,
+    0.1,
+    0.653
+   ],
+   "kelly_max": 1.2,
+   "kelly_over1": 15,
+   "payout_avg": 0.938,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 17:52:25",
+   "last_time_ms": 1795773145955,
+   "quality": "ok",
+   "home": "国际米兰",
+   "away": "热那亚",
+   "league": "意甲",
+   "time": "03:40",
+   "match_date": "2026-11-28",
+   "handicap": -2,
+   "double_choice": "客胜+平局",
+   "total_p": 72.0,
+   "grade": "B"
+  },
+  "98": {
+   "mid": "4562572",
+   "n_companies": 50,
+   "open_fav": "主胜",
+   "close_fav": "主胜",
+   "open_votes": [
+    50,
+    0,
+    0
+   ],
+   "close_votes": [
+    50,
+    0,
+    0
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 25,
+    "平局": 23,
+    "客胜": 25
+   },
+   "avg_open": [
+    1.718,
+    3.811,
+    4.029
+   ],
+   "avg_close": [
+    1.719,
+    3.852,
+    4.053
+   ],
+   "close_probs": [
+    53.46,
+    23.86,
+    22.68
+   ],
+   "entropy": 1.0132,
+   "dispersion": [
+    1.69,
+    3.22,
+    4.67
+   ],
+   "variance": [
+    0.001,
+    0.015,
+    0.036
+   ],
+   "kelly_max": 1.01,
+   "kelly_over1": 1,
+   "payout_avg": 0.918,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 17:52:55",
+   "last_time_ms": 1795773175950,
+   "quality": "ok",
+   "home": "卢顿",
+   "away": "牛津联",
+   "league": "英甲",
+   "time": "22:55",
+   "match_date": "2026-11-28",
+   "handicap": -1,
+   "double_choice": "客胜+主胜",
+   "total_p": 72.0,
+   "grade": "B"
+  },
+  "90": {
+   "mid": "4563712",
+   "n_companies": 52,
+   "open_fav": "主胜",
+   "close_fav": "主胜",
+   "open_votes": [
+    52,
+    0,
+    0
+   ],
+   "close_votes": [
+    52,
+    0,
+    0
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 44,
+    "平局": 37,
+    "客胜": 49
+   },
+   "avg_open": [
+    2.16,
+    3.566,
+    2.977
+   ],
+   "avg_close": [
+    2.106,
+    3.546,
+    3.125
+   ],
+   "close_probs": [
+    44.1,
+    26.19,
+    29.72
+   ],
+   "entropy": 1.0725,
+   "dispersion": [
+    2.58,
+    3.65,
+    4.42
+   ],
+   "variance": [
+    0.003,
+    0.017,
+    0.019
+   ],
+   "kelly_max": 1.03,
+   "kelly_over1": 2,
+   "payout_avg": 0.928,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 17:53:24",
+   "last_time_ms": 1795773204869,
+   "quality": "ok",
+   "home": "米尔沃尔",
+   "away": "伯恩利",
+   "league": "英冠",
+   "time": "22:55",
+   "match_date": "2026-11-28",
+   "handicap": 0,
+   "double_choice": "客胜+主胜",
+   "total_p": 72.9,
+   "grade": "B"
+  },
+  "159": {
+   "mid": "4561163",
+   "n_companies": 44,
+   "open_fav": "客胜",
+   "close_fav": "客胜",
+   "open_votes": [
+    0,
+    0,
+    44
+   ],
+   "close_votes": [
+    0,
+    0,
+    44
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 17,
+    "平局": 14,
+    "客胜": 16
+   },
+   "avg_open": [
+    2.95,
+    3.46,
+    2.068
+   ],
+   "avg_close": [
+    2.974,
+    3.448,
+    2.063
+   ],
+   "close_probs": [
+    30.27,
+    26.1,
+    43.63
+   ],
+   "entropy": 1.0742,
+   "dispersion": [
+    2.96,
+    2.78,
+    2.36
+   ],
+   "variance": [
+    0.008,
+    0.009,
+    0.002
+   ],
+   "kelly_max": 0.97,
+   "kelly_over1": 0,
+   "payout_avg": 0.9,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 17:53:52",
+   "last_time_ms": 1795773232549,
+   "quality": "ok",
+   "home": "洛克伦",
+   "away": "比尔肖特",
+   "league": "比乙",
+   "time": "02:55",
+   "match_date": "2026-11-28",
+   "handicap": 0,
+   "double_choice": "客胜+平局",
+   "total_p": 71.9,
+   "grade": "B"
+  },
+  "185": {
+   "mid": "4555679",
+   "n_companies": 49,
+   "open_fav": "主胜",
+   "close_fav": "主胜",
+   "open_votes": [
+    47,
+    0,
+    2
+   ],
+   "close_votes": [
+    49,
+    0,
+    0
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 44,
+    "平局": 43,
+    "客胜": 38
+   },
+   "avg_open": [
+    2.219,
+    3.015,
+    3.114
+   ],
+   "avg_close": [
+    2.088,
+    3.133,
+    3.261
+   ],
+   "close_probs": [
+    43.35,
+    28.89,
+    27.76
+   ],
+   "entropy": 1.0768,
+   "dispersion": [
+    3.03,
+    3.54,
+    4.28
+   ],
+   "variance": [
+    0.004,
+    0.012,
+    0.019
+   ],
+   "kelly_max": 1.0,
+   "kelly_over1": 0,
+   "payout_avg": 0.904,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 17:54:19",
+   "last_time_ms": 1795773259733,
+   "quality": "ok",
+   "home": "八户云罗里",
+   "away": "藤枝MYFC",
+   "league": "J2联赛",
+   "time": "11:55",
+   "match_date": "2026-11-29",
+   "handicap": 0,
+   "double_choice": "客胜+平局",
+   "total_p": 66.6,
+   "grade": "A"
+  },
+  "66": {
+   "mid": "4553536",
+   "n_companies": 49,
+   "open_fav": "主胜",
+   "close_fav": "主胜",
+   "open_votes": [
+    49,
+    0,
+    0
+   ],
+   "close_votes": [
+    49,
+    0,
+    0
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 28,
+    "平局": 31,
+    "客胜": 30
+   },
+   "avg_open": [
+    2.258,
+    3.31,
+    2.776
+   ],
+   "avg_close": [
+    2.272,
+    3.288,
+    2.798
+   ],
+   "close_probs": [
+    39.95,
+    27.61,
+    32.44
+   ],
+   "entropy": 1.0871,
+   "dispersion": [
+    2.68,
+    4.34,
+    3.09
+   ],
+   "variance": [
+    0.004,
+    0.02,
+    0.007
+   ],
+   "kelly_max": 0.98,
+   "kelly_over1": 0,
+   "payout_avg": 0.907,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 17:54:46",
+   "last_time_ms": 1795773286506,
+   "quality": "ok",
+   "home": "HB克厄",
+   "away": "奥胡斯前进",
+   "league": "丹甲",
+   "time": "20:25",
+   "match_date": "2026-11-28",
+   "handicap": 0,
+   "double_choice": "客胜+平局",
+   "total_p": 65.8,
+   "grade": "A"
+  },
+  "170": {
+   "mid": "4567388",
+   "n_companies": 51,
+   "open_fav": "主胜",
+   "close_fav": "主胜",
+   "open_votes": [
+    51,
+    0,
+    0
+   ],
+   "close_votes": [
+    51,
+    0,
+    0
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 29,
+    "平局": 31,
+    "客胜": 28
+   },
+   "avg_open": [
+    1.749,
+    3.723,
+    3.922
+   ],
+   "avg_close": [
+    1.735,
+    3.755,
+    4.02
+   ],
+   "close_probs": [
+    52.81,
+    24.4,
+    22.79
+   ],
+   "entropy": 1.0184,
+   "dispersion": [
+    2.6,
+    3.84,
+    4.98
+   ],
+   "variance": [
+    0.002,
+    0.021,
+    0.04
+   ],
+   "kelly_max": 1.03,
+   "kelly_over1": 1,
+   "payout_avg": 0.916,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 17:55:11",
+   "last_time_ms": 1795773311427,
+   "quality": "ok",
+   "home": "巴利亚多利德",
+   "away": "皇家社会B队",
+   "league": "西乙",
+   "time": "03:55",
+   "match_date": "2026-11-28",
+   "handicap": -1,
+   "double_choice": "客胜+平局",
+   "total_p": 72.0,
+   "grade": "B"
+  },
+  "33": {
+   "mid": "4565634",
+   "n_companies": 57,
+   "open_fav": "主胜",
+   "close_fav": "主胜",
+   "open_votes": [
+    57,
+    0,
+    0
+   ],
+   "close_votes": [
+    57,
+    0,
+    0
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 46,
+    "平局": 46,
+    "客胜": 47
+   },
+   "avg_open": [
+    2.041,
+    3.784,
+    3.149
+   ],
+   "avg_close": [
+    2.008,
+    3.925,
+    3.231
+   ],
+   "close_probs": [
+    46.88,
+    23.98,
+    29.14
+   ],
+   "entropy": 1.0569,
+   "dispersion": [
+    2.18,
+    3.54,
+    4.28
+   ],
+   "variance": [
+    0.002,
+    0.019,
+    0.019
+   ],
+   "kelly_max": 1.03,
+   "kelly_over1": 4,
+   "payout_avg": 0.941,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 17:55:36",
+   "last_time_ms": 1795773336527,
+   "quality": "ok",
+   "home": "莱万特",
+   "away": "桑坦德竞技",
+   "league": "西甲",
+   "time": "03:55",
+   "match_date": "2026-11-27",
+   "handicap": 0,
+   "double_choice": "主胜+客胜",
+   "total_p": 72.1,
+   "grade": "B"
+  },
+  "63": {
+   "mid": "4563136",
+   "n_companies": 49,
+   "open_fav": "主胜",
+   "close_fav": "主胜",
+   "open_votes": [
+    49,
+    0,
+    0
+   ],
+   "close_votes": [
+    49,
+    0,
+    0
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 45,
+    "平局": 45,
+    "客胜": 33
+   },
+   "avg_open": [
+    1.86,
+    3.518,
+    3.675
+   ],
+   "avg_close": [
+    1.919,
+    3.372,
+    3.638
+   ],
+   "close_probs": [
+    47.7,
+    27.14,
+    25.16
+   ],
+   "entropy": 1.0542,
+   "dispersion": [
+    2.0,
+    2.97,
+    4.32
+   ],
+   "variance": [
+    0.001,
+    0.01,
+    0.025
+   ],
+   "kelly_max": 1.01,
+   "kelly_over1": 2,
+   "payout_avg": 0.915,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 17:56:02",
+   "last_time_ms": 1795773362286,
+   "quality": "ok",
+   "home": "布里斯托尔流浪者",
+   "away": "特兰米尔流浪者",
+   "league": "英乙",
+   "time": "20:25",
+   "match_date": "2026-11-28",
+   "handicap": 0,
+   "double_choice": "主胜+平局",
+   "total_p": 71.1,
+   "grade": "B"
+  },
+  "5": {
+   "mid": "4566623",
+   "n_companies": 56,
+   "open_fav": "主胜",
+   "close_fav": "主胜",
+   "open_votes": [
+    56,
+    0,
+    0
+   ],
+   "close_votes": [
+    56,
+    0,
+    0
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 50,
+    "平局": 40,
+    "客胜": 47
+   },
+   "avg_open": [
+    2.036,
+    3.831,
+    3.001
+   ],
+   "avg_close": [
+    2.144,
+    3.792,
+    2.891
+   ],
+   "close_probs": [
+    43.35,
+    24.51,
+    32.15
+   ],
+   "entropy": 1.0718,
+   "dispersion": [
+    3.13,
+    3.76,
+    4.33
+   ],
+   "variance": [
+    0.005,
+    0.02,
+    0.016
+   ],
+   "kelly_max": 1.09,
+   "kelly_over1": 1,
+   "payout_avg": 0.928,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 17:56:27",
+   "last_time_ms": 1795773387506,
+   "quality": "ok",
+   "home": "海登海姆",
+   "away": "纽伦堡",
+   "league": "德乙",
+   "time": "01:25",
+   "match_date": "2026-11-27",
+   "handicap": 0,
+   "double_choice": "主胜+客胜",
+   "total_p": 71.9,
+   "grade": "B"
+  },
+  "9": {
+   "mid": "4553535",
+   "n_companies": 51,
+   "open_fav": "主胜",
+   "close_fav": "主胜",
+   "open_votes": [
+    51,
+    0,
+    0
+   ],
+   "close_votes": [
+    51,
+    0,
+    0
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 49,
+    "平局": 44,
+    "客胜": 44
+   },
+   "avg_open": [
+    1.848,
+    3.629,
+    3.488
+   ],
+   "avg_close": [
+    1.771,
+    3.774,
+    3.766
+   ],
+   "close_probs": [
+    51.56,
+    24.19,
+    24.25
+   ],
+   "entropy": 1.0284,
+   "dispersion": [
+    3.02,
+    4.23,
+    6.09
+   ],
+   "variance": [
+    0.003,
+    0.026,
+    0.053
+   ],
+   "kelly_max": 1.07,
+   "kelly_over1": 4,
+   "payout_avg": 0.913,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 17:56:52",
+   "last_time_ms": 1795773412829,
+   "quality": "ok",
+   "home": "哈维德夫",
+   "away": "科灵",
+   "league": "丹甲",
+   "time": "01:55",
+   "match_date": "2026-11-27",
+   "handicap": -1,
+   "double_choice": "客胜+主胜",
+   "total_p": 71.0,
+   "grade": "A"
+  },
+  "40": {
+   "mid": "4555302",
+   "n_companies": 48,
+   "open_fav": "主胜",
+   "close_fav": "主胜",
+   "open_votes": [
+    47,
+    0,
+    1
+   ],
+   "close_votes": [
+    48,
+    0,
+    0
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 20,
+    "平局": 21,
+    "客胜": 20
+   },
+   "avg_open": [
+    2.416,
+    3.376,
+    2.641
+   ],
+   "avg_close": [
+    2.411,
+    3.397,
+    2.666
+   ],
+   "close_probs": [
+    38.25,
+    27.15,
+    34.6
+   ],
+   "entropy": 1.0888,
+   "dispersion": [
+    3.06,
+    3.24,
+    2.97
+   ],
+   "variance": [
+    0.005,
+    0.012,
+    0.006
+   ],
+   "kelly_max": 1.02,
+   "kelly_over1": 1,
+   "payout_avg": 0.922,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 17:57:15",
+   "last_time_ms": 1795773435739,
+   "quality": "ok",
+   "home": "京都不死鸟",
+   "away": "大阪樱花",
+   "league": "J1联赛",
+   "time": "12:55",
+   "match_date": "2026-11-28",
+   "handicap": 0,
+   "double_choice": "主胜+客胜",
+   "total_p": 71.9,
+   "grade": "A"
+  },
+  "57": {
+   "mid": "4669373",
+   "n_companies": 49,
+   "open_fav": "主胜",
+   "close_fav": "客胜",
+   "open_votes": [
+    49,
+    0,
+    0
+   ],
+   "close_votes": [
+    2,
+    0,
+    47
+   ],
+   "flip": true,
+   "moved": {
+    "主胜": 48,
+    "平局": 31,
+    "客胜": 48
+   },
+   "avg_open": [
+    2.451,
+    3.191,
+    2.673
+   ],
+   "avg_close": [
+    2.638,
+    3.234,
+    2.462
+   ],
+   "close_probs": [
+    34.64,
+    28.25,
+    37.11
+   ],
+   "entropy": 1.0922,
+   "dispersion": [
+    3.42,
+    2.45,
+    3.45
+   ],
+   "variance": [
+    0.008,
+    0.006,
+    0.007
+   ],
+   "kelly_max": 1.04,
+   "kelly_over1": 2,
+   "payout_avg": 0.914,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 17:57:39",
+   "last_time_ms": 1795773459595,
+   "quality": "ok",
+   "home": "瓦尔贝里",
+   "away": "厄斯特松德",
+   "league": "瑞典甲",
+   "time": "19:55",
+   "match_date": "2026-11-28",
+   "handicap": 0,
+   "double_choice": "客胜+平局",
+   "total_p": 68.7,
+   "grade": "B"
+  },
+  "69": {
+   "mid": "4559388",
+   "n_companies": 53,
+   "open_fav": "主胜",
+   "close_fav": "主胜",
+   "open_votes": [
+    53,
+    0,
+    0
+   ],
+   "close_votes": [
+    53,
+    0,
+    0
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 38,
+    "平局": 42,
+    "客胜": 43
+   },
+   "avg_open": [
+    1.795,
+    3.511,
+    3.948
+   ],
+   "avg_close": [
+    1.836,
+    3.493,
+    3.813
+   ],
+   "close_probs": [
+    49.82,
+    26.19,
+    23.99
+   ],
+   "entropy": 1.0405,
+   "dispersion": [
+    2.48,
+    3.31,
+    5.25
+   ],
+   "variance": [
+    0.002,
+    0.013,
+    0.04
+   ],
+   "kelly_max": 1.01,
+   "kelly_over1": 2,
+   "payout_avg": 0.914,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 17:58:04",
+   "last_time_ms": 1795773484355,
+   "quality": "ok",
+   "home": "罗兹维德祖",
+   "away": "卢宾扎格勒比",
+   "league": "波兰甲",
+   "time": "21:40",
+   "match_date": "2026-11-28",
+   "handicap": 0,
+   "double_choice": "平局+主胜",
+   "total_p": 71.9,
+   "grade": "A"
+  },
+  "173": {
+   "mid": "4476504",
+   "n_companies": 50,
+   "open_fav": "主胜",
+   "close_fav": "主胜",
+   "open_votes": [
+    50,
+    0,
+    0
+   ],
+   "close_votes": [
+    50,
+    0,
+    0
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 43,
+    "平局": 32,
+    "客胜": 43
+   },
+   "avg_open": [
+    1.693,
+    3.769,
+    4.065
+   ],
+   "avg_close": [
+    1.758,
+    3.714,
+    3.812
+   ],
+   "close_probs": [
+    51.69,
+    24.47,
+    23.84
+   ],
+   "entropy": 1.0274,
+   "dispersion": [
+    2.63,
+    3.34,
+    5.52
+   ],
+   "variance": [
+    0.002,
+    0.015,
+    0.044
+   ],
+   "kelly_max": 1.03,
+   "kelly_over1": 2,
+   "payout_avg": 0.908,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 17:58:28",
+   "last_time_ms": 1795773508261,
+   "quality": "ok",
+   "home": "科金博联",
+   "away": "利马切",
+   "league": "智利甲",
+   "time": "04:55",
+   "match_date": "2026-11-28",
+   "handicap": 0,
+   "double_choice": "客胜+主胜",
+   "total_p": 68.0,
+   "grade": "A"
+  },
+  "17": {
+   "mid": "4551931",
+   "n_companies": 54,
+   "open_fav": "主胜",
+   "close_fav": "主胜",
+   "open_votes": [
+    54,
+    0,
+    0
+   ],
+   "close_votes": [
+    54,
+    0,
+    0
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 45,
+    "平局": 44,
+    "客胜": 43
+   },
+   "avg_open": [
+    2.089,
+    3.662,
+    2.849
+   ],
+   "avg_close": [
+    2.01,
+    3.806,
+    2.987
+   ],
+   "close_probs": [
+    45.43,
+    23.99,
+    30.57
+   ],
+   "entropy": 1.0632,
+   "dispersion": [
+    2.75,
+    4.12,
+    3.65
+   ],
+   "variance": [
+    0.003,
+    0.025,
+    0.012
+   ],
+   "kelly_max": 1.01,
+   "kelly_over1": 1,
+   "payout_avg": 0.912,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 17:58:52",
+   "last_time_ms": 1795773532039,
+   "quality": "ok",
+   "home": "马斯特里赫特",
+   "away": "PSV埃因霍温青年",
+   "league": "荷乙",
+   "time": "02:55",
+   "match_date": "2026-11-27",
+   "handicap": 0,
+   "double_choice": "主胜+客胜",
+   "total_p": 68.1,
+   "grade": "C"
+  },
+  "120": {
+   "mid": "4590641",
+   "n_companies": 41,
+   "open_fav": "主胜",
+   "close_fav": "主胜",
+   "open_votes": [
+    41,
+    0,
+    0
+   ],
+   "close_votes": [
+    41,
+    0,
+    0
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 34,
+    "平局": 26,
+    "客胜": 35
+   },
+   "avg_open": [
+    1.865,
+    3.342,
+    3.788
+   ],
+   "avg_close": [
+    1.801,
+    3.403,
+    4.063
+   ],
+   "close_probs": [
+    50.7,
+    26.83,
+    22.47
+   ],
+   "entropy": 1.0329,
+   "dispersion": [
+    2.09,
+    3.56,
+    5.66
+   ],
+   "variance": [
+    0.001,
+    0.015,
+    0.053
+   ],
+   "kelly_max": 1.01,
+   "kelly_over1": 2,
+   "payout_avg": 0.912,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 17:59:13",
+   "last_time_ms": 1795773553706,
+   "quality": "ok",
+   "home": "伊拉克利斯",
+   "away": "帕纳多里科斯",
+   "league": "希腊超",
+   "time": "22:55",
+   "match_date": "2026-11-28",
+   "handicap": 0,
+   "double_choice": "主胜+平局",
+   "total_p": 69.9,
+   "grade": "B"
+  },
+  "78": {
+   "mid": "4566429",
+   "n_companies": 55,
+   "open_fav": "客胜",
+   "close_fav": "客胜",
+   "open_votes": [
+    0,
+    0,
+    55
+   ],
+   "close_votes": [
+    0,
+    0,
+    55
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 48,
+    "平局": 43,
+    "客胜": 43
+   },
+   "avg_open": [
+    11.811,
+    8.009,
+    1.179
+   ],
+   "avg_close": [
+    9.309,
+    6.527,
+    1.243
+   ],
+   "close_probs": [
+    10.09,
+    14.38,
+    75.53
+   ],
+   "entropy": 0.7222,
+   "dispersion": [
+    7.43,
+    6.14,
+    2.29
+   ],
+   "variance": [
+    0.478,
+    0.161,
+    0.001
+   ],
+   "kelly_max": 1.11,
+   "kelly_over1": 21,
+   "payout_avg": 0.938,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 17:59:36",
+   "last_time_ms": 1795773576052,
+   "quality": "ok",
+   "home": "汉堡",
+   "away": "拜仁慕尼黑",
+   "league": "德甲",
+   "time": "22:25",
+   "match_date": "2026-11-28",
+   "handicap": 2,
+   "double_choice": "主胜+客胜",
+   "total_p": 72.0,
+   "grade": "B"
+  },
+  "36": {
+   "mid": "4669860",
+   "n_companies": 51,
+   "open_fav": "主胜",
+   "close_fav": "客胜",
+   "open_votes": [
+    50,
+    0,
+    1
+   ],
+   "close_votes": [
+    5,
+    0,
+    46
+   ],
+   "flip": true,
+   "moved": {
+    "主胜": 50,
+    "平局": 34,
+    "客胜": 50
+   },
+   "avg_open": [
+    2.359,
+    3.009,
+    2.883
+   ],
+   "avg_close": [
+    2.765,
+    2.981,
+    2.515
+   ],
+   "close_probs": [
+    33.04,
+    30.64,
+    36.32
+   ],
+   "entropy": 1.0962,
+   "dispersion": [
+    4.21,
+    3.59,
+    3.68
+   ],
+   "variance": [
+    0.014,
+    0.011,
+    0.009
+   ],
+   "kelly_max": 1.02,
+   "kelly_over1": 1,
+   "payout_avg": 0.912,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 17:59:58",
+   "last_time_ms": 1795773598101,
+   "quality": "ok",
+   "home": "维拉诺瓦",
+   "away": "戈亚尼亚竞技",
+   "league": "巴西乙",
+   "time": "06:00",
+   "match_date": "2026-11-27",
+   "handicap": 0,
+   "double_choice": "主胜+平局",
+   "total_p": 70.1,
+   "grade": "B"
+  },
+  "108": {
+   "mid": "4563141",
+   "n_companies": 48,
+   "open_fav": "客胜",
+   "close_fav": "客胜",
+   "open_votes": [
+    0,
+    0,
+    48
+   ],
+   "close_votes": [
+    0,
+    0,
+    48
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 38,
+    "平局": 32,
+    "客胜": 40
+   },
+   "avg_open": [
+    3.92,
+    3.785,
+    1.736
+   ],
+   "avg_close": [
+    3.772,
+    3.712,
+    1.795
+   ],
+   "close_probs": [
+    24.29,
+    24.68,
+    51.03
+   ],
+   "entropy": 1.0323,
+   "dispersion": [
+    3.8,
+    3.85,
+    2.27
+   ],
+   "variance": [
+    0.021,
+    0.02,
+    0.002
+   ],
+   "kelly_max": 0.99,
+   "kelly_over1": 0,
+   "payout_avg": 0.915,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 18:00:17",
+   "last_time_ms": 1795773617928,
+   "quality": "ok",
+   "home": "罗奇代尔",
+   "away": "巴尼特",
+   "league": "英乙",
+   "time": "22:55",
+   "match_date": "2026-11-28",
+   "handicap": 1,
+   "double_choice": "主胜+客胜",
+   "total_p": 72.0,
+   "grade": "B"
+  },
+  "75": {
+   "mid": "4568964",
+   "n_companies": 5,
+   "open_fav": "主胜",
+   "close_fav": "主胜",
+   "open_votes": [
+    5,
+    0,
+    0
+   ],
+   "close_votes": [
+    5,
+    0,
+    0
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 3,
+    "平局": 2,
+    "客胜": 2
+   },
+   "avg_open": [
+    2.238,
+    3.514,
+    2.756
+   ],
+   "avg_close": [
+    2.26,
+    3.522,
+    2.764
+   ],
+   "close_probs": [
+    40.66,
+    26.09,
+    33.25
+   ],
+   "entropy": 1.0826,
+   "dispersion": [
+    3.01,
+    2.59,
+    3.47
+   ],
+   "variance": [
+    0.005,
+    0.008,
+    0.009
+   ],
+   "kelly_max": 0.96,
+   "kelly_over1": 0,
+   "payout_avg": 0.92,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 18:00:39",
+   "last_time_ms": 1795773639147,
+   "quality": "ok",
+   "home": "姆拉达博莱斯拉夫",
+   "away": "奥洛穆茨",
+   "league": "捷克甲",
+   "time": "21:55",
+   "match_date": "2026-11-28",
+   "handicap": 0,
+   "double_choice": "主胜+平局",
+   "total_p": 70.0,
+   "grade": "A"
+  },
+  "97": {
+   "mid": "4562571",
+   "n_companies": 50,
+   "open_fav": "主胜",
+   "close_fav": "主胜",
+   "open_votes": [
+    50,
+    0,
+    0
+   ],
+   "close_votes": [
+    50,
+    0,
+    0
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 43,
+    "平局": 41,
+    "客胜": 45
+   },
+   "avg_open": [
+    1.575,
+    4.147,
+    4.643
+   ],
+   "avg_close": [
+    1.488,
+    4.434,
+    5.304
+   ],
+   "close_probs": [
+    61.88,
+    20.76,
+    17.36
+   ],
+   "entropy": 0.9274,
+   "dispersion": [
+    2.7,
+    3.45,
+    7.18
+   ],
+   "variance": [
+    0.002,
+    0.023,
+    0.145
+   ],
+   "kelly_max": 1.05,
+   "kelly_over1": 3,
+   "payout_avg": 0.92,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 18:00:39",
+   "last_time_ms": 1795773639503,
+   "quality": "ok",
+   "home": "莱斯特城",
+   "away": "曼斯菲尔德",
+   "league": "英甲",
+   "time": "22:55",
+   "match_date": "2026-11-28",
+   "handicap": -1,
+   "double_choice": "客胜+主胜",
+   "total_p": 72.0,
+   "grade": "B"
+  },
+  "110": {
+   "mid": "4563143",
+   "n_companies": 49,
+   "open_fav": "主胜",
+   "close_fav": "主胜",
+   "open_votes": [
+    49,
+    0,
+    0
+   ],
+   "close_votes": [
+    49,
+    0,
+    0
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 35,
+    "平局": 36,
+    "客胜": 32
+   },
+   "avg_open": [
+    1.485,
+    4.178,
+    5.514
+   ],
+   "avg_close": [
+    1.457,
+    4.281,
+    5.827
+   ],
+   "close_probs": [
+    62.88,
+    21.4,
+    15.72
+   ],
+   "entropy": 0.9126,
+   "dispersion": [
+    1.86,
+    3.89,
+    7.72
+   ],
+   "variance": [
+    0.001,
+    0.028,
+    0.202
+   ],
+   "kelly_max": 1.07,
+   "kelly_over1": 4,
+   "payout_avg": 0.915,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 18:01:01",
+   "last_time_ms": 1795773661787,
+   "quality": "ok",
+   "home": "索尔福德城",
+   "away": "吉林汉姆",
+   "league": "英乙",
+   "time": "22:55",
+   "match_date": "2026-11-28",
+   "handicap": -1,
+   "double_choice": "客胜+主胜",
+   "total_p": 72.0,
+   "grade": "B"
+  },
+  "54": {
+   "mid": "4566609",
+   "n_companies": 40,
+   "open_fav": "客胜",
+   "close_fav": "客胜",
+   "open_votes": [
+    8,
+    0,
+    32
+   ],
+   "close_votes": [
+    0,
+    0,
+    40
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 23,
+    "平局": 13,
+    "客胜": 22
+   },
+   "avg_open": [
+    2.585,
+    3.46,
+    2.466
+   ],
+   "avg_close": [
+    2.671,
+    3.456,
+    2.413
+   ],
+   "close_probs": [
+    34.72,
+    26.84,
+    38.44
+   ],
+   "entropy": 1.0878,
+   "dispersion": [
+    2.38,
+    3.61,
+    2.74
+   ],
+   "variance": [
+    0.004,
+    0.016,
+    0.004
+   ],
+   "kelly_max": 0.99,
+   "kelly_over1": 0,
+   "payout_avg": 0.928,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 18:01:22",
+   "last_time_ms": 1795773682832,
+   "quality": "ok",
+   "home": "德累斯顿",
+   "away": "圣保利",
+   "league": "德乙",
+   "time": "19:55",
+   "match_date": "2026-11-28",
+   "handicap": 0,
+   "double_choice": "客胜+平局",
+   "total_p": 69.3,
+   "grade": "B"
+  },
+  "175": {
+   "mid": "4672027",
+   "n_companies": 28,
+   "open_fav": "主胜",
+   "close_fav": "主胜",
+   "open_votes": [
+    28,
+    0,
+    0
+   ],
+   "close_votes": [
+    28,
+    0,
+    0
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 12,
+    "平局": 11,
+    "客胜": 11
+   },
+   "avg_open": [
+    2.006,
+    3.093,
+    3.817
+   ],
+   "avg_close": [
+    2.015,
+    3.089,
+    3.826
+   ],
+   "close_probs": [
+    45.89,
+    29.94,
+    24.17
+   ],
+   "entropy": 1.0617,
+   "dispersion": [
+    2.72,
+    2.33,
+    5.27
+   ],
+   "variance": [
+    0.003,
+    0.005,
+    0.041
+   ],
+   "kelly_max": 1.02,
+   "kelly_over1": 3,
+   "payout_avg": 0.923,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 18:01:44",
+   "last_time_ms": 1795773704372,
+   "quality": "ok",
+   "home": "萨斯菲尔德",
+   "away": "阿根廷独立",
+   "league": "阿职联",
+   "time": "06:00",
+   "match_date": "2026-11-28",
+   "handicap": 0,
+   "double_choice": "客胜+主胜",
+   "total_p": 68.0,
+   "grade": "C"
+  },
+  "116": {
+   "mid": "4557642",
+   "n_companies": 53,
+   "open_fav": "主胜",
+   "close_fav": "主胜",
+   "open_votes": [
+    53,
+    0,
+    0
+   ],
+   "close_votes": [
+    53,
+    0,
+    0
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 32,
+    "平局": 38,
+    "客胜": 36
+   },
+   "avg_open": [
+    1.232,
+    5.949,
+    9.448
+   ],
+   "avg_close": [
+    1.222,
+    6.221,
+    9.829
+   ],
+   "close_probs": [
+    75.71,
+    14.87,
+    9.41
+   ],
+   "entropy": 0.7165,
+   "dispersion": [
+    2.0,
+    4.7,
+    6.26
+   ],
+   "variance": [
+    0.001,
+    0.086,
+    0.379
+   ],
+   "kelly_max": 1.04,
+   "kelly_over1": 6,
+   "payout_avg": 0.925,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 18:02:06",
+   "last_time_ms": 1795773726139,
+   "quality": "ok",
+   "home": "格拉斯哥流浪者",
+   "away": "福尔柯克",
+   "league": "苏超",
+   "time": "22:55",
+   "match_date": "2026-11-28",
+   "handicap": -2,
+   "double_choice": "客胜+主胜",
+   "total_p": 72.0,
+   "grade": "A"
+  },
+  "24": {
+   "mid": "4556834",
+   "n_companies": 49,
+   "open_fav": "客胜",
+   "close_fav": "客胜",
+   "open_votes": [
+    0,
+    0,
+    49
+   ],
+   "close_votes": [
+    0,
+    0,
+    49
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 35,
+    "平局": 32,
+    "客胜": 28
+   },
+   "avg_open": [
+    3.842,
+    3.674,
+    1.741
+   ],
+   "avg_close": [
+    3.748,
+    3.653,
+    1.782
+   ],
+   "close_probs": [
+    24.22,
+    24.85,
+    50.94
+   ],
+   "entropy": 1.033,
+   "dispersion": [
+    5.22,
+    4.16,
+    2.97
+   ],
+   "variance": [
+    0.038,
+    0.023,
+    0.003
+   ],
+   "kelly_max": 1.02,
+   "kelly_over1": 1,
+   "payout_avg": 0.906,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 18:02:28",
+   "last_time_ms": 1795773748881,
+   "quality": "ok",
+   "home": "卡鲁日星",
+   "away": "洛桑乌契",
+   "league": "瑞士甲",
+   "time": "03:10",
+   "match_date": "2026-11-27",
+   "handicap": 1,
+   "double_choice": "客胜+主胜",
+   "total_p": 71.2,
+   "grade": "B"
+  },
+  "130": {
+   "mid": "4552266",
+   "n_companies": 54,
+   "open_fav": "主胜",
+   "close_fav": "主胜",
+   "open_votes": [
+    54,
+    0,
+    0
+   ],
+   "close_votes": [
+    54,
+    0,
+    0
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 39,
+    "平局": 44,
+    "客胜": 48
+   },
+   "avg_open": [
+    1.972,
+    3.597,
+    3.349
+   ],
+   "avg_close": [
+    1.984,
+    3.525,
+    3.442
+   ],
+   "close_probs": [
+    46.75,
+    26.31,
+    26.94
+   ],
+   "entropy": 1.0601,
+   "dispersion": [
+    2.36,
+    3.1,
+    4.4
+   ],
+   "variance": [
+    0.002,
+    0.012,
+    0.023
+   ],
+   "kelly_max": 1.02,
+   "kelly_over1": 1,
+   "payout_avg": 0.927,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 18:02:50",
+   "last_time_ms": 1795773770141,
+   "quality": "ok",
+   "home": "鹿特丹精英",
+   "away": "特尔斯达",
+   "league": "荷甲",
+   "time": "23:25",
+   "match_date": "2026-11-28",
+   "handicap": 0,
+   "double_choice": "平局+主胜",
+   "total_p": 69.5,
+   "grade": "A"
+  },
+  "56": {
+   "mid": "4553533",
+   "n_companies": 49,
+   "open_fav": "主胜",
+   "close_fav": "主胜",
+   "open_votes": [
+    29,
+    0,
+    20
+   ],
+   "close_votes": [
+    49,
+    0,
+    0
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 40,
+    "平局": 23,
+    "客胜": 40
+   },
+   "avg_open": [
+    2.452,
+    3.294,
+    2.532
+   ],
+   "avg_close": [
+    2.275,
+    3.324,
+    2.765
+   ],
+   "close_probs": [
+    39.89,
+    27.3,
+    32.82
+   ],
+   "entropy": 1.0867,
+   "dispersion": [
+    3.1,
+    3.57,
+    3.17
+   ],
+   "variance": [
+    0.005,
+    0.014,
+    0.008
+   ],
+   "kelly_max": 0.99,
+   "kelly_over1": 0,
+   "payout_avg": 0.907,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 18:03:10",
+   "last_time_ms": 1795773790880,
+   "quality": "ok",
+   "home": "希勒勒",
+   "away": "文德斯尔",
+   "league": "丹甲",
+   "time": "19:55",
+   "match_date": "2026-11-28",
+   "handicap": 0,
+   "double_choice": "客胜+主胜",
+   "total_p": 68.0,
+   "grade": "A"
+  },
+  "14": {
+   "mid": "4552268",
+   "n_companies": 57,
+   "open_fav": "主胜",
+   "close_fav": "主胜",
+   "open_votes": [
+    57,
+    0,
+    0
+   ],
+   "close_votes": [
+    57,
+    0,
+    0
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 52,
+    "平局": 47,
+    "客胜": 53
+   },
+   "avg_open": [
+    1.292,
+    5.663,
+    8.002
+   ],
+   "avg_close": [
+    1.301,
+    5.565,
+    8.175
+   ],
+   "close_probs": [
+    71.79,
+    16.78,
+    11.43
+   ],
+   "entropy": 0.7853,
+   "dispersion": [
+    3.68,
+    7.21,
+    10.71
+   ],
+   "variance": [
+    0.002,
+    0.161,
+    0.767
+   ],
+   "kelly_max": 1.15,
+   "kelly_over1": 25,
+   "payout_avg": 0.932,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 18:03:29",
+   "last_time_ms": 1795773809655,
+   "quality": "ok",
+   "home": "格罗宁根",
+   "away": "威廉二世",
+   "league": "荷甲",
+   "time": "02:55",
+   "match_date": "2026-11-27",
+   "handicap": -1,
+   "double_choice": "主胜+客胜",
+   "total_p": 68.0,
+   "grade": "A"
+  },
+  "25": {
+   "mid": "4566434",
+   "n_companies": 57,
+   "open_fav": "主胜",
+   "close_fav": "主胜",
+   "open_votes": [
+    57,
+    0,
+    0
+   ],
+   "close_votes": [
+    57,
+    0,
+    0
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 55,
+    "平局": 46,
+    "客胜": 55
+   },
+   "avg_open": [
+    1.755,
+    4.068,
+    3.921
+   ],
+   "avg_close": [
+    1.661,
+    4.22,
+    4.459
+   ],
+   "close_probs": [
+    56.62,
+    22.29,
+    21.09
+   ],
+   "entropy": 0.9849,
+   "dispersion": [
+    2.87,
+    4.36,
+    5.7
+   ],
+   "variance": [
+    0.002,
+    0.034,
+    0.065
+   ],
+   "kelly_max": 1.03,
+   "kelly_over1": 7,
+   "payout_avg": 0.94,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 18:03:47",
+   "last_time_ms": 1795773827954,
+   "quality": "ok",
+   "home": "云达不来梅",
+   "away": "门兴格拉德巴赫",
+   "league": "德甲",
+   "time": "03:25",
+   "match_date": "2026-11-27",
+   "handicap": -1,
+   "double_choice": "主胜+客胜",
+   "total_p": 71.9,
+   "grade": "B"
+  },
+  "46": {
+   "mid": "4555330",
+   "n_companies": 53,
+   "open_fav": "主胜",
+   "close_fav": "主胜",
+   "open_votes": [
+    53,
+    0,
+    0
+   ],
+   "close_votes": [
+    53,
+    0,
+    0
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 39,
+    "平局": 22,
+    "客胜": 31
+   },
+   "avg_open": [
+    1.754,
+    3.575,
+    4.233
+   ],
+   "avg_close": [
+    1.78,
+    3.562,
+    4.219
+   ],
+   "close_probs": [
+    52.04,
+    26.01,
+    21.96
+   ],
+   "entropy": 1.023,
+   "dispersion": [
+    2.74,
+    3.4,
+    5.71
+   ],
+   "variance": [
+    0.002,
+    0.015,
+    0.058
+   ],
+   "kelly_max": 1.15,
+   "kelly_over1": 3,
+   "payout_avg": 0.926,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 18:04:08",
+   "last_time_ms": 1795773848677,
+   "quality": "ok",
+   "home": "鹿岛鹿角",
+   "away": "冈山绿雉",
+   "league": "J1联赛",
+   "time": "13:55",
+   "match_date": "2026-11-28",
+   "handicap": 0,
+   "double_choice": "客胜+主胜",
+   "total_p": 68.0,
+   "grade": "A"
+  },
+  "94": {
+   "mid": "4563719",
+   "n_companies": 52,
+   "open_fav": "主胜",
+   "close_fav": "主胜",
+   "open_votes": [
+    52,
+    0,
+    0
+   ],
+   "close_votes": [
+    52,
+    0,
+    0
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 47,
+    "平局": 46,
+    "客胜": 49
+   },
+   "avg_open": [
+    1.968,
+    3.368,
+    3.66
+   ],
+   "avg_close": [
+    2.085,
+    3.208,
+    3.498
+   ],
+   "close_probs": [
+    44.52,
+    28.94,
+    26.54
+   ],
+   "entropy": 1.0712,
+   "dispersion": [
+    2.95,
+    3.06,
+    3.42
+   ],
+   "variance": [
+    0.004,
+    0.01,
+    0.014
+   ],
+   "kelly_max": 1.02,
+   "kelly_over1": 1,
+   "payout_avg": 0.927,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 18:04:27",
+   "last_time_ms": 1795773867420,
+   "quality": "ok",
+   "home": "雷克瑟姆",
+   "away": "朴茨茅斯",
+   "league": "英冠",
+   "time": "22:55",
+   "match_date": "2026-11-28",
+   "handicap": 0,
+   "double_choice": "主胜+平局",
+   "total_p": 70.1,
+   "grade": "B"
+  },
+  "16": {
+   "mid": "4551932",
+   "n_companies": 54,
+   "open_fav": "主胜",
+   "close_fav": "主胜",
+   "open_votes": [
+    54,
+    0,
+    0
+   ],
+   "close_votes": [
+    54,
+    0,
+    0
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 49,
+    "平局": 40,
+    "客胜": 40
+   },
+   "avg_open": [
+    1.346,
+    5.143,
+    6.088
+   ],
+   "avg_close": [
+    1.38,
+    4.998,
+    5.937
+   ],
+   "close_probs": [
+    66.29,
+    18.3,
+    15.41
+   ],
+   "entropy": 0.8715,
+   "dispersion": [
+    2.07,
+    4.14,
+    6.55
+   ],
+   "variance": [
+    0.001,
+    0.043,
+    0.151
+   ],
+   "kelly_max": 1.05,
+   "kelly_over1": 5,
+   "payout_avg": 0.914,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 18:04:45",
+   "last_time_ms": 1795773885543,
+   "quality": "ok",
+   "home": "布雷达",
+   "away": "邓伯什",
+   "league": "荷乙",
+   "time": "02:55",
+   "match_date": "2026-11-27",
+   "handicap": -1,
+   "double_choice": "主胜+客胜",
+   "total_p": 68.0,
+   "grade": "C"
+  },
+  "167": {
+   "mid": "4550947",
+   "n_companies": 53,
+   "open_fav": "主胜",
+   "close_fav": "主胜",
+   "open_votes": [
+    53,
+    0,
+    0
+   ],
+   "close_votes": [
+    53,
+    0,
+    0
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 33,
+    "平局": 28,
+    "客胜": 38
+   },
+   "avg_open": [
+    1.645,
+    3.952,
+    4.71
+   ],
+   "avg_close": [
+    1.663,
+    3.996,
+    4.679
+   ],
+   "close_probs": [
+    56.45,
+    23.49,
+    20.06
+   ],
+   "entropy": 0.9853,
+   "dispersion": [
+    2.28,
+    3.73,
+    5.35
+   ],
+   "variance": [
+    0.001,
+    0.022,
+    0.063
+   ],
+   "kelly_max": 1.04,
+   "kelly_over1": 4,
+   "payout_avg": 0.938,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 18:05:03",
+   "last_time_ms": 1795773903530,
+   "quality": "ok",
+   "home": "尼斯",
+   "away": "特鲁瓦",
+   "league": "法甲",
+   "time": "03:40",
+   "match_date": "2026-11-28",
+   "handicap": -1,
+   "double_choice": "客胜+主胜",
+   "total_p": 68.0,
+   "grade": "B"
+  },
+  "95": {
+   "mid": "4562568",
+   "n_companies": 50,
+   "open_fav": "客胜",
+   "close_fav": "客胜",
+   "open_votes": [
+    34,
+    0,
+    16
+   ],
+   "close_votes": [
+    0,
+    0,
+    50
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 44,
+    "平局": 28,
+    "客胜": 44
+   },
+   "avg_open": [
+    2.473,
+    3.566,
+    2.455
+   ],
+   "avg_close": [
+    2.667,
+    3.577,
+    2.312
+   ],
+   "close_probs": [
+    34.49,
+    25.72,
+    39.79
+   ],
+   "entropy": 1.0831,
+   "dispersion": [
+    3.06,
+    3.36,
+    2.68
+   ],
+   "variance": [
+    0.007,
+    0.014,
+    0.004
+   ],
+   "kelly_max": 1.0,
+   "kelly_over1": 0,
+   "payout_avg": 0.92,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 18:05:23",
+   "last_time_ms": 1795773923431,
+   "quality": "ok",
+   "home": "AFC温布尔登",
+   "away": "巴恩斯利",
+   "league": "英甲",
+   "time": "22:55",
+   "match_date": "2026-11-28",
+   "handicap": 0,
+   "double_choice": "主胜+平局",
+   "total_p": 65.6,
+   "grade": "B"
+  },
+  "91": {
+   "mid": "4563714",
+   "n_companies": 48,
+   "open_fav": "主胜",
+   "close_fav": "主胜",
+   "open_votes": [
+    48,
+    0,
+    0
+   ],
+   "close_votes": [
+    48,
+    0,
+    0
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 39,
+    "平局": 33,
+    "客胜": 40
+   },
+   "avg_open": [
+    2.068,
+    3.502,
+    3.205
+   ],
+   "avg_close": [
+    2.015,
+    3.487,
+    3.404
+   ],
+   "close_probs": [
+    46.09,
+    26.63,
+    27.28
+   ],
+   "entropy": 1.0637,
+   "dispersion": [
+    2.11,
+    3.2,
+    4.69
+   ],
+   "variance": [
+    0.002,
+    0.012,
+    0.025
+   ],
+   "kelly_max": 1.02,
+   "kelly_over1": 1,
+   "payout_avg": 0.928,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 18:05:42",
+   "last_time_ms": 1795773942933,
+   "quality": "ok",
+   "home": "女王公园巡游者",
+   "away": "谢菲尔德联",
+   "league": "英冠",
+   "time": "22:55",
+   "match_date": "2026-11-28",
+   "handicap": 0,
+   "double_choice": "客胜+平局",
+   "total_p": 71.2,
+   "grade": "B"
+  },
+  "96": {
+   "mid": "4562569",
+   "n_companies": 50,
+   "open_fav": "主胜",
+   "close_fav": "主胜",
+   "open_votes": [
+    49,
+    0,
+    1
+   ],
+   "close_votes": [
+    50,
+    0,
+    0
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 40,
+    "平局": 24,
+    "客胜": 40
+   },
+   "avg_open": [
+    2.185,
+    3.446,
+    2.919
+   ],
+   "avg_close": [
+    2.216,
+    3.465,
+    2.872
+   ],
+   "close_probs": [
+    41.47,
+    26.52,
+    32.0
+   ],
+   "entropy": 1.0816,
+   "dispersion": [
+    2.47,
+    3.17,
+    3.01
+   ],
+   "variance": [
+    0.003,
+    0.012,
+    0.007
+   ],
+   "kelly_max": 0.99,
+   "kelly_over1": 0,
+   "payout_avg": 0.919,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 18:06:00",
+   "last_time_ms": 1795773960235,
+   "quality": "ok",
+   "home": "布罗姆利",
+   "away": "伯顿",
+   "league": "英甲",
+   "time": "22:55",
+   "match_date": "2026-11-28",
+   "handicap": 0,
+   "double_choice": "客胜+平局",
+   "total_p": 65.8,
+   "grade": "B"
+  },
+  "81": {
+   "mid": "4568063",
+   "n_companies": 46,
+   "open_fav": "主胜",
+   "close_fav": "主胜",
+   "open_votes": [
+    46,
+    0,
+    0
+   ],
+   "close_votes": [
+    46,
+    0,
+    0
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 20,
+    "平局": 25,
+    "客胜": 16
+   },
+   "avg_open": [
+    1.92,
+    3.897,
+    3.021
+   ],
+   "avg_close": [
+    1.935,
+    3.865,
+    3.04
+   ],
+   "close_probs": [
+    46.79,
+    23.43,
+    29.78
+   ],
+   "entropy": 1.0561,
+   "dispersion": [
+    2.25,
+    4.53,
+    3.25
+   ],
+   "variance": [
+    0.002,
+    0.031,
+    0.01
+   ],
+   "kelly_max": 1.01,
+   "kelly_over1": 1,
+   "payout_avg": 0.905,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 18:06:16",
+   "last_time_ms": 1795773976215,
+   "quality": "ok",
+   "home": "阿德米拉",
+   "away": "列夫林",
+   "league": "奥乙",
+   "time": "22:25",
+   "match_date": "2026-11-28",
+   "handicap": 0,
+   "double_choice": "主胜+客胜",
+   "total_p": 72.3,
+   "grade": "A"
+  },
+  "22": {
+   "mid": "4561159",
+   "n_companies": 49,
+   "open_fav": "客胜",
+   "close_fav": "客胜",
+   "open_votes": [
+    0,
+    0,
+    49
+   ],
+   "close_votes": [
+    0,
+    0,
+    49
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 47,
+    "平局": 36,
+    "客胜": 46
+   },
+   "avg_open": [
+    2.99,
+    3.357,
+    2.087
+   ],
+   "avg_close": [
+    3.233,
+    3.394,
+    1.99
+   ],
+   "close_probs": [
+    27.95,
+    26.63,
+    45.42
+   ],
+   "entropy": 1.0671,
+   "dispersion": [
+    4.99,
+    2.94,
+    2.78
+   ],
+   "variance": [
+    0.026,
+    0.01,
+    0.003
+   ],
+   "kelly_max": 1.02,
+   "kelly_over1": 3,
+   "payout_avg": 0.903,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 18:06:35",
+   "last_time_ms": 1795773995595,
+   "quality": "ok",
+   "home": "布瑞恩斯",
+   "away": "欧本",
+   "league": "比乙",
+   "time": "02:55",
+   "match_date": "2026-11-27",
+   "handicap": 0,
+   "double_choice": "客胜+平局",
+   "total_p": 72.0,
+   "grade": "B"
+  },
+  "161": {
+   "mid": "4566556",
+   "n_companies": 53,
+   "open_fav": "客胜",
+   "close_fav": "客胜",
+   "open_votes": [
+    0,
+    0,
+    53
+   ],
+   "close_votes": [
+    0,
+    0,
+    53
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 39,
+    "平局": 40,
+    "客胜": 50
+   },
+   "avg_open": [
+    2.909,
+    3.6,
+    2.15
+   ],
+   "avg_close": [
+    2.884,
+    3.512,
+    2.23
+   ],
+   "close_probs": [
+    32.11,
+    26.37,
+    41.52
+   ],
+   "entropy": 1.0812,
+   "dispersion": [
+    3.55,
+    3.35,
+    3.24
+   ],
+   "variance": [
+    0.011,
+    0.014,
+    0.005
+   ],
+   "kelly_max": 1.0,
+   "kelly_over1": 0,
+   "payout_avg": 0.926,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 18:06:52",
+   "last_time_ms": 1795774012214,
+   "quality": "ok",
+   "home": "奥斯纳布吕克",
+   "away": "汉诺威96",
+   "league": "德乙",
+   "time": "03:25",
+   "match_date": "2026-11-28",
+   "handicap": 0,
+   "double_choice": "客胜+平局",
+   "total_p": 68.5,
+   "grade": "B"
+  },
+  "181": {
+   "mid": "4671970",
+   "n_companies": 37,
+   "open_fav": "客胜",
+   "close_fav": "客胜",
+   "open_votes": [
+    0,
+    0,
+    37
+   ],
+   "close_votes": [
+    0,
+    0,
+    37
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 27,
+    "平局": 20,
+    "客胜": 24
+   },
+   "avg_open": [
+    2.725,
+    3.642,
+    2.211
+   ],
+   "avg_close": [
+    2.838,
+    3.63,
+    2.155
+   ],
+   "close_probs": [
+    32.27,
+    25.23,
+    42.5
+   ],
+   "entropy": 1.0761,
+   "dispersion": [
+    3.38,
+    4.05,
+    3.14
+   ],
+   "variance": [
+    0.009,
+    0.022,
+    0.005
+   ],
+   "kelly_max": 1.0,
+   "kelly_over1": 0,
+   "payout_avg": 0.916,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 18:07:07",
+   "last_time_ms": 1795774027384,
+   "quality": "ok",
+   "home": "阿特拉斯",
+   "away": "托卢卡",
+   "league": "墨超",
+   "time": "06:00",
+   "match_date": "2026-11-28",
+   "handicap": 0,
+   "double_choice": "客胜+平局",
+   "total_p": 68.0,
+   "grade": "B"
+  },
+  "150": {
+   "mid": "4552270",
+   "n_companies": 53,
+   "open_fav": "主胜",
+   "close_fav": "主胜",
+   "open_votes": [
+    53,
+    0,
+    0
+   ],
+   "close_votes": [
+    53,
+    0,
+    0
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 43,
+    "平局": 43,
+    "客胜": 46
+   },
+   "avg_open": [
+    1.243,
+    6.414,
+    8.419
+   ],
+   "avg_close": [
+    1.217,
+    6.915,
+    9.155
+   ],
+   "close_probs": [
+    76.4,
+    13.45,
+    10.16
+   ],
+   "entropy": 0.7077,
+   "dispersion": [
+    1.86,
+    6.88,
+    8.79
+   ],
+   "variance": [
+    0.001,
+    0.227,
+    0.648
+   ],
+   "kelly_max": 1.12,
+   "kelly_over1": 13,
+   "payout_avg": 0.929,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 18:07:22",
+   "last_time_ms": 1795774042467,
+   "quality": "ok",
+   "home": "PSV埃因霍温",
+   "away": "前进之鹰",
+   "league": "荷甲",
+   "time": "01:40",
+   "match_date": "2026-11-28",
+   "handicap": -2,
+   "double_choice": "客胜+主胜",
+   "total_p": 72.0,
+   "grade": "A"
+  },
+  "60": {
+   "mid": "4563713",
+   "n_companies": 52,
+   "open_fav": "客胜",
+   "close_fav": "客胜",
+   "open_votes": [
+    0,
+    0,
+    52
+   ],
+   "close_votes": [
+    0,
+    0,
+    52
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 37,
+    "平局": 38,
+    "客胜": 44
+   },
+   "avg_open": [
+    4.429,
+    4.042,
+    1.653
+   ],
+   "avg_close": [
+    4.4,
+    3.979,
+    1.674
+   ],
+   "close_probs": [
+    21.12,
+    23.36,
+    55.52
+   ],
+   "entropy": 0.9948,
+   "dispersion": [
+    4.74,
+    3.4,
+    2.21
+   ],
+   "variance": [
+    0.044,
+    0.018,
+    0.001
+   ],
+   "kelly_max": 1.01,
+   "kelly_over1": 2,
+   "payout_avg": 0.929,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 18:07:37",
+   "last_time_ms": 1795774057567,
+   "quality": "ok",
+   "home": "普雷斯顿",
+   "away": "诺维奇",
+   "league": "英冠",
+   "time": "20:25",
+   "match_date": "2026-11-28",
+   "handicap": 1,
+   "double_choice": "主胜+客胜",
+   "total_p": 68.0,
+   "grade": "B"
+  },
+  "144": {
+   "mid": "4556838",
+   "n_companies": 46,
+   "open_fav": "主胜",
+   "close_fav": "主胜",
+   "open_votes": [
+    46,
+    0,
+    0
+   ],
+   "close_votes": [
+    46,
+    0,
+    0
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 9,
+    "平局": 9,
+    "客胜": 10
+   },
+   "avg_open": [
+    1.387,
+    4.614,
+    5.939
+   ],
+   "avg_close": [
+    1.389,
+    4.619,
+    5.97
+   ],
+   "close_probs": [
+    65.22,
+    19.61,
+    15.17
+   ],
+   "entropy": 0.8844,
+   "dispersion": [
+    1.56,
+    5.01,
+    6.14
+   ],
+   "variance": [
+    0.0,
+    0.054,
+    0.134
+   ],
+   "kelly_max": 1.04,
+   "kelly_over1": 3,
+   "payout_avg": 0.905,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 18:07:52",
+   "last_time_ms": 1795774072804,
+   "quality": "ok",
+   "home": "纳沙泰尔",
+   "away": "尼永奈斯",
+   "league": "瑞士甲",
+   "time": "00:55",
+   "match_date": "2026-11-28",
+   "handicap": -1,
+   "double_choice": "客胜+主胜",
+   "total_p": 68.0,
+   "grade": "B"
+  },
+  "30": {
+   "mid": "4550943",
+   "n_companies": 57,
+   "open_fav": "客胜",
+   "close_fav": "客胜",
+   "open_votes": [
+    0,
+    0,
+    57
+   ],
+   "close_votes": [
+    0,
+    0,
+    57
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 54,
+    "平局": 38,
+    "客胜": 48
+   },
+   "avg_open": [
+    3.09,
+    3.415,
+    2.188
+   ],
+   "avg_close": [
+    3.342,
+    3.389,
+    2.138
+   ],
+   "close_probs": [
+    28.17,
+    27.78,
+    44.04
+   ],
+   "entropy": 1.0739,
+   "dispersion": [
+    4.73,
+    3.18,
+    3.57
+   ],
+   "variance": [
+    0.025,
+    0.012,
+    0.006
+   ],
+   "kelly_max": 1.04,
+   "kelly_over1": 6,
+   "payout_avg": 0.941,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 18:08:08",
+   "last_time_ms": 1795774088363,
+   "quality": "ok",
+   "home": "布雷斯特",
+   "away": "巴黎FC",
+   "league": "法甲",
+   "time": "03:40",
+   "match_date": "2026-11-27",
+   "handicap": 0,
+   "double_choice": "客胜+平局",
+   "total_p": 68.0,
+   "grade": "B"
+  },
+  "155": {
+   "mid": "4577948",
+   "n_companies": 42,
+   "open_fav": "主胜",
+   "close_fav": "主胜",
+   "open_votes": [
+    42,
+    0,
+    0
+   ],
+   "close_votes": [
+    42,
+    0,
+    0
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 25,
+    "平局": 17,
+    "客胜": 24
+   },
+   "avg_open": [
+    2.062,
+    3.158,
+    3.245
+   ],
+   "avg_close": [
+    2.125,
+    3.185,
+    3.106
+   ],
+   "close_probs": [
+    42.53,
+    28.37,
+    29.1
+   ],
+   "entropy": 1.0803,
+   "dispersion": [
+    2.42,
+    2.68,
+    3.89
+   ],
+   "variance": [
+    0.003,
+    0.007,
+    0.015
+   ],
+   "kelly_max": 0.99,
+   "kelly_over1": 0,
+   "payout_avg": 0.904,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 18:08:25",
+   "last_time_ms": 1795774105249,
+   "quality": "ok",
+   "home": "洛罗萨卢西塔尼亚",
+   "away": "维泽拉",
+   "league": "葡甲",
+   "time": "01:55",
+   "match_date": "2026-11-28",
+   "handicap": 0,
+   "double_choice": "平局+客胜",
+   "total_p": 63.4,
+   "grade": "B"
+  },
+  "125": {
+   "mid": "4565636",
+   "n_companies": 54,
+   "open_fav": "客胜",
+   "close_fav": "客胜",
+   "open_votes": [
+    0,
+    0,
+    54
+   ],
+   "close_votes": [
+    0,
+    0,
+    54
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 43,
+    "平局": 37,
+    "客胜": 42
+   },
+   "avg_open": [
+    4.45,
+    3.706,
+    1.739
+   ],
+   "avg_close": [
+    4.596,
+    3.751,
+    1.725
+   ],
+   "close_probs": [
+    20.45,
+    25.06,
+    54.49
+   ],
+   "entropy": 1.0022,
+   "dispersion": [
+    5.46,
+    3.44,
+    2.02
+   ],
+   "variance": [
+    0.063,
+    0.017,
+    0.001
+   ],
+   "kelly_max": 1.03,
+   "kelly_over1": 6,
+   "payout_avg": 0.939,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 18:08:40",
+   "last_time_ms": 1795774120112,
+   "quality": "ok",
+   "home": "马拉加",
+   "away": "毕尔巴鄂竞技",
+   "league": "西甲",
+   "time": "23:10",
+   "match_date": "2026-11-28",
+   "handicap": 1,
+   "double_choice": "主胜+客胜",
+   "total_p": 72.0,
+   "grade": "B"
+  },
+  "114": {
+   "mid": "4557638",
+   "n_companies": 54,
+   "open_fav": "主胜",
+   "close_fav": "主胜",
+   "open_votes": [
+    54,
+    0,
+    0
+   ],
+   "close_votes": [
+    54,
+    0,
+    0
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 30,
+    "平局": 29,
+    "客胜": 38
+   },
+   "avg_open": [
+    1.832,
+    3.7,
+    3.669
+   ],
+   "avg_close": [
+    1.846,
+    3.707,
+    3.68
+   ],
+   "close_probs": [
+    50.01,
+    24.9,
+    25.09
+   ],
+   "entropy": 1.0396,
+   "dispersion": [
+    1.93,
+    3.26,
+    4.29
+   ],
+   "variance": [
+    0.001,
+    0.015,
+    0.025
+   ],
+   "kelly_max": 1.0,
+   "kelly_over1": 0,
+   "payout_avg": 0.923,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 18:08:55",
+   "last_time_ms": 1795774135653,
+   "quality": "ok",
+   "home": "阿伯丁",
+   "away": "邓迪FC",
+   "league": "苏超",
+   "time": "22:55",
+   "match_date": "2026-11-28",
+   "handicap": 0,
+   "double_choice": "主胜+平局",
+   "total_p": 69.9,
+   "grade": "A"
+  },
+  "77": {
+   "mid": "4566428",
+   "n_companies": 53,
+   "open_fav": "主胜",
+   "close_fav": "主胜",
+   "open_votes": [
+    53,
+    0,
+    0
+   ],
+   "close_votes": [
+    53,
+    0,
+    0
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 32,
+    "平局": 29,
+    "客胜": 31
+   },
+   "avg_open": [
+    1.497,
+    4.484,
+    5.612
+   ],
+   "avg_close": [
+    1.486,
+    4.572,
+    5.762
+   ],
+   "close_probs": [
+    63.17,
+    20.53,
+    16.29
+   ],
+   "entropy": 0.9108,
+   "dispersion": [
+    2.55,
+    4.04,
+    5.55
+   ],
+   "variance": [
+    0.001,
+    0.034,
+    0.102
+   ],
+   "kelly_max": 1.08,
+   "kelly_over1": 5,
+   "payout_avg": 0.938,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 18:09:11",
+   "last_time_ms": 1795774151844,
+   "quality": "ok",
+   "home": "美因茨",
+   "away": "柏林联合",
+   "league": "德甲",
+   "time": "22:25",
+   "match_date": "2026-11-28",
+   "handicap": -1,
+   "double_choice": "客胜+平局",
+   "total_p": 71.9,
+   "grade": "B"
+  },
+  "172": {
+   "mid": "4578257",
+   "n_companies": 51,
+   "open_fav": "主胜",
+   "close_fav": "主胜",
+   "open_votes": [
+    51,
+    0,
+    0
+   ],
+   "close_votes": [
+    51,
+    0,
+    0
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 31,
+    "平局": 29,
+    "客胜": 33
+   },
+   "avg_open": [
+    1.668,
+    3.773,
+    4.602
+   ],
+   "avg_close": [
+    1.668,
+    3.801,
+    4.65
+   ],
+   "close_probs": [
+    55.63,
+    24.41,
+    19.96
+   ],
+   "entropy": 0.9921,
+   "dispersion": [
+    2.3,
+    3.86,
+    5.01
+   ],
+   "variance": [
+    0.001,
+    0.021,
+    0.054
+   ],
+   "kelly_max": 1.05,
+   "kelly_over1": 3,
+   "payout_avg": 0.927,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 18:09:25",
+   "last_time_ms": 1795774165939,
+   "quality": "ok",
+   "home": "吉马良斯",
+   "away": "阿马多拉之星",
+   "league": "葡超",
+   "time": "04:25",
+   "match_date": "2026-11-28",
+   "handicap": -1,
+   "double_choice": "客胜+平局",
+   "total_p": 72.0,
+   "grade": "B"
+  },
+  "28": {
+   "mid": "4568090",
+   "n_companies": 48,
+   "open_fav": "客胜",
+   "close_fav": "客胜",
+   "open_votes": [
+    0,
+    0,
+    48
+   ],
+   "close_votes": [
+    0,
+    0,
+    48
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 35,
+    "平局": 44,
+    "客胜": 48
+   },
+   "avg_open": [
+    3.296,
+    3.395,
+    1.967
+   ],
+   "avg_close": [
+    3.246,
+    3.196,
+    2.093
+   ],
+   "close_probs": [
+    28.04,
+    28.48,
+    43.48
+   ],
+   "entropy": 1.0764,
+   "dispersion": [
+    4.67,
+    3.21,
+    2.73
+   ],
+   "variance": [
+    0.023,
+    0.011,
+    0.003
+   ],
+   "kelly_max": 1.01,
+   "kelly_over1": 2,
+   "payout_avg": 0.91,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 18:09:41",
+   "last_time_ms": 1795774181959,
+   "quality": "ok",
+   "home": "因斯布鲁克",
+   "away": "第一维也纳",
+   "league": "奥乙",
+   "time": "03:25",
+   "match_date": "2026-11-27",
+   "handicap": 0,
+   "double_choice": "客胜+主胜",
+   "total_p": 68.0,
+   "grade": "A"
+  },
+  "151": {
+   "mid": "4557641",
+   "n_companies": 53,
+   "open_fav": "客胜",
+   "close_fav": "客胜",
+   "open_votes": [
+    9,
+    0,
+    44
+   ],
+   "close_votes": [
+    8,
+    0,
+    45
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 36,
+    "平局": 36,
+    "客胜": 38
+   },
+   "avg_open": [
+    2.6,
+    3.562,
+    2.369
+   ],
+   "avg_close": [
+    2.558,
+    3.464,
+    2.475
+   ],
+   "close_probs": [
+    36.08,
+    26.64,
+    37.28
+   ],
+   "entropy": 1.088,
+   "dispersion": [
+    2.72,
+    3.27,
+    3.45
+   ],
+   "variance": [
+    0.005,
+    0.013,
+    0.007
+   ],
+   "kelly_max": 1.0,
+   "kelly_over1": 0,
+   "payout_avg": 0.922,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 18:09:57",
+   "last_time_ms": 1795774197515,
+   "quality": "ok",
+   "home": "马瑟韦尔",
+   "away": "希伯尼安",
+   "league": "苏超",
+   "time": "01:40",
+   "match_date": "2026-11-28",
+   "handicap": 0,
+   "double_choice": "平局+主胜",
+   "total_p": 67.1,
+   "grade": "A"
+  },
+  "59": {
+   "mid": "4563711",
+   "n_companies": 52,
+   "open_fav": "客胜",
+   "close_fav": "客胜",
+   "open_votes": [
+    0,
+    0,
+    52
+   ],
+   "close_votes": [
+    0,
+    0,
+    52
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 50,
+    "平局": 46,
+    "客胜": 51
+   },
+   "avg_open": [
+    4.816,
+    3.883,
+    1.629
+   ],
+   "avg_close": [
+    5.609,
+    4.077,
+    1.54
+   ],
+   "close_probs": [
+    16.62,
+    22.86,
+    60.52
+   ],
+   "entropy": 0.9395,
+   "dispersion": [
+    6.96,
+    3.85,
+    2.27
+   ],
+   "variance": [
+    0.152,
+    0.025,
+    0.001
+   ],
+   "kelly_max": 1.13,
+   "kelly_over1": 4,
+   "payout_avg": 0.931,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 18:10:14",
+   "last_time_ms": 1795774214643,
+   "quality": "ok",
+   "home": "林肯城",
+   "away": "狼队",
+   "league": "英冠",
+   "time": "20:25",
+   "match_date": "2026-11-28",
+   "handicap": 1,
+   "double_choice": "主胜+客胜",
+   "total_p": 68.1,
+   "grade": "B"
+  },
+  "15": {
+   "mid": "4551933",
+   "n_companies": 55,
+   "open_fav": "客胜",
+   "close_fav": "客胜",
+   "open_votes": [
+    2,
+    0,
+    53
+   ],
+   "close_votes": [
+    0,
+    0,
+    55
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 53,
+    "平局": 38,
+    "客胜": 53
+   },
+   "avg_open": [
+    2.514,
+    3.599,
+    2.34
+   ],
+   "avg_close": [
+    2.686,
+    3.583,
+    2.259
+   ],
+   "close_probs": [
+    34.03,
+    25.51,
+    40.46
+   ],
+   "entropy": 1.0814,
+   "dispersion": [
+    4.67,
+    4.95,
+    3.61
+   ],
+   "variance": [
+    0.016,
+    0.031,
+    0.007
+   ],
+   "kelly_max": 1.04,
+   "kelly_over1": 1,
+   "payout_avg": 0.913,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 18:10:28",
+   "last_time_ms": 1795774228069,
+   "quality": "ok",
+   "home": "芬洛",
+   "away": "瓦尔韦克",
+   "league": "荷乙",
+   "time": "02:55",
+   "match_date": "2026-11-27",
+   "handicap": 0,
+   "double_choice": "主胜+客胜",
+   "total_p": 68.0,
+   "grade": "C"
+  },
+  "178": {
+   "mid": "4670821",
+   "n_companies": 52,
+   "open_fav": "客胜",
+   "close_fav": "客胜",
+   "open_votes": [
+    0,
+    0,
+    52
+   ],
+   "close_votes": [
+    0,
+    0,
+    52
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 41,
+    "平局": 40,
+    "客胜": 46
+   },
+   "avg_open": [
+    2.831,
+    3.626,
+    2.175
+   ],
+   "avg_close": [
+    3.077,
+    3.686,
+    2.051
+   ],
+   "close_probs": [
+    29.98,
+    25.03,
+    44.98
+   ],
+   "entropy": 1.0672,
+   "dispersion": [
+    4.9,
+    3.23,
+    3.15
+   ],
+   "variance": [
+    0.023,
+    0.014,
+    0.004
+   ],
+   "kelly_max": 1.04,
+   "kelly_over1": 4,
+   "payout_avg": 0.922,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 18:10:41",
+   "last_time_ms": 1795774241192,
+   "quality": "ok",
+   "home": "FC辛辛那提",
+   "away": "纳什维尔SC",
+   "league": "美职",
+   "time": "06:00",
+   "match_date": "2026-11-28",
+   "handicap": 0,
+   "double_choice": "客胜+平局",
+   "total_p": 69.6,
+   "grade": "A"
+  },
+  "109": {
+   "mid": "4563142",
+   "n_companies": 49,
+   "open_fav": "客胜",
+   "close_fav": "客胜",
+   "open_votes": [
+    2,
+    0,
+    47
+   ],
+   "close_votes": [
+    2,
+    0,
+    47
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 34,
+    "平局": 31,
+    "客胜": 29
+   },
+   "avg_open": [
+    2.601,
+    3.311,
+    2.442
+   ],
+   "avg_close": [
+    2.615,
+    3.267,
+    2.474
+   ],
+   "close_probs": [
+    35.0,
+    28.01,
+    36.99
+   ],
+   "entropy": 1.0918,
+   "dispersion": [
+    2.7,
+    2.31,
+    2.26
+   ],
+   "variance": [
+    0.005,
+    0.006,
+    0.003
+   ],
+   "kelly_max": 0.98,
+   "kelly_over1": 0,
+   "payout_avg": 0.915,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 18:10:57",
+   "last_time_ms": 1795774257193,
+   "quality": "ok",
+   "home": "罗瑟汉姆联",
+   "away": "奥德汉姆",
+   "league": "英乙",
+   "time": "22:55",
+   "match_date": "2026-11-28",
+   "handicap": 0,
+   "double_choice": "平局+主胜",
+   "total_p": 69.3,
+   "grade": "B"
+  },
+  "4": {
+   "mid": "4559386",
+   "n_companies": 54,
+   "open_fav": "主胜",
+   "close_fav": "主胜",
+   "open_votes": [
+    54,
+    0,
+    0
+   ],
+   "close_votes": [
+    54,
+    0,
+    0
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 47,
+    "平局": 47,
+    "客胜": 47
+   },
+   "avg_open": [
+    1.848,
+    3.693,
+    3.536
+   ],
+   "avg_close": [
+    1.802,
+    3.812,
+    3.685
+   ],
+   "close_probs": [
+    50.98,
+    24.1,
+    24.93
+   ],
+   "entropy": 1.0327,
+   "dispersion": [
+    2.34,
+    3.75,
+    4.65
+   ],
+   "variance": [
+    0.002,
+    0.02,
+    0.029
+   ],
+   "kelly_max": 1.01,
+   "kelly_over1": 1,
+   "payout_avg": 0.919,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 18:11:11",
+   "last_time_ms": 1795774271260,
+   "quality": "ok",
+   "home": "琴斯托霍瓦",
+   "away": "格利维采皮亚斯特",
+   "league": "波兰甲",
+   "time": "00:55",
+   "match_date": "2026-11-27",
+   "handicap": 0,
+   "double_choice": "主胜+客胜",
+   "total_p": 68.0,
+   "grade": "A"
+  },
+  "47": {
+   "mid": "4555276",
+   "n_companies": 50,
+   "open_fav": "主胜",
+   "close_fav": "主胜",
+   "open_votes": [
+    50,
+    0,
+    0
+   ],
+   "close_votes": [
+    50,
+    0,
+    0
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 27,
+    "平局": 18,
+    "客胜": 25
+   },
+   "avg_open": [
+    1.577,
+    3.967,
+    5.04
+   ],
+   "avg_close": [
+    1.591,
+    3.959,
+    5.0
+   ],
+   "close_probs": [
+    58.14,
+    23.36,
+    18.5
+   ],
+   "entropy": 0.9672,
+   "dispersion": [
+    2.49,
+    4.37,
+    4.54
+   ],
+   "variance": [
+    0.002,
+    0.03,
+    0.052
+   ],
+   "kelly_max": 1.04,
+   "kelly_over1": 4,
+   "payout_avg": 0.924,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 18:11:25",
+   "last_time_ms": 1795774285014,
+   "quality": "ok",
+   "home": "神户胜利船",
+   "away": "千叶市原",
+   "league": "J1联赛",
+   "time": "13:55",
+   "match_date": "2026-11-28",
+   "handicap": -1,
+   "double_choice": "客胜+主胜",
+   "total_p": 68.0,
+   "grade": "A"
+  },
+  "80": {
+   "mid": "4566437",
+   "n_companies": 56,
+   "open_fav": "主胜",
+   "close_fav": "主胜",
+   "open_votes": [
+    55,
+    0,
+    1
+   ],
+   "close_votes": [
+    53,
+    0,
+    3
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 49,
+    "平局": 34,
+    "客胜": 46
+   },
+   "avg_open": [
+    2.381,
+    3.435,
+    2.767
+   ],
+   "avg_close": [
+    2.488,
+    3.409,
+    2.693
+   ],
+   "close_probs": [
+    37.68,
+    27.5,
+    34.81
+   ],
+   "entropy": 1.0901,
+   "dispersion": [
+    3.96,
+    3.43,
+    3.79
+   ],
+   "variance": [
+    0.01,
+    0.014,
+    0.01
+   ],
+   "kelly_max": 1.02,
+   "kelly_over1": 5,
+   "payout_avg": 0.938,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 18:11:37",
+   "last_time_ms": 1795774297991,
+   "quality": "ok",
+   "home": "帕德博恩",
+   "away": "沙尔克04",
+   "league": "德甲",
+   "time": "22:25",
+   "match_date": "2026-11-28",
+   "handicap": 0,
+   "double_choice": "平局+客胜",
+   "total_p": 67.5,
+   "grade": "B"
+  },
+  "132": {
+   "mid": "4551934",
+   "n_companies": 52,
+   "open_fav": "主胜",
+   "close_fav": "主胜",
+   "open_votes": [
+    52,
+    0,
+    0
+   ],
+   "close_votes": [
+    52,
+    0,
+    0
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 50,
+    "平局": 40,
+    "客胜": 50
+   },
+   "avg_open": [
+    1.658,
+    4.128,
+    3.892
+   ],
+   "avg_close": [
+    1.756,
+    4.035,
+    3.571
+   ],
+   "close_probs": [
+    51.9,
+    22.58,
+    25.52
+   ],
+   "entropy": 1.025,
+   "dispersion": [
+    2.74,
+    4.75,
+    4.73
+   ],
+   "variance": [
+    0.002,
+    0.037,
+    0.029
+   ],
+   "kelly_max": 1.01,
+   "kelly_over1": 1,
+   "payout_avg": 0.911,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 18:11:51",
+   "last_time_ms": 1795774311086,
+   "quality": "ok",
+   "home": "埃门",
+   "away": "海尔蒙德体育",
+   "league": "荷乙",
+   "time": "23:25",
+   "match_date": "2026-11-28",
+   "handicap": -1,
+   "double_choice": "客胜+主胜",
+   "total_p": 68.0,
+   "grade": "C"
+  },
+  "44": {
+   "mid": "4481265",
+   "n_companies": 49,
+   "open_fav": "主胜",
+   "close_fav": "主胜",
+   "open_votes": [
+    49,
+    0,
+    0
+   ],
+   "close_votes": [
+    49,
+    0,
+    0
+   ],
+   "flip": false,
+   "moved": {
+    "主胜": 46,
+    "平局": 45,
+    "客胜": 46
+   },
+   "avg_open": [
+    2.01,
+    3.318,
+    3.186
+   ],
+   "avg_close": [
+    1.887,
+    3.418,
+    3.512
+   ],
+   "close_probs": [
+    47.86,
+    26.42,
+    25.72
+   ],
+   "entropy": 1.0536,
+   "dispersion": [
+    2.34,
+    4.18,
+    5.46
+   ],
+   "variance": [
+    0.002,
+    0.02,
+    0.037
+   ],
+   "kelly_max": 1.08,
+   "kelly_over1": 1,
+   "payout_avg": 0.903,
+   "asian_conv": null,
+   "eu_asian_div": null,
+   "first_time": "2026-11-27 18:12:04",
+   "last_time_ms": 1795774324035,
+   "quality": "ok",
+   "home": "龙仁FC",
+   "away": "坡州前沿",
+   "league": "K2联赛",
+   "time": "12:55",
    "match_date": "2026-11-28",
    "handicap": 0,
    "double_choice": "客胜+主胜",
